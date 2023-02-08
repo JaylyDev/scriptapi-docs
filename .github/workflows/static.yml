@@ -39,15 +39,14 @@ jobs:
 
       - name: Generate documentation
         run: node .
-
+        
       - name: Setup Pages
         uses: actions/configure-pages@v2
 
-      - name: Deploy Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          branch: static
-          folder: docs
+          path: "./docs"
 
       - name: Deploy to GitHub Pages
         id: deployment
