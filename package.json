@@ -1,0 +1,16 @@
+{
+  "name": "scriptapi-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@npm/types": "^1.0.2",
+    "axios": "^1.3.2",
+    "fs-extra": "^11.1.0",
+    "tar": "^6.1.13",
+    "typedoc": "^0.23.24"
+  }
+}
