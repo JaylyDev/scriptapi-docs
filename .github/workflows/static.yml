@@ -39,6 +39,9 @@ jobs:
 
       - name: Vitepress Build
         run: npm run docs:build
+        
+      - name: Pages Modify
+        run: node ./dist/staticModify.js
 
       - name: Generate Documentation
         run: node .
