@@ -43,14 +43,8 @@ jobs:
       - name: Generate Documentation
         run: node .
         
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          path: "./static"
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+          branch: static
+          folder: static
