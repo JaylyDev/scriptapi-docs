@@ -94,7 +94,7 @@ export async function downloadScriptModuleTypings(channel: Channel, module: stri
   const filename = path.basename(result.tarball);
   const tgzFile = path.resolve(cacheFolder, filename);
 
-  console.log(`Latest ${channel} version for ${module} is ${result.version}`);
+  console.log(`Downloading latest ${channel} version of ${module}: ${result.version}`);
 
   // download and extract tar.gz
   await downloadFile(result.tarball, tgzFile);

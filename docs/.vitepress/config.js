@@ -7,5 +7,6 @@ import * as vitepress from "vitepress";
 export default {
   title: 'Script API References',
   description: 'Script API References',
-  outDir: path.resolve(process.cwd(), 'static')
+  outDir: path.resolve(process.cwd(), 'static'),
+  base: '/scriptapi-docs'
 }
