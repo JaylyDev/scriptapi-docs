@@ -1,4 +1,5 @@
 script_modules
 node_modules
 dist
-docs
+static
+docs/.vitepress/cache

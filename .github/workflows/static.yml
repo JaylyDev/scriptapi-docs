@@ -37,7 +37,10 @@ jobs:
       - name: Build
         run: tsc --build
 
-      - name: Generate documentation
+      - name: Vitepress Build
+        run: npm run docs:build
+
+      - name: Generate Documentation
         run: node .
         
       - name: Setup Pages
@@ -46,7 +49,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "./docs"
+          path: "./static"
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -5,15 +5,21 @@
   "main": "dist/index.js",
   "keywords": [],
   "author": "",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs"
+  },
   "license": "ISC",
   "dependencies": {
-    "@npm/types": "^1.0.2",
     "axios": "^1.3.2",
     "fs-extra": "^11.1.0",
     "tar": "^6.1.13",
-    "typedoc": "^0.23.24"
+    "typedoc": "^0.23.24",
+    "vitepress": "^1.0.0-alpha.45",
+    "vue": "^3.2.47"
   },
   "devDependencies": {
-    "@types/node": "^18.13.0"
+    "@types/node": "^18.13.0",
+    "@npm/types": "^1.0.2"
   }
 }

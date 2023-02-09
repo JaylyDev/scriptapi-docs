@@ -24,7 +24,7 @@ export async function generateDocs(
       path.resolve(modulePath, "@minecraft/server-net/index.d.ts"),
       path.resolve(modulePath, "@minecraft/server-ui/index.d.ts"),
     ],
-    name: "Preview",
+    name: channel.substring(0, 1).toUpperCase() + channel.substring(1).toLowerCase(),
     basePath: modulePath,
     cleanOutputDir: true,
   });
@@ -33,7 +33,7 @@ export async function generateDocs(
 
   if (project) {
     // Project may not have converted correctly
-    const outputDir = "docs/" + channel;
+    const outputDir = "static/" + channel;
 
     project.readme = [
       {
@@ -63,8 +63,9 @@ export async function generateTsConfig(channel: "preview" | "stable") {
       strictFunctionTypes: true,
       strictNullChecks: true,
       baseUrl: "./",
+      skipLibCheck: true
     },
-    files: [ ],
+    files: [ ]
   };
 
   for (const scriptModule of readdirSync(path.resolve(script_module(channel), '@minecraft'))) {
