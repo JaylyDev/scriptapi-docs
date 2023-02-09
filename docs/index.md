@@ -4,5 +4,5 @@ Landing page containing a high-level introduction of experimental Script APIs fo
 
 ## Versions
 
-- [Latest Stable](./stable/modules)
-- [Latest Preview](./preview/modules)
+- <a href="./stable/modules" target="_blank" rel="noreferrer">Latest Stable</a>
+- <a href="./preview/modules" target="_blank" rel="noreferrer">Latest Preview</a>
