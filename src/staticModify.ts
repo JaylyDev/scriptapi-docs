@@ -23,7 +23,7 @@ for (const filePath of readDirSync(staticDirectory)) {
   if (path.extname(filePath) !== '.html') continue;
 
   const file = fs.readFileSync(filePath).toString();
-  const dist = file.replaceAll('"/', '"./');
+  const dist = file.replaceAll('"/', '"');
 
   fs.writeFileSync(filePath, dist);
 
