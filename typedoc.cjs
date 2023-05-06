@@ -2,9 +2,9 @@ const fs = require("fs");
 const path = require("path");
 const dotenv = require("dotenv");
 
-console.log(process.env.VERSION);
+console.log(`env`, process.env.VERSION);
 dotenv.config();
-console.log(process.env.VERSION);
+console.log(`env`, process.env.VERSION);
 
 // Running typedoc now requires a version argument.
 const version = process.env.VERSION;
