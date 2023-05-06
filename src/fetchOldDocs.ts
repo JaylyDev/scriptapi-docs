@@ -8,7 +8,14 @@ const branch = "gh-pages";
 
 export function copyOldDocumentation () {
   execSync(`git clone --depth 1 --single-branch --branch ${branch} ${gitUrl} ${tempBranchDir}`);
-  const folders = fs.readdirSync(path.resolve(tempBranchDir)).filter(f => f.startsWith("1.") && fs.statSync(path.resolve(tempBranchDir, f)).isDirectory());
+  const folders = fs.readdirSync(path.resolve(tempBranchDir)).filter(f =>
+    // Only include folders that start with 1.
+    f.startsWith("1.")
+    // Not current version that it's fetching
+    && f !== process.env.VERSION
+    // Is directory
+    && fs.statSync(path.resolve(tempBranchDir, f)).isDirectory()
+  );
   folders.forEach(folder => {
     // Copy each folder to the dist folder
     fs.copySync(

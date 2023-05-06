@@ -2,9 +2,8 @@ import { Version } from "./fetchVersion";
 import { execSync } from "child_process";
 import * as dotenv from "dotenv";
 import { generateDocsIndexPage } from "./indexPage";
-import { PackageMetadata, installBundle, installModule } from "./installModules";
-import * as fs from "fs-extra";
-import { copyOldDocumentation } from "./fetchOldDocs";
+import { installBundle, installModule } from "./installModules";
+import { readdirSync } from "fs";
 
 dotenv.config();
 
@@ -41,11 +40,14 @@ console.log("Generating documentation for version " + version + "...");
   console.log("Successfully built docs at ./docs/.vuepress/dist");
 
   // Pull existing documentation hosted on GitHub, to reduce build time.
-  copyOldDocumentation();
-  console.log("Successfully copied previous documentation at ./docs/.vuepress/dist");
+  // copyOldDocumentation();
+  // console.log("Successfully copied previous documentation at ./docs/.vuepress/dist");
 
   // Generate docs for version requested
-  execSync("typedoc");
+  const lib = readdirSync("./lib");
+  for (const version of lib) {
+    execSync("typedoc --version " + version);
+  };
   console.log("Successfully ran typedoc. Documentation are generated in ./docs/.vuepress/dist/" + version);
 })();
 
