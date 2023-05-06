@@ -57,6 +57,7 @@ const isValidVersion = /^\d+\.\d+\.\d+(\.\d+)?$/.test(version);
   if (!version) {
     const lib = readdirSync("./lib");
     for (const libVer of lib) {
+      console.log('env', libVer);
       // save environment variable VERSION to be used in typedoc
       writeFileSync(".env", `VERSION=${libVer}`);
 
