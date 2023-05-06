@@ -4,5 +4,5 @@ Landing page containing documentation of experimental and stable Script APIs for
 
 ## Documentation
 
-For more detailed documentation, the changelog, and How-To Guide provided by Microsoft, see https://learn.microsoft.com/minecraft/creator/scriptapi/.
+For more detailed documentation, the changelog, and How-To Guide provided by Microsoft, see [Script API Documentation Homepage | Microsoft Learn](https://learn.microsoft.com/minecraft/creator/scriptapi/).
 
