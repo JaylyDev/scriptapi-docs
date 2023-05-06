@@ -78,10 +78,10 @@ export async function installBundle(module_name: string, version: Version): Prom
   }]);
 
   fs.writeFileSync(`${module_path}@${moduleVersion}.d.ts`, bundledTypes);
-  fs.rm(module_path, { recursive: true });
 
   // Uninstall module
   execSync(`npm un ${module_name}`);
+  fs.rmSync(module_path, { recursive: true });
 
   return {
     name: module_name,

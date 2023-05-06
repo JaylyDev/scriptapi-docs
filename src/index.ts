@@ -22,19 +22,17 @@ const bundleModules = [
 console.log("Generating documentation for version " + version + "...");
 
 (async () => {
-  // Collect stats
-  const installedModules: PackageMetadata[] = [];
-
   for (const module_name of scriptModules) {
-    installedModules.push(...await installModule(module_name, version));
+    await installModule(module_name, version);
   };
-  console.log("Successfully installed all modules.");
 
   for (const module_name of bundleModules) {
-    installedModules.push(await installBundle(module_name, version));
+    await installBundle(module_name, version);
   };
+  
+  console.log("Successfully retrieved all modules.");
 
-  generateDocsIndexPage("./docs/index.md", installedModules);
+  generateDocsIndexPage("./docs/index.md");
   console.log("Successfully generated index page.");
   
   execSync("npm run docs:build");

@@ -13,3 +13,4 @@ node_modules
 
 # Docs dist directory
 dist
+/docs/index.md

@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'The version to use'
+        description: "The version to use"
         required: true
 
 jobs:
@@ -34,5 +34,6 @@ jobs:
       - name: Upload Docs
         uses: EndBug/add-and-commit@v9
         with:
-          add: ./libs
-          message: 'Uploaded Script API Docs - $VERSION'
+          default_author: github_actions
+          add: ./lib
+          message: "Uploaded Script API Docs - ${{ github.event.inputs.version }}"
