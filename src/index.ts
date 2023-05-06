@@ -55,15 +55,13 @@ const isValidVersion = /^\d+\.\d+\.\d+(\.\d+)?$/.test(version);
   console.log("Successfully built docs at ./docs/.vuepress/dist");
 
   if (!version) {
-    const hasEnv = existsSync(".env");
     const lib = readdirSync("./lib");
     for (const libVer of lib) {
       // save environment variable VERSION to be used in typedoc
-      if (!hasEnv) writeFileSync(".env", `VERSION=${libVer}`);
+      writeFileSync(".env", `VERSION=${libVer}`);
 
       execSync("typedoc");
     };
-    if (!hasEnv) rmSync(".env");
   }
   else {
     // Pull existing documentation hosted on GitHub, to reduce build time.
