@@ -3,7 +3,8 @@ import { execSync } from "child_process";
 import * as dotenv from "dotenv";
 import { generateDocsIndexPage } from "./indexPage";
 import { installBundle, installModule } from "./installModules";
-import { readdirSync } from "fs";
+import { existsSync, readdirSync, rmSync, writeFileSync } from "fs";
+import { copyOldDocumentation } from "./fetchOldDocs";
 
 dotenv.config();
 
@@ -20,34 +21,58 @@ const bundleModules = [
   "@minecraft/vanilla-data",
 ];
 
-console.log("Generating documentation for version " + version + "...");
+const isValidVersion = /^\d+\.\d+\.\d+(\.\d+)?$/.test(version);
 
 (async () => {
-  for (const module_name of scriptModules) {
-    await installModule(module_name, version);
-  };
+  if (isValidVersion) {
+    console.log("Generating documentation for version " + version + "...");
 
-  for (const module_name of bundleModules) {
-    await installBundle(module_name, version);
-  };
+    for (const module_name of scriptModules) {
+      try {
+        await installModule(module_name, version);        
+      } catch (error) {
+        console.warn(`Failed to install module ${module_name}@${version}.\n`, error);
+      }
+    };
   
-  console.log("Successfully retrieved all modules.");
+    for (const module_name of bundleModules) {
+      try {
+        await installBundle(module_name, version);
+      } catch (error) {
+        console.warn(`Failed to install bundle ${module_name}@${version}.\n`, error);
+      }
+    };
+    
+    console.log("Successfully retrieved all modules.");
+  }
+  else if (!!version) throw new Error(`Invalid version: ${version}. Accept '0.0.0' for stable, '0.0.0.0' for preview.`);
+  else console.log("No version specified. Rebuilding the entire documentation...");
 
   generateDocsIndexPage("./docs/index.md");
   console.log("Successfully generated index page.");
   
-  execSync("npm run docs:build");
+  console.log(execSync("npm run docs:build").toString());
   console.log("Successfully built docs at ./docs/.vuepress/dist");
 
-  // Pull existing documentation hosted on GitHub, to reduce build time.
-  // copyOldDocumentation();
-  // console.log("Successfully copied previous documentation at ./docs/.vuepress/dist");
+  if (!version) {
+    const hasEnv = existsSync(".env");
+    const lib = readdirSync("./lib");
+    for (const libVer of lib) {
+      // save environment variable VERSION to be used in typedoc
+      if (!hasEnv) writeFileSync(".env", `VERSION=${libVer}`);
 
-  // Generate docs for version requested
-  const lib = readdirSync("./lib");
-  for (const version of lib) {
-    execSync("typedoc --version " + version);
+      execSync("typedoc");
+    };
+    if (!hasEnv) rmSync(".env");
+  }
+  else {
+    // Pull existing documentation hosted on GitHub, to reduce build time.
+    copyOldDocumentation();
+    console.log("Successfully copied previous documentation at ./docs/.vuepress/dist");
+
+    execSync("typedoc");
   };
-  console.log("Successfully ran typedoc. Documentation are generated in ./docs/.vuepress/dist/" + version);
+  
+  console.log("Successfully generated documentation.");
 })();
 

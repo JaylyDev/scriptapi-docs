@@ -4,7 +4,7 @@ on:
     inputs:
       version:
         description: "The version to use"
-        required: true
+        required: false
 
 jobs:
   build:

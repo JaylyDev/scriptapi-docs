@@ -1,12 +1,14 @@
 const fs = require("fs");
 const path = require("path");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 // Running typedoc now requires a version argument.
-const versionDeclare = process.argv.findIndex(v => v === "--version");
-const version = versionDeclare > -1 ? process.argv[versionDeclare + 1] : undefined;
+const version = process.env.VERSION;
 
 if (!/^\d+\.\d+\.\d+(\.\d+)?$/.test(version)) {
-  throw new Error("Parameter 'typedoc --version' is not set. Accept '0.0.0' for stable, '0.0.0.0' for preview.");
+  throw new Error("Environment variable 'VERSION' is not set. Accept '0.0.0' for stable, '0.0.0.0' for preview.");
 };
 
 /**
