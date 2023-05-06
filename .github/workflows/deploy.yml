@@ -1,0 +1,38 @@
+name: Build Documentation
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The version to use'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set env variable
+        run: echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
+
+      - run: npm install
+
+      - name: Build source files
+        run: tsc --build
+
+      - name: Generate static pages
+        run: npm run start
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages  # default: gh-pages
+          publish_dir: ./docs/.vuepress/dist
+
+      - name: Upload Docs
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: ./libs
+          message: 'Uploaded Script API Docs - $VERSION'

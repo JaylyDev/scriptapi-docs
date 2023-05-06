@@ -1,17 +1,13 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
+    "module": "commonjs",
+    "target": "es2020",
     "moduleResolution": "node",
-    "target": "ES2021",
-    "lib": ["ES2021"],
-    "esModuleInterop": true,
-    "downlevelIteration": true,
-    "resolveJsonModule": true,
+    "types": ["node"],
     "outDir": "dist",
-    "rootDir": "src",
     "sourceMap": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
   },
-  "include": [ "src" ],
-  "exclude": ["node_modules", "script_modules"]
+  "include": ["src"],
+  "exclude": ["node_modules", "lib", "dist"]
 }

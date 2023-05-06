@@ -1,5 +1,15 @@
-script_modules
+# node modules
 node_modules
+
+# MacOS desktop services store
+.DS_Store
+
+# Log files
+*.log
+
+# VuePress temp directory
+.temp
+.cache
+
+# Docs dist directory
 dist
-static
-docs/.vitepress/cache

@@ -1,20 +1,52 @@
-import { Channel, script_modules } from "./variables";
 import axios from "axios";
 import type * as npm from "@npm/types";
-import * as tar from 'tar';
-import * as fs from 'fs-extra';
-import * as path from 'path';
+import * as semver from "semver";
 
 const REGISTRY = 'https://registry.npmjs.org/';
-const cacheFolder = script_modules;
 const ignoredKeys = [ 'created', 'modified' ];
 
-interface npmFetchResult {
-  version: string,
-  tarball: string
+interface VersionResult {
+  readonly moduleVersion: string,
+  readonly engineVersion: string
 };
 
-export async function getVersion(channel: Channel, module: string): Promise<npmFetchResult> {
+export function splitVersion(versionString: string): VersionResult | null {
+  const parsedVersion = semver.parse(versionString);
+
+  if (!parsedVersion) {
+    // invalid version string
+    return null;
+  }
+
+  const { major, minor, patch, prerelease } = parsedVersion;
+
+  if (prerelease.length === 0) {
+    // stable version
+    return { moduleVersion: `${major}.${minor}.${patch}`, engineVersion: '' };
+  }
+
+  // prerelease version
+  const prereleaseString = prerelease[0].toString();
+  const [moduleChannel] = prereleaseString.split('-');
+  const moduleVersion = `${major}.${minor}.${patch}-${moduleChannel}`;
+  const engineVersion = versionString.replace(`${moduleVersion}.`, '');
+  return { moduleVersion, engineVersion };
+};
+
+export type Version = `${string}.${string}.${string}` | `${string}.${string}.${string}-${string}`;
+
+/**
+ * 
+ * @param mcVersion Minecraft version
+ * @param module Minecraft module
+ */
+export async function getVersions(mcVersion: Version, module: string): Promise<string[]> {
+  if (!/^\d+\.\d+\.\d+(\.\d+)?$/.test(mcVersion)) {
+    throw new Error('Invalid version. Accept "1.0.0" for stable version, or "1.0.0.0" for preview version.');
+  };
+
+  const [major, minor, patch, revision] = mcVersion.split('.');
+  const versionString = !revision ? `${major}.${minor}.${patch}-stable` : `${major}.${minor}.${patch}-preview.${revision}`;
   const response = await axios.get(REGISTRY + module);
   const packument = response.data as npm.Packument;
   const { time } = packument;
@@ -23,90 +55,42 @@ export async function getVersion(channel: Channel, module: string): Promise<npmF
     delete time[key];
   };
 
-  const sorted = Object.keys(time).sort(function(a,b){
+  /**
+   * Complete version list, sorted by latest
+   * Example version format
+   * 1.1.0-beta.1.19.0-preview.25
+   * 1.0.0-rc.1.19.0-preview.25
+   * 0.1.0
+   */
+  const versionsList = Object.keys(time).sort(function(a,b){
     // Turn your strings into dates, and then subtract them
     // to get a value that is either negative, positive, or zero.
     return new Date(time[a]).getTime() - new Date(time[b]).getTime();
   }).reverse();
 
-  const latestPreview = sorted.find((v) => v.includes('preview'));
-  const latestRelease = sorted.find((v) => v.includes('release') || v.includes('stable'));
-  console.log(`${module} - preview: ${latestPreview}, release: ${latestRelease}`);
+  const latestVersions = [undefined, ...versionsList.filter(v => semver.parse(v).prerelease.length === 0)];
 
-  switch (channel) {
-    case 'stable':
-      return {
-        version: latestRelease,
-        tarball: packument.versions[latestRelease].dist.tarball
-      };
+  let latestBeta: string | undefined;
 
-    case 'preview':
-      return {
-        version: latestPreview,
-        tarball: packument.versions[latestPreview].dist.tarball
-      };
-  
-    default:
-      throw 'Channel not found';
-  }
-};
-
-export async function downloadFile(fileUrl: string, outputLocationPath: string) {
-  const writer = fs.createWriteStream(outputLocationPath);
-
-  return axios({
-    method: 'get',
-    url: fileUrl,
-    responseType: 'stream',
-  }).then(response => {
-
-    //ensure that the user can call `then()` only when the file has
-    //been downloaded entirely.
-
-    return new Promise((resolve, reject) => {
-      response.data.pipe(writer);
-      let error = null;
-      writer.on('error', err => {
-        error = err;
-        writer.close();
-        reject(err);
-      });
-      writer.on('close', () => {
-        if (!error) {
-          resolve(true);
-        }
-        //no need to call the reject here, as it will have been called in the
-        //'error' stream;
-      });
+  while (!latestBeta) {
+    latestVersions.shift();
+    latestBeta = versionsList.find(v => {
+      const { moduleVersion, engineVersion } = splitVersion(v);
+      const latestVersion = latestVersions[0] ?? "0.0.0";
+      return semver.parse(v).prerelease[0] === 'beta' && semver.compare(moduleVersion, latestVersion) > 0 && semver.compare(engineVersion, versionString) === 0
     });
+  };
+
+  const latestRc = versionsList.find(v => {
+    const { moduleVersion, engineVersion } = splitVersion(v);
+    const latestVersion = latestVersions[0] ?? "0.0.0";
+    return semver.parse(v).prerelease[0] === 'rc' && semver.compare(moduleVersion, latestVersion) > 0 && semver.compare(engineVersion, versionString) === 0
   });
-}
 
-/**
- * 
- * @param channel minecraft version channel
- * @param module script module
- * @returns file
- */
-export async function downloadScriptModuleTypings(channel: Channel, module: string) {
-  const outputPath = path.resolve(script_modules, channel, module);
-  const result = await getVersion(channel, module);
-  const filename = path.basename(result.tarball);
-  const tgzFile = path.resolve(cacheFolder, filename);
+  const versions: string[] = [];
+  versions.push(latestBeta);
+  if (!!latestRc) versions.push(latestRc);
+  versions.push(...latestVersions);
 
-  console.log(`Downloading latest ${channel} version of ${module}: ${result.version}`);
-
-  // download and extract tar.gz
-  await downloadFile(result.tarball, tgzFile);
-  await tar.extract({ file: tgzFile, cwd: cacheFolder });
-  fs.moveSync(path.resolve(cacheFolder, 'package'), outputPath, { overwrite: true }); // move package folder to root
-
-  return {
-    version: result.version,
-    file: fs.readFileSync(path.resolve(outputPath, 'index.d.ts'))
-  }
+  return versions;
 };
-
-// create directory
-if (fs.existsSync(cacheFolder)) fs.rmSync(cacheFolder, { recursive: true });    
-fs.mkdirSync(cacheFolder, { recursive: true });
