@@ -3,8 +3,8 @@ import { execSync } from "child_process";
 import * as dotenv from "dotenv";
 import { generateDocsIndexPage } from "./indexPage";
 import { installBundle, installModule } from "./installModules";
-import { existsSync, readdirSync, rmSync, writeFileSync } from "fs";
-import { copyOldDocumentation } from "./fetchOldDocs";
+import { readdirSync, writeFileSync } from "fs";
+import { generateDocs } from "./typedoc";
 
 dotenv.config();
 
@@ -54,21 +54,9 @@ const isValidVersion = /^\d+\.\d+\.\d+(\.\d+)?$/.test(version);
   console.log(execSync("npm run docs:build").toString());
   console.log("Successfully built docs at ./docs/.vuepress/dist");
 
-  if (!version) {
-    const lib = readdirSync("./lib");
-    for (const libVer of lib) {
-      // save environment variable VERSION to be used in typedoc
-      writeFileSync(".env", `VERSION=${libVer}`);
-
-      execSync("typedoc");
-    };
-  }
-  else {
-    // Pull existing documentation hosted on GitHub, to reduce build time.
-    copyOldDocumentation();
-    console.log("Successfully copied previous documentation at ./docs/.vuepress/dist");
-
-    execSync("typedoc");
+  const lib = readdirSync("./lib");
+  for (const libVer of lib) {
+    generateDocs(libVer);
   };
   
   console.log("Successfully generated documentation.");
