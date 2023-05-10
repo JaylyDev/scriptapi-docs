@@ -10,7 +10,7 @@ interface VersionResult {
   readonly engineVersion: string
 };
 
-export function splitVersion(versionString: string): VersionResult | null {
+export function splitVersion(versionString: string, platform: "npm" | "minecraft"): VersionResult | null {
   const parsedVersion = semver.parse(versionString);
 
   if (!parsedVersion) {
@@ -19,18 +19,22 @@ export function splitVersion(versionString: string): VersionResult | null {
   }
 
   const { major, minor, patch, prerelease } = parsedVersion;
-
-  if (prerelease.length === 0) {
-    // stable version
-    return { moduleVersion: `${major}.${minor}.${patch}`, engineVersion: '' };
-  }
-
-  // prerelease version
-  const prereleaseString = prerelease[0].toString();
-  const [moduleChannel] = prereleaseString.split('-');
+  const moduleChannel = prerelease[0]?.toString();
   const moduleVersion = `${major}.${minor}.${patch}-${moduleChannel}`;
   const engineVersion = versionString.replace(`${moduleVersion}.`, '');
-  return { moduleVersion, engineVersion };
+
+  if (platform === "minecraft") {
+    // stable version
+    if (!moduleChannel || moduleChannel === 'rc') return { moduleVersion: `${major}.${minor}.${patch}`, engineVersion: '' };
+    // prerelease version
+    else return { moduleVersion, engineVersion };
+  }
+  else {
+    // stable version
+    if (!moduleChannel) return { moduleVersion: `${major}.${minor}.${patch}`, engineVersion: '' };
+    // prerelease version
+    return { moduleVersion, engineVersion };
+  }
 };
 
 export type Version = `${string}.${string}.${string}` | `${string}.${string}.${string}-${string}`;
@@ -75,14 +79,14 @@ export async function getVersions(mcVersion: Version, module: string): Promise<s
   while (!latestBeta) {
     latestVersions.shift();
     latestBeta = versionsList.find(v => {
-      const { moduleVersion, engineVersion } = splitVersion(v);
+      const { moduleVersion, engineVersion } = splitVersion(v, "npm");
       const latestVersion = latestVersions[0] ?? "0.0.0";
       return semver.parse(v).prerelease[0] === 'beta' && semver.compare(moduleVersion, latestVersion) > 0 && semver.compare(engineVersion, versionString) === 0
     });
   };
 
   const latestRc = versionsList.find(v => {
-    const { moduleVersion, engineVersion } = splitVersion(v);
+    const { moduleVersion, engineVersion } = splitVersion(v, "npm");
     const latestVersion = latestVersions[0] ?? "0.0.0";
     return semver.parse(v).prerelease[0] === 'rc' && semver.compare(moduleVersion, latestVersion) > 0 && semver.compare(engineVersion, versionString) === 0
   });

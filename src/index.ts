@@ -3,7 +3,7 @@ import { execSync } from "child_process";
 import * as dotenv from "dotenv";
 import { generateDocsIndexPage } from "./indexPage";
 import { installBundle, installModule } from "./installModules";
-import { readdirSync, writeFileSync } from "fs";
+import { readdirSync, rmSync } from "fs";
 import { generateDocs } from "./typedoc";
 
 dotenv.config();
@@ -24,8 +24,14 @@ const bundleModules = [
 const isValidVersion = /^\d+\.\d+\.\d+(\.\d+)?$/.test(version);
 
 (async () => {
+  // Check if the version is valid against schema, if so download the types and generate docs for that specific version
+  // If version input exist but it's not valid, it throws error
+  // otherwise if input has no version, it only builds the docs from existing types in lib folder
   if (isValidVersion) {
     console.log("Generating documentation for version " + version + "...");
+
+    // remove existing types for that version only
+    rmSync("./lib/" + version, { recursive: true, force: true, maxRetries: 3 });
 
     for (const module_name of scriptModules) {
       try {

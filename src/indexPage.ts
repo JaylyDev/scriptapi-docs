@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-const docsRedirectUrl = (version: string) => `- <a href="${version}/index" target="_blank" rel="noreferrer">Script API - v${version}</a>`;
+const docsRedirectUrl = (version: string) => `- <a href="${version}" target="_blank" rel="noreferrer">Script API - v${version}</a>`;
 
 export function generateDocsIndexPage (location: string) {
   let indexMd = "<!-- This file is auto-generated, DO NOT modify this file. -->" + "\n\n"

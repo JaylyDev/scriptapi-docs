@@ -25,7 +25,7 @@ export async function installModule(module_name: string, version: Version): Prom
     // Install npm package, saving as peer dependencies to avoid conflicts.
     console.log(`Installing ${module_name}@${module_version}`);
     execSync(`npm i ${module_name}@${module_version} --save-peer --save-exact`);
-    const { moduleVersion } = splitVersion(module_version);
+    const { moduleVersion } = splitVersion(module_version, "minecraft");
 
     // Copy the node module index.d.ts file into the lib directory.
     // For example if path is node_modules/@minecraft/server/index.d.ts, the file will be copied to lib/{version}/@minecraft/server@{moduleVersion}.d.ts without the use of exec.
@@ -61,7 +61,7 @@ export async function installBundle(module_name: string, version: Version): Prom
   // Install npm package, saving as peer dependencies to avoid conflicts.
   console.log(`Installing ${module_name}@${module_version}`);
   execSync(`npm i ${module_name}@${module_version} --save-peer --save-exact`);
-  const { moduleVersion } = splitVersion(module_version);
+  const { moduleVersion } = splitVersion(module_version, "minecraft");
 
   // Copy the node module index.d.ts file into the lib directory.
   // For example if path is node_modules/@minecraft/server/index.d.ts, the file will be copied to lib/{version}/@minecraft/server@{moduleVersion}.d.ts without the use of exec.
