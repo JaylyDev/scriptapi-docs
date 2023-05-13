@@ -16,7 +16,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server",
- *   "version": "1.3.0-internal.1.20.0-preview.23"
+ *   "version": "1.4.0-internal.1.20.0-preview.24"
  * }
  * ```
  *
@@ -592,6 +592,9 @@ export class Entity {
      *
      * @param tag
      * Content of the tag to add.
+     * @returns
+     * Returns true if the tag was added successfully. This can
+     * fail if the tag already exists on the entity.
      * @throws This function can throw errors.
      */
     addTag(tag: string): boolean;
@@ -608,6 +611,10 @@ export class Entity {
      * Additional options about the source of damage, which may add
      * additional effects or spur additional behaviors on this
      * entity.
+     * @returns
+     * Whether the entity takes any damage. This can return false
+     * if the entity is invulnerable or if the damage applied is
+     * less than or equal to 0.
      * @throws This function can throw errors.
      */
     applyDamage(amount: number, options?: EntityApplyDamageByProjectileOptions | EntityApplyDamageOptions): boolean;
@@ -665,6 +672,9 @@ export class Entity {
      * to retrieve. If no namespace prefix is specified,
      * 'minecraft:' is assumed. If the component is not present on
      * the entity, undefined is returned.
+     * @returns
+     * Returns the component if it exists on the entity, otherwise
+     * undefined.
      */
     getComponent(componentId: string): EntityComponent | undefined;
     /**
@@ -673,6 +683,9 @@ export class Entity {
      * Returns all components that are both present on this entity
      * and supported by the API.
      *
+     * @returns
+     * Returns all components that are both present on this entity
+     * and supported by the API.
      */
     getComponents(): EntityComponent[];
     /**
@@ -681,6 +694,9 @@ export class Entity {
      * Returns the current location of the head component of this
      * entity.
      *
+     * @returns
+     * Returns the current location of the head component of this
+     * entity.
      * @throws This function can throw errors.
      */
     getHeadLocation(): Vector3;
@@ -689,6 +705,8 @@ export class Entity {
      * @remarks
      * Returns all tags associated with an entity.
      *
+     * @returns
+     * Returns the current rotation component of this entity.
      * @throws This function can throw errors.
      */
     getTags(): string[];
@@ -697,6 +715,8 @@ export class Entity {
      * @remarks
      * Returns the current velocity vector of the entity.
      *
+     * @returns
+     * Returns the current velocity vector of the entity.
      * @throws This function can throw errors.
      */
     getVelocity(): Vector3;
@@ -705,6 +725,8 @@ export class Entity {
      * @remarks
      * Returns the current view direction of the entity.
      *
+     * @returns
+     * Returns the current view direction of the entity.
      * @throws This function can throw errors.
      */
     getViewDirection(): Vector3;
@@ -718,15 +740,20 @@ export class Entity {
      * The identifier of the component (e.g., 'minecraft:rideable')
      * to retrieve. If no namespace prefix is specified,
      * 'minecraft:' is assumed.
+     * @returns
+     * Returns true if the specified component is present on this
+     * entity.
      */
     hasComponent(componentId: string): boolean;
     /**
      * @beta
      * @remarks
-     * Tests whether an entity has a particular tag.
+     * Returns whether an entity has a particular tag.
      *
      * @param tag
      * Identifier of the tag to test for.
+     * @returns
+     * Returns whether an entity has a particular tag.
      * @throws This function can throw errors.
      */
     hasTag(tag: string): boolean;
@@ -752,6 +779,8 @@ export class Entity {
      *
      * @param tag
      * Content of the tag to remove.
+     * @returns
+     * Returns whether the tag existed on the entity.
      * @throws This function can throw errors.
      */
     removeTag(tag: string): boolean;
@@ -762,6 +791,12 @@ export class Entity {
      *
      * This function can't be called in read-only mode.
      *
+     * @param commandString
+     * The command string. Note: This should not include a leading
+     * forward slash.
+     * @returns
+     * A command result containing whether the command was
+     * successful.
      * @throws This function can throw errors.
      */
     runCommand(commandString: string): CommandResult;
