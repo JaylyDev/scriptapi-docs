@@ -1,7 +1,7 @@
 import { Version } from "./fetchVersion";
 import { execSync } from "child_process";
 import * as dotenv from "dotenv";
-import { generateDocsIndexPage } from "./indexPage";
+import { applyGoogleAdvertisements, generateDocsIndexPage } from "./docsPages";
 import { installBundle, installModule } from "./installModules";
 import { readdirSync, rmSync } from "fs";
 import { generateDocs } from "./typedoc";
@@ -22,6 +22,7 @@ const bundleModules = [
 ];
 
 const isValidVersion = /^\d+\.\d+\.\d+(\.\d+)?$/.test(version);
+const applyGoogleAds = true;
 
 (async () => {
   // Check if the version is valid against schema, if so download the types and generate docs for that specific version
@@ -63,6 +64,11 @@ const isValidVersion = /^\d+\.\d+\.\d+(\.\d+)?$/.test(version);
   const lib = readdirSync("./lib");
   for (const libVer of lib) {
     generateDocs(libVer);
+  };
+  
+  if (applyGoogleAds) {
+    console.log("Applying Google Ads to website.");
+    applyGoogleAdvertisements();
   };
   
   console.log("Successfully generated documentation.");
