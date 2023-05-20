@@ -1,8 +1,5 @@
 import * as fs from "fs";
 import * as path from "path";
-import { config } from "dotenv";
-
-config();
 
 const docsRedirectUrl = (version: string) => `- <a href="${version}" target="_blank" rel="noreferrer">Script API - v${version}</a>`;
 

@@ -70,7 +70,6 @@ const applyGoogleAds = true;
     console.log("Applying Google Ads to website.");
     applyGoogleAdvertisements();
   };
-  
   console.log("Successfully generated documentation.");
 })();
 
