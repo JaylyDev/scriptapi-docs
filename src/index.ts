@@ -62,14 +62,16 @@ const applyGoogleAds = true;
   console.log("Successfully built docs at ./docs/.vuepress/dist");
 
   const lib = readdirSync("./lib");
-  for (const libVer of lib) {
-    generateDocs(libVer);
-  };
+  await Promise.allSettled(lib.map(libVer => new Promise((resolve, reject) => {
+    generateDocs(libVer).then(resolve).catch(reject);
+  })));
   
   if (applyGoogleAds) {
     console.log("Applying Google Ads to website.");
-    applyGoogleAdvertisements();
+    const successCount = applyGoogleAdvertisements();
+    console.log(`Successfully applied Google Ads to ${successCount} pages.`);
   };
+  
   console.log("Successfully generated documentation.");
 })();
 

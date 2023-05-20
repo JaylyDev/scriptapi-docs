@@ -29,11 +29,15 @@ export function generateDocsIndexPage (location: string) {
 
 export function applyGoogleAdvertisements () {
   const adsenseCode = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.ADSENSE_CLIENT}" crossorigin="anonymous"></script>`;
+  let successCount = 0;
 
   for (const filePath of walkSync("./docs/.vuepress/dist")) {
     if (path.extname(filePath) !== ".html") continue;
     const file = fs.readFileSync(filePath, "utf8");
     const newFile = file.replace("</head>", adsenseCode + "</head>");
     fs.writeFileSync(filePath, newFile);
-  }
+    successCount++;
+  };
+
+  return successCount;
 };
