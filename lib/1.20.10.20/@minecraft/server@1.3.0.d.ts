@@ -16,7 +16,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server",
- *   "version": "1.4.0-internal.1.20.0-preview.24"
+ *   "version": "1.4.0-internal.1.20.10-preview.20"
  * }
  * ```
  *
@@ -320,10 +320,9 @@ export class Container {
      * out of bounds.
      * @example getItem.ts
      * ```typescript
-     *        // Get a copy of the first item in the player's hotbar
-     *        const inventory = player.getComponent("inventory") as EntityInventoryComponent;
-     *        const itemStack = inventory.container.getItem(0);
-     *
+     * // Get a copy of the first item in the player's hotbar
+     * const inventory = player.getComponent("inventory") as EntityInventoryComponent;
+     * const itemStack = inventory.container.getItem(0);
      * ```
      */
     getItem(slot: number): ItemStack | undefined;
@@ -348,11 +347,10 @@ export class Container {
      * or if the `fromSlot` or `toSlot` indices out of bounds.
      * @example moveItem.ts
      * ```typescript
-     *        // Move an item from the first slot of fromPlayer's inventory to the fifth slot of toPlayer's inventory
-     *        const fromInventory = fromPlayer.getComponent('inventory') as EntityInventoryComponent;
-     *        const toInventory = toPlayer.getComponent('inventory') as EntityInventoryComponent;
-     *        fromInventory.container.moveItem(0, 4, toInventory.container);
-     *
+     * // Move an item from the first slot of fromPlayer's inventory to the fifth slot of toPlayer's inventory
+     * const fromInventory = fromPlayer.getComponent('inventory') as EntityInventoryComponent;
+     * const toInventory = toPlayer.getComponent('inventory') as EntityInventoryComponent;
+     * fromInventory.container.moveItem(0, 4, toInventory.container);
      * ```
      */
     moveItem(fromSlot: number, toSlot: number, toContainer: Container): void;
@@ -390,10 +388,9 @@ export class Container {
      * invalid or if the `slot` or `otherSlot` are out of bounds.
      * @example swapItems.ts
      * ```typescript
-     *        // Swaps an item between slots 0 and 4 in the player's inventory
-     *        const inventory = fromPlayer.getComponent('inventory') as EntityInventoryComponent;
-     *        inventory.container.swapItems(0, 4, inventory);
-     *
+     * // Swaps an item between slots 0 and 4 in the player's inventory
+     * const inventory = fromPlayer.getComponent('inventory') as EntityInventoryComponent;
+     * inventory.container.swapItems(0, 4, inventory);
      * ```
      */
     swapItems(slot: number, otherSlot: number, otherContainer: Container): void;
@@ -415,11 +412,10 @@ export class Container {
      * or if the `fromSlot` or `toSlot` indices out of bounds.
      * @example transferItem.ts
      * ```typescript
-     *        // Transfer an item from the first slot of fromPlayer's inventory to toPlayer's inventory
-     *        const fromInventory = fromPlayer.getComponent('inventory') as EntityInventoryComponent;
-     *        const toInventory = toPlayer.getComponent('inventory') as EntityInventoryComponent;
-     *        fromInventory.container.transferItem(0, toInventory.container);
-     *
+     * // Transfer an item from the first slot of fromPlayer's inventory to toPlayer's inventory
+     * const fromInventory = fromPlayer.getComponent('inventory') as EntityInventoryComponent;
+     * const toInventory = toPlayer.getComponent('inventory') as EntityInventoryComponent;
+     * fromInventory.container.transferItem(0, toInventory.container);
      * ```
      */
     transferItem(fromSlot: number, toContainer: Container): ItemStack;
@@ -464,22 +460,21 @@ export class Dimension {
      * @throws This function can throw errors.
      * @example testThatEntityIsFeatherItem.ts
      * ```typescript
-     *        const query = {
-     *          type: "item",
-     *          location: targetLocation,
-     *        };
-     *        const items = overworld.getEntities(query);
+     * const query = {
+     *   type: "item",
+     *   location: targetLocation,
+     * };
+     * const items = overworld.getEntities(query);
      *
-     *        for (const item of items) {
-     *          const itemComp = item.getComponent("item") as any;
+     * for (const item of items) {
+     *   const itemComp = item.getComponent("item") as any;
      *
-     *          if (itemComp) {
-     *            if (itemComp.itemStack.id.endsWith("feather")) {
-     *              console.log("Success! Found a feather", 1);
-     *            }
-     *          }
-     *        }
-     *
+     *   if (itemComp) {
+     *     if (itemComp.itemStack.id.endsWith("feather")) {
+     *       console.log("Success! Found a feather", 1);
+     *     }
+     *   }
+     * }
      * ```
      */
     getEntities(options?: EntityQueryOptions): Entity[];
@@ -1635,11 +1630,10 @@ export class ItemStack {
      * stack, undefined is returned.
      * @example durability.ts
      * ```typescript
-     *        // Get the maximum durability of a custom sword item
-     *        const itemStack = new ItemStack("custom:sword");
-     *        const durability = itemStack.getComponent("minecraft:durability") as ItemDurabilityComponent;
-     *        const maxDurability = durability.maxDurability;
-     *
+     * // Get the maximum durability of a custom sword item
+     * const itemStack = new ItemStack("custom:sword");
+     * const durability = itemStack.getComponent("minecraft:durability") as ItemDurabilityComponent;
+     * const maxDurability = durability.maxDurability;
      * ```
      */
     getComponent(componentId: string): ItemComponent | undefined;
@@ -1767,33 +1761,29 @@ export class Player extends Entity {
      * is provided to `score`.
      * @example nestedTranslation.ts
      * ```typescript
-     *        // Displays "Apple or Coal"
-     *        let rawMessage = {
-     *          translate: "accessibility.list.or.two",
-     *          with: { rawtext: [{ translate: "item.apple.name" }, { translate: "item.coal.name" }] },
-     *        };
-     *        player.sendMessage(rawMessage);
-     *
+     * // Displays "Apple or Coal"
+     * let rawMessage = {
+     *   translate: "accessibility.list.or.two",
+     *   with: { rawtext: [{ translate: "item.apple.name" }, { translate: "item.coal.name" }] },
+     * };
+     * player.sendMessage(rawMessage);
      * ```
      * @example scoreWildcard.ts
      * ```typescript
-     *        // Displays the player's score for objective "obj". Each player will see their own score.
-     *        const rawMessage = { score: { name: "*", objective: "obj" } };
-     *        world.sendMessage(rawMessage);
-     *
+     * // Displays the player's score for objective "obj". Each player will see their own score.
+     * const rawMessage = { score: { name: "*", objective: "obj" } };
+     * world.sendMessage(rawMessage);
      * ```
      * @example simpleString.ts
      * ```typescript
-     *        // Displays "Hello, world!"
-     *        world.sendMessage("Hello, world!");
-     *
+     * // Displays "Hello, world!"
+     * world.sendMessage("Hello, world!");
      * ```
      * @example translation.ts
      * ```typescript
-     *        // Displays "First or Second"
-     *        const rawMessage = { translate: "accessibility.list.or.two", with: ["First", "Second"] };
-     *        player.sendMessage(rawMessage);
-     *
+     * // Displays "First or Second"
+     * const rawMessage = { translate: "accessibility.list.or.two", with: ["First", "Second"] };
+     * player.sendMessage(rawMessage);
      * ```
      */
     sendMessage(message: (RawMessage | string)[] | RawMessage | string): void;
@@ -1946,33 +1936,29 @@ export class World {
      * is provided to `score`.
      * @example nestedTranslation.ts
      * ```typescript
-     *        // Displays "Apple or Coal"
-     *        let rawMessage = {
-     *          translate: "accessibility.list.or.two",
-     *          with: { rawtext: [{ translate: "item.apple.name" }, { translate: "item.coal.name" }] },
-     *        };
-     *        world.sendMessage(rawMessage);
-     *
+     * // Displays "Apple or Coal"
+     * let rawMessage = {
+     *   translate: "accessibility.list.or.two",
+     *   with: { rawtext: [{ translate: "item.apple.name" }, { translate: "item.coal.name" }] },
+     * };
+     * world.sendMessage(rawMessage);
      * ```
      * @example scoreWildcard.ts
      * ```typescript
-     *        // Displays the player's score for objective "obj". Each player will see their own score.
-     *        const rawMessage = { score: { name: "*", objective: "obj" } };
-     *        world.sendMessage(rawMessage);
-     *
+     * // Displays the player's score for objective "obj". Each player will see their own score.
+     * const rawMessage = { score: { name: "*", objective: "obj" } };
+     * world.sendMessage(rawMessage);
      * ```
      * @example simpleString.ts
      * ```typescript
-     *        // Displays "Hello, world!"
-     *        world.sendMessage("Hello, world!");
-     *
+     * // Displays "Hello, world!"
+     * world.sendMessage("Hello, world!");
      * ```
      * @example translation.ts
      * ```typescript
-     *        // Displays "First or Second"
-     *        const rawMessage = { translate: "accessibility.list.or.two", with: ["First", "Second"] };
-     *        world.sendMessage(rawMessage);
-     *
+     * // Displays "First or Second"
+     * const rawMessage = { translate: "accessibility.list.or.two", with: ["First", "Second"] };
+     * world.sendMessage(rawMessage);
      * ```
      */
     sendMessage(message: (RawMessage | string)[] | RawMessage | string): void;

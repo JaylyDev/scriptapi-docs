@@ -17,7 +17,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-gametest",
- *   "version": "1.0.0-internal.1.20.0-preview.24"
+ *   "version": "1.0.0-internal.1.20.10-preview.20"
  * }
  * ```
  *
@@ -945,10 +945,9 @@ export class Test {
      * @throws This function can throw errors.
      * @example testIfButtonNotPressed.js
      * ```typescript
-     *        test.assertBlockState(buttonPos, (block) => {
-     *          return block.permutation.getProperty("button_pressed_bit") == 0;
-     *        });
-     *
+     * test.assertBlockState(buttonPos, (block) => {
+     *   return block.permutation.getProperty("button_pressed_bit") == 0;
+     * });
      * ```
      */
     assertBlockState(blockLocation: minecraftserver.Vector3, callback: (arg: minecraftserver.Block) => boolean): void;
@@ -1023,8 +1022,7 @@ export class Test {
      * @throws This function can throw errors.
      * @example horseArmorTest.js
      * ```typescript
-     *        test.assertEntityHasArmor("minecraft:horse", armorSlotTorso, "diamond_horse_armor", 0, horseLocation, true);
-     *
+     * test.assertEntityHasArmor("minecraft:horse", armorSlotTorso, "diamond_horse_armor", 0, horseLocation, true);
      * ```
      */
     assertEntityHasArmor(
@@ -1056,8 +1054,7 @@ export class Test {
      * @throws This function can throw errors.
      * @example sheepShearedTest.js
      * ```typescript
-     *        test.assertEntityHasComponent("minecraft:sheep", "minecraft:is_sheared", entityLoc, false);
-     *
+     * test.assertEntityHasComponent("minecraft:sheep", "minecraft:is_sheared", entityLoc, false);
      * ```
      */
     assertEntityHasComponent(
@@ -1101,22 +1098,21 @@ export class Test {
      * @throws This function can throw errors.
      * @example simpleMobTest.ts
      * ```typescript
-     *        gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
-     *          const attackerId = "fox";
-     *          const victimId = "chicken";
+     * gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
+     *   const attackerId = "fox";
+     *   const victimId = "chicken";
      *
-     *          test.spawn(attackerId, { x: 5, y: 2, z: 5 });
-     *          let victim = test.spawn(victimId, { x: 2, y: 2, z: 2 });
+     *   test.spawn(attackerId, { x: 5, y: 2, z: 5 });
+     *   let victim = test.spawn(victimId, { x: 2, y: 2, z: 2 });
      *
-     *          test.assertEntityInstancePresentInArea(victim, true);
+     *   test.assertEntityInstancePresentInArea(victim, true);
      *
-     *          test.succeedWhen(() => {
-     *            test.assertEntityInstancePresentInArea(victim, false);
-     *          });
-     *        })
-     *          .maxTicks(400)
-     *          .structureName("gametests:mediumglass");
-     *
+     *   test.succeedWhen(() => {
+     *     test.assertEntityInstancePresentInArea(victim, false);
+     *   });
+     * })
+     *   .maxTicks(400)
+     *   .structureName("gametests:mediumglass");
      *
      * ```
      */
@@ -1165,22 +1161,21 @@ export class Test {
      * @throws This function can throw errors.
      * @example simpleMobTest.ts
      * ```typescript
-     *        gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
-     *          const attackerId = "fox";
-     *          const victimId = "chicken";
+     * gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
+     *   const attackerId = "fox";
+     *   const victimId = "chicken";
      *
-     *          test.spawn(attackerId, { x: 5, y: 2, z: 5 });
-     *          test.spawn(victimId, { x: 2, y: 2, z: 2 });
+     *   test.spawn(attackerId, { x: 5, y: 2, z: 5 });
+     *   test.spawn(victimId, { x: 2, y: 2, z: 2 });
      *
-     *          test.assertEntityPresentInArea(victimId, true);
+     *   test.assertEntityPresentInArea(victimId, true);
      *
-     *          test.succeedWhen(() => {
-     *            test.assertEntityPresentInArea(victimId, false);
-     *          });
-     *        })
-     *          .maxTicks(400)
-     *          .structureName("gametests:mediumglass");
-     *
+     *   test.succeedWhen(() => {
+     *     test.assertEntityPresentInArea(victimId, false);
+     *   });
+     * })
+     *   .maxTicks(400)
+     *   .structureName("gametests:mediumglass");
      *
      * ```
      */
@@ -1205,12 +1200,11 @@ export class Test {
      * @throws This function can throw errors.
      * @example villagerEffectTest.js
      * ```typescript
-     *        test.assertEntityState(
-     *          villagerPos,
-     *          "minecraft:villager_v2",
-     *          (entity) => entity.getEffect(MinecraftEffectTypes.regeneration).duration > 120
-     *        ); // At least 6 seconds remaining in the villagers' effect
-     *
+     * test.assertEntityState(
+     *   villagerPos,
+     *   "minecraft:villager_v2",
+     *   (entity) => entity.getEffect(MinecraftEffectTypes.Regeneration).duration > 120
+     * ); // At least 6 seconds remaining in the villagers' effect
      * ```
      */
     assertEntityState(
@@ -1269,8 +1263,7 @@ export class Test {
      * @throws This function can throw errors.
      * @example findFeathers.js
      * ```typescript
-     *        test.assertItemEntityCountIs(Items.feather, expectedFeatherLoc, 0, 1);
-     *
+     * test.assertItemEntityCountIs(Items.feather, expectedFeatherLoc, 0, 1);
      * ```
      */
     assertItemEntityCountIs(
@@ -1650,27 +1643,25 @@ export class Test {
      * @throws This function can throw errors.
      * @example simpleMobTest.ts
      * ```typescript
-     *        gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
-     *          const attackerId = "fox";
-     *          const victimId = "chicken";
+     * gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
+     *   const attackerId = "fox";
+     *   const victimId = "chicken";
      *
-     *          test.spawn(attackerId, { x: 5, y: 2, z: 5 });
-     *          test.spawn(victimId, { x: 2, y: 2, z: 2 });
+     *   test.spawn(attackerId, { x: 5, y: 2, z: 5 });
+     *   test.spawn(victimId, { x: 2, y: 2, z: 2 });
      *
-     *          test.assertEntityPresentInArea(victimId, true);
+     *   test.assertEntityPresentInArea(victimId, true);
      *
-     *          test.succeedWhen(() => {
-     *            test.assertEntityPresentInArea(victimId, false);
-     *          });
-     *        })
-     *          .maxTicks(400)
-     *          .structureName("gametests:mediumglass");
-     *
+     *   test.succeedWhen(() => {
+     *     test.assertEntityPresentInArea(victimId, false);
+     *   });
+     * })
+     *   .maxTicks(400)
+     *   .structureName("gametests:mediumglass");
      * ```
      * @example spawnAdultPig.js
      * ```typescript
-     *        test.spawn("minecraft:pig<minecraft:ageable_grow_up>", { x: 1, y: 2, z: 1 });
-     *
+     * test.spawn("minecraft:pig<minecraft:ageable_grow_up>", { x: 1, y: 2, z: 1 });
      *
      * ```
      */
@@ -1692,8 +1683,7 @@ export class Test {
      * @throws This function can throw errors.
      * @example spawnAdultPig.js
      * ```typescript
-     *        test.spawn("minecraft:pig<minecraft:ageable_grow_up>", { x: 1.5, y: 2, z: 1.5 });
-     *
+     * test.spawn("minecraft:pig<minecraft:ageable_grow_up>", { x: 1.5, y: 2, z: 1.5 });
      * ```
      */
     spawnAtLocation(entityTypeIdentifier: string, location: minecraftserver.Vector3): minecraftserver.Entity;
@@ -1710,12 +1700,11 @@ export class Test {
      * @throws This function can throw errors.
      * @example spawnEmeralds.js
      * ```typescript
-     *        const oneEmerald = new ItemStack(MinecraftItemTypes.emerald, 1, 0);
-     *        const fiveEmeralds = new ItemStack(MinecraftItemTypes.emerald, 5, 0);
+     * const oneEmerald = new ItemStack(MinecraftItemTypes.emerald, 1, 0);
+     * const fiveEmeralds = new ItemStack(MinecraftItemTypes.emerald, 5, 0);
      *
-     *        test.spawnItem(oneEmerald, { x: 3.5, y: 3, z: 1.5 });
-     *        test.spawnItem(fiveEmeralds, { x: 1.5, y: 3, z: 1.5 });
-     *
+     * test.spawnItem(oneEmerald, { x: 3.5, y: 3, z: 1.5 });
+     * test.spawnItem(fiveEmeralds, { x: 1.5, y: 3, z: 1.5 });
      *
      * ```
      */
@@ -1783,8 +1772,7 @@ export class Test {
      * @throws This function can throw errors.
      * @example spreadFromFaceTowardDirection.js
      * ```typescript
-     *        test.spreadFromFaceTowardDirection({ x: 1, y: 2, z: 1 }, Direction.south, Direction.down);
-     *
+     * test.spreadFromFaceTowardDirection({ x: 1, y: 2, z: 1 }, Direction.south, Direction.down);
      * ```
      */
     spreadFromFaceTowardDirection(
@@ -1871,22 +1859,21 @@ export class Test {
      * @throws This function can throw errors.
      * @example simpleMobTest.ts
      * ```typescript
-     *        gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
-     *          const attackerId = "fox";
-     *          const victimId = "chicken";
+     * gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
+     *   const attackerId = "fox";
+     *   const victimId = "chicken";
      *
-     *          test.spawn(attackerId, { x: 5, y: 2, z: 5 });
-     *          test.spawn(victimId, { x: 2, y: 2, z: 2 });
+     *   test.spawn(attackerId, { x: 5, y: 2, z: 5 });
+     *   test.spawn(victimId, { x: 2, y: 2, z: 2 });
      *
-     *          test.assertEntityPresentInArea(victimId, true);
+     *   test.assertEntityPresentInArea(victimId, true);
      *
-     *          test.succeedWhen(() => {
-     *            test.assertEntityPresentInArea(victimId, false);
-     *          });
-     *        })
-     *          .maxTicks(400)
-     *          .structureName("gametests:mediumglass");
-     *
+     *   test.succeedWhen(() => {
+     *     test.assertEntityPresentInArea(victimId, false);
+     *   });
+     * })
+     *   .maxTicks(400)
+     *   .structureName("gametests:mediumglass");
      *
      * ```
      */
@@ -2096,29 +2083,27 @@ export class GameTestError extends Error {
  * builder methods.
  * @example example1.js
  * ```typescript
- *        GameTest.register("ExampleTests", "alwaysFail", (test) => {
- *          test.fail("This test, runnable via '/gametest run ExampleTests:alwaysFail', will always fail");
- *        });
- *
+ * GameTest.register("ExampleTests", "alwaysFail", (test) => {
+ *   test.fail("This test, runnable via '/gametest run ExampleTests:alwaysFail', will always fail");
+ * });
  * ```
  * @example simpleMobTest.ts
  * ```typescript
- *        gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
- *          const attackerId = "fox";
- *          const victimId = "chicken";
+ * gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
+ *   const attackerId = "fox";
+ *   const victimId = "chicken";
  *
- *          test.spawn(attackerId, { x: 5, y: 2, z: 5 });
- *          test.spawn(victimId, { x: 2, y: 2, z: 2 });
+ *   test.spawn(attackerId, { x: 5, y: 2, z: 5 });
+ *   test.spawn(victimId, { x: 2, y: 2, z: 2 });
  *
- *          test.assertEntityPresentInArea(victimId, true);
+ *   test.assertEntityPresentInArea(victimId, true);
  *
- *          test.succeedWhen(() => {
- *            test.assertEntityPresentInArea(victimId, false);
- *          });
- *        })
- *          .maxTicks(400)
- *          .structureName("gametests:mediumglass");
- *
+ *   test.succeedWhen(() => {
+ *     test.assertEntityPresentInArea(victimId, false);
+ *   });
+ * })
+ *   .maxTicks(400)
+ *   .structureName("gametests:mediumglass");
  * ```
  */
 export function register(
