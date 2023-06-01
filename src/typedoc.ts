@@ -30,7 +30,7 @@ const scriptModules = [
  * Generate typedoc documentation for a specific version.
  * @param version 
  */
-export function generateDocs (version: string) {
+export async function generateDocs (version: string) {
   const entryPoints = 
     [...getFiles("./lib")]
       .filter(
@@ -83,5 +83,5 @@ export function generateDocs (version: string) {
   app.bootstrap(options);
   
   const project = app.convert();
-  app.generateDocs(project, "./docs/.vuepress/dist/" + version);
+  await app.generateDocs(project, "./docs/.vuepress/dist/" + version);
 }

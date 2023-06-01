@@ -31,6 +31,8 @@ jobs:
 
       - name: Generate static pages
         run: npm run start
+        env:
+          ADSENSE_CLIENT: ${{ secrets.ADSENSE_CLIENT }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
