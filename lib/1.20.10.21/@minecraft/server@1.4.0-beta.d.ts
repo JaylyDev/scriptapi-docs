@@ -16,7 +16,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server",
- *   "version": "1.4.0-internal.1.20.10-preview.20"
+ *   "version": "1.4.0-internal.1.20.10-preview.21"
  * }
  * ```
  *
@@ -225,18 +225,6 @@ export enum ItemLockMode {
 
 /**
  * @beta
- */
-export enum MessageSourceType {
-    clientScript = 'clientScript',
-    commandBlock = 'commandBlock',
-    dialogueCommand = 'dialogueCommand',
-    entityCommand = 'entityCommand',
-    serverCommand = 'serverCommand',
-    serverScript = 'serverScript',
-}
-
-/**
- * @beta
  * Used for specifying a sort order for how to display an
  * objective and its list of participants.
  */
@@ -287,6 +275,16 @@ export enum ScoreboardIdentityType {
      *
      */
     player = 'player',
+}
+
+/**
+ * @beta
+ */
+export enum ScriptEventSource {
+    block = 'block',
+    entity = 'entity',
+    npcDialogue = 'npcDialogue',
+    server = 'server',
 }
 
 /**
@@ -354,269 +352,6 @@ export enum WeatherType {
     clear = 'clear',
     rain = 'rain',
     thunder = 'thunder',
-}
-
-/**
- * @beta
- * Contains a set of events that are available across the scope
- * of the World.
- */
-export class AfterEvents {
-    protected constructor();
-    /**
-     * @remarks
-     * This event fires for a block that is broken by a player.
-     *
-     */
-    readonly blockBreak: BlockBreakAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires for each BlockLocation destroyed by an
-     * explosion. It is fired after the blocks have already been
-     * destroyed.
-     *
-     */
-    readonly blockExplode: BlockExplodeAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires for a block that is placed by a player.
-     *
-     */
-    readonly blockPlace: BlockPlaceAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when a button is pushed.
-     *
-     */
-    readonly buttonPush: ButtonPushAfterEventSignal;
-    /**
-     * @remarks
-     * This event is triggered after a chat message has been
-     * broadcast or sent to players.
-     *
-     */
-    readonly chatSend: ChatSendAfterEventSignal;
-    /**
-     * @remarks
-     * This event is fired when an entity event has been triggered
-     * that will update the component definition state of an
-     * entity.
-     *
-     */
-    readonly dataDrivenEntityTriggerEvent: DataDrivenEntityTriggerAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when an effect, like poisoning, is added to
-     * an entity.
-     *
-     */
-    readonly effectAdd: EffectAddAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when an entity dies.
-     *
-     */
-    readonly entityDie: EntityDieAfterEventSignal;
-    readonly entityHealthChanged: EntityHealthChangedAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when an entity hits (makes a melee attack)
-     * and potentially impacts another entity or block.
-     *
-     */
-    readonly entityHit: EntityHitAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when an entity is hurt (takes damage).
-     *
-     */
-    readonly entityHurt: EntityHurtAfterEventSignal;
-    readonly entityRemoved: EntityRemovedAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when an entity is spawned.
-     *
-     */
-    readonly entitySpawn: EntitySpawnAfterEventSignal;
-    /**
-     * @remarks
-     * This event is fired after an explosion occurs.
-     *
-     */
-    readonly explosion: ExplosionAfterEventSignal;
-    readonly itemCompleteUse: ItemCompleteUseAfterEventSignal;
-    /**
-     * @remarks
-     * For custom items, this event is triggered when the
-     * fundamental set of defined components for the item change.
-     * Note that this event is only fired for custom data-driven
-     * items.
-     *
-     */
-    readonly itemDefinitionEvent: ItemDefinitionAfterEventSignal;
-    readonly itemReleaseUse: ItemReleaseUseAfterEventSignal;
-    readonly itemStartUse: ItemStartUseAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when a player successfully uses an item or
-     * places a block by pressing the Use Item / Place Block
-     * button. If multiple blocks are placed, this event will only
-     * occur once at the beginning of the block placement. Note:
-     * This event cannot be used with Hoe or Axe items.
-     *
-     */
-    readonly itemStartUseOn: ItemStartUseOnAfterEventSignal;
-    readonly itemStopUse: ItemStopUseAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when a player releases the Use Item / Place
-     * Block button after successfully using an item. Note: This
-     * event cannot be used with Hoe or Axe items.
-     *
-     */
-    readonly itemStopUseOn: ItemStopUseOnAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when an item is successfully used by a
-     * player.
-     *
-     */
-    readonly itemUse: ItemUseAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when an item is used on a block by a
-     * player.
-     *
-     */
-    readonly itemUseOn: ItemUseOnAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when a lever activates or is deactivated.
-     *
-     */
-    readonly leverActivate: LeverActionAfterEventSignal;
-    /**
-     * @remarks
-     * This event is an internal implementation detail, and is
-     * otherwise not currently functional.
-     *
-     */
-    readonly messageReceive: ServerMessageAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when a piston expands or retracts.
-     *
-     */
-    readonly pistonActivate: PistonActivateAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when a player joins a world.  See also
-     * playerSpawn for another related event you can trap for when
-     * a player is spawned the first time within a world.
-     *
-     */
-    readonly playerJoin: PlayerJoinAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when a player leaves a world.
-     *
-     */
-    readonly playerLeave: PlayerLeaveAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when a player spawns or respawns. Note that
-     * an additional flag within this event will tell you whether
-     * the player is spawning right after join vs. a respawn.
-     *
-     */
-    readonly playerSpawn: PlayerSpawnAfterEventSignal;
-    readonly pressurePlatePop: PressurePlatePopAfterEventSignal;
-    readonly pressurePlatePush: PressurePlatePushAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when a projectile hits an entity or block.
-     *
-     */
-    readonly projectileHit: ProjectileHitAfterEventSignal;
-    readonly targetBlockHit: TargetBlockHitAfterEventSignal;
-    readonly tripWireTrip: TripWireTripAfterEventSignal;
-    /**
-     * @remarks
-     * This event will be triggered when the weather changes within
-     * Minecraft.
-     *
-     */
-    readonly weatherChange: WeatherChangeAfterEventSignal;
-    /**
-     * @remarks
-     * This event fires when the script environment is initialized
-     * on a World. In addition, you can register dynamic properties
-     * within the scope of a world Initialize event.
-     *
-     */
-    readonly worldInitialize: WorldInitializeAfterEventSignal;
-}
-
-/**
- * @beta
- * A set of events that fire before an actual action occurs. In
- * most cases, you can potentially cancel or modify the
- * impending event. Note that in before events any APIs that
- * modify gameplay state will not function and will throw an
- * error. (e.g., dimension.spawnEntity)
- */
-export class BeforeEvents {
-    protected constructor();
-    /**
-     * @remarks
-     * This event is triggered after a chat message has been
-     * broadcast or sent to players.
-     *
-     */
-    readonly chatSend: ChatSendBeforeEventSignal;
-    /**
-     * @remarks
-     * This event is fired when an entity event has been triggered
-     * that will update the component definition state of an
-     * entity.
-     *
-     */
-    readonly dataDrivenEntityTriggerEvent: DataDrivenEntityTriggerBeforeEventSignal;
-    /**
-     * @remarks
-     * This event is fired after an explosion occurs.
-     *
-     */
-    readonly explosion: ExplosionBeforeEventSignal;
-    /**
-     * @remarks
-     * For custom items, this event is triggered when the
-     * fundamental set of defined components for the item change.
-     * Note that this event is only fired for custom data-driven
-     * items.
-     *
-     */
-    readonly itemDefinitionEvent: ItemDefinitionBeforeEventSignal;
-    /**
-     * @remarks
-     * This event fires when an item is successfully used by a
-     * player.
-     *
-     */
-    readonly itemUse: ItemUseBeforeEventSignal;
-    /**
-     * @remarks
-     * This event fires when an item is used on a block by a
-     * player.
-     *
-     */
-    readonly itemUseOn: ItemUseOnBeforeEventSignal;
-    /**
-     * @remarks
-     * This event fires when a piston expands or retracts.
-     *
-     */
-    readonly pistonActivate: PistonActivateBeforeEventSignal;
 }
 
 /**
@@ -816,6 +551,10 @@ export class Block {
      * @throws This function can throw errors.
      */
     isSolid(): boolean;
+    /**
+     * @beta
+     */
+    isValid(): boolean;
     /**
      * @remarks
      * Sets the block in the dimension to the state of the
@@ -2264,6 +2003,10 @@ export class Container {
      */
     getSlot(slot: number): ContainerSlot;
     /**
+     * @beta
+     */
+    isValid(): boolean;
+    /**
      * @remarks
      * Moves an item from one slot to another, potentially across
      * containers.
@@ -2389,14 +2132,6 @@ export class ContainerSlot {
     readonly isStackable: boolean;
     /**
      * @remarks
-     * Returns whether the ContainerSlot is valid. The container
-     * slot is valid if the container exists and is loaded, and the
-     * slot index is valid.
-     *
-     */
-    readonly isValid: boolean;
-    /**
-     * @remarks
      * Gets or sets whether the item is kept on death.
      *
      * This property can't be edited in read-only mode.
@@ -2519,6 +2254,14 @@ export class ContainerSlot {
      * Throws if the slot's container is invalid.
      */
     isStackableWith(itemStack: ItemStack): boolean;
+    /**
+     * @remarks
+     * Returns whether the ContainerSlot is valid. The container
+     * slot is valid if the container exists and is loaded, and the
+     * slot index is valid.
+     *
+     */
+    isValid(): boolean;
     /**
      * @remarks
      * The list of block types this item can break in Adventure
@@ -3121,6 +2864,7 @@ export class Effect {
      * @throws This property can throw when used.
      */
     readonly typeId: string;
+    isValid(): boolean;
 }
 
 /**
@@ -4376,6 +4120,10 @@ export class EntityComponent extends Component {
      *
      */
     readonly entity: Entity;
+    /**
+     * @beta
+     */
+    isValid(): boolean;
 }
 
 /**
@@ -7168,6 +6916,10 @@ export class ItemCompleteUseAfterEventSignal extends IItemCompleteUseAfterEventS
  */
 export class ItemComponent extends Component {
     protected constructor();
+    /**
+     * @beta
+     */
+    isValid(): boolean;
 }
 
 /**
@@ -8171,7 +7923,6 @@ export class MessageReceiveAfterEvent {
     readonly id: string;
     readonly message: string;
     readonly player: Player;
-    readonly sourceType: MessageSourceType;
 }
 
 /**
@@ -17525,6 +17276,7 @@ export class ScoreboardIdentity {
      * @throws This function can throw errors.
      */
     getScore(objective: ScoreboardObjective): number;
+    isValid(): boolean;
     /**
      * @remarks
      * Removes this participant from an objective.
@@ -17597,6 +17349,7 @@ export class ScoreboardObjective {
      * @throws This function can throw errors.
      */
     getScores(): ScoreboardScoreInfo[];
+    isValid(): boolean;
     /**
      * @remarks
      * Removes a participant from this scoreboard objective.
@@ -17652,6 +17405,7 @@ export class ScoreboardScoreInfo {
  */
 export class ScreenDisplay {
     protected constructor();
+    isValid(): boolean;
     /**
      * @remarks
      * Set the action bar text - a piece of text that displays
@@ -17732,7 +17486,7 @@ export class ScriptEventCommandMessageAfterEvent {
      * Returns the type of source that fired this command.
      *
      */
-    readonly sourceType: MessageSourceType;
+    readonly sourceType: ScriptEventSource;
 }
 
 /**
@@ -17797,19 +17551,19 @@ export class System {
     protected constructor();
     /**
      * @beta
+     */
+    readonly afterEvents: SystemAfterEvents;
+    /**
+     * @beta
+     */
+    readonly beforeEvents: SystemBeforeEvents;
+    /**
+     * @beta
      * @remarks
      * Represents the current world tick of the server.
      *
      */
     readonly currentTick: number;
-    /**
-     * @beta
-     * @remarks
-     * Contains a set of events that are applicable for the
-     * lifecycle of items in the Minecraft system.
-     *
-     */
-    readonly events: SystemEvents;
     /**
      * @beta
      * @remarks
@@ -17866,29 +17620,18 @@ export class System {
 
 /**
  * @beta
- * Contains a set of events that are available across the scope
- * of the Minecraft add-on system.
  */
-export class SystemEvents {
+export class SystemAfterEvents {
     protected constructor();
-    /**
-     * @remarks
-     * This event fires before a the performance watchdog
-     * terminates scripting execution due to exceeding a
-     * performance boundary. Depending on the configuration of the
-     * runtime environment, this event can be canceled. For
-     * example, on certain dedicated server environments the
-     * ability to override termination events may be disabled.
-     *
-     */
-    readonly beforeWatchdogTerminate: WatchdogTerminateBeforeEventSignal;
-    /**
-     * @remarks
-     * This event fires if a /scriptevent command is invoked by a
-     * player, NPC, or block.
-     *
-     */
     readonly scriptEventReceive: ScriptEventCommandMessageAfterEventSignal;
+}
+
+/**
+ * @beta
+ */
+export class SystemBeforeEvents {
+    protected constructor();
+    readonly watchdogTerminate: WatchdogTerminateBeforeEventSignal;
 }
 
 /**
@@ -18244,7 +17987,7 @@ export class World {
      * Event callbacks are executed in read-write mode.
      *
      */
-    readonly afterEvents: AfterEvents;
+    readonly afterEvents: WorldAfterEvents;
     /**
      * @beta
      * @remarks
@@ -18254,7 +17997,7 @@ export class World {
      * Event callbacks are executed in read-only mode.
      *
      */
-    readonly beforeEvents: BeforeEvents;
+    readonly beforeEvents: WorldBeforeEvents;
     /**
      * @beta
      * @remarks
@@ -18478,6 +18221,63 @@ export class World {
      *
      */
     stopMusic(): void;
+}
+
+/**
+ * @beta
+ */
+export class WorldAfterEvents {
+    protected constructor();
+    readonly blockBreak: BlockBreakAfterEventSignal;
+    readonly blockExplode: BlockExplodeAfterEventSignal;
+    readonly blockPlace: BlockPlaceAfterEventSignal;
+    readonly buttonPush: ButtonPushAfterEventSignal;
+    readonly chatSend: ChatSendAfterEventSignal;
+    readonly dataDrivenEntityTriggerEvent: DataDrivenEntityTriggerAfterEventSignal;
+    readonly effectAdd: EffectAddAfterEventSignal;
+    readonly entityDie: EntityDieAfterEventSignal;
+    readonly entityHealthChanged: EntityHealthChangedAfterEventSignal;
+    readonly entityHit: EntityHitAfterEventSignal;
+    readonly entityHurt: EntityHurtAfterEventSignal;
+    readonly entityRemoved: EntityRemovedAfterEventSignal;
+    readonly entitySpawn: EntitySpawnAfterEventSignal;
+    readonly explosion: ExplosionAfterEventSignal;
+    readonly itemCompleteUse: ItemCompleteUseAfterEventSignal;
+    readonly itemDefinitionEvent: ItemDefinitionAfterEventSignal;
+    readonly itemReleaseUse: ItemReleaseUseAfterEventSignal;
+    readonly itemStartUse: ItemStartUseAfterEventSignal;
+    readonly itemStartUseOn: ItemStartUseOnAfterEventSignal;
+    readonly itemStopUse: ItemStopUseAfterEventSignal;
+    readonly itemStopUseOn: ItemStopUseOnAfterEventSignal;
+    readonly itemUse: ItemUseAfterEventSignal;
+    readonly itemUseOn: ItemUseOnAfterEventSignal;
+    readonly leverActivate: LeverActionAfterEventSignal;
+    readonly messageReceive: ServerMessageAfterEventSignal;
+    readonly pistonActivate: PistonActivateAfterEventSignal;
+    readonly playerJoin: PlayerJoinAfterEventSignal;
+    readonly playerLeave: PlayerLeaveAfterEventSignal;
+    readonly playerSpawn: PlayerSpawnAfterEventSignal;
+    readonly pressurePlatePop: PressurePlatePopAfterEventSignal;
+    readonly pressurePlatePush: PressurePlatePushAfterEventSignal;
+    readonly projectileHit: ProjectileHitAfterEventSignal;
+    readonly targetBlockHit: TargetBlockHitAfterEventSignal;
+    readonly tripWireTrip: TripWireTripAfterEventSignal;
+    readonly weatherChange: WeatherChangeAfterEventSignal;
+    readonly worldInitialize: WorldInitializeAfterEventSignal;
+}
+
+/**
+ * @beta
+ */
+export class WorldBeforeEvents {
+    protected constructor();
+    readonly chatSend: ChatSendBeforeEventSignal;
+    readonly dataDrivenEntityTriggerEvent: DataDrivenEntityTriggerBeforeEventSignal;
+    readonly explosion: ExplosionBeforeEventSignal;
+    readonly itemDefinitionEvent: ItemDefinitionBeforeEventSignal;
+    readonly itemUse: ItemUseBeforeEventSignal;
+    readonly itemUseOn: ItemUseOnBeforeEventSignal;
+    readonly pistonActivate: PistonActivateBeforeEventSignal;
 }
 
 /**
