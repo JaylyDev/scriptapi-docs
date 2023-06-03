@@ -39,6 +39,7 @@ export function applyStatsCollection () {
   </script>`;
   const adsenseCode = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.ADSENSE_CLIENT}"
   crossorigin="anonymous"></script>`;
+
   let successCount = 0;
 
   for (const filePath of walkSync("./docs/.vuepress/dist")) {
