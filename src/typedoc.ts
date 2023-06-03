@@ -1,6 +1,11 @@
+import { PackageJson } from "@npm/types";
 import * as fs from "fs-extra";
 import path = require("path");
 import { Application, TSConfigReader, TypeDocOptions, TypeDocReader } from "typedoc";
+import { splitVersion } from "./fetchVersion";
+import { TsConfigSourceFile } from "typescript";
+import ts = require("typescript");
+import assert = require("assert");
 
 /**
  * @param {string} dir
@@ -18,48 +23,10 @@ function* getFiles(dir: string): IterableIterator<string> {
   }
 }
 
-const scriptModules = [
-  "@minecraft/server",
-  "@minecraft/server-ui",
-  "@minecraft/server-net",
-  "@minecraft/server-admin",
-  "@minecraft/server-gametest",
-];
-
-/**
- * Generate typedoc documentation for a specific version.
- * @param version 
- */
-export async function generateDocs (version: string) {
-  const entryPoints = 
-    [...getFiles("./lib")]
-      .filter(
-        (file) =>
-          file.startsWith(`./lib/${version}/@minecraft`) &&
-          file.endsWith(".d.ts") &&
-          !file.includes("internal")
-      );
-
-  // Get latest beta version of @minecraft/server by parsing path from entryPoints.
-  // For example get 1.2.0-beta from ./lib/1.19.80/@minecraft/server@1.2.0-beta.d.ts, and compare which semver is greater.
-  const compilerOptions = {
-    paths: scriptModules.reduce((acc, module_name) => {
-      const module_path = entryPoints.reverse().find((file) => file.startsWith(`./lib/${version}/@minecraft/server@`));
-      if (module_path) {
-        acc[module_name] = [module_path];
-      } else {
-        acc[module_name] = [];
-      }
-      return acc;
-    }, {}),
-  };
-
-  console.log("entryPoints", entryPoints);
-  console.log("paths", compilerOptions.paths);
-  console.log("version", version);
-
+async function renderHtml (entryPoints: string[], version: string) {
   const options: Partial<TypeDocOptions> = {
     entryPoints,
+    entryPointStrategy: "packages",
     skipErrorChecking: true,
     disableSources: false,
     basePath: "./lib/" + version,
@@ -67,10 +34,9 @@ export async function generateDocs (version: string) {
     excludeInternal: true,
     cleanOutputDir: true,
     includeVersion: false,
-    compilerOptions,
     name: "Script API - v" + version,
     readme: "README.md",
-    tsconfig: "./tsconfig-typedoc.json"
+    githubPages: true
   };
 
   // Make an application to execute typedoc
@@ -84,4 +50,73 @@ export async function generateDocs (version: string) {
   
   const project = app.convert();
   await app.generateDocs(project, "./docs/.vuepress/dist/" + version);
+};
+
+/**
+ * Generate typedoc documentation for a specific version.
+ * @param version 
+ */
+export async function generateDocs (version: string) {
+  const entryPoints = [...getFiles("./lib/" + version)].filter((file) => file.endsWith(".d.ts") && !file.includes("internal")).map(v => path.dirname(v));
+
+  console.log("entryPoints", entryPoints);
+  console.log("version", version);
+
+  await renderHtml(entryPoints, version);
 }
+
+/**
+ * This function must be called before uninstalling the module.
+ */
+export function setupTypedoc (module_name: string, module_version: string, npm_version: string, module_path: string) {
+  const typedocJson: Partial<TypeDocOptions> = {
+    basePath: "../../",
+    entryPoints: ["./index.d.ts"],
+    tsconfig: "./tsconfig.json",
+    readme: "README.md"
+  };
+  const tsconfig = {
+    compilerOptions: {
+      module: "commonjs",
+      lib: ["es6"],
+      target: "es6",
+      forceConsistentCasingInFileNames: true,
+      noEmit: true,
+      noImplicitAny: true,
+      noImplicitThis: true,
+      strictFunctionTypes: true,
+      strictNullChecks: true,
+      typeRoots: [],
+      types: [],
+      paths: {}
+    },
+    files: ["index.d.ts"]
+  };
+  const dummyPackage: PackageJson = {
+    name: module_name + "@" + module_version,
+    version: module_version
+  };
+  let readmeText = [`### Dependencies`];
+  
+  const packageInfo = fs.readJSONSync(`./node_modules/${module_name}/package.json`) as PackageJson;
+  assert(packageInfo.version === npm_version, new Error(`Package.json version is not the same as NPM version: ${packageInfo.version} != ${npm_version}`));
+
+  // script module dependencies
+  for (const dependencyName in packageInfo.dependencies) {
+    const depednencyVersion = packageInfo.dependencies[dependencyName];
+    const { moduleVersion } = splitVersion(depednencyVersion, "minecraft");
+    tsconfig.compilerOptions.paths[dependencyName] = [`../../${dependencyName}@${moduleVersion}/index.d.ts`];
+    readmeText.push(`- <p>${dependencyName}@${moduleVersion}</p>`, `\`\`\`json
+{
+  "module_name": "${dependencyName}",
+  "version": "${moduleVersion}"
+}
+\`\`\``);
+  }
+
+  // write
+  fs.writeJSONSync(path.resolve(module_path, "typedoc.json"), typedocJson);
+  fs.writeJSONSync(path.resolve(module_path, "tsconfig.json"), tsconfig);
+  fs.writeJSONSync(path.resolve(module_path, "package.json"), dummyPackage);
+  fs.writeFileSync(path.resolve(module_path, "README.md"), readmeText.length > 1 ? readmeText.join('\n') : "");
+};

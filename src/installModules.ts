@@ -4,6 +4,7 @@ import * as fs from "fs-extra";
 import path = require("path");
 import { generateDtsBundle } from "dts-bundle-generator";
 import { PackageJson } from "@npm/types";
+import { setupTypedoc } from "./typedoc";
 
 /**
  * @deprecated
@@ -17,35 +18,28 @@ export interface PackageMetadata {
 /**
  * Installs all Script API native modules.
  */
-export async function installModule(module_name: string, version: Version): Promise<PackageMetadata[]> {  
+export async function installModule(module_name: string, version: Version) {  
   const versions = await getVersions(version, module_name);
-  const metadata: PackageMetadata[] = [];
 
-  for (const module_version of versions) {
+  for (const npm_version of versions) {
     // Install npm package, saving as peer dependencies to avoid conflicts.
-    console.log(`Installing ${module_name}@${module_version}`);
-    execSync(`npm i ${module_name}@${module_version} --save-peer --save-exact`);
-    const { moduleVersion } = splitVersion(module_version, "minecraft");
+    console.log(`Installing ${module_name}@${npm_version}`);
+    execSync(`npm i ${module_name}@${npm_version} --save-peer --save-exact`);
+    const { moduleVersion } = splitVersion(npm_version, "minecraft");
 
     // Copy the node module index.d.ts file into the lib directory.
     // For example if path is node_modules/@minecraft/server/index.d.ts, the file will be copied to lib/{version}/@minecraft/server@{moduleVersion}.d.ts without the use of exec.
     // But first, create directory on lib if haven't.
-    const module_path = `lib/${version}/` + module_name;
-    const dirname = path.dirname(module_path);
-      if (!fs.existsSync(dirname)) fs.mkdirSync(dirname, { recursive: true });
-    fs.copyFileSync(`node_modules/${module_name}/index.d.ts`, module_path + `@${moduleVersion}.d.ts`);
+    const module_path = `lib/${version}/${module_name}@${moduleVersion}`;
+    if (!fs.existsSync(module_path)) fs.mkdirSync(module_path, { recursive: true });
+    fs.copyFileSync(`node_modules/${module_name}/index.d.ts`, module_path + `/index.d.ts`);
+
+    // Fetch depednencies
+    setupTypedoc(module_name, moduleVersion, npm_version, module_path);
 
     // Uninstall module
     execSync(`npm un ${module_name}`);
-
-    metadata.push({
-      name: module_name,
-      version: module_version,
-      npmVersion: moduleVersion,
-    });
   };
-
-  return metadata;
 }
 
 /**
@@ -53,7 +47,7 @@ export async function installModule(module_name: string, version: Version): Prom
  * @param module_name 
  * @param version 
  */
-export async function installBundle(module_name: string, version: Version): Promise<PackageMetadata> {  
+export async function installBundle(module_name: string, version: Version) {  
   const isPreview = version.split(".").length === 4;
   // If it's preview, format version from '0.0.0.0' to '0.0.0-preview.0', otherwise keep it same
   const module_version = isPreview ? version.replace(/\.(\d+)$/, '-preview.$1') : version;
@@ -61,7 +55,6 @@ export async function installBundle(module_name: string, version: Version): Prom
   // Install npm package, saving as peer dependencies to avoid conflicts.
   console.log(`Installing ${module_name}@${module_version}`);
   execSync(`npm i ${module_name}@${module_version} --save-peer --save-exact`);
-  const { moduleVersion } = splitVersion(module_version, "minecraft");
 
   // Copy the node module index.d.ts file into the lib directory.
   // For example if path is node_modules/@minecraft/server/index.d.ts, the file will be copied to lib/{version}/@minecraft/server@{moduleVersion}.d.ts without the use of exec.
@@ -76,16 +69,12 @@ export async function installBundle(module_name: string, version: Version): Prom
     filePath: path.resolve(module_path, types),
     output: { noBanner: true },
   }]);
-
-  fs.writeFileSync(`${module_path}@${moduleVersion}.d.ts`, bundledTypes);
+  const distPath = `${module_path}@${module_version}`;
+  fs.mkdirSync(distPath, { recursive: true });
+  fs.writeFileSync(`${distPath}/index.d.ts`, bundledTypes);
+  setupTypedoc(module_name, module_version, module_version, distPath);
 
   // Uninstall module
   execSync(`npm un ${module_name}`);
   fs.rmSync(module_path, { recursive: true });
-
-  return {
-    name: module_name,
-    version: module_version,
-    npmVersion: moduleVersion,
-  }
 }

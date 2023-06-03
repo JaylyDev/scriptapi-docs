@@ -27,14 +27,24 @@ export function generateDocsIndexPage (location: string) {
   fs.writeFileSync(location, indexMd);
 };
 
-export function applyGoogleAdvertisements () {
-  const adsenseCode = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.ADSENSE_CLIENT}" crossorigin="anonymous"></script>`;
+export function applyStatsCollection () {
+  const googleAnalyticsCode = `<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.MEASURE_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', '${process.env.MEASURE_ID}');
+  </script>`;
+  const adsenseCode = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.ADSENSE_CLIENT}"
+  crossorigin="anonymous"></script>`;
   let successCount = 0;
 
   for (const filePath of walkSync("./docs/.vuepress/dist")) {
     if (path.extname(filePath) !== ".html") continue;
     const file = fs.readFileSync(filePath, "utf8");
-    const newFile = file.replace("</head>", adsenseCode + "</head>");
+    const newFile = file.replace("</head>", googleAnalyticsCode + adsenseCode + "</head>");
     fs.writeFileSync(filePath, newFile);
     successCount++;
   };

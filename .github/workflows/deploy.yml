@@ -33,6 +33,7 @@ jobs:
         run: npm run start
         env:
           ADSENSE_CLIENT: ${{ secrets.ADSENSE_CLIENT }}
+          MEASURE_ID: ${{ secrets.MEASURE_ID }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

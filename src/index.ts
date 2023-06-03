@@ -1,7 +1,7 @@
 import { Version } from "./fetchVersion";
 import { execSync } from "child_process";
 import * as dotenv from "dotenv";
-import { applyGoogleAdvertisements, generateDocsIndexPage } from "./docsPages";
+import { applyStatsCollection, generateDocsIndexPage } from "./docsPages";
 import { installBundle, installModule } from "./installModules";
 import { readdirSync, rmSync } from "fs";
 import { generateDocs } from "./typedoc";
@@ -22,7 +22,19 @@ const bundleModules = [
 ];
 
 const isValidVersion = /^\d+\.\d+\.\d+(\.\d+)?$/.test(version);
-const applyGoogleAds = true;
+const statsCollectEnabled = true;
+
+async function installModules(modules: string[], installFunction: (module_name: string, version: string) => Promise<void>, version: string) {
+  const installPromises = modules.map(async (module_name) => {
+    try {
+      await installFunction(module_name, version);
+    } catch (error) {
+      console.warn(`Failed to install ${installFunction.name} ${module_name}@${version}.\n`, error);
+    }
+  });
+
+  await Promise.all(installPromises);
+}
 
 (async () => {
   // Check if the version is valid against schema, if so download the types and generate docs for that specific version
@@ -34,21 +46,10 @@ const applyGoogleAds = true;
     // remove existing types for that version only
     rmSync("./lib/" + version, { recursive: true, force: true, maxRetries: 3 });
 
-    for (const module_name of scriptModules) {
-      try {
-        await installModule(module_name, version);        
-      } catch (error) {
-        console.warn(`Failed to install module ${module_name}@${version}.\n`, error);
-      }
-    };
-  
-    for (const module_name of bundleModules) {
-      try {
-        await installBundle(module_name, version);
-      } catch (error) {
-        console.warn(`Failed to install bundle ${module_name}@${version}.\n`, error);
-      }
-    };
+    await Promise.all([
+      installModules(scriptModules, installModule, version),
+      installModules(bundleModules, installBundle, version),
+    ]);    
     
     console.log("Successfully retrieved all modules.");
   }
@@ -66,10 +67,10 @@ const applyGoogleAds = true;
     generateDocs(libVer).then(resolve).catch(reject);
   })));
   
-  if (applyGoogleAds) {
-    console.log("Applying Google Ads to website.");
-    const successCount = applyGoogleAdvertisements();
-    console.log(`Successfully applied Google Ads to ${successCount} pages.`);
+  if (statsCollectEnabled) {
+    console.log("Applying stats collection to website.");
+    const successCount = applyStatsCollection();
+    console.log(`Successfully applied stats collection to ${successCount} pages.`);
   };
   
   console.log("Successfully generated documentation.");
