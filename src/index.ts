@@ -27,7 +27,7 @@ async function installModules(modules: string[], installFunction: (module_name: 
     try {
       await installFunction(module_name, version);
     } catch (error) {
-      console.warn(`Failed to install ${installFunction.name} ${module_name}@${version}.\n`, error);
+      console.warn(`Failed to install ${module_name}@${version}.\n`, error);
     }
   });
 
