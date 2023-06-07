@@ -17,7 +17,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-net",
- *   "version": "1.0.0-beta.1.20.0-preview.25"
+ *   "version": "1.0.0-beta.1.20.0-stable"
  * }
  * ```
  *
@@ -68,7 +68,7 @@ export enum HttpRequestMethod {
 }
 
 export class HttpClient {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Cancels all pending requests.
@@ -221,7 +221,7 @@ export class HttpRequest {
  * Main object that contains result information from a request.
  */
 export class HttpResponse {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Body content of the HTTP response.

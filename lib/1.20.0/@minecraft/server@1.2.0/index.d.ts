@@ -7,7 +7,6 @@
    Copyright (c) Microsoft Corporation.
    ***************************************************************************** */
 /**
- * @beta
  * @packageDocumentation
  * Contains many types related to manipulating a Minecraft
  * world, including entities, blocks, dimensions, and more.
@@ -16,13 +15,10 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server",
- *   "version": "1.3.0-internal.1.20.0-preview.25"
+ *   "version": "1.2.0"
  * }
  * ```
  *
- */
-/**
- * @beta
  */
 export enum EntityDamageCause {
     anvil = 'anvil',
@@ -59,12 +55,10 @@ export enum EntityDamageCause {
 }
 
 /**
- * @beta
  * Represents a game mode for the current world experience.
  */
 export enum GameMode {
     /**
-     * @beta
      * @remarks
      * World is in a more locked-down experience, where blocks may
      * not be manipulated.
@@ -72,7 +66,6 @@ export enum GameMode {
      */
     adventure = 'adventure',
     /**
-     * @beta
      * @remarks
      * World is in a full creative mode. In creative mode, the
      * player has all the resources available in the item selection
@@ -86,7 +79,6 @@ export enum GameMode {
     creative = 'creative',
     spectator = 'spectator',
     /**
-     * @beta
      * @remarks
      * World is in a survival mode, where players can take damage
      * and entities may not be peaceful. Survival mode is where the
@@ -98,9 +90,6 @@ export enum GameMode {
     survival = 'survival',
 }
 
-/**
- * @beta
- */
 export enum ItemLockMode {
     inventory = 'inventory',
     none = 'none',
@@ -108,14 +97,13 @@ export enum ItemLockMode {
 }
 
 /**
- * @beta
  * Represents a block in a dimension. A block represents a
  * unique X, Y, and Z within a dimension and get/sets the state
  * of the block at that location. This type was significantly
  * updated in version 1.17.10.21.
  */
 export class Block {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Returns the dimension that the block is within.
@@ -171,12 +159,11 @@ export class Block {
 }
 
 /**
- * @beta
  * Represents the inventory of a block in the world. Used with
  * blocks like chests.
  */
 export class BlockInventoryComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * The container which holds an {@link ItemStack}.
@@ -194,14 +181,13 @@ export class BlockInventoryComponent {
 }
 
 /**
- * @beta
  * Contains the combination of type {@link BlockType} and
  * properties (also sometimes called block state) which
  * describe a block (but does not belong to a specific {@link
  * Block}). This type was introduced as of version 1.17.10.21.
  */
 export class BlockPermutation {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Returns a boolean whether a specified permutation matches
@@ -229,7 +215,7 @@ export class BlockPermutation {
  * Contains return data on the result of a command execution.
  */
 export class CommandResult {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * If the command operates against a number of entities,
@@ -241,11 +227,10 @@ export class CommandResult {
 }
 
 /**
- * @beta
  * Base class for downstream Component implementations.
  */
 export class Component {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of the component.
@@ -255,13 +240,12 @@ export class Component {
 }
 
 /**
- * @beta
  * Represents a container that can hold sets of items. Used
  * with entities such as Players, Chest Minecarts, Llamas, and
  * more.
  */
 export class Container {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Count of the slots in the container that are empty.
@@ -426,7 +410,7 @@ export class Container {
  * End) within a world.
  */
 export class Dimension {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of the dimension.
@@ -435,7 +419,6 @@ export class Dimension {
      */
     readonly id: string;
     /**
-     * @beta
      * @remarks
      * Returns a block instance at the given location.
      *
@@ -447,7 +430,6 @@ export class Dimension {
      */
     getBlock(location: Vector3): Block | undefined;
     /**
-     * @beta
      * @remarks
      * Returns a set of entities based on a set of conditions
      * defined via the EntityQueryOptions set of filter criteria.
@@ -479,7 +461,6 @@ export class Dimension {
      */
     getEntities(options?: EntityQueryOptions): Entity[];
     /**
-     * @beta
      * @remarks
      * Returns a set of entities at a particular location.
      *
@@ -490,7 +471,6 @@ export class Dimension {
      */
     getEntitiesAtBlockLocation(location: Vector3): Entity[];
     /**
-     * @beta
      * @remarks
      * Returns a set of players based on a set of conditions
      * defined via the EntityQueryOptions set of filter criteria.
@@ -504,7 +484,6 @@ export class Dimension {
      */
     getPlayers(options?: EntityQueryOptions): Player[];
     /**
-     * @beta
      * @remarks
      * This function can't be called in read-only mode.
      *
@@ -534,9 +513,8 @@ export class Dimension {
  * other moving objects like minecarts) in the world.
  */
 export class Entity {
-    protected constructor();
+    private constructor();
     /**
-     * @beta
      * @remarks
      * Dimension that the entity is currently within.
      *
@@ -554,7 +532,6 @@ export class Entity {
      */
     readonly id: string;
     /**
-     * @beta
      * @remarks
      * Current location of the entity.
      *
@@ -562,7 +539,6 @@ export class Entity {
      */
     readonly location: Vector3;
     /**
-     * @beta
      * @remarks
      * Given name of the entity.
      *
@@ -579,7 +555,6 @@ export class Entity {
      */
     readonly typeId: string;
     /**
-     * @beta
      * @remarks
      * Adds a specified tag to an entity.
      *
@@ -594,7 +569,6 @@ export class Entity {
      */
     addTag(tag: string): boolean;
     /**
-     * @beta
      * @remarks
      * Applies a set of damage to an entity.
      *
@@ -614,7 +588,6 @@ export class Entity {
      */
     applyDamage(amount: number, options?: EntityApplyDamageByProjectileOptions | EntityApplyDamageOptions): boolean;
     /**
-     * @beta
      * @remarks
      * Applies impulse vector to the current velocity of the
      * entity.
@@ -627,7 +600,6 @@ export class Entity {
      */
     applyImpulse(vector: Vector3): void;
     /**
-     * @beta
      * @remarks
      * Applies impulse vector to the current velocity of the
      * entity.
@@ -646,7 +618,6 @@ export class Entity {
      */
     applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void;
     /**
-     * @beta
      * @remarks
      * Sets the current velocity of the Entity to zero. Note that
      * this method may not have an impact on Players.
@@ -657,7 +628,6 @@ export class Entity {
      */
     clearVelocity(): void;
     /**
-     * @beta
      * @remarks
      * Gets a component (that represents additional capabilities)
      * for an entity.
@@ -673,7 +643,6 @@ export class Entity {
      */
     getComponent(componentId: string): EntityComponent | undefined;
     /**
-     * @beta
      * @remarks
      * Returns all components that are both present on this entity
      * and supported by the API.
@@ -684,7 +653,6 @@ export class Entity {
      */
     getComponents(): EntityComponent[];
     /**
-     * @beta
      * @remarks
      * Returns the current location of the head component of this
      * entity.
@@ -696,7 +664,6 @@ export class Entity {
      */
     getHeadLocation(): Vector3;
     /**
-     * @beta
      * @remarks
      * Returns all tags associated with an entity.
      *
@@ -706,7 +673,6 @@ export class Entity {
      */
     getTags(): string[];
     /**
-     * @beta
      * @remarks
      * Returns the current velocity vector of the entity.
      *
@@ -716,7 +682,6 @@ export class Entity {
      */
     getVelocity(): Vector3;
     /**
-     * @beta
      * @remarks
      * Returns the current view direction of the entity.
      *
@@ -726,7 +691,6 @@ export class Entity {
      */
     getViewDirection(): Vector3;
     /**
-     * @beta
      * @remarks
      * Returns true if the specified component is present on this
      * entity.
@@ -741,7 +705,6 @@ export class Entity {
      */
     hasComponent(componentId: string): boolean;
     /**
-     * @beta
      * @remarks
      * Returns whether an entity has a particular tag.
      *
@@ -753,7 +716,6 @@ export class Entity {
      */
     hasTag(tag: string): boolean;
     /**
-     * @beta
      * @remarks
      * Kills this entity. The entity will drop loot as normal.
      *
@@ -766,7 +728,6 @@ export class Entity {
      */
     kill(): boolean;
     /**
-     * @beta
      * @remarks
      * Removes a specified tag from an entity.
      *
@@ -780,7 +741,6 @@ export class Entity {
      */
     removeTag(tag: string): boolean;
     /**
-     * @beta
      * @remarks
      * Runs a synchronous command on the entity.
      *
@@ -813,21 +773,21 @@ export class Entity {
 }
 
 /**
- * @beta
  * Base class for a family of entity movement events.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityBaseMovementComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     readonly maxTurn: number;
 }
 
 /**
- * @beta
  * When added, this component signifies that the entity can
  * climb up ladders.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityCanClimbComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -838,13 +798,13 @@ export class EntityCanClimbComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that the entity can
  * fly, and the pathfinder won't be restricted to paths where a
  * solid block is required underneath it.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityCanFlyComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -855,12 +815,12 @@ export class EntityCanFlyComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that the entity can
  * power jump like the horse does within Minecraft.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityCanPowerJumpComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -871,12 +831,12 @@ export class EntityCanPowerJumpComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Defines the entity's color. Only works on certain entities
  * that have predefined color values (sheep, llama, shulker).
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityColorComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * This property can't be edited in read-only mode.
@@ -893,20 +853,20 @@ export class EntityColorComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Base class for downstream entity components.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityComponent extends Component {
-    protected constructor();
+    private constructor();
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity
  * doesn't take damage from fire.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityFireImmuneComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -917,12 +877,12 @@ export class EntityFireImmuneComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity can
  * float in liquid blocks.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityFloatsInLiquidComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -933,11 +893,11 @@ export class EntityFloatsInLiquidComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Represents the flying speed of an entity.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityFlyingSpeedComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * This property can't be edited in read-only mode.
@@ -954,11 +914,11 @@ export class EntityFlyingSpeedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Defines how much friction affects this entity.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityFrictionModifierComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * This property can't be edited in read-only mode.
@@ -975,12 +935,12 @@ export class EntityFrictionModifierComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Sets the offset from the ground that the entity is actually
  * at.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityGroundOffsetComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * This property can't be edited in read-only mode.
@@ -997,11 +957,11 @@ export class EntityGroundOffsetComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Defines this entity's inventory properties.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityInventoryComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Number of slots that this entity can gain per extra
@@ -1064,12 +1024,12 @@ export class EntityInventoryComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is a
  * baby.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsBabyComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1080,12 +1040,12 @@ export class EntityIsBabyComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * charged.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsChargedComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1096,12 +1056,12 @@ export class EntityIsChargedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently carrying a chest.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsChestedComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1112,12 +1072,12 @@ export class EntityIsChestedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that dyes can be used
  * on this entity to change its color.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsDyeableComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1128,12 +1088,12 @@ export class EntityIsDyeableComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity can
  * hide from hostile mobs while invisible.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsHiddenWhenInvisibleComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1144,12 +1104,12 @@ export class EntityIsHiddenWhenInvisibleComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity this
  * currently on fire.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsIgnitedComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1160,12 +1120,12 @@ export class EntityIsIgnitedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is an
  * illager captain.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsIllagerCaptainComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1176,12 +1136,12 @@ export class EntityIsIllagerCaptainComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently saddled.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsSaddledComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1192,12 +1152,12 @@ export class EntityIsSaddledComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently shaking.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsShakingComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1208,12 +1168,12 @@ export class EntityIsShakingComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently sheared.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsShearedComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1224,12 +1184,12 @@ export class EntityIsShearedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity can be
  * stacked.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsStackableComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1240,12 +1200,12 @@ export class EntityIsStackableComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently stunned.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsStunnedComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1256,12 +1216,12 @@ export class EntityIsStunnedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently tamed.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsTamedComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1272,14 +1232,14 @@ export class EntityIsTamedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * If added onto the entity, this indicates that the entity
  * represents a free-floating item in the world. Lets you
  * retrieve the actual item stack contents via the itemStack
  * property.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityItemComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Item stack represented by this entity in the world.
@@ -1296,12 +1256,12 @@ export class EntityItemComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Additional variant value. Can be used to further
  * differentiate variants.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMarkVariantComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * This property can't be edited in read-only mode.
@@ -1318,12 +1278,12 @@ export class EntityMarkVariantComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this movement control allows the mob to swim in
  * water and walk on land.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementAmphibiousComponent extends EntityBaseMovementComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1334,11 +1294,11 @@ export class EntityMovementAmphibiousComponent extends EntityBaseMovementCompone
 }
 
 /**
- * @beta
  * This component accents the movement of an entity.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementBasicComponent extends EntityBaseMovementComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1349,11 +1309,11 @@ export class EntityMovementBasicComponent extends EntityBaseMovementComponent {
 }
 
 /**
- * @beta
  * When added, this move control causes the mob to fly.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementFlyComponent extends EntityBaseMovementComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1364,12 +1324,12 @@ export class EntityMovementFlyComponent extends EntityBaseMovementComponent {
 }
 
 /**
- * @beta
  * When added, this move control allows a mob to fly, swim,
  * climb, etc.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementGenericComponent extends EntityBaseMovementComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1380,11 +1340,11 @@ export class EntityMovementGenericComponent extends EntityBaseMovementComponent 
 }
 
 /**
- * @beta
  * When added, this move control causes the mob to hover.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementHoverComponent extends EntityBaseMovementComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1395,12 +1355,12 @@ export class EntityMovementHoverComponent extends EntityBaseMovementComponent {
 }
 
 /**
- * @beta
  * Move control that causes the mob to jump as it moves with a
  * specified delay between jumps.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementJumpComponent extends EntityBaseMovementComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1411,12 +1371,12 @@ export class EntityMovementJumpComponent extends EntityBaseMovementComponent {
 }
 
 /**
- * @beta
  * When added, this move control causes the mob to hop as it
  * moves.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementSkipComponent extends EntityBaseMovementComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1427,11 +1387,11 @@ export class EntityMovementSkipComponent extends EntityBaseMovementComponent {
 }
 
 /**
- * @beta
  * Sets the distance through which the entity can push through.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityPushThroughComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * This property can't be edited in read-only mode.
@@ -1448,11 +1408,11 @@ export class EntityPushThroughComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Sets the entity's visual size.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityScaleComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * This property can't be edited in read-only mode.
@@ -1469,12 +1429,12 @@ export class EntityScaleComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Skin Id value. Can be used to differentiate skins, such as
  * base skins for villagers.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntitySkinIdComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * This property can't be edited in read-only mode.
@@ -1491,12 +1451,12 @@ export class EntitySkinIdComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Used to differentiate the component group of a variant of an
  * entity from others. (e.g. ocelot, villager).
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityVariantComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     readonly value: number;
     /**
      * @remarks
@@ -1508,12 +1468,12 @@ export class EntityVariantComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity wants
  * to become a jockey.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class EntityWantsJockeyComponent extends EntityComponent {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Identifier of this component. Should always be
@@ -1524,15 +1484,14 @@ export class EntityWantsJockeyComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Base class for item components.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class ItemComponent extends Component {
-    protected constructor();
+    private constructor();
 }
 
 /**
- * @beta
  * Defines a collection of items.
  */
 export class ItemStack {
@@ -1668,11 +1627,10 @@ export class ItemStack {
 }
 
 /**
- * @beta
  * Represents the type of an item - for example, Wool.
  */
 export class ItemType {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Returns the identifier of the item type - for example,
@@ -1686,7 +1644,7 @@ export class ItemType {
  * A collection of default Minecraft dimension types.
  */
 export class MinecraftDimensionTypes {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * The Nether is a collection of biomes separate from the
@@ -1725,8 +1683,9 @@ export class MinecraftDimensionTypes {
 /**
  * Represents a player within the world.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class Player extends Entity {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Name of the player.
@@ -1735,7 +1694,6 @@ export class Player extends Entity {
      */
     readonly name: string;
     /**
-     * @beta
      * @remarks
      * Plays a sound that only this particular player can hear.
      *
@@ -1749,7 +1707,6 @@ export class Player extends Entity {
      */
     playSound(soundID: string, soundOptions?: PlayerSoundOptions): void;
     /**
-     * @beta
      * @remarks
      * Sends a message to the player.
      *
@@ -1793,16 +1750,14 @@ export class Player extends Entity {
  * A class that provides system-level events and functions.
  */
 export class System {
-    protected constructor();
+    private constructor();
     /**
-     * @beta
      * @remarks
      * Represents the current world tick of the server.
      *
      */
     readonly currentTick: number;
     /**
-     * @beta
      * @remarks
      * Cancels the execution of a function run that was previously
      * scheduled via the `run` function.
@@ -1824,7 +1779,6 @@ export class System {
      */
     run(callback: () => void): number;
     /**
-     * @beta
      * @remarks
      * Runs a set of code on an interval.
      *
@@ -1839,7 +1793,6 @@ export class System {
      */
     runInterval(callback: () => void, tickInterval?: number): number;
     /**
-     * @beta
      * @remarks
      * Runs a set of code at a future time specified by tickDelay.
      *
@@ -1860,7 +1813,7 @@ export class System {
  * dimensions and the environment of Minecraft.
  */
 export class World {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Returns an array of all active players within the world.
@@ -1879,7 +1832,6 @@ export class World {
      */
     getDimension(dimensionId: string): Dimension;
     /**
-     * @beta
      * @remarks
      * Returns a set of players based on a set of conditions
      * defined via the EntityQueryOptions set of filter criteria.
@@ -1893,7 +1845,6 @@ export class World {
      */
     getPlayers(options?: EntityQueryOptions): Player[];
     /**
-     * @beta
      * @remarks
      * Plays a particular music track for all players.
      *
@@ -1903,7 +1854,6 @@ export class World {
      */
     playMusic(trackID: string, musicOptions?: MusicOptions): void;
     /**
-     * @beta
      * @remarks
      * Plays a sound for all players.
      *
@@ -1913,7 +1863,6 @@ export class World {
      */
     playSound(soundID: string, location: Vector3, soundOptions?: WorldSoundOptions): void;
     /**
-     * @beta
      * @remarks
      * Queues an additional music track for players. If a track is
      * not playing, a music track will play.
@@ -1924,7 +1873,6 @@ export class World {
      */
     queueMusic(trackID: string, musicOptions?: MusicOptions): void;
     /**
-     * @beta
      * @remarks
      * Sends a message to all players.
      *
@@ -1963,7 +1911,6 @@ export class World {
      */
     sendMessage(message: (RawMessage | string)[] | RawMessage | string): void;
     /**
-     * @beta
      * @remarks
      * Stops any music tracks from playing.
      *
@@ -1974,7 +1921,6 @@ export class World {
 }
 
 /**
- * @beta
  * Additional options for when damage has been applied via a
  * projectile.
  */
@@ -1994,7 +1940,6 @@ export interface EntityApplyDamageByProjectileOptions {
 }
 
 /**
- * @beta
  * Additional descriptions and metadata for a damage event.
  */
 export interface EntityApplyDamageOptions {
@@ -2013,7 +1958,6 @@ export interface EntityApplyDamageOptions {
 }
 
 /**
- * @beta
  * Contains options for selecting entities within an area.
  */
 export interface EntityQueryOptions {
@@ -2176,7 +2120,6 @@ export interface EntityQueryOptions {
 }
 
 /**
- * @beta
  * Contains additional options for filtering players based on
  * their score for an objective.
  */
@@ -2211,7 +2154,6 @@ export interface EntityQueryScoreOptions {
 }
 
 /**
- * @beta
  * Additional configuration options for {@link
  * World.playMusic}/{@link World.queueMusic} methods.
  */
@@ -2237,7 +2179,6 @@ export interface MusicOptions {
 }
 
 /**
- * @beta
  * Additional options for how a sound plays for a player.
  */
 export interface PlayerSoundOptions {
@@ -2262,9 +2203,6 @@ export interface PlayerSoundOptions {
     volume?: number;
 }
 
-/**
- * @beta
- */
 export interface RawMessage {
     rawtext?: RawMessage[];
     score?: RawMessageScore;
@@ -2274,7 +2212,6 @@ export interface RawMessage {
 }
 
 /**
- * @beta
  * Provides a description of a score token to use within a raw
  * message.
  */
@@ -2294,7 +2231,6 @@ export interface RawMessageScore {
 }
 
 /**
- * @beta
  * Contains a description of a vector.
  */
 export interface Vector3 {
@@ -2319,7 +2255,6 @@ export interface Vector3 {
 }
 
 /**
- * @beta
  * Contains additional options for a world-level playSound
  * occurrence.
  */

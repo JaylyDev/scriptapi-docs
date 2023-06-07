@@ -17,7 +17,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-gametest",
- *   "version": "1.0.0-internal.1.20.0-preview.25"
+ *   "version": "1.0.0-internal.1.20.0-stable"
  * }
  * ```
  *
@@ -41,7 +41,7 @@ export enum GameTestErrorType {
  * other fences in several directions.
  */
 export class FenceConnectivity {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Represents whether this fence block is connected to another
@@ -78,7 +78,7 @@ export class FenceConnectivity {
  * GameTest setup methods and assertions over time.
  */
 export class GameTestSequence {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Runs the given callback as a step within a GameTest
@@ -201,7 +201,7 @@ export class GameTestSequence {
  * Methods can be chained together to set multiple properties.
  */
 export class RegistrationBuilder {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Sets the batch for the test to run in.
@@ -335,7 +335,7 @@ export class RegistrationBuilder {
  * growth of sculk around a particular block.
  */
 export class SculkSpreader {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Gets the maximum charge of a sculk spreader.
@@ -388,8 +388,9 @@ export class SculkSpreader {
  * player. This type derives much of its structure and methods
  * from the {@link @minecraft/server.Player} type.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class SimulatedPlayer extends minecraftserver.Player {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Rotation of the head across pitch and yaw angles.
@@ -817,7 +818,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
  * tests into suites to run.
  */
 export class Tags {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Indicates that the tagged test should be a part of all
@@ -855,7 +856,7 @@ export class Tags {
  * the GameTest structure block.
  */
 export class Test {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Tests that the condition specified in _condition_ is true.
@@ -1161,7 +1162,7 @@ export class Test {
      * test.assertEntityState(
      *   villagerPos,
      *   "minecraft:villager_v2",
-     *   (entity) => entity.getEffect(MinecraftEffectTypes.regeneration).duration > 120
+     *   (entity) => entity.getEffect(MinecraftEffectTypes.Regeneration).duration > 120
      * ); // At least 6 seconds remaining in the villagers' effect
      * ```
      */
@@ -2014,8 +2015,9 @@ export interface GameTestErrorContext {
     tickCount: number;
 }
 
+// @ts-ignore Class inheritance allowed for native defined classes
 export class GameTestError extends Error {
-    protected constructor();
+    private constructor();
     context?: GameTestErrorContext;
     messageParameters: string[];
     type: GameTestErrorType;
