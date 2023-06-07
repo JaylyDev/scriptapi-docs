@@ -21,7 +21,9 @@ export function splitVersion(versionString: string, platform: "npm" | "minecraft
   const { major, minor, patch, prerelease } = parsedVersion;
   const moduleChannel = prerelease[0]?.toString();
   const moduleVersion = `${major}.${minor}.${patch}-${moduleChannel}`;
-  const engineVersion = versionString.replace(`${moduleVersion}.`, '');
+  const engineVersion = versionString.replace(`${moduleVersion}.`, '')
+                                     .replace(/^preview\.(\d+\.\d+\.\d+)\.(\d+)$/, "$1-preview.$2")
+                                     .replace(/^release\.(\d+\.\d+\.\d+)$/, "$1-stable");
 
   if (platform === "minecraft") {
     // stable version
@@ -38,6 +40,7 @@ export function splitVersion(versionString: string, platform: "npm" | "minecraft
 };
 
 export type Version = `${string}.${string}.${string}` | `${string}.${string}.${string}-${string}`;
+export const versionRegex = /^\d+\.\d+\.\d+(\.\d+)?$/;
 
 /**
  * 
@@ -45,7 +48,7 @@ export type Version = `${string}.${string}.${string}` | `${string}.${string}.${s
  * @param module Minecraft module
  */
 export async function getVersions(mcVersion: Version, module: string): Promise<string[]> {
-  if (!/^\d+\.\d+\.\d+(\.\d+)?$/.test(mcVersion)) {
+  if (!versionRegex.test(mcVersion)) {
     throw new Error('Invalid version. Accept "1.0.0" for stable version, or "1.0.0.0" for preview version.');
   };
 
