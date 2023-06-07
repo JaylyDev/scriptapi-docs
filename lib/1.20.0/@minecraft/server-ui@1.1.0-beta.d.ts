@@ -7,7 +7,6 @@
    Copyright (c) Microsoft Corporation.
    ***************************************************************************** */
 /**
- * @beta
  * @packageDocumentation
  * The `@minecraft/server-ui` module contains types for
  * expressing simple dialog-based user experiences.
@@ -43,12 +42,20 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-ui",
- *   "version": "1.1.0-internal.1.20.0-preview.25"
+ *   "version": "1.0.0"
  * }
  * ```
  *
  */
 import * as minecraftserver from '@minecraft/server';
+/**
+ * @beta
+ */
+export enum FormCancelationReason {
+    userBusy = 'userBusy',
+    userClosed = 'userClosed',
+}
+
 export enum FormRejectReason {
     MalformedResponse = 'MalformedResponse',
     PlayerQuit = 'PlayerQuit',
@@ -104,8 +111,9 @@ export class ActionFormData {
  * Returns data about the player results from a modal action
  * form.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class ActionFormResponse extends FormResponse {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Returns the index of the button that was pushed.
@@ -118,7 +126,22 @@ export class ActionFormResponse extends FormResponse {
  * Base type for a form response.
  */
 export class FormResponse {
-    protected constructor();
+    private constructor();
+    /**
+     * @beta
+     * @remarks
+     * Contains additional details as to why a form was canceled.
+     *
+     */
+    readonly cancelationReason?: FormCancelationReason;
+    /**
+     * @beta
+     * @remarks
+     * If true, the form was canceled by the player (e.g., they
+     * selected the pop-up X close button).
+     *
+     */
+    readonly canceled: boolean;
 }
 
 /**
@@ -178,8 +201,9 @@ export class MessageFormData {
  * Returns data about the player results from a modal message
  * form.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class MessageFormResponse extends FormResponse {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * Returns the index of the button that was pushed.
@@ -265,8 +289,9 @@ export class ModalFormData {
 /**
  * Returns data about player responses to a modal form.
  */
+// @ts-ignore Class inheritance allowed for native defined classes
 export class ModalFormResponse extends FormResponse {
-    protected constructor();
+    private constructor();
     /**
      * @remarks
      * An ordered set of values based on the order of controls
@@ -276,7 +301,8 @@ export class ModalFormResponse extends FormResponse {
     readonly formValues?: (boolean | number | string)[];
 }
 
+// @ts-ignore Class inheritance allowed for native defined classes
 export class FormRejectError extends Error {
-    protected constructor();
+    private constructor();
     reason: FormRejectReason;
 }
