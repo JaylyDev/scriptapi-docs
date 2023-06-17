@@ -1,8 +1,8 @@
 ### Dependencies
-- <p>@minecraft/server@1.4.0-beta</p>
+- <p>@minecraft/server@1.2.0</p>
 ```json
 {
   "module_name": "@minecraft/server",
-  "version": "1.4.0-beta"
+  "version": "1.2.0"
 }
 ```
