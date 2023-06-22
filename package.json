@@ -15,7 +15,9 @@
     "dotenv": "^16.0.3",
     "dts-bundle-generator": "^8.0.1",
     "fs-extra": "^11.1.1",
+    "prettier": "^2.8.8",
     "semver": "^7.5.0",
+    "ts-morph": "^19.0.0",
     "typedoc": "^0.24.6",
     "vuepress": "^2.0.0-beta.61"
   },
