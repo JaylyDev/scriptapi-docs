@@ -1,0 +1,7 @@
+{
+  "reserved_files": [
+    "SetRawMessage.ts",
+    "SetRawText.ts",
+    "SetString.ts"
+  ]
+}

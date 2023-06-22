@@ -18044,8 +18044,25 @@ export class World {
      * of the world.
      * Event callbacks are called in a deferred manner.
      * Event callbacks are executed in read-write mode.
+     * @example subscribeEvent.js
+     * ```js
+     * import { world } from "@minecraft/server";
      *
+     * world.afterEvents.blockBreak.subscribe((event) => {
+     *     const { brokenBlockPermutation, player } = event;
+     *
+     *     if (brokenBlockPermutation.type.id === "minecraft:grass") {
+     *         player.sendMessage("You broke a grass block!");
+     *     }
+     *
+     *     if (brokenBlockPermutation.type.id === "minecraft:stone") {
+     *         player.sendMessage("You broke a stone block!");
+     *     }
+     * });
+     *
+     * ```
      */
+
     readonly afterEvents: WorldAfterEvents;
     /**
      * @beta

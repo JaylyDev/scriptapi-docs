@@ -3,8 +3,6 @@ import * as fs from "fs-extra";
 import path = require("path");
 import { Application, TSConfigReader, TypeDocOptions, TypeDocReader } from "typedoc";
 import { splitVersion } from "./fetchVersion";
-import { TsConfigSourceFile } from "typescript";
-import ts = require("typescript");
 import assert = require("assert");
 
 /**
@@ -30,7 +28,7 @@ async function renderHtml (entryPoints: string[], version: string) {
     skipErrorChecking: true,
     disableSources: false,
     basePath: "./lib/" + version,
-    logLevel: "Verbose",
+    logLevel: "Info",
     excludeInternal: true,
     cleanOutputDir: true,
     includeVersion: false,
@@ -80,12 +78,7 @@ export function setupTypedoc (module_name: string, module_version: string, npm_v
       module: "commonjs",
       lib: ["es6"],
       target: "es6",
-      forceConsistentCasingInFileNames: true,
       noEmit: true,
-      noImplicitAny: true,
-      noImplicitThis: true,
-      strictFunctionTypes: true,
-      strictNullChecks: true,
       typeRoots: [],
       types: [],
       paths: {}
@@ -103,7 +96,7 @@ export function setupTypedoc (module_name: string, module_version: string, npm_v
 
   // script module dependencies
   for (const dependencyName in packageInfo.dependencies) {
-    const depednencyVersion = packageInfo.dependencies[dependencyName];
+    const depednencyVersion = packageInfo.dependencies[dependencyName].replace(/\^|\~/, "");
     const { moduleVersion } = splitVersion(depednencyVersion, "minecraft");
     tsconfig.compilerOptions.paths[dependencyName] = [`../../${dependencyName}@${moduleVersion}/index.d.ts`];
     readmeText.push(`- <p>${dependencyName}@${moduleVersion}</p>`, `\`\`\`json

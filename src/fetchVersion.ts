@@ -73,7 +73,7 @@ export async function getVersions(mcVersion: Version, module: string): Promise<s
     // Turn your strings into dates, and then subtract them
     // to get a value that is either negative, positive, or zero.
     return new Date(time[a]).getTime() - new Date(time[b]).getTime();
-  }).reverse();
+  }).reverse().map(v => v.replace(/\^|\~/, ''));
 
   const latestVersions = [undefined, ...versionsList.filter(v => semver.parse(v).prerelease.length === 0)];
 
@@ -84,14 +84,16 @@ export async function getVersions(mcVersion: Version, module: string): Promise<s
     latestBeta = versionsList.find(v => {
       const { moduleVersion, engineVersion } = splitVersion(v, "npm");
       const latestVersion = latestVersions[0] ?? "0.0.0";
-      return semver.parse(v).prerelease[0] === 'beta' && semver.compare(moduleVersion, latestVersion) > 0 && semver.compare(engineVersion, versionString) === 0
+      const [channel] = semver.parse(v).prerelease;
+      return channel === 'beta' && semver.compare(moduleVersion, latestVersion) > 0 && semver.compare(engineVersion, versionString) === 0
     });
   };
 
   const latestRc = versionsList.filter(v => {
     const { moduleVersion, engineVersion } = splitVersion(v, "npm");
     const latestVersion = latestVersions[0] ?? "0.0.0";
-    return semver.parse(v).prerelease[0] === 'rc' && semver.compare(moduleVersion, latestVersion) > 0 && semver.compare(engineVersion, versionString) === 0
+    const [channel] = semver.parse(v).prerelease;
+    return channel === 'rc' && semver.compare(moduleVersion, latestVersion) > 0 && semver.compare(engineVersion, versionString) === 0
   });
 
   const versions: string[] = [];

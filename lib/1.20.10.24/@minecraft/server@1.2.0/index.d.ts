@@ -90,6 +90,7 @@ export enum GameMode {
     survival = 'survival',
 }
 
+/** */
 export enum ItemLockMode {
     inventory = 'inventory',
     none = 'none',
@@ -2203,6 +2204,7 @@ export interface PlayerSoundOptions {
     volume?: number;
 }
 
+/** */
 export interface RawMessage {
     rawtext?: RawMessage[];
     score?: RawMessageScore;

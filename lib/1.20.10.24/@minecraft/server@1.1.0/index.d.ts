@@ -823,6 +823,7 @@ export interface EntityQueryScoreOptions {
     objective?: string;
 }
 
+/** */
 export interface RawMessage {
     rawtext?: RawMessage[];
     score?: RawMessageScore;
@@ -831,8 +832,11 @@ export interface RawMessage {
     with?: string[] | RawMessage;
 }
 
+/** */
 export interface RawMessageScore {
+    /** */
     name?: string;
+    /** */
     objective?: string;
 }
 

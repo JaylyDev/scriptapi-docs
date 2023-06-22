@@ -5,6 +5,7 @@ import { applyStatsCollection, generateDocsIndexPage } from "./docsPages";
 import { installBundle, installModule } from "./installModules";
 import { existsSync, mkdirSync, readdirSync, rmSync } from "fs";
 import { generateDocs } from "./typedoc";
+import { modifyExampleDocsSnippets } from "./snippetsEditor";
 
 dotenv.config();
 
@@ -80,12 +81,16 @@ async function main () {
   // If version input exist but it's not valid, it throws error
   for (const version of versions) {
     if (/^\d+\.\d+\.\d+(\.\d+)?$/.test(version)) {
-      await installScriptModules(version);
+      // await installScriptModules(version);
+
+      for (const module_name of scriptModules) {
+        modifyExampleDocsSnippets(module_name, version);
+      }
     }
-    else throw new Error(`Invalid version: ${version}. Accept '0.0.0' for stable, '0.0.0.0' for preview.`);
+    else if (!!version) throw new Error(`Invalid version: ${version}. Accept '0.0.0' for stable, '0.0.0.0' for preview.`);
   }
 
-  await generate_documentation(versions.length === 0);
+  // await generate_documentation(versions.length === 0);
 };
 
 main();
