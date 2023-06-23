@@ -18071,8 +18071,23 @@ export class World {
      * of the world.
      * Event callbacks are called immediately.
      * Event callbacks are executed in read-only mode.
+     * @example subscribeEvent.js
+     * ```js
+     * import { WeatherType, system, world } from "@minecraft/server";
      *
+     * world.beforeEvents.chatSend.subscribe((event) => {
+     *     const { message, sender } = event;
+     *
+     *     if (message === "!weather clear") {
+     *         system.run(() => {
+     *             sender.dimension.setWeather(WeatherType.clear);
+     *         });
+     *     }
+     * });
+     *
+     * ```
      */
+
     readonly beforeEvents: WorldBeforeEvents;
     /**
      * @beta
