@@ -192,7 +192,6 @@ export class System {
  */
 export class World {
     protected constructor();
-    /** */
     getAllPlayers(): Player[];
     /**
      * @param dimensionId
