@@ -3402,6 +3402,11 @@ export class Entity {
      * if the entity is invulnerable or if the damage applied is
      * less than or equal to 0.
      * @throws This function can throw errors.
+     * @example damageEntity.js
+     * ```js
+     * const damageApplied = entity.applyDamage(10);
+     * console.log(`Damage applied: ${damageApplied}`);
+     * ```
      */
     applyDamage(amount: number, options?: EntityApplyDamageByProjectileOptions | EntityApplyDamageOptions): boolean;
     /**
@@ -3476,6 +3481,19 @@ export class Entity {
      * Returns the first intersecting block from the direction that
      * this entity is looking at.
      * @throws This function can throw errors.
+     * @example facingBlock.js
+     * ```js
+     * const blockHit = entity.getBlockFromViewDirection();
+     *
+     * if (blockHit) {
+     *     console.log("Block Hit:");
+     *     console.log("Block:", blockHit.block);
+     *     console.log("Face:", blockHit.face);
+     *     console.log("Face Location:", JSON.stringify(blockHit.faceLocation));
+     * } else {
+     *     console.log("No block in view direction.");
+     * }
+     * ```
      */
     getBlockFromViewDirection(options?: BlockRaycastOptions): BlockRaycastHit | undefined;
     /**
@@ -3492,6 +3510,17 @@ export class Entity {
      * @returns
      * Returns the component if it exists on the entity, otherwise
      * undefined.
+     * @example getHealth.ts
+     * ```ts
+     * import { EntityHealthComponent, world } from "@minecraft/server";
+     *
+     * for (const entity of world.getDimension("overworld").getEntities()) {
+     *     const health = entity.getComponent(
+     *         EntityHealthComponent.componentId
+     *     ) as EntityHealthComponent;
+     *     entity.nameTag = health.currentValue.toString();
+     * }
+     * ```
      */
     getComponent(componentId: string): EntityComponent | undefined;
     /**
@@ -3503,6 +3532,15 @@ export class Entity {
      * @returns
      * Returns all components that are both present on this entity
      * and supported by the API.
+     * @example getComponents.js
+     * ```js
+     * const components = entity.getComponents();
+     * console.log(
+     *     `Number of components: ${components.length}: ${components.map(
+     *         (component) => component.typeId
+     *     )}`
+     * );
+     * ```
      */
     getComponents(): EntityComponent[];
     /**
@@ -3803,6 +3841,23 @@ export class Entity {
      * @param teleportOptions
      * Options regarding the teleport operation.
      * @throws This function can throw errors.
+     * @example teleport.js
+     * ```js
+     * player.teleport(
+     *     { x: 0, y: 0, z: 0 },
+     *     { dimension: world.getDimension("nether") }
+     * );
+     * ```
+     * @example teleportFacing.js
+     * ```js
+     * player.teleport(
+     *     { x: 0, y: 0, z: 0 },
+     *     {
+     *         dimension: world.getDimension("nether"),
+     *         teleportFacing: { x: 100, y: 100, z: 100 },
+     *     }
+     * );
+     * ```
      */
     teleport(location: Vector3, teleportOptions?: TeleportOptions): void;
     /**
@@ -16772,6 +16827,11 @@ export class Player extends Entity {
      * @returns
      * Returns the current experience of the Player.
      * @throws This function can throw errors.
+     * @example addXp.js
+     * ```js
+     * const xpAdded = player.addExperience(100);
+     * console.log(`Player ${player.name} now has ${xpAdded} experience points.`);
+     * ```
      */
     addExperience(amount: number): number;
     /**
@@ -16787,6 +16847,11 @@ export class Player extends Entity {
      * @returns
      * Returns the current level of the Player.
      * @throws This function can throw errors.
+     * @example addLevels.js
+     * ```js
+     * const levels = player.addLevels(5);
+     * console.log(`Player ${player.name} now has ${levels} levels.`);
+     * ```
      */
     addLevels(amount: number): number;
     /**
@@ -16799,11 +16864,27 @@ export class Player extends Entity {
      * Specifies the cooldown category to retrieve the current
      * cooldown for.
      * @throws This function can throw errors.
+     * @example getEquipmentCooldown.js
+     * ```js
+     * const cooldown = player.getItemCooldown("equipment");
+     * console.log(`Cooldown for the equipment category: ${cooldown} seconds.`);
+     * ```
      */
     getItemCooldown(itemCategory: string): number;
     /**
      * @beta
      * @throws This function can throw errors.
+     * @example getSpawnPoint.js
+     * ```js
+     * const spawnPoint = player.getSpawnPoint();
+     * if (spawnPoint) {
+     *     console.log(
+     *         `Spawn point location: ${spawnPoint.x} ${spawnPoint.y} ${spawnPoint.z} at ${spawnPoint.dimension.id}`
+     *     );
+     * } else {
+     *     console.log(`No spawn point set.`);
+     * }
+     * ```
      */
     getSpawnPoint(): DimensionLocation | undefined;
     /**
@@ -17622,7 +17703,15 @@ export class System {
      * @remarks
      * Cancels the execution of a function run that was previously
      * scheduled via the `run` function.
+     * @example clearRun.js
+     * ```js
+     * const runId = system.run(() => {
+     *     console.log("Running callback function...");
+     * });
      *
+     * // Clear the run, so it will not run again.
+     * system.clearRun(runId);
+     * ```
      */
     clearRun(runId: number): void;
     /**
@@ -17637,6 +17726,12 @@ export class System {
      * @returns
      * An opaque identifier that can be used with the `clearRun`
      * function to cancel the execution of this run.
+     * @example run.js
+     * ```js
+     * const runId = system.run(() => {
+     *     console.log("Running callback function...");
+     * });
+     * ```
      */
     run(callback: () => void): number;
     /**
@@ -17667,6 +17762,14 @@ export class System {
      * @returns
      * An opaque handle that can be used with the clearRun method
      * to stop the run of this function on an interval.
+     * @example runTimeout.js
+     * ```js
+     * import { TicksPerSecond } from "@minecraft/server";
+     *
+     * system.runTimeout(() => {
+     *     console.log("Running callback function after delay...");
+     * }, TicksPerSecond * 5); // Tick delay of 5 seconds
+     * ```
      */
     runTimeout(callback: () => void, tickDelay?: number): number;
 }
@@ -17676,6 +17779,39 @@ export class System {
  */
 export class SystemAfterEvents {
     private constructor();
+    /**
+     * @example entity.js
+     * ```js
+     * import { system, world } from "@minecraft/server";
+     *
+     * system.afterEvents.scriptEventReceive.subscribe((event) => {
+     *     const { id, message, sourceEntity, sourceType } = event;
+     *
+     *     console.log(id); // wiki:test
+     *     console.log(message); // Hello World
+     *     console.log(sourceEntity); // Player object
+     *     console.log(sourceType); // Entity
+     * });
+     *
+     * world.getPlayers().forEach((player) => {
+     *     player.runCommand("scriptevent wiki:test Hello World");
+     * });
+     * ```
+     * @example server.js
+     * ```js
+     * import { system, world } from "@minecraft/server";
+     *
+     * system.afterEvents.scriptEventReceive.subscribe((event) => {
+     *     const { id, message, sourceType } = event;
+     *
+     *     console.log(id); // wiki:test
+     *     console.log(message); // Hello World
+     *     console.log(sourceType); // Server
+     * });
+     *
+     * world.getDimension("overworld").runCommand("scriptevent wiki:test Hello World");
+     * ```
+     */
     readonly scriptEventReceive: ScriptEventCommandMessageAfterEventSignal;
 }
 
@@ -17684,6 +17820,19 @@ export class SystemAfterEvents {
  */
 export class SystemBeforeEvents {
     private constructor();
+    /**
+     * @example cancelTerminate.js
+     * ```js
+     * import { system } from "@minecraft/server";
+     *
+     * system.beforeEvents.watchdogTerminate.subscribe((event) => {
+     *     event.cancel = true;
+     *     console.warn(
+     *         `[Watchdog] Canceled critical exception of type '${event.cancelationReason}`
+     *     );
+     * });
+     * ```
+     */
     readonly watchdogTerminate: WatchdogTerminateBeforeEventSignal;
 }
 
@@ -18044,25 +18193,8 @@ export class World {
      * of the world.
      * Event callbacks are called in a deferred manner.
      * Event callbacks are executed in read-write mode.
-     * @example subscribeEvent.js
-     * ```js
-     * import { world } from "@minecraft/server";
      *
-     * world.afterEvents.blockBreak.subscribe((event) => {
-     *     const { brokenBlockPermutation, player } = event;
-     *
-     *     if (brokenBlockPermutation.type.id === "minecraft:grass") {
-     *         player.sendMessage("You broke a grass block!");
-     *     }
-     *
-     *     if (brokenBlockPermutation.type.id === "minecraft:stone") {
-     *         player.sendMessage("You broke a stone block!");
-     *     }
-     * });
-     *
-     * ```
      */
-
     readonly afterEvents: WorldAfterEvents;
     /**
      * @beta
@@ -18071,23 +18203,8 @@ export class World {
      * of the world.
      * Event callbacks are called immediately.
      * Event callbacks are executed in read-only mode.
-     * @example subscribeEvent.js
-     * ```js
-     * import { WeatherType, system, world } from "@minecraft/server";
      *
-     * world.beforeEvents.chatSend.subscribe((event) => {
-     *     const { message, sender } = event;
-     *
-     *     if (message === "!weather clear") {
-     *         system.run(() => {
-     *             sender.dimension.setWeather(WeatherType.clear);
-     *         });
-     *     }
-     * });
-     *
-     * ```
      */
-
     readonly beforeEvents: WorldBeforeEvents;
     /**
      * @beta
@@ -18314,6 +18431,22 @@ export class WorldAfterEvents {
     private constructor();
     /**
      * @beta
+     * @example subscribe.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * world.afterEvents.blockBreak.subscribe((event) => {
+     *     const { brokenBlockPermutation, player } = event;
+     *
+     *     if (brokenBlockPermutation.type.id === "minecraft:grass") {
+     *         player.sendMessage("You broke a grass block!");
+     *     }
+     *
+     *     if (brokenBlockPermutation.type.id === "minecraft:stone") {
+     *         player.sendMessage("You broke a stone block!");
+     *     }
+     * });
+     * ```
      */
     readonly blockBreak: BlockBreakAfterEventSignal;
     /**
@@ -18324,13 +18457,86 @@ export class WorldAfterEvents {
      * @beta
      */
     readonly blockPlace: BlockPlaceAfterEventSignal;
+    /**
+     * @example subscribe.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * world.afterEvents.buttonPush.subscribe((event) => {
+     *     console.log("Button: ", event.block.typeId);
+     *     console.log("Dimension: ", event.dimension.id);
+     *     console.log("Source: ", event.source.typeId);
+     * });
+     * ```
+     */
     readonly buttonPush: ButtonPushAfterEventSignal;
     /**
      * @beta
+     * @example subscribe.js
+     * ```js
+     * import { WeatherType, system, world } from "@minecraft/server";
+     *
+     * const chatObjective =
+     *     world.scoreboard.getObjective("chat") ??
+     *     world.scoreboard.addObjective("chat", "chat");
+     *
+     * world.afterEvents.chatSend.subscribe((event) => {
+     *     const { sender } = event;
+     *
+     *     const score = chatObjective.hasParticipant(sender)
+     *         ? chatObjective.getScore(sender.scoreboardIdentity)
+     *         : 0;
+     *     chatObjective.setScore(sender, score + 1);
+     * });
+     * ```
      */
     readonly chatSend: ChatSendAfterEventSignal;
     /**
      * @beta
+     * @example sheepEventListener.ts
+     * ```ts
+     * import { world, system, Entity } from "@minecraft/server";
+     *
+     * const eventId = "minecraft:entity_spawned";
+     *
+     * system.runInterval(() => {
+     *     for (let player of world.getAllPlayers()) {
+     *         let [entityRaycaseHit] = player.getEntitiesFromViewDirection({
+     *             maxDistance: 150,
+     *         });
+     *         if (!entityRaycaseHit) continue;
+     *         let entity = entityRaycaseHit.entity;
+     *
+     *         if (entity?.typeId === "minecraft:sheep") {
+     *             listenTo(entity);
+     *             entity.triggerEvent(eventId);
+     *         }
+     *     }
+     * });
+     *
+     * function listenTo(entity: Entity) {
+     *     const callback = world.afterEvents.dataDrivenEntityTriggerEvent.subscribe(
+     *         (data) => {
+     *             world.afterEvents.dataDrivenEntityTriggerEvent.unsubscribe(
+     *                 callback
+     *             );
+     *
+     *             data.getModifiers().forEach((modifier) => {
+     *                 console.log(
+     *                     "ComponentGroupsToAdd:",
+     *                     modifier.getComponentGroupsToAdd()
+     *                 );
+     *                 console.log(
+     *                     "ComponentGroupsToRemove:",
+     *                     modifier.getComponentGroupsToRemove()
+     *                 );
+     *                 console.log("Triggers:", modifier.getTriggers());
+     *             });
+     *         },
+     *         { entities: [entity], eventTypes: [eventId] }
+     *     );
+     * }
+     * ```
      */
     readonly dataDrivenEntityTriggerEvent: DataDrivenEntityTriggerAfterEventSignal;
     /**
@@ -18339,6 +18545,16 @@ export class WorldAfterEvents {
     readonly effectAdd: EffectAddAfterEventSignal;
     /**
      * @beta
+     * @example subscribe.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * world.afterEvents.entityDie.subscribe((event) => {
+     *     world.sendMessage(
+     *         `${event.deadEntity.typeId} died from ${event.damageSource}!`
+     *     );
+     * });
+     * ```
      */
     readonly entityDie: EntityDieAfterEventSignal;
     /**
@@ -18414,8 +18630,44 @@ export class WorldAfterEvents {
      * @beta
      */
     readonly pistonActivate: PistonActivateAfterEventSignal;
+    /**
+     * @example subscribe.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     * world.afterEvents.playerJoin.subscribe(({ playerId, playerName }) => {
+     *     world.sendMessage(
+     *         `Player ${playerName} (${playerId}) has just joined the world.`
+     *     );
+     * });
+     * ```
+     */
     readonly playerJoin: PlayerJoinAfterEventSignal;
+    /**
+     * @example subscribe.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     * world.afterEvents.playerLeave.subscribe(({ playerId, playerName }) => {
+     *     world.sendMessage(
+     *         `Player ${playerName} (${playerId}) has just left the world.`
+     *     );
+     * });
+     * ```
+     */
     readonly playerLeave: PlayerLeaveAfterEventSignal;
+    /**
+     * @example initialSpawn.js
+     * ```js
+     * // https://github.com/JaylyDev/ScriptAPI/tree/main/scripts/player-spawn
+     * import { world } from "@minecraft/server";
+     *
+     * world.afterEvents.playerSpawn.subscribe((eventData) => {
+     *     let { player, initialSpawn } = eventData;
+     *     if (!initialSpawn) return;
+     *
+     *     // This runs when the player joins the game for the first time!
+     * });
+     * ```
+     */
     readonly playerSpawn: PlayerSpawnAfterEventSignal;
     /**
      * @beta
@@ -18452,11 +18704,53 @@ export class WorldAfterEvents {
  */
 export class WorldBeforeEvents {
     private constructor();
+    /**
+     * @example subscribe.js
+     * ```js
+     * import { WeatherType, system, world } from "@minecraft/server";
+     *
+     * world.beforeEvents.chatSend.subscribe((event) => {
+     *     const { message, sender } = event;
+     *     const { dimension } = sender;
+     *
+     *     if (message === "!weather clear") {
+     *         event.cancel = true;
+     *         system.run(() => {
+     *             dimension.setWeather(WeatherType.Clear);
+     *         });
+     *     }
+     * });
+     * ```
+     */
     readonly chatSend: ChatSendBeforeEventSignal;
     readonly dataDrivenEntityTriggerEvent: DataDrivenEntityTriggerBeforeEventSignal;
     readonly explosion: ExplosionBeforeEventSignal;
     readonly itemDefinitionEvent: ItemDefinitionBeforeEventSignal;
     readonly itemUse: ItemUseBeforeEventSignal;
+    /**
+     * @example subscribe.ts
+     * ```ts
+     * import {
+     *     world,
+     *     MinecraftBlockTypes,
+     *     MinecraftItemTypes,
+     *     Player,
+     * } from "@minecraft/server";
+     *
+     * // Subscribe to the itemUseOn event before it happens
+     * world.beforeEvents.itemUseOn.subscribe((event) => {
+     *     const { source, block, itemStack } = event;
+     *     if (!(source instanceof Player)) return;
+     *
+     *     source.sendMessage("You used " + itemStack.typeId + " on " + block.typeId);
+     *
+     *     // If the item is a diamond, set the block to be a diamond block
+     *     if (itemStack.typeId === MinecraftItemTypes.diamond.id) {
+     *         block.setType(MinecraftBlockTypes.diamondBlock);
+     *     }
+     * });
+     * ```
+     */
     readonly itemUseOn: ItemUseOnBeforeEventSignal;
     readonly pistonActivate: PistonActivateBeforeEventSignal;
 }

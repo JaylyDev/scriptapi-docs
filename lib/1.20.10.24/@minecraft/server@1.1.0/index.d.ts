@@ -486,7 +486,15 @@ export class System {
      * scheduled via the `run` function.
      *
      * This function can't be called in read-only mode.
+     * @example clearRun.js
+     * ```js
+     * const runId = system.run(() => {
+     *     console.log("Running callback function...");
+     * });
      *
+     * // Clear the run, so it will not run again.
+     * system.clearRun(runId);
+     * ```
      */
     clearRun(runId: number): void;
     /**
@@ -503,6 +511,12 @@ export class System {
      * @returns
      * An opaque identifier that can be used with the `clearRun`
      * function to cancel the execution of this run.
+     * @example run.js
+     * ```js
+     * const runId = system.run(() => {
+     *     console.log("Running callback function...");
+     * });
+     * ```
      */
     run(callback: () => void): number;
     /**
@@ -535,6 +549,14 @@ export class System {
      * @returns
      * An opaque handle that can be used with the clearRun method
      * to stop the run of this function on an interval.
+     * @example runTimeout.js
+     * ```js
+     * import { TicksPerSecond } from "@minecraft/server";
+     *
+     * system.runTimeout(() => {
+     *     console.log("Running callback function after delay...");
+     * }, TicksPerSecond * 5); // Tick delay of 5 seconds
+     * ```
      */
     runTimeout(callback: () => void, tickDelay?: number): number;
 }

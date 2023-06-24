@@ -585,6 +585,11 @@ export class Entity {
      * if the entity is invulnerable or if the damage applied is
      * less than or equal to 0.
      * @throws This function can throw errors.
+     * @example damageEntity.js
+     * ```js
+     * const damageApplied = entity.applyDamage(10);
+     * console.log(`Damage applied: ${damageApplied}`);
+     * ```
      */
     applyDamage(amount: number, options?: EntityApplyDamageByProjectileOptions | EntityApplyDamageOptions): boolean;
     /**
@@ -640,6 +645,17 @@ export class Entity {
      * @returns
      * Returns the component if it exists on the entity, otherwise
      * undefined.
+     * @example getHealth.ts
+     * ```ts
+     * import { EntityHealthComponent, world } from "@minecraft/server";
+     *
+     * for (const entity of world.getDimension("overworld").getEntities()) {
+     *     const health = entity.getComponent(
+     *         EntityHealthComponent.componentId
+     *     ) as EntityHealthComponent;
+     *     entity.nameTag = health.currentValue.toString();
+     * }
+     * ```
      */
     getComponent(componentId: string): EntityComponent | undefined;
     /**
@@ -650,6 +666,15 @@ export class Entity {
      * @returns
      * Returns all components that are both present on this entity
      * and supported by the API.
+     * @example getComponents.js
+     * ```js
+     * const components = entity.getComponents();
+     * console.log(
+     *     `Number of components: ${components.length}: ${components.map(
+     *         (component) => component.typeId
+     *     )}`
+     * );
+     * ```
      */
     getComponents(): EntityComponent[];
     /**
@@ -1761,7 +1786,15 @@ export class System {
      * @remarks
      * Cancels the execution of a function run that was previously
      * scheduled via the `run` function.
+     * @example clearRun.js
+     * ```js
+     * const runId = system.run(() => {
+     *     console.log("Running callback function...");
+     * });
      *
+     * // Clear the run, so it will not run again.
+     * system.clearRun(runId);
+     * ```
      */
     clearRun(runId: number): void;
     /**
@@ -1776,6 +1809,12 @@ export class System {
      * @returns
      * An opaque identifier that can be used with the `clearRun`
      * function to cancel the execution of this run.
+     * @example run.js
+     * ```js
+     * const runId = system.run(() => {
+     *     console.log("Running callback function...");
+     * });
+     * ```
      */
     run(callback: () => void): number;
     /**
@@ -1804,6 +1843,14 @@ export class System {
      * @returns
      * An opaque handle that can be used with the clearRun method
      * to stop the run of this function on an interval.
+     * @example runTimeout.js
+     * ```js
+     * import { TicksPerSecond } from "@minecraft/server";
+     *
+     * system.runTimeout(() => {
+     *     console.log("Running callback function after delay...");
+     * }, TicksPerSecond * 5); // Tick delay of 5 seconds
+     * ```
      */
     runTimeout(callback: () => void, tickDelay?: number): number;
 }

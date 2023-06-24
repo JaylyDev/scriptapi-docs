@@ -183,6 +183,12 @@ export class System {
      * @returns
      * An opaque identifier that can be used with the `clearRun`
      * function to cancel the execution of this run.
+     * @example run.js
+     * ```js
+     * const runId = system.run(() => {
+     *     console.log("Running callback function...");
+     * });
+     * ```
      */
     run(callback: () => void): number;
 }
