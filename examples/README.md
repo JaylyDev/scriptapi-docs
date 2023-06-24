@@ -9,3 +9,4 @@ This feature is experimental and it's subject to change, so please avoid taking 
 - Examples of class static properties' usage are located in the `{ClassName}/*` directory.
 - Examples of class instance properties' usage are located in `{ClassName}/prototype/*` directory.
 - Examples usage of interface and enumeration are located in either the `{InterfaceName}/*` or `{EnumName}/*` directories.
+- Properties inherited from classes will not be documented. Please document the inherited properties in inherited class.

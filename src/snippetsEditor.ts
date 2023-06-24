@@ -92,7 +92,7 @@ const prettierOptions: prettier.Options = {
   tabWidth: 4
 };
 
-const formatDocExample = (filepath: string, code: string) => path.basename(filepath) + '\n' + "```" + path.extname(filepath).slice(1) + '\n' + prettier.format(code, prettierOptions) + '\n' + "```"
+const formatDocExample = (filepath: string, code: string) => path.basename(filepath) + '\n' + "```" + path.extname(filepath).slice(1) + '\n' + prettier.format(code, prettierOptions) + "```"
 
 function reader(tsPath: string, doc: JSDoc, module_name: string) {
   const dir = path.resolve('examples', module_name, tsPath.replace(/\./g, '/'));
@@ -150,7 +150,7 @@ function reader(tsPath: string, doc: JSDoc, module_name: string) {
     });
     doc.addTags(jsdoctags);
 
-    const formatted = prettier.format(doc.getText(), prettierOptions);
+    const formatted = prettier.format(doc.getText(), prettierOptions).replace(/\n\s*$/, "");
     doc.replaceWithText(formatted);
   };
 };
