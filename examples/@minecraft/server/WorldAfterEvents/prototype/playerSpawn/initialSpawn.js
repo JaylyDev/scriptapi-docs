@@ -1,4 +1,3 @@
-// https://github.com/JaylyDev/ScriptAPI/tree/main/scripts/player-spawn
 import { world } from "@minecraft/server";
 
 world.afterEvents.playerSpawn.subscribe((eventData) => {

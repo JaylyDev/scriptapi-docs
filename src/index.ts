@@ -15,6 +15,7 @@ const scriptModules = [
   "@minecraft/server-net",
   "@minecraft/server-admin",
   "@minecraft/server-gametest",
+  "@minecraft/server-editor",
 ];
 
 const bundleModules = [
