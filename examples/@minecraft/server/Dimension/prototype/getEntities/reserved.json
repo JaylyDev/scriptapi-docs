@@ -1,5 +1,7 @@
 {
   "reserved_files": [
+    "bounceSkeletons.ts",
+    "tagsQuery.ts",
     "testThatEntityIsFeatherItem.ts"
   ]
 }
