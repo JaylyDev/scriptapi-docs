@@ -7,7 +7,6 @@
    Copyright (c) Microsoft Corporation.
    ***************************************************************************** */
 /**
- * @beta
  * @packageDocumentation
  * Contains many types related to manipulating a Minecraft
  * world, including entities, blocks, dimensions, and more.
@@ -16,7 +15,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server",
- *   "version": "1.4.0-internal.1.20.10-preview.24"
+ *   "version": "1.3.0"
  * }
  * ```
  *
@@ -40,13 +39,50 @@ export enum CompoundBlockVolumeAction {
 
 /**
  * @beta
+ * A general purpose relative direction enumeration.
  */
 export enum Direction {
+    /**
+     * @beta
+     * @remarks
+     * Returns the block beneath (y - 1) of this item.
+     *
+     */
     Down = 'Down',
+    /**
+     * @beta
+     * @remarks
+     * Returns the block to the east (x + 1) of this item.
+     *
+     */
     East = 'East',
+    /**
+     * @beta
+     * @remarks
+     * Returns the block to the east (z + 1) of this item.
+     *
+     */
     North = 'North',
+    /**
+     * @beta
+     * @remarks
+     * Returns the block to the south (z - 1) of this item.
+     *
+     */
     South = 'South',
+    /**
+     * @beta
+     * @remarks
+     * Returns the block above (y + 1) of this item.
+     *
+     */
     Up = 'Up',
+    /**
+     * @beta
+     * @remarks
+     * Returns the block to the west (x - 1) of this item.
+     *
+     */
     West = 'West',
 }
 
@@ -81,9 +117,6 @@ export enum DyeColor {
     Yellow = 'Yellow',
 }
 
-/**
- * @beta
- */
 export enum EntityDamageCause {
     anvil = 'anvil',
     blockExplosion = 'blockExplosion',
@@ -120,21 +153,82 @@ export enum EntityDamageCause {
 
 /**
  * @beta
+ * Describes the lifetime state of an Entity. For example,
+ * Entities can be loaded or unloaded depending on whether
+ * their chunks are loaded or when they move across dimensions.
  */
 export enum EntityLifetimeState {
+    /**
+     * @beta
+     * @remarks
+     * Corresponding object is loaded.
+     *
+     */
     Loaded = 'Loaded',
+    /**
+     * @beta
+     * @remarks
+     * Corresponding object is now unloaded. Unloaded entities
+     * cannot be manipulated. However, if an unloaded Entity later
+     * reloads, it becomes valid and can once again be manipulated.
+     *
+     */
     Unloaded = 'Unloaded',
 }
 
 /**
  * @beta
+ * The equipment slot of the mob. This includes armor, offhand
+ * and mainhand slots.
  */
 export enum EquipmentSlot {
+    /**
+     * @beta
+     * @remarks
+     * The chest slot. This slot is used to hold items such as
+     * Chestplate or Elytra.
+     *
+     */
     chest = 'chest',
+    /**
+     * @beta
+     * @remarks
+     * The feet slot. This slot is used to hold items such as
+     * Boots.
+     *
+     */
     feet = 'feet',
+    /**
+     * @beta
+     * @remarks
+     * The head slot. This slot is used to hold items such as
+     * Helmets or Carved Pumpkins.
+     *
+     */
     head = 'head',
+    /**
+     * @beta
+     * @remarks
+     * The legs slot. This slot is used to hold items such as
+     * Leggings.
+     *
+     */
     legs = 'legs',
+    /**
+     * @beta
+     * @remarks
+     * The mainhand slot. For players, the mainhand slot refers to
+     * the currently active hotbar slot.
+     *
+     */
     mainhand = 'mainhand',
+    /**
+     * @beta
+     * @remarks
+     * The offhand slot. This slot is used to hold items such as
+     * shields and maps.
+     *
+     */
     offhand = 'offhand',
 }
 
@@ -175,12 +269,10 @@ export enum FluidType {
 }
 
 /**
- * @beta
  * Represents a game mode for the current world experience.
  */
 export enum GameMode {
     /**
-     * @beta
      * @remarks
      * World is in a more locked-down experience, where blocks may
      * not be manipulated.
@@ -188,7 +280,6 @@ export enum GameMode {
      */
     adventure = 'adventure',
     /**
-     * @beta
      * @remarks
      * World is in a full creative mode. In creative mode, the
      * player has all the resources available in the item selection
@@ -200,9 +291,19 @@ export enum GameMode {
      *
      */
     creative = 'creative',
+    /**
+     * @remarks
+     * World is in spectator mode. In spectator mode, spectators
+     * are always flying and cannot become grounded. Spectators can
+     * pass through solid blocks and entities without any
+     * collisions, and cannot use items or interact with blocks or
+     * mobs. Spectators cannot be seen by mobs or other players,
+     * except for other spectators; spectators appear as a
+     * transparent floating head.
+     *
+     */
     spectator = 'spectator',
     /**
-     * @beta
      * @remarks
      * World is in a survival mode, where players can take damage
      * and entities may not be peaceful. Survival mode is where the
@@ -215,11 +316,27 @@ export enum GameMode {
 }
 
 /**
- * @beta
+ * Describes how an an item can be moved within a container.
  */
 export enum ItemLockMode {
+    /**
+     * @remarks
+     * The item cannot be dropped or crafted with.
+     *
+     */
     inventory = 'inventory',
+    /**
+     * @remarks
+     * The item has no container restrictions.
+     *
+     */
     none = 'none',
+    /**
+     * @remarks
+     * The item cannot be moved from its slot, dropped or crafted
+     * with.
+     *
+     */
     slot = 'slot',
 }
 
@@ -279,11 +396,39 @@ export enum ScoreboardIdentityType {
 
 /**
  * @beta
+ * Describes where the script event originated from.
  */
 export enum ScriptEventSource {
+    /**
+     * @beta
+     * @remarks
+     * The script event originated from a Block such as a Command
+     * Block.
+     *
+     */
     Block = 'Block',
+    /**
+     * @beta
+     * @remarks
+     * The script event originated from an Entity such as a Player,
+     * Command Block Minecart or Animation Controller.
+     *
+     */
     Entity = 'Entity',
+    /**
+     * @beta
+     * @remarks
+     * The script event originated from an NPC dialogue.
+     *
+     */
     NPCDialogue = 'NPCDialogue',
+    /**
+     * @beta
+     * @remarks
+     * The script event originated from the server, such as from a
+     * runCommand API call or a dedicated server console.
+     *
+     */
     Server = 'Server',
 }
 
@@ -310,6 +455,8 @@ export enum SignSide {
 
 /**
  * @beta
+ * Provides numeric values for common periods in the Minecraft
+ * day.
  */
 export enum TimeOfDay {
     Day = 1000,
@@ -355,7 +502,6 @@ export enum WeatherType {
 }
 
 /**
- * @beta
  * Represents a block in a dimension. A block represents a
  * unique X, Y, and Z within a dimension and get/sets the state
  * of the block at that location. This type was significantly
@@ -446,7 +592,6 @@ export class Block {
      */
     canPlace(blockToPlace: BlockPermutation | BlockType, faceToPlaceOn?: Direction): boolean;
     /**
-     * @beta
      * @remarks
      * Gets additional configuration properties (a component) for
      * specific capabilities of particular blocks - for example, an
@@ -553,6 +698,13 @@ export class Block {
     isSolid(): boolean;
     /**
      * @beta
+     * @remarks
+     * Returns true if this reference to a block is still valid
+     * (for example, if the block is unloaded, references to that
+     * block will no longer be valid.)
+     *
+     * @returns
+     * True if this block object is still working and valid.
      */
     isValid(): boolean;
     /**
@@ -673,14 +825,12 @@ export class BlockBreakAfterEventSignal extends IBlockBreakAfterEventSignal {
 }
 
 /**
- * @beta
  * Base type for components associated with blocks.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class BlockComponent extends Component {
     private constructor();
     /**
-     * @beta
      * @remarks
      * Block instance that this component pertains to.
      *
@@ -689,7 +839,6 @@ export class BlockComponent extends Component {
 }
 
 /**
- * @beta
  * Contains information regarding an event that impacts a
  * specific block.
  */
@@ -743,7 +892,6 @@ export class BlockExplodeAfterEventSignal extends IBlockExplodeAfterEventSignal 
 }
 
 /**
- * @beta
  * Represents the inventory of a block in the world. Used with
  * blocks like chests.
  */
@@ -757,12 +905,6 @@ export class BlockInventoryComponent extends BlockComponent {
      * @throws This property can throw when used.
      */
     readonly container: Container;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:inventory.
-     *
-     */
     static readonly componentId = 'minecraft:inventory';
 }
 
@@ -774,12 +916,6 @@ export class BlockInventoryComponent extends BlockComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class BlockLavaContainerComponent extends BlockLiquidContainerComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:lavaContainer.
-     *
-     */
     static readonly componentId = 'minecraft:lavaContainer';
 }
 
@@ -837,11 +973,10 @@ export class BlockLocationIterator implements Iterable<Vector3> {
 }
 
 /**
- * @beta
  * Contains the combination of type {@link BlockType} and
  * properties (also sometimes called block state) which
  * describe a block (but does not belong to a specific {@link
- * Block}). This type was introduced as of version 1.17.10.21.
+ * Block}).
  */
 export class BlockPermutation {
     private constructor();
@@ -956,6 +1091,46 @@ export class BlockPermutation {
      * @param blockName
      * Identifier of the block to check.
      * @throws This function can throw errors.
+     * @example addBlockColorCube.ts
+     * ```typescript
+     *   const allColorNames: string[] = [
+     *     "white",
+     *     "orange",
+     *     "magenta",
+     *     "light_blue",
+     *     "yellow",
+     *     "lime",
+     *     "pink",
+     *     "gray",
+     *     "silver",
+     *     "cyan",
+     *     "purple",
+     *     "blue",
+     *     "brown",
+     *     "green",
+     *     "red",
+     *     "black",
+     *   ];
+     *
+     *   const cubeDim = 7;
+     *
+     *   let colorIndex = 0;
+     *
+     *   for (let x = 0; x <= cubeDim; x++) {
+     *     for (let y = 0; y <= cubeDim; y++) {
+     *       for (let z = 0; z <= cubeDim; z++) {
+     *         colorIndex++;
+     *         overworld
+     *           .getBlock({ x: targetLocation.x + x, y: targetLocation.y + y, z: targetLocation.z + z })
+     *           ?.setPermutation(
+     *             mc.BlockPermutation.resolve("minecraft:wool", {
+     *               color: allColorNames[colorIndex % allColorNames.length],
+     *             })
+     *           );
+     *       }
+     *     }
+     *   }
+     * ```
      */
     static resolve(blockName: string, states?: Record<string, boolean | number | string>): BlockPermutation;
 }
@@ -1004,11 +1179,6 @@ export class BlockPistonComponent extends BlockComponent {
      * @throws This property can throw when used.
      */
     readonly isRetracting: boolean;
-    /**
-     * @remarks
-     * Identifier of this component.
-     *
-     */
     static readonly componentId = 'minecraft:piston';
     /**
      * @remarks
@@ -1054,12 +1224,6 @@ export class BlockPlaceAfterEventSignal extends IBlockPlaceAfterEventSignal {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class BlockPotionContainerComponent extends BlockLiquidContainerComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:potionContainer.
-     *
-     */
     static readonly componentId = 'minecraft:potionContainer';
     /**
      * @remarks
@@ -1079,12 +1243,6 @@ export class BlockPotionContainerComponent extends BlockLiquidContainerComponent
 // @ts-ignore Class inheritance allowed for native defined classes
 export class BlockRecordPlayerComponent extends BlockComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:recordPlayer.
-     *
-     */
     static readonly componentId = 'minecraft:recordPlayer';
     /**
      * @remarks
@@ -1131,12 +1289,6 @@ export class BlockSignComponent extends BlockComponent {
      * @throws This property can throw when used.
      */
     readonly isWaxed: boolean;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:sign.
-     *
-     */
     static readonly componentId = 'minecraft:sign';
     /**
      * @remarks
@@ -1252,12 +1404,6 @@ export class BlockSignComponent extends BlockComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class BlockSnowContainerComponent extends BlockLiquidContainerComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:snowContainer.
-     *
-     */
     static readonly componentId = 'minecraft:snowContainer';
 }
 
@@ -1473,12 +1619,6 @@ export class BlockVolumeUtils {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class BlockWaterContainerComponent extends BlockLiquidContainerComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:waterContainer.
-     *
-     */
     static readonly componentId = 'minecraft:waterContainer';
     /**
      * @remarks
@@ -1640,7 +1780,6 @@ export class BoundingBoxUtils {
 }
 
 /**
- * @beta
  * Contains information related to changes to a button push.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -1655,7 +1794,6 @@ export class ButtonPushAfterEvent extends BlockEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to when a button is
  * pushed.
  */
@@ -1762,7 +1900,6 @@ export class CommandResult {
 }
 
 /**
- * @beta
  * Base class for downstream Component implementations.
  */
 export class Component {
@@ -1775,6 +1912,14 @@ export class Component {
     readonly typeId: string;
     /**
      * @beta
+     * @remarks
+     * Returns whether the component is valid. A component is
+     * considered valid if its owner is valid, in addition to any
+     * addition to any additional validation required by the
+     * component.
+     *
+     * @returns
+     * Whether the component is valid.
      */
     isValid(): boolean;
 }
@@ -1944,7 +2089,6 @@ export class CompoundBlockVolume {
 }
 
 /**
- * @beta
  * Represents a container that can hold sets of items. Used
  * with entities such as Players, Chest Minecarts, Llamas, and
  * more.
@@ -1982,6 +2126,22 @@ export class Container {
      * @param itemStack
      * The stack of items to add.
      * @throws This function can throw errors.
+     * @example add_diamond_sword.ts
+     * ```ts
+     * import {
+     *     EntityInventoryComponent,
+     *     ItemStack,
+     *     MinecraftItemTypes,
+     *     world,
+     * } from "@minecraft/server";
+     * for (const player of world.getAllPlayers()) {
+     *     const inventory = player.getComponent(
+     *         "inventory"
+     *     ) as EntityInventoryComponent;
+     *     const item = new ItemStack(MinecraftItemTypes.diamondSword, 10);
+     *     inventory.container.addItem(item);
+     * }
+     * ```
      */
     addItem(itemStack: ItemStack): ItemStack;
     /**
@@ -2031,6 +2191,11 @@ export class Container {
     getSlot(slot: number): ContainerSlot;
     /**
      * @beta
+     * @remarks
+     * Returns whether a container object (or the entity or block
+     * that this container is associated with) is still available
+     * for use in this context.
+     *
      */
     isValid(): boolean;
     /**
@@ -2075,6 +2240,22 @@ export class Container {
      * @throws
      * Throws if the container is invalid or if the `slot` index is
      * out of bounds.
+     * @example set_mainhand.ts
+     * ```ts
+     * import {
+     *     EntityInventoryComponent,
+     *     ItemStack,
+     *     MinecraftItemTypes,
+     *     world,
+     * } from "@minecraft/server";
+     * for (const player of world.getAllPlayers()) {
+     *     const inventory = player.getComponent(
+     *         "inventory"
+     *     ) as EntityInventoryComponent;
+     *     const item = new ItemStack(MinecraftItemTypes.diamondSword, 10);
+     *     inventory.container.setItem(0, item);
+     * }
+     * ```
      */
     setItem(slot: number, itemStack?: ItemStack): void;
     /**
@@ -2524,41 +2705,37 @@ export class Dimension {
      * @throws This function can throw errors.
      * @example createExplosion.ts
      * ```typescript
-     *   overworld.createExplosion(targetLocation, 10, new mc.ExplosionOptions());
+     *   const overworld = mc.world.getDimension("overworld");
+     *
+     *   log("Creating an explosion of radius 10.");
+     *   overworld.createExplosion(targetLocation, 10);
      * ```
      * @example createFireAndWaterExplosions.ts
      * ```typescript
-     * const explosionLoc: mc.Vector3 = { x: targetLocation.x + 0.5, y: targetLocation.y + 0.5, z: targetLocation.z + 0.5 };
+     *   const overworld = mc.world.getDimension("overworld");
      *
-     * const fireExplosionOptions = new mc.ExplosionOptions();
+     *   const explosionLoc = { x: targetLocation.x + 0.5, y: targetLocation.y + 0.5, z: targetLocation.z + 0.5};
      *
-     * // Explode with fire
-     * fireExplosionOptions.causesFire = true;
+     *   log("Creating an explosion of radius 15 that causes fire.");
+     *   overworld.createExplosion(explosionLoc, 15, { causesFire: true });
      *
-     * overworld.createExplosion(explosionLoc, 15, fireExplosionOptions);
-     * const waterExplosionOptions = new mc.ExplosionOptions();
+     *   const belowWaterLoc = { x: targetLocation.x + 3, y: targetLocation.y + 1,z: targetLocation.z + 3};
      *
-     * // Explode in water
-     * waterExplosionOptions.allowUnderwater = true;
-     *
-     * const belowWaterLoc: mc.Vector3 = { x: targetLocation.x + 3, y: targetLocation.y + 1, z: targetLocation.z + 3 };
-     *
-     * overworld.createExplosion(belowWaterLoc, 10, waterExplosionOptions);
+     *   log("Creating an explosion of radius 10 that can go underwater.");
+     *   overworld.createExplosion(belowWaterLoc, 10, { allowUnderwater: true });
      * ```
      * @example createNoBlockExplosion.ts
      * ```typescript
-     * const explosionOptions = new mc.ExplosionOptions();
+     *   const overworld = mc.world.getDimension("overworld");
      *
-     * // Start by exploding without breaking blocks
-     * explosionOptions.breaksBlocks = false;
+     *   const explodeNoBlocksLoc = {
+     *     x: Math.floor(targetLocation.x + 1),
+     *     y: Math.floor(targetLocation.y + 2),
+     *     z: Math.floor(targetLocation.z + 1)
+     *   };
      *
-     * const explodeNoBlocksLoc: mc.Vector3 = {
-     *   x: Math.floor(targetLocation.x + 1),
-     *   y: Math.floor(targetLocation.y + 2),
-     *   z: Math.floor(targetLocation.z + 1),
-     * };
-     *
-     * overworld.createExplosion(explodeNoBlocksLoc, 15, explosionOptions);
+     *   log("Creating an explosion of radius 15 that does not break blocks.");
+     *   overworld.createExplosion(explodeNoBlocksLoc, 15, { breaksBlocks: false });
      * ```
      */
     createExplosion(location: Vector3, radius: number, explosionOptions?: ExplosionOptions): void;
@@ -2585,15 +2762,23 @@ export class Dimension {
      */
     fillBlocks(begin: Vector3, end: Vector3, block: BlockPermutation | BlockType, options?: BlockFillOptions): number;
     /**
-     * @beta
      * @remarks
      * Returns a block instance at the given location.
      *
      * @param location
      * The location at which to return a block.
      * @returns
-     * Block at the specified location.
-     * @throws This function can throw errors.
+     * Block at the specified location, or 'undefined' if asking
+     * for a block at an unloaded chunk.
+     * @throws
+     * PositionInUnloadedChunkError: Exception thrown when trying
+     * to interact with a Block object that isn't in a loaded and
+     * ticking chunk anymore
+     *
+     * PositionOutOfWorldBoundariesError: Exception thrown when
+     * trying to interact with a position outside of dimension
+     * height range
+     *
      */
     getBlock(location: Vector3): Block | undefined;
     /**
@@ -2611,7 +2796,6 @@ export class Dimension {
      */
     getBlockFromRay(location: Vector3, direction: Vector3, options?: BlockRaycastOptions): BlockRaycastHit | undefined;
     /**
-     * @beta
      * @remarks
      * Returns a set of entities based on a set of conditions
      * defined via the EntityQueryOptions set of filter criteria.
@@ -2622,28 +2806,64 @@ export class Dimension {
      * @returns
      * An entity array.
      * @throws This function can throw errors.
+     * @example bounceSkeletons.ts
+     * ```typescript
+     *   let mobs = ["creeper", "skeleton", "sheep"];
+     *
+     *   // create some sample mob data
+     *   for (let i = 0; i < 10; i++) {
+     *     overworld.spawnEntity(mobs[i % mobs.length], targetLocation);
+     *   }
+     *
+     *   let eqo: mc.EntityQueryOptions = {
+     *     type: "skeleton",
+     *   };
+     *
+     *   for (let entity of overworld.getEntities(eqo)) {
+     *     entity.applyKnockback(0, 0, 0, 1);
+     *   }
+     * ```
+     * @example tagsQuery.ts
+     * ```typescript
+     *   let mobs = ["creeper", "skeleton", "sheep"];
+     *
+     *   // create some sample mob data
+     *   for (let i = 0; i < 10; i++) {
+     *     let mobTypeId = mobs[i % mobs.length];
+     *     let entity = overworld.spawnEntity(mobTypeId, targetLocation);
+     *     entity.addTag("mobparty." + mobTypeId);
+     *   }
+     *
+     *   let eqo: mc.EntityQueryOptions = {
+     *     tags: ["mobparty.skeleton"],
+     *   };
+     *
+     *   for (let entity of overworld.getEntities(eqo)) {
+     *     entity.kill();
+     *   }
+     * ```
      * @example testThatEntityIsFeatherItem.ts
      * ```typescript
-     * const query = {
-     *   type: "item",
-     *   location: targetLocation,
-     * };
-     * const items = overworld.getEntities(query);
+     *   const overworld = mc.world.getDimension("overworld");
      *
-     * for (const item of items) {
-     *   const itemComp = item.getComponent("item") as any;
+     *   const items = overworld.getEntities({
+     *     location: targetLocation,
+     *     maxDistance: 20,
+     *   });
      *
-     *   if (itemComp) {
-     *     if (itemComp.itemStack.id.endsWith("feather")) {
-     *       console.log("Success! Found a feather", 1);
+     *   for (const item of items) {
+     *     const itemComp = item.getComponent("item") as mc.EntityItemComponent;
+     *
+     *     if (itemComp) {
+     *       if (itemComp.itemStack.typeId.endsWith("feather")) {
+     *         log("Success! Found a feather", 1);
+     *       }
      *     }
      *   }
-     * }
      * ```
      */
     getEntities(options?: EntityQueryOptions): Entity[];
     /**
-     * @beta
      * @remarks
      * Returns a set of entities at a particular location.
      *
@@ -2664,7 +2884,6 @@ export class Dimension {
      */
     getEntitiesFromRay(location: Vector3, direction: Vector3, options?: EntityRaycastOptions): EntityRaycastHit[];
     /**
-     * @beta
      * @remarks
      * Returns a set of players based on a set of conditions
      * defined via the EntityQueryOptions set of filter criteria.
@@ -2678,11 +2897,24 @@ export class Dimension {
      */
     getPlayers(options?: EntityQueryOptions): Player[];
     /**
-     * @beta
      * @remarks
+     * Runs a command synchronously using the context of the
+     * broader dimenion.
+     *
      * This function can't be called in read-only mode.
      *
-     * @throws This function can throw errors.
+     * @param commandString
+     * Command to run. Note that command strings should not start
+     * with slash.
+     * @returns
+     * Returns a command result with a count of successful values
+     * from the command.
+     * @throws
+     * Throws an exception if the command fails due to incorrect
+     * parameters or command syntax, or in erroneous cases for the
+     * command. Note that in many cases, if the command does not
+     * operate (e.g., a target selector found no matches), this
+     * method will not throw an exception.
      */
     runCommand(commandString: string): CommandResult;
     /**
@@ -2698,18 +2930,26 @@ export class Dimension {
      * @returns
      * For commands that return data, returns a CommandResult with
      * an indicator of command results.
-     * @throws This function can throw errors.
+     * @throws
+     * Throws an exception if the command fails due to incorrect
+     * parameters or command syntax, or in erroneous cases for the
+     * command. Note that in many cases, if the command does not
+     * operate (e.g., a target selector found no matches), this
+     * method will not throw an exception.
      */
     runCommandAsync(commandString: string): Promise<CommandResult>;
     /**
      * @beta
      * @remarks
+     * Sets the current weather within the dimesion
+     *
      * This function can't be called in read-only mode.
      *
+     * @param weatherType
+     * Set of weather to apply.
      */
     setWeather(weatherType: WeatherType): void;
     /**
-     * @beta
      * @remarks
      * Creates a new entity (e.g., a mob) at the specified
      * location.
@@ -2726,45 +2966,46 @@ export class Dimension {
      * @throws This function can throw errors.
      * @example createOldHorse.ts
      * ```typescript
-     *   // create a horse and trigger the 'ageable_grow_up' event, ensuring the horse is created as an adult
+     *   const overworld = mc.world.getDimension("overworld");
+     *
+     *   log("Create a horse and triggering the 'ageable_grow_up' event, ensuring the horse is created as an adult");
      *   overworld.spawnEntity("minecraft:horse<minecraft:ageable_grow_up>", targetLocation);
      * ```
      * @example quickFoxLazyDog.ts
      * ```typescript
-     * const fox = overworld.spawnEntity("minecraft:fox", {
-     *   x: targetLocation.x + 1,
-     *   y: targetLocation.y + 2,
-     *   z: targetLocation.z + 3,
-     * });
-     * fox.addEffect(mc.MinecraftEffectTypes.Speed, 10, 20);
-     * log("Created a fox.");
+     *   const overworld = mc.world.getDimension("overworld");
      *
-     * const wolf = overworld.spawnEntity("minecraft:wolf", {
-     *   x: targetLocation.x + 4,
-     *   y: targetLocation.y + 2,
-     *   z: targetLocation.z + 3,
-     * });
-     * wolf.addEffect(mc.MinecraftEffectTypes.Slowness, 10, 20);
-     * wolf.isSneaking = true;
-     * log("Created a sneaking wolf.", 1);
-     * ```
-     * @example trapTick.ts
-     * ```typescript
-     *   let ticks = 0;
-     *
-     *   mc.world.events.tick.subscribe((event: mc.TickEvent) => {
-     *     ticks++;
-     *
-     *     // Minecraft runs at 20 ticks per second
-     *     if (ticks % 1200 === 0) {
-     *       overworld.runCommand("say Another minute passes...");
-     *     }
+     *   const fox = overworld.spawnEntity("minecraft:fox", {
+     *     x: targetLocation.x + 1,
+     *     y: targetLocation.y + 2,
+     *     z: targetLocation.z + 3,
      *   });
+     *
+     *   fox.addEffect("speed", 10, {
+     *     amplifier: 2,
+     *   });
+     *   log("Created a fox.");
+     *
+     *   const wolf = overworld.spawnEntity("minecraft:wolf", {
+     *     x: targetLocation.x + 4,
+     *     y: targetLocation.y + 2,
+     *     z: targetLocation.z + 3,
+     *   });
+     *   wolf.addEffect("slowness", 10, {
+     *     amplifier: 2,
+     *   });
+     *   wolf.isSneaking = true;
+     *   log("Created a sneaking wolf.", 1);
+     * ```
+     * @example triggerEvent.ts
+     * ```typescript
+     *   const creeper = overworld.spawnEntity("minecraft:creeper", targetLocation);
+     *
+     *   creeper.triggerEvent("minecraft:start_exploding_forced");
      * ```
      */
     spawnEntity(identifier: string, location: Vector3): Entity;
     /**
-     * @beta
      * @remarks
      * Creates a new item stack as an entity at the specified
      * location.
@@ -2778,24 +3019,31 @@ export class Dimension {
      * @throws This function can throw errors.
      * @example itemStacks.ts
      * ```typescript
-     * const oneItemLoc: mc.Vector3 = { x: 3, y: 2, z: 1 };
-     * const fiveItemsLoc: mc.Vector3 = { x: 1, y: 2, z: 1 };
-     * const diamondPickaxeLoc: mc.Vector3 = { x: 2, y: 2, z: 4 };
+     * const overworld = mc.world.getDimension('overworld');
      *
-     * const oneEmerald = new mc.ItemStack(mc.MinecraftItemTypes.emerald, 1, 0);
-     * const onePickaxe = new mc.ItemStack(mc.MinecraftItemTypes.diamondPickaxe, 1, 0);
-     * const fiveEmeralds = new mc.ItemStack(mc.MinecraftItemTypes.emerald, 5, 0);
+     * const oneItemLoc = { x: targetLocation.x + targetLocation.y + 3, y: 2, z: targetLocation.z + 1 };
+     * const fiveItemsLoc = { x: targetLocation.x + 1, y: targetLocation.y + 2, z: targetLocation.z + 1 };
+     * const diamondPickaxeLoc = { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 4 };
      *
+     * const oneEmerald = new mc.ItemStack(mc.MinecraftItemTypes.Emerald, 1);
+     * const onePickaxe = new mc.ItemStack(mc.MinecraftItemTypes.DiamondPickaxe, 1);
+     * const fiveEmeralds = new mc.ItemStack(mc.MinecraftItemTypes.Emerald, 5);
+     *
+     * log(`Spawning an emerald at (${oneItemLoc.x}, ${oneItemLoc.y}, ${oneItemLoc.z})`);
      * overworld.spawnItem(oneEmerald, oneItemLoc);
+     *
+     * log(`Spawning five emeralds at (${fiveItemsLoc.x}, ${fiveItemsLoc.y}, ${fiveItemsLoc.z})`);
      * overworld.spawnItem(fiveEmeralds, fiveItemsLoc);
+     *
+     * log(`Spawning a diamond pickaxe at (${diamondPickaxeLoc.x}, ${diamondPickaxeLoc.y}, ${diamondPickaxeLoc.z})`);
      * overworld.spawnItem(onePickaxe, diamondPickaxeLoc);
      * ```
      * @example spawnItem.ts
      * ```typescript
-     *   const featherItem = new mc.ItemStack(mc.MinecraftItemTypes.feather, 1, 0);
+     * const featherItem = new mc.ItemStack(mc.MinecraftItemTypes.Feather, 1);
      *
-     *   overworld.spawnItem(featherItem, targetLocation);
-     *   log("New feather created!");
+     * overworld.spawnItem(featherItem, targetLocation);
+     * log(`New feather created at ${targetLocation.x}, ${targetLocation.y}, ${targetLocation.z}!`);
      * ```
      */
     spawnItem(itemStack: ItemStack, location: Vector3): Entity;
@@ -2817,6 +3065,21 @@ export class Dimension {
      * @returns
      * Newly created entity at the specified location.
      * @throws This function can throw errors.
+     * @example spawnParticle.ts
+     * ```typescript
+     *   for (let i = 0; i < 100; i++) {
+     *     const molang = new mc.MolangVariableMap();
+     *
+     *     molang.setColorRGB("variable.color", { red: Math.random(), green: Math.random(), blue: Math.random(), alpha: 1 });
+     *
+     *     let newLocation = {
+     *       x: targetLocation.x + Math.floor(Math.random() * 8) - 4,
+     *       y: targetLocation.y + Math.floor(Math.random() * 8) - 4,
+     *       z: targetLocation.z + Math.floor(Math.random() * 8) - 4,
+     *     };
+     *     overworld.spawnParticle("minecraft:colored_flame_particle", newLocation, molang);
+     *   }
+     * ```
      */
     spawnParticle(effectName: string, location: Vector3, molangVariables: MolangVariableMap): void;
 }
@@ -2852,7 +3115,6 @@ export class DynamicPropertiesDefinition {
 }
 
 /**
- * @beta
  * Represents an effect - like poison - that has been added to
  * an Entity.
  */
@@ -2891,6 +3153,12 @@ export class Effect {
      * @throws This property can throw when used.
      */
     readonly typeId: string;
+    /**
+     * @remarks
+     * Returns whether an effect instance is available for use in
+     * this context.
+     *
+     */
     isValid(): boolean;
 }
 
@@ -2938,7 +3206,6 @@ export class EffectAddAfterEventSignal extends IEffectAddAfterEventSignal {
 }
 
 /**
- * @beta
  * Represents a type of effect - like poison - that can be
  * applied to an entity.
  */
@@ -3150,6 +3417,7 @@ export class EnchantmentType {
 
 /**
  * @beta
+ * Provides a list of enchantment types.
  */
 export class EnchantmentTypes {
     private constructor();
@@ -3174,7 +3442,6 @@ export class EnchantmentTypes {
 export class Entity {
     private constructor();
     /**
-     * @beta
      * @remarks
      * Dimension that the entity is currently within.
      *
@@ -3196,7 +3463,9 @@ export class Entity {
      * Unique identifier of the entity. This identifier is intended
      * to be consistent across loads of a world instance. No
      * meaning should be inferred from the value and structure of
-     * this unique identifier - do not parse or interpret it.
+     * this unique identifier - do not parse or interpret it. This
+     * property is accessible even if {@link Entity.isValid} is
+     * false.
      *
      * @throws This property can throw when used.
      */
@@ -3276,7 +3545,6 @@ export class Entity {
      */
     readonly lifetimeState: EntityLifetimeState;
     /**
-     * @beta
      * @remarks
      * Current location of the entity.
      *
@@ -3284,7 +3552,6 @@ export class Entity {
      */
     readonly location: Vector3;
     /**
-     * @beta
      * @remarks
      * Given name of the entity.
      *
@@ -3312,13 +3579,13 @@ export class Entity {
     /**
      * @remarks
      * Unique identifier of the type of the entity - for example,
-     * 'minecraft:skeleton'.
+     * 'minecraft:skeleton'. This property is accessible even if
+     * {@link Entity.isValid} is false.
      *
      * @throws This property can throw when used.
      */
     readonly typeId: string;
     /**
-     * @beta
      * @remarks
      * Adds or updates an effect, like poison, to the entity.
      *
@@ -3350,42 +3617,67 @@ export class Entity {
      * ```
      * @example quickFoxLazyDog.ts
      * ```typescript
-     * const fox = overworld.spawnEntity('minecraft:fox', {
+     *   const overworld = mc.world.getDimension("overworld");
+     *
+     *   const fox = overworld.spawnEntity("minecraft:fox", {
      *     x: targetLocation.x + 1,
      *     y: targetLocation.y + 2,
      *     z: targetLocation.z + 3,
-     * });
-     * fox.addEffect(mc.MinecraftEffectTypes.Speed, 10, { amplifier: 20 });
-     * log('Created a fox.');
+     *   });
      *
-     * const wolf = overworld.spawnEntity('minecraft:wolf', {
+     *   fox.addEffect("speed", 10, {
+     *     amplifier: 2,
+     *   });
+     *   log("Created a fox.");
+     *
+     *   const wolf = overworld.spawnEntity("minecraft:wolf", {
      *     x: targetLocation.x + 4,
      *     y: targetLocation.y + 2,
      *     z: targetLocation.z + 3,
-     * });
-     * wolf.addEffect(mc.MinecraftEffectTypes.Slowness, 10, { amplifier: 20 });
-     * wolf.isSneaking = true;
-     * log('Created a sneaking wolf.', 1);
+     *   });
+     *   wolf.addEffect("slowness", 10, {
+     *     amplifier: 2,
+     *   });
+     *   wolf.isSneaking = true;
+     *   log("Created a sneaking wolf.", 1);
      * ```
      */
     addEffect(effectType: EffectType | string, duration: number, options?: EntityEffectOptions): void;
     /**
-     * @beta
      * @remarks
      * Adds a specified tag to an entity.
      *
      * This function can't be called in read-only mode.
      *
      * @param tag
-     * Content of the tag to add.
+     * Content of the tag to add. The tag must be less than 256
+     * characters.
      * @returns
      * Returns true if the tag was added successfully. This can
      * fail if the tag already exists on the entity.
      * @throws This function can throw errors.
+     * @example tagsQuery.ts
+     * ```typescript
+     *   let mobs = ["creeper", "skeleton", "sheep"];
+     *
+     *   // create some sample mob data
+     *   for (let i = 0; i < 10; i++) {
+     *     let mobTypeId = mobs[i % mobs.length];
+     *     let entity = overworld.spawnEntity(mobTypeId, targetLocation);
+     *     entity.addTag("mobparty." + mobTypeId);
+     *   }
+     *
+     *   let eqo: mc.EntityQueryOptions = {
+     *     tags: ["mobparty.skeleton"],
+     *   };
+     *
+     *   for (let entity of overworld.getEntities(eqo)) {
+     *     entity.kill();
+     *   }
+     * ```
      */
     addTag(tag: string): boolean;
     /**
-     * @beta
      * @remarks
      * Applies a set of damage to an entity.
      *
@@ -3402,6 +3694,19 @@ export class Entity {
      * if the entity is invulnerable or if the damage applied is
      * less than or equal to 0.
      * @throws This function can throw errors.
+     * @example applyDamageThenHeal.ts
+     * ```typescript
+     *   const skelly = overworld.spawnEntity("minecraft:skeleton", targetLocation);
+     *
+     *   skelly.applyDamage(19); // skeletons have max damage of 20 so this is a near-death skeleton
+     *
+     *   mc.system.runTimeout(() => {
+     *     let health = skelly.getComponent("health") as mc.EntityHealthComponent;
+     *     log("Skeleton health before heal: " + health.currentValue);
+     *     health.resetToMaxValue();
+     *     log("Skeleton health after heal: " + health.currentValue);
+     *   }, 20);
+     * ```
      * @example damageEntity.js
      * ```js
      * const damageApplied = entity.applyDamage(10);
@@ -3410,7 +3715,6 @@ export class Entity {
      */
     applyDamage(amount: number, options?: EntityApplyDamageByProjectileOptions | EntityApplyDamageOptions): boolean;
     /**
-     * @beta
      * @remarks
      * Applies impulse vector to the current velocity of the
      * entity.
@@ -3420,10 +3724,18 @@ export class Entity {
      * @param vector
      * Impulse vector.
      * @throws This function can throw errors.
+     * @example applyImpulse.ts
+     * ```typescript
+     *   const zombie = overworld.spawnEntity("minecraft:zombie", targetLocation);
+     *
+     *   zombie.clearVelocity();
+     *
+     *   // throw the zombie up in the air
+     *   zombie.applyImpulse({ x: 0, y: 0.5, z: 0 });
+     * ```
      */
     applyImpulse(vector: Vector3): void;
     /**
-     * @beta
      * @remarks
      * Applies impulse vector to the current velocity of the
      * entity.
@@ -3439,10 +3751,26 @@ export class Entity {
      * @param verticalStrength
      * Knockback strength for the vertical vector.
      * @throws This function can throw errors.
+     * @example bounceSkeletons.ts
+     * ```typescript
+     *   let mobs = ["creeper", "skeleton", "sheep"];
+     *
+     *   // create some sample mob data
+     *   for (let i = 0; i < 10; i++) {
+     *     overworld.spawnEntity(mobs[i % mobs.length], targetLocation);
+     *   }
+     *
+     *   let eqo: mc.EntityQueryOptions = {
+     *     type: "skeleton",
+     *   };
+     *
+     *   for (let entity of overworld.getEntities(eqo)) {
+     *     entity.applyKnockback(0, 0, 0, 1);
+     *   }
+     * ```
      */
     applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void;
     /**
-     * @beta
      * @remarks
      * Sets the current velocity of the Entity to zero. Note that
      * this method may not have an impact on Players.
@@ -3450,6 +3778,15 @@ export class Entity {
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
+     * @example applyImpulse.ts
+     * ```typescript
+     *   const zombie = overworld.spawnEntity("minecraft:zombie", targetLocation);
+     *
+     *   zombie.clearVelocity();
+     *
+     *   // throw the zombie up in the air
+     *   zombie.applyImpulse({ x: 0, y: 0.5, z: 0 });
+     * ```
      */
     clearVelocity(): void;
     /**
@@ -3467,6 +3804,33 @@ export class Entity {
      * @returns
      * Returns whether the entity was on fire.
      * @throws This function can throw errors.
+     * @example setOnFire.ts
+     * ```typescript
+     *   const skelly = overworld.spawnEntity("minecraft:skeleton", targetLocation);
+     *
+     *   skelly.setOnFire(20, true);
+     *
+     *   mc.system.runTimeout(() => {
+     *     let onfire = skelly.getComponent("onfire") as mc.EntityOnFireComponent;
+     *     log(onfire.onFireTicksRemaining + " fire ticks remaining.");
+     *
+     *     skelly.extinguishFire(true);
+     *     log("Never mind. Fire extinguished.");
+     *   }, 20);
+     * ```
+     * @example teleport.ts
+     * ```typescript
+     *   const cow = overworld.spawnEntity("minecraft:cow", targetLocation);
+     *
+     *   mc.system.runTimeout(() => {
+     *     cow.teleport(
+     *       { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 2 },
+     *       {
+     *         facingLocation: targetLocation,
+     *       }
+     *     );
+     *   }, 20);
+     * ```
      */
     extinguishFire(useEffects?: boolean): boolean;
     /**
@@ -3497,7 +3861,6 @@ export class Entity {
      */
     getBlockFromViewDirection(options?: BlockRaycastOptions): BlockRaycastHit | undefined;
     /**
-     * @beta
      * @remarks
      * Gets a component (that represents additional capabilities)
      * for an entity.
@@ -3524,7 +3887,6 @@ export class Entity {
      */
     getComponent(componentId: string): EntityComponent | undefined;
     /**
-     * @beta
      * @remarks
      * Returns all components that are both present on this entity
      * and supported by the API.
@@ -3557,7 +3919,6 @@ export class Entity {
      */
     getDynamicProperty(identifier: string): boolean | number | string | undefined;
     /**
-     * @beta
      * @remarks
      * Returns the effect for the specified EffectType on the
      * entity, undefined if the effect is not present, or throws an
@@ -3573,7 +3934,6 @@ export class Entity {
      */
     getEffect(effectType: EffectType | string): Effect | undefined;
     /**
-     * @beta
      * @remarks
      * Returns a set of effects applied to this entity.
      *
@@ -3597,7 +3957,6 @@ export class Entity {
      */
     getEntitiesFromViewDirection(options?: EntityRaycastOptions): EntityRaycastHit[];
     /**
-     * @beta
      * @remarks
      * Returns the current location of the head component of this
      * entity.
@@ -3619,7 +3978,6 @@ export class Entity {
      */
     getRotation(): Vector2;
     /**
-     * @beta
      * @remarks
      * Returns all tags associated with an entity.
      *
@@ -3629,17 +3987,25 @@ export class Entity {
      */
     getTags(): string[];
     /**
-     * @beta
      * @remarks
      * Returns the current velocity vector of the entity.
      *
      * @returns
      * Returns the current velocity vector of the entity.
      * @throws This function can throw errors.
+     * @example getFireworkVelocity.ts
+     * ```typescript
+     *   const fireworkRocket = overworld.spawnEntity("minecraft:fireworks_rocket", targetLocation);
+     *
+     *   mc.system.runTimeout(() => {
+     *     let velocity = fireworkRocket.getVelocity();
+     *
+     *     log("Velocity of firework is: (x: " + velocity.x + ", y:" + velocity.y + ", z:" + velocity.z + ")");
+     *   }, 5);
+     * ```
      */
     getVelocity(): Vector3;
     /**
-     * @beta
      * @remarks
      * Returns the current view direction of the entity.
      *
@@ -3649,7 +4015,6 @@ export class Entity {
      */
     getViewDirection(): Vector3;
     /**
-     * @beta
      * @remarks
      * Returns true if the specified component is present on this
      * entity.
@@ -3664,7 +4029,6 @@ export class Entity {
      */
     hasComponent(componentId: string): boolean;
     /**
-     * @beta
      * @remarks
      * Returns whether an entity has a particular tag.
      *
@@ -3677,10 +4041,16 @@ export class Entity {
     hasTag(tag: string): boolean;
     /**
      * @beta
+     * @remarks
+     * Returns whether the entity can be manipulated by script. A
+     * Player is considered valid when it's EntityLifetimeState is
+     * set to Loaded.
+     *
+     * @returns
+     * Whether the entity is valid.
      */
     isValid(): boolean;
     /**
-     * @beta
      * @remarks
      * Kills this entity. The entity will drop loot as normal.
      *
@@ -3690,6 +4060,25 @@ export class Entity {
      * Returns true if entity can be killed (even if it is already
      * dead), otherwise it returns false.
      * @throws This function can throw errors.
+     * @example tagsQuery.ts
+     * ```typescript
+     *   let mobs = ["creeper", "skeleton", "sheep"];
+     *
+     *   // create some sample mob data
+     *   for (let i = 0; i < 10; i++) {
+     *     let mobTypeId = mobs[i % mobs.length];
+     *     let entity = overworld.spawnEntity(mobTypeId, targetLocation);
+     *     entity.addTag("mobparty." + mobTypeId);
+     *   }
+     *
+     *   let eqo: mc.EntityQueryOptions = {
+     *     tags: ["mobparty.skeleton"],
+     *   };
+     *
+     *   for (let entity of overworld.getEntities(eqo)) {
+     *     entity.kill();
+     *   }
+     * ```
      */
     kill(): boolean;
     /**
@@ -3720,7 +4109,6 @@ export class Entity {
      */
     removeDynamicProperty(identifier: string): boolean;
     /**
-     * @beta
      * @remarks
      * Removes the specified EffectType on the entity, or returns
      * false if the effect is not present.
@@ -3730,14 +4118,12 @@ export class Entity {
      * @param effectType
      * The effect identifier.
      * @returns
-     * Returns true if the effect has been removed, false if the
-     * effect is not present, or will throw an error if the effect
-     * does not exist.
+     * Returns true if the effect has been removed. Returns false
+     * if the effect is not found or does not exist.
      * @throws This function can throw errors.
      */
     removeEffect(effectType: EffectType | string): boolean;
     /**
-     * @beta
      * @remarks
      * Removes a specified tag from an entity.
      *
@@ -3751,7 +4137,6 @@ export class Entity {
      */
     removeTag(tag: string): boolean;
     /**
-     * @beta
      * @remarks
      * Runs a synchronous command on the entity.
      *
@@ -3813,6 +4198,33 @@ export class Entity {
      * is less than or equal to zero, the entity is wet or the
      * entity is immune to fire.
      * @throws This function can throw errors.
+     * @example setOnFire.ts
+     * ```typescript
+     *   const skelly = overworld.spawnEntity("minecraft:skeleton", targetLocation);
+     *
+     *   skelly.setOnFire(20, true);
+     *
+     *   mc.system.runTimeout(() => {
+     *     let onfire = skelly.getComponent("onfire") as mc.EntityOnFireComponent;
+     *     log(onfire.onFireTicksRemaining + " fire ticks remaining.");
+     *
+     *     skelly.extinguishFire(true);
+     *     log("Never mind. Fire extinguished.");
+     *   }, 20);
+     * ```
+     * @example teleport.ts
+     * ```typescript
+     *   const cow = overworld.spawnEntity("minecraft:cow", targetLocation);
+     *
+     *   mc.system.runTimeout(() => {
+     *     cow.teleport(
+     *       { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 2 },
+     *       {
+     *         facingLocation: targetLocation,
+     *       }
+     *     );
+     *   }, 20);
+     * ```
      */
     setOnFire(seconds: number, useEffects?: boolean): boolean;
     /**
@@ -3830,7 +4242,6 @@ export class Entity {
      */
     setRotation(rotation: Vector2): void;
     /**
-     * @beta
      * @remarks
      * Teleports the selected entity to a new location
      *
@@ -3841,6 +4252,25 @@ export class Entity {
      * @param teleportOptions
      * Options regarding the teleport operation.
      * @throws This function can throw errors.
+     * @example teleportMovement.ts
+     * ```typescript
+     *   const pig = overworld.spawnEntity("minecraft:pig", targetLocation);
+     *
+     *   let inc = 1;
+     *   let runId = mc.system.runInterval(() => {
+     *     pig.teleport(
+     *       { x: targetLocation.x + inc / 4, y: targetLocation.y + inc / 4, z: targetLocation.z + inc / 4 },
+     *       {
+     *         facingLocation: targetLocation,
+     *       }
+     *     );
+     *
+     *     if (inc > 100) {
+     *       mc.system.clearRun(runId);
+     *     }
+     *     inc++;
+     *   }, 4);
+     * ```
      * @example teleport.js
      * ```js
      * player.teleport(
@@ -3874,10 +4304,15 @@ export class Entity {
      * Name of the entity type event to trigger. If a namespace is
      * not specified, minecraft: is assumed.
      * @throws This function can throw errors.
+     * @example triggerEvent.ts
+     * ```typescript
+     *   const creeper = overworld.spawnEntity("minecraft:creeper", targetLocation);
+     *
+     *   creeper.triggerEvent("minecraft:start_exploding_forced");
+     * ```
      */
     triggerEvent(eventName: string): void;
     /**
-     * @beta
      * @remarks
      * Attempts to try a teleport, but may not complete the
      * teleport operation (for example, if there are blocks at the
@@ -3922,12 +4357,6 @@ export class EntityAddRiderComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly spawnEvent: string;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:addrider.
-     *
-     */
     static readonly componentId = 'minecraft:addrider';
 }
 
@@ -3955,12 +4384,6 @@ export class EntityAgeableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly growUp: Trigger;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:ageable.
-     *
-     */
     static readonly componentId = 'minecraft:ageable';
     /**
      * @remarks
@@ -3981,17 +4404,48 @@ export class EntityAgeableComponent extends EntityComponent {
 }
 
 /**
- * @beta
+ * This is a base abstract class for any entity component that
+ * centers around a number and can have a minimum, maximum, and
+ * default defined value.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityAttributeComponent extends EntityComponent {
     private constructor();
+    /**
+     * @remarks
+     * Current value of this attribute for this instance.
+     *
+     * @throws This property can throw when used.
+     */
     readonly currentValue: number;
+    /**
+     * @remarks
+     * Returns the default defined value for this attribute.
+     *
+     * @throws This property can throw when used.
+     */
     readonly defaultValue: number;
+    /**
+     * @remarks
+     * Returns the effective max of this attribute given any other
+     * ambient components or factors.
+     *
+     * @throws This property can throw when used.
+     */
     readonly effectiveMax: number;
+    /**
+     * @remarks
+     * Returns the effective min of this attribute given any other
+     * ambient components or factors.
+     *
+     * @throws This property can throw when used.
+     */
     readonly effectiveMin: number;
     /**
      * @remarks
+     * Resets the current value of this attribute to the defined
+     * default value.
+     *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
@@ -3999,6 +4453,9 @@ export class EntityAttributeComponent extends EntityComponent {
     resetToDefaultValue(): void;
     /**
      * @remarks
+     * Resets the current value of this attribute to the maximum
+     * defined value.
+     *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
@@ -4006,6 +4463,9 @@ export class EntityAttributeComponent extends EntityComponent {
     resetToMaxValue(): void;
     /**
      * @remarks
+     * Resets the current value of this attribute to the minimum
+     * defined value.
+     *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
@@ -4013,6 +4473,8 @@ export class EntityAttributeComponent extends EntityComponent {
     resetToMinValue(): void;
     /**
      * @remarks
+     * Sets the current value of this attribute.
+     *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
@@ -4021,7 +4483,6 @@ export class EntityAttributeComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Base class for a family of entity movement events.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -4095,12 +4556,6 @@ export class EntityBreathableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly totalSupply: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:breathable.
-     *
-     */
     static readonly componentId = 'minecraft:breathable';
     /**
      * @remarks
@@ -4129,24 +4584,16 @@ export class EntityBreathableComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that the entity can
  * climb up ladders.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityCanClimbComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:can_climb.
-     *
-     */
     static readonly componentId = 'minecraft:can_climb';
 }
 
 /**
- * @beta
  * When added, this component signifies that the entity can
  * fly, and the pathfinder won't be restricted to paths where a
  * solid block is required underneath it.
@@ -4154,57 +4601,39 @@ export class EntityCanClimbComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityCanFlyComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:can_fly.
-     *
-     */
     static readonly componentId = 'minecraft:can_fly';
 }
 
 /**
- * @beta
  * When added, this component signifies that the entity can
  * power jump like the horse does within Minecraft.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityCanPowerJumpComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:can_power_jump.
-     *
-     */
     static readonly componentId = 'minecraft:can_power_jump';
 }
 
 /**
- * @beta
  * Defines the entity's color. Only works on certain entities
- * that have predefined color values (sheep, llama, shulker).
+ * that have predefined color values (e.g., sheep, llama,
+ * shulker).
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityColorComponent extends EntityComponent {
     private constructor();
     /**
      * @remarks
+     * Value of this particular color.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     value: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:color.
-     *
-     */
     static readonly componentId = 'minecraft:color';
 }
 
 /**
- * @beta
  * Base class for downstream entity components.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -4246,10 +4675,22 @@ export class EntityDefinitionFeedItem {
 
 /**
  * @beta
+ * Contains data related to the death of an entity in the game.
  */
 export class EntityDieAfterEvent {
     private constructor();
+    /**
+     * @remarks
+     * If specified, provides more information on the source of
+     * damage that caused the death of this entity.
+     *
+     */
     readonly damageSource: EntityDamageSource;
+    /**
+     * @remarks
+     * Now-dead entity object.
+     *
+     */
     readonly deadEntity: Entity;
 }
 
@@ -4315,41 +4756,26 @@ export class EntityEquipmentInventoryComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity
  * doesn't take damage from fire.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityFireImmuneComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:fire_immune.
-     *
-     */
     static readonly componentId = 'minecraft:fire_immune';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity can
  * float in liquid blocks.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityFloatsInLiquidComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:floats_in_liquid.
-     *
-     */
     static readonly componentId = 'minecraft:floats_in_liquid';
 }
 
 /**
- * @beta
  * Represents the flying speed of an entity.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -4361,17 +4787,10 @@ export class EntityFlyingSpeedComponent extends EntityComponent {
      *
      */
     value: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:flying_speed.
-     *
-     */
     static readonly componentId = 'minecraft:flying_speed';
 }
 
 /**
- * @beta
  * Defines how much friction affects this entity.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -4383,17 +4802,10 @@ export class EntityFrictionModifierComponent extends EntityComponent {
      *
      */
     value: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:friction_modifier.
-     *
-     */
     static readonly componentId = 'minecraft:friction_modifier';
 }
 
 /**
- * @beta
  * Sets the offset from the ground that the entity is actually
  * at.
  */
@@ -4402,21 +4814,16 @@ export class EntityGroundOffsetComponent extends EntityComponent {
     private constructor();
     /**
      * @remarks
+     * Value of this particular ground offset.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     value: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:ground_offset.
-     *
-     */
     static readonly componentId = 'minecraft:ground_offset';
 }
 
 /**
- * @beta
  * Defines the interactions with this entity for healing it.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -4424,9 +4831,6 @@ export class EntityHealableComponent extends EntityComponent {
     private constructor();
     /**
      * @beta
-     * @remarks
-     * A set of filters for when these Healable items would apply.
-     *
      * @throws This property can throw when used.
      */
     readonly filters: FilterGroup;
@@ -4438,12 +4842,6 @@ export class EntityHealableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly forceUse: boolean;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:healable.
-     *
-     */
     static readonly componentId = 'minecraft:healable';
     /**
      * @remarks
@@ -4495,18 +4893,11 @@ export class EntityHealthChangedAfterEventSignal extends IEntityHealthChangedAft
 }
 
 /**
- * @beta
  * Defines the health properties of an entity.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityHealthComponent extends EntityAttributeComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:health.
-     *
-     */
     static readonly componentId = 'minecraft:health';
 }
 
@@ -4610,7 +5001,6 @@ export class EntityHurtAfterEventSignal extends IEntityHurtAfterEventSignal {
 }
 
 /**
- * @beta
  * Defines this entity's inventory properties.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -4668,238 +5058,140 @@ export class EntityInventoryComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly restrictToOwner: boolean;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:inventory.
-     *
-     */
     static readonly componentId = 'minecraft:inventory';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is a
  * baby.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsBabyComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_baby.
-     *
-     */
     static readonly componentId = 'minecraft:is_baby';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * charged.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsChargedComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_charged.
-     *
-     */
     static readonly componentId = 'minecraft:is_charged';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently carrying a chest.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsChestedComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_chested.
-     *
-     */
     static readonly componentId = 'minecraft:is_chested';
 }
 
 /**
- * @beta
  * When added, this component signifies that dyes can be used
  * on this entity to change its color.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsDyeableComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_dyeable.
-     *
-     */
     static readonly componentId = 'minecraft:is_dyeable';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity can
  * hide from hostile mobs while invisible.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsHiddenWhenInvisibleComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_hidden_when_invisible.
-     *
-     */
     static readonly componentId = 'minecraft:is_hidden_when_invisible';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity this
  * currently on fire.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsIgnitedComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_ignited.
-     *
-     */
     static readonly componentId = 'minecraft:is_ignited';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is an
  * illager captain.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsIllagerCaptainComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_illager_captain.
-     *
-     */
     static readonly componentId = 'minecraft:is_illager_captain';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently saddled.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsSaddledComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_saddled.
-     *
-     */
     static readonly componentId = 'minecraft:is_saddled';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently shaking.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsShakingComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_shaking.
-     *
-     */
     static readonly componentId = 'minecraft:is_shaking';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently sheared.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsShearedComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_sheared.
-     *
-     */
     static readonly componentId = 'minecraft:is_sheared';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity can be
  * stacked.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsStackableComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_stackable.
-     *
-     */
     static readonly componentId = 'minecraft:is_stackable';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently stunned.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsStunnedComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_stunned.
-     *
-     */
     static readonly componentId = 'minecraft:is_stunned';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently tamed.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsTamedComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:is_tamed.
-     *
-     */
     static readonly componentId = 'minecraft:is_tamed';
 }
 
 /**
- * @beta
  * If added onto the entity, this indicates that the entity
  * represents a free-floating item in the world. Lets you
  * retrieve the actual item stack contents via the itemStack
@@ -4915,11 +5207,6 @@ export class EntityItemComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly itemStack: ItemStack;
-    /**
-     * @remarks
-     * Identifier of this component.
-     *
-     */
     static readonly componentId = 'minecraft:item';
 }
 
@@ -4956,12 +5243,6 @@ export class EntityIterator implements Iterable<Entity> {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityLavaMovementComponent extends EntityAttributeComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:lava_movement.
-     *
-     */
     static readonly componentId = 'minecraft:lava_movement';
 }
 
@@ -4982,12 +5263,6 @@ export class EntityLeashableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly softDistance: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:leashable.
-     *
-     */
     static readonly componentId = 'minecraft:leashable';
     /**
      * @remarks
@@ -5012,7 +5287,6 @@ export class EntityLeashableComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Additional variant value. Can be used to further
  * differentiate variants.
  */
@@ -5021,16 +5295,12 @@ export class EntityMarkVariantComponent extends EntityComponent {
     private constructor();
     /**
      * @remarks
+     * Value of the mark variant value for this entity.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     value: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:mark_variant.
-     *
-     */
     static readonly componentId = 'minecraft:mark_variant';
 }
 
@@ -5042,12 +5312,6 @@ export class EntityMarkVariantComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMountTamingComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:mount_taming.
-     *
-     */
     static readonly componentId = 'minecraft:tamemount';
     /**
      * @remarks
@@ -5063,35 +5327,21 @@ export class EntityMountTamingComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this movement control allows the mob to swim in
  * water and walk on land.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementAmphibiousComponent extends EntityBaseMovementComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:movement.amphibious.
-     *
-     */
     static readonly componentId = 'minecraft:movement.amphibious';
 }
 
 /**
- * @beta
  * This component accents the movement of an entity.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementBasicComponent extends EntityBaseMovementComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:movement.basic.
-     *
-     */
     static readonly componentId = 'minecraft:movement.basic';
 }
 
@@ -5102,45 +5352,25 @@ export class EntityMovementBasicComponent extends EntityBaseMovementComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementComponent extends EntityAttributeComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:movement.
-     *
-     */
     static readonly componentId = 'minecraft:movement';
 }
 
 /**
- * @beta
  * When added, this move control causes the mob to fly.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementFlyComponent extends EntityBaseMovementComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:movement.fly.
-     *
-     */
     static readonly componentId = 'minecraft:movement.fly';
 }
 
 /**
- * @beta
  * When added, this move control allows a mob to fly, swim,
  * climb, etc.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementGenericComponent extends EntityBaseMovementComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:movement.generic.
-     *
-     */
     static readonly componentId = 'minecraft:movement.generic';
 }
 
@@ -5165,62 +5395,35 @@ export class EntityMovementGlideComponent extends EntityBaseMovementComponent {
      * @throws This property can throw when used.
      */
     readonly startSpeed: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:movement.glide.
-     *
-     */
     static readonly componentId = 'minecraft:movement.glide';
 }
 
 /**
- * @beta
  * When added, this move control causes the mob to hover.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementHoverComponent extends EntityBaseMovementComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:movement.hover.
-     *
-     */
     static readonly componentId = 'minecraft:movement.hover';
 }
 
 /**
- * @beta
  * Move control that causes the mob to jump as it moves with a
  * specified delay between jumps.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementJumpComponent extends EntityBaseMovementComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:movement.jump.
-     *
-     */
     static readonly componentId = 'minecraft:movement.jump';
 }
 
 /**
- * @beta
  * When added, this move control causes the mob to hop as it
  * moves.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementSkipComponent extends EntityBaseMovementComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:movement.skip.
-     *
-     */
     static readonly componentId = 'minecraft:movement.skip';
 }
 
@@ -5246,12 +5449,6 @@ export class EntityMovementSwayComponent extends EntityBaseMovementComponent {
      * @throws This property can throw when used.
      */
     readonly swayFrequency: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:movement.sway.
-     *
-     */
     static readonly componentId = 'minecraft:movement.sway';
 }
 
@@ -5263,12 +5460,6 @@ export class EntityMovementSwayComponent extends EntityBaseMovementComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityNavigationClimbComponent extends EntityNavigationComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:navigation.climb.
-     *
-     */
     static readonly componentId = 'minecraft:navigation.climb';
 }
 
@@ -5438,12 +5629,6 @@ export class EntityNavigationComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityNavigationFloatComponent extends EntityNavigationComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:navigation.float.
-     *
-     */
     static readonly componentId = 'minecraft:navigation.float';
 }
 
@@ -5455,12 +5640,6 @@ export class EntityNavigationFloatComponent extends EntityNavigationComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityNavigationFlyComponent extends EntityNavigationComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:navigation.fly.
-     *
-     */
     static readonly componentId = 'minecraft:navigation.fly';
 }
 
@@ -5473,12 +5652,6 @@ export class EntityNavigationFlyComponent extends EntityNavigationComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityNavigationGenericComponent extends EntityNavigationComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:navigation.generic.
-     *
-     */
     static readonly componentId = 'minecraft:navigation.generic';
 }
 
@@ -5491,12 +5664,6 @@ export class EntityNavigationGenericComponent extends EntityNavigationComponent 
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityNavigationHoverComponent extends EntityNavigationComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:navigation.hover.
-     *
-     */
     static readonly componentId = 'minecraft:navigation.hover';
 }
 
@@ -5508,12 +5675,6 @@ export class EntityNavigationHoverComponent extends EntityNavigationComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityNavigationWalkComponent extends EntityNavigationComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:navigation.swim.
-     *
-     */
     static readonly componentId = 'minecraft:navigation.walk';
 }
 
@@ -5534,7 +5695,6 @@ export class EntityOnFireComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Sets the distance through which the entity can push through.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -5542,24 +5702,28 @@ export class EntityPushThroughComponent extends EntityComponent {
     private constructor();
     /**
      * @remarks
+     * Value of the push through distances of this entity.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     value: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:push_through.
-     *
-     */
     static readonly componentId = 'minecraft:push_through';
 }
 
 /**
  * @beta
+ * Data for an event that happens when an entity is removed
+ * from the world (for example, the entity is unloaded because
+ * it is not close to players.)
  */
 export class EntityRemovedAfterEvent {
     private constructor();
+    /**
+     * @remarks
+     * Reference to an entity that was removed.
+     *
+     */
     readonly removedEntity: string;
 }
 
@@ -5627,12 +5791,6 @@ export class EntityRideableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly seatCount: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:rideable.
-     *
-     */
     static readonly componentId = 'minecraft:rideable';
     /**
      * @remarks
@@ -5708,17 +5866,10 @@ export class EntityRidingComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly entityRidingOn: Entity;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:riding.
-     *
-     */
     static readonly componentId = 'minecraft:riding';
 }
 
 /**
- * @beta
  * Sets the entity's visual size.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -5726,21 +5877,16 @@ export class EntityScaleComponent extends EntityComponent {
     private constructor();
     /**
      * @remarks
+     * Current value for the scale property set on entities.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     value: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:scale.
-     *
-     */
     static readonly componentId = 'minecraft:scale';
 }
 
 /**
- * @beta
  * Skin Id value. Can be used to differentiate skins, such as
  * base skins for villagers.
  */
@@ -5753,12 +5899,6 @@ export class EntitySkinIdComponent extends EntityComponent {
      *
      */
     value: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:skin_id.
-     *
-     */
     static readonly componentId = 'minecraft:skin_id';
 }
 
@@ -5804,13 +5944,14 @@ export class EntityStrengthComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly max: number;
-    readonly value: number;
     /**
      * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:strength.
+     * Current value of the strength component that has been set
+     * for entities.
      *
+     * @throws This property can throw when used.
      */
+    readonly value: number;
     static readonly componentId = 'minecraft:strength';
 }
 
@@ -5829,12 +5970,6 @@ export class EntityTameableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly probability: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:tameable.
-     *
-     */
     static readonly componentId = 'minecraft:tameable';
     /**
      * @remarks
@@ -5920,47 +6055,34 @@ export class EntityTypes {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityUnderwaterMovementComponent extends EntityAttributeComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:underwater_movement.
-     *
-     */
     static readonly componentId = 'minecraft:underwater_movement';
 }
 
 /**
- * @beta
  * Used to differentiate the component group of a variant of an
  * entity from others. (e.g. ocelot, villager).
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityVariantComponent extends EntityComponent {
     private constructor();
-    readonly value: number;
     /**
      * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:variant.
+     * Current value for variant for this entity, as specified via
+     * components.
      *
+     * @throws This property can throw when used.
      */
+    readonly value: number;
     static readonly componentId = 'minecraft:variant';
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity wants
  * to become a jockey.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityWantsJockeyComponent extends EntityComponent {
     private constructor();
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * minecraft:wants_jockey.
-     *
-     */
     static readonly componentId = 'minecraft:wants_jockey';
 }
 
@@ -6037,7 +6159,6 @@ export class ExplosionBeforeEventSignal extends IExplosionBeforeEventSignal {
 }
 
 /**
- * @beta
  * As part of the Healable component, represents a specific
  * item that can be fed to an entity to cause health effects.
  */
@@ -6069,7 +6190,6 @@ export class FeedItem {
 }
 
 /**
- * @beta
  * Represents an effect that is applied as a result of a food
  * item being fed to an entity.
  */
@@ -6202,7 +6322,6 @@ export class IBlockPlaceAfterEventSignal {
 }
 
 /**
- * @beta
  * Provides an adaptable interface for callers to subscribe to
  * an event that fires when a button is pushed.
  */
@@ -6815,7 +6934,6 @@ export class IItemUseOnBeforeEventSignal {
 }
 
 /**
- * @beta
  * Provides an adaptable interface for callers to subscribe to
  * an event that fires after a lever is used.
  */
@@ -6881,7 +6999,6 @@ export class IPistonActivateBeforeEventSignal {
 }
 
 /**
- * @beta
  * Provides an adaptable interface for callers to subscribe to
  * an event that fires after a player joins a world.
  */
@@ -6903,7 +7020,6 @@ export class IPlayerJoinAfterEventSignal {
 }
 
 /**
- * @beta
  * Provides an adaptable interface for callers to subscribe to
  * an event that fires after a player leaves a world.
  */
@@ -6925,7 +7041,6 @@ export class IPlayerLeaveAfterEventSignal {
 }
 
 /**
- * @beta
  * Provides an adaptable interface for callers to subscribe to
  * an event that fires after a player spawns.
  */
@@ -7115,7 +7230,6 @@ export class ItemCompleteUseAfterEventSignal extends IItemCompleteUseAfterEventS
 }
 
 /**
- * @beta
  * Base class for item components.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -7147,12 +7261,6 @@ export class ItemCooldownComponent extends ItemComponent {
      * @throws This property can throw when used.
      */
     readonly cooldownTicks: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * 'minecraft:cooldown'.
-     *
-     */
     static readonly componentId = 'minecraft:cooldown';
     /**
      * @remarks
@@ -7250,12 +7358,6 @@ export class ItemDurabilityComponent extends ItemComponent {
      * @throws This property can throw when used.
      */
     readonly maxDurability: number;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * 'minecraft:durability'.
-     *
-     */
     static readonly componentId = 'minecraft:durability';
     /**
      * @remarks
@@ -7301,11 +7403,6 @@ export class ItemEnchantsComponent extends ItemComponent {
      *
      */
     enchantments: EnchantmentList;
-    /**
-     * @remarks
-     * Identifier of this component.
-     *
-     */
     static readonly componentId = 'minecraft:enchantments';
     /**
      * @remarks
@@ -7360,12 +7457,6 @@ export class ItemFoodComponent extends ItemComponent {
      * @throws This property can throw when used.
      */
     readonly usingConvertsTo: string;
-    /**
-     * @remarks
-     * Identifier of this component. Should always be
-     * 'minecraft:food'.
-     *
-     */
     static readonly componentId = 'minecraft:food';
 }
 
@@ -7409,7 +7500,6 @@ export class ItemReleaseUseAfterEventSignal extends IItemReleaseUseAfterEventSig
 }
 
 /**
- * @beta
  * Defines a collection of items.
  */
 export class ItemStack {
@@ -7490,9 +7580,9 @@ export class ItemStack {
      * world.
      *
      * @param itemType
-     * Type of item to create. See the {@link MinecraftItemTypes}
-     * enumeration for a list of standard item types in Minecraft
-     * experiences.
+     * Type of item to create. See the {@link
+     * @minecraft/vanilla-data.MinecraftItemTypes} enumeration for
+     * a list of standard item types in Minecraft experiences.
      * @param amount
      * Number of items to place in the stack, between 1-255. The
      * provided value will be clamped to the item's maximum stack
@@ -7638,6 +7728,25 @@ export class ItemStack {
      *
      * This function can't be called in read-only mode.
      *
+     * @example diamondAwesomeSword.ts
+     * ```typescript
+     *   const diamondAwesomeSword = new mc.ItemStack(mc.MinecraftItemTypes.diamondSword, 1);
+     *   let players = mc.world.getAllPlayers();
+     *
+     *   diamondAwesomeSword.setLore(["§c§lDiamond Sword of Awesome§r", "+10 coolness", "§p+4 shiny§r"]);
+     *
+     *   // hover over/select the item in your inventory to see the lore.
+     *   const inventory = players[0].getComponent("inventory") as mc.EntityInventoryComponent;
+     *   inventory.container.setItem(0, diamondAwesomeSword);
+     *
+     *   let item = inventory.container.getItem(0);
+     *
+     *   if (item) {
+     *     let enchants = item.getComponent("minecraft:enchantments") as mc.ItemEnchantsComponent;
+     *     let knockbackEnchant = new mc.Enchantment("knockback", 3);
+     *     enchants.enchantments.addEnchantment(knockbackEnchant);
+     *   }
+     * ```
      * @example multilineLore.ts
      * ```typescript
      * // Set the lore of an item to multiple lines of text
@@ -7705,8 +7814,9 @@ export class ItemStartUseAfterEventSignal extends IItemStartUseAfterEventSignal 
  * Contains information related to an item being used on a
  * block. This event fires when a player presses the the Use
  * Item / Place Block button to successfully use an item or
- * place a block. Note: This event cannot be used with Hoe or
- * Axe items.
+ * place a block. Fires for the first block that is interacted
+ * with when performing a build action. Note: This event cannot
+ * be used with Hoe or Axe items.
  */
 export class ItemStartUseOnAfterEvent {
     private constructor();
@@ -7829,7 +7939,6 @@ export class ItemStopUseOnAfterEventSignal extends IItemStopUseOnAfterEventSigna
 }
 
 /**
- * @beta
  * Represents the type of an item - for example, Wool.
  */
 export class ItemType {
@@ -7845,7 +7954,6 @@ export class ItemType {
 
 /**
  * @beta
- * An iterator over a set of available item types.
  */
 export class ItemTypeIterator implements Iterable<ItemType> {
     private constructor();
@@ -7941,8 +8049,8 @@ export class ItemUseBeforeEventSignal extends IItemUseBeforeEventSignal {
 /**
  * @beta
  * Contains information related to an item being used on a
- * block. This event fires when an item is used on a block by a
- * player.
+ * block. This event fires when an item is successfully used on
+ * a block by a player.
  */
 export class ItemUseOnAfterEvent {
     private constructor();
@@ -8102,7 +8210,6 @@ export class IWorldInitializeAfterEventSignal {
 }
 
 /**
- * @beta
  * Contains information related to changes to a lever
  * activating or deactivating.
  */
@@ -8125,7 +8232,6 @@ export class LeverActionAfterEvent extends BlockEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to lever moves
  * (activates or deactivates).
  */
@@ -8141,8 +8247,23 @@ export class LeverActionAfterEventSignal extends ILeverActionAfterEventSignal {
  */
 export class MessageReceiveAfterEvent {
     private constructor();
+    /**
+     * @remarks
+     * The message identifier.
+     *
+     */
     readonly id: string;
+    /**
+     * @remarks
+     * The message.
+     *
+     */
     readonly message: string;
+    /**
+     * @remarks
+     * The player who sent the message.
+     *
+     */
     readonly player: Player;
 }
 
@@ -12680,6 +12801,8 @@ export class MinecraftBlockTypes {
 }
 
 /**
+ * DEPRECATED
+ * Use @minecraft/vanilla-data.MinecraftDimensionTypes
  * A collection of default Minecraft dimension types.
  */
 export class MinecraftDimensionTypes {
@@ -12721,6 +12844,8 @@ export class MinecraftDimensionTypes {
 
 /**
  * @beta
+ * Contains definitions of standard Minecraft and Minecraft
+ * Education Edition Entity types.
  */
 export class MinecraftEntityTypes {
     private constructor();
@@ -12842,115 +12967,30 @@ export class MinecraftEntityTypes {
 
 /**
  * @beta
- * Contains definitions of standard Minecraft and Minecraft
- * Education Edition block types.
  */
 export class MinecraftItemTypes {
     private constructor();
     static readonly acaciaBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an acacia button within
-     * Minecraft.
-     *
-     */
     static readonly acaciaButton: ItemType;
     static readonly acaciaChestBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an acacia door within
-     * Minecraft.
-     *
-     */
     static readonly acaciaDoor: ItemType;
     static readonly acaciaFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an acacia fence gate
-     * within Minecraft.
-     *
-     */
     static readonly acaciaFenceGate: ItemType;
     static readonly acaciaHangingSign: ItemType;
     static readonly acaciaLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an acacia pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly acaciaPressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an acacia sign within
-     * Minecraft.
-     *
-     */
     static readonly acaciaSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of acacia stairs
-     * within Minecraft.
-     *
-     */
     static readonly acaciaStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an acacia trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly acaciaTrapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an activator rail within
-     * Minecraft.
-     *
-     */
     static readonly activatorRail: ItemType;
     static readonly allaySpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an allow block within
-     * Minecraft.
-     *
-     */
     static readonly allow: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an amethyst block within
-     * Minecraft.
-     *
-     */
     static readonly amethystBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cluster of amethyst
-     * within Minecraft.
-     *
-     */
     static readonly amethystCluster: ItemType;
     static readonly amethystShard: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place ancient debris within
-     * Minecraft.
-     *
-     */
     static readonly ancientDebris: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place andesite stairs within
-     * Minecraft.
-     *
-     */
     static readonly andesiteStairs: ItemType;
     static readonly anglerPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an anvil within Minecraft.
-     *
-     */
     static readonly anvil: ItemType;
     static readonly apple: ItemType;
     static readonly archerPotterySherd: ItemType;
@@ -12959,33 +12999,10 @@ export class MinecraftItemTypes {
     static readonly arrow: ItemType;
     static readonly axolotlBucket: ItemType;
     static readonly axolotlSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an azalea flowering plant
-     * within Minecraft.
-     *
-     */
     static readonly azalea: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place azalea leaves within
-     * Minecraft.
-     *
-     */
     static readonly azaleaLeaves: ItemType;
-    /**
-     * @remarks
-     * Represents flowered azalea leaves within Minecraft.
-     *
-     */
     static readonly azaleaLeavesFlowered: ItemType;
     static readonly bakedPotato: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bamboo tree within
-     * Minecraft.
-     *
-     */
     static readonly bamboo: ItemType;
     static readonly bambooBlock: ItemType;
     static readonly bambooButton: ItemType;
@@ -13006,245 +13023,64 @@ export class MinecraftItemTypes {
     static readonly bambooTrapdoor: ItemType;
     static readonly banner: ItemType;
     static readonly bannerPattern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a barrel within Minecraft.
-     *
-     */
     static readonly barrel: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an invisible but logical
-     * barrier within Minecraft.
-     *
-     */
     static readonly barrier: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a basalt block within
-     * Minecraft.
-     *
-     */
     static readonly basalt: ItemType;
     static readonly batSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a beacon within Minecraft.
-     *
-     */
     static readonly beacon: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bed within Minecraft.
-     *
-     */
     static readonly bed: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bedrock block within
-     * Minecraft.
-     *
-     */
     static readonly bedrock: ItemType;
     static readonly beef: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a beehive within
-     * Minecraft.
-     *
-     */
     static readonly beehive: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bee nest within
-     * Minecraft.
-     *
-     */
     static readonly beeNest: ItemType;
     static readonly beeSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a beetroot vegetable
-     * within Minecraft.
-     *
-     */
     static readonly beetroot: ItemType;
     static readonly beetrootSeeds: ItemType;
     static readonly beetrootSoup: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bell within Minecraft.
-     *
-     */
     static readonly bell: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a big dripleaf plant
-     * within Minecraft.
-     *
-     */
     static readonly bigDripleaf: ItemType;
     static readonly birchBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch button within
-     * Minecraft.
-     *
-     */
     static readonly birchButton: ItemType;
     static readonly birchChestBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch door within
-     * Minecraft.
-     *
-     */
     static readonly birchDoor: ItemType;
     static readonly birchFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch fence gate within
-     * Minecraft.
-     *
-     */
     static readonly birchFenceGate: ItemType;
     static readonly birchHangingSign: ItemType;
     static readonly birchLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly birchPressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch sign within
-     * Minecraft.
-     *
-     */
     static readonly birchSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch stairs block
-     * within Minecraft.
-     *
-     */
     static readonly birchStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly birchTrapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a black candle within
-     * Minecraft.
-     *
-     */
     static readonly blackCandle: ItemType;
     static readonly blackCarpet: ItemType;
     static readonly blackConcrete: ItemType;
     static readonly blackDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a black glazed terracotta
-     * block within Minecraft.
-     *
-     */
     static readonly blackGlazedTerracotta: ItemType;
     static readonly blackShulkerBox: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blackstone block within
-     * Minecraft.
-     *
-     */
     static readonly blackstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blackstone slab within
-     * Minecraft.
-     *
-     */
     static readonly blackstoneSlab: ItemType;
-    /**
-     * @remarks
-     * Represents blackstone stairs within Minecraft.
-     *
-     */
     static readonly blackstoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blackstone wall within
-     * Minecraft.
-     *
-     */
     static readonly blackstoneWall: ItemType;
     static readonly blackWool: ItemType;
     static readonly bladePotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blast furnace within
-     * Minecraft.
-     *
-     */
     static readonly blastFurnace: ItemType;
     static readonly blazePowder: ItemType;
     static readonly blazeRod: ItemType;
     static readonly blazeSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blue candle within
-     * Minecraft.
-     *
-     */
     static readonly blueCandle: ItemType;
     static readonly blueCarpet: ItemType;
     static readonly blueConcrete: ItemType;
     static readonly blueDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blue glazed terracotta
-     * block within Minecraft.
-     *
-     */
     static readonly blueGlazedTerracotta: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blue ice block within
-     * Minecraft.
-     *
-     */
     static readonly blueIce: ItemType;
     static readonly blueShulkerBox: ItemType;
     static readonly blueWool: ItemType;
     static readonly boat: ItemType;
     static readonly bone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bone block within
-     * Minecraft.
-     *
-     */
     static readonly boneBlock: ItemType;
     static readonly boneMeal: ItemType;
     static readonly book: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an unbreakable border
-     * block within Minecraft.
-     *
-     */
     static readonly bookshelf: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a border block within
-     * Minecraft.
-     *
-     */
     static readonly borderBlock: ItemType;
     static readonly bordureIndentedBannerPattern: ItemType;
     static readonly bow: ItemType;
@@ -13252,150 +13088,40 @@ export class MinecraftItemTypes {
     static readonly brainCoral: ItemType;
     static readonly bread: ItemType;
     static readonly brewerPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a brewing stand within
-     * Minecraft.
-     *
-     */
     static readonly brewingStand: ItemType;
     static readonly brick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of brick within
-     * Minecraft.
-     *
-     */
     static readonly brickBlock: ItemType;
-    /**
-     * @remarks
-     * Represents brick stairs within Minecraft.
-     *
-     */
     static readonly brickStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a brown candle within
-     * Minecraft.
-     *
-     */
     static readonly brownCandle: ItemType;
     static readonly brownCarpet: ItemType;
     static readonly brownConcrete: ItemType;
     static readonly brownDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a brown glazed terracotta
-     * block within Minecraft.
-     *
-     */
     static readonly brownGlazedTerracotta: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a brown mushroom within
-     * Minecraft.
-     *
-     */
     static readonly brownMushroom: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of brown mushroom
-     * within Minecraft.
-     *
-     */
     static readonly brownMushroomBlock: ItemType;
     static readonly brownShulkerBox: ItemType;
     static readonly brownWool: ItemType;
     static readonly brush: ItemType;
     static readonly bubbleCoral: ItemType;
     static readonly bucket: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of budding
-     * amethyst within Minecraft.
-     *
-     */
     static readonly buddingAmethyst: ItemType;
     static readonly burnPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cactus within Minecraft.
-     *
-     */
     static readonly cactus: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cake within Minecraft.
-     *
-     */
     static readonly cake: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a calcite block within
-     * Minecraft.
-     *
-     */
     static readonly calcite: ItemType;
     static readonly calibratedSculkSensor: ItemType;
     static readonly camelSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a campfire within
-     * Minecraft.
-     *
-     */
     static readonly campfire: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a candle within Minecraft.
-     *
-     */
     static readonly candle: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a carpet within Minecraft.
-     *
-     */
     static readonly carpet: ItemType;
     static readonly carrot: ItemType;
     static readonly carrotOnAStick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cartography table block
-     * within Minecraft.
-     *
-     */
     static readonly cartographyTable: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a carved pumpkin within
-     * Minecraft.
-     *
-     */
     static readonly carvedPumpkin: ItemType;
     static readonly catSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cauldron within
-     * Minecraft.
-     *
-     */
     static readonly cauldron: ItemType;
     static readonly caveSpiderSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a metallic chain within
-     * Minecraft.
-     *
-     */
     static readonly chain: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block that gives off
-     * heat but not light, within Minecraft Education Edition or
-     * Bedrock Edition with Education features.
-     *
-     */
     static readonly chainCommandBlock: ItemType;
     static readonly chainmailBoots: ItemType;
     static readonly chainmailChestplate: ItemType;
@@ -13419,154 +13145,42 @@ export class MinecraftItemTypes {
     static readonly cherryStairs: ItemType;
     static readonly cherryTrapdoor: ItemType;
     static readonly cherryWood: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a chest within Minecraft.
-     *
-     */
     static readonly chest: ItemType;
     static readonly chestBoat: ItemType;
     static readonly chestMinecart: ItemType;
     static readonly chicken: ItemType;
     static readonly chickenSpawnEgg: ItemType;
     static readonly chiseledBookshelf: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of chiseled
-     * deepslate within Minecraft.
-     *
-     */
     static readonly chiseledDeepslate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of chiseled nether
-     * bricks within Minecraft.
-     *
-     */
     static readonly chiseledNetherBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of chiseled
-     * polished blackstone within Minecraft.
-     *
-     */
     static readonly chiseledPolishedBlackstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a chorus flower within
-     * Minecraft.
-     *
-     */
     static readonly chorusFlower: ItemType;
     static readonly chorusFruit: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a chorus plant within
-     * Minecraft.
-     *
-     */
     static readonly chorusPlant: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of clay within
-     * Minecraft.
-     *
-     */
     static readonly clay: ItemType;
     static readonly clayBall: ItemType;
     static readonly clock: ItemType;
     static readonly coal: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of solid coal
-     * within Minecraft.
-     *
-     */
     static readonly coalBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded coal
-     * ore within Minecraft.
-     *
-     */
     static readonly coalOre: ItemType;
     static readonly coastArmorTrimSmithingTemplate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cobbled
-     * deepslate within Minecraft.
-     *
-     */
     static readonly cobbledDeepslate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of deepslate within
-     * Minecraft.
-     *
-     */
     static readonly cobbledDeepslateSlab: ItemType;
-    /**
-     * @remarks
-     * Represents cobbled deepslate stairs within Minecraft.
-     *
-     */
     static readonly cobbledDeepslateStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cobbled deepslate wall
-     * within Minecraft.
-     *
-     */
     static readonly cobbledDeepslateWall: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cobblestone
-     * within Minecraft.
-     *
-     */
     static readonly cobblestone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wall of cobblestone
-     * within Minecraft.
-     *
-     */
     static readonly cobblestoneWall: ItemType;
     static readonly cocoaBeans: ItemType;
     static readonly cod: ItemType;
     static readonly codBucket: ItemType;
     static readonly codSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block that can run
-     * commands within Minecraft.
-     *
-     */
     static readonly commandBlock: ItemType;
     static readonly commandBlockMinecart: ItemType;
     static readonly comparator: ItemType;
     static readonly compass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a composter block within
-     * Minecraft.
-     *
-     */
     static readonly composter: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of concrete powder
-     * within Minecraft.
-     *
-     */
     static readonly concrete: ItemType;
     static readonly concretePowder: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a conduit block within
-     * Minecraft.
-     *
-     */
     static readonly conduit: ItemType;
     static readonly cookedBeef: ItemType;
     static readonly cookedChicken: ItemType;
@@ -13576,453 +13190,92 @@ export class MinecraftItemTypes {
     static readonly cookedRabbit: ItemType;
     static readonly cookedSalmon: ItemType;
     static readonly cookie: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a solid block of copper
-     * within Minecraft.
-     *
-     */
     static readonly copperBlock: ItemType;
     static readonly copperIngot: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded
-     * copper ore within Minecraft.
-     *
-     */
     static readonly copperOre: ItemType;
-    /**
-     * @remarks
-     * Represents coral within Minecraft.
-     *
-     */
     static readonly coral: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a solid block of coral
-     * within Minecraft.
-     *
-     */
     static readonly coralBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a fan formation of coral
-     * within Minecraft.
-     *
-     */
     static readonly coralFan: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a fan formation of dead
-     * coral within Minecraft.
-     *
-     */
     static readonly coralFanDead: ItemType;
     static readonly cowSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cracked
-     * deepslate bricks within Minecraft.
-     *
-     */
     static readonly crackedDeepslateBricks: ItemType;
-    /**
-     * @remarks
-     * Represents tiles of cracked deepslate within Minecraft.
-     *
-     */
     static readonly crackedDeepslateTiles: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cracked nether
-     * bricks within Minecraft.
-     *
-     */
     static readonly crackedNetherBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cracked and
-     * polished blackstone bricks within Minecraft.
-     *
-     */
     static readonly crackedPolishedBlackstoneBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crafting table within
-     * Minecraft.
-     *
-     */
     static readonly craftingTable: ItemType;
     static readonly creeperBannerPattern: ItemType;
     static readonly creeperSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson button within
-     * Minecraft.
-     *
-     */
     static readonly crimsonButton: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson door within
-     * Minecraft.
-     *
-     */
     static readonly crimsonDoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson fence within
-     * Minecraft.
-     *
-     */
     static readonly crimsonFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson fence gate
-     * within Minecraft.
-     *
-     */
     static readonly crimsonFenceGate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson fungus within
-     * Minecraft.
-     *
-     */
     static readonly crimsonFungus: ItemType;
     static readonly crimsonHangingSign: ItemType;
-    /**
-     * @remarks
-     * Represents crimson hyphae within Minecraft.
-     *
-     */
     static readonly crimsonHyphae: ItemType;
-    /**
-     * @remarks
-     * Represents crimson nylium within Minecraft.
-     *
-     */
     static readonly crimsonNylium: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of crimson planks
-     * within Minecraft.
-     *
-     */
     static readonly crimsonPlanks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly crimsonPressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of crimson roots
-     * within Minecraft.
-     *
-     */
     static readonly crimsonRoots: ItemType;
     static readonly crimsonSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson slab within
-     * Minecraft.
-     *
-     */
     static readonly crimsonSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of crimson stairs
-     * within Minecraft.
-     *
-     */
     static readonly crimsonStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson stem within
-     * Minecraft.
-     *
-     */
     static readonly crimsonStem: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly crimsonTrapdoor: ItemType;
     static readonly crossbow: ItemType;
-    /**
-     * @remarks
-     * Represents crying obsidian within Minecraft.
-     *
-     */
     static readonly cryingObsidian: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cut copper block within
-     * Minecraft.
-     *
-     */
     static readonly cutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cut copper slab within
-     * Minecraft.
-     *
-     */
     static readonly cutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of cut copper stairs
-     * within Minecraft.
-     *
-     */
     static readonly cutCopperStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cyan-colored candle
-     * within Minecraft.
-     *
-     */
     static readonly cyanCandle: ItemType;
     static readonly cyanCarpet: ItemType;
     static readonly cyanConcrete: ItemType;
     static readonly cyanDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cyan-colored
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly cyanGlazedTerracotta: ItemType;
     static readonly cyanShulkerBox: ItemType;
     static readonly cyanWool: ItemType;
     static readonly dangerPotterySherd: ItemType;
     static readonly darkOakBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dark oak button within
-     * Minecraft.
-     *
-     */
     static readonly darkOakButton: ItemType;
     static readonly darkOakChestBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dark oak door within
-     * Minecraft.
-     *
-     */
     static readonly darkOakDoor: ItemType;
     static readonly darkOakFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dark oak fence gate
-     * within Minecraft.
-     *
-     */
     static readonly darkOakFenceGate: ItemType;
     static readonly darkOakHangingSign: ItemType;
     static readonly darkOakLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dark oak pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly darkOakPressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dark oak sign within
-     * Minecraft.
-     *
-     */
     static readonly darkOakSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of dark oak stairs
-     * within Minecraft.
-     *
-     */
     static readonly darkOakStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dark oak trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly darkOakTrapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of dark prismarine
-     * stairs within Minecraft.
-     *
-     */
     static readonly darkPrismarineStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a daylight detector within
-     * Minecraft.
-     *
-     */
     static readonly daylightDetector: ItemType;
     static readonly deadBrainCoral: ItemType;
     static readonly deadBubbleCoral: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dead bush within
-     * Minecraft.
-     *
-     */
     static readonly deadbush: ItemType;
     static readonly deadFireCoral: ItemType;
     static readonly deadHornCoral: ItemType;
     static readonly deadTubeCoral: ItemType;
     static readonly decoratedPot: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate
-     * within Minecraft.
-     *
-     */
     static readonly deepslate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate
-     * bricks within Minecraft.
-     *
-     */
     static readonly deepslateBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of deepslate brick
-     * within Minecraft.
-     *
-     */
     static readonly deepslateBrickSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of deepslate brick
-     * stairs within Minecraft.
-     *
-     */
     static readonly deepslateBrickStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a deepslate brick wall
-     * within Minecraft.
-     *
-     */
     static readonly deepslateBrickWall: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded coal ore within Minecraft.
-     *
-     */
     static readonly deepslateCoalOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded copper ore within Minecraft.
-     *
-     */
     static readonly deepslateCopperOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded diamond ore within Minecraft.
-     *
-     */
     static readonly deepslateDiamondOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded emerald ore within Minecraft.
-     *
-     */
     static readonly deepslateEmeraldOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded gold ore within Minecraft.
-     *
-     */
     static readonly deepslateGoldOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded iron ore within Minecraft.
-     *
-     */
     static readonly deepslateIronOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded lapis lazuli ore within Minecraft.
-     *
-     */
     static readonly deepslateLapisOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded redstone ore within Minecraft.
-     *
-     */
     static readonly deepslateRedstoneOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of deepslate tiles
-     * within Minecraft.
-     *
-     */
     static readonly deepslateTiles: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of deepslate tiles
-     * within Minecraft.
-     *
-     */
     static readonly deepslateTileSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of deepslate tile
-     * stairs within Minecraft.
-     *
-     */
     static readonly deepslateTileStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wall of deepslate tile
-     * within Minecraft.
-     *
-     */
     static readonly deepslateTileWall: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a logical but generally
-     * invisible Deny logic block within Minecraft.
-     *
-     */
     static readonly deny: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a detector rail within
-     * Minecraft.
-     *
-     */
     static readonly detectorRail: ItemType;
     static readonly diamond: ItemType;
     static readonly diamondAxe: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of diamond within
-     * Minecraft.
-     *
-     */
     static readonly diamondBlock: ItemType;
     static readonly diamondBoots: ItemType;
     static readonly diamondChestplate: ItemType;
@@ -14030,83 +13283,23 @@ export class MinecraftItemTypes {
     static readonly diamondHoe: ItemType;
     static readonly diamondHorseArmor: ItemType;
     static readonly diamondLeggings: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded
-     * diamond ore within Minecraft.
-     *
-     */
     static readonly diamondOre: ItemType;
     static readonly diamondPickaxe: ItemType;
     static readonly diamondShovel: ItemType;
     static readonly diamondSword: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of diorite stairs
-     * within Minecraft.
-     *
-     */
     static readonly dioriteStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of dirt within
-     * Minecraft.
-     *
-     */
     static readonly dirt: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of dirt with roots
-     * within Minecraft.
-     *
-     */
     static readonly dirtWithRoots: ItemType;
     static readonly discFragment5: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dispenser within
-     * Minecraft.
-     *
-     */
     static readonly dispenser: ItemType;
     static readonly dolphinSpawnEgg: ItemType;
     static readonly donkeySpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a double plant within
-     * Minecraft.
-     *
-     */
     static readonly doublePlant: ItemType;
     static readonly dragonBreath: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dragon egg within
-     * Minecraft.
-     *
-     */
     static readonly dragonEgg: ItemType;
     static readonly driedKelp: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of dried kelp
-     * within Minecraft.
-     *
-     */
     static readonly driedKelpBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of dripstone
-     * within Minecraft.
-     *
-     */
     static readonly dripstoneBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dropper within
-     * Minecraft.
-     *
-     */
     static readonly dropper: ItemType;
     static readonly drownedSpawnEgg: ItemType;
     static readonly duneArmorTrimSmithingTemplate: ItemType;
@@ -14116,130 +13309,35 @@ export class MinecraftItemTypes {
     static readonly elderGuardianSpawnEgg: ItemType;
     static readonly elytra: ItemType;
     static readonly emerald: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of emerald within
-     * Minecraft.
-     *
-     */
     static readonly emeraldBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded
-     * emerald ore within Minecraft.
-     *
-     */
     static readonly emeraldOre: ItemType;
     static readonly emptyMap: ItemType;
     static readonly enchantedBook: ItemType;
     static readonly enchantedGoldenApple: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an enchanting table within
-     * Minecraft.
-     *
-     */
     static readonly enchantingTable: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an end bricks block within
-     * Minecraft.
-     *
-     */
     static readonly endBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of end brick stairs
-     * within Minecraft.
-     *
-     */
     static readonly endBrickStairs: ItemType;
     static readonly endCrystal: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an ender chest within
-     * Minecraft.
-     *
-     */
     static readonly enderChest: ItemType;
     static readonly enderDragonSpawnEgg: ItemType;
     static readonly enderEye: ItemType;
     static readonly endermanSpawnEgg: ItemType;
     static readonly endermiteSpawnEgg: ItemType;
     static readonly enderPearl: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an end portal frame within
-     * Minecraft.
-     *
-     */
     static readonly endPortalFrame: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an end rod within
-     * Minecraft.
-     *
-     */
     static readonly endRod: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an end stone block within
-     * Minecraft.
-     *
-     */
     static readonly endStone: ItemType;
     static readonly evokerSpawnEgg: ItemType;
     static readonly experienceBottle: ItemType;
     static readonly explorerPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of exposed copper
-     * within Minecraft.
-     *
-     */
     static readonly exposedCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of exposed cut
-     * copper within Minecraft.
-     *
-     */
     static readonly exposedCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of exposed cut
-     * copper within Minecraft.
-     *
-     */
     static readonly exposedCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of exposed cut
-     * copper stairs within Minecraft.
-     *
-     */
     static readonly exposedCutCopperStairs: ItemType;
     static readonly eyeArmorTrimSmithingTemplate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a farmland block within
-     * Minecraft.
-     *
-     */
     static readonly farmland: ItemType;
     static readonly feather: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a fence within Minecraft.
-     *
-     */
     static readonly fence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a fence gate within
-     * Minecraft.
-     *
-     */
     static readonly fenceGate: ItemType;
     static readonly fermentedSpiderEye: ItemType;
     static readonly fieldMasonedBannerPattern: ItemType;
@@ -14249,112 +13347,36 @@ export class MinecraftItemTypes {
     static readonly fireworkRocket: ItemType;
     static readonly fireworkStar: ItemType;
     static readonly fishingRod: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a fletching table within
-     * Minecraft.
-     *
-     */
     static readonly fletchingTable: ItemType;
     static readonly flint: ItemType;
     static readonly flintAndSteel: ItemType;
     static readonly flowerBannerPattern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a flowering azalea plant
-     * within Minecraft.
-     *
-     */
     static readonly floweringAzalea: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a flower pot within
-     * Minecraft.
-     *
-     */
     static readonly flowerPot: ItemType;
     static readonly foxSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a frame within Minecraft.
-     *
-     */
     static readonly frame: ItemType;
     static readonly friendPotterySherd: ItemType;
     static readonly frogSpawn: ItemType;
     static readonly frogSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a frosted ice block within
-     * Minecraft.
-     *
-     */
     static readonly frostedIce: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a furnace within
-     * Minecraft.
-     *
-     */
     static readonly furnace: ItemType;
     static readonly ghastSpawnEgg: ItemType;
     static readonly ghastTear: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of gilded
-     * blackstone within Minecraft.
-     *
-     */
     static readonly gildedBlackstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a glass block within
-     * Minecraft.
-     *
-     */
     static readonly glass: ItemType;
     static readonly glassBottle: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a pane of glass within
-     * Minecraft.
-     *
-     */
     static readonly glassPane: ItemType;
     static readonly glisteringMelonSlice: ItemType;
     static readonly globeBannerPattern: ItemType;
     static readonly glowBerries: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a glowing frame within
-     * Minecraft.
-     *
-     */
     static readonly glowFrame: ItemType;
     static readonly glowInkSac: ItemType;
-    /**
-     * @remarks
-     * Represents glow lichen within Minecraft.
-     *
-     */
     static readonly glowLichen: ItemType;
     static readonly glowSquidSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of glowstone
-     * within Minecraft.
-     *
-     */
     static readonly glowstone: ItemType;
     static readonly glowstoneDust: ItemType;
     static readonly goatHorn: ItemType;
     static readonly goatSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a gold block within
-     * Minecraft.
-     *
-     */
     static readonly goldBlock: ItemType;
     static readonly goldenApple: ItemType;
     static readonly goldenAxe: ItemType;
@@ -14366,152 +13388,45 @@ export class MinecraftItemTypes {
     static readonly goldenHorseArmor: ItemType;
     static readonly goldenLeggings: ItemType;
     static readonly goldenPickaxe: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a golden rail element
-     * within Minecraft.
-     *
-     */
     static readonly goldenRail: ItemType;
     static readonly goldenShovel: ItemType;
     static readonly goldenSword: ItemType;
     static readonly goldIngot: ItemType;
     static readonly goldNugget: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded gold
-     * ore within Minecraft.
-     *
-     */
     static readonly goldOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of granite stairs
-     * within Minecraft.
-     *
-     */
     static readonly graniteStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of dirt and grass
-     * within Minecraft.
-     *
-     */
     static readonly grass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of dirt and grass
-     * with a path within Minecraft.
-     *
-     */
     static readonly grassPath: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of gravel within
-     * Minecraft.
-     *
-     */
     static readonly gravel: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a gray-colored candle
-     * within Minecraft.
-     *
-     */
     static readonly grayCandle: ItemType;
     static readonly grayCarpet: ItemType;
     static readonly grayConcrete: ItemType;
     static readonly grayDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a gray-colored block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly grayGlazedTerracotta: ItemType;
     static readonly grayShulkerBox: ItemType;
     static readonly grayWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a green-colored candle
-     * within Minecraft.
-     *
-     */
     static readonly greenCandle: ItemType;
     static readonly greenCarpet: ItemType;
     static readonly greenConcrete: ItemType;
     static readonly greenDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a green block of glazed
-     * terracotta within Minecraft.
-     *
-     */
     static readonly greenGlazedTerracotta: ItemType;
     static readonly greenShulkerBox: ItemType;
     static readonly greenWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a grindstone within
-     * Minecraft.
-     *
-     */
     static readonly grindstone: ItemType;
     static readonly guardianSpawnEgg: ItemType;
     static readonly gunpowder: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of hanging roots
-     * within Minecraft.
-     *
-     */
     static readonly hangingRoots: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of hardened clay
-     * within Minecraft.
-     *
-     */
     static readonly hardenedClay: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of hay within
-     * Minecraft.
-     *
-     */
     static readonly hayBlock: ItemType;
     static readonly heartbreakPotterySherd: ItemType;
     static readonly heartOfTheSea: ItemType;
     static readonly heartPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a heavy weighted pressure
-     * plate within Minecraft.
-     *
-     */
     static readonly heavyWeightedPressurePlate: ItemType;
     static readonly hoglinSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of honey within
-     * Minecraft.
-     *
-     */
     static readonly honeyBlock: ItemType;
     static readonly honeyBottle: ItemType;
     static readonly honeycomb: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a honeycomb block within
-     * Minecraft.
-     *
-     */
     static readonly honeycombBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a hopper within Minecraft.
-     *
-     */
     static readonly hopper: ItemType;
     static readonly hopperMinecart: ItemType;
     static readonly hornCoral: ItemType;
@@ -14519,43 +13434,14 @@ export class MinecraftItemTypes {
     static readonly hostArmorTrimSmithingTemplate: ItemType;
     static readonly howlPotterySherd: ItemType;
     static readonly huskSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of ice within
-     * Minecraft.
-     *
-     */
     static readonly ice: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an infested block of
-     * deepslate within Minecraft.
-     *
-     */
     static readonly infestedDeepslate: ItemType;
     static readonly inkSac: ItemType;
     static readonly ironAxe: ItemType;
-    /**
-     * @remarks
-     * Represents iron bars within Minecraft.
-     *
-     */
     static readonly ironBars: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of iron within
-     * Minecraft.
-     *
-     */
     static readonly ironBlock: ItemType;
     static readonly ironBoots: ItemType;
     static readonly ironChestplate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an iron door within
-     * Minecraft.
-     *
-     */
     static readonly ironDoor: ItemType;
     static readonly ironGolemSpawnEgg: ItemType;
     static readonly ironHelmet: ItemType;
@@ -14564,130 +13450,31 @@ export class MinecraftItemTypes {
     static readonly ironIngot: ItemType;
     static readonly ironLeggings: ItemType;
     static readonly ironNugget: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded iron
-     * ore within Minecraft.
-     *
-     */
     static readonly ironOre: ItemType;
     static readonly ironPickaxe: ItemType;
     static readonly ironShovel: ItemType;
     static readonly ironSword: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an iron trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly ironTrapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jigsaw within Minecraft.
-     *
-     */
     static readonly jigsaw: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jukebox within
-     * Minecraft.
-     *
-     */
     static readonly jukebox: ItemType;
     static readonly jungleBoat: ItemType;
-    /**
-     * @remarks
-     * Represents jungle wood button within Minecraft.
-     *
-     */
     static readonly jungleButton: ItemType;
     static readonly jungleChestBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jungle wood door within
-     * Minecraft.
-     *
-     */
     static readonly jungleDoor: ItemType;
     static readonly jungleFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jungle wood fence gate
-     * within Minecraft.
-     *
-     */
     static readonly jungleFenceGate: ItemType;
     static readonly jungleHangingSign: ItemType;
     static readonly jungleLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jungle wood pressure
-     * plate within Minecraft.
-     *
-     */
     static readonly junglePressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jungle sign within
-     * Minecraft.
-     *
-     */
     static readonly jungleSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of jungle wood
-     * stairs within Minecraft.
-     *
-     */
     static readonly jungleStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jungle wood trapdoor
-     * within Minecraft.
-     *
-     */
     static readonly jungleTrapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of kelp within
-     * Minecraft.
-     *
-     */
     static readonly kelp: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a ladder within Minecraft.
-     *
-     */
     static readonly ladder: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lantern within
-     * Minecraft.
-     *
-     */
     static readonly lantern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of lapis lazuli
-     * within Minecraft.
-     *
-     */
     static readonly lapisBlock: ItemType;
     static readonly lapisLazuli: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded
-     * lapis lazuli within Minecraft.
-     *
-     */
     static readonly lapisOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bud of large amethyst
-     * within Minecraft.
-     *
-     */
     static readonly largeAmethystBud: ItemType;
     static readonly lavaBucket: ItemType;
     static readonly lead: ItemType;
@@ -14697,164 +13484,48 @@ export class MinecraftItemTypes {
     static readonly leatherHelmet: ItemType;
     static readonly leatherHorseArmor: ItemType;
     static readonly leatherLeggings: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of leaves within
-     * Minecraft.
-     *
-     */
     static readonly leaves: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an updated set of leaves
-     * within Minecraft.
-     *
-     */
     static readonly leaves2: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lectern within
-     * Minecraft.
-     *
-     */
     static readonly lectern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lever within Minecraft.
-     *
-     */
     static readonly lever: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of light within
-     * Minecraft.
-     *
-     */
     static readonly lightBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a light blue candle within
-     * Minecraft.
-     *
-     */
     static readonly lightBlueCandle: ItemType;
     static readonly lightBlueCarpet: ItemType;
     static readonly lightBlueConcrete: ItemType;
     static readonly lightBlueDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a light blue block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly lightBlueGlazedTerracotta: ItemType;
     static readonly lightBlueShulkerBox: ItemType;
     static readonly lightBlueWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a light gray candle within
-     * Minecraft.
-     *
-     */
     static readonly lightGrayCandle: ItemType;
     static readonly lightGrayCarpet: ItemType;
     static readonly lightGrayConcrete: ItemType;
     static readonly lightGrayDye: ItemType;
     static readonly lightGrayShulkerBox: ItemType;
     static readonly lightGrayWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lightning rod within
-     * Minecraft.
-     *
-     */
     static readonly lightningRod: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a light weighted pressure
-     * plate within Minecraft.
-     *
-     */
     static readonly lightWeightedPressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lime candle within
-     * Minecraft.
-     *
-     */
     static readonly limeCandle: ItemType;
     static readonly limeCarpet: ItemType;
     static readonly limeConcrete: ItemType;
     static readonly limeDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lime-colored block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly limeGlazedTerracotta: ItemType;
     static readonly limeShulkerBox: ItemType;
     static readonly limeWool: ItemType;
     static readonly lingeringPotion: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lit pumpkin within
-     * Minecraft.
-     *
-     */
     static readonly litPumpkin: ItemType;
     static readonly llamaSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lodestone within
-     * Minecraft.
-     *
-     */
     static readonly lodestone: ItemType;
     static readonly lodestoneCompass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a log within Minecraft.
-     *
-     */
     static readonly log: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a more updated,
-     * customizable log within Minecraft.
-     *
-     */
     static readonly log2: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a loom within Minecraft.
-     *
-     */
     static readonly loom: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a magenta candle within
-     * Minecraft.
-     *
-     */
     static readonly magentaCandle: ItemType;
     static readonly magentaCarpet: ItemType;
     static readonly magentaConcrete: ItemType;
     static readonly magentaDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of magenta-colored
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly magentaGlazedTerracotta: ItemType;
     static readonly magentaShulkerBox: ItemType;
     static readonly magentaWool: ItemType;
-    /**
-     * @remarks
-     * Represents magma within Minecraft.
-     *
-     */
     static readonly magma: ItemType;
     static readonly magmaCream: ItemType;
     static readonly magmaCubeSpawnEgg: ItemType;
@@ -14876,75 +13547,21 @@ export class MinecraftItemTypes {
     static readonly mangroveStairs: ItemType;
     static readonly mangroveTrapdoor: ItemType;
     static readonly mangroveWood: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a medium-sized bud of
-     * amethyst within Minecraft.
-     *
-     */
     static readonly mediumAmethystBud: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of melon within
-     * Minecraft.
-     *
-     */
     static readonly melonBlock: ItemType;
     static readonly melonSeeds: ItemType;
     static readonly melonSlice: ItemType;
     static readonly milkBucket: ItemType;
     static readonly minecart: ItemType;
     static readonly minerPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a mob spawner within
-     * Minecraft.
-     *
-     */
     static readonly mobSpawner: ItemType;
     static readonly mojangBannerPattern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a monster egg within
-     * Minecraft.
-     *
-     */
     static readonly monsterEgg: ItemType;
     static readonly mooshroomSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of moss within
-     * Minecraft.
-     *
-     */
     static readonly mossBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a carpet of moss within
-     * Minecraft.
-     *
-     */
     static readonly mossCarpet: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cobblestone
-     * with moss within Minecraft.
-     *
-     */
     static readonly mossyCobblestone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of mossy cobblestone
-     * stairs within Minecraft.
-     *
-     */
     static readonly mossyCobblestoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of mossy stone brick
-     * stairs within Minecraft.
-     *
-     */
     static readonly mossyStoneBrickStairs: ItemType;
     static readonly mournerPotterySherd: ItemType;
     static readonly mud: ItemType;
@@ -14972,57 +13589,15 @@ export class MinecraftItemTypes {
     static readonly musicDiscWait: ItemType;
     static readonly musicDiscWard: ItemType;
     static readonly mutton: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a mycelium plant within
-     * Minecraft.
-     *
-     */
     static readonly mycelium: ItemType;
     static readonly nameTag: ItemType;
     static readonly nautilusShell: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a nether brick block
-     * within Minecraft.
-     *
-     */
     static readonly netherbrick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a nether brick block
-     * within Minecraft.
-     *
-     */
     static readonly netherBrick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a nether brick fence
-     * within Minecraft.
-     *
-     */
     static readonly netherBrickFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of nether brick
-     * stairs within Minecraft.
-     *
-     */
     static readonly netherBrickStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of nether with
-     * embedded gold ore within Minecraft.
-     *
-     */
     static readonly netherGoldOre: ItemType;
     static readonly netheriteAxe: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of netherite
-     * within Minecraft.
-     *
-     */
     static readonly netheriteBlock: ItemType;
     static readonly netheriteBoots: ItemType;
     static readonly netheriteChestplate: ItemType;
@@ -15035,46 +13610,12 @@ export class MinecraftItemTypes {
     static readonly netheriteShovel: ItemType;
     static readonly netheriteSword: ItemType;
     static readonly netheriteUpgradeSmithingTemplate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of netherrack
-     * within Minecraft.
-     *
-     */
     static readonly netherrack: ItemType;
-    /**
-     * @remarks
-     * Represents nether sprouts within Minecraft.
-     *
-     */
     static readonly netherSprouts: ItemType;
     static readonly netherStar: ItemType;
-    /**
-     * @remarks
-     * Represents nether wart within Minecraft.
-     *
-     */
     static readonly netherWart: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of nether wart
-     * within Minecraft.
-     *
-     */
     static readonly netherWartBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a standard set of stone
-     * stairs within Minecraft.
-     *
-     */
     static readonly normalStoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a note block within
-     * Minecraft.
-     *
-     */
     static readonly noteblock: ItemType;
     static readonly oakBoat: ItemType;
     static readonly oakChestBoat: ItemType;
@@ -15082,82 +13623,22 @@ export class MinecraftItemTypes {
     static readonly oakHangingSign: ItemType;
     static readonly oakLog: ItemType;
     static readonly oakSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of oak stairs within
-     * Minecraft.
-     *
-     */
     static readonly oakStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an observer within
-     * Minecraft.
-     *
-     */
     static readonly observer: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an obsidian block within
-     * Minecraft.
-     *
-     */
     static readonly obsidian: ItemType;
     static readonly ocelotSpawnEgg: ItemType;
     static readonly ochreFroglight: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an orange candle within
-     * Minecraft.
-     *
-     */
     static readonly orangeCandle: ItemType;
     static readonly orangeCarpet: ItemType;
     static readonly orangeConcrete: ItemType;
     static readonly orangeDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of orange-colored
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly orangeGlazedTerracotta: ItemType;
     static readonly orangeShulkerBox: ItemType;
     static readonly orangeWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of oxidized copper
-     * within Minecraft.
-     *
-     */
     static readonly oxidizedCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of oxidized cut
-     * copper within Minecraft.
-     *
-     */
     static readonly oxidizedCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of oxidized cut
-     * copper within Minecraft.
-     *
-     */
     static readonly oxidizedCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of oxidized cut
-     * copper stairs within Minecraft.
-     *
-     */
     static readonly oxidizedCutCopperStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of packed ice
-     * within Minecraft.
-     *
-     */
     static readonly packedIce: ItemType;
     static readonly packedMud: ItemType;
     static readonly painting: ItemType;
@@ -15172,436 +13653,109 @@ export class MinecraftItemTypes {
     static readonly piglinSpawnEgg: ItemType;
     static readonly pigSpawnEgg: ItemType;
     static readonly pillagerSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a pink candle within
-     * Minecraft.
-     *
-     */
     static readonly pinkCandle: ItemType;
     static readonly pinkCarpet: ItemType;
     static readonly pinkConcrete: ItemType;
     static readonly pinkDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a pink-colored block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly pinkGlazedTerracotta: ItemType;
     static readonly pinkPetals: ItemType;
     static readonly pinkShulkerBox: ItemType;
     static readonly pinkWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a piston within Minecraft.
-     *
-     */
     static readonly piston: ItemType;
     static readonly pitcherPlant: ItemType;
     static readonly pitcherPod: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of planks within
-     * Minecraft.
-     *
-     */
     static readonly planks: ItemType;
     static readonly plentyPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents podzol within Minecraft.
-     *
-     */
     static readonly podzol: ItemType;
-    /**
-     * @remarks
-     * Represents pointed dripstone within Minecraft.
-     *
-     */
     static readonly pointedDripstone: ItemType;
     static readonly poisonousPotato: ItemType;
     static readonly polarBearSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of polished andesite
-     * stairs within Minecraft.
-     *
-     */
     static readonly polishedAndesiteStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of polished basalt
-     * within Minecraft.
-     *
-     */
     static readonly polishedBasalt: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of polished
-     * blackstone within Minecraft.
-     *
-     */
     static readonly polishedBlackstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of polished
-     * blackstone bricks within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of polished
-     * blackstone within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneBrickSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of polished
-     * blackstone brick stairs within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneBrickStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a polished blackstone
-     * brick wall within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneBrickWall: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a polished blackstone
-     * button within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneButton: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a polished blackstone
-     * pressure plate within Minecraft.
-     *
-     */
     static readonly polishedBlackstonePressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of polished
-     * blackstone within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of polished
-     * blackstone stairs within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a polished blackstone wall
-     * within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneWall: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of polished
-     * deepslate within Minecraft.
-     *
-     */
     static readonly polishedDeepslate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of polished
-     * deepslate within Minecraft.
-     *
-     */
     static readonly polishedDeepslateSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of polished
-     * deepslate stairs within Minecraft.
-     *
-     */
     static readonly polishedDeepslateStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wall of polished
-     * deepslate within Minecraft.
-     *
-     */
     static readonly polishedDeepslateWall: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of polished
-     * diorite within Minecraft.
-     *
-     */
     static readonly polishedDioriteStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of polished granite
-     * stairs within Minecraft.
-     *
-     */
     static readonly polishedGraniteStairs: ItemType;
     static readonly poppedChorusFruit: ItemType;
     static readonly porkchop: ItemType;
     static readonly potato: ItemType;
     static readonly potion: ItemType;
     static readonly powderSnowBucket: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of prismarine
-     * within Minecraft.
-     *
-     */
     static readonly prismarine: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of prismarine brick
-     * stairs within Minecraft.
-     *
-     */
     static readonly prismarineBricksStairs: ItemType;
     static readonly prismarineCrystals: ItemType;
     static readonly prismarineShard: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of prismarine stairs
-     * within Minecraft.
-     *
-     */
     static readonly prismarineStairs: ItemType;
     static readonly prizePotterySherd: ItemType;
     static readonly pufferfish: ItemType;
     static readonly pufferfishBucket: ItemType;
     static readonly pufferfishSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a pumpkin within
-     * Minecraft.
-     *
-     */
     static readonly pumpkin: ItemType;
     static readonly pumpkinPie: ItemType;
     static readonly pumpkinSeeds: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a purple candle within
-     * Minecraft.
-     *
-     */
     static readonly purpleCandle: ItemType;
     static readonly purpleCarpet: ItemType;
     static readonly purpleConcrete: ItemType;
     static readonly purpleDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a purple-colored block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly purpleGlazedTerracotta: ItemType;
     static readonly purpleShulkerBox: ItemType;
     static readonly purpleWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a purpur block within
-     * Minecraft.
-     *
-     */
     static readonly purpurBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of purpur stairs
-     * within Minecraft.
-     *
-     */
     static readonly purpurStairs: ItemType;
     static readonly quartz: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of solid quartz
-     * within Minecraft.
-     *
-     */
     static readonly quartzBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of solid quartz
-     * bricks within Minecraft.
-     *
-     */
     static readonly quartzBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded
-     * quartz ore within Minecraft.
-     *
-     */
     static readonly quartzOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of quartz stairs
-     * within Minecraft.
-     *
-     */
     static readonly quartzStairs: ItemType;
     static readonly rabbit: ItemType;
     static readonly rabbitFoot: ItemType;
     static readonly rabbitHide: ItemType;
     static readonly rabbitSpawnEgg: ItemType;
     static readonly rabbitStew: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of rails within
-     * Minecraft.
-     *
-     */
     static readonly rail: ItemType;
     static readonly raiserArmorTrimSmithingTemplate: ItemType;
     static readonly ravagerSpawnEgg: ItemType;
     static readonly rawCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of raw copper
-     * within Minecraft.
-     *
-     */
     static readonly rawCopperBlock: ItemType;
     static readonly rawGold: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of raw gold within
-     * Minecraft.
-     *
-     */
     static readonly rawGoldBlock: ItemType;
     static readonly rawIron: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of raw iron within
-     * Minecraft.
-     *
-     */
     static readonly rawIronBlock: ItemType;
     static readonly recoveryCompass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a red candle within
-     * Minecraft.
-     *
-     */
     static readonly redCandle: ItemType;
     static readonly redCarpet: ItemType;
     static readonly redConcrete: ItemType;
     static readonly redDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a red flower within
-     * Minecraft.
-     *
-     */
     static readonly redFlower: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a red-colored block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly redGlazedTerracotta: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a red mushroom within
-     * Minecraft.
-     *
-     */
     static readonly redMushroom: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of red mushroom
-     * within Minecraft.
-     *
-     */
     static readonly redMushroomBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of red nether
-     * brick within Minecraft.
-     *
-     */
     static readonly redNetherBrick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of red nether brick
-     * stairs within Minecraft.
-     *
-     */
     static readonly redNetherBrickStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of red sandstone
-     * within Minecraft.
-     *
-     */
     static readonly redSandstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of red sandstone
-     * stairs within Minecraft.
-     *
-     */
     static readonly redSandstoneStairs: ItemType;
     static readonly redShulkerBox: ItemType;
     static readonly redstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of redstone within
-     * Minecraft.
-     *
-     */
     static readonly redstoneBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a redstone lamp within
-     * Minecraft.
-     *
-     */
     static readonly redstoneLamp: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded
-     * redstone ore within Minecraft.
-     *
-     */
     static readonly redstoneOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a redstone torch within
-     * Minecraft.
-     *
-     */
     static readonly redstoneTorch: ItemType;
     static readonly redWool: ItemType;
     static readonly reinforcedDeepslate: ItemType;
     static readonly repeater: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a repeating command block
-     * within Minecraft.
-     *
-     */
     static readonly repeatingCommandBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a respawn anchor within
-     * Minecraft.
-     *
-     */
     static readonly respawnAnchor: ItemType;
     static readonly ribArmorTrimSmithingTemplate: ItemType;
     static readonly rottenFlesh: ItemType;
@@ -15609,66 +13763,19 @@ export class MinecraftItemTypes {
     static readonly salmon: ItemType;
     static readonly salmonBucket: ItemType;
     static readonly salmonSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of sand within
-     * Minecraft.
-     *
-     */
     static readonly sand: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of sandstone
-     * within Minecraft.
-     *
-     */
     static readonly sandstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of sandstone stairs
-     * within Minecraft.
-     *
-     */
     static readonly sandstoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a sapling within
-     * Minecraft.
-     *
-     */
     static readonly sapling: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of scaffolding
-     * within Minecraft.
-     *
-     */
     static readonly scaffolding: ItemType;
     static readonly sculk: ItemType;
     static readonly sculkCatalyst: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a sculk sensor within
-     * Minecraft.
-     *
-     */
     static readonly sculkSensor: ItemType;
     static readonly sculkShrieker: ItemType;
     static readonly sculkVein: ItemType;
     static readonly scute: ItemType;
-    /**
-     * @remarks
-     * Represents seagrass within Minecraft.
-     *
-     */
     static readonly seagrass: ItemType;
     static readonly seaLantern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a seapickle within
-     * Minecraft.
-     *
-     */
     static readonly seaPickle: ItemType;
     static readonly sentryArmorTrimSmithingTemplate: ItemType;
     static readonly shaperArmorTrimSmithingTemplate: ItemType;
@@ -15677,413 +13784,104 @@ export class MinecraftItemTypes {
     static readonly sheepSpawnEgg: ItemType;
     static readonly shelterPotterySherd: ItemType;
     static readonly shield: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a shroom light within
-     * Minecraft.
-     *
-     */
     static readonly shroomlight: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a shulker box within
-     * Minecraft.
-     *
-     */
     static readonly shulkerBox: ItemType;
     static readonly shulkerShell: ItemType;
     static readonly shulkerSpawnEgg: ItemType;
     static readonly silenceArmorTrimSmithingTemplate: ItemType;
     static readonly silverfishSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a silver-colored block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly silverGlazedTerracotta: ItemType;
     static readonly skeletonHorseSpawnEgg: ItemType;
     static readonly skeletonSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a skull within Minecraft.
-     *
-     */
     static readonly skull: ItemType;
     static readonly skullBannerPattern: ItemType;
     static readonly skullPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents slime within Minecraft.
-     *
-     */
     static readonly slime: ItemType;
     static readonly slimeBall: ItemType;
     static readonly slimeSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a small bud of amethyst
-     * within Minecraft.
-     *
-     */
     static readonly smallAmethystBud: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a small dripleaf block
-     * within Minecraft.
-     *
-     */
     static readonly smallDripleafBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a smithing table within
-     * Minecraft.
-     *
-     */
     static readonly smithingTable: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a smoker within Minecraft.
-     *
-     */
     static readonly smoker: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of smooth basalt
-     * within Minecraft.
-     *
-     */
     static readonly smoothBasalt: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of smooth quartz
-     * stairs within Minecraft.
-     *
-     */
     static readonly smoothQuartzStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of smooth red
-     * sandstone stairs within Minecraft.
-     *
-     */
     static readonly smoothRedSandstoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of smooth redstone
-     * stairs within Minecraft.
-     *
-     */
     static readonly smoothSandstoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a smooth stone block
-     * within Minecraft.
-     *
-     */
     static readonly smoothStone: ItemType;
     static readonly snifferEgg: ItemType;
     static readonly snifferSpawnEgg: ItemType;
     static readonly snortPotterySherd: ItemType;
     static readonly snoutArmorTrimSmithingTemplate: ItemType;
-    /**
-     * @remarks
-     * Represents snow within Minecraft.
-     *
-     */
     static readonly snow: ItemType;
     static readonly snowball: ItemType;
     static readonly snowGolemSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a layer of snow within
-     * Minecraft.
-     *
-     */
     static readonly snowLayer: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a soul campfire within
-     * Minecraft.
-     *
-     */
     static readonly soulCampfire: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a soul lantern within
-     * Minecraft.
-     *
-     */
     static readonly soulLantern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of soul sand
-     * within Minecraft.
-     *
-     */
     static readonly soulSand: ItemType;
-    /**
-     * @remarks
-     * Represents soul soil within Minecraft.
-     *
-     */
     static readonly soulSoil: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a soul torch within
-     * Minecraft.
-     *
-     */
     static readonly soulTorch: ItemType;
     static readonly spawnEgg: ItemType;
     static readonly spiderEye: ItemType;
     static readonly spiderSpawnEgg: ItemType;
     static readonly spireArmorTrimSmithingTemplate: ItemType;
     static readonly splashPotion: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a sponge within Minecraft.
-     *
-     */
     static readonly sponge: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spore blossom within
-     * Minecraft.
-     *
-     */
     static readonly sporeBlossom: ItemType;
     static readonly spruceBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spruce wood button
-     * within Minecraft.
-     *
-     */
     static readonly spruceButton: ItemType;
     static readonly spruceChestBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spruce wood door within
-     * Minecraft.
-     *
-     */
     static readonly spruceDoor: ItemType;
     static readonly spruceFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spruce wood fence gate
-     * within Minecraft.
-     *
-     */
     static readonly spruceFenceGate: ItemType;
     static readonly spruceHangingSign: ItemType;
     static readonly spruceLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spruce wood pressure
-     * plate within Minecraft.
-     *
-     */
     static readonly sprucePressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spruce sign within
-     * Minecraft.
-     *
-     */
     static readonly spruceSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of spruce wood
-     * stairs within Minecraft.
-     *
-     */
     static readonly spruceStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spruce wood trapdoor
-     * within Minecraft.
-     *
-     */
     static readonly spruceTrapdoor: ItemType;
     static readonly spyglass: ItemType;
     static readonly squidSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents stained glass within Minecraft.
-     *
-     */
     static readonly stainedGlass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a pane of stained glass
-     * within Minecraft.
-     *
-     */
     static readonly stainedGlassPane: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of stained
-     * hardened clay within Minecraft.
-     *
-     */
     static readonly stainedHardenedClay: ItemType;
     static readonly stick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a piston block with a
-     * sticky arm within Minecraft.
-     *
-     */
     static readonly stickyPiston: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of stone within
-     * Minecraft.
-     *
-     */
     static readonly stone: ItemType;
     static readonly stoneAxe: ItemType;
     static readonly stoneBlockSlab: ItemType;
     static readonly stoneBlockSlab2: ItemType;
     static readonly stoneBlockSlab3: ItemType;
     static readonly stoneBlockSlab4: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of stone brick
-     * within Minecraft.
-     *
-     */
     static readonly stonebrick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of stone brick
-     * stairs within Minecraft.
-     *
-     */
     static readonly stoneBrickStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stone button within
-     * Minecraft.
-     *
-     */
     static readonly stoneButton: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stonecutter block within
-     * Minecraft.
-     *
-     */
     static readonly stonecutterBlock: ItemType;
     static readonly stoneHoe: ItemType;
     static readonly stonePickaxe: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stone pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly stonePressurePlate: ItemType;
     static readonly stoneShovel: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of stone stairs
-     * within Minecraft.
-     *
-     */
     static readonly stoneStairs: ItemType;
     static readonly stoneSword: ItemType;
     static readonly straySpawnEgg: ItemType;
     static readonly striderSpawnEgg: ItemType;
     static readonly 'string': ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped acacia log
-     * within Minecraft.
-     *
-     */
     static readonly strippedAcaciaLog: ItemType;
     static readonly strippedBambooBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped birch log
-     * within Minecraft.
-     *
-     */
     static readonly strippedBirchLog: ItemType;
     static readonly strippedCherryLog: ItemType;
     static readonly strippedCherryWood: ItemType;
-    /**
-     * @remarks
-     * Represents stripped crimson hyphae within Minecraft.
-     *
-     */
     static readonly strippedCrimsonHyphae: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped crimson stem
-     * within Minecraft.
-     *
-     */
     static readonly strippedCrimsonStem: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped dark oak log
-     * within Minecraft.
-     *
-     */
     static readonly strippedDarkOakLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped jungle log
-     * within Minecraft.
-     *
-     */
     static readonly strippedJungleLog: ItemType;
     static readonly strippedMangroveLog: ItemType;
     static readonly strippedMangroveWood: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped oak log within
-     * Minecraft.
-     *
-     */
     static readonly strippedOakLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped spruce log
-     * within Minecraft.
-     *
-     */
     static readonly strippedSpruceLog: ItemType;
-    /**
-     * @remarks
-     * Represents stripped warped hyphae within Minecraft.
-     *
-     */
     static readonly strippedWarpedHyphae: ItemType;
-    /**
-     * @remarks
-     * Represents stripped warped stem within Minecraft.
-     *
-     */
     static readonly strippedWarpedStem: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a structure block, which
-     * provides for the saving and loading of block structures,
-     * within Minecraft.
-     *
-     */
     static readonly structureBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a structure void within
-     * Minecraft.
-     *
-     */
     static readonly structureVoid: ItemType;
     static readonly sugar: ItemType;
     static readonly sugarCane: ItemType;
@@ -16093,488 +13891,115 @@ export class MinecraftItemTypes {
     static readonly sweetBerries: ItemType;
     static readonly tadpoleBucket: ItemType;
     static readonly tadpoleSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents tall grass within Minecraft.
-     *
-     */
     static readonly tallgrass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a target within Minecraft.
-     *
-     */
     static readonly target: ItemType;
     static readonly tideArmorTrimSmithingTemplate: ItemType;
-    /**
-     * @remarks
-     * Represents tinted glass within Minecraft.
-     *
-     */
     static readonly tintedGlass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of TnT within
-     * Minecraft.
-     *
-     */
     static readonly tnt: ItemType;
     static readonly tntMinecart: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a torch within Minecraft.
-     *
-     */
     static readonly torch: ItemType;
     static readonly torchflower: ItemType;
     static readonly torchflowerSeeds: ItemType;
     static readonly totemOfUndying: ItemType;
     static readonly traderLlamaSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly trapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a trapped chest within
-     * Minecraft.
-     *
-     */
     static readonly trappedChest: ItemType;
     static readonly trident: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a tripwire hook within
-     * Minecraft.
-     *
-     */
     static readonly tripwireHook: ItemType;
     static readonly tropicalFish: ItemType;
     static readonly tropicalFishBucket: ItemType;
     static readonly tropicalFishSpawnEgg: ItemType;
     static readonly tubeCoral: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of tuff within
-     * Minecraft.
-     *
-     */
     static readonly tuff: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a turtle egg within
-     * Minecraft.
-     *
-     */
     static readonly turtleEgg: ItemType;
     static readonly turtleHelmet: ItemType;
     static readonly turtleSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of twisting vines
-     * within Minecraft.
-     *
-     */
     static readonly twistingVines: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an undyed shulker box
-     * within Minecraft.
-     *
-     */
     static readonly undyedShulkerBox: ItemType;
     static readonly verdantFroglight: ItemType;
     static readonly vexArmorTrimSmithingTemplate: ItemType;
     static readonly vexSpawnEgg: ItemType;
     static readonly villagerSpawnEgg: ItemType;
     static readonly vindicatorSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of vines within
-     * Minecraft.
-     *
-     */
     static readonly vine: ItemType;
     static readonly wanderingTraderSpawnEgg: ItemType;
     static readonly wardArmorTrimSmithingTemplate: ItemType;
     static readonly wardenSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped button within
-     * Minecraft.
-     *
-     */
     static readonly warpedButton: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped door within
-     * Minecraft.
-     *
-     */
     static readonly warpedDoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped fence within
-     * Minecraft.
-     *
-     */
     static readonly warpedFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped fence gate within
-     * Minecraft.
-     *
-     */
     static readonly warpedFenceGate: ItemType;
-    /**
-     * @remarks
-     * Represents warped fungus within Minecraft.
-     *
-     */
     static readonly warpedFungus: ItemType;
     static readonly warpedFungusOnAStick: ItemType;
     static readonly warpedHangingSign: ItemType;
-    /**
-     * @remarks
-     * Represents warped hyphae within Minecraft.
-     *
-     */
     static readonly warpedHyphae: ItemType;
-    /**
-     * @remarks
-     * Represents warped nylium within Minecraft.
-     *
-     */
     static readonly warpedNylium: ItemType;
-    /**
-     * @remarks
-     * Represents warped planks within Minecraft.
-     *
-     */
     static readonly warpedPlanks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly warpedPressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of warped roots
-     * within Minecraft.
-     *
-     */
     static readonly warpedRoots: ItemType;
     static readonly warpedSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of warped material
-     * within Minecraft.
-     *
-     */
     static readonly warpedSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of warped stairs
-     * within Minecraft.
-     *
-     */
     static readonly warpedStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped stem within
-     * Minecraft.
-     *
-     */
     static readonly warpedStem: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly warpedTrapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped wart block within
-     * Minecraft.
-     *
-     */
     static readonly warpedWartBlock: ItemType;
     static readonly waterBucket: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a water lily within
-     * Minecraft.
-     *
-     */
     static readonly waterlily: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed copper
-     * within Minecraft.
-     *
-     */
     static readonly waxedCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed cut
-     * copper within Minecraft.
-     *
-     */
     static readonly waxedCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of waxed cut copper
-     * within Minecraft.
-     *
-     */
     static readonly waxedCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of waxed cut copper
-     * stairs within Minecraft.
-     *
-     */
     static readonly waxedCutCopperStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed exposed
-     * copper within Minecraft.
-     *
-     */
     static readonly waxedExposedCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed exposed
-     * cut copper within Minecraft.
-     *
-     */
     static readonly waxedExposedCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of waxed exposed
-     * cut copper within Minecraft.
-     *
-     */
     static readonly waxedExposedCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of waxed exposed cut
-     * copper stairs within Minecraft.
-     *
-     */
     static readonly waxedExposedCutCopperStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed oxidized
-     * copper within Minecraft.
-     *
-     */
     static readonly waxedOxidizedCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed oxidized
-     * cut copper within Minecraft.
-     *
-     */
     static readonly waxedOxidizedCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of waxed oxidized
-     * cut copper within Minecraft.
-     *
-     */
     static readonly waxedOxidizedCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of waxed oxidized
-     * cut copper stairs within Minecraft.
-     *
-     */
     static readonly waxedOxidizedCutCopperStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed weathered
-     * copper within Minecraft.
-     *
-     */
     static readonly waxedWeatheredCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed weathered
-     * cut copper within Minecraft.
-     *
-     */
     static readonly waxedWeatheredCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of waxed weathered
-     * cut copper within Minecraft.
-     *
-     */
     static readonly waxedWeatheredCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of waxed weathered
-     * cut copper stairs within Minecraft.
-     *
-     */
     static readonly waxedWeatheredCutCopperStairs: ItemType;
     static readonly wayfinderArmorTrimSmithingTemplate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of weathered
-     * copper within Minecraft.
-     *
-     */
     static readonly weatheredCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of weathered cut
-     * copper within Minecraft.
-     *
-     */
     static readonly weatheredCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of weathered cut
-     * copper within Minecraft.
-     *
-     */
     static readonly weatheredCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of weathered cut
-     * copper stairs within Minecraft.
-     *
-     */
     static readonly weatheredCutCopperStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a web within Minecraft.
-     *
-     */
     static readonly web: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of weeping vines
-     * within Minecraft.
-     *
-     */
     static readonly weepingVines: ItemType;
-    /**
-     * @remarks
-     * Represents wheat within Minecraft.
-     *
-     */
     static readonly wheat: ItemType;
     static readonly wheatSeeds: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a white candle within
-     * Minecraft.
-     *
-     */
     static readonly whiteCandle: ItemType;
     static readonly whiteCarpet: ItemType;
     static readonly whiteConcrete: ItemType;
     static readonly whiteDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of white glazed
-     * terracotta within Minecraft.
-     *
-     */
     static readonly whiteGlazedTerracotta: ItemType;
     static readonly whiteShulkerBox: ItemType;
     static readonly whiteWool: ItemType;
     static readonly wildArmorTrimSmithingTemplate: ItemType;
     static readonly witchSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wither rose within
-     * Minecraft.
-     *
-     */
     static readonly witherRose: ItemType;
     static readonly witherSkeletonSpawnEgg: ItemType;
     static readonly witherSpawnEgg: ItemType;
     static readonly wolfSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of wood within
-     * Minecraft.
-     *
-     */
     static readonly wood: ItemType;
     static readonly woodenAxe: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wooden button within
-     * Minecraft.
-     *
-     */
     static readonly woodenButton: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wooden door within
-     * Minecraft.
-     *
-     */
     static readonly woodenDoor: ItemType;
     static readonly woodenHoe: ItemType;
     static readonly woodenPickaxe: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wooden pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly woodenPressurePlate: ItemType;
     static readonly woodenShovel: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wooden slab within
-     * Minecraft.
-     *
-     */
     static readonly woodenSlab: ItemType;
     static readonly woodenSword: ItemType;
-    /**
-     * @remarks
-     * Represents wool within Minecraft.
-     *
-     */
     static readonly wool: ItemType;
     static readonly writableBook: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a yellow candle within
-     * Minecraft.
-     *
-     */
     static readonly yellowCandle: ItemType;
     static readonly yellowCarpet: ItemType;
     static readonly yellowConcrete: ItemType;
     static readonly yellowDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a yellow flower within
-     * Minecraft.
-     *
-     */
     static readonly yellowFlower: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a yellow block of glazed
-     * terracotta within Minecraft.
-     *
-     */
     static readonly yellowGlazedTerracotta: ItemType;
     static readonly yellowShulkerBox: ItemType;
     static readonly yellowWool: ItemType;
@@ -16837,7 +14262,7 @@ export class Player extends Entity {
     /**
      * @beta
      * @remarks
-     *  Adds/removes level to/from the Player and returns the
+     * Adds/removes level to/from the Player and returns the
      * current level of the Player.
      *
      * This function can't be called in read-only mode.
@@ -16873,6 +14298,9 @@ export class Player extends Entity {
     getItemCooldown(itemCategory: string): number;
     /**
      * @beta
+     * @remarks
+     * Gets the current spawn point of the player.
+     *
      * @throws This function can throw errors.
      * @example getSpawnPoint.js
      * ```js
@@ -16904,7 +14332,6 @@ export class Player extends Entity {
      */
     isOp(): boolean;
     /**
-     * @beta
      * @remarks
      * Plays a sound that only this particular player can hear.
      *
@@ -16915,6 +14342,30 @@ export class Player extends Entity {
      * @param soundOptions
      * Additional optional options for the sound.
      * @throws This function can throw errors.
+     * @example playMusicAndSound.ts
+     * ```typescript
+     *   let players = mc.world.getPlayers();
+     *
+     *   const musicOptions: mc.MusicOptions = {
+     *     fade: 0.5,
+     *     loop: true,
+     *     volume: 1.0,
+     *   };
+     *   mc.world.playMusic("music.menu", musicOptions);
+     *
+     *   const worldSoundOptions: mc.WorldSoundOptions = {
+     *     pitch: 0.5,
+     *     volume: 4.0,
+     *   };
+     *   mc.world.playSound("ambient.weather.thunder", targetLocation, worldSoundOptions);
+     *
+     *   const playerSoundOptions: mc.PlayerSoundOptions = {
+     *     pitch: 1.0,
+     *     volume: 1.0,
+     *   };
+     *
+     *   players[0].playSound("bucket.fill_water", playerSoundOptions);
+     * ```
      */
     playSound(soundID: string, soundOptions?: PlayerSoundOptions): void;
     /**
@@ -16939,7 +14390,6 @@ export class Player extends Entity {
      */
     resetLevel(): void;
     /**
-     * @beta
      * @remarks
      * Sends a message to the player.
      *
@@ -16963,6 +14413,18 @@ export class Player extends Entity {
      * // Displays the player's score for objective "obj". Each player will see their own score.
      * const rawMessage = { score: { name: "*", objective: "obj" } };
      * world.sendMessage(rawMessage);
+     * ```
+     * @example sendBasicMessage.ts
+     * ```typescript
+     *   let players = mc.world.getPlayers();
+     *
+     *   players[0].sendMessage("Hello World!");
+     * ```
+     * @example sendTranslatedMessage.ts
+     * ```typescript
+     *   let players = mc.world.getPlayers();
+     *
+     *   players[0].sendMessage({ translate: "authentication.welcome", with: ["Amazing Player 1"] });
      * ```
      * @example simpleString.ts
      * ```typescript
@@ -16991,6 +14453,9 @@ export class Player extends Entity {
     /**
      * @beta
      * @remarks
+     * Sets the current starting spawn point for this particular
+     * player.
+     *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
@@ -17041,7 +14506,6 @@ export class PlayerIterator implements Iterable<Player> {
 }
 
 /**
- * @beta
  * Contains information regarding a player that has joined.
  * See the playerSpawn event for more detailed information that
  * could be returned after the first time a player has spawned
@@ -17064,7 +14528,6 @@ export class PlayerJoinAfterEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to a player joining the
  * world.
  */
@@ -17074,7 +14537,6 @@ export class PlayerJoinAfterEventSignal extends IPlayerJoinAfterEventSignal {
 }
 
 /**
- * @beta
  * Contains information regarding a player that has left the
  * world.
  */
@@ -17096,7 +14558,6 @@ export class PlayerLeaveAfterEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to a player leaving the
  * world.
  */
@@ -17106,7 +14567,6 @@ export class PlayerLeaveAfterEventSignal extends IPlayerLeaveAfterEventSignal {
 }
 
 /**
- * @beta
  * An event that contains more information about a player
  * spawning.
  */
@@ -17132,7 +14592,6 @@ export class PlayerSpawnAfterEvent {
 }
 
 /**
- * @beta
  * Registers an event when a player is spawned (or re-spawned
  * after death) and fully ready within the world.
  */
@@ -17217,55 +14676,22 @@ export class PressurePlatePushAfterEventSignal extends IPressurePlatePushAfterEv
 
 /**
  * @beta
- * Contains information related to a projectile hitting an
- * entity or block.
  */
 export class ProjectileHitAfterEvent {
     private constructor();
-    /**
-     * @remarks
-     * Dimension where this projectile hit took place.
-     *
-     */
     readonly dimension: Dimension;
-    /**
-     * @remarks
-     * Direction vector of the projectile as it hit a block/entity.
-     *
-     */
     readonly hitVector: Vector3;
-    /**
-     * @remarks
-     * Location where the projectile hit occurred.
-     *
-     */
     readonly location: Vector3;
-    /**
-     * @remarks
-     * Entity for the projectile that hit a block/entity.
-     *
-     */
     readonly projectile: Entity;
-    /**
-     * @remarks
-     * Optional source entity that fired the projectile.
-     *
-     */
     readonly source: Entity;
     /**
      * @remarks
-     * Contains additional information about the block that was hit
-     * by the projectile, or undefined if the projectile did not
-     * hit a block.
-     *
      * This function can't be called in read-only mode.
      *
      */
     getBlockHit(): BlockHitInformation | undefined;
     /**
      * @remarks
-     * Contains additional information about a block that was hit.
-     *
      * This function can't be called in read-only mode.
      *
      */
@@ -17274,8 +14700,6 @@ export class ProjectileHitAfterEvent {
 
 /**
  * @beta
- * Manages callbacks that are connected to when a projectile
- * hits an entity or block.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class ProjectileHitAfterEventSignal extends IProjectileHitAfterEventSignal {
@@ -17537,6 +14961,12 @@ export class ScoreboardScoreInfo {
  */
 export class ScreenDisplay {
     private constructor();
+    /**
+     * @remarks
+     * Returns true if the current reference to this screen display
+     * manager object is valid and functional.
+     *
+     */
     isValid(): boolean;
     /**
      * @remarks
@@ -17545,6 +14975,8 @@ export class ScreenDisplay {
      *
      * This function can't be called in read-only mode.
      *
+     * @param text
+     * New value for the action bar text.
      * @throws This function can throw errors.
      */
     setActionBar(text: (RawMessage | string)[] | RawMessage | string): void;
@@ -17558,6 +14990,45 @@ export class ScreenDisplay {
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
+     * @example countdown.ts
+     * ```typescript
+     *   let players = mc.world.getPlayers();
+     *
+     *   players[0].onScreenDisplay.setTitle("Get ready!", {
+     *     stayDuration: 220,
+     *     fadeInDuration: 2,
+     *     fadeOutDuration: 4,
+     *     subtitle: "10",
+     *   });
+     *
+     *   let countdown = 10;
+     *
+     *   let intervalId = mc.system.runInterval(() => {
+     *     countdown--;
+     *     players[0].onScreenDisplay.updateSubtitle(countdown.toString());
+     *
+     *     if (countdown == 0) {
+     *       mc.system.clearRun(intervalId);
+     *     }
+     *   }, 20);
+     * ```
+     * @example setTitle.ts
+     * ```typescript
+     *   let players = mc.world.getPlayers();
+     *
+     *   players[0].onScreenDisplay.setTitle("§o§6Fancy Title§r");
+     * ```
+     * @example setTitleAndSubtitle.ts
+     * ```typescript
+     *   let players = mc.world.getPlayers();
+     *
+     *   players[0].onScreenDisplay.setTitle("Chapter 1", {
+     *     stayDuration: 100,
+     *     fadeInDuration: 2,
+     *     fadeOutDuration: 4,
+     *     subtitle: "Trouble in Block Town",
+     *   });
+     * ```
      */
     setTitle(title: (RawMessage | string)[] | RawMessage | string, options?: TitleDisplayOptions): void;
     /**
@@ -17685,21 +15156,27 @@ export class System {
     private constructor();
     /**
      * @beta
+     * @remarks
+     * Returns a collection of after-events for system-level
+     * operations.
+     *
      */
     readonly afterEvents: SystemAfterEvents;
     /**
      * @beta
+     * @remarks
+     * Returns a collection of before-events for system-level
+     * operations.
+     *
      */
     readonly beforeEvents: SystemBeforeEvents;
     /**
-     * @beta
      * @remarks
      * Represents the current world tick of the server.
      *
      */
     readonly currentTick: number;
     /**
-     * @beta
      * @remarks
      * Cancels the execution of a function run that was previously
      * scheduled via the `run` function.
@@ -17726,6 +15203,21 @@ export class System {
      * @returns
      * An opaque identifier that can be used with the `clearRun`
      * function to cancel the execution of this run.
+     * @example trapTick.ts
+     * ```typescript
+     *   const overworld = mc.world.getDimension("overworld");
+     *
+     *   try {
+     *     // Minecraft runs at 20 ticks per second.
+     *     if (mc.system.currentTick % 1200 === 0) {
+     *       mc.world.sendMessage("Another minute passes...");
+     *     }
+     *   } catch (e) {
+     *     console.warn("Error: " + e);
+     *   }
+     *
+     *   mc.system.run(trapTick);
+     * ```
      * @example run.js
      * ```js
      * const runId = system.run(() => {
@@ -17735,7 +15227,6 @@ export class System {
      */
     run(callback: () => void): number;
     /**
-     * @beta
      * @remarks
      * Runs a set of code on an interval.
      *
@@ -17747,10 +15238,17 @@ export class System {
      * @returns
      * An opaque handle that can be used with the clearRun method
      * to stop the run of this function on an interval.
+     * @example every30Seconds.ts
+     * ```typescript
+     *   let intervalRunIdentifier = Math.floor(Math.random() * 10000);
+     *
+     *   mc.system.runInterval(() => {
+     *     mc.world.sendMessage("This is an interval run " + intervalRunIdentifier + " sending a message every 30 seconds.");
+     *   }, 600);
+     * ```
      */
     runInterval(callback: () => void, tickInterval?: number): number;
     /**
-     * @beta
      * @remarks
      * Runs a set of code at a future time specified by tickDelay.
      *
@@ -17776,10 +15274,16 @@ export class System {
 
 /**
  * @beta
+ * Provides a set of events that fire within the broader
+ * scripting system within Minecraft.
  */
 export class SystemAfterEvents {
     private constructor();
     /**
+     * @remarks
+     * An event that fires when a /scriptevent command is set. This
+     * provides a way for commands and other systems to trigger
+     * behavior within script.
      * @example entity.js
      * ```js
      * import { system, world } from "@minecraft/server";
@@ -17817,10 +15321,21 @@ export class SystemAfterEvents {
 
 /**
  * @beta
+ * A set of events that fire before an actual action occurs. In
+ * most cases, you can potentially cancel or modify the
+ * impending event. Note that in before events any APIs that
+ * modify gameplay state will not function and will throw an
+ * error.
  */
 export class SystemBeforeEvents {
     private constructor();
     /**
+     * @remarks
+     * Fires when the scripting watchdog shuts down the server. The
+     * can be due to using too much memory, or by causing
+     * significant slowdown or hang.
+     * To prevent shutdown, set the event's cancel property to
+     * true.
      * @example cancelTerminate.js
      * ```js
      * import { system } from "@minecraft/server";
@@ -18190,9 +15705,8 @@ export class World {
      * @beta
      * @remarks
      * Contains a set of events that are applicable to the entirety
-     * of the world.
-     * Event callbacks are called in a deferred manner.
-     * Event callbacks are executed in read-write mode.
+     * of the world.  Event callbacks are called in a deferred
+     * manner. Event callbacks are executed in read-write mode.
      *
      */
     readonly afterEvents: WorldAfterEvents;
@@ -18200,9 +15714,8 @@ export class World {
      * @beta
      * @remarks
      * Contains a set of events that are applicable to the entirety
-     * of the world.
-     * Event callbacks are called immediately.
-     * Event callbacks are executed in read-only mode.
+     * of the world. Event callbacks are called immediately. Event
+     * callbacks are executed in read-only mode.
      *
      */
     readonly beforeEvents: WorldBeforeEvents;
@@ -18222,6 +15735,10 @@ export class World {
      *
      * This function can't be called in read-only mode.
      *
+     * @param id
+     * The message identifier.
+     * @param value
+     * The message.
      */
     broadcastClientMessage(id: string, value: string): void;
     /**
@@ -18240,16 +15757,32 @@ export class World {
     getAllPlayers(): Player[];
     /**
      * @beta
+     * @remarks
+     * Returns the current day.
+     *
+     * @returns
+     * The current day, determined by the world time divided by the
+     * number of ticks per day. New worlds start at day 0.
      */
     getDay(): number;
     /**
      * @beta
+     * @remarks
+     * Returns the default Overworld spawn location.
+     *
+     * @returns
+     * The default Overworld spawn location. By default, the Y
+     * coordinate is 32767, indicating a player's spawn height is
+     * not fixed and will be determined by surrounding blocks.
      */
     getDefaultSpawnLocation(): Vector3;
     /**
      * @remarks
      * Returns a dimension object.
      *
+     * @param dimensionId
+     * The name of the dimension. For example, "overworld",
+     * "nether" or "the_end".
      * @returns
      * The requested dimension
      * @throws
@@ -18261,10 +15794,66 @@ export class World {
      * @remarks
      * Returns a property value.
      *
+     * @param identifier
+     * The property identifier.
      * @returns
      * Returns the value for the property, or undefined if the
      * property has not been set.
-     * @throws This function can throw errors.
+     * @throws
+     * Throws if the given dynamic property identifier is not
+     * defined.
+     * @example incrementProperty.ts
+     * ```typescript
+     *   let number = mc.world.getDynamicProperty("samplelibrary:number");
+     *
+     *   log("Current value is: " + number);
+     *
+     *   if (number === undefined) {
+     *     number = 0;
+     *   }
+     *
+     *   if (typeof number !== "number") {
+     *     log("Number is of an unexpected type.");
+     *     return -1;
+     *   }
+     *
+     *   mc.world.setDynamicProperty("samplelibrary:number", number + 1);
+     * ```
+     * @example incrementPropertyInJsonBlob.ts
+     * ```typescript
+     *   let paintStr = mc.world.getDynamicProperty("samplelibrary:longerjson");
+     *   let paint: { color: string; intensity: number } | undefined = undefined;
+     *
+     *   log("Current value is: " + paintStr);
+     *
+     *   if (paintStr === undefined) {
+     *     paint = {
+     *       color: "purple",
+     *       intensity: 0,
+     *     };
+     *   } else {
+     *     if (typeof paintStr !== "string") {
+     *       log("Paint is of an unexpected type.");
+     *       return -1;
+     *     }
+     *
+     *     try {
+     *       paint = JSON.parse(paintStr);
+     *     } catch (e) {
+     *       log("Error parsing serialized struct.");
+     *       return -1;
+     *     }
+     *   }
+     *
+     *   if (!paint) {
+     *     log("Error parsing serialized struct.");
+     *     return -1;
+     *   }
+     *
+     *   paint.intensity++;
+     *   paintStr = JSON.stringify(paint); // be very careful to ensure your serialized JSON str cannot exceed limits
+     *   mc.world.setDynamicProperty("samplelibrary:longerjson", paintStr);
+     * ```
      */
     getDynamicProperty(identifier: string): boolean | number | string | undefined;
     /**
@@ -18281,7 +15870,6 @@ export class World {
      */
     getEntity(id: string): Entity | undefined;
     /**
-     * @beta
      * @remarks
      * Returns a set of players based on a set of conditions
      * defined via the EntityQueryOptions set of filter criteria.
@@ -18291,42 +15879,100 @@ export class World {
      * players returned.
      * @returns
      * A player array.
-     * @throws This function can throw errors.
+     * @throws
+     * Throws if the provided EntityQueryOptions are invalid.
      */
     getPlayers(options?: EntityQueryOptions): Player[];
     /**
      * @beta
+     * @remarks
+     * Returns the time of day.
+     *
+     * @returns
+     * The time of day, in ticks, between 0 and 24000.
      */
     getTimeOfDay(): number;
     /**
-     * @beta
      * @remarks
      * Plays a particular music track for all players.
      *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
+     * @example playMusicAndSound.ts
+     * ```typescript
+     *   let players = mc.world.getPlayers();
+     *
+     *   const musicOptions: mc.MusicOptions = {
+     *     fade: 0.5,
+     *     loop: true,
+     *     volume: 1.0,
+     *   };
+     *   mc.world.playMusic("music.menu", musicOptions);
+     *
+     *   const worldSoundOptions: mc.WorldSoundOptions = {
+     *     pitch: 0.5,
+     *     volume: 4.0,
+     *   };
+     *   mc.world.playSound("ambient.weather.thunder", targetLocation, worldSoundOptions);
+     *
+     *   const playerSoundOptions: mc.PlayerSoundOptions = {
+     *     pitch: 1.0,
+     *     volume: 1.0,
+     *   };
+     *
+     *   players[0].playSound("bucket.fill_water", playerSoundOptions);
+     * ```
      */
     playMusic(trackID: string, musicOptions?: MusicOptions): void;
     /**
-     * @beta
      * @remarks
      * Plays a sound for all players.
      *
      * This function can't be called in read-only mode.
      *
-     * @throws This function can throw errors.
+     * @throws
+     * An error will be thrown if volume is less than 0.0.
+     * An error will be thrown if fade is less than 0.0.
+     * An error will be thrown if pitch is less than 0.01.
+     * An error will be thrown if volume is less than 0.0.
+     * @example playMusicAndSound.ts
+     * ```typescript
+     *   let players = mc.world.getPlayers();
+     *
+     *   const musicOptions: mc.MusicOptions = {
+     *     fade: 0.5,
+     *     loop: true,
+     *     volume: 1.0,
+     *   };
+     *   mc.world.playMusic("music.menu", musicOptions);
+     *
+     *   const worldSoundOptions: mc.WorldSoundOptions = {
+     *     pitch: 0.5,
+     *     volume: 4.0,
+     *   };
+     *   mc.world.playSound("ambient.weather.thunder", targetLocation, worldSoundOptions);
+     *
+     *   const playerSoundOptions: mc.PlayerSoundOptions = {
+     *     pitch: 1.0,
+     *     volume: 1.0,
+     *   };
+     *
+     *   players[0].playSound("bucket.fill_water", playerSoundOptions);
+     * ```
      */
     playSound(soundID: string, location: Vector3, soundOptions?: WorldSoundOptions): void;
     /**
-     * @beta
      * @remarks
      * Queues an additional music track for players. If a track is
      * not playing, a music track will play.
      *
      * This function can't be called in read-only mode.
      *
-     * @throws This function can throw errors.
+     * @throws
+     * An error will be thrown if volume is less than 0.0.
+     * An error will be thrown if fade is less than 0.0.
+     *
      */
     queueMusic(trackID: string, musicOptions?: MusicOptions): void;
     /**
@@ -18340,7 +15986,6 @@ export class World {
      */
     removeDynamicProperty(identifier: string): boolean;
     /**
-     * @beta
      * @remarks
      * Sends a message to all players.
      *
@@ -18381,16 +16026,26 @@ export class World {
     /**
      * @beta
      * @remarks
+     * Sets the world time.
+     *
      * This function can't be called in read-only mode.
      *
+     * @param absoluteTime
+     * The world time, in ticks.
      */
     setAbsoluteTime(absoluteTime: number): void;
     /**
      * @beta
      * @remarks
+     * Sets a default spawn location for all players.
+     *
      * This function can't be called in read-only mode.
      *
-     * @throws This function can throw errors.
+     * @param spawnLocation
+     * Location of the spawn point. Note that this is assumed to be
+     * within the overworld dimension.
+     * @throws
+     * Throws if the provided spawn location is out of bounds.
      */
     setDefaultSpawnLocation(spawnLocation: Vector3): void;
     /**
@@ -18400,21 +16055,82 @@ export class World {
      *
      * This function can't be called in read-only mode.
      *
+     * @param identifier
+     * The property identifier.
      * @param value
      * Data value of the property to set.
-     * @throws This function can throw errors.
+     * @throws
+     * Throws if the given dynamic property identifier is not
+     * defined.
+     * @example incrementProperty.ts
+     * ```typescript
+     *   let number = mc.world.getDynamicProperty("samplelibrary:number");
+     *
+     *   log("Current value is: " + number);
+     *
+     *   if (number === undefined) {
+     *     number = 0;
+     *   }
+     *
+     *   if (typeof number !== "number") {
+     *     log("Number is of an unexpected type.");
+     *     return -1;
+     *   }
+     *
+     *   mc.world.setDynamicProperty("samplelibrary:number", number + 1);
+     * ```
+     * @example incrementPropertyInJsonBlob.ts
+     * ```typescript
+     *   let paintStr = mc.world.getDynamicProperty("samplelibrary:longerjson");
+     *   let paint: { color: string; intensity: number } | undefined = undefined;
+     *
+     *   log("Current value is: " + paintStr);
+     *
+     *   if (paintStr === undefined) {
+     *     paint = {
+     *       color: "purple",
+     *       intensity: 0,
+     *     };
+     *   } else {
+     *     if (typeof paintStr !== "string") {
+     *       log("Paint is of an unexpected type.");
+     *       return -1;
+     *     }
+     *
+     *     try {
+     *       paint = JSON.parse(paintStr);
+     *     } catch (e) {
+     *       log("Error parsing serialized struct.");
+     *       return -1;
+     *     }
+     *   }
+     *
+     *   if (!paint) {
+     *     log("Error parsing serialized struct.");
+     *     return -1;
+     *   }
+     *
+     *   paint.intensity++;
+     *   paintStr = JSON.stringify(paint); // be very careful to ensure your serialized JSON str cannot exceed limits
+     *   mc.world.setDynamicProperty("samplelibrary:longerjson", paintStr);
+     * ```
      */
     setDynamicProperty(identifier: string, value: boolean | number | string): void;
     /**
      * @beta
      * @remarks
+     * Sets the time of day.
+     *
      * This function can't be called in read-only mode.
      *
-     * @throws This function can throw errors.
+     * @param timeOfDay
+     * The time of day, in ticks, between 0 and 24000.
+     * @throws
+     * Throws if the provided time of day is not within the valid
+     * range.
      */
     setTimeOfDay(timeOfDay: number | TimeOfDay): void;
     /**
-     * @beta
      * @remarks
      * Stops any music tracks from playing.
      *
@@ -18425,12 +16141,15 @@ export class World {
 }
 
 /**
- * @beta
+ * Contains a set of events that are available across the scope
+ * of the World.
  */
 export class WorldAfterEvents {
     private constructor();
     /**
      * @beta
+     * @remarks
+     * This event fires for a block that is broken by a player.
      * @example subscribe.js
      * ```js
      * import { world } from "@minecraft/server";
@@ -18451,13 +16170,23 @@ export class WorldAfterEvents {
     readonly blockBreak: BlockBreakAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires for each BlockLocation destroyed by an
+     * explosion. It is fired after the blocks have already been
+     * destroyed.
+     *
      */
     readonly blockExplode: BlockExplodeAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires for a block that is placed by a player.
+     *
      */
     readonly blockPlace: BlockPlaceAfterEventSignal;
     /**
+     * @remarks
+     * This event fires when a button is pushed.
      * @example subscribe.js
      * ```js
      * import { world } from "@minecraft/server";
@@ -18472,6 +16201,9 @@ export class WorldAfterEvents {
     readonly buttonPush: ButtonPushAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event is triggered after a chat message has been
+     * broadcast or sent to players.
      * @example subscribe.js
      * ```js
      * import { WeatherType, system, world } from "@minecraft/server";
@@ -18493,6 +16225,10 @@ export class WorldAfterEvents {
     readonly chatSend: ChatSendAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event is fired when an entity event has been triggered
+     * that will update the component definition state of an
+     * entity.
      * @example sheepEventListener.ts
      * ```ts
      * import { world, system, Entity } from "@minecraft/server";
@@ -18541,10 +16277,16 @@ export class WorldAfterEvents {
     readonly dataDrivenEntityTriggerEvent: DataDrivenEntityTriggerAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires when an effect, like poisoning, is added to
+     * an entity.
+     *
      */
     readonly effectAdd: EffectAddAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires when an entity dies.
      * @example subscribe.js
      * ```js
      * import { world } from "@minecraft/server";
@@ -18571,6 +16313,9 @@ export class WorldAfterEvents {
     readonly entityHitEntity: EntityHitEntityAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires when an entity is hurt (takes damage).
+     *
      */
     readonly entityHurt: EntityHurtAfterEventSignal;
     /**
@@ -18579,10 +16324,16 @@ export class WorldAfterEvents {
     readonly entityRemoved: EntityRemovedAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires when an entity is spawned.
+     *
      */
     readonly entitySpawn: EntitySpawnAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event is fired after an explosion occurs.
+     *
      */
     readonly explosion: ExplosionAfterEventSignal;
     /**
@@ -18591,6 +16342,12 @@ export class WorldAfterEvents {
     readonly itemCompleteUse: ItemCompleteUseAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * For custom items, this event is triggered when the
+     * fundamental set of defined components for the item change.
+     * Note that this event is only fired for custom data-driven
+     * items.
+     *
      */
     readonly itemDefinitionEvent: ItemDefinitionAfterEventSignal;
     /**
@@ -18603,6 +16360,13 @@ export class WorldAfterEvents {
     readonly itemStartUse: ItemStartUseAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires when a player successfully uses an item or
+     * places a block by pressing the Use Item / Place Block
+     * button. If multiple blocks are placed, this event will only
+     * occur once at the beginning of the block placement. Note:
+     * This event cannot be used with Hoe or Axe items.
+     *
      */
     readonly itemStartUseOn: ItemStartUseOnAfterEventSignal;
     /**
@@ -18611,26 +16375,50 @@ export class WorldAfterEvents {
     readonly itemStopUse: ItemStopUseAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires when a player releases the Use Item / Place
+     * Block button after successfully using an item. Note: This
+     * event cannot be used with Hoe or Axe items.
+     *
      */
     readonly itemStopUseOn: ItemStopUseOnAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires when an item is successfully used by a
+     * player.
+     *
      */
     readonly itemUse: ItemUseAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires when an item is used on a block by a
+     * player.
+     *
      */
     readonly itemUseOn: ItemUseOnAfterEventSignal;
     readonly leverAction: LeverActionAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event is an internal implementation detail, and is
+     * otherwise not currently functional.
+     *
      */
     readonly messageReceive: ServerMessageAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires when a piston expands or retracts.
+     *
      */
     readonly pistonActivate: PistonActivateAfterEventSignal;
     /**
+     * @remarks
+     * This event fires when a player joins a world.  See also
+     * playerSpawn for another related event you can trap for when
+     * a player is spawned the first time within a world.
      * @example subscribe.js
      * ```js
      * import { world } from "@minecraft/server";
@@ -18643,6 +16431,8 @@ export class WorldAfterEvents {
      */
     readonly playerJoin: PlayerJoinAfterEventSignal;
     /**
+     * @remarks
+     * This event fires when a player leaves a world.
      * @example subscribe.js
      * ```js
      * import { world } from "@minecraft/server";
@@ -18655,9 +16445,12 @@ export class WorldAfterEvents {
      */
     readonly playerLeave: PlayerLeaveAfterEventSignal;
     /**
+     * @remarks
+     * This event fires when a player spawns or respawns. Note that
+     * an additional flag within this event will tell you whether
+     * the player is spawning right after join vs. a respawn.
      * @example initialSpawn.js
      * ```js
-     * // https://github.com/JaylyDev/ScriptAPI/tree/main/scripts/player-spawn
      * import { world } from "@minecraft/server";
      *
      * world.afterEvents.playerSpawn.subscribe((eventData) => {
@@ -18691,20 +16484,37 @@ export class WorldAfterEvents {
     readonly tripWireTrip: TripWireTripAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event will be triggered when the weather changes within
+     * Minecraft.
+     *
      */
     readonly weatherChange: WeatherChangeAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires when the script environment is initialized
+     * on a World. In addition, you can register dynamic properties
+     * within the scope of a world Initialize event.
+     *
      */
     readonly worldInitialize: WorldInitializeAfterEventSignal;
 }
 
 /**
  * @beta
+ * A set of events that fire before an actual action occurs. In
+ * most cases, you can potentially cancel or modify the
+ * impending event. Note that in before events any APIs that
+ * modify gameplay state will not function and will throw an
+ * error. (e.g., dimension.spawnEntity)
  */
 export class WorldBeforeEvents {
     private constructor();
     /**
+     * @remarks
+     * This event is triggered after a chat message has been
+     * broadcast or sent to players.
      * @example subscribe.js
      * ```js
      * import { WeatherType, system, world } from "@minecraft/server";
@@ -18723,11 +16533,40 @@ export class WorldBeforeEvents {
      * ```
      */
     readonly chatSend: ChatSendBeforeEventSignal;
+    /**
+     * @remarks
+     * This event is fired when an entity event has been triggered
+     * that will update the component definition state of an
+     * entity.
+     *
+     */
     readonly dataDrivenEntityTriggerEvent: DataDrivenEntityTriggerBeforeEventSignal;
+    /**
+     * @remarks
+     * This event is fired after an explosion occurs.
+     *
+     */
     readonly explosion: ExplosionBeforeEventSignal;
+    /**
+     * @remarks
+     * For custom items, this event is triggered when the
+     * fundamental set of defined components for the item change.
+     * Note that this event is only fired for custom data-driven
+     * items.
+     *
+     */
     readonly itemDefinitionEvent: ItemDefinitionBeforeEventSignal;
+    /**
+     * @remarks
+     * This event fires when an item is successfully used by a
+     * player.
+     *
+     */
     readonly itemUse: ItemUseBeforeEventSignal;
     /**
+     * @remarks
+     * This event fires when an item is used on a block by a
+     * player.
      * @example subscribe.ts
      * ```ts
      * import {
@@ -18752,6 +16591,11 @@ export class WorldBeforeEvents {
      * ```
      */
     readonly itemUseOn: ItemUseOnBeforeEventSignal;
+    /**
+     * @remarks
+     * This event fires when a piston expands or retracts.
+     *
+     */
     readonly pistonActivate: PistonActivateBeforeEventSignal;
 }
 
@@ -18772,16 +16616,17 @@ export class WorldInitializeAfterEvent {
      *
      * @example propertyRegistration.js
      * ```typescript
-     * import { DynamicPropertiesDefinition, MinecraftEntityTypes, world } from "@minecraft/server";
+     * import { DynamicPropertiesDefinition, EntityTypes, world } from '@minecraft/server';
+     * import { MinecraftEntityTypes } from '@minecraft/vanilla-data';
      *
-     * world.afterEvents.worldInitialize.subscribe((e) => {
-     *   let def = new DynamicPropertiesDefinition();
+     * world.afterEvents.worldInitialize.subscribe(e => {
+     *     let def = new DynamicPropertiesDefinition();
      *
-     *   def.defineNumber("rpgStrength");
-     *   def.defineString("rpgRole", 16);
-     *   def.defineBoolean("rpgIsHero");
+     *     def.defineNumber('rpgStrength');
+     *     def.defineString('rpgRole', 16);
+     *     def.defineBoolean('rpgIsHero');
      *
-     *   e.propertyRegistry.registerEntityTypeDynamicProperties(def, MinecraftEntityTypes.skeleton);
+     *     e.propertyRegistry.registerEntityTypeDynamicProperties(def, EntityTypes.get(MinecraftEntityTypes.Skeleton));
      * });
      * ```
      */
@@ -18978,36 +16823,11 @@ export interface BoundingBox {
 
 /**
  * @beta
- * Represents a fully customizable color within Minecraft.
  */
 export interface Color {
-    /**
-     * @remarks
-     * Determines a color's alpha (opacity) component. Valid values
-     * are between 0 (transparent) and 1.0 (opaque).
-     *
-     */
     alpha: number;
-    /**
-     * @remarks
-     * Determines a color's blue component. Valid values are
-     * between 0 and 1.0.
-     *
-     */
     blue: number;
-    /**
-     * @remarks
-     * Determines a color's green component. Valid values are
-     * between 0 and 1.0.
-     *
-     */
     green: number;
-    /**
-     * @remarks
-     * Determines a color's red component. Valid values are between
-     * 0 and 1.0.
-     *
-     */
     red: number;
 }
 
@@ -19039,16 +16859,37 @@ export interface CompoundBlockVolumeItem {
 
 /**
  * @beta
+ * An exact coordinate within the world, including its
+ * dimension and location.
  */
 export interface DimensionLocation {
+    /**
+     * @remarks
+     * The dimension.
+     *
+     */
     dimension: Dimension;
+    /**
+     * @remarks
+     * The x coordinate.
+     *
+     */
     x: number;
+    /**
+     * @remarks
+     * The y coordinate.
+     *
+     */
     y: number;
+    /**
+     * @remarks
+     * The z coordinate.
+     *
+     */
     z: number;
 }
 
 /**
- * @beta
  * Additional options for when damage has been applied via a
  * projectile.
  */
@@ -19068,7 +16909,6 @@ export interface EntityApplyDamageByProjectileOptions {
 }
 
 /**
- * @beta
  * Additional descriptions and metadata for a damage event.
  */
 export interface EntityApplyDamageOptions {
@@ -19143,7 +16983,6 @@ export interface EntityDataDrivenTriggerEventOptions {
 }
 
 /**
- * @beta
  * Contains additional options for entity effects.
  */
 export interface EntityEffectOptions {
@@ -19198,7 +17037,6 @@ export interface EntityHitInformation {
 }
 
 /**
- * @beta
  * Contains options for selecting entities within an area.
  */
 export interface EntityQueryOptions {
@@ -19369,7 +17207,6 @@ export interface EntityQueryOptions {
 }
 
 /**
- * @beta
  * Contains additional options for filtering players based on
  * their score for an objective.
  */
@@ -19470,7 +17307,6 @@ export interface ExplosionOptions {
 }
 
 /**
- * @beta
  * Additional configuration options for {@link
  * World.playMusic}/{@link World.queueMusic} methods.
  */
@@ -19549,7 +17385,6 @@ export interface PlayAnimationOptions {
 }
 
 /**
- * @beta
  * Additional options for how a sound plays for a player.
  */
 export interface PlayerSoundOptions {
@@ -19575,18 +17410,35 @@ export interface PlayerSoundOptions {
 }
 
 /**
- * @beta
+ * Defines a JSON structure that is used for more flexible
  */
 export interface RawMessage {
     rawtext?: RawMessage[];
+    /**
+     * @remarks
+     * Provides a token that will get replaced with the value of a
+     * score.
+     *
+     */
     score?: RawMessageScore;
+    /**
+     * @remarks
+     * Provides a string literal value to use.
+     *
+     */
     text?: string;
+    /**
+     * @remarks
+     * Provides a translation token where, if the client has an
+     * available resource in the players' language which matches
+     * the token, will get translated on the client.
+     *
+     */
     translate?: string;
     with?: string[] | RawMessage;
 }
 
 /**
- * @beta
  * Provides a description of a score token to use within a raw
  * message.
  */
@@ -19653,7 +17505,6 @@ export interface ScriptEventMessageFilterOptions {
 }
 
 /**
- * @beta
  * Contains additional options for teleporting an entity.
  */
 export interface TeleportOptions {
@@ -19732,7 +17583,6 @@ export interface TitleDisplayOptions {
 }
 
 /**
- * @beta
  * Represents a two-directional vector.
  */
 export interface Vector2 {
@@ -19751,7 +17601,6 @@ export interface Vector2 {
 }
 
 /**
- * @beta
  * Contains a description of a vector.
  */
 export interface Vector3 {
@@ -19776,7 +17625,6 @@ export interface Vector3 {
 }
 
 /**
- * @beta
  * Contains additional options for a world-level playSound
  * occurrence.
  */

@@ -277,6 +277,22 @@ export class Container {
      * @param itemStack
      * The stack of items to add.
      * @throws This function can throw errors.
+     * @example add_diamond_sword.ts
+     * ```ts
+     * import {
+     *     EntityInventoryComponent,
+     *     ItemStack,
+     *     MinecraftItemTypes,
+     *     world,
+     * } from "@minecraft/server";
+     * for (const player of world.getAllPlayers()) {
+     *     const inventory = player.getComponent(
+     *         "inventory"
+     *     ) as EntityInventoryComponent;
+     *     const item = new ItemStack(MinecraftItemTypes.diamondSword, 10);
+     *     inventory.container.addItem(item);
+     * }
+     * ```
      */
     addItem(itemStack: ItemStack): ItemStack;
     /**
@@ -352,6 +368,22 @@ export class Container {
      * @throws
      * Throws if the container is invalid or if the `slot` index is
      * out of bounds.
+     * @example set_mainhand.ts
+     * ```ts
+     * import {
+     *     EntityInventoryComponent,
+     *     ItemStack,
+     *     MinecraftItemTypes,
+     *     world,
+     * } from "@minecraft/server";
+     * for (const player of world.getAllPlayers()) {
+     *     const inventory = player.getComponent(
+     *         "inventory"
+     *     ) as EntityInventoryComponent;
+     *     const item = new ItemStack(MinecraftItemTypes.diamondSword, 10);
+     *     inventory.container.setItem(0, item);
+     * }
+     * ```
      */
     setItem(slot: number, itemStack?: ItemStack): void;
     /**
