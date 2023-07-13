@@ -16,7 +16,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server",
- *   "version": "1.5.0-internal.1.20.20-preview.20"
+ *   "version": "1.5.0-internal.1.20.20-preview.21"
  * }
  * ```
  *
@@ -351,6 +351,23 @@ export enum ItemLockMode {
      *
      */
     slot = 'slot',
+}
+
+/**
+ * @beta
+ * Enum containing the different phases of the moon based on
+ * the current day.
+ * Obtain the current MoonPhase using world.getMoonPhase
+ */
+export enum MoonPhase {
+    FullMoon = 0,
+    WaningGibbous = 1,
+    FirstQuarter = 2,
+    WaningCrescent = 3,
+    NewMoon = 4,
+    WaxingCrescent = 5,
+    LastQuarter = 6,
+    WaxingGibbous = 7,
 }
 
 /**
@@ -834,9 +851,27 @@ export class BlockBreakAfterEvent extends BlockEvent {
  * Manages callbacks that are connected to when a block is
  * broken.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class BlockBreakAfterEventSignal extends IBlockBreakAfterEventSignal {
+export class BlockBreakAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a block is broken
+     * by a player.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: BlockBreakAfterEvent) => void): (arg: BlockBreakAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an block is
+     * broken.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: BlockBreakAfterEvent) => void): void;
 }
 
 /**
@@ -904,9 +939,27 @@ export class BlockExplodeAfterEvent extends BlockEvent {
  * Manages callbacks that are connected to when an explosion
  * occurs, as it impacts individual blocks.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class BlockExplodeAfterEventSignal extends IBlockExplodeAfterEventSignal {
+export class BlockExplodeAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an explosion
+     * occurs, as it impacts individual blocks.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: BlockExplodeAfterEvent) => void): (arg: BlockExplodeAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an explosion
+     * occurs, as it impacts individual blocks.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: BlockExplodeAfterEvent) => void): void;
 }
 
 /**
@@ -1231,9 +1284,27 @@ export class BlockPlaceAfterEvent extends BlockEvent {
  * Manages callbacks that are connected to when a block is
  * placed.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class BlockPlaceAfterEventSignal extends IBlockPlaceAfterEventSignal {
+export class BlockPlaceAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a block is placed
+     * by a player.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: BlockPlaceAfterEvent) => void): (arg: BlockPlaceAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an block is
+     * placed.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: BlockPlaceAfterEvent) => void): void;
 }
 
 /**
@@ -1866,9 +1937,39 @@ export class ChatSendAfterEvent {
  * Manages callbacks that are connected to chat messages being
  * sent.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ChatSendAfterEventSignal extends IChatSendAfterEventSignal {
+export class ChatSendAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when new chat messages
+     * are sent.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @example custom_command.js
+     * ```typescript
+     * const chatCallback = World.beforeEvents.chatSend.subscribe((eventData) => {
+     *   if (eventData.message.includes("cancel")) {
+     *     // Cancel event if the message contains "cancel"
+     *     eventData.canceled = true;
+     *   } else {
+     *     // Modify chat message being sent
+     *     eventData.message = `Modified '${eventData.message}'`;
+     *   }
+     * });
+     * ```
+     */
+    subscribe(callback: (arg: ChatSendAfterEvent) => void): (arg: ChatSendAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when new chat messages
+     * are sent.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ChatSendAfterEvent) => void): void;
 }
 
 /**
@@ -1901,9 +2002,27 @@ export class ChatSendBeforeEvent extends ChatSendAfterEvent {
  * Manages callbacks that are connected to an event that fires
  * before chat messages are sent.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ChatSendBeforeEventSignal extends IChatSendBeforeEventSignal {
+export class ChatSendBeforeEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called before new chat messages
+     * are sent.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ChatSendBeforeEvent) => void): (arg: ChatSendBeforeEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called before new chat
+     * messages are sent.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ChatSendBeforeEvent) => void): void;
 }
 
 /**
@@ -2590,9 +2709,30 @@ export class DataDrivenEntityTriggerAfterEvent {
  * driven entity event - for example, the
  * minecraft:ageable_grow_up event on a chicken.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class DataDrivenEntityTriggerAfterEventSignal extends IDataDrivenEntityTriggerAfterEventSignal {
+export class DataDrivenEntityTriggerAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called after a data driven
+     * entity event is triggered.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: DataDrivenEntityTriggerAfterEvent) => void,
+        options?: EntityDataDrivenTriggerEventOptions,
+    ): (arg: DataDrivenEntityTriggerAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback that will be called after a data driven
+     * entity event is triggered.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: DataDrivenEntityTriggerAfterEvent) => void): void;
 }
 
 /**
@@ -2645,9 +2785,30 @@ export class DataDrivenEntityTriggerBeforeEvent {
  * entity event - for example, the minecraft:ageable_grow_up
  * event on a chicken.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class DataDrivenEntityTriggerBeforeEventSignal extends IDataDrivenEntityTriggerBeforeEventSignal {
+export class DataDrivenEntityTriggerBeforeEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called before a data driven
+     * entity event is triggered.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: DataDrivenEntityTriggerBeforeEvent) => void,
+        options?: EntityDataDrivenTriggerEventOptions,
+    ): (arg: DataDrivenEntityTriggerBeforeEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback that will be called before a data driven
+     * entity event is triggered.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: DataDrivenEntityTriggerBeforeEvent) => void): void;
 }
 
 /**
@@ -3050,31 +3211,31 @@ export class Dimension {
      * @throws This function can throw errors.
      * @example itemStacks.ts
      * ```typescript
-     *   const overworld = mc.world.getDimension("overworld");
+     * const overworld = mc.world.getDimension('overworld');
      *
-     *   const oneItemLoc = { x: targetLocation.x + targetLocation.y + 3, y: 2, z: targetLocation.z + 1 };
-     *   const fiveItemsLoc = { x: targetLocation.x + 1, y: targetLocation.y + 2, z: targetLocation.z + 1 };
-     *   const diamondPickaxeLoc = { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 4 };
+     * const oneItemLoc = { x: targetLocation.x + targetLocation.y + 3, y: 2, z: targetLocation.z + 1 };
+     * const fiveItemsLoc = { x: targetLocation.x + 1, y: targetLocation.y + 2, z: targetLocation.z + 1 };
+     * const diamondPickaxeLoc = { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 4 };
      *
-     *   const oneEmerald = new mc.ItemStack(mc.MinecraftItemTypes.emerald, 1);
-     *   const onePickaxe = new mc.ItemStack(mc.MinecraftItemTypes.diamondPickaxe, 1);
-     *   const fiveEmeralds = new mc.ItemStack(mc.MinecraftItemTypes.emerald, 5);
+     * const oneEmerald = new mc.ItemStack(mc.MinecraftItemTypes.Emerald, 1);
+     * const onePickaxe = new mc.ItemStack(mc.MinecraftItemTypes.DiamondPickaxe, 1);
+     * const fiveEmeralds = new mc.ItemStack(mc.MinecraftItemTypes.Emerald, 5);
      *
-     *   log(`Spawning an emerald at (${oneItemLoc.x}, ${oneItemLoc.y}, ${oneItemLoc.z})`);
-     *   overworld.spawnItem(oneEmerald, oneItemLoc);
+     * log(`Spawning an emerald at (${oneItemLoc.x}, ${oneItemLoc.y}, ${oneItemLoc.z})`);
+     * overworld.spawnItem(oneEmerald, oneItemLoc);
      *
-     *   log(`Spawning five emeralds at (${fiveItemsLoc.x}, ${fiveItemsLoc.y}, ${fiveItemsLoc.z})`);
-     *   overworld.spawnItem(fiveEmeralds, fiveItemsLoc);
+     * log(`Spawning five emeralds at (${fiveItemsLoc.x}, ${fiveItemsLoc.y}, ${fiveItemsLoc.z})`);
+     * overworld.spawnItem(fiveEmeralds, fiveItemsLoc);
      *
-     *   log(`Spawning a diamond pickaxe at (${diamondPickaxeLoc.x}, ${diamondPickaxeLoc.y}, ${diamondPickaxeLoc.z})`);
-     *   overworld.spawnItem(onePickaxe, diamondPickaxeLoc);
+     * log(`Spawning a diamond pickaxe at (${diamondPickaxeLoc.x}, ${diamondPickaxeLoc.y}, ${diamondPickaxeLoc.z})`);
+     * overworld.spawnItem(onePickaxe, diamondPickaxeLoc);
      * ```
      * @example spawnItem.ts
      * ```typescript
-     *   const featherItem = new mc.ItemStack(mc.MinecraftItemTypes.feather, 1);
+     * const featherItem = new mc.ItemStack(mc.MinecraftItemTypes.Feather, 1);
      *
-     *   overworld.spawnItem(featherItem, targetLocation);
-     *   log(`New feather created at ${targetLocation.x}, ${targetLocation.y}, ${targetLocation.z}!`);
+     * overworld.spawnItem(featherItem, targetLocation);
+     * log(`New feather created at ${targetLocation.x}, ${targetLocation.y}, ${targetLocation.z}!`);
      * ```
      */
     spawnItem(itemStack: ItemStack, location: Vector3): Entity;
@@ -3233,9 +3394,30 @@ export class EffectAddAfterEvent {
  * Manages callbacks that are connected to when an effect is
  * added to an entity.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class EffectAddAfterEventSignal extends IEffectAddAfterEventSignal {
+export class EffectAddAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an effect is added
+     * to an entity.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: EffectAddAfterEvent) => void,
+        options?: EntityEventOptions,
+    ): (arg: EffectAddAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an effect is added
+     * to an entity.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EffectAddAfterEvent) => void): void;
 }
 
 /**
@@ -4763,9 +4945,24 @@ export class EntityDieAfterEvent {
 /**
  * @beta
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class EntityDieAfterEventSignal extends IEntityDieAfterEventSignal {
+export class EntityDieAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: EntityDieAfterEvent) => void,
+        options?: EntityEventOptions,
+    ): (arg: EntityDieAfterEvent) => void;
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EntityDieAfterEvent) => void): void;
 }
 
 /**
@@ -4959,9 +5156,30 @@ export class EntityHealthChangedAfterEvent {
  * Manages callbacks that are connected to when the health of
  * an entity changes.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class EntityHealthChangedAfterEventSignal extends IEntityHealthChangedAfterEventSignal {
+export class EntityHealthChangedAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when the health of an
+     * entity changes.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: EntityHealthChangedAfterEvent) => void,
+        options?: EntityEventOptions,
+    ): (arg: EntityHealthChangedAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when the health of an
+     * entity changes.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EntityHealthChangedAfterEvent) => void): void;
 }
 
 /**
@@ -5000,9 +5218,30 @@ export class EntityHitBlockAfterEvent {
  * Manages callbacks that are connected to when an entity hits
  * a block.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class EntityHitBlockAfterEventSignal extends IEntityHitBlockAfterEventSignal {
+export class EntityHitBlockAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an entity hits a
+     * block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: EntityHitBlockAfterEvent) => void,
+        options?: EntityEventOptions,
+    ): (arg: EntityHitBlockAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an entity hits a
+     * block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EntityHitBlockAfterEvent) => void): void;
 }
 
 /**
@@ -5031,9 +5270,30 @@ export class EntityHitEntityAfterEvent {
  * Manages callbacks that are connected to when an entity makes
  * a melee attack on another entity.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class EntityHitEntityAfterEventSignal extends IEntityHitEntityAfterEventSignal {
+export class EntityHitEntityAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an entity hits
+     * another entity.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: EntityHitEntityAfterEvent) => void,
+        options?: EntityEventOptions,
+    ): (arg: EntityHitEntityAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an entity makes a
+     * melee attack on another entity.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EntityHitEntityAfterEvent) => void): void;
 }
 
 /**
@@ -5068,9 +5328,28 @@ export class EntityHurtAfterEvent {
  * Manages callbacks that are connected to when an entity is
  * hurt.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class EntityHurtAfterEventSignal extends IEntityHurtAfterEventSignal {
+export class EntityHurtAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an entity is hurt.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: EntityHurtAfterEvent) => void,
+        options?: EntityEventOptions,
+    ): (arg: EntityHurtAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an entity is hurt.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EntityHurtAfterEvent) => void): void;
 }
 
 /**
@@ -5827,9 +6106,24 @@ export class EntityRemovedAfterEvent {
 /**
  * @beta
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class EntityRemovedAfterEventSignal extends IEntityRemovedAfterEventSignal {
+export class EntityRemovedAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: EntityRemovedAfterEvent) => void,
+        options?: EntityEventOptions,
+    ): (arg: EntityRemovedAfterEvent) => void;
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EntityRemovedAfterEvent) => void): void;
 }
 
 /**
@@ -6023,9 +6317,47 @@ export class EntitySpawnAfterEvent {
  * Registers a script-based event handler for handling what
  * happens when an entity spawns.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class EntitySpawnAfterEventSignal extends IEntitySpawnAfterEventSignal {
+export class EntitySpawnAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Method to register an event handler for what happens when an
+     * entity spawns.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @param callback
+     * Function that handles the spawn event.
+     * @example runEntitySpawnEvent.ts
+     * ```typescript
+     *   // register a new function that is called when a new entity is created.
+     *   mc.world.afterEvents.entitySpawn.subscribe((entityEvent: mc.EntitySpawnAfterEvent) => {
+     *     if (entityEvent && entityEvent.entity) {
+     *       log(`New entity of type '${entityEvent.entity.typeId}' created!`, 1);
+     *     } else {
+     *       log(`The entity event didn't work as expected.`, -1);
+     *     }
+     *   });
+     *
+     *   mc.system.runTimeout(() => {
+     *     createOldHorse(log, targetLocation);
+     *   }, 20);
+     * ```
+     */
+    subscribe(callback: (arg: EntitySpawnAfterEvent) => void): (arg: EntitySpawnAfterEvent) => void;
+    /**
+     * @remarks
+     * Unregisters a method that was previously subscribed to the
+     * subscription event.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @param callback
+     * Original function that was passed into the subscribe event,
+     * that is to be unregistered.
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EntitySpawnAfterEvent) => void): void;
 }
 
 /**
@@ -6219,9 +6551,27 @@ export class ExplosionAfterEvent {
  * Manages callbacks that are connected to when an explosion
  * occurs.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ExplosionAfterEventSignal extends IExplosionAfterEventSignal {
+export class ExplosionAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an explosion
+     * occurs.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ExplosionAfterEvent) => void): (arg: ExplosionAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an explosion
+     * occurs.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ExplosionAfterEvent) => void): void;
 }
 
 /**
@@ -6254,9 +6604,28 @@ export class ExplosionBeforeEvent extends ExplosionAfterEvent {
  * Manages callbacks that are connected to before an explosion
  * occurs.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ExplosionBeforeEventSignal extends IExplosionBeforeEventSignal {
+export class ExplosionBeforeEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when before an explosion
+     * occurs. The callback can optionally change or cancel
+     * explosion behavior.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ExplosionBeforeEvent) => void): (arg: ExplosionBeforeEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called from before when an
+     * explosion would occur.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ExplosionBeforeEvent) => void): void;
 }
 
 /**
@@ -6361,72 +6730,6 @@ export class FluidContainer {
 /**
  * @beta
  * Provides an adaptable interface for callers to subscribe to
- * an event that fires when blocks are broken.
- */
-export class IBlockBreakAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: BlockBreakAfterEvent) => void): (arg: BlockBreakAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: BlockBreakAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires when an explosion occurs.
- */
-export class IBlockExplodeAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: BlockExplodeAfterEvent) => void): (arg: BlockExplodeAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: BlockExplodeAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires after a block is placed.
- */
-export class IBlockPlaceAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: BlockPlaceAfterEvent) => void): (arg: BlockPlaceAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: BlockPlaceAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
  * an event that fires when a button is pushed.
  */
 export class IButtonPushAfterEventSignal {
@@ -6449,597 +6752,6 @@ export class IButtonPushAfterEventSignal {
 /**
  * @beta
  * Provides an adaptable interface for callers to subscribe to
- * an event that fires when a chat message is sent.
- */
-export class IChatSendAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ChatSendAfterEvent) => void): (arg: ChatSendAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ChatSendAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires before a chat message is sent.
- */
-export class IChatSendBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ChatSendBeforeEvent) => void): (arg: ChatSendBeforeEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ChatSendBeforeEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires when an entities' definition is
- * triggered to change.
- */
-export class IDataDrivenEntityTriggerAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: DataDrivenEntityTriggerAfterEvent) => void,
-        options?: EntityDataDrivenTriggerEventOptions,
-    ): (arg: DataDrivenEntityTriggerAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: DataDrivenEntityTriggerAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires before an entities' definition is
- * scheduled to change via a triggered event.
- */
-export class IDataDrivenEntityTriggerBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: DataDrivenEntityTriggerBeforeEvent) => void,
-        options?: EntityDataDrivenTriggerEventOptions,
-    ): (arg: DataDrivenEntityTriggerBeforeEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: DataDrivenEntityTriggerBeforeEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires when an effect is added to an entity.
- */
-export class IEffectAddAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: EffectAddAfterEvent) => void,
-        options?: EntityEventOptions,
-    ): (arg: EffectAddAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: EffectAddAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires when an entity dies.
- */
-export class IEntityDieAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: EntityDieAfterEvent) => void,
-        options?: EntityEventOptions,
-    ): (arg: EntityDieAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: EntityDieAfterEvent) => void): void;
-}
-
-/**
- * @beta
- */
-export class IEntityHealthChangedAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: EntityHealthChangedAfterEvent) => void,
-        options?: EntityEventOptions,
-    ): (arg: EntityHealthChangedAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: EntityHealthChangedAfterEvent) => void): void;
-}
-
-/**
- * @beta
- */
-export class IEntityHitBlockAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: EntityHitBlockAfterEvent) => void,
-        options?: EntityEventOptions,
-    ): (arg: EntityHitBlockAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: EntityHitBlockAfterEvent) => void): void;
-}
-
-/**
- * @beta
- */
-export class IEntityHitEntityAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: EntityHitEntityAfterEvent) => void,
-        options?: EntityEventOptions,
-    ): (arg: EntityHitEntityAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: EntityHitEntityAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires when an entity is hurt.
- */
-export class IEntityHurtAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: EntityHurtAfterEvent) => void,
-        options?: EntityEventOptions,
-    ): (arg: EntityHurtAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: EntityHurtAfterEvent) => void): void;
-}
-
-/**
- * @beta
- */
-export class IEntityRemovedAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: EntityRemovedAfterEvent) => void,
-        options?: EntityEventOptions,
-    ): (arg: EntityRemovedAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: EntityRemovedAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires after an entity is spawned.
- */
-export class IEntitySpawnAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: EntitySpawnAfterEvent) => void): (arg: EntitySpawnAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: EntitySpawnAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires after an explosion occurs.
- */
-export class IExplosionAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ExplosionAfterEvent) => void): (arg: ExplosionAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ExplosionAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires before an explosion begins.
- */
-export class IExplosionBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ExplosionBeforeEvent) => void): (arg: ExplosionBeforeEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ExplosionBeforeEvent) => void): void;
-}
-
-/**
- * @beta
- */
-export class IItemCompleteUseAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ItemCompleteUseAfterEvent) => void): (arg: ItemCompleteUseAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ItemCompleteUseAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires after an items' definition has changed.
- */
-export class IItemDefinitionAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: ItemDefinitionTriggeredAfterEvent) => void,
-    ): (arg: ItemDefinitionTriggeredAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ItemDefinitionTriggeredAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires before an items' definition changes.
- */
-export class IItemDefinitionBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: ItemDefinitionTriggeredBeforeEvent) => void,
-    ): (arg: ItemDefinitionTriggeredBeforeEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ItemDefinitionTriggeredBeforeEvent) => void): void;
-}
-
-/**
- * @beta
- */
-export class IItemReleaseUseAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ItemReleaseUseAfterEvent) => void): (arg: ItemReleaseUseAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ItemReleaseUseAfterEvent) => void): void;
-}
-
-/**
- * @beta
- */
-export class IItemStartUseAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ItemStartUseAfterEvent) => void): (arg: ItemStartUseAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ItemStartUseAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires when an item item is starting to be used
- * on a block.
- */
-export class IItemStartUseOnAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ItemStartUseOnAfterEvent) => void): (arg: ItemStartUseOnAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ItemStartUseOnAfterEvent) => void): void;
-}
-
-/**
- * @beta
- */
-export class IItemStopUseAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ItemStopUseAfterEvent) => void): (arg: ItemStopUseAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ItemStopUseAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires when an item has stopped being used on a
- * block.
- */
-export class IItemStopUseOnAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ItemStopUseOnAfterEvent) => void): (arg: ItemStopUseOnAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ItemStopUseOnAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires after an item is used.
- */
-export class IItemUseAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ItemUseAfterEvent) => void): (arg: ItemUseAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ItemUseAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires before an item is used.
- */
-export class IItemUseBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ItemUseBeforeEvent) => void): (arg: ItemUseBeforeEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ItemUseBeforeEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires after an item is used on a block.
- */
-export class IItemUseOnAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ItemUseOnAfterEvent) => void): (arg: ItemUseOnAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ItemUseOnAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires before an item is being used on a block.
- */
-export class IItemUseOnBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ItemUseOnBeforeEvent) => void): (arg: ItemUseOnBeforeEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ItemUseOnBeforeEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
  * an event that fires after a lever is used.
  */
 export class ILeverActionAfterEventSignal {
@@ -7057,50 +6769,6 @@ export class ILeverActionAfterEventSignal {
      * @throws This function can throw errors.
      */
     unsubscribe(callback: (arg: LeverActionAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires after a piston is activated.
- */
-export class IPistonActivateAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: PistonActivateAfterEvent) => void): (arg: PistonActivateAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: PistonActivateAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires before a piston is activated.
- */
-export class IPistonActivateBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: PistonActivateBeforeEvent) => void): (arg: PistonActivateBeforeEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: PistonActivateBeforeEvent) => void): void;
 }
 
 /**
@@ -7171,136 +6839,6 @@ export class IPlayerSpawnAfterEventSignal {
 
 /**
  * @beta
- */
-export class IPressurePlatePopAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: PressurePlatePopAfterEvent) => void): (arg: PressurePlatePopAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: PressurePlatePopAfterEvent) => void): void;
-}
-
-/**
- * @beta
- */
-export class IPressurePlatePushAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: PressurePlatePushAfterEvent) => void): (arg: PressurePlatePushAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: PressurePlatePushAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires after a projectile hits a target.
- */
-export class IProjectileHitAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: ProjectileHitAfterEvent) => void): (arg: ProjectileHitAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ProjectileHitAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires when /script event command is called.
- */
-export class IScriptEventCommandMessageAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: ScriptEventCommandMessageAfterEvent) => void,
-        options?: ScriptEventMessageFilterOptions,
-    ): (arg: ScriptEventCommandMessageAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ScriptEventCommandMessageAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires after a server message is sent. Note
- * that this event is for internal use only.
- */
-export class IServerMessageAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: MessageReceiveAfterEvent) => void): (arg: MessageReceiveAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: MessageReceiveAfterEvent) => void): void;
-}
-
-/**
- * @beta
- */
-export class ITargetBlockHitAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: TargetBlockHitAfterEvent) => void): (arg: TargetBlockHitAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: TargetBlockHitAfterEvent) => void): void;
-}
-
-/**
- * @beta
  * Contains information related to a chargeable item completing
  * being charged.
  */
@@ -7317,7 +6855,7 @@ export class ItemCompleteUseAfterEvent {
      * Returns the source entity that triggered this item event.
      *
      */
-    readonly source: Entity;
+    readonly source: Player;
     /**
      * @remarks
      * Returns the time, in ticks, for the remaining duration left
@@ -7332,9 +6870,27 @@ export class ItemCompleteUseAfterEvent {
  * Manages callbacks that are connected to the completion of
  * charging for a chargeable item.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ItemCompleteUseAfterEventSignal extends IItemCompleteUseAfterEventSignal {
+export class ItemCompleteUseAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a chargeable item
+     * completes charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemCompleteUseAfterEvent) => void): (arg: ItemCompleteUseAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a chargeable item
+     * completes charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemCompleteUseAfterEvent) => void): void;
 }
 
 /**
@@ -7387,9 +6943,29 @@ export class ItemCooldownComponent extends ItemComponent {
  * Manages callbacks that are connected to an item's definition
  * and components changing.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ItemDefinitionAfterEventSignal extends IItemDefinitionAfterEventSignal {
+export class ItemDefinitionAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an item's
+     * definition and components change.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: ItemDefinitionTriggeredAfterEvent) => void,
+    ): (arg: ItemDefinitionTriggeredAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an item's
+     * definition and components change.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemDefinitionTriggeredAfterEvent) => void): void;
 }
 
 /**
@@ -7397,9 +6973,29 @@ export class ItemDefinitionAfterEventSignal extends IItemDefinitionAfterEventSig
  * Manages callbacks that are connected to an item's definition
  * and components changing.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ItemDefinitionBeforeEventSignal extends IItemDefinitionBeforeEventSignal {
+export class ItemDefinitionBeforeEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an item's
+     * definition and components change.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: ItemDefinitionTriggeredBeforeEvent) => void,
+    ): (arg: ItemDefinitionTriggeredBeforeEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an item's
+     * definition and components change.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemDefinitionTriggeredBeforeEvent) => void): void;
 }
 
 /**
@@ -7422,7 +7018,7 @@ export class ItemDefinitionTriggeredAfterEvent {
      * Returns the source entity that triggered this item event.
      *
      */
-    readonly source: Entity;
+    readonly source: Player;
 }
 
 /**
@@ -7588,7 +7184,7 @@ export class ItemReleaseUseAfterEvent {
      * Returns the source entity that triggered this item event.
      *
      */
-    readonly source: Entity;
+    readonly source: Player;
     /**
      * @remarks
      * Returns the time, in ticks, for the remaining duration left
@@ -7603,9 +7199,27 @@ export class ItemReleaseUseAfterEvent {
  * Manages callbacks that are connected to the releasing of
  * charging for a chargeable item.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ItemReleaseUseAfterEventSignal extends IItemReleaseUseAfterEventSignal {
+export class ItemReleaseUseAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a chargeable item
+     * is released from charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemReleaseUseAfterEvent) => void): (arg: ItemReleaseUseAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a chargeable item
+     * is released from charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemReleaseUseAfterEvent) => void): void;
 }
 
 /**
@@ -7694,9 +7308,9 @@ export class ItemStack {
      * world.
      *
      * @param itemType
-     * Type of item to create. See the {@link MinecraftItemTypes}
-     * enumeration for a list of standard item types in Minecraft
-     * experiences.
+     * Type of item to create. See the {@link
+     * @minecraft/vanilla-data.MinecraftItemTypes} enumeration for
+     * a list of standard item types in Minecraft experiences.
      * @param amount
      * Number of items to place in the stack, between 1-255. The
      * provided value will be clamped to the item's maximum stack
@@ -7904,7 +7518,7 @@ export class ItemStartUseAfterEvent {
      * Returns the source entity that triggered this item event.
      *
      */
-    readonly source: Entity;
+    readonly source: Player;
     /**
      * @remarks
      * Returns the time, in ticks, for the remaining duration left
@@ -7919,9 +7533,27 @@ export class ItemStartUseAfterEvent {
  * Manages callbacks that are connected to the start of
  * charging for a chargeable item.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ItemStartUseAfterEventSignal extends IItemStartUseAfterEventSignal {
+export class ItemStartUseAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a chargeable item
+     * starts charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemStartUseAfterEvent) => void): (arg: ItemStartUseAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a chargeable item
+     * starts charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemStartUseAfterEvent) => void): void;
 }
 
 /**
@@ -7958,7 +7590,7 @@ export class ItemStartUseOnAfterEvent {
      * Returns the source entity that triggered this item event.
      *
      */
-    readonly source: Entity;
+    readonly source: Player;
 }
 
 /**
@@ -7966,9 +7598,27 @@ export class ItemStartUseOnAfterEvent {
  * Manages callbacks that are connected to an item starting
  * being used on a block event.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ItemStartUseOnAfterEventSignal extends IItemStartUseOnAfterEventSignal {
+export class ItemStartUseOnAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an item is used on
+     * a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemStartUseOnAfterEvent) => void): (arg: ItemStartUseOnAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an item is used on
+     * a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemStartUseOnAfterEvent) => void): void;
 }
 
 /**
@@ -7990,7 +7640,7 @@ export class ItemStopUseAfterEvent {
      * Returns the source entity that triggered this item event.
      *
      */
-    readonly source: Entity;
+    readonly source: Player;
     /**
      * @remarks
      * Returns the time, in ticks, for the remaining duration left
@@ -8006,9 +7656,27 @@ export class ItemStopUseAfterEvent {
  * charging for an item that has a registered
  * minecraft:chargeable component.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ItemStopUseAfterEventSignal extends IItemStopUseAfterEventSignal {
+export class ItemStopUseAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a chargeable item
+     * stops charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemStopUseAfterEvent) => void): (arg: ItemStopUseAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a chargeable item
+     * stops charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemStopUseAfterEvent) => void): void;
 }
 
 /**
@@ -8040,7 +7708,7 @@ export class ItemStopUseOnAfterEvent {
      * Returns the source entity that triggered this item event.
      *
      */
-    readonly source: Entity;
+    readonly source: Player;
 }
 
 /**
@@ -8048,9 +7716,27 @@ export class ItemStopUseOnAfterEvent {
  * Manages callbacks that are connected to an item stops used
  * on a block event.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ItemStopUseOnAfterEventSignal extends IItemStopUseOnAfterEventSignal {
+export class ItemStopUseOnAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an item stops being
+     * used on a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemStopUseOnAfterEvent) => void): (arg: ItemStopUseOnAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an item is used on
+     * a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemStopUseOnAfterEvent) => void): void;
 }
 
 /**
@@ -8070,7 +7756,6 @@ export class ItemType {
 
 /**
  * @beta
- * An iterator over a set of available item types.
  */
 export class ItemTypeIterator implements Iterable<ItemType> {
     private constructor();
@@ -8127,16 +7812,32 @@ export class ItemUseAfterEvent {
      * Returns the source entity that triggered this item event.
      *
      */
-    readonly source: Entity;
+    readonly source: Player;
 }
 
 /**
  * @beta
  * Manages callbacks that are connected to an item use event.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ItemUseAfterEventSignal extends IItemUseAfterEventSignal {
+export class ItemUseAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an item is used.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemUseAfterEvent) => void): (arg: ItemUseAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an item is used.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemUseAfterEvent) => void): void;
 }
 
 /**
@@ -8158,9 +7859,25 @@ export class ItemUseBeforeEvent extends ItemUseAfterEvent {
  * @beta
  * Manages callbacks that fire before an item is used.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ItemUseBeforeEventSignal extends IItemUseBeforeEventSignal {
+export class ItemUseBeforeEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called before an item is used.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemUseBeforeEvent) => void): (arg: ItemUseBeforeEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called before an item is used.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemUseBeforeEvent) => void): void;
 }
 
 /**
@@ -8201,7 +7918,7 @@ export class ItemUseOnAfterEvent {
      * Returns the source entity that triggered this item event.
      *
      */
-    readonly source: Entity;
+    readonly source: Player;
 }
 
 /**
@@ -8209,9 +7926,27 @@ export class ItemUseOnAfterEvent {
  * Manages callbacks that are connected to an item being used
  * on a block event.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ItemUseOnAfterEventSignal extends IItemUseOnAfterEventSignal {
+export class ItemUseOnAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an item is used on
+     * a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemUseOnAfterEvent) => void): (arg: ItemUseOnAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an item is used on
+     * a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemUseOnAfterEvent) => void): void;
 }
 
 /**
@@ -8235,95 +7970,27 @@ export class ItemUseOnBeforeEvent extends ItemUseOnAfterEvent {
  * Manages callbacks that fire before an item being used on a
  * block event.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ItemUseOnBeforeEventSignal extends IItemUseOnBeforeEventSignal {
-    private constructor();
-}
-
-/**
- * @beta
- */
-export class ITripWireTripAfterEventSignal {
+export class ItemUseOnBeforeEventSignal {
     private constructor();
     /**
      * @remarks
+     * Adds a callback that will be called before an item is used
+     * on a block.
+     *
      * This function can't be called in read-only mode.
      *
      */
-    subscribe(callback: (arg: TripWireTripAfterEvent) => void): (arg: TripWireTripAfterEvent) => void;
+    subscribe(callback: (arg: ItemUseOnBeforeEvent) => void): (arg: ItemUseOnBeforeEvent) => void;
     /**
      * @remarks
+     * Removes a callback from being called before an item is used
+     * on a block.
+     *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    unsubscribe(callback: (arg: TripWireTripAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * An event that fires before the watchdog is about to
- * terminate a world because various performance metrics for
- * scripting have exceeded a threshold.
- */
-export class IWatchdogTerminateBeforeEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: WatchdogTerminateBeforeEvent) => void): (arg: WatchdogTerminateBeforeEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: WatchdogTerminateBeforeEvent) => void): void;
-}
-
-/**
- * @beta
- * An event that fires after the weather has changed.
- */
-export class IWeatherChangeAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: WeatherChangeAfterEvent) => void): (arg: WeatherChangeAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: WeatherChangeAfterEvent) => void): void;
-}
-
-/**
- * @beta
- * An event that fires when a world is first initialized or
- * loaded.
- */
-export class IWorldInitializeAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(callback: (arg: WorldInitializeAfterEvent) => void): (arg: WorldInitializeAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: WorldInitializeAfterEvent) => void): void;
+    unsubscribe(callback: (arg: ItemUseOnBeforeEvent) => void): void;
 }
 
 /**
@@ -8679,6 +8346,8 @@ export class MinecraftBlockTypes {
      */
     static readonly blackGlazedTerracotta: BlockType;
     static readonly blackShulkerBox: BlockType;
+    static readonly blackStainedGlass: BlockType;
+    static readonly blackStainedGlassPane: BlockType;
     /**
      * @remarks
      * Represents a blackstone block within Minecraft.
@@ -8743,6 +8412,8 @@ export class MinecraftBlockTypes {
      */
     static readonly blueIce: BlockType;
     static readonly blueShulkerBox: BlockType;
+    static readonly blueStainedGlass: BlockType;
+    static readonly blueStainedGlassPane: BlockType;
     static readonly blueWool: BlockType;
     /**
      * @remarks
@@ -8814,6 +8485,8 @@ export class MinecraftBlockTypes {
      */
     static readonly brownMushroomBlock: BlockType;
     static readonly brownShulkerBox: BlockType;
+    static readonly brownStainedGlass: BlockType;
+    static readonly brownStainedGlassPane: BlockType;
     static readonly brownWool: BlockType;
     /**
      * @remarks
@@ -9339,6 +9012,8 @@ export class MinecraftBlockTypes {
      */
     static readonly cyanGlazedTerracotta: BlockType;
     static readonly cyanShulkerBox: BlockType;
+    static readonly cyanStainedGlass: BlockType;
+    static readonly cyanStainedGlassPane: BlockType;
     static readonly cyanWool: BlockType;
     /**
      * @remarks
@@ -10774,6 +10449,8 @@ export class MinecraftBlockTypes {
      */
     static readonly grayGlazedTerracotta: BlockType;
     static readonly grayShulkerBox: BlockType;
+    static readonly grayStainedGlass: BlockType;
+    static readonly grayStainedGlassPane: BlockType;
     static readonly grayWool: BlockType;
     /**
      * @remarks
@@ -10797,6 +10474,8 @@ export class MinecraftBlockTypes {
      */
     static readonly greenGlazedTerracotta: BlockType;
     static readonly greenShulkerBox: BlockType;
+    static readonly greenStainedGlass: BlockType;
+    static readonly greenStainedGlassPane: BlockType;
     static readonly greenWool: BlockType;
     /**
      * @remarks
@@ -11090,6 +10769,8 @@ export class MinecraftBlockTypes {
      */
     static readonly lightBlueGlazedTerracotta: BlockType;
     static readonly lightBlueShulkerBox: BlockType;
+    static readonly lightBlueStainedGlass: BlockType;
+    static readonly lightBlueStainedGlassPane: BlockType;
     static readonly lightBlueWool: BlockType;
     /**
      * @remarks
@@ -11106,6 +10787,8 @@ export class MinecraftBlockTypes {
     static readonly lightGrayCarpet: BlockType;
     static readonly lightGrayConcrete: BlockType;
     static readonly lightGrayShulkerBox: BlockType;
+    static readonly lightGrayStainedGlass: BlockType;
+    static readonly lightGrayStainedGlassPane: BlockType;
     static readonly lightGrayWool: BlockType;
     /**
      * @remarks
@@ -11141,6 +10824,8 @@ export class MinecraftBlockTypes {
      */
     static readonly limeGlazedTerracotta: BlockType;
     static readonly limeShulkerBox: BlockType;
+    static readonly limeStainedGlass: BlockType;
+    static readonly limeStainedGlassPane: BlockType;
     static readonly limeWool: BlockType;
     /**
      * @remarks
@@ -11218,6 +10903,8 @@ export class MinecraftBlockTypes {
      */
     static readonly magentaGlazedTerracotta: BlockType;
     static readonly magentaShulkerBox: BlockType;
+    static readonly magentaStainedGlass: BlockType;
+    static readonly magentaStainedGlassPane: BlockType;
     static readonly magentaWool: BlockType;
     /**
      * @remarks
@@ -11437,6 +11124,8 @@ export class MinecraftBlockTypes {
      */
     static readonly orangeGlazedTerracotta: BlockType;
     static readonly orangeShulkerBox: BlockType;
+    static readonly orangeStainedGlass: BlockType;
+    static readonly orangeStainedGlassPane: BlockType;
     static readonly orangeWool: BlockType;
     /**
      * @remarks
@@ -11501,6 +11190,8 @@ export class MinecraftBlockTypes {
     static readonly pinkGlazedTerracotta: BlockType;
     static readonly pinkPetals: BlockType;
     static readonly pinkShulkerBox: BlockType;
+    static readonly pinkStainedGlass: BlockType;
+    static readonly pinkStainedGlassPane: BlockType;
     static readonly pinkWool: BlockType;
     /**
      * @remarks
@@ -11749,6 +11440,8 @@ export class MinecraftBlockTypes {
      */
     static readonly purpleGlazedTerracotta: BlockType;
     static readonly purpleShulkerBox: BlockType;
+    static readonly purpleStainedGlass: BlockType;
+    static readonly purpleStainedGlassPane: BlockType;
     static readonly purpleWool: BlockType;
     /**
      * @remarks
@@ -11876,6 +11569,8 @@ export class MinecraftBlockTypes {
      */
     static readonly redSandstoneStairs: BlockType;
     static readonly redShulkerBox: BlockType;
+    static readonly redStainedGlass: BlockType;
+    static readonly redStainedGlassPane: BlockType;
     /**
      * @remarks
      * Represents a block of redstone within Minecraft.
@@ -12183,18 +11878,6 @@ export class MinecraftBlockTypes {
      *
      */
     static readonly spruceWallSign: BlockType;
-    /**
-     * @remarks
-     * Represents stained glass within Minecraft.
-     *
-     */
-    static readonly stainedGlass: BlockType;
-    /**
-     * @remarks
-     * Represents a pane of stained glass within Minecraft.
-     *
-     */
-    static readonly stainedGlassPane: BlockType;
     /**
      * @remarks
      * Represents a block of stained hardened clay within
@@ -12839,6 +12522,8 @@ export class MinecraftBlockTypes {
      */
     static readonly whiteGlazedTerracotta: BlockType;
     static readonly whiteShulkerBox: BlockType;
+    static readonly whiteStainedGlass: BlockType;
+    static readonly whiteStainedGlassPane: BlockType;
     static readonly whiteWool: BlockType;
     /**
      * @remarks
@@ -12904,6 +12589,8 @@ export class MinecraftBlockTypes {
      */
     static readonly yellowGlazedTerracotta: BlockType;
     static readonly yellowShulkerBox: BlockType;
+    static readonly yellowStainedGlass: BlockType;
+    static readonly yellowStainedGlassPane: BlockType;
     static readonly yellowWool: BlockType;
     /**
      * @remarks
@@ -12920,6 +12607,8 @@ export class MinecraftBlockTypes {
 }
 
 /**
+ * DEPRECATED
+ * Use @minecraft/vanilla-data.MinecraftDimensionTypes
  * A collection of default Minecraft dimension types.
  */
 export class MinecraftDimensionTypes {
@@ -12961,238 +12650,30 @@ export class MinecraftDimensionTypes {
 
 /**
  * @beta
- * Contains definitions of standard Minecraft and Minecraft
- * Education Edition Entity types.
- */
-export class MinecraftEntityTypes {
-    private constructor();
-    static readonly agent: EntityType;
-    static readonly allay: EntityType;
-    static readonly areaEffectCloud: EntityType;
-    static readonly armorStand: EntityType;
-    static readonly arrow: EntityType;
-    static readonly axolotl: EntityType;
-    static readonly bat: EntityType;
-    static readonly bee: EntityType;
-    static readonly blaze: EntityType;
-    static readonly boat: EntityType;
-    static readonly camel: EntityType;
-    static readonly cat: EntityType;
-    static readonly caveSpider: EntityType;
-    static readonly chestBoat: EntityType;
-    static readonly chestMinecart: EntityType;
-    static readonly chicken: EntityType;
-    static readonly cod: EntityType;
-    static readonly commandBlockMinecart: EntityType;
-    static readonly cow: EntityType;
-    static readonly creeper: EntityType;
-    static readonly dolphin: EntityType;
-    static readonly donkey: EntityType;
-    static readonly dragonFireball: EntityType;
-    static readonly drowned: EntityType;
-    static readonly egg: EntityType;
-    static readonly elderGuardian: EntityType;
-    static readonly enderCrystal: EntityType;
-    static readonly enderDragon: EntityType;
-    static readonly enderman: EntityType;
-    static readonly endermite: EntityType;
-    static readonly enderPearl: EntityType;
-    static readonly evocationIllager: EntityType;
-    static readonly eyeOfEnderSignal: EntityType;
-    static readonly fireball: EntityType;
-    static readonly fireworksRocket: EntityType;
-    static readonly fishingHook: EntityType;
-    static readonly fox: EntityType;
-    static readonly frog: EntityType;
-    static readonly ghast: EntityType;
-    static readonly glowSquid: EntityType;
-    static readonly goat: EntityType;
-    static readonly guardian: EntityType;
-    static readonly hoglin: EntityType;
-    static readonly hopperMinecart: EntityType;
-    static readonly horse: EntityType;
-    static readonly husk: EntityType;
-    static readonly ironGolem: EntityType;
-    static readonly lightningBolt: EntityType;
-    static readonly lingeringPotion: EntityType;
-    static readonly llama: EntityType;
-    static readonly llamaSpit: EntityType;
-    static readonly magmaCube: EntityType;
-    static readonly minecart: EntityType;
-    static readonly mooshroom: EntityType;
-    static readonly mule: EntityType;
-    static readonly npc: EntityType;
-    static readonly ocelot: EntityType;
-    static readonly panda: EntityType;
-    static readonly parrot: EntityType;
-    static readonly phantom: EntityType;
-    static readonly pig: EntityType;
-    static readonly piglin: EntityType;
-    static readonly piglinBrute: EntityType;
-    static readonly pillager: EntityType;
-    static readonly player: EntityType;
-    static readonly polarBear: EntityType;
-    static readonly pufferfish: EntityType;
-    static readonly rabbit: EntityType;
-    static readonly ravager: EntityType;
-    static readonly salmon: EntityType;
-    static readonly sheep: EntityType;
-    static readonly shulker: EntityType;
-    static readonly shulkerBullet: EntityType;
-    static readonly silverfish: EntityType;
-    static readonly skeleton: EntityType;
-    static readonly skeletonHorse: EntityType;
-    static readonly slime: EntityType;
-    static readonly smallFireball: EntityType;
-    static readonly sniffer: EntityType;
-    static readonly snowball: EntityType;
-    static readonly snowGolem: EntityType;
-    static readonly spider: EntityType;
-    static readonly splashPotion: EntityType;
-    static readonly squid: EntityType;
-    static readonly stray: EntityType;
-    static readonly strider: EntityType;
-    static readonly tadpole: EntityType;
-    static readonly thrownTrident: EntityType;
-    static readonly tnt: EntityType;
-    static readonly tntMinecart: EntityType;
-    static readonly traderLlama: EntityType;
-    static readonly tripodCamera: EntityType;
-    static readonly tropicalfish: EntityType;
-    static readonly turtle: EntityType;
-    static readonly vex: EntityType;
-    static readonly villager: EntityType;
-    static readonly villagerV2: EntityType;
-    static readonly vindicator: EntityType;
-    static readonly wanderingTrader: EntityType;
-    static readonly warden: EntityType;
-    static readonly witch: EntityType;
-    static readonly wither: EntityType;
-    static readonly witherSkeleton: EntityType;
-    static readonly witherSkull: EntityType;
-    static readonly witherSkullDangerous: EntityType;
-    static readonly wolf: EntityType;
-    static readonly xpBottle: EntityType;
-    static readonly xpOrb: EntityType;
-    static readonly zoglin: EntityType;
-    static readonly zombie: EntityType;
-    static readonly zombieHorse: EntityType;
-    static readonly zombiePigman: EntityType;
-    static readonly zombieVillager: EntityType;
-    static readonly zombieVillagerV2: EntityType;
-}
-
-/**
- * @beta
- * Contains definitions of standard Minecraft and Minecraft
- * Education Edition block types.
  */
 export class MinecraftItemTypes {
     private constructor();
     static readonly acaciaBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an acacia button within
-     * Minecraft.
-     *
-     */
     static readonly acaciaButton: ItemType;
     static readonly acaciaChestBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an acacia door within
-     * Minecraft.
-     *
-     */
     static readonly acaciaDoor: ItemType;
     static readonly acaciaFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an acacia fence gate
-     * within Minecraft.
-     *
-     */
     static readonly acaciaFenceGate: ItemType;
     static readonly acaciaHangingSign: ItemType;
     static readonly acaciaLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an acacia pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly acaciaPressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an acacia sign within
-     * Minecraft.
-     *
-     */
     static readonly acaciaSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of acacia stairs
-     * within Minecraft.
-     *
-     */
     static readonly acaciaStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an acacia trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly acaciaTrapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an activator rail within
-     * Minecraft.
-     *
-     */
     static readonly activatorRail: ItemType;
     static readonly allaySpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an allow block within
-     * Minecraft.
-     *
-     */
     static readonly allow: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an amethyst block within
-     * Minecraft.
-     *
-     */
     static readonly amethystBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cluster of amethyst
-     * within Minecraft.
-     *
-     */
     static readonly amethystCluster: ItemType;
     static readonly amethystShard: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place ancient debris within
-     * Minecraft.
-     *
-     */
     static readonly ancientDebris: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place andesite stairs within
-     * Minecraft.
-     *
-     */
     static readonly andesiteStairs: ItemType;
     static readonly anglerPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an anvil within Minecraft.
-     *
-     */
     static readonly anvil: ItemType;
     static readonly apple: ItemType;
     static readonly archerPotterySherd: ItemType;
@@ -13201,33 +12682,10 @@ export class MinecraftItemTypes {
     static readonly arrow: ItemType;
     static readonly axolotlBucket: ItemType;
     static readonly axolotlSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an azalea flowering plant
-     * within Minecraft.
-     *
-     */
     static readonly azalea: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place azalea leaves within
-     * Minecraft.
-     *
-     */
     static readonly azaleaLeaves: ItemType;
-    /**
-     * @remarks
-     * Represents flowered azalea leaves within Minecraft.
-     *
-     */
     static readonly azaleaLeavesFlowered: ItemType;
     static readonly bakedPotato: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bamboo tree within
-     * Minecraft.
-     *
-     */
     static readonly bamboo: ItemType;
     static readonly bambooBlock: ItemType;
     static readonly bambooButton: ItemType;
@@ -13248,245 +12706,68 @@ export class MinecraftItemTypes {
     static readonly bambooTrapdoor: ItemType;
     static readonly banner: ItemType;
     static readonly bannerPattern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a barrel within Minecraft.
-     *
-     */
     static readonly barrel: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an invisible but logical
-     * barrier within Minecraft.
-     *
-     */
     static readonly barrier: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a basalt block within
-     * Minecraft.
-     *
-     */
     static readonly basalt: ItemType;
     static readonly batSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a beacon within Minecraft.
-     *
-     */
     static readonly beacon: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bed within Minecraft.
-     *
-     */
     static readonly bed: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bedrock block within
-     * Minecraft.
-     *
-     */
     static readonly bedrock: ItemType;
     static readonly beef: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a beehive within
-     * Minecraft.
-     *
-     */
     static readonly beehive: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bee nest within
-     * Minecraft.
-     *
-     */
     static readonly beeNest: ItemType;
     static readonly beeSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a beetroot vegetable
-     * within Minecraft.
-     *
-     */
     static readonly beetroot: ItemType;
     static readonly beetrootSeeds: ItemType;
     static readonly beetrootSoup: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bell within Minecraft.
-     *
-     */
     static readonly bell: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a big dripleaf plant
-     * within Minecraft.
-     *
-     */
     static readonly bigDripleaf: ItemType;
     static readonly birchBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch button within
-     * Minecraft.
-     *
-     */
     static readonly birchButton: ItemType;
     static readonly birchChestBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch door within
-     * Minecraft.
-     *
-     */
     static readonly birchDoor: ItemType;
     static readonly birchFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch fence gate within
-     * Minecraft.
-     *
-     */
     static readonly birchFenceGate: ItemType;
     static readonly birchHangingSign: ItemType;
     static readonly birchLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly birchPressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch sign within
-     * Minecraft.
-     *
-     */
     static readonly birchSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch stairs block
-     * within Minecraft.
-     *
-     */
     static readonly birchStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a birch trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly birchTrapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a black candle within
-     * Minecraft.
-     *
-     */
     static readonly blackCandle: ItemType;
     static readonly blackCarpet: ItemType;
     static readonly blackConcrete: ItemType;
     static readonly blackDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a black glazed terracotta
-     * block within Minecraft.
-     *
-     */
     static readonly blackGlazedTerracotta: ItemType;
     static readonly blackShulkerBox: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blackstone block within
-     * Minecraft.
-     *
-     */
+    static readonly blackStainedGlass: ItemType;
+    static readonly blackStainedGlassPane: ItemType;
     static readonly blackstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blackstone slab within
-     * Minecraft.
-     *
-     */
     static readonly blackstoneSlab: ItemType;
-    /**
-     * @remarks
-     * Represents blackstone stairs within Minecraft.
-     *
-     */
     static readonly blackstoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blackstone wall within
-     * Minecraft.
-     *
-     */
     static readonly blackstoneWall: ItemType;
     static readonly blackWool: ItemType;
     static readonly bladePotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blast furnace within
-     * Minecraft.
-     *
-     */
     static readonly blastFurnace: ItemType;
     static readonly blazePowder: ItemType;
     static readonly blazeRod: ItemType;
     static readonly blazeSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blue candle within
-     * Minecraft.
-     *
-     */
     static readonly blueCandle: ItemType;
     static readonly blueCarpet: ItemType;
     static readonly blueConcrete: ItemType;
     static readonly blueDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blue glazed terracotta
-     * block within Minecraft.
-     *
-     */
     static readonly blueGlazedTerracotta: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a blue ice block within
-     * Minecraft.
-     *
-     */
     static readonly blueIce: ItemType;
     static readonly blueShulkerBox: ItemType;
+    static readonly blueStainedGlass: ItemType;
+    static readonly blueStainedGlassPane: ItemType;
     static readonly blueWool: ItemType;
     static readonly boat: ItemType;
     static readonly bone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bone block within
-     * Minecraft.
-     *
-     */
     static readonly boneBlock: ItemType;
     static readonly boneMeal: ItemType;
     static readonly book: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an unbreakable border
-     * block within Minecraft.
-     *
-     */
     static readonly bookshelf: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a border block within
-     * Minecraft.
-     *
-     */
     static readonly borderBlock: ItemType;
     static readonly bordureIndentedBannerPattern: ItemType;
     static readonly bow: ItemType;
@@ -13494,150 +12775,42 @@ export class MinecraftItemTypes {
     static readonly brainCoral: ItemType;
     static readonly bread: ItemType;
     static readonly brewerPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a brewing stand within
-     * Minecraft.
-     *
-     */
     static readonly brewingStand: ItemType;
     static readonly brick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of brick within
-     * Minecraft.
-     *
-     */
     static readonly brickBlock: ItemType;
-    /**
-     * @remarks
-     * Represents brick stairs within Minecraft.
-     *
-     */
     static readonly brickStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a brown candle within
-     * Minecraft.
-     *
-     */
     static readonly brownCandle: ItemType;
     static readonly brownCarpet: ItemType;
     static readonly brownConcrete: ItemType;
     static readonly brownDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a brown glazed terracotta
-     * block within Minecraft.
-     *
-     */
     static readonly brownGlazedTerracotta: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a brown mushroom within
-     * Minecraft.
-     *
-     */
     static readonly brownMushroom: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of brown mushroom
-     * within Minecraft.
-     *
-     */
     static readonly brownMushroomBlock: ItemType;
     static readonly brownShulkerBox: ItemType;
+    static readonly brownStainedGlass: ItemType;
+    static readonly brownStainedGlassPane: ItemType;
     static readonly brownWool: ItemType;
     static readonly brush: ItemType;
     static readonly bubbleCoral: ItemType;
     static readonly bucket: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of budding
-     * amethyst within Minecraft.
-     *
-     */
     static readonly buddingAmethyst: ItemType;
     static readonly burnPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cactus within Minecraft.
-     *
-     */
     static readonly cactus: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cake within Minecraft.
-     *
-     */
     static readonly cake: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a calcite block within
-     * Minecraft.
-     *
-     */
     static readonly calcite: ItemType;
     static readonly calibratedSculkSensor: ItemType;
     static readonly camelSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a campfire within
-     * Minecraft.
-     *
-     */
     static readonly campfire: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a candle within Minecraft.
-     *
-     */
     static readonly candle: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a carpet within Minecraft.
-     *
-     */
     static readonly carpet: ItemType;
     static readonly carrot: ItemType;
     static readonly carrotOnAStick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cartography table block
-     * within Minecraft.
-     *
-     */
     static readonly cartographyTable: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a carved pumpkin within
-     * Minecraft.
-     *
-     */
     static readonly carvedPumpkin: ItemType;
     static readonly catSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cauldron within
-     * Minecraft.
-     *
-     */
     static readonly cauldron: ItemType;
     static readonly caveSpiderSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a metallic chain within
-     * Minecraft.
-     *
-     */
     static readonly chain: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block that gives off
-     * heat but not light, within Minecraft Education Edition or
-     * Bedrock Edition with Education features.
-     *
-     */
     static readonly chainCommandBlock: ItemType;
     static readonly chainmailBoots: ItemType;
     static readonly chainmailChestplate: ItemType;
@@ -13661,154 +12834,42 @@ export class MinecraftItemTypes {
     static readonly cherryStairs: ItemType;
     static readonly cherryTrapdoor: ItemType;
     static readonly cherryWood: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a chest within Minecraft.
-     *
-     */
     static readonly chest: ItemType;
     static readonly chestBoat: ItemType;
     static readonly chestMinecart: ItemType;
     static readonly chicken: ItemType;
     static readonly chickenSpawnEgg: ItemType;
     static readonly chiseledBookshelf: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of chiseled
-     * deepslate within Minecraft.
-     *
-     */
     static readonly chiseledDeepslate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of chiseled nether
-     * bricks within Minecraft.
-     *
-     */
     static readonly chiseledNetherBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of chiseled
-     * polished blackstone within Minecraft.
-     *
-     */
     static readonly chiseledPolishedBlackstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a chorus flower within
-     * Minecraft.
-     *
-     */
     static readonly chorusFlower: ItemType;
     static readonly chorusFruit: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a chorus plant within
-     * Minecraft.
-     *
-     */
     static readonly chorusPlant: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of clay within
-     * Minecraft.
-     *
-     */
     static readonly clay: ItemType;
     static readonly clayBall: ItemType;
     static readonly clock: ItemType;
     static readonly coal: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of solid coal
-     * within Minecraft.
-     *
-     */
     static readonly coalBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded coal
-     * ore within Minecraft.
-     *
-     */
     static readonly coalOre: ItemType;
     static readonly coastArmorTrimSmithingTemplate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cobbled
-     * deepslate within Minecraft.
-     *
-     */
     static readonly cobbledDeepslate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of deepslate within
-     * Minecraft.
-     *
-     */
     static readonly cobbledDeepslateSlab: ItemType;
-    /**
-     * @remarks
-     * Represents cobbled deepslate stairs within Minecraft.
-     *
-     */
     static readonly cobbledDeepslateStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cobbled deepslate wall
-     * within Minecraft.
-     *
-     */
     static readonly cobbledDeepslateWall: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cobblestone
-     * within Minecraft.
-     *
-     */
     static readonly cobblestone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wall of cobblestone
-     * within Minecraft.
-     *
-     */
     static readonly cobblestoneWall: ItemType;
     static readonly cocoaBeans: ItemType;
     static readonly cod: ItemType;
     static readonly codBucket: ItemType;
     static readonly codSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block that can run
-     * commands within Minecraft.
-     *
-     */
     static readonly commandBlock: ItemType;
     static readonly commandBlockMinecart: ItemType;
     static readonly comparator: ItemType;
     static readonly compass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a composter block within
-     * Minecraft.
-     *
-     */
     static readonly composter: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of concrete powder
-     * within Minecraft.
-     *
-     */
     static readonly concrete: ItemType;
     static readonly concretePowder: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a conduit block within
-     * Minecraft.
-     *
-     */
     static readonly conduit: ItemType;
     static readonly cookedBeef: ItemType;
     static readonly cookedChicken: ItemType;
@@ -13818,453 +12879,94 @@ export class MinecraftItemTypes {
     static readonly cookedRabbit: ItemType;
     static readonly cookedSalmon: ItemType;
     static readonly cookie: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a solid block of copper
-     * within Minecraft.
-     *
-     */
     static readonly copperBlock: ItemType;
     static readonly copperIngot: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded
-     * copper ore within Minecraft.
-     *
-     */
     static readonly copperOre: ItemType;
-    /**
-     * @remarks
-     * Represents coral within Minecraft.
-     *
-     */
     static readonly coral: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a solid block of coral
-     * within Minecraft.
-     *
-     */
     static readonly coralBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a fan formation of coral
-     * within Minecraft.
-     *
-     */
     static readonly coralFan: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a fan formation of dead
-     * coral within Minecraft.
-     *
-     */
     static readonly coralFanDead: ItemType;
     static readonly cowSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cracked
-     * deepslate bricks within Minecraft.
-     *
-     */
     static readonly crackedDeepslateBricks: ItemType;
-    /**
-     * @remarks
-     * Represents tiles of cracked deepslate within Minecraft.
-     *
-     */
     static readonly crackedDeepslateTiles: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cracked nether
-     * bricks within Minecraft.
-     *
-     */
     static readonly crackedNetherBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cracked and
-     * polished blackstone bricks within Minecraft.
-     *
-     */
     static readonly crackedPolishedBlackstoneBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crafting table within
-     * Minecraft.
-     *
-     */
     static readonly craftingTable: ItemType;
     static readonly creeperBannerPattern: ItemType;
     static readonly creeperSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson button within
-     * Minecraft.
-     *
-     */
     static readonly crimsonButton: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson door within
-     * Minecraft.
-     *
-     */
     static readonly crimsonDoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson fence within
-     * Minecraft.
-     *
-     */
     static readonly crimsonFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson fence gate
-     * within Minecraft.
-     *
-     */
     static readonly crimsonFenceGate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson fungus within
-     * Minecraft.
-     *
-     */
     static readonly crimsonFungus: ItemType;
     static readonly crimsonHangingSign: ItemType;
-    /**
-     * @remarks
-     * Represents crimson hyphae within Minecraft.
-     *
-     */
     static readonly crimsonHyphae: ItemType;
-    /**
-     * @remarks
-     * Represents crimson nylium within Minecraft.
-     *
-     */
     static readonly crimsonNylium: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of crimson planks
-     * within Minecraft.
-     *
-     */
     static readonly crimsonPlanks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly crimsonPressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of crimson roots
-     * within Minecraft.
-     *
-     */
     static readonly crimsonRoots: ItemType;
     static readonly crimsonSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson slab within
-     * Minecraft.
-     *
-     */
     static readonly crimsonSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of crimson stairs
-     * within Minecraft.
-     *
-     */
     static readonly crimsonStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson stem within
-     * Minecraft.
-     *
-     */
     static readonly crimsonStem: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a crimson trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly crimsonTrapdoor: ItemType;
     static readonly crossbow: ItemType;
-    /**
-     * @remarks
-     * Represents crying obsidian within Minecraft.
-     *
-     */
     static readonly cryingObsidian: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cut copper block within
-     * Minecraft.
-     *
-     */
     static readonly cutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cut copper slab within
-     * Minecraft.
-     *
-     */
     static readonly cutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of cut copper stairs
-     * within Minecraft.
-     *
-     */
     static readonly cutCopperStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a cyan-colored candle
-     * within Minecraft.
-     *
-     */
     static readonly cyanCandle: ItemType;
     static readonly cyanCarpet: ItemType;
     static readonly cyanConcrete: ItemType;
     static readonly cyanDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cyan-colored
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly cyanGlazedTerracotta: ItemType;
     static readonly cyanShulkerBox: ItemType;
+    static readonly cyanStainedGlass: ItemType;
+    static readonly cyanStainedGlassPane: ItemType;
     static readonly cyanWool: ItemType;
     static readonly dangerPotterySherd: ItemType;
     static readonly darkOakBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dark oak button within
-     * Minecraft.
-     *
-     */
     static readonly darkOakButton: ItemType;
     static readonly darkOakChestBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dark oak door within
-     * Minecraft.
-     *
-     */
     static readonly darkOakDoor: ItemType;
     static readonly darkOakFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dark oak fence gate
-     * within Minecraft.
-     *
-     */
     static readonly darkOakFenceGate: ItemType;
     static readonly darkOakHangingSign: ItemType;
     static readonly darkOakLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dark oak pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly darkOakPressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dark oak sign within
-     * Minecraft.
-     *
-     */
     static readonly darkOakSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of dark oak stairs
-     * within Minecraft.
-     *
-     */
     static readonly darkOakStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dark oak trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly darkOakTrapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of dark prismarine
-     * stairs within Minecraft.
-     *
-     */
     static readonly darkPrismarineStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a daylight detector within
-     * Minecraft.
-     *
-     */
     static readonly daylightDetector: ItemType;
     static readonly deadBrainCoral: ItemType;
     static readonly deadBubbleCoral: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dead bush within
-     * Minecraft.
-     *
-     */
     static readonly deadbush: ItemType;
     static readonly deadFireCoral: ItemType;
     static readonly deadHornCoral: ItemType;
     static readonly deadTubeCoral: ItemType;
     static readonly decoratedPot: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate
-     * within Minecraft.
-     *
-     */
     static readonly deepslate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate
-     * bricks within Minecraft.
-     *
-     */
     static readonly deepslateBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of deepslate brick
-     * within Minecraft.
-     *
-     */
     static readonly deepslateBrickSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of deepslate brick
-     * stairs within Minecraft.
-     *
-     */
     static readonly deepslateBrickStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a deepslate brick wall
-     * within Minecraft.
-     *
-     */
     static readonly deepslateBrickWall: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded coal ore within Minecraft.
-     *
-     */
     static readonly deepslateCoalOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded copper ore within Minecraft.
-     *
-     */
     static readonly deepslateCopperOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded diamond ore within Minecraft.
-     *
-     */
     static readonly deepslateDiamondOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded emerald ore within Minecraft.
-     *
-     */
     static readonly deepslateEmeraldOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded gold ore within Minecraft.
-     *
-     */
     static readonly deepslateGoldOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded iron ore within Minecraft.
-     *
-     */
     static readonly deepslateIronOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded lapis lazuli ore within Minecraft.
-     *
-     */
     static readonly deepslateLapisOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of deepslate with
-     * embedded redstone ore within Minecraft.
-     *
-     */
     static readonly deepslateRedstoneOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of deepslate tiles
-     * within Minecraft.
-     *
-     */
     static readonly deepslateTiles: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of deepslate tiles
-     * within Minecraft.
-     *
-     */
     static readonly deepslateTileSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of deepslate tile
-     * stairs within Minecraft.
-     *
-     */
     static readonly deepslateTileStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wall of deepslate tile
-     * within Minecraft.
-     *
-     */
     static readonly deepslateTileWall: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a logical but generally
-     * invisible Deny logic block within Minecraft.
-     *
-     */
     static readonly deny: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a detector rail within
-     * Minecraft.
-     *
-     */
     static readonly detectorRail: ItemType;
     static readonly diamond: ItemType;
     static readonly diamondAxe: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of diamond within
-     * Minecraft.
-     *
-     */
     static readonly diamondBlock: ItemType;
     static readonly diamondBoots: ItemType;
     static readonly diamondChestplate: ItemType;
@@ -14272,83 +12974,23 @@ export class MinecraftItemTypes {
     static readonly diamondHoe: ItemType;
     static readonly diamondHorseArmor: ItemType;
     static readonly diamondLeggings: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded
-     * diamond ore within Minecraft.
-     *
-     */
     static readonly diamondOre: ItemType;
     static readonly diamondPickaxe: ItemType;
     static readonly diamondShovel: ItemType;
     static readonly diamondSword: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of diorite stairs
-     * within Minecraft.
-     *
-     */
     static readonly dioriteStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of dirt within
-     * Minecraft.
-     *
-     */
     static readonly dirt: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of dirt with roots
-     * within Minecraft.
-     *
-     */
     static readonly dirtWithRoots: ItemType;
     static readonly discFragment5: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dispenser within
-     * Minecraft.
-     *
-     */
     static readonly dispenser: ItemType;
     static readonly dolphinSpawnEgg: ItemType;
     static readonly donkeySpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a double plant within
-     * Minecraft.
-     *
-     */
     static readonly doublePlant: ItemType;
     static readonly dragonBreath: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dragon egg within
-     * Minecraft.
-     *
-     */
     static readonly dragonEgg: ItemType;
     static readonly driedKelp: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of dried kelp
-     * within Minecraft.
-     *
-     */
     static readonly driedKelpBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of dripstone
-     * within Minecraft.
-     *
-     */
     static readonly dripstoneBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a dropper within
-     * Minecraft.
-     *
-     */
     static readonly dropper: ItemType;
     static readonly drownedSpawnEgg: ItemType;
     static readonly duneArmorTrimSmithingTemplate: ItemType;
@@ -14358,130 +13000,35 @@ export class MinecraftItemTypes {
     static readonly elderGuardianSpawnEgg: ItemType;
     static readonly elytra: ItemType;
     static readonly emerald: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of emerald within
-     * Minecraft.
-     *
-     */
     static readonly emeraldBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded
-     * emerald ore within Minecraft.
-     *
-     */
     static readonly emeraldOre: ItemType;
     static readonly emptyMap: ItemType;
     static readonly enchantedBook: ItemType;
     static readonly enchantedGoldenApple: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an enchanting table within
-     * Minecraft.
-     *
-     */
     static readonly enchantingTable: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an end bricks block within
-     * Minecraft.
-     *
-     */
     static readonly endBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of end brick stairs
-     * within Minecraft.
-     *
-     */
     static readonly endBrickStairs: ItemType;
     static readonly endCrystal: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an ender chest within
-     * Minecraft.
-     *
-     */
     static readonly enderChest: ItemType;
     static readonly enderDragonSpawnEgg: ItemType;
     static readonly enderEye: ItemType;
     static readonly endermanSpawnEgg: ItemType;
     static readonly endermiteSpawnEgg: ItemType;
     static readonly enderPearl: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an end portal frame within
-     * Minecraft.
-     *
-     */
     static readonly endPortalFrame: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an end rod within
-     * Minecraft.
-     *
-     */
     static readonly endRod: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an end stone block within
-     * Minecraft.
-     *
-     */
     static readonly endStone: ItemType;
     static readonly evokerSpawnEgg: ItemType;
     static readonly experienceBottle: ItemType;
     static readonly explorerPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of exposed copper
-     * within Minecraft.
-     *
-     */
     static readonly exposedCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of exposed cut
-     * copper within Minecraft.
-     *
-     */
     static readonly exposedCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of exposed cut
-     * copper within Minecraft.
-     *
-     */
     static readonly exposedCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of exposed cut
-     * copper stairs within Minecraft.
-     *
-     */
     static readonly exposedCutCopperStairs: ItemType;
     static readonly eyeArmorTrimSmithingTemplate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a farmland block within
-     * Minecraft.
-     *
-     */
     static readonly farmland: ItemType;
     static readonly feather: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a fence within Minecraft.
-     *
-     */
     static readonly fence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a fence gate within
-     * Minecraft.
-     *
-     */
     static readonly fenceGate: ItemType;
     static readonly fermentedSpiderEye: ItemType;
     static readonly fieldMasonedBannerPattern: ItemType;
@@ -14491,112 +13038,36 @@ export class MinecraftItemTypes {
     static readonly fireworkRocket: ItemType;
     static readonly fireworkStar: ItemType;
     static readonly fishingRod: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a fletching table within
-     * Minecraft.
-     *
-     */
     static readonly fletchingTable: ItemType;
     static readonly flint: ItemType;
     static readonly flintAndSteel: ItemType;
     static readonly flowerBannerPattern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a flowering azalea plant
-     * within Minecraft.
-     *
-     */
     static readonly floweringAzalea: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a flower pot within
-     * Minecraft.
-     *
-     */
     static readonly flowerPot: ItemType;
     static readonly foxSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a frame within Minecraft.
-     *
-     */
     static readonly frame: ItemType;
     static readonly friendPotterySherd: ItemType;
     static readonly frogSpawn: ItemType;
     static readonly frogSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a frosted ice block within
-     * Minecraft.
-     *
-     */
     static readonly frostedIce: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a furnace within
-     * Minecraft.
-     *
-     */
     static readonly furnace: ItemType;
     static readonly ghastSpawnEgg: ItemType;
     static readonly ghastTear: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of gilded
-     * blackstone within Minecraft.
-     *
-     */
     static readonly gildedBlackstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a glass block within
-     * Minecraft.
-     *
-     */
     static readonly glass: ItemType;
     static readonly glassBottle: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a pane of glass within
-     * Minecraft.
-     *
-     */
     static readonly glassPane: ItemType;
     static readonly glisteringMelonSlice: ItemType;
     static readonly globeBannerPattern: ItemType;
     static readonly glowBerries: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a glowing frame within
-     * Minecraft.
-     *
-     */
     static readonly glowFrame: ItemType;
     static readonly glowInkSac: ItemType;
-    /**
-     * @remarks
-     * Represents glow lichen within Minecraft.
-     *
-     */
     static readonly glowLichen: ItemType;
     static readonly glowSquidSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of glowstone
-     * within Minecraft.
-     *
-     */
     static readonly glowstone: ItemType;
     static readonly glowstoneDust: ItemType;
     static readonly goatHorn: ItemType;
     static readonly goatSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a gold block within
-     * Minecraft.
-     *
-     */
     static readonly goldBlock: ItemType;
     static readonly goldenApple: ItemType;
     static readonly goldenAxe: ItemType;
@@ -14608,152 +13079,49 @@ export class MinecraftItemTypes {
     static readonly goldenHorseArmor: ItemType;
     static readonly goldenLeggings: ItemType;
     static readonly goldenPickaxe: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a golden rail element
-     * within Minecraft.
-     *
-     */
     static readonly goldenRail: ItemType;
     static readonly goldenShovel: ItemType;
     static readonly goldenSword: ItemType;
     static readonly goldIngot: ItemType;
     static readonly goldNugget: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded gold
-     * ore within Minecraft.
-     *
-     */
     static readonly goldOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of granite stairs
-     * within Minecraft.
-     *
-     */
     static readonly graniteStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of dirt and grass
-     * within Minecraft.
-     *
-     */
     static readonly grass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of dirt and grass
-     * with a path within Minecraft.
-     *
-     */
     static readonly grassPath: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of gravel within
-     * Minecraft.
-     *
-     */
     static readonly gravel: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a gray-colored candle
-     * within Minecraft.
-     *
-     */
     static readonly grayCandle: ItemType;
     static readonly grayCarpet: ItemType;
     static readonly grayConcrete: ItemType;
     static readonly grayDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a gray-colored block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly grayGlazedTerracotta: ItemType;
     static readonly grayShulkerBox: ItemType;
+    static readonly grayStainedGlass: ItemType;
+    static readonly grayStainedGlassPane: ItemType;
     static readonly grayWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a green-colored candle
-     * within Minecraft.
-     *
-     */
     static readonly greenCandle: ItemType;
     static readonly greenCarpet: ItemType;
     static readonly greenConcrete: ItemType;
     static readonly greenDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a green block of glazed
-     * terracotta within Minecraft.
-     *
-     */
     static readonly greenGlazedTerracotta: ItemType;
     static readonly greenShulkerBox: ItemType;
+    static readonly greenStainedGlass: ItemType;
+    static readonly greenStainedGlassPane: ItemType;
     static readonly greenWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a grindstone within
-     * Minecraft.
-     *
-     */
     static readonly grindstone: ItemType;
     static readonly guardianSpawnEgg: ItemType;
     static readonly gunpowder: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of hanging roots
-     * within Minecraft.
-     *
-     */
     static readonly hangingRoots: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of hardened clay
-     * within Minecraft.
-     *
-     */
     static readonly hardenedClay: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of hay within
-     * Minecraft.
-     *
-     */
     static readonly hayBlock: ItemType;
     static readonly heartbreakPotterySherd: ItemType;
     static readonly heartOfTheSea: ItemType;
     static readonly heartPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a heavy weighted pressure
-     * plate within Minecraft.
-     *
-     */
     static readonly heavyWeightedPressurePlate: ItemType;
     static readonly hoglinSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of honey within
-     * Minecraft.
-     *
-     */
     static readonly honeyBlock: ItemType;
     static readonly honeyBottle: ItemType;
     static readonly honeycomb: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a honeycomb block within
-     * Minecraft.
-     *
-     */
     static readonly honeycombBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a hopper within Minecraft.
-     *
-     */
     static readonly hopper: ItemType;
     static readonly hopperMinecart: ItemType;
     static readonly hornCoral: ItemType;
@@ -14761,43 +13129,14 @@ export class MinecraftItemTypes {
     static readonly hostArmorTrimSmithingTemplate: ItemType;
     static readonly howlPotterySherd: ItemType;
     static readonly huskSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of ice within
-     * Minecraft.
-     *
-     */
     static readonly ice: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an infested block of
-     * deepslate within Minecraft.
-     *
-     */
     static readonly infestedDeepslate: ItemType;
     static readonly inkSac: ItemType;
     static readonly ironAxe: ItemType;
-    /**
-     * @remarks
-     * Represents iron bars within Minecraft.
-     *
-     */
     static readonly ironBars: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of iron within
-     * Minecraft.
-     *
-     */
     static readonly ironBlock: ItemType;
     static readonly ironBoots: ItemType;
     static readonly ironChestplate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an iron door within
-     * Minecraft.
-     *
-     */
     static readonly ironDoor: ItemType;
     static readonly ironGolemSpawnEgg: ItemType;
     static readonly ironHelmet: ItemType;
@@ -14806,130 +13145,31 @@ export class MinecraftItemTypes {
     static readonly ironIngot: ItemType;
     static readonly ironLeggings: ItemType;
     static readonly ironNugget: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded iron
-     * ore within Minecraft.
-     *
-     */
     static readonly ironOre: ItemType;
     static readonly ironPickaxe: ItemType;
     static readonly ironShovel: ItemType;
     static readonly ironSword: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an iron trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly ironTrapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jigsaw within Minecraft.
-     *
-     */
     static readonly jigsaw: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jukebox within
-     * Minecraft.
-     *
-     */
     static readonly jukebox: ItemType;
     static readonly jungleBoat: ItemType;
-    /**
-     * @remarks
-     * Represents jungle wood button within Minecraft.
-     *
-     */
     static readonly jungleButton: ItemType;
     static readonly jungleChestBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jungle wood door within
-     * Minecraft.
-     *
-     */
     static readonly jungleDoor: ItemType;
     static readonly jungleFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jungle wood fence gate
-     * within Minecraft.
-     *
-     */
     static readonly jungleFenceGate: ItemType;
     static readonly jungleHangingSign: ItemType;
     static readonly jungleLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jungle wood pressure
-     * plate within Minecraft.
-     *
-     */
     static readonly junglePressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jungle sign within
-     * Minecraft.
-     *
-     */
     static readonly jungleSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of jungle wood
-     * stairs within Minecraft.
-     *
-     */
     static readonly jungleStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a jungle wood trapdoor
-     * within Minecraft.
-     *
-     */
     static readonly jungleTrapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of kelp within
-     * Minecraft.
-     *
-     */
     static readonly kelp: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a ladder within Minecraft.
-     *
-     */
     static readonly ladder: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lantern within
-     * Minecraft.
-     *
-     */
     static readonly lantern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of lapis lazuli
-     * within Minecraft.
-     *
-     */
     static readonly lapisBlock: ItemType;
     static readonly lapisLazuli: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded
-     * lapis lazuli within Minecraft.
-     *
-     */
     static readonly lapisOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a bud of large amethyst
-     * within Minecraft.
-     *
-     */
     static readonly largeAmethystBud: ItemType;
     static readonly lavaBucket: ItemType;
     static readonly lead: ItemType;
@@ -14939,164 +13179,56 @@ export class MinecraftItemTypes {
     static readonly leatherHelmet: ItemType;
     static readonly leatherHorseArmor: ItemType;
     static readonly leatherLeggings: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of leaves within
-     * Minecraft.
-     *
-     */
     static readonly leaves: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an updated set of leaves
-     * within Minecraft.
-     *
-     */
     static readonly leaves2: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lectern within
-     * Minecraft.
-     *
-     */
     static readonly lectern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lever within Minecraft.
-     *
-     */
     static readonly lever: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of light within
-     * Minecraft.
-     *
-     */
     static readonly lightBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a light blue candle within
-     * Minecraft.
-     *
-     */
     static readonly lightBlueCandle: ItemType;
     static readonly lightBlueCarpet: ItemType;
     static readonly lightBlueConcrete: ItemType;
     static readonly lightBlueDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a light blue block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly lightBlueGlazedTerracotta: ItemType;
     static readonly lightBlueShulkerBox: ItemType;
+    static readonly lightBlueStainedGlass: ItemType;
+    static readonly lightBlueStainedGlassPane: ItemType;
     static readonly lightBlueWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a light gray candle within
-     * Minecraft.
-     *
-     */
     static readonly lightGrayCandle: ItemType;
     static readonly lightGrayCarpet: ItemType;
     static readonly lightGrayConcrete: ItemType;
     static readonly lightGrayDye: ItemType;
     static readonly lightGrayShulkerBox: ItemType;
+    static readonly lightGrayStainedGlass: ItemType;
+    static readonly lightGrayStainedGlassPane: ItemType;
     static readonly lightGrayWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lightning rod within
-     * Minecraft.
-     *
-     */
     static readonly lightningRod: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a light weighted pressure
-     * plate within Minecraft.
-     *
-     */
     static readonly lightWeightedPressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lime candle within
-     * Minecraft.
-     *
-     */
     static readonly limeCandle: ItemType;
     static readonly limeCarpet: ItemType;
     static readonly limeConcrete: ItemType;
     static readonly limeDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lime-colored block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly limeGlazedTerracotta: ItemType;
     static readonly limeShulkerBox: ItemType;
+    static readonly limeStainedGlass: ItemType;
+    static readonly limeStainedGlassPane: ItemType;
     static readonly limeWool: ItemType;
     static readonly lingeringPotion: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lit pumpkin within
-     * Minecraft.
-     *
-     */
     static readonly litPumpkin: ItemType;
     static readonly llamaSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a lodestone within
-     * Minecraft.
-     *
-     */
     static readonly lodestone: ItemType;
     static readonly lodestoneCompass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a log within Minecraft.
-     *
-     */
     static readonly log: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a more updated,
-     * customizable log within Minecraft.
-     *
-     */
     static readonly log2: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a loom within Minecraft.
-     *
-     */
     static readonly loom: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a magenta candle within
-     * Minecraft.
-     *
-     */
     static readonly magentaCandle: ItemType;
     static readonly magentaCarpet: ItemType;
     static readonly magentaConcrete: ItemType;
     static readonly magentaDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of magenta-colored
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly magentaGlazedTerracotta: ItemType;
     static readonly magentaShulkerBox: ItemType;
+    static readonly magentaStainedGlass: ItemType;
+    static readonly magentaStainedGlassPane: ItemType;
     static readonly magentaWool: ItemType;
-    /**
-     * @remarks
-     * Represents magma within Minecraft.
-     *
-     */
     static readonly magma: ItemType;
     static readonly magmaCream: ItemType;
     static readonly magmaCubeSpawnEgg: ItemType;
@@ -15118,75 +13250,21 @@ export class MinecraftItemTypes {
     static readonly mangroveStairs: ItemType;
     static readonly mangroveTrapdoor: ItemType;
     static readonly mangroveWood: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a medium-sized bud of
-     * amethyst within Minecraft.
-     *
-     */
     static readonly mediumAmethystBud: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of melon within
-     * Minecraft.
-     *
-     */
     static readonly melonBlock: ItemType;
     static readonly melonSeeds: ItemType;
     static readonly melonSlice: ItemType;
     static readonly milkBucket: ItemType;
     static readonly minecart: ItemType;
     static readonly minerPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a mob spawner within
-     * Minecraft.
-     *
-     */
     static readonly mobSpawner: ItemType;
     static readonly mojangBannerPattern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a monster egg within
-     * Minecraft.
-     *
-     */
     static readonly monsterEgg: ItemType;
     static readonly mooshroomSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of moss within
-     * Minecraft.
-     *
-     */
     static readonly mossBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a carpet of moss within
-     * Minecraft.
-     *
-     */
     static readonly mossCarpet: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of cobblestone
-     * with moss within Minecraft.
-     *
-     */
     static readonly mossyCobblestone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of mossy cobblestone
-     * stairs within Minecraft.
-     *
-     */
     static readonly mossyCobblestoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of mossy stone brick
-     * stairs within Minecraft.
-     *
-     */
     static readonly mossyStoneBrickStairs: ItemType;
     static readonly mournerPotterySherd: ItemType;
     static readonly mud: ItemType;
@@ -15214,57 +13292,15 @@ export class MinecraftItemTypes {
     static readonly musicDiscWait: ItemType;
     static readonly musicDiscWard: ItemType;
     static readonly mutton: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a mycelium plant within
-     * Minecraft.
-     *
-     */
     static readonly mycelium: ItemType;
     static readonly nameTag: ItemType;
     static readonly nautilusShell: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a nether brick block
-     * within Minecraft.
-     *
-     */
     static readonly netherbrick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a nether brick block
-     * within Minecraft.
-     *
-     */
     static readonly netherBrick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a nether brick fence
-     * within Minecraft.
-     *
-     */
     static readonly netherBrickFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of nether brick
-     * stairs within Minecraft.
-     *
-     */
     static readonly netherBrickStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of nether with
-     * embedded gold ore within Minecraft.
-     *
-     */
     static readonly netherGoldOre: ItemType;
     static readonly netheriteAxe: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of netherite
-     * within Minecraft.
-     *
-     */
     static readonly netheriteBlock: ItemType;
     static readonly netheriteBoots: ItemType;
     static readonly netheriteChestplate: ItemType;
@@ -15277,46 +13313,12 @@ export class MinecraftItemTypes {
     static readonly netheriteShovel: ItemType;
     static readonly netheriteSword: ItemType;
     static readonly netheriteUpgradeSmithingTemplate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of netherrack
-     * within Minecraft.
-     *
-     */
     static readonly netherrack: ItemType;
-    /**
-     * @remarks
-     * Represents nether sprouts within Minecraft.
-     *
-     */
     static readonly netherSprouts: ItemType;
     static readonly netherStar: ItemType;
-    /**
-     * @remarks
-     * Represents nether wart within Minecraft.
-     *
-     */
     static readonly netherWart: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of nether wart
-     * within Minecraft.
-     *
-     */
     static readonly netherWartBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a standard set of stone
-     * stairs within Minecraft.
-     *
-     */
     static readonly normalStoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a note block within
-     * Minecraft.
-     *
-     */
     static readonly noteblock: ItemType;
     static readonly oakBoat: ItemType;
     static readonly oakChestBoat: ItemType;
@@ -15324,82 +13326,24 @@ export class MinecraftItemTypes {
     static readonly oakHangingSign: ItemType;
     static readonly oakLog: ItemType;
     static readonly oakSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of oak stairs within
-     * Minecraft.
-     *
-     */
     static readonly oakStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an observer within
-     * Minecraft.
-     *
-     */
     static readonly observer: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an obsidian block within
-     * Minecraft.
-     *
-     */
     static readonly obsidian: ItemType;
     static readonly ocelotSpawnEgg: ItemType;
     static readonly ochreFroglight: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an orange candle within
-     * Minecraft.
-     *
-     */
     static readonly orangeCandle: ItemType;
     static readonly orangeCarpet: ItemType;
     static readonly orangeConcrete: ItemType;
     static readonly orangeDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of orange-colored
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly orangeGlazedTerracotta: ItemType;
     static readonly orangeShulkerBox: ItemType;
+    static readonly orangeStainedGlass: ItemType;
+    static readonly orangeStainedGlassPane: ItemType;
     static readonly orangeWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of oxidized copper
-     * within Minecraft.
-     *
-     */
     static readonly oxidizedCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of oxidized cut
-     * copper within Minecraft.
-     *
-     */
     static readonly oxidizedCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of oxidized cut
-     * copper within Minecraft.
-     *
-     */
     static readonly oxidizedCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of oxidized cut
-     * copper stairs within Minecraft.
-     *
-     */
     static readonly oxidizedCutCopperStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of packed ice
-     * within Minecraft.
-     *
-     */
     static readonly packedIce: ItemType;
     static readonly packedMud: ItemType;
     static readonly painting: ItemType;
@@ -15414,436 +13358,115 @@ export class MinecraftItemTypes {
     static readonly piglinSpawnEgg: ItemType;
     static readonly pigSpawnEgg: ItemType;
     static readonly pillagerSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a pink candle within
-     * Minecraft.
-     *
-     */
     static readonly pinkCandle: ItemType;
     static readonly pinkCarpet: ItemType;
     static readonly pinkConcrete: ItemType;
     static readonly pinkDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a pink-colored block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly pinkGlazedTerracotta: ItemType;
     static readonly pinkPetals: ItemType;
     static readonly pinkShulkerBox: ItemType;
+    static readonly pinkStainedGlass: ItemType;
+    static readonly pinkStainedGlassPane: ItemType;
     static readonly pinkWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a piston within Minecraft.
-     *
-     */
     static readonly piston: ItemType;
     static readonly pitcherPlant: ItemType;
     static readonly pitcherPod: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of planks within
-     * Minecraft.
-     *
-     */
     static readonly planks: ItemType;
     static readonly plentyPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents podzol within Minecraft.
-     *
-     */
     static readonly podzol: ItemType;
-    /**
-     * @remarks
-     * Represents pointed dripstone within Minecraft.
-     *
-     */
     static readonly pointedDripstone: ItemType;
     static readonly poisonousPotato: ItemType;
     static readonly polarBearSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of polished andesite
-     * stairs within Minecraft.
-     *
-     */
     static readonly polishedAndesiteStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of polished basalt
-     * within Minecraft.
-     *
-     */
     static readonly polishedBasalt: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of polished
-     * blackstone within Minecraft.
-     *
-     */
     static readonly polishedBlackstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of polished
-     * blackstone bricks within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of polished
-     * blackstone within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneBrickSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of polished
-     * blackstone brick stairs within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneBrickStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a polished blackstone
-     * brick wall within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneBrickWall: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a polished blackstone
-     * button within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneButton: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a polished blackstone
-     * pressure plate within Minecraft.
-     *
-     */
     static readonly polishedBlackstonePressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of polished
-     * blackstone within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of polished
-     * blackstone stairs within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a polished blackstone wall
-     * within Minecraft.
-     *
-     */
     static readonly polishedBlackstoneWall: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of polished
-     * deepslate within Minecraft.
-     *
-     */
     static readonly polishedDeepslate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of polished
-     * deepslate within Minecraft.
-     *
-     */
     static readonly polishedDeepslateSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of polished
-     * deepslate stairs within Minecraft.
-     *
-     */
     static readonly polishedDeepslateStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wall of polished
-     * deepslate within Minecraft.
-     *
-     */
     static readonly polishedDeepslateWall: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of polished
-     * diorite within Minecraft.
-     *
-     */
     static readonly polishedDioriteStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of polished granite
-     * stairs within Minecraft.
-     *
-     */
     static readonly polishedGraniteStairs: ItemType;
     static readonly poppedChorusFruit: ItemType;
     static readonly porkchop: ItemType;
     static readonly potato: ItemType;
     static readonly potion: ItemType;
     static readonly powderSnowBucket: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of prismarine
-     * within Minecraft.
-     *
-     */
     static readonly prismarine: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of prismarine brick
-     * stairs within Minecraft.
-     *
-     */
     static readonly prismarineBricksStairs: ItemType;
     static readonly prismarineCrystals: ItemType;
     static readonly prismarineShard: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of prismarine stairs
-     * within Minecraft.
-     *
-     */
     static readonly prismarineStairs: ItemType;
     static readonly prizePotterySherd: ItemType;
     static readonly pufferfish: ItemType;
     static readonly pufferfishBucket: ItemType;
     static readonly pufferfishSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a pumpkin within
-     * Minecraft.
-     *
-     */
     static readonly pumpkin: ItemType;
     static readonly pumpkinPie: ItemType;
     static readonly pumpkinSeeds: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a purple candle within
-     * Minecraft.
-     *
-     */
     static readonly purpleCandle: ItemType;
     static readonly purpleCarpet: ItemType;
     static readonly purpleConcrete: ItemType;
     static readonly purpleDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a purple-colored block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly purpleGlazedTerracotta: ItemType;
     static readonly purpleShulkerBox: ItemType;
+    static readonly purpleStainedGlass: ItemType;
+    static readonly purpleStainedGlassPane: ItemType;
     static readonly purpleWool: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a purpur block within
-     * Minecraft.
-     *
-     */
     static readonly purpurBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of purpur stairs
-     * within Minecraft.
-     *
-     */
     static readonly purpurStairs: ItemType;
     static readonly quartz: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of solid quartz
-     * within Minecraft.
-     *
-     */
     static readonly quartzBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of solid quartz
-     * bricks within Minecraft.
-     *
-     */
     static readonly quartzBricks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded
-     * quartz ore within Minecraft.
-     *
-     */
     static readonly quartzOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of quartz stairs
-     * within Minecraft.
-     *
-     */
     static readonly quartzStairs: ItemType;
     static readonly rabbit: ItemType;
     static readonly rabbitFoot: ItemType;
     static readonly rabbitHide: ItemType;
     static readonly rabbitSpawnEgg: ItemType;
     static readonly rabbitStew: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of rails within
-     * Minecraft.
-     *
-     */
     static readonly rail: ItemType;
     static readonly raiserArmorTrimSmithingTemplate: ItemType;
     static readonly ravagerSpawnEgg: ItemType;
     static readonly rawCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of raw copper
-     * within Minecraft.
-     *
-     */
     static readonly rawCopperBlock: ItemType;
     static readonly rawGold: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of raw gold within
-     * Minecraft.
-     *
-     */
     static readonly rawGoldBlock: ItemType;
     static readonly rawIron: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of raw iron within
-     * Minecraft.
-     *
-     */
     static readonly rawIronBlock: ItemType;
     static readonly recoveryCompass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a red candle within
-     * Minecraft.
-     *
-     */
     static readonly redCandle: ItemType;
     static readonly redCarpet: ItemType;
     static readonly redConcrete: ItemType;
     static readonly redDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a red flower within
-     * Minecraft.
-     *
-     */
     static readonly redFlower: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a red-colored block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly redGlazedTerracotta: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a red mushroom within
-     * Minecraft.
-     *
-     */
     static readonly redMushroom: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of red mushroom
-     * within Minecraft.
-     *
-     */
     static readonly redMushroomBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of red nether
-     * brick within Minecraft.
-     *
-     */
     static readonly redNetherBrick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of red nether brick
-     * stairs within Minecraft.
-     *
-     */
     static readonly redNetherBrickStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of red sandstone
-     * within Minecraft.
-     *
-     */
     static readonly redSandstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of red sandstone
-     * stairs within Minecraft.
-     *
-     */
     static readonly redSandstoneStairs: ItemType;
     static readonly redShulkerBox: ItemType;
+    static readonly redStainedGlass: ItemType;
+    static readonly redStainedGlassPane: ItemType;
     static readonly redstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of redstone within
-     * Minecraft.
-     *
-     */
     static readonly redstoneBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a redstone lamp within
-     * Minecraft.
-     *
-     */
     static readonly redstoneLamp: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block with embedded
-     * redstone ore within Minecraft.
-     *
-     */
     static readonly redstoneOre: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a redstone torch within
-     * Minecraft.
-     *
-     */
     static readonly redstoneTorch: ItemType;
     static readonly redWool: ItemType;
     static readonly reinforcedDeepslate: ItemType;
     static readonly repeater: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a repeating command block
-     * within Minecraft.
-     *
-     */
     static readonly repeatingCommandBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a respawn anchor within
-     * Minecraft.
-     *
-     */
     static readonly respawnAnchor: ItemType;
     static readonly ribArmorTrimSmithingTemplate: ItemType;
     static readonly rottenFlesh: ItemType;
@@ -15851,66 +13474,19 @@ export class MinecraftItemTypes {
     static readonly salmon: ItemType;
     static readonly salmonBucket: ItemType;
     static readonly salmonSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of sand within
-     * Minecraft.
-     *
-     */
     static readonly sand: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of sandstone
-     * within Minecraft.
-     *
-     */
     static readonly sandstone: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of sandstone stairs
-     * within Minecraft.
-     *
-     */
     static readonly sandstoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a sapling within
-     * Minecraft.
-     *
-     */
     static readonly sapling: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of scaffolding
-     * within Minecraft.
-     *
-     */
     static readonly scaffolding: ItemType;
     static readonly sculk: ItemType;
     static readonly sculkCatalyst: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a sculk sensor within
-     * Minecraft.
-     *
-     */
     static readonly sculkSensor: ItemType;
     static readonly sculkShrieker: ItemType;
     static readonly sculkVein: ItemType;
     static readonly scute: ItemType;
-    /**
-     * @remarks
-     * Represents seagrass within Minecraft.
-     *
-     */
     static readonly seagrass: ItemType;
     static readonly seaLantern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a seapickle within
-     * Minecraft.
-     *
-     */
     static readonly seaPickle: ItemType;
     static readonly sentryArmorTrimSmithingTemplate: ItemType;
     static readonly shaperArmorTrimSmithingTemplate: ItemType;
@@ -15919,413 +13495,104 @@ export class MinecraftItemTypes {
     static readonly sheepSpawnEgg: ItemType;
     static readonly shelterPotterySherd: ItemType;
     static readonly shield: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a shroom light within
-     * Minecraft.
-     *
-     */
     static readonly shroomlight: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a shulker box within
-     * Minecraft.
-     *
-     */
     static readonly shulkerBox: ItemType;
     static readonly shulkerShell: ItemType;
     static readonly shulkerSpawnEgg: ItemType;
     static readonly silenceArmorTrimSmithingTemplate: ItemType;
     static readonly silverfishSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a silver-colored block of
-     * glazed terracotta within Minecraft.
-     *
-     */
     static readonly silverGlazedTerracotta: ItemType;
     static readonly skeletonHorseSpawnEgg: ItemType;
     static readonly skeletonSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a skull within Minecraft.
-     *
-     */
     static readonly skull: ItemType;
     static readonly skullBannerPattern: ItemType;
     static readonly skullPotterySherd: ItemType;
-    /**
-     * @remarks
-     * Represents slime within Minecraft.
-     *
-     */
     static readonly slime: ItemType;
     static readonly slimeBall: ItemType;
     static readonly slimeSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a small bud of amethyst
-     * within Minecraft.
-     *
-     */
     static readonly smallAmethystBud: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a small dripleaf block
-     * within Minecraft.
-     *
-     */
     static readonly smallDripleafBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a smithing table within
-     * Minecraft.
-     *
-     */
     static readonly smithingTable: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a smoker within Minecraft.
-     *
-     */
     static readonly smoker: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of smooth basalt
-     * within Minecraft.
-     *
-     */
     static readonly smoothBasalt: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of smooth quartz
-     * stairs within Minecraft.
-     *
-     */
     static readonly smoothQuartzStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of smooth red
-     * sandstone stairs within Minecraft.
-     *
-     */
     static readonly smoothRedSandstoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of smooth redstone
-     * stairs within Minecraft.
-     *
-     */
     static readonly smoothSandstoneStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a smooth stone block
-     * within Minecraft.
-     *
-     */
     static readonly smoothStone: ItemType;
     static readonly snifferEgg: ItemType;
     static readonly snifferSpawnEgg: ItemType;
     static readonly snortPotterySherd: ItemType;
     static readonly snoutArmorTrimSmithingTemplate: ItemType;
-    /**
-     * @remarks
-     * Represents snow within Minecraft.
-     *
-     */
     static readonly snow: ItemType;
     static readonly snowball: ItemType;
     static readonly snowGolemSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a layer of snow within
-     * Minecraft.
-     *
-     */
     static readonly snowLayer: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a soul campfire within
-     * Minecraft.
-     *
-     */
     static readonly soulCampfire: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a soul lantern within
-     * Minecraft.
-     *
-     */
     static readonly soulLantern: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of soul sand
-     * within Minecraft.
-     *
-     */
     static readonly soulSand: ItemType;
-    /**
-     * @remarks
-     * Represents soul soil within Minecraft.
-     *
-     */
     static readonly soulSoil: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a soul torch within
-     * Minecraft.
-     *
-     */
     static readonly soulTorch: ItemType;
     static readonly spawnEgg: ItemType;
     static readonly spiderEye: ItemType;
     static readonly spiderSpawnEgg: ItemType;
     static readonly spireArmorTrimSmithingTemplate: ItemType;
     static readonly splashPotion: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a sponge within Minecraft.
-     *
-     */
     static readonly sponge: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spore blossom within
-     * Minecraft.
-     *
-     */
     static readonly sporeBlossom: ItemType;
     static readonly spruceBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spruce wood button
-     * within Minecraft.
-     *
-     */
     static readonly spruceButton: ItemType;
     static readonly spruceChestBoat: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spruce wood door within
-     * Minecraft.
-     *
-     */
     static readonly spruceDoor: ItemType;
     static readonly spruceFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spruce wood fence gate
-     * within Minecraft.
-     *
-     */
     static readonly spruceFenceGate: ItemType;
     static readonly spruceHangingSign: ItemType;
     static readonly spruceLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spruce wood pressure
-     * plate within Minecraft.
-     *
-     */
     static readonly sprucePressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spruce sign within
-     * Minecraft.
-     *
-     */
     static readonly spruceSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of spruce wood
-     * stairs within Minecraft.
-     *
-     */
     static readonly spruceStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a spruce wood trapdoor
-     * within Minecraft.
-     *
-     */
     static readonly spruceTrapdoor: ItemType;
     static readonly spyglass: ItemType;
     static readonly squidSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents stained glass within Minecraft.
-     *
-     */
     static readonly stainedGlass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a pane of stained glass
-     * within Minecraft.
-     *
-     */
     static readonly stainedGlassPane: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of stained
-     * hardened clay within Minecraft.
-     *
-     */
     static readonly stainedHardenedClay: ItemType;
     static readonly stick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a piston block with a
-     * sticky arm within Minecraft.
-     *
-     */
     static readonly stickyPiston: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of stone within
-     * Minecraft.
-     *
-     */
     static readonly stone: ItemType;
     static readonly stoneAxe: ItemType;
     static readonly stoneBlockSlab: ItemType;
     static readonly stoneBlockSlab2: ItemType;
     static readonly stoneBlockSlab3: ItemType;
     static readonly stoneBlockSlab4: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of stone brick
-     * within Minecraft.
-     *
-     */
     static readonly stonebrick: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of stone brick
-     * stairs within Minecraft.
-     *
-     */
     static readonly stoneBrickStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stone button within
-     * Minecraft.
-     *
-     */
     static readonly stoneButton: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stonecutter block within
-     * Minecraft.
-     *
-     */
     static readonly stonecutterBlock: ItemType;
     static readonly stoneHoe: ItemType;
     static readonly stonePickaxe: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stone pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly stonePressurePlate: ItemType;
     static readonly stoneShovel: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of stone stairs
-     * within Minecraft.
-     *
-     */
     static readonly stoneStairs: ItemType;
     static readonly stoneSword: ItemType;
     static readonly straySpawnEgg: ItemType;
     static readonly striderSpawnEgg: ItemType;
     static readonly 'string': ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped acacia log
-     * within Minecraft.
-     *
-     */
     static readonly strippedAcaciaLog: ItemType;
     static readonly strippedBambooBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped birch log
-     * within Minecraft.
-     *
-     */
     static readonly strippedBirchLog: ItemType;
     static readonly strippedCherryLog: ItemType;
     static readonly strippedCherryWood: ItemType;
-    /**
-     * @remarks
-     * Represents stripped crimson hyphae within Minecraft.
-     *
-     */
     static readonly strippedCrimsonHyphae: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped crimson stem
-     * within Minecraft.
-     *
-     */
     static readonly strippedCrimsonStem: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped dark oak log
-     * within Minecraft.
-     *
-     */
     static readonly strippedDarkOakLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped jungle log
-     * within Minecraft.
-     *
-     */
     static readonly strippedJungleLog: ItemType;
     static readonly strippedMangroveLog: ItemType;
     static readonly strippedMangroveWood: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped oak log within
-     * Minecraft.
-     *
-     */
     static readonly strippedOakLog: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a stripped spruce log
-     * within Minecraft.
-     *
-     */
     static readonly strippedSpruceLog: ItemType;
-    /**
-     * @remarks
-     * Represents stripped warped hyphae within Minecraft.
-     *
-     */
     static readonly strippedWarpedHyphae: ItemType;
-    /**
-     * @remarks
-     * Represents stripped warped stem within Minecraft.
-     *
-     */
     static readonly strippedWarpedStem: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a structure block, which
-     * provides for the saving and loading of block structures,
-     * within Minecraft.
-     *
-     */
     static readonly structureBlock: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a structure void within
-     * Minecraft.
-     *
-     */
     static readonly structureVoid: ItemType;
     static readonly sugar: ItemType;
     static readonly sugarCane: ItemType;
@@ -16335,490 +13602,121 @@ export class MinecraftItemTypes {
     static readonly sweetBerries: ItemType;
     static readonly tadpoleBucket: ItemType;
     static readonly tadpoleSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents tall grass within Minecraft.
-     *
-     */
     static readonly tallgrass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a target within Minecraft.
-     *
-     */
     static readonly target: ItemType;
     static readonly tideArmorTrimSmithingTemplate: ItemType;
-    /**
-     * @remarks
-     * Represents tinted glass within Minecraft.
-     *
-     */
     static readonly tintedGlass: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of TnT within
-     * Minecraft.
-     *
-     */
     static readonly tnt: ItemType;
     static readonly tntMinecart: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a torch within Minecraft.
-     *
-     */
     static readonly torch: ItemType;
     static readonly torchflower: ItemType;
     static readonly torchflowerSeeds: ItemType;
     static readonly totemOfUndying: ItemType;
     static readonly traderLlamaSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly trapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a trapped chest within
-     * Minecraft.
-     *
-     */
     static readonly trappedChest: ItemType;
     static readonly trident: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a tripwire hook within
-     * Minecraft.
-     *
-     */
     static readonly tripwireHook: ItemType;
     static readonly tropicalFish: ItemType;
     static readonly tropicalFishBucket: ItemType;
     static readonly tropicalFishSpawnEgg: ItemType;
     static readonly tubeCoral: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of tuff within
-     * Minecraft.
-     *
-     */
     static readonly tuff: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a turtle egg within
-     * Minecraft.
-     *
-     */
     static readonly turtleEgg: ItemType;
     static readonly turtleHelmet: ItemType;
     static readonly turtleSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of twisting vines
-     * within Minecraft.
-     *
-     */
     static readonly twistingVines: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place an undyed shulker box
-     * within Minecraft.
-     *
-     */
     static readonly undyedShulkerBox: ItemType;
     static readonly verdantFroglight: ItemType;
     static readonly vexArmorTrimSmithingTemplate: ItemType;
     static readonly vexSpawnEgg: ItemType;
     static readonly villagerSpawnEgg: ItemType;
     static readonly vindicatorSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of vines within
-     * Minecraft.
-     *
-     */
     static readonly vine: ItemType;
     static readonly wanderingTraderSpawnEgg: ItemType;
     static readonly wardArmorTrimSmithingTemplate: ItemType;
     static readonly wardenSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped button within
-     * Minecraft.
-     *
-     */
     static readonly warpedButton: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped door within
-     * Minecraft.
-     *
-     */
     static readonly warpedDoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped fence within
-     * Minecraft.
-     *
-     */
     static readonly warpedFence: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped fence gate within
-     * Minecraft.
-     *
-     */
     static readonly warpedFenceGate: ItemType;
-    /**
-     * @remarks
-     * Represents warped fungus within Minecraft.
-     *
-     */
     static readonly warpedFungus: ItemType;
     static readonly warpedFungusOnAStick: ItemType;
     static readonly warpedHangingSign: ItemType;
-    /**
-     * @remarks
-     * Represents warped hyphae within Minecraft.
-     *
-     */
     static readonly warpedHyphae: ItemType;
-    /**
-     * @remarks
-     * Represents warped nylium within Minecraft.
-     *
-     */
     static readonly warpedNylium: ItemType;
-    /**
-     * @remarks
-     * Represents warped planks within Minecraft.
-     *
-     */
     static readonly warpedPlanks: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly warpedPressurePlate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of warped roots
-     * within Minecraft.
-     *
-     */
     static readonly warpedRoots: ItemType;
     static readonly warpedSign: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of warped material
-     * within Minecraft.
-     *
-     */
     static readonly warpedSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of warped stairs
-     * within Minecraft.
-     *
-     */
     static readonly warpedStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped stem within
-     * Minecraft.
-     *
-     */
     static readonly warpedStem: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped trapdoor within
-     * Minecraft.
-     *
-     */
     static readonly warpedTrapdoor: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a warped wart block within
-     * Minecraft.
-     *
-     */
     static readonly warpedWartBlock: ItemType;
     static readonly waterBucket: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a water lily within
-     * Minecraft.
-     *
-     */
     static readonly waterlily: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed copper
-     * within Minecraft.
-     *
-     */
     static readonly waxedCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed cut
-     * copper within Minecraft.
-     *
-     */
     static readonly waxedCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of waxed cut copper
-     * within Minecraft.
-     *
-     */
     static readonly waxedCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of waxed cut copper
-     * stairs within Minecraft.
-     *
-     */
     static readonly waxedCutCopperStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed exposed
-     * copper within Minecraft.
-     *
-     */
     static readonly waxedExposedCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed exposed
-     * cut copper within Minecraft.
-     *
-     */
     static readonly waxedExposedCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of waxed exposed
-     * cut copper within Minecraft.
-     *
-     */
     static readonly waxedExposedCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of waxed exposed cut
-     * copper stairs within Minecraft.
-     *
-     */
     static readonly waxedExposedCutCopperStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed oxidized
-     * copper within Minecraft.
-     *
-     */
     static readonly waxedOxidizedCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed oxidized
-     * cut copper within Minecraft.
-     *
-     */
     static readonly waxedOxidizedCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of waxed oxidized
-     * cut copper within Minecraft.
-     *
-     */
     static readonly waxedOxidizedCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of waxed oxidized
-     * cut copper stairs within Minecraft.
-     *
-     */
     static readonly waxedOxidizedCutCopperStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed weathered
-     * copper within Minecraft.
-     *
-     */
     static readonly waxedWeatheredCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of waxed weathered
-     * cut copper within Minecraft.
-     *
-     */
     static readonly waxedWeatheredCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of waxed weathered
-     * cut copper within Minecraft.
-     *
-     */
     static readonly waxedWeatheredCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of waxed weathered
-     * cut copper stairs within Minecraft.
-     *
-     */
     static readonly waxedWeatheredCutCopperStairs: ItemType;
     static readonly wayfinderArmorTrimSmithingTemplate: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of weathered
-     * copper within Minecraft.
-     *
-     */
     static readonly weatheredCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of weathered cut
-     * copper within Minecraft.
-     *
-     */
     static readonly weatheredCutCopper: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a slab of weathered cut
-     * copper within Minecraft.
-     *
-     */
     static readonly weatheredCutCopperSlab: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of weathered cut
-     * copper stairs within Minecraft.
-     *
-     */
     static readonly weatheredCutCopperStairs: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a web within Minecraft.
-     *
-     */
     static readonly web: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a set of weeping vines
-     * within Minecraft.
-     *
-     */
     static readonly weepingVines: ItemType;
-    /**
-     * @remarks
-     * Represents wheat within Minecraft.
-     *
-     */
     static readonly wheat: ItemType;
     static readonly wheatSeeds: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a white candle within
-     * Minecraft.
-     *
-     */
     static readonly whiteCandle: ItemType;
     static readonly whiteCarpet: ItemType;
     static readonly whiteConcrete: ItemType;
     static readonly whiteDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of white glazed
-     * terracotta within Minecraft.
-     *
-     */
     static readonly whiteGlazedTerracotta: ItemType;
     static readonly whiteShulkerBox: ItemType;
+    static readonly whiteStainedGlass: ItemType;
+    static readonly whiteStainedGlassPane: ItemType;
     static readonly whiteWool: ItemType;
     static readonly wildArmorTrimSmithingTemplate: ItemType;
     static readonly witchSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wither rose within
-     * Minecraft.
-     *
-     */
     static readonly witherRose: ItemType;
     static readonly witherSkeletonSpawnEgg: ItemType;
     static readonly witherSpawnEgg: ItemType;
     static readonly wolfSpawnEgg: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a block of wood within
-     * Minecraft.
-     *
-     */
     static readonly wood: ItemType;
     static readonly woodenAxe: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wooden button within
-     * Minecraft.
-     *
-     */
     static readonly woodenButton: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wooden door within
-     * Minecraft.
-     *
-     */
     static readonly woodenDoor: ItemType;
     static readonly woodenHoe: ItemType;
     static readonly woodenPickaxe: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wooden pressure plate
-     * within Minecraft.
-     *
-     */
     static readonly woodenPressurePlate: ItemType;
     static readonly woodenShovel: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a wooden slab within
-     * Minecraft.
-     *
-     */
     static readonly woodenSlab: ItemType;
     static readonly woodenSword: ItemType;
-    /**
-     * @remarks
-     * Represents wool within Minecraft.
-     *
-     */
     static readonly wool: ItemType;
     static readonly writableBook: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a yellow candle within
-     * Minecraft.
-     *
-     */
     static readonly yellowCandle: ItemType;
     static readonly yellowCarpet: ItemType;
     static readonly yellowConcrete: ItemType;
     static readonly yellowDye: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a yellow flower within
-     * Minecraft.
-     *
-     */
     static readonly yellowFlower: ItemType;
-    /**
-     * @remarks
-     * Represents an item that can place a yellow block of glazed
-     * terracotta within Minecraft.
-     *
-     */
     static readonly yellowGlazedTerracotta: ItemType;
     static readonly yellowShulkerBox: ItemType;
+    static readonly yellowStainedGlass: ItemType;
+    static readonly yellowStainedGlassPane: ItemType;
     static readonly yellowWool: ItemType;
     static readonly zoglinSpawnEgg: ItemType;
     static readonly zombieHorseSpawnEgg: ItemType;
@@ -16929,9 +13827,76 @@ export class PistonActivateAfterEvent extends BlockEvent {
  * @beta
  * Manages callbacks that are connected to piston activations.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class PistonActivateAfterEventSignal extends IPistonActivateAfterEventSignal {
+export class PistonActivateAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a piston expands or
+     * retracts.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @example pistonAfterEvent.ts
+     * ```typescript
+     *   // set up a couple of piston blocks
+     *   let piston = overworld.getBlock(targetLocation);
+     *   let button = overworld.getBlock({ x: targetLocation.x, y: targetLocation.y + 1, z: targetLocation.z });
+     *
+     *   if (piston === undefined || button === undefined) {
+     *     log("Could not find block at location.");
+     *     return -1;
+     *   }
+     *
+     *   piston.setPermutation(mc.BlockPermutation.resolve('piston').withState('facing_direction', 3));
+     *   button.setPermutation(mc.BlockPermutation.resolve('acacia_button').withState('facing_direction', 1));
+     *
+     *   mc.world.afterEvents.pistonActivate.subscribe((pistonEvent: mc.PistonActivateAfterEvent) => {
+     *     let eventLoc = pistonEvent.piston.block.location;
+     *
+     *     if (eventLoc.x === targetLocation.x && eventLoc.y === targetLocation.y && eventLoc.z === targetLocation.z) {
+     *       log(
+     *         "Piston event at " +
+     *           mc.system.currentTick +
+     *           (pistonEvent.piston.isMoving ? " Moving" : "") +
+     *           (pistonEvent.piston.isExpanding ? " Expanding" : "") +
+     *           (pistonEvent.piston.isExpanded ? " Expanded" : "") +
+     *           (pistonEvent.piston.isRetracting ? " Retracting" : "") +
+     *           (pistonEvent.piston.isRetracted ? " Retracted" : "")
+     *       );
+     *     }
+     *   });
+     * ```
+     * @example pistonEvent.ts
+     * ```typescript
+     * let canceled = false;
+     *
+     * const pistonLoc: mc.Vector3 = {
+     *   x: Math.floor(targetLocation.x) + 1,
+     *   y: Math.floor(targetLocation.y) + 2,
+     *   z: Math.floor(targetLocation.z) + 1,
+     * };
+     *
+     * const pistonCallback = mc.world.beforeEvents.pistonActivate.subscribe((pistonEvent: mc.PistonActivateBeforeEvent) => {
+     *   if (pistonEvent.piston.location.equals(pistonLoc)) {
+     *     log("Cancelling piston event");
+     *     pistonEvent.cancel = true;
+     *     canceled = true;
+     *   }
+     * });
+     *
+     * ```
+     */
+    subscribe(callback: (arg: PistonActivateAfterEvent) => void): (arg: PistonActivateAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a piston expands
+     * or retracts.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: PistonActivateAfterEvent) => void): void;
 }
 
 /**
@@ -16968,9 +13933,71 @@ export class PistonActivateBeforeEvent extends BlockEvent {
  * Manages callbacks that are connected to an event that fires
  * before a piston is activated.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class PistonActivateBeforeEventSignal extends IPistonActivateBeforeEventSignal {
+export class PistonActivateBeforeEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called before a piston expands
+     * or retracts.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @example pistonBeforeEvent.ts
+     * ```typescript
+     *   // set up a couple of piston blocks
+     *   let piston = overworld.getBlock(targetLocation);
+     *   let button = overworld.getBlock({ x: targetLocation.x, y: targetLocation.y + 1, z: targetLocation.z });
+     *
+     *   if (piston === undefined || button === undefined) {
+     *     log("Could not find block at location.");
+     *     return -1;
+     *   }
+     *
+     *   piston.setPermutation(mc.BlockPermutation.resolve('piston').withState('facing_direction', 3));
+     *   button.setPermutation(mc.BlockPermutation.resolve('acacia_button').withState('facing_direction', 1));
+     *
+     *   const uncanceledPistonLoc = {
+     *     x: Math.floor(targetLocation.x) + 2,
+     *     y: Math.floor(targetLocation.y),
+     *     z: Math.floor(targetLocation.z) + 2,
+     *   };
+     *
+     *   // this is our control.
+     *   let uncanceledPiston = overworld.getBlock(uncanceledPistonLoc);
+     *   let uncanceledButton = overworld.getBlock({
+     *     x: uncanceledPistonLoc.x,
+     *     y: uncanceledPistonLoc.y + 1,
+     *     z: uncanceledPistonLoc.z,
+     *   });
+     *
+     *   if (uncanceledPiston === undefined || uncanceledButton === undefined) {
+     *     log("Could not find block at location.");
+     *     return -1;
+     *   }
+     *
+     *   uncanceledPiston.setPermutation(mc.BlockPermutation.resolve('piston').withState('facing_direction', 3));
+     *   uncanceledButton.setPermutation(mc.BlockPermutation.resolve('acacia_button').withState('facing_direction', 1));
+     *
+     *   mc.world.beforeEvents.pistonActivate.subscribe((pistonEvent: mc.PistonActivateBeforeEvent) => {
+     *     let eventLoc = pistonEvent.piston.block.location;
+     *     if (eventLoc.x === targetLocation.x && eventLoc.y === targetLocation.y && eventLoc.z === targetLocation.z) {
+     *       log("Cancelling piston event");
+     *       pistonEvent.cancel = true;
+     *     }
+     *   });
+     * ```
+     */
+    subscribe(callback: (arg: PistonActivateBeforeEvent) => void): (arg: PistonActivateBeforeEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called before a piston expands
+     * or retracts.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: PistonActivateBeforeEvent) => void): void;
 }
 
 /**
@@ -17454,9 +14481,27 @@ export class PressurePlatePopAfterEvent extends BlockEvent {
  * Manages callbacks that are connected to when a pressure
  * plate is popped.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class PressurePlatePopAfterEventSignal extends IPressurePlatePopAfterEventSignal {
+export class PressurePlatePopAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a pressure plate is
+     * popped.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: PressurePlatePopAfterEvent) => void): (arg: PressurePlatePopAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a pressure plate
+     * is popped.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: PressurePlatePopAfterEvent) => void): void;
 }
 
 /**
@@ -17494,62 +14539,47 @@ export class PressurePlatePushAfterEvent extends BlockEvent {
  * Manages callbacks that are connected to when a pressure
  * plate is pushed.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class PressurePlatePushAfterEventSignal extends IPressurePlatePushAfterEventSignal {
+export class PressurePlatePushAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a pressure plate is
+     * pushed.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: PressurePlatePushAfterEvent) => void): (arg: PressurePlatePushAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a pressure plate
+     * is pushed.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: PressurePlatePushAfterEvent) => void): void;
 }
 
 /**
  * @beta
- * Contains information related to a projectile hitting an
- * entity or block.
  */
 export class ProjectileHitAfterEvent {
     private constructor();
-    /**
-     * @remarks
-     * Dimension where this projectile hit took place.
-     *
-     */
     readonly dimension: Dimension;
-    /**
-     * @remarks
-     * Direction vector of the projectile as it hit a block/entity.
-     *
-     */
     readonly hitVector: Vector3;
-    /**
-     * @remarks
-     * Location where the projectile hit occurred.
-     *
-     */
     readonly location: Vector3;
-    /**
-     * @remarks
-     * Entity for the projectile that hit a block/entity.
-     *
-     */
     readonly projectile: Entity;
-    /**
-     * @remarks
-     * Optional source entity that fired the projectile.
-     *
-     */
     readonly source: Entity;
     /**
      * @remarks
-     * Contains additional information about the block that was hit
-     * by the projectile, or undefined if the projectile did not
-     * hit a block.
-     *
      * This function can't be called in read-only mode.
      *
      */
     getBlockHit(): BlockHitInformation | undefined;
     /**
      * @remarks
-     * Contains additional information about a block that was hit.
-     *
      * This function can't be called in read-only mode.
      *
      */
@@ -17558,12 +14588,22 @@ export class ProjectileHitAfterEvent {
 
 /**
  * @beta
- * Manages callbacks that are connected to when a projectile
- * hits an entity or block.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ProjectileHitAfterEventSignal extends IProjectileHitAfterEventSignal {
+export class ProjectileHitAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ProjectileHitAfterEvent) => void): (arg: ProjectileHitAfterEvent) => void;
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ProjectileHitAfterEvent) => void): void;
 }
 
 /**
@@ -17585,7 +14625,7 @@ export class PropertyRegistry {
      */
     registerEntityTypeDynamicProperties(
         propertiesDefinition: DynamicPropertiesDefinition,
-        entityType: EntityType,
+        entityTypeOrId: EntityType | string,
     ): void;
     /**
      * @remarks
@@ -17733,6 +14773,17 @@ export class ScoreboardObjective {
      * @throws This property can throw when used.
      */
     readonly id: string;
+    /**
+     * @remarks
+     * Adds a score to the given participant and objective.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @param participant
+     * Participant to apply the scoreboard value addition to.
+     * @throws This function can throw errors.
+     */
+    addScore(participant: Entity | ScoreboardIdentity | string, scoreToAdd: number): number;
     /**
      * @remarks
      * Returns all objective participant identities.
@@ -17957,9 +15008,28 @@ export class ScriptEventCommandMessageAfterEvent {
  * Allows for registering an event handler that responds to
  * inbound /scriptevent commands.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ScriptEventCommandMessageAfterEventSignal extends IScriptEventCommandMessageAfterEventSignal {
+export class ScriptEventCommandMessageAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Registers a new ScriptEvent handler.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: ScriptEventCommandMessageAfterEvent) => void,
+        options?: ScriptEventMessageFilterOptions,
+    ): (arg: ScriptEventCommandMessageAfterEvent) => void;
+    /**
+     * @remarks
+     * Unsubscribes a particular handler for a ScriptEvent event.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ScriptEventCommandMessageAfterEvent) => void): void;
 }
 
 /**
@@ -18004,9 +15074,27 @@ export class Seat {
  * event is not currently fully implemented, and should not be
  * used.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ServerMessageAfterEventSignal extends IServerMessageAfterEventSignal {
+export class ServerMessageAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an internal message
+     * is passed.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: MessageReceiveAfterEvent) => void): (arg: MessageReceiveAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an internal
+     * message is passed.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: MessageReceiveAfterEvent) => void): void;
 }
 
 /**
@@ -18254,9 +15342,27 @@ export class TargetBlockHitAfterEvent extends BlockEvent {
  * Manages callbacks that are connected to when a target block
  * is hit.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class TargetBlockHitAfterEventSignal extends ITargetBlockHitAfterEventSignal {
+export class TargetBlockHitAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a target block is
+     * hit.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: TargetBlockHitAfterEvent) => void): (arg: TargetBlockHitAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a target block is
+     * hit.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: TargetBlockHitAfterEvent) => void): void;
 }
 
 /**
@@ -18304,9 +15410,27 @@ export class TripWireTripAfterEvent extends BlockEvent {
  * Manages callbacks that are connected to when a trip wire is
  * tripped.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class TripWireTripAfterEventSignal extends ITripWireTripAfterEventSignal {
+export class TripWireTripAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a trip wire is
+     * tripped.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: TripWireTripAfterEvent) => void): (arg: TripWireTripAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a trip wire is
+     * tripped.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: TripWireTripAfterEvent) => void): void;
 }
 
 /**
@@ -18518,9 +15642,29 @@ export class WatchdogTerminateBeforeEvent {
  * be called when a script runtime is being terminated due to a
  * violation of the performance watchdog system.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class WatchdogTerminateBeforeEventSignal extends IWatchdogTerminateBeforeEventSignal {
+export class WatchdogTerminateBeforeEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a script runtime is
+     * being terminated due to a violation of the performance
+     * watchdog system.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: WatchdogTerminateBeforeEvent) => void): (arg: WatchdogTerminateBeforeEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a script runtime
+     * is being terminated due to a violation of the performance
+     * watchdog system.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: WatchdogTerminateBeforeEvent) => void): void;
 }
 
 /**
@@ -18554,9 +15698,25 @@ export class WeatherChangeAfterEvent {
  * @beta
  * Manages callbacks that are connected to weather changing.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class WeatherChangeAfterEventSignal extends IWeatherChangeAfterEventSignal {
+export class WeatherChangeAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when weather changes.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: WeatherChangeAfterEvent) => void): (arg: WeatherChangeAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when weather changes.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: WeatherChangeAfterEvent) => void): void;
 }
 
 /**
@@ -18733,6 +15893,13 @@ export class World {
      * Throws if the given entity id is invalid.
      */
     getEntity(id: string): Entity | undefined;
+    /**
+     * @beta
+     * @remarks
+     * Returns the MoonPhase for the current time.
+     *
+     */
+    getMoonPhase(): MoonPhase;
     /**
      * @beta
      * @remarks
@@ -19343,9 +16510,6 @@ export class WorldAfterEvents {
     readonly pressurePlatePush: PressurePlatePushAfterEventSignal;
     /**
      * @beta
-     * @remarks
-     * This event fires when a projectile hits an entity or block.
-     *
      */
     readonly projectileHit: ProjectileHitAfterEventSignal;
     /**
@@ -19490,16 +16654,17 @@ export class WorldInitializeAfterEvent {
      *
      * @example propertyRegistration.js
      * ```typescript
-     * import { DynamicPropertiesDefinition, MinecraftEntityTypes, world } from "@minecraft/server";
+     * import { DynamicPropertiesDefinition, EntityTypes, world } from '@minecraft/server';
+     * import { MinecraftEntityTypes } from '@minecraft/vanilla-data';
      *
-     * world.afterEvents.worldInitialize.subscribe((e) => {
-     *   let def = new DynamicPropertiesDefinition();
+     * world.afterEvents.worldInitialize.subscribe(e => {
+     *     let def = new DynamicPropertiesDefinition();
      *
-     *   def.defineNumber("rpgStrength");
-     *   def.defineString("rpgRole", 16);
-     *   def.defineBoolean("rpgIsHero");
+     *     def.defineNumber('rpgStrength');
+     *     def.defineString('rpgRole', 16);
+     *     def.defineBoolean('rpgIsHero');
      *
-     *   e.propertyRegistry.registerEntityTypeDynamicProperties(def, MinecraftEntityTypes.skeleton);
+     *     e.propertyRegistry.registerEntityTypeDynamicProperties(def, EntityTypes.get(MinecraftEntityTypes.Skeleton));
      * });
      * ```
      */
@@ -19513,9 +16678,27 @@ export class WorldInitializeAfterEvent {
  * may run multiple times within a session in the case that the
  * /reload command is used.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class WorldInitializeAfterEventSignal extends IWorldInitializeAfterEventSignal {
+export class WorldInitializeAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when the scripting
+     * environment is initialized for a World.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: WorldInitializeAfterEvent) => void): (arg: WorldInitializeAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called the scripting
+     * environment is initialized for a World.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: WorldInitializeAfterEvent) => void): void;
 }
 
 /**
@@ -19696,36 +16879,11 @@ export interface BoundingBox {
 
 /**
  * @beta
- * Represents a fully customizable color within Minecraft.
  */
 export interface Color {
-    /**
-     * @remarks
-     * Determines a color's alpha (opacity) component. Valid values
-     * are between 0 (transparent) and 1.0 (opaque).
-     *
-     */
     alpha: number;
-    /**
-     * @remarks
-     * Determines a color's blue component. Valid values are
-     * between 0 and 1.0.
-     *
-     */
     blue: number;
-    /**
-     * @remarks
-     * Determines a color's green component. Valid values are
-     * between 0 and 1.0.
-     *
-     */
     green: number;
-    /**
-     * @remarks
-     * Determines a color's red component. Valid values are between
-     * 0 and 1.0.
-     *
-     */
     red: number;
 }
 
@@ -20578,6 +17736,13 @@ export class PositionOutOfWorldBoundariesError extends Error {
     private constructor();
 }
 
+/**
+ * @beta
+ * @remarks
+ * Holds the number of MoonPhases
+ *
+ */
+export const MoonPhaseCount = 8;
 /**
  * @beta
  */

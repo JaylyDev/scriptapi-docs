@@ -7,7 +7,6 @@
    Copyright (c) Microsoft Corporation.
    ***************************************************************************** */
 /**
- * @beta
  * @packageDocumentation
  * Contains many types related to manipulating a Minecraft
  * world, including entities, blocks, dimensions, and more.
@@ -16,13 +15,10 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server",
- *   "version": "1.5.0-internal.1.20.20-preview.20"
+ *   "version": "1.3.0"
  * }
  * ```
  *
- */
-/**
- * @beta
  */
 export enum EntityDamageCause {
     anvil = 'anvil',
@@ -59,12 +55,10 @@ export enum EntityDamageCause {
 }
 
 /**
- * @beta
  * Represents a game mode for the current world experience.
  */
 export enum GameMode {
     /**
-     * @beta
      * @remarks
      * World is in a more locked-down experience, where blocks may
      * not be manipulated.
@@ -72,7 +66,6 @@ export enum GameMode {
      */
     adventure = 'adventure',
     /**
-     * @beta
      * @remarks
      * World is in a full creative mode. In creative mode, the
      * player has all the resources available in the item selection
@@ -85,7 +78,6 @@ export enum GameMode {
      */
     creative = 'creative',
     /**
-     * @beta
      * @remarks
      * World is in spectator mode. In spectator mode, spectators
      * are always flying and cannot become grounded. Spectators can
@@ -98,7 +90,6 @@ export enum GameMode {
      */
     spectator = 'spectator',
     /**
-     * @beta
      * @remarks
      * World is in a survival mode, where players can take damage
      * and entities may not be peaceful. Survival mode is where the
@@ -111,26 +102,22 @@ export enum GameMode {
 }
 
 /**
- * @beta
  * Describes how an an item can be moved within a container.
  */
 export enum ItemLockMode {
     /**
-     * @beta
      * @remarks
      * The item cannot be dropped or crafted with.
      *
      */
     inventory = 'inventory',
     /**
-     * @beta
      * @remarks
      * The item has no container restrictions.
      *
      */
     none = 'none',
     /**
-     * @beta
      * @remarks
      * The item cannot be moved from its slot, dropped or crafted
      * with.
@@ -140,7 +127,6 @@ export enum ItemLockMode {
 }
 
 /**
- * @beta
  * Represents a block in a dimension. A block represents a
  * unique X, Y, and Z within a dimension and get/sets the state
  * of the block at that location. This type was significantly
@@ -188,7 +174,6 @@ export class Block {
      */
     readonly z: number;
     /**
-     * @beta
      * @remarks
      * Gets additional configuration properties (a component) for
      * specific capabilities of particular blocks - for example, an
@@ -219,14 +204,12 @@ export class Block {
 }
 
 /**
- * @beta
  * Base type for components associated with blocks.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class BlockComponent extends Component {
     private constructor();
     /**
-     * @beta
      * @remarks
      * Block instance that this component pertains to.
      *
@@ -235,7 +218,6 @@ export class BlockComponent extends Component {
 }
 
 /**
- * @beta
  * Contains information regarding an event that impacts a
  * specific block.
  */
@@ -257,7 +239,6 @@ export class BlockEvent {
 }
 
 /**
- * @beta
  * Represents the inventory of a block in the world. Used with
  * blocks like chests.
  */
@@ -275,7 +256,6 @@ export class BlockInventoryComponent extends BlockComponent {
 }
 
 /**
- * @beta
  * Contains the combination of type {@link BlockType} and
  * properties (also sometimes called block state) which
  * describe a block (but does not belong to a specific {@link
@@ -347,7 +327,6 @@ export class BlockPermutation {
 }
 
 /**
- * @beta
  * Contains information related to changes to a button push.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -362,7 +341,6 @@ export class ButtonPushAfterEvent extends BlockEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to when a button is
  * pushed.
  */
@@ -387,7 +365,6 @@ export class CommandResult {
 }
 
 /**
- * @beta
  * Base class for downstream Component implementations.
  */
 export class Component {
@@ -401,7 +378,6 @@ export class Component {
 }
 
 /**
- * @beta
  * Represents a container that can hold sets of items. Used
  * with entities such as Players, Chest Minecarts, Llamas, and
  * more.
@@ -613,7 +589,6 @@ export class Dimension {
      */
     readonly id: string;
     /**
-     * @beta
      * @remarks
      * Returns a block instance at the given location.
      *
@@ -634,7 +609,6 @@ export class Dimension {
      */
     getBlock(location: Vector3): Block | undefined;
     /**
-     * @beta
      * @remarks
      * Returns a set of entities based on a set of conditions
      * defined via the EntityQueryOptions set of filter criteria.
@@ -703,7 +677,6 @@ export class Dimension {
      */
     getEntities(options?: EntityQueryOptions): Entity[];
     /**
-     * @beta
      * @remarks
      * Returns a set of entities at a particular location.
      *
@@ -714,7 +687,6 @@ export class Dimension {
      */
     getEntitiesAtBlockLocation(location: Vector3): Entity[];
     /**
-     * @beta
      * @remarks
      * Returns a set of players based on a set of conditions
      * defined via the EntityQueryOptions set of filter criteria.
@@ -728,7 +700,6 @@ export class Dimension {
      */
     getPlayers(options?: EntityQueryOptions): Player[];
     /**
-     * @beta
      * @remarks
      * Runs a command synchronously using the context of the
      * broader dimenion.
@@ -771,7 +742,6 @@ export class Dimension {
      */
     runCommandAsync(commandString: string): Promise<CommandResult>;
     /**
-     * @beta
      * @remarks
      * Creates a new entity (e.g., a mob) at the specified
      * location.
@@ -828,7 +798,6 @@ export class Dimension {
      */
     spawnEntity(identifier: string, location: Vector3): Entity;
     /**
-     * @beta
      * @remarks
      * Creates a new item stack as an entity at the specified
      * location.
@@ -842,38 +811,37 @@ export class Dimension {
      * @throws This function can throw errors.
      * @example itemStacks.ts
      * ```typescript
-     *   const overworld = mc.world.getDimension("overworld");
+     * const overworld = mc.world.getDimension('overworld');
      *
-     *   const oneItemLoc = { x: targetLocation.x + targetLocation.y + 3, y: 2, z: targetLocation.z + 1 };
-     *   const fiveItemsLoc = { x: targetLocation.x + 1, y: targetLocation.y + 2, z: targetLocation.z + 1 };
-     *   const diamondPickaxeLoc = { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 4 };
+     * const oneItemLoc = { x: targetLocation.x + targetLocation.y + 3, y: 2, z: targetLocation.z + 1 };
+     * const fiveItemsLoc = { x: targetLocation.x + 1, y: targetLocation.y + 2, z: targetLocation.z + 1 };
+     * const diamondPickaxeLoc = { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 4 };
      *
-     *   const oneEmerald = new mc.ItemStack(mc.MinecraftItemTypes.emerald, 1);
-     *   const onePickaxe = new mc.ItemStack(mc.MinecraftItemTypes.diamondPickaxe, 1);
-     *   const fiveEmeralds = new mc.ItemStack(mc.MinecraftItemTypes.emerald, 5);
+     * const oneEmerald = new mc.ItemStack(mc.MinecraftItemTypes.Emerald, 1);
+     * const onePickaxe = new mc.ItemStack(mc.MinecraftItemTypes.DiamondPickaxe, 1);
+     * const fiveEmeralds = new mc.ItemStack(mc.MinecraftItemTypes.Emerald, 5);
      *
-     *   log(`Spawning an emerald at (${oneItemLoc.x}, ${oneItemLoc.y}, ${oneItemLoc.z})`);
-     *   overworld.spawnItem(oneEmerald, oneItemLoc);
+     * log(`Spawning an emerald at (${oneItemLoc.x}, ${oneItemLoc.y}, ${oneItemLoc.z})`);
+     * overworld.spawnItem(oneEmerald, oneItemLoc);
      *
-     *   log(`Spawning five emeralds at (${fiveItemsLoc.x}, ${fiveItemsLoc.y}, ${fiveItemsLoc.z})`);
-     *   overworld.spawnItem(fiveEmeralds, fiveItemsLoc);
+     * log(`Spawning five emeralds at (${fiveItemsLoc.x}, ${fiveItemsLoc.y}, ${fiveItemsLoc.z})`);
+     * overworld.spawnItem(fiveEmeralds, fiveItemsLoc);
      *
-     *   log(`Spawning a diamond pickaxe at (${diamondPickaxeLoc.x}, ${diamondPickaxeLoc.y}, ${diamondPickaxeLoc.z})`);
-     *   overworld.spawnItem(onePickaxe, diamondPickaxeLoc);
+     * log(`Spawning a diamond pickaxe at (${diamondPickaxeLoc.x}, ${diamondPickaxeLoc.y}, ${diamondPickaxeLoc.z})`);
+     * overworld.spawnItem(onePickaxe, diamondPickaxeLoc);
      * ```
      * @example spawnItem.ts
      * ```typescript
-     *   const featherItem = new mc.ItemStack(mc.MinecraftItemTypes.feather, 1);
+     * const featherItem = new mc.ItemStack(mc.MinecraftItemTypes.Feather, 1);
      *
-     *   overworld.spawnItem(featherItem, targetLocation);
-     *   log(`New feather created at ${targetLocation.x}, ${targetLocation.y}, ${targetLocation.z}!`);
+     * overworld.spawnItem(featherItem, targetLocation);
+     * log(`New feather created at ${targetLocation.x}, ${targetLocation.y}, ${targetLocation.z}!`);
      * ```
      */
     spawnItem(itemStack: ItemStack, location: Vector3): Entity;
 }
 
 /**
- * @beta
  * Represents an effect - like poison - that has been added to
  * an Entity.
  */
@@ -922,7 +890,6 @@ export class Effect {
 }
 
 /**
- * @beta
  * Represents a type of effect - like poison - that can be
  * applied to an entity.
  */
@@ -945,7 +912,6 @@ export class EffectType {
 export class Entity {
     private constructor();
     /**
-     * @beta
      * @remarks
      * Dimension that the entity is currently within.
      *
@@ -965,7 +931,6 @@ export class Entity {
      */
     readonly id: string;
     /**
-     * @beta
      * @remarks
      * Current location of the entity.
      *
@@ -973,7 +938,6 @@ export class Entity {
      */
     readonly location: Vector3;
     /**
-     * @beta
      * @remarks
      * Given name of the entity.
      *
@@ -991,7 +955,6 @@ export class Entity {
      */
     readonly typeId: string;
     /**
-     * @beta
      * @remarks
      * Adds or updates an effect, like poison, to the entity.
      *
@@ -1050,7 +1013,6 @@ export class Entity {
      */
     addEffect(effectType: EffectType | string, duration: number, options?: EntityEffectOptions): void;
     /**
-     * @beta
      * @remarks
      * Adds a specified tag to an entity.
      *
@@ -1085,7 +1047,6 @@ export class Entity {
      */
     addTag(tag: string): boolean;
     /**
-     * @beta
      * @remarks
      * Applies a set of damage to an entity.
      *
@@ -1123,7 +1084,6 @@ export class Entity {
      */
     applyDamage(amount: number, options?: EntityApplyDamageByProjectileOptions | EntityApplyDamageOptions): boolean;
     /**
-     * @beta
      * @remarks
      * Applies impulse vector to the current velocity of the
      * entity.
@@ -1145,7 +1105,6 @@ export class Entity {
      */
     applyImpulse(vector: Vector3): void;
     /**
-     * @beta
      * @remarks
      * Applies impulse vector to the current velocity of the
      * entity.
@@ -1181,7 +1140,6 @@ export class Entity {
      */
     applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void;
     /**
-     * @beta
      * @remarks
      * Sets the current velocity of the Entity to zero. Note that
      * this method may not have an impact on Players.
@@ -1201,7 +1159,6 @@ export class Entity {
      */
     clearVelocity(): void;
     /**
-     * @beta
      * @remarks
      * Gets a component (that represents additional capabilities)
      * for an entity.
@@ -1228,7 +1185,6 @@ export class Entity {
      */
     getComponent(componentId: string): EntityComponent | undefined;
     /**
-     * @beta
      * @remarks
      * Returns all components that are both present on this entity
      * and supported by the API.
@@ -1248,7 +1204,6 @@ export class Entity {
      */
     getComponents(): EntityComponent[];
     /**
-     * @beta
      * @remarks
      * Returns the effect for the specified EffectType on the
      * entity, undefined if the effect is not present, or throws an
@@ -1264,7 +1219,6 @@ export class Entity {
      */
     getEffect(effectType: EffectType | string): Effect | undefined;
     /**
-     * @beta
      * @remarks
      * Returns a set of effects applied to this entity.
      *
@@ -1274,7 +1228,6 @@ export class Entity {
      */
     getEffects(): Effect[];
     /**
-     * @beta
      * @remarks
      * Returns the current location of the head component of this
      * entity.
@@ -1286,7 +1239,6 @@ export class Entity {
      */
     getHeadLocation(): Vector3;
     /**
-     * @beta
      * @remarks
      * Returns all tags associated with an entity.
      *
@@ -1296,7 +1248,6 @@ export class Entity {
      */
     getTags(): string[];
     /**
-     * @beta
      * @remarks
      * Returns the current velocity vector of the entity.
      *
@@ -1316,7 +1267,6 @@ export class Entity {
      */
     getVelocity(): Vector3;
     /**
-     * @beta
      * @remarks
      * Returns the current view direction of the entity.
      *
@@ -1326,7 +1276,6 @@ export class Entity {
      */
     getViewDirection(): Vector3;
     /**
-     * @beta
      * @remarks
      * Returns true if the specified component is present on this
      * entity.
@@ -1341,7 +1290,6 @@ export class Entity {
      */
     hasComponent(componentId: string): boolean;
     /**
-     * @beta
      * @remarks
      * Returns whether an entity has a particular tag.
      *
@@ -1353,7 +1301,6 @@ export class Entity {
      */
     hasTag(tag: string): boolean;
     /**
-     * @beta
      * @remarks
      * Kills this entity. The entity will drop loot as normal.
      *
@@ -1385,7 +1332,6 @@ export class Entity {
      */
     kill(): boolean;
     /**
-     * @beta
      * @remarks
      * Removes the specified EffectType on the entity, or returns
      * false if the effect is not present.
@@ -1401,7 +1347,6 @@ export class Entity {
      */
     removeEffect(effectType: EffectType | string): boolean;
     /**
-     * @beta
      * @remarks
      * Removes a specified tag from an entity.
      *
@@ -1415,7 +1360,6 @@ export class Entity {
      */
     removeTag(tag: string): boolean;
     /**
-     * @beta
      * @remarks
      * Runs a synchronous command on the entity.
      *
@@ -1446,7 +1390,6 @@ export class Entity {
      */
     runCommandAsync(commandString: string): Promise<CommandResult>;
     /**
-     * @beta
      * @remarks
      * Teleports the selected entity to a new location
      *
@@ -1496,7 +1439,6 @@ export class Entity {
      */
     teleport(location: Vector3, teleportOptions?: TeleportOptions): void;
     /**
-     * @beta
      * @remarks
      * Attempts to try a teleport, but may not complete the
      * teleport operation (for example, if there are blocks at the
@@ -1518,7 +1460,6 @@ export class Entity {
 }
 
 /**
- * @beta
  * This is a base abstract class for any entity component that
  * centers around a number and can have a minimum, maximum, and
  * default defined value.
@@ -1598,7 +1539,6 @@ export class EntityAttributeComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Base class for a family of entity movement events.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -1608,7 +1548,6 @@ export class EntityBaseMovementComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that the entity can
  * climb up ladders.
  */
@@ -1619,7 +1558,6 @@ export class EntityCanClimbComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that the entity can
  * fly, and the pathfinder won't be restricted to paths where a
  * solid block is required underneath it.
@@ -1631,7 +1569,6 @@ export class EntityCanFlyComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that the entity can
  * power jump like the horse does within Minecraft.
  */
@@ -1642,7 +1579,6 @@ export class EntityCanPowerJumpComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Defines the entity's color. Only works on certain entities
  * that have predefined color values (e.g., sheep, llama,
  * shulker).
@@ -1662,7 +1598,6 @@ export class EntityColorComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Base class for downstream entity components.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -1671,7 +1606,6 @@ export class EntityComponent extends Component {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity
  * doesn't take damage from fire.
  */
@@ -1682,7 +1616,6 @@ export class EntityFireImmuneComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity can
  * float in liquid blocks.
  */
@@ -1693,7 +1626,6 @@ export class EntityFloatsInLiquidComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Represents the flying speed of an entity.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -1709,7 +1641,6 @@ export class EntityFlyingSpeedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Defines how much friction affects this entity.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -1725,7 +1656,6 @@ export class EntityFrictionModifierComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Sets the offset from the ground that the entity is actually
  * at.
  */
@@ -1744,7 +1674,6 @@ export class EntityGroundOffsetComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Defines the interactions with this entity for healing it.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -1771,7 +1700,6 @@ export class EntityHealableComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Defines the health properties of an entity.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -1781,7 +1709,6 @@ export class EntityHealthComponent extends EntityAttributeComponent {
 }
 
 /**
- * @beta
  * Defines this entity's inventory properties.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -1843,7 +1770,6 @@ export class EntityInventoryComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is a
  * baby.
  */
@@ -1854,7 +1780,6 @@ export class EntityIsBabyComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * charged.
  */
@@ -1865,7 +1790,6 @@ export class EntityIsChargedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently carrying a chest.
  */
@@ -1876,7 +1800,6 @@ export class EntityIsChestedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that dyes can be used
  * on this entity to change its color.
  */
@@ -1887,7 +1810,6 @@ export class EntityIsDyeableComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity can
  * hide from hostile mobs while invisible.
  */
@@ -1898,7 +1820,6 @@ export class EntityIsHiddenWhenInvisibleComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity this
  * currently on fire.
  */
@@ -1909,7 +1830,6 @@ export class EntityIsIgnitedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is an
  * illager captain.
  */
@@ -1920,7 +1840,6 @@ export class EntityIsIllagerCaptainComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently saddled.
  */
@@ -1931,7 +1850,6 @@ export class EntityIsSaddledComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently shaking.
  */
@@ -1942,7 +1860,6 @@ export class EntityIsShakingComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently sheared.
  */
@@ -1953,7 +1870,6 @@ export class EntityIsShearedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity can be
  * stacked.
  */
@@ -1964,7 +1880,6 @@ export class EntityIsStackableComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently stunned.
  */
@@ -1975,7 +1890,6 @@ export class EntityIsStunnedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity is
  * currently tamed.
  */
@@ -1986,7 +1900,6 @@ export class EntityIsTamedComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * If added onto the entity, this indicates that the entity
  * represents a free-floating item in the world. Lets you
  * retrieve the actual item stack contents via the itemStack
@@ -2006,7 +1919,6 @@ export class EntityItemComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Additional variant value. Can be used to further
  * differentiate variants.
  */
@@ -2025,7 +1937,6 @@ export class EntityMarkVariantComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this movement control allows the mob to swim in
  * water and walk on land.
  */
@@ -2036,7 +1947,6 @@ export class EntityMovementAmphibiousComponent extends EntityBaseMovementCompone
 }
 
 /**
- * @beta
  * This component accents the movement of an entity.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -2046,7 +1956,6 @@ export class EntityMovementBasicComponent extends EntityBaseMovementComponent {
 }
 
 /**
- * @beta
  * When added, this move control causes the mob to fly.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -2056,7 +1965,6 @@ export class EntityMovementFlyComponent extends EntityBaseMovementComponent {
 }
 
 /**
- * @beta
  * When added, this move control allows a mob to fly, swim,
  * climb, etc.
  */
@@ -2067,7 +1975,6 @@ export class EntityMovementGenericComponent extends EntityBaseMovementComponent 
 }
 
 /**
- * @beta
  * When added, this move control causes the mob to hover.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -2077,7 +1984,6 @@ export class EntityMovementHoverComponent extends EntityBaseMovementComponent {
 }
 
 /**
- * @beta
  * Move control that causes the mob to jump as it moves with a
  * specified delay between jumps.
  */
@@ -2088,7 +1994,6 @@ export class EntityMovementJumpComponent extends EntityBaseMovementComponent {
 }
 
 /**
- * @beta
  * When added, this move control causes the mob to hop as it
  * moves.
  */
@@ -2099,7 +2004,6 @@ export class EntityMovementSkipComponent extends EntityBaseMovementComponent {
 }
 
 /**
- * @beta
  * Sets the distance through which the entity can push through.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -2117,7 +2021,6 @@ export class EntityPushThroughComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Sets the entity's visual size.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -2135,7 +2038,6 @@ export class EntityScaleComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Skin Id value. Can be used to differentiate skins, such as
  * base skins for villagers.
  */
@@ -2152,7 +2054,6 @@ export class EntitySkinIdComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Used to differentiate the component group of a variant of an
  * entity from others. (e.g. ocelot, villager).
  */
@@ -2171,7 +2072,6 @@ export class EntityVariantComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * When added, this component signifies that this entity wants
  * to become a jockey.
  */
@@ -2182,7 +2082,6 @@ export class EntityWantsJockeyComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * As part of the Healable component, represents a specific
  * item that can be fed to an entity to cause health effects.
  */
@@ -2214,7 +2113,6 @@ export class FeedItem {
 }
 
 /**
- * @beta
  * Represents an effect that is applied as a result of a food
  * item being fed to an entity.
  */
@@ -2251,7 +2149,6 @@ export class FeedItemEffect {
 }
 
 /**
- * @beta
  * Provides an adaptable interface for callers to subscribe to
  * an event that fires when a button is pushed.
  */
@@ -2273,7 +2170,6 @@ export class IButtonPushAfterEventSignal {
 }
 
 /**
- * @beta
  * Provides an adaptable interface for callers to subscribe to
  * an event that fires after a lever is used.
  */
@@ -2295,7 +2191,6 @@ export class ILeverActionAfterEventSignal {
 }
 
 /**
- * @beta
  * Provides an adaptable interface for callers to subscribe to
  * an event that fires after a player joins a world.
  */
@@ -2317,7 +2212,6 @@ export class IPlayerJoinAfterEventSignal {
 }
 
 /**
- * @beta
  * Provides an adaptable interface for callers to subscribe to
  * an event that fires after a player leaves a world.
  */
@@ -2339,7 +2233,6 @@ export class IPlayerLeaveAfterEventSignal {
 }
 
 /**
- * @beta
  * Provides an adaptable interface for callers to subscribe to
  * an event that fires after a player spawns.
  */
@@ -2361,7 +2254,6 @@ export class IPlayerSpawnAfterEventSignal {
 }
 
 /**
- * @beta
  * Base class for item components.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -2370,12 +2262,10 @@ export class ItemComponent extends Component {
 }
 
 /**
- * @beta
  * Defines a collection of items.
  */
 export class ItemStack {
     /**
-     * @beta
      * @remarks
      * Number of the items in the stack. Valid values range between
      * 1-255. The provided value will be clamped to the item's
@@ -2394,14 +2284,12 @@ export class ItemStack {
      */
     readonly isStackable: boolean;
     /**
-     * @beta
      * @remarks
      * Gets or sets whether the item is kept on death.
      *
      */
     readonly keepOnDeath: boolean;
     /**
-     * @beta
      * @remarks
      * Gets or sets the item's lock mode. The default value is
      * `ItemLockMode.none`.
@@ -2417,7 +2305,6 @@ export class ItemStack {
      */
     readonly maxAmount: number;
     /**
-     * @beta
      * @remarks
      * Given name of this stack of items. The name tag is displayed
      * when hovering over the item. Setting the name tag to an
@@ -2447,9 +2334,9 @@ export class ItemStack {
      * world.
      *
      * @param itemType
-     * Type of item to create. See the {@link MinecraftItemTypes}
-     * enumeration for a list of standard item types in Minecraft
-     * experiences.
+     * Type of item to create. See the {@link
+     * @minecraft/vanilla-data.MinecraftItemTypes} enumeration for
+     * a list of standard item types in Minecraft experiences.
      * @param amount
      * Number of items to place in the stack, between 1-255. The
      * provided value will be clamped to the item's maximum stack
@@ -2510,7 +2397,6 @@ export class ItemStack {
 }
 
 /**
- * @beta
  * Represents the type of an item - for example, Wool.
  */
 export class ItemType {
@@ -2525,7 +2411,6 @@ export class ItemType {
 }
 
 /**
- * @beta
  * Contains information related to changes to a lever
  * activating or deactivating.
  */
@@ -2548,7 +2433,6 @@ export class LeverActionAfterEvent extends BlockEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to lever moves
  * (activates or deactivates).
  */
@@ -2558,6 +2442,8 @@ export class LeverActionAfterEventSignal extends ILeverActionAfterEventSignal {
 }
 
 /**
+ * DEPRECATED
+ * Use @minecraft/vanilla-data.MinecraftDimensionTypes
  * A collection of default Minecraft dimension types.
  */
 export class MinecraftDimensionTypes {
@@ -2611,7 +2497,6 @@ export class Player extends Entity {
      */
     readonly name: string;
     /**
-     * @beta
      * @remarks
      * Plays a sound that only this particular player can hear.
      *
@@ -2649,7 +2534,6 @@ export class Player extends Entity {
      */
     playSound(soundID: string, soundOptions?: PlayerSoundOptions): void;
     /**
-     * @beta
      * @remarks
      * Sends a message to the player.
      *
@@ -2702,7 +2586,6 @@ export class Player extends Entity {
 }
 
 /**
- * @beta
  * Contains information regarding a player that has joined.
  * See the playerSpawn event for more detailed information that
  * could be returned after the first time a player has spawned
@@ -2725,7 +2608,6 @@ export class PlayerJoinAfterEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to a player joining the
  * world.
  */
@@ -2735,7 +2617,6 @@ export class PlayerJoinAfterEventSignal extends IPlayerJoinAfterEventSignal {
 }
 
 /**
- * @beta
  * Contains information regarding a player that has left the
  * world.
  */
@@ -2757,7 +2638,6 @@ export class PlayerLeaveAfterEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to a player leaving the
  * world.
  */
@@ -2767,7 +2647,6 @@ export class PlayerLeaveAfterEventSignal extends IPlayerLeaveAfterEventSignal {
 }
 
 /**
- * @beta
  * An event that contains more information about a player
  * spawning.
  */
@@ -2793,7 +2672,6 @@ export class PlayerSpawnAfterEvent {
 }
 
 /**
- * @beta
  * Registers an event when a player is spawned (or re-spawned
  * after death) and fully ready within the world.
  */
@@ -2808,14 +2686,12 @@ export class PlayerSpawnAfterEventSignal extends IPlayerSpawnAfterEventSignal {
 export class System {
     private constructor();
     /**
-     * @beta
      * @remarks
      * Represents the current world tick of the server.
      *
      */
     readonly currentTick: number;
     /**
-     * @beta
      * @remarks
      * Cancels the execution of a function run that was previously
      * scheduled via the `run` function.
@@ -2866,7 +2742,6 @@ export class System {
      */
     run(callback: () => void): number;
     /**
-     * @beta
      * @remarks
      * Runs a set of code on an interval.
      *
@@ -2889,7 +2764,6 @@ export class System {
      */
     runInterval(callback: () => void, tickInterval?: number): number;
     /**
-     * @beta
      * @remarks
      * Runs a set of code at a future time specified by tickDelay.
      *
@@ -2940,7 +2814,6 @@ export class World {
      */
     getDimension(dimensionId: string): Dimension;
     /**
-     * @beta
      * @remarks
      * Returns a set of players based on a set of conditions
      * defined via the EntityQueryOptions set of filter criteria.
@@ -2955,7 +2828,6 @@ export class World {
      */
     getPlayers(options?: EntityQueryOptions): Player[];
     /**
-     * @beta
      * @remarks
      * Plays a particular music track for all players.
      *
@@ -2989,7 +2861,6 @@ export class World {
      */
     playMusic(trackID: string, musicOptions?: MusicOptions): void;
     /**
-     * @beta
      * @remarks
      * Plays a sound for all players.
      *
@@ -3027,7 +2898,6 @@ export class World {
      */
     playSound(soundID: string, location: Vector3, soundOptions?: WorldSoundOptions): void;
     /**
-     * @beta
      * @remarks
      * Queues an additional music track for players. If a track is
      * not playing, a music track will play.
@@ -3041,7 +2911,6 @@ export class World {
      */
     queueMusic(trackID: string, musicOptions?: MusicOptions): void;
     /**
-     * @beta
      * @remarks
      * Sends a message to all players.
      *
@@ -3080,7 +2949,6 @@ export class World {
      */
     sendMessage(message: (RawMessage | string)[] | RawMessage | string): void;
     /**
-     * @beta
      * @remarks
      * Stops any music tracks from playing.
      *
@@ -3091,7 +2959,6 @@ export class World {
 }
 
 /**
- * @beta
  * Contains a set of events that are available across the scope
  * of the World.
  */
@@ -3164,7 +3031,6 @@ export class WorldAfterEvents {
 }
 
 /**
- * @beta
  * Additional options for when damage has been applied via a
  * projectile.
  */
@@ -3184,7 +3050,6 @@ export interface EntityApplyDamageByProjectileOptions {
 }
 
 /**
- * @beta
  * Additional descriptions and metadata for a damage event.
  */
 export interface EntityApplyDamageOptions {
@@ -3203,7 +3068,6 @@ export interface EntityApplyDamageOptions {
 }
 
 /**
- * @beta
  * Contains additional options for entity effects.
  */
 export interface EntityEffectOptions {
@@ -3222,7 +3086,6 @@ export interface EntityEffectOptions {
 }
 
 /**
- * @beta
  * Contains options for selecting entities within an area.
  */
 export interface EntityQueryOptions {
@@ -3385,7 +3248,6 @@ export interface EntityQueryOptions {
 }
 
 /**
- * @beta
  * Contains additional options for filtering players based on
  * their score for an objective.
  */
@@ -3420,7 +3282,6 @@ export interface EntityQueryScoreOptions {
 }
 
 /**
- * @beta
  * Additional configuration options for {@link
  * World.playMusic}/{@link World.queueMusic} methods.
  */
@@ -3446,7 +3307,6 @@ export interface MusicOptions {
 }
 
 /**
- * @beta
  * Additional options for how a sound plays for a player.
  */
 export interface PlayerSoundOptions {
@@ -3472,7 +3332,6 @@ export interface PlayerSoundOptions {
 }
 
 /**
- * @beta
  * Defines a JSON structure that is used for more flexible
  */
 export interface RawMessage {
@@ -3502,7 +3361,6 @@ export interface RawMessage {
 }
 
 /**
- * @beta
  * Provides a description of a score token to use within a raw
  * message.
  */
@@ -3522,7 +3380,6 @@ export interface RawMessageScore {
 }
 
 /**
- * @beta
  * Contains additional options for teleporting an entity.
  */
 export interface TeleportOptions {
@@ -3562,7 +3419,6 @@ export interface TeleportOptions {
 }
 
 /**
- * @beta
  * Represents a two-directional vector.
  */
 export interface Vector2 {
@@ -3581,7 +3437,6 @@ export interface Vector2 {
 }
 
 /**
- * @beta
  * Contains a description of a vector.
  */
 export interface Vector3 {
@@ -3606,7 +3461,6 @@ export interface Vector3 {
 }
 
 /**
- * @beta
  * Contains additional options for a world-level playSound
  * occurrence.
  */

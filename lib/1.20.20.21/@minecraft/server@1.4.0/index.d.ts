@@ -16,11 +16,60 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server",
- *   "version": "1.5.0-internal.1.20.20-preview.20"
+ *   "version": "1.5.0-internal.1.20.20-preview.21"
  * }
  * ```
  *
  */
+/**
+ * @beta
+ * A general purpose relative direction enumeration.
+ */
+export enum Direction {
+    /**
+     * @beta
+     * @remarks
+     * Returns the block beneath (y - 1) of this item.
+     *
+     */
+    Down = 'Down',
+    /**
+     * @beta
+     * @remarks
+     * Returns the block to the east (x + 1) of this item.
+     *
+     */
+    East = 'East',
+    /**
+     * @beta
+     * @remarks
+     * Returns the block to the east (z + 1) of this item.
+     *
+     */
+    North = 'North',
+    /**
+     * @beta
+     * @remarks
+     * Returns the block to the south (z - 1) of this item.
+     *
+     */
+    South = 'South',
+    /**
+     * @beta
+     * @remarks
+     * Returns the block above (y + 1) of this item.
+     *
+     */
+    Up = 'Up',
+    /**
+     * @beta
+     * @remarks
+     * Returns the block to the west (x - 1) of this item.
+     *
+     */
+    West = 'West',
+}
+
 /**
  * @beta
  */
@@ -688,6 +737,20 @@ export class Dimension {
     /**
      * @beta
      * @remarks
+     * Gets the first block that intersects with a vector emanating
+     * from a location.
+     *
+     * @param location
+     * Location from where to initiate the ray check.
+     * @param direction
+     * Vector direction to cast the ray.
+     * @param options
+     * Additional options for processing this raycast query.
+     */
+    getBlockFromRay(location: Vector3, direction: Vector3, options?: BlockRaycastOptions): BlockRaycastHit | undefined;
+    /**
+     * @beta
+     * @remarks
      * Returns a set of entities based on a set of conditions
      * defined via the EntityQueryOptions set of filter criteria.
      *
@@ -765,6 +828,16 @@ export class Dimension {
      * Zero or more entities at the specified location.
      */
     getEntitiesAtBlockLocation(location: Vector3): Entity[];
+    /**
+     * @beta
+     * @remarks
+     * Gets entities that intersect with a specified vector
+     * emanating from a location.
+     *
+     * @param options
+     * Additional options for processing this raycast query.
+     */
+    getEntitiesFromRay(location: Vector3, direction: Vector3, options?: EntityRaycastOptions): EntityRaycastHit[];
     /**
      * @beta
      * @remarks
@@ -894,31 +967,31 @@ export class Dimension {
      * @throws This function can throw errors.
      * @example itemStacks.ts
      * ```typescript
-     *   const overworld = mc.world.getDimension("overworld");
+     * const overworld = mc.world.getDimension('overworld');
      *
-     *   const oneItemLoc = { x: targetLocation.x + targetLocation.y + 3, y: 2, z: targetLocation.z + 1 };
-     *   const fiveItemsLoc = { x: targetLocation.x + 1, y: targetLocation.y + 2, z: targetLocation.z + 1 };
-     *   const diamondPickaxeLoc = { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 4 };
+     * const oneItemLoc = { x: targetLocation.x + targetLocation.y + 3, y: 2, z: targetLocation.z + 1 };
+     * const fiveItemsLoc = { x: targetLocation.x + 1, y: targetLocation.y + 2, z: targetLocation.z + 1 };
+     * const diamondPickaxeLoc = { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 4 };
      *
-     *   const oneEmerald = new mc.ItemStack(mc.MinecraftItemTypes.emerald, 1);
-     *   const onePickaxe = new mc.ItemStack(mc.MinecraftItemTypes.diamondPickaxe, 1);
-     *   const fiveEmeralds = new mc.ItemStack(mc.MinecraftItemTypes.emerald, 5);
+     * const oneEmerald = new mc.ItemStack(mc.MinecraftItemTypes.Emerald, 1);
+     * const onePickaxe = new mc.ItemStack(mc.MinecraftItemTypes.DiamondPickaxe, 1);
+     * const fiveEmeralds = new mc.ItemStack(mc.MinecraftItemTypes.Emerald, 5);
      *
-     *   log(`Spawning an emerald at (${oneItemLoc.x}, ${oneItemLoc.y}, ${oneItemLoc.z})`);
-     *   overworld.spawnItem(oneEmerald, oneItemLoc);
+     * log(`Spawning an emerald at (${oneItemLoc.x}, ${oneItemLoc.y}, ${oneItemLoc.z})`);
+     * overworld.spawnItem(oneEmerald, oneItemLoc);
      *
-     *   log(`Spawning five emeralds at (${fiveItemsLoc.x}, ${fiveItemsLoc.y}, ${fiveItemsLoc.z})`);
-     *   overworld.spawnItem(fiveEmeralds, fiveItemsLoc);
+     * log(`Spawning five emeralds at (${fiveItemsLoc.x}, ${fiveItemsLoc.y}, ${fiveItemsLoc.z})`);
+     * overworld.spawnItem(fiveEmeralds, fiveItemsLoc);
      *
-     *   log(`Spawning a diamond pickaxe at (${diamondPickaxeLoc.x}, ${diamondPickaxeLoc.y}, ${diamondPickaxeLoc.z})`);
-     *   overworld.spawnItem(onePickaxe, diamondPickaxeLoc);
+     * log(`Spawning a diamond pickaxe at (${diamondPickaxeLoc.x}, ${diamondPickaxeLoc.y}, ${diamondPickaxeLoc.z})`);
+     * overworld.spawnItem(onePickaxe, diamondPickaxeLoc);
      * ```
      * @example spawnItem.ts
      * ```typescript
-     *   const featherItem = new mc.ItemStack(mc.MinecraftItemTypes.feather, 1);
+     * const featherItem = new mc.ItemStack(mc.MinecraftItemTypes.Feather, 1);
      *
-     *   overworld.spawnItem(featherItem, targetLocation);
-     *   log(`New feather created at ${targetLocation.x}, ${targetLocation.y}, ${targetLocation.z}!`);
+     * overworld.spawnItem(featherItem, targetLocation);
+     * log(`New feather created at ${targetLocation.x}, ${targetLocation.y}, ${targetLocation.z}!`);
      * ```
      */
     spawnItem(itemStack: ItemStack, location: Vector3): Entity;
@@ -1255,6 +1328,33 @@ export class Entity {
     /**
      * @beta
      * @remarks
+     * Returns the first intersecting block from the direction that
+     * this entity is looking at.
+     *
+     * @param options
+     * Additional configuration options for the ray cast.
+     * @returns
+     * Returns the first intersecting block from the direction that
+     * this entity is looking at.
+     * @throws This function can throw errors.
+     * @example facingBlock.js
+     * ```js
+     * const blockHit = entity.getBlockFromViewDirection();
+     *
+     * if (blockHit) {
+     *     console.log("Block Hit:");
+     *     console.log("Block:", blockHit.block);
+     *     console.log("Face:", blockHit.face);
+     *     console.log("Face Location:", JSON.stringify(blockHit.faceLocation));
+     * } else {
+     *     console.log("No block in view direction.");
+     * }
+     * ```
+     */
+    getBlockFromViewDirection(options?: BlockRaycastOptions): BlockRaycastHit | undefined;
+    /**
+     * @beta
+     * @remarks
      * Gets a component (that represents additional capabilities)
      * for an entity.
      *
@@ -1325,6 +1425,20 @@ export class Entity {
      * @throws This function can throw errors.
      */
     getEffects(): Effect[];
+    /**
+     * @beta
+     * @remarks
+     * Gets the entities that this entity is looking at by
+     * performing a ray cast from the view of this entity.
+     *
+     * @param options
+     * Additional configuration options for the ray cast.
+     * @returns
+     * Returns a set of entities from the direction that this
+     * entity is looking at.
+     * @throws This function can throw errors.
+     */
+    getEntitiesFromViewDirection(options?: EntityRaycastOptions): EntityRaycastHit[];
     /**
      * @beta
      * @remarks
@@ -1724,6 +1838,50 @@ export class EntityComponent extends Component {
 
 /**
  * @beta
+ * Contains data related to the death of an entity in the game.
+ */
+export class EntityDieAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * If specified, provides more information on the source of
+     * damage that caused the death of this entity.
+     *
+     */
+    readonly damageSource: EntityDamageSource;
+    /**
+     * @remarks
+     * Now-dead entity object.
+     *
+     */
+    readonly deadEntity: Entity;
+}
+
+/**
+ * @beta
+ */
+export class EntityDieAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: EntityDieAfterEvent) => void,
+        options?: EntityEventOptions,
+    ): (arg: EntityDieAfterEvent) => void;
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EntityDieAfterEvent) => void): void;
+}
+
+/**
+ * @beta
  * When added, this component signifies that this entity
  * doesn't take damage from fire.
  */
@@ -1824,12 +1982,231 @@ export class EntityHealableComponent extends EntityComponent {
 
 /**
  * @beta
+ * Contains information related to an entity when its health
+ * changes. Warning: don't change the health of an entity in
+ * this event, or it will cause an infinite loop!
+ */
+export class EntityHealthChangedAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * Entity whose health changed.
+     *
+     */
+    readonly entity: Entity;
+    /**
+     * @remarks
+     * New health value of the entity.
+     *
+     */
+    readonly newValue: number;
+    /**
+     * @remarks
+     * Old health value of the entity.
+     *
+     */
+    readonly oldValue: number;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to when the health of
+ * an entity changes.
+ */
+export class EntityHealthChangedAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when the health of an
+     * entity changes.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: EntityHealthChangedAfterEvent) => void,
+        options?: EntityEventOptions,
+    ): (arg: EntityHealthChangedAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when the health of an
+     * entity changes.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EntityHealthChangedAfterEvent) => void): void;
+}
+
+/**
+ * @beta
  * Defines the health properties of an entity.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityHealthComponent extends EntityAttributeComponent {
     private constructor();
     static readonly componentId = 'minecraft:health';
+}
+
+/**
+ * @beta
+ * Contains information related to an entity hitting a block.
+ */
+export class EntityHitBlockAfterEvent {
+    private constructor();
+    readonly blockFace: Direction;
+    /**
+     * @remarks
+     * Entity that made the attack.
+     *
+     */
+    readonly damagingEntity: Entity;
+    /**
+     * @remarks
+     * Block that was hit by the attack.
+     *
+     */
+    readonly hitBlock: Block;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to when an entity hits
+ * a block.
+ */
+export class EntityHitBlockAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an entity hits a
+     * block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: EntityHitBlockAfterEvent) => void,
+        options?: EntityEventOptions,
+    ): (arg: EntityHitBlockAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an entity hits a
+     * block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EntityHitBlockAfterEvent) => void): void;
+}
+
+/**
+ * @beta
+ * Contains information related to an entity hitting (melee
+ * attacking) another entity.
+ */
+export class EntityHitEntityAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * Entity that made a hit/melee attack.
+     *
+     */
+    readonly damagingEntity: Entity;
+    /**
+     * @remarks
+     * Entity that was hit by the attack.
+     *
+     */
+    readonly hitEntity: Entity;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to when an entity makes
+ * a melee attack on another entity.
+ */
+export class EntityHitEntityAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an entity hits
+     * another entity.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: EntityHitEntityAfterEvent) => void,
+        options?: EntityEventOptions,
+    ): (arg: EntityHitEntityAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an entity makes a
+     * melee attack on another entity.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EntityHitEntityAfterEvent) => void): void;
+}
+
+/**
+ * @beta
+ * Contains information related to an entity getting hurt.
+ */
+export class EntityHurtAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * Describes the amount of damage caused.
+     *
+     */
+    readonly damage: number;
+    /**
+     * @remarks
+     * Source information on the entity that may have applied this
+     * damage.
+     *
+     */
+    readonly damageSource: EntityDamageSource;
+    /**
+     * @remarks
+     * Entity that was hurt.
+     *
+     */
+    readonly hurtEntity: Entity;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to when an entity is
+ * hurt.
+ */
+export class EntityHurtAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an entity is hurt.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: EntityHurtAfterEvent) => void,
+        options?: EntityEventOptions,
+    ): (arg: EntityHurtAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an entity is hurt.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: EntityHurtAfterEvent) => void): void;
 }
 
 /**
@@ -2414,31 +2791,6 @@ export class IPlayerSpawnAfterEventSignal {
 
 /**
  * @beta
- * Provides an adaptable interface for callers to subscribe to
- * an event that fires when /script event command is called.
- */
-export class IScriptEventCommandMessageAfterEventSignal {
-    private constructor();
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    subscribe(
-        callback: (arg: ScriptEventCommandMessageAfterEvent) => void,
-        options?: ScriptEventMessageFilterOptions,
-    ): (arg: ScriptEventCommandMessageAfterEvent) => void;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     * @throws This function can throw errors.
-     */
-    unsubscribe(callback: (arg: ScriptEventCommandMessageAfterEvent) => void): void;
-}
-
-/**
- * @beta
  * Base class for item components.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -2487,9 +2839,9 @@ export class ItemStack {
      * world.
      *
      * @param itemType
-     * Type of item to create. See the {@link MinecraftItemTypes}
-     * enumeration for a list of standard item types in Minecraft
-     * experiences.
+     * Type of item to create. See the {@link
+     * @minecraft/vanilla-data.MinecraftItemTypes} enumeration for
+     * a list of standard item types in Minecraft experiences.
      * @param amount
      * Number of items to place in the stack, between 1-255. The
      * provided value will be clamped to the item's maximum stack
@@ -2645,6 +2997,8 @@ export class LeverActionAfterEventSignal extends ILeverActionAfterEventSignal {
 }
 
 /**
+ * DEPRECATED
+ * Use @minecraft/vanilla-data.MinecraftDimensionTypes
  * A collection of default Minecraft dimension types.
  */
 export class MinecraftDimensionTypes {
@@ -2900,6 +3254,116 @@ export class PlayerSpawnAfterEventSignal extends IPlayerSpawnAfterEventSignal {
 
 /**
  * @beta
+ * Contains information related to changes to a pressure plate
+ * pop.
+ */
+// @ts-ignore Class inheritance allowed for native defined classes
+export class PressurePlatePopAfterEvent extends BlockEvent {
+    private constructor();
+    /**
+     * @remarks
+     * The redstone power of the pressure plate before it was
+     * popped.
+     *
+     */
+    readonly previousRedstonePower: number;
+    /**
+     * @remarks
+     * The redstone power of the pressure plate at the time of the
+     * pop.
+     *
+     */
+    readonly redstonePower: number;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to when a pressure
+ * plate is popped.
+ */
+export class PressurePlatePopAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a pressure plate is
+     * popped.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: PressurePlatePopAfterEvent) => void): (arg: PressurePlatePopAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a pressure plate
+     * is popped.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: PressurePlatePopAfterEvent) => void): void;
+}
+
+/**
+ * @beta
+ * Contains information related to changes to a pressure plate
+ * push.
+ */
+// @ts-ignore Class inheritance allowed for native defined classes
+export class PressurePlatePushAfterEvent extends BlockEvent {
+    private constructor();
+    /**
+     * @remarks
+     * The redstone power of the pressure plate before it was
+     * pushed.
+     *
+     */
+    readonly previousRedstonePower: number;
+    /**
+     * @remarks
+     * The redstone power of the pressure plate at the time of the
+     * push.
+     *
+     */
+    readonly redstonePower: number;
+    /**
+     * @remarks
+     * Source that triggered the pressure plate push.
+     *
+     */
+    readonly source: Entity;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to when a pressure
+ * plate is pushed.
+ */
+export class PressurePlatePushAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a pressure plate is
+     * pushed.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: PressurePlatePushAfterEvent) => void): (arg: PressurePlatePushAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a pressure plate
+     * is pushed.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: PressurePlatePushAfterEvent) => void): void;
+}
+
+/**
+ * @beta
  * Contains information about user interface elements that are
  * showing up on the screen.
  */
@@ -3041,9 +3505,28 @@ export class ScriptEventCommandMessageAfterEvent {
  * Allows for registering an event handler that responds to
  * inbound /scriptevent commands.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export class ScriptEventCommandMessageAfterEventSignal extends IScriptEventCommandMessageAfterEventSignal {
+export class ScriptEventCommandMessageAfterEventSignal {
     private constructor();
+    /**
+     * @remarks
+     * Registers a new ScriptEvent handler.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: ScriptEventCommandMessageAfterEvent) => void,
+        options?: ScriptEventMessageFilterOptions,
+    ): (arg: ScriptEventCommandMessageAfterEvent) => void;
+    /**
+     * @remarks
+     * Unsubscribes a particular handler for a ScriptEvent event.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ScriptEventCommandMessageAfterEvent) => void): void;
 }
 
 /**
@@ -3210,6 +3693,117 @@ export class SystemAfterEvents {
      * ```
      */
     readonly scriptEventReceive: ScriptEventCommandMessageAfterEventSignal;
+}
+
+/**
+ * @beta
+ * Contains information related to changes to a target block
+ * hit.
+ */
+// @ts-ignore Class inheritance allowed for native defined classes
+export class TargetBlockHitAfterEvent extends BlockEvent {
+    private constructor();
+    /**
+     * @remarks
+     * The position where the source hit the block.
+     *
+     */
+    readonly hitVector: Vector3;
+    /**
+     * @remarks
+     * The redstone power before the block is hit.
+     *
+     */
+    readonly previousRedstonePower: number;
+    /**
+     * @remarks
+     * The redstone power at the time the block is hit.
+     *
+     */
+    readonly redstonePower: number;
+    /**
+     * @remarks
+     * Optional source that hit the target block.
+     *
+     */
+    readonly source: Entity;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to when a target block
+ * is hit.
+ */
+export class TargetBlockHitAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a target block is
+     * hit.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: TargetBlockHitAfterEvent) => void): (arg: TargetBlockHitAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a target block is
+     * hit.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: TargetBlockHitAfterEvent) => void): void;
+}
+
+/**
+ * @beta
+ * Contains information related to changes to a trip wire trip.
+ */
+// @ts-ignore Class inheritance allowed for native defined classes
+export class TripWireTripAfterEvent extends BlockEvent {
+    private constructor();
+    /**
+     * @remarks
+     * Whether or not the block has redstone power.
+     *
+     */
+    readonly isPowered: boolean;
+    /**
+     * @remarks
+     * The sources that triggered the trip wire to trip.
+     *
+     */
+    readonly sources: Entity[];
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to when a trip wire is
+ * tripped.
+ */
+export class TripWireTripAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a trip wire is
+     * tripped.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: TripWireTripAfterEvent) => void): (arg: TripWireTripAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a trip wire is
+     * tripped.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: TripWireTripAfterEvent) => void): void;
 }
 
 /**
@@ -3462,6 +4056,41 @@ export class WorldAfterEvents {
      * ```
      */
     readonly buttonPush: ButtonPushAfterEventSignal;
+    /**
+     * @beta
+     * @remarks
+     * This event fires when an entity dies.
+     * @example subscribe.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * world.afterEvents.entityDie.subscribe((event) => {
+     *     world.sendMessage(
+     *         `${event.deadEntity.typeId} died from ${event.damageSource}!`
+     *     );
+     * });
+     * ```
+     */
+    readonly entityDie: EntityDieAfterEventSignal;
+    /**
+     * @beta
+     */
+    readonly entityHealthChanged: EntityHealthChangedAfterEventSignal;
+    /**
+     * @beta
+     */
+    readonly entityHitBlock: EntityHitBlockAfterEventSignal;
+    /**
+     * @beta
+     */
+    readonly entityHitEntity: EntityHitEntityAfterEventSignal;
+    /**
+     * @beta
+     * @remarks
+     * This event fires when an entity is hurt (takes damage).
+     *
+     */
+    readonly entityHurt: EntityHurtAfterEventSignal;
     readonly leverAction: LeverActionAfterEventSignal;
     /**
      * @remarks
@@ -3511,6 +4140,76 @@ export class WorldAfterEvents {
      * ```
      */
     readonly playerSpawn: PlayerSpawnAfterEventSignal;
+    /**
+     * @beta
+     */
+    readonly pressurePlatePop: PressurePlatePopAfterEventSignal;
+    /**
+     * @beta
+     */
+    readonly pressurePlatePush: PressurePlatePushAfterEventSignal;
+    /**
+     * @beta
+     */
+    readonly targetBlockHit: TargetBlockHitAfterEventSignal;
+    /**
+     * @beta
+     */
+    readonly tripWireTrip: TripWireTripAfterEventSignal;
+}
+
+/**
+ * @beta
+ * Contains information for block raycast hit results.
+ */
+export interface BlockRaycastHit {
+    /**
+     * @remarks
+     * Block that was hit.
+     *
+     */
+    block: Block;
+    /**
+     * @remarks
+     * Face of the block that was hit.
+     *
+     */
+    face: Direction;
+    /**
+     * @remarks
+     * Hit location relative to the bottom north-west corner of the
+     * block.
+     *
+     */
+    faceLocation: Vector3;
+}
+
+/**
+ * @beta
+ * Contains additional options for configuring a block raycast
+ * query.
+ */
+export interface BlockRaycastOptions {
+    /**
+     * @remarks
+     * If true, liquid blocks will be considered as blocks that
+     * 'stop' the raycast.
+     *
+     */
+    includeLiquidBlocks?: boolean;
+    /**
+     * @remarks
+     * If true, passable blocks like vines and flowers will be
+     * considered as blocks that 'stop' the raycast.
+     *
+     */
+    includePassableBlocks?: boolean;
+    /**
+     * @remarks
+     * Maximum distance, in blocks, to process the raycast.
+     *
+     */
+    maxDistance?: number;
 }
 
 /**
@@ -3554,6 +4253,32 @@ export interface EntityApplyDamageOptions {
 
 /**
  * @beta
+ * Provides information about how damage has been applied to an
+ * entity.
+ */
+export interface EntityDamageSource {
+    /**
+     * @remarks
+     * Cause enumeration of damage.
+     *
+     */
+    cause: EntityDamageCause;
+    /**
+     * @remarks
+     * Optional entity that caused the damage.
+     *
+     */
+    damagingEntity?: Entity;
+    /**
+     * @remarks
+     * Optional projectile that may have caused damage.
+     *
+     */
+    damagingProjectile?: Entity;
+}
+
+/**
+ * @beta
  * Contains additional options for entity effects.
  */
 export interface EntityEffectOptions {
@@ -3569,6 +4294,28 @@ export interface EntityEffectOptions {
      *
      */
     showParticles?: boolean;
+}
+
+/**
+ * @beta
+ * Contains optional parameters for registering an entity
+ * event.
+ */
+export interface EntityEventOptions {
+    /**
+     * @remarks
+     * If this value is set, this event will only fire for entities
+     * that match the entities within this collection.
+     *
+     */
+    entities?: Entity[];
+    /**
+     * @remarks
+     * If this value is set, this event will only fire if the
+     * impacted entities' type matches this parameter.
+     *
+     */
+    entityTypes?: string[];
 }
 
 /**
@@ -3767,6 +4514,38 @@ export interface EntityQueryScoreOptions {
      *
      */
     objective?: string;
+}
+
+/**
+ * @beta
+ * Contains information for entity raycast hit results.
+ */
+export interface EntityRaycastHit {
+    /**
+     * @remarks
+     * Distance from ray origin to entity bounds.
+     *
+     */
+    distance: number;
+    /**
+     * @remarks
+     * Entity that was hit.
+     *
+     */
+    entity: Entity;
+}
+
+/**
+ * @beta
+ * Contains additional options for an entity raycast operation.
+ */
+export interface EntityRaycastOptions {
+    /**
+     * @remarks
+     * Maximum distance, in blocks, to process the raycast.
+     *
+     */
+    maxDistance?: number;
 }
 
 /**

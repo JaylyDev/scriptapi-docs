@@ -17,7 +17,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-gametest",
- *   "version": "1.0.0-internal.1.20.20-preview.20"
+ *   "version": "1.0.0-internal.1.20.20-preview.21"
  * }
  * ```
  *
@@ -1709,12 +1709,11 @@ export class Test {
      * @throws This function can throw errors.
      * @example spawnEmeralds.js
      * ```typescript
-     * const oneEmerald = new ItemStack(MinecraftItemTypes.emerald, 1, 0);
-     * const fiveEmeralds = new ItemStack(MinecraftItemTypes.emerald, 5, 0);
+     * const oneEmerald = new ItemStack(MinecraftItemTypes.Emerald, 1, 0);
+     * const fiveEmeralds = new ItemStack(MinecraftItemTypes.Emerald, 5, 0);
      *
      * test.spawnItem(oneEmerald, { x: 3.5, y: 3, z: 1.5 });
      * test.spawnItem(fiveEmeralds, { x: 1.5, y: 3, z: 1.5 });
-     *
      * ```
      */
     spawnItem(itemStack: minecraftserver.ItemStack, location: minecraftserver.Vector3): minecraftserver.Entity;
