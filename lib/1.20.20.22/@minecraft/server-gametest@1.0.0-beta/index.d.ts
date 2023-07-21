@@ -17,7 +17,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-gametest",
- *   "version": "1.0.0-internal.1.20.20-preview.21"
+ *   "version": "1.0.0-internal.1.20.20-preview.22"
  * }
  * ```
  *
@@ -937,7 +937,7 @@ export class Test {
      * @throws This function can throw errors.
      */
     assertBlockPresent(
-        blockType: minecraftserver.BlockType,
+        blockType: minecraftserver.BlockType | string,
         blockLocation: minecraftserver.Vector3,
         isPresent?: boolean,
     ): void;
@@ -1606,7 +1606,7 @@ export class Test {
      * Location of the block to set.
      * @throws This function can throw errors.
      */
-    setBlockType(blockType: minecraftserver.BlockType, blockLocation: minecraftserver.Vector3): void;
+    setBlockType(blockType: minecraftserver.BlockType | string, blockLocation: minecraftserver.Vector3): void;
     /**
      * @remarks
      * For blocks that are fluid containers - like a cauldron -
@@ -1905,7 +1905,7 @@ export class Test {
      * @throws This function can throw errors.
      */
     succeedWhenBlockPresent(
-        blockType: minecraftserver.BlockType,
+        blockType: minecraftserver.BlockType | string,
         blockLocation: minecraftserver.Vector3,
         isPresent?: boolean,
     ): void;

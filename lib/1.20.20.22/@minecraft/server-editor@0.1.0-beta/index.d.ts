@@ -14,7 +14,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-editor",
- *   "version": "0.1.0-beta.1.20.20-preview.21"
+ *   "version": "0.1.0-beta.1.20.20-preview.22"
  * }
  * ```
  *
@@ -563,7 +563,8 @@ export declare class BedrockEventSubscriptionCache {
         | ((arg: minecraftserver.PistonActivateAfterEvent) => void)
         | ((arg: minecraftserver.PlayerJoinAfterEvent) => void)
         | ((arg: minecraftserver.PlayerSpawnAfterEvent) => void)
-        | ((arg: minecraftserver.ProjectileHitAfterEvent) => void)
+        | ((arg: minecraftserver.ProjectileHitBlockAfterEvent) => void)
+        | ((arg: minecraftserver.ProjectileHitEntityAfterEvent) => void)
         | ((arg: minecraftserver.TargetBlockHitAfterEvent) => void)
         | ((arg: minecraftserver.TripWireTripAfterEvent) => void)
         | ((arg: minecraftserver.WeatherChangeAfterEvent) => void)

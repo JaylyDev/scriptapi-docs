@@ -16,7 +16,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server",
- *   "version": "1.5.0-internal.1.20.20-preview.21"
+ *   "version": "1.5.0-internal.1.20.20-preview.22"
  * }
  * ```
  *
@@ -68,6 +68,15 @@ export enum Direction {
      *
      */
     West = 'West',
+}
+
+/**
+ * @beta
+ */
+export enum DisplaySlotId {
+    BelowName = 'BelowName',
+    List = 'List',
+    Sidebar = 'Sidebar',
 }
 
 /**
@@ -190,6 +199,60 @@ export enum ItemLockMode {
 
 /**
  * @beta
+ * Used for specifying a sort order for how to display an
+ * objective and its list of participants.
+ */
+export enum ObjectiveSortOrder {
+    /**
+     * @beta
+     * @remarks
+     * Objective participant list is displayed in ascending (e.g.,
+     * A-Z) order.
+     *
+     */
+    Ascending = 0,
+    /**
+     * @beta
+     * @remarks
+     * Objective participant list is displayed in descending (e.g.,
+     * Z-A) order.
+     *
+     */
+    Descending = 1,
+}
+
+/**
+ * @beta
+ * Contains objectives and participants for the scoreboard.
+ */
+export enum ScoreboardIdentityType {
+    /**
+     * @beta
+     * @remarks
+     * This scoreboard participant is tied to an entity.
+     *
+     */
+    Entity = 'Entity',
+    /**
+     * @beta
+     * @remarks
+     * This scoreboard participant is tied to a pseudo player
+     * entity - typically this is used to store scores as data or
+     * as abstract progress.
+     *
+     */
+    FakePlayer = 'FakePlayer',
+    /**
+     * @beta
+     * @remarks
+     * This scoreboard participant is tied to a player.
+     *
+     */
+    Player = 'Player',
+}
+
+/**
+ * @beta
  * Describes where the script event originated from.
  */
 export enum ScriptEventSource {
@@ -304,6 +367,17 @@ export class Block {
      * @throws This function can throw errors.
      */
     getComponent(componentName: string): BlockComponent | undefined;
+    /**
+     * @beta
+     * @remarks
+     * Returns true if this reference to a block is still valid
+     * (for example, if the block is unloaded, references to that
+     * block will no longer be valid.)
+     *
+     * @returns
+     * True if this block object is still working and valid.
+     */
+    isValid(): boolean;
     /**
      * @remarks
      * Sets the block in the dimension to the state of the
@@ -499,6 +573,18 @@ export class Component {
      *
      */
     readonly typeId: string;
+    /**
+     * @beta
+     * @remarks
+     * Returns whether the component is valid. A component is
+     * considered valid if its owner is valid, in addition to any
+     * addition to any additional validation required by the
+     * component.
+     *
+     * @returns
+     * Whether the component is valid.
+     */
+    isValid(): boolean;
 }
 
 /**
@@ -589,6 +675,15 @@ export class Container {
      * ```
      */
     getItem(slot: number): ItemStack | undefined;
+    /**
+     * @beta
+     * @remarks
+     * Returns whether a container object (or the entity or block
+     * that this container is associated with) is still available
+     * for use in this context.
+     *
+     */
+    isValid(): boolean;
     /**
      * @remarks
      * Moves an item from one slot to another, potentially across
@@ -1107,6 +1202,14 @@ export class Entity {
      */
     nameTag: string;
     /**
+     * @beta
+     * @remarks
+     * Returns a scoreboard identity that represents this entity.
+     *
+     * @throws This property can throw when used.
+     */
+    readonly scoreboardIdentity?: ScoreboardIdentity;
+    /**
      * @remarks
      * Unique identifier of the type of the entity - for example,
      * 'minecraft:skeleton'. This property is accessible even if
@@ -1518,6 +1621,17 @@ export class Entity {
      * @throws This function can throw errors.
      */
     hasTag(tag: string): boolean;
+    /**
+     * @beta
+     * @remarks
+     * Returns whether the entity can be manipulated by script. A
+     * Player is considered valid when it's EntityLifetimeState is
+     * set to Loaded.
+     *
+     * @returns
+     * Whether the entity is valid.
+     */
+    isValid(): boolean;
     /**
      * @beta
      * @remarks
@@ -2791,11 +2905,124 @@ export class IPlayerSpawnAfterEventSignal {
 
 /**
  * @beta
+ * Contains information related to a chargeable item completing
+ * being charged.
+ */
+export class ItemCompleteUseAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * Returns the item stack that has completed charging.
+     *
+     */
+    readonly itemStack: ItemStack;
+    /**
+     * @remarks
+     * Returns the source entity that triggered this item event.
+     *
+     */
+    readonly source: Player;
+    /**
+     * @remarks
+     * Returns the time, in ticks, for the remaining duration left
+     * before the charge completes its cycle.
+     *
+     */
+    readonly useDuration: number;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to the completion of
+ * charging for a chargeable item.
+ */
+export class ItemCompleteUseAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a chargeable item
+     * completes charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemCompleteUseAfterEvent) => void): (arg: ItemCompleteUseAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a chargeable item
+     * completes charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemCompleteUseAfterEvent) => void): void;
+}
+
+/**
+ * @beta
  * Base class for item components.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class ItemComponent extends Component {
     private constructor();
+}
+
+/**
+ * @beta
+ * Contains information related to a chargeable item when the
+ * player has finished using the item and released the build
+ * action.
+ */
+export class ItemReleaseUseAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * Returns the item stack that triggered this item event.
+     *
+     */
+    readonly itemStack: ItemStack;
+    /**
+     * @remarks
+     * Returns the source entity that triggered this item event.
+     *
+     */
+    readonly source: Player;
+    /**
+     * @remarks
+     * Returns the time, in ticks, for the remaining duration left
+     * before the charge completes its cycle.
+     *
+     */
+    readonly useDuration: number;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to the releasing of
+ * charging for a chargeable item.
+ */
+export class ItemReleaseUseAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a chargeable item
+     * is released from charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemReleaseUseAfterEvent) => void): (arg: ItemReleaseUseAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a chargeable item
+     * is released from charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemReleaseUseAfterEvent) => void): void;
 }
 
 /**
@@ -2950,6 +3177,245 @@ export class ItemStack {
 
 /**
  * @beta
+ * Contains information related to a chargeable item starting
+ * to be charged.
+ */
+export class ItemStartUseAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * The impacted item stack that is starting to be charged.
+     *
+     */
+    readonly itemStack: ItemStack;
+    /**
+     * @remarks
+     * Returns the source entity that triggered this item event.
+     *
+     */
+    readonly source: Player;
+    /**
+     * @remarks
+     * Returns the time, in ticks, for the remaining duration left
+     * before the charge completes its cycle.
+     *
+     */
+    readonly useDuration: number;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to the start of
+ * charging for a chargeable item.
+ */
+export class ItemStartUseAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a chargeable item
+     * starts charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemStartUseAfterEvent) => void): (arg: ItemStartUseAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a chargeable item
+     * starts charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemStartUseAfterEvent) => void): void;
+}
+
+/**
+ * @beta
+ * Contains information related to an item being used on a
+ * block. This event fires when a player presses the the Use
+ * Item / Place Block button to successfully use an item or
+ * place a block. Fires for the first block that is interacted
+ * with when performing a build action. Note: This event cannot
+ * be used with Hoe or Axe items.
+ */
+export class ItemStartUseOnAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * The block that the item is used on.
+     *
+     */
+    readonly block: Block;
+    /**
+     * @remarks
+     * The face of the block that an item is being used on.
+     *
+     */
+    readonly blockFace: Direction;
+    /**
+     * @remarks
+     * The impacted item stack that is starting to be used.
+     *
+     */
+    readonly itemStack: ItemStack;
+    /**
+     * @remarks
+     * Returns the source entity that triggered this item event.
+     *
+     */
+    readonly source: Player;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to an item starting
+ * being used on a block event.
+ */
+export class ItemStartUseOnAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an item is used on
+     * a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemStartUseOnAfterEvent) => void): (arg: ItemStartUseOnAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an item is used on
+     * a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemStartUseOnAfterEvent) => void): void;
+}
+
+/**
+ * @beta
+ * Contains information related to a chargeable item has
+ * finished an items use cycle, or when the player has released
+ * the use action with the item.
+ */
+export class ItemStopUseAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * The impacted item stack that is stopping being charged.
+     *
+     */
+    readonly itemStack: ItemStack;
+    /**
+     * @remarks
+     * Returns the source entity that triggered this item event.
+     *
+     */
+    readonly source: Player;
+    /**
+     * @remarks
+     * Returns the time, in ticks, for the remaining duration left
+     * before the charge completes its cycle.
+     *
+     */
+    readonly useDuration: number;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to the stopping of
+ * charging for an item that has a registered
+ * minecraft:chargeable component.
+ */
+export class ItemStopUseAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a chargeable item
+     * stops charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemStopUseAfterEvent) => void): (arg: ItemStopUseAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a chargeable item
+     * stops charging.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemStopUseAfterEvent) => void): void;
+}
+
+/**
+ * @beta
+ * Contains information related to an item that has stopped
+ * being used on a block. This event fires when a player
+ * successfully uses an item or places a block by pressing the
+ * Use Item / Place Block button. If multiple blocks are
+ * placed, this event will only occur once at the beginning of
+ * the block placement. Note: This event cannot be used with
+ * Hoe or Axe items.
+ */
+export class ItemStopUseOnAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * The block that the item is used on.
+     *
+     */
+    readonly block: Block;
+    /**
+     * @remarks
+     * The impacted item stack that is being used on a block.
+     *
+     */
+    readonly itemStack?: ItemStack;
+    /**
+     * @remarks
+     * Returns the source entity that triggered this item event.
+     *
+     */
+    readonly source: Player;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to an item stops used
+ * on a block event.
+ */
+export class ItemStopUseOnAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an item stops being
+     * used on a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemStopUseOnAfterEvent) => void): (arg: ItemStopUseOnAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an item is used on
+     * a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemStopUseOnAfterEvent) => void): void;
+}
+
+/**
+ * @beta
  * Represents the type of an item - for example, Wool.
  */
 export class ItemType {
@@ -2961,6 +3427,205 @@ export class ItemType {
      *
      */
     readonly id: string;
+}
+
+/**
+ * @beta
+ * Contains information related to an item being used. This
+ * event fires when an item is successfully used by a player.
+ */
+export class ItemUseAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * The impacted item stack that is being used.
+     *
+     */
+    itemStack: ItemStack;
+    /**
+     * @remarks
+     * Returns the source entity that triggered this item event.
+     *
+     */
+    readonly source: Player;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to an item use event.
+ */
+export class ItemUseAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an item is used.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemUseAfterEvent) => void): (arg: ItemUseAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an item is used.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemUseAfterEvent) => void): void;
+}
+
+/**
+ * @beta
+ * Contains information related to an item being used.
+ */
+// @ts-ignore Class inheritance allowed for native defined classes
+export class ItemUseBeforeEvent extends ItemUseAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * If set to true, this will cancel the item use behavior.
+     *
+     */
+    cancel: boolean;
+}
+
+/**
+ * @beta
+ * Manages callbacks that fire before an item is used.
+ */
+export class ItemUseBeforeEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called before an item is used.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemUseBeforeEvent) => void): (arg: ItemUseBeforeEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called before an item is used.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemUseBeforeEvent) => void): void;
+}
+
+/**
+ * @beta
+ * Contains information related to an item being used on a
+ * block. This event fires when an item is successfully used on
+ * a block by a player.
+ */
+export class ItemUseOnAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * The block that the item is used on.
+     *
+     */
+    readonly block: Block;
+    /**
+     * @remarks
+     * The face of the block that an item is being used on.
+     *
+     */
+    readonly blockFace: Direction;
+    /**
+     * @remarks
+     * Location relative to the bottom north-west corner of the
+     * block where the item is placed.
+     *
+     */
+    readonly faceLocation: Vector3;
+    /**
+     * @remarks
+     * The impacted item stack that is being used on a block.
+     *
+     */
+    readonly itemStack: ItemStack;
+    /**
+     * @remarks
+     * Returns the source entity that triggered this item event.
+     *
+     */
+    readonly source: Player;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to an item being used
+ * on a block event.
+ */
+export class ItemUseOnAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when an item is used on
+     * a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemUseOnAfterEvent) => void): (arg: ItemUseOnAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when an item is used on
+     * a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemUseOnAfterEvent) => void): void;
+}
+
+/**
+ * @beta
+ * Contains information related to an item being used on a
+ * block.
+ */
+// @ts-ignore Class inheritance allowed for native defined classes
+export class ItemUseOnBeforeEvent extends ItemUseOnAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * If set to true, this will cancel the item use behavior.
+     *
+     */
+    cancel: boolean;
+}
+
+/**
+ * @beta
+ * Manages callbacks that fire before an item being used on a
+ * block event.
+ */
+export class ItemUseOnBeforeEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called before an item is used
+     * on a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ItemUseOnBeforeEvent) => void): (arg: ItemUseOnBeforeEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called before an item is used
+     * on a block.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ItemUseOnBeforeEvent) => void): void;
 }
 
 /**
@@ -3063,6 +3728,25 @@ export class Player extends Entity {
     /**
      * @beta
      * @remarks
+     * Gets the current spawn point of the player.
+     *
+     * @throws This function can throw errors.
+     * @example getSpawnPoint.js
+     * ```js
+     * const spawnPoint = player.getSpawnPoint();
+     * if (spawnPoint) {
+     *     console.log(
+     *         `Spawn point location: ${spawnPoint.x} ${spawnPoint.y} ${spawnPoint.z} at ${spawnPoint.dimension.id}`
+     *     );
+     * } else {
+     *     console.log(`No spawn point set.`);
+     * }
+     * ```
+     */
+    getSpawnPoint(): DimensionLocation | undefined;
+    /**
+     * @beta
+     * @remarks
      * Plays a sound that only this particular player can hear.
      *
      * This function can't be called in read-only mode.
@@ -3149,6 +3833,17 @@ export class Player extends Entity {
      * ```
      */
     sendMessage(message: (RawMessage | string)[] | RawMessage | string): void;
+    /**
+     * @beta
+     * @remarks
+     * Sets the current starting spawn point for this particular
+     * player.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setSpawnPoint(spawnPoint?: DimensionLocation): void;
 }
 
 /**
@@ -3360,6 +4055,228 @@ export class PressurePlatePushAfterEventSignal {
      * @throws This function can throw errors.
      */
     unsubscribe(callback: (arg: PressurePlatePushAfterEvent) => void): void;
+}
+
+/**
+ * @beta
+ * Contains objectives and participants for the scoreboard.
+ */
+export class Scoreboard {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a new objective to the scoreboard.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addObjective(objectiveId: string, displayName: string): ScoreboardObjective;
+    /**
+     * @remarks
+     * Clears the objective that occupies a display slot.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    clearObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId): ScoreboardObjective | undefined;
+    /**
+     * @remarks
+     * Returns a specific objective (by id).
+     *
+     * @param objectiveId
+     * Identifier of the objective.
+     */
+    getObjective(objectiveId: string): ScoreboardObjective | undefined;
+    /**
+     * @remarks
+     * Returns an objective that occupies the specified display
+     * slot.
+     *
+     */
+    getObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId): ScoreboardObjectiveDisplayOptions | undefined;
+    /**
+     * @remarks
+     * Returns all defined objectives.
+     *
+     */
+    getObjectives(): ScoreboardObjective[];
+    /**
+     * @remarks
+     * Returns all defined scoreboard identities.
+     *
+     */
+    getParticipants(): ScoreboardIdentity[];
+    /**
+     * @remarks
+     * Removes an objective from the scoreboard.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    removeObjective(objectiveId: ScoreboardObjective | string): boolean;
+    /**
+     * @remarks
+     * Sets an objective into a display slot with specified
+     * additional display settings.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setObjectiveAtDisplaySlot(
+        displaySlotId: DisplaySlotId,
+        objectiveDisplaySetting: ScoreboardObjectiveDisplayOptions,
+    ): ScoreboardObjective;
+}
+
+/**
+ * @beta
+ * Contains an identity of the scoreboard item.
+ */
+export class ScoreboardIdentity {
+    private constructor();
+    /**
+     * @remarks
+     * Returns the player-visible name of this identity.
+     *
+     */
+    readonly displayName: string;
+    /**
+     * @remarks
+     * Identifier of the scoreboard identity.
+     *
+     */
+    readonly id: number;
+    /**
+     * @remarks
+     * Type of the scoreboard identity.
+     *
+     */
+    readonly 'type': ScoreboardIdentityType;
+    /**
+     * @remarks
+     * If the scoreboard identity is an entity or player, returns
+     * the entity that this scoreboard item corresponds to.
+     *
+     * @throws This function can throw errors.
+     */
+    getEntity(): Entity;
+    isValid(): boolean;
+}
+
+/**
+ * @beta
+ * Contains objectives and participants for the scoreboard.
+ */
+export class ScoreboardObjective {
+    private constructor();
+    /**
+     * @remarks
+     * Returns the player-visible name of this scoreboard
+     * objective.
+     *
+     * @throws This property can throw when used.
+     */
+    readonly displayName: string;
+    /**
+     * @remarks
+     * Identifier of the scoreboard objective.
+     *
+     * @throws This property can throw when used.
+     */
+    readonly id: string;
+    /**
+     * @remarks
+     * Adds a score to the given participant and objective.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @param participant
+     * Participant to apply the scoreboard value addition to.
+     * @throws This function can throw errors.
+     */
+    addScore(participant: Entity | ScoreboardIdentity | string, scoreToAdd: number): number;
+    /**
+     * @remarks
+     * Returns all objective participant identities.
+     *
+     * @throws This function can throw errors.
+     */
+    getParticipants(): ScoreboardIdentity[];
+    /**
+     * @remarks
+     * Returns a specific score for a participant.
+     *
+     * @param participant
+     * Identifier of the participant to retrieve a score for.
+     * @throws This function can throw errors.
+     */
+    getScore(participant: Entity | ScoreboardIdentity | string): number | undefined;
+    /**
+     * @remarks
+     * Returns specific scores for this objective for all
+     * participants.
+     *
+     * @throws This function can throw errors.
+     */
+    getScores(): ScoreboardScoreInfo[];
+    /**
+     * @remarks
+     * Returns if the specified identity is a participant of the
+     * scoreboard objective.
+     *
+     * @throws This function can throw errors.
+     */
+    hasParticipant(participant: Entity | ScoreboardIdentity | string): boolean;
+    isValid(): boolean;
+    /**
+     * @remarks
+     * Removes a participant from this scoreboard objective.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @param participant
+     * Participant to remove from being tracked with this
+     * objective.
+     * @throws This function can throw errors.
+     */
+    removeParticipant(participant: Entity | ScoreboardIdentity | string): boolean;
+    /**
+     * @remarks
+     * Sets a score for a participant.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @param participant
+     * Identity of the participant.
+     * @param score
+     * New value of the score.
+     * @throws This function can throw errors.
+     */
+    setScore(participant: Entity | ScoreboardIdentity | string, score: number): void;
+}
+
+/**
+ * @beta
+ * Contains a pair of a scoreboard participant and its
+ * respective score.
+ */
+export class ScoreboardScoreInfo {
+    private constructor();
+    /**
+     * @remarks
+     * This scoreboard participant for this score.
+     *
+     */
+    readonly participant: ScoreboardIdentity;
+    /**
+     * @remarks
+     * Score value of the identity for this objective.
+     *
+     */
+    readonly score: number;
 }
 
 /**
@@ -3815,6 +4732,32 @@ export class World {
     /**
      * @beta
      * @remarks
+     * Contains a set of events that are applicable to the entirety
+     * of the world.  Event callbacks are called in a deferred
+     * manner. Event callbacks are executed in read-write mode.
+     *
+     */
+    readonly afterEvents: WorldAfterEvents;
+    /**
+     * @beta
+     * @remarks
+     * Contains a set of events that are applicable to the entirety
+     * of the world. Event callbacks are called immediately. Event
+     * callbacks are executed in read-only mode.
+     *
+     */
+    readonly beforeEvents: WorldBeforeEvents;
+    /**
+     * @beta
+     * @remarks
+     * Returns the general global scoreboard that applies to the
+     * world.
+     *
+     */
+    readonly scoreboard: Scoreboard;
+    /**
+     * @beta
+     * @remarks
      * Returns the absolute time since the start of the world.
      *
      */
@@ -3836,6 +4779,17 @@ export class World {
      * number of ticks per day. New worlds start at day 0.
      */
     getDay(): number;
+    /**
+     * @beta
+     * @remarks
+     * Returns the default Overworld spawn location.
+     *
+     * @returns
+     * The default Overworld spawn location. By default, the Y
+     * coordinate is 32767, indicating a player's spawn height is
+     * not fixed and will be determined by surrounding blocks.
+     */
+    getDefaultSpawnLocation(): Vector3;
     /**
      * @remarks
      * Returns a dimension object.
@@ -4012,6 +4966,20 @@ export class World {
     /**
      * @beta
      * @remarks
+     * Sets a default spawn location for all players.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @param spawnLocation
+     * Location of the spawn point. Note that this is assumed to be
+     * within the overworld dimension.
+     * @throws
+     * Throws if the provided spawn location is out of bounds.
+     */
+    setDefaultSpawnLocation(spawnLocation: Vector3): void;
+    /**
+     * @beta
+     * @remarks
      * Sets the time of day.
      *
      * This function can't be called in read-only mode.
@@ -4091,6 +5059,58 @@ export class WorldAfterEvents {
      *
      */
     readonly entityHurt: EntityHurtAfterEventSignal;
+    /**
+     * @beta
+     */
+    readonly itemCompleteUse: ItemCompleteUseAfterEventSignal;
+    /**
+     * @beta
+     */
+    readonly itemReleaseUse: ItemReleaseUseAfterEventSignal;
+    /**
+     * @beta
+     */
+    readonly itemStartUse: ItemStartUseAfterEventSignal;
+    /**
+     * @beta
+     * @remarks
+     * This event fires when a player successfully uses an item or
+     * places a block by pressing the Use Item / Place Block
+     * button. If multiple blocks are placed, this event will only
+     * occur once at the beginning of the block placement. Note:
+     * This event cannot be used with Hoe or Axe items.
+     *
+     */
+    readonly itemStartUseOn: ItemStartUseOnAfterEventSignal;
+    /**
+     * @beta
+     */
+    readonly itemStopUse: ItemStopUseAfterEventSignal;
+    /**
+     * @beta
+     * @remarks
+     * This event fires when a player releases the Use Item / Place
+     * Block button after successfully using an item. Note: This
+     * event cannot be used with Hoe or Axe items.
+     *
+     */
+    readonly itemStopUseOn: ItemStopUseOnAfterEventSignal;
+    /**
+     * @beta
+     * @remarks
+     * This event fires when an item is successfully used by a
+     * player.
+     *
+     */
+    readonly itemUse: ItemUseAfterEventSignal;
+    /**
+     * @beta
+     * @remarks
+     * This event fires when an item is used on a block by a
+     * player.
+     *
+     */
+    readonly itemUseOn: ItemUseOnAfterEventSignal;
     readonly leverAction: LeverActionAfterEventSignal;
     /**
      * @remarks
@@ -4160,6 +5180,53 @@ export class WorldAfterEvents {
 
 /**
  * @beta
+ * A set of events that fire before an actual action occurs. In
+ * most cases, you can potentially cancel or modify the
+ * impending event. Note that in before events any APIs that
+ * modify gameplay state will not function and will throw an
+ * error. (e.g., dimension.spawnEntity)
+ */
+export class WorldBeforeEvents {
+    private constructor();
+    /**
+     * @remarks
+     * This event fires when an item is successfully used by a
+     * player.
+     *
+     */
+    readonly itemUse: ItemUseBeforeEventSignal;
+    /**
+     * @remarks
+     * This event fires when an item is used on a block by a
+     * player.
+     * @example subscribe.ts
+     * ```ts
+     * import {
+     *     world,
+     *     MinecraftBlockTypes,
+     *     MinecraftItemTypes,
+     *     Player,
+     * } from "@minecraft/server";
+     *
+     * // Subscribe to the itemUseOn event before it happens
+     * world.beforeEvents.itemUseOn.subscribe((event) => {
+     *     const { source, block, itemStack } = event;
+     *     if (!(source instanceof Player)) return;
+     *
+     *     source.sendMessage("You used " + itemStack.typeId + " on " + block.typeId);
+     *
+     *     // If the item is a diamond, set the block to be a diamond block
+     *     if (itemStack.typeId === MinecraftItemTypes.diamond.id) {
+     *         block.setType(MinecraftBlockTypes.diamondBlock);
+     *     }
+     * });
+     * ```
+     */
+    readonly itemUseOn: ItemUseOnBeforeEventSignal;
+}
+
+/**
+ * @beta
  * Contains information for block raycast hit results.
  */
 export interface BlockRaycastHit {
@@ -4210,6 +5277,38 @@ export interface BlockRaycastOptions {
      *
      */
     maxDistance?: number;
+}
+
+/**
+ * @beta
+ * An exact coordinate within the world, including its
+ * dimension and location.
+ */
+export interface DimensionLocation {
+    /**
+     * @remarks
+     * The dimension.
+     *
+     */
+    dimension: Dimension;
+    /**
+     * @remarks
+     * The x coordinate.
+     *
+     */
+    x: number;
+    /**
+     * @remarks
+     * The y coordinate.
+     *
+     */
+    y: number;
+    /**
+     * @remarks
+     * The z coordinate.
+     *
+     */
+    z: number;
 }
 
 /**
@@ -4652,6 +5751,26 @@ export interface RawMessageScore {
 
 /**
  * @beta
+ * Contains additional options for how a scoreboard should be
+ * displayed within its display slot.
+ */
+export interface ScoreboardObjectiveDisplayOptions {
+    /**
+     * @remarks
+     * Objective to be displayed.
+     *
+     */
+    objective: ScoreboardObjective;
+    /**
+     * @remarks
+     * The sort order to display the objective items within.
+     *
+     */
+    sortOrder?: ObjectiveSortOrder;
+}
+
+/**
+ * @beta
  * Contains additional options for registering a script event
  * event callback.
  */
@@ -4806,6 +5925,30 @@ export interface WorldSoundOptions {
      *
      */
     volume?: number;
+}
+
+/**
+ * @beta
+ */
+// @ts-ignore Class inheritance allowed for native defined classes
+export class CommandError extends Error {
+    private constructor();
+}
+
+/**
+ * @beta
+ */
+// @ts-ignore Class inheritance allowed for native defined classes
+export class LocationInUnloadedChunkError extends Error {
+    private constructor();
+}
+
+/**
+ * @beta
+ */
+// @ts-ignore Class inheritance allowed for native defined classes
+export class LocationOutOfWorldBoundariesError extends Error {
+    private constructor();
 }
 
 /**

@@ -3449,6 +3449,19 @@ export type BlockStateMapping = {
 	[MinecraftBlockTypes.YellowGlazedTerracotta]: YellowGlazedTerracottaStates;
 };
 /**
+ * All possible MinecraftCameraPresetsTypes
+ */
+export declare enum MinecraftCameraPresetsTypes {
+	FirstPerson = "minecraft:first_person",
+	Free = "minecraft:free",
+	ThirdPerson = "minecraft:third_person",
+	ThirdPersonFront = "minecraft:third_person_front"
+}
+/**
+ * Union type equivalent of the MinecraftCameraPresetsTypes enum.
+ */
+export type MinecraftCameraPresetsTypesUnion = keyof typeof MinecraftCameraPresetsTypes;
+/**
  * All possible MinecraftDimensionTypes
  */
 export declare enum MinecraftDimensionTypes {

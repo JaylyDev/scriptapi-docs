@@ -16,7 +16,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server",
- *   "version": "1.5.0-internal.1.20.20-preview.21"
+ *   "version": "1.5.0-internal.1.20.20-preview.22"
  * }
  * ```
  *
@@ -116,6 +116,44 @@ export enum DyeColor {
     Silver = 'Silver',
     White = 'White',
     Yellow = 'Yellow',
+}
+
+/**
+ * @beta
+ */
+export enum EasingType {
+    InBack = 'InBack',
+    InBounce = 'InBounce',
+    InCirc = 'InCirc',
+    InCubic = 'InCubic',
+    InElastic = 'InElastic',
+    InExpo = 'InExpo',
+    InOutBack = 'InOutBack',
+    InOutBounce = 'InOutBounce',
+    InOutCirc = 'InOutCirc',
+    InOutCubic = 'InOutCubic',
+    InOutElastic = 'InOutElastic',
+    InOutExpo = 'InOutExpo',
+    InOutQuad = 'InOutQuad',
+    InOutQuart = 'InOutQuart',
+    InOutQuint = 'InOutQuint',
+    InOutSine = 'InOutSine',
+    InQuad = 'InQuad',
+    InQuart = 'InQuart',
+    InQuint = 'InQuint',
+    InSine = 'InSine',
+    Linear = 'Linear',
+    OutBack = 'OutBack',
+    OutBounce = 'OutBounce',
+    OutCirc = 'OutCirc',
+    OutCubic = 'OutCubic',
+    OutElastic = 'OutElastic',
+    OutExpo = 'OutExpo',
+    OutQuad = 'OutQuad',
+    OutQuart = 'OutQuart',
+    OutQuint = 'OutQuint',
+    OutSine = 'OutSine',
+    Spring = 'Spring',
 }
 
 /**
@@ -621,7 +659,7 @@ export class Block {
      * placed on this block, else `false`.
      * @throws This function can throw errors.
      */
-    canPlace(blockToPlace: BlockPermutation | BlockType, faceToPlaceOn?: Direction): boolean;
+    canPlace(blockToPlace: BlockPermutation | BlockType | string, faceToPlaceOn?: Direction): boolean;
     /**
      * @beta
      * @remarks
@@ -764,7 +802,7 @@ export class Block {
      * minecraft:powered_repeater.
      * @throws This function can throw errors.
      */
-    setType(blockType: BlockType): void;
+    setType(blockType: BlockType | string): void;
     /**
      * @beta
      * @remarks
@@ -1007,6 +1045,18 @@ export class BlockLiquidContainerComponent extends BlockComponent {
      *
      */
     fillLevel: number;
+    /**
+     * @remarks
+     * Returns true if this reference to a liquid container is
+     * still valid and contains the liquid of the type you have a
+     * reference for (for example, if the block is unloaded, no
+     * longer a liquid container or contains lava when you have a
+     * potion container component, isValidLiquid will not be true.)
+     *
+     * @returns
+     * True if this liquid container still exists, is valid and
+     * contains the expected liquid type.
+     */
     isValidLiquid(): boolean;
 }
 
@@ -1565,6 +1615,15 @@ export class BlockType {
 
 /**
  * @beta
+ */
+export class BlockTypes {
+    private constructor();
+    static get(typeName: string): BlockType | undefined;
+    static getAll(): BlockType[];
+}
+
+/**
+ * @beta
  * Block Volume Utils is a utility class that provides a number
  * of useful functions for the creation and utility of {@link
  * @minecraft-server.BlockVolume} objects
@@ -1893,6 +1952,42 @@ export class ButtonPushAfterEvent extends BlockEvent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class ButtonPushAfterEventSignal extends IButtonPushAfterEventSignal {
     private constructor();
+}
+
+/**
+ * @beta
+ */
+export class Camera {
+    private constructor();
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    clear(): void;
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    fade(fadeCameraOptions?: CameraFadeOptions): void;
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setCamera(
+        cameraPreset: string,
+        setOptions?:
+            | ScriptCameraDefaultOptions
+            | ScriptCameraSetFacingOptions
+            | ScriptCameraSetLocationOptions
+            | ScriptCameraSetPosOptions
+            | ScriptCameraSetRotOptions,
+    ): void;
 }
 
 /**
@@ -2945,7 +3040,12 @@ export class Dimension {
      *  Returns number of blocks placed.
      * @throws This function can throw errors.
      */
-    fillBlocks(begin: Vector3, end: Vector3, block: BlockPermutation | BlockType, options?: BlockFillOptions): number;
+    fillBlocks(
+        begin: Vector3,
+        end: Vector3,
+        block: BlockPermutation | BlockType | string,
+        options?: BlockFillOptions,
+    ): number;
     /**
      * @beta
      * @remarks
@@ -3252,10 +3352,8 @@ export class Dimension {
      * @param location
      * The location at which to create the particle emitter.
      * @param molangVariables
-     * A set of additional, customizable variables that can be
-     * adjusted for this particle emitter.
-     * @returns
-     * Newly created entity at the specified location.
+     * A set of optional, customizable variables that can be
+     * adjusted for this particle.
      * @throws This function can throw errors.
      * @example spawnParticle.ts
      * ```typescript
@@ -3274,6 +3372,35 @@ export class Dimension {
      * ```
      */
     spawnParticle(effectName: string, location: Vector3, molangVariables: MolangVariableMap): void;
+}
+
+/**
+ * @beta
+ * Represents a type of dimension.
+ */
+export class DimensionType {
+    private constructor();
+    readonly typeId: string;
+}
+
+/**
+ * @beta
+ * Used for accessing all available dimension types.
+ */
+export class DimensionTypes {
+    private constructor();
+    /**
+     * @remarks
+     * Retrieves a dimension type using a string-based identifier.
+     *
+     */
+    static get(dimensionTypeId: string): DimensionType | undefined;
+    /**
+     * @remarks
+     * Retrieves an array of all dimension types.
+     *
+     */
+    static getAll(): DimensionType[];
 }
 
 /**
@@ -8054,4559 +8181,6 @@ export class MessageReceiveAfterEvent {
 }
 
 /**
- * @beta
- * Contains definitions of standard Minecraft and Minecraft
- * Education Edition block types.
- */
-export class MinecraftBlockTypes {
-    private constructor();
-    /**
-     * @remarks
-     * Represents an acacia button within Minecraft.
-     *
-     */
-    static readonly acaciaButton: BlockType;
-    /**
-     * @remarks
-     * Represents an acacia door within Minecraft.
-     *
-     */
-    static readonly acaciaDoor: BlockType;
-    static readonly acaciaFence: BlockType;
-    /**
-     * @remarks
-     * Represents an acacia fence gate within Minecraft.
-     *
-     */
-    static readonly acaciaFenceGate: BlockType;
-    static readonly acaciaHangingSign: BlockType;
-    static readonly acaciaLog: BlockType;
-    /**
-     * @remarks
-     * Represents an acacia pressure plate within Minecraft.
-     *
-     */
-    static readonly acaciaPressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a set of acacia stairs within Minecraft.
-     *
-     */
-    static readonly acaciaStairs: BlockType;
-    /**
-     * @remarks
-     * Represents an acacia standing sign within Minecraft.
-     *
-     */
-    static readonly acaciaStandingSign: BlockType;
-    /**
-     * @remarks
-     * Represents an acacia trapdoor within Minecraft.
-     *
-     */
-    static readonly acaciaTrapdoor: BlockType;
-    /**
-     * @remarks
-     * Represents an acacia wall sign within Minecraft.
-     *
-     */
-    static readonly acaciaWallSign: BlockType;
-    /**
-     * @remarks
-     * Represents an activator rail within Minecraft.
-     *
-     */
-    static readonly activatorRail: BlockType;
-    /**
-     * @remarks
-     * Represents an empty space (air) within Minecraft.
-     *
-     */
-    static readonly air: BlockType;
-    /**
-     * @remarks
-     * Represents an allow block within Minecraft.
-     *
-     */
-    static readonly allow: BlockType;
-    /**
-     * @remarks
-     * Represents an amethyst block within Minecraft.
-     *
-     */
-    static readonly amethystBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a cluster of amethyst within Minecraft.
-     *
-     */
-    static readonly amethystCluster: BlockType;
-    /**
-     * @remarks
-     * Represents ancient debris within Minecraft.
-     *
-     */
-    static readonly ancientDebris: BlockType;
-    /**
-     * @remarks
-     * Represents andesite stairs within Minecraft.
-     *
-     */
-    static readonly andesiteStairs: BlockType;
-    /**
-     * @remarks
-     * Represents an anvil within Minecraft.
-     *
-     */
-    static readonly anvil: BlockType;
-    /**
-     * @remarks
-     * Represents an azalea flowering plant within Minecraft.
-     *
-     */
-    static readonly azalea: BlockType;
-    /**
-     * @remarks
-     * Represents azalea leaves within Minecraft.
-     *
-     */
-    static readonly azaleaLeaves: BlockType;
-    /**
-     * @remarks
-     * Represents flowered azalea leaves within Minecraft.
-     *
-     */
-    static readonly azaleaLeavesFlowered: BlockType;
-    /**
-     * @remarks
-     * Represents a bamboo tree within Minecraft.
-     *
-     */
-    static readonly bamboo: BlockType;
-    static readonly bambooBlock: BlockType;
-    static readonly bambooButton: BlockType;
-    static readonly bambooDoor: BlockType;
-    static readonly bambooDoubleSlab: BlockType;
-    static readonly bambooFence: BlockType;
-    static readonly bambooFenceGate: BlockType;
-    static readonly bambooHangingSign: BlockType;
-    static readonly bambooMosaic: BlockType;
-    static readonly bambooMosaicDoubleSlab: BlockType;
-    static readonly bambooMosaicSlab: BlockType;
-    static readonly bambooMosaicStairs: BlockType;
-    static readonly bambooPlanks: BlockType;
-    static readonly bambooPressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a bamboo sapling within Minecraft.
-     *
-     */
-    static readonly bambooSapling: BlockType;
-    static readonly bambooSlab: BlockType;
-    static readonly bambooStairs: BlockType;
-    static readonly bambooStandingSign: BlockType;
-    static readonly bambooTrapdoor: BlockType;
-    static readonly bambooWallSign: BlockType;
-    /**
-     * @remarks
-     * Represents a barrel within Minecraft.
-     *
-     */
-    static readonly barrel: BlockType;
-    /**
-     * @remarks
-     * Represents an invisible but logical barrier within
-     * Minecraft.
-     *
-     */
-    static readonly barrier: BlockType;
-    /**
-     * @remarks
-     * Represents a basalt block within Minecraft.
-     *
-     */
-    static readonly basalt: BlockType;
-    /**
-     * @remarks
-     * Represents a beacon within Minecraft.
-     *
-     */
-    static readonly beacon: BlockType;
-    /**
-     * @remarks
-     * Represents a bed within Minecraft.
-     *
-     */
-    static readonly bed: BlockType;
-    /**
-     * @remarks
-     * Represents a bedrock block within Minecraft.
-     *
-     */
-    static readonly bedrock: BlockType;
-    /**
-     * @remarks
-     * Represents a beehive within Minecraft.
-     *
-     */
-    static readonly beehive: BlockType;
-    /**
-     * @remarks
-     * Represents a bee nest within Minecraft.
-     *
-     */
-    static readonly beeNest: BlockType;
-    /**
-     * @remarks
-     * Represents a beetroot vegetable within Minecraft.
-     *
-     */
-    static readonly beetroot: BlockType;
-    /**
-     * @remarks
-     * Represents a bell within Minecraft.
-     *
-     */
-    static readonly bell: BlockType;
-    /**
-     * @remarks
-     * Represents a big dripleaf plant within Minecraft.
-     *
-     */
-    static readonly bigDripleaf: BlockType;
-    /**
-     * @remarks
-     * Represents a birch button within Minecraft.
-     *
-     */
-    static readonly birchButton: BlockType;
-    /**
-     * @remarks
-     * Represents a birch door within Minecraft.
-     *
-     */
-    static readonly birchDoor: BlockType;
-    static readonly birchFence: BlockType;
-    /**
-     * @remarks
-     * Represents a birch fence gate within Minecraft.
-     *
-     */
-    static readonly birchFenceGate: BlockType;
-    static readonly birchHangingSign: BlockType;
-    static readonly birchLog: BlockType;
-    /**
-     * @remarks
-     * Represents a birch pressure plate within Minecraft.
-     *
-     */
-    static readonly birchPressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a birch stairs block within Minecraft.
-     *
-     */
-    static readonly birchStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a birch standing sign within Minecraft.
-     *
-     */
-    static readonly birchStandingSign: BlockType;
-    /**
-     * @remarks
-     * Represents a birch trapdoor within Minecraft.
-     *
-     */
-    static readonly birchTrapdoor: BlockType;
-    /**
-     * @remarks
-     * Represents a birch wall sign within Minecraft.
-     *
-     */
-    static readonly birchWallSign: BlockType;
-    /**
-     * @remarks
-     * Represents a black candle within Minecraft.
-     *
-     */
-    static readonly blackCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a black candle cake within Minecraft.
-     *
-     */
-    static readonly blackCandleCake: BlockType;
-    static readonly blackCarpet: BlockType;
-    static readonly blackConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a black glazed terracotta block within Minecraft.
-     *
-     */
-    static readonly blackGlazedTerracotta: BlockType;
-    static readonly blackShulkerBox: BlockType;
-    static readonly blackStainedGlass: BlockType;
-    static readonly blackStainedGlassPane: BlockType;
-    /**
-     * @remarks
-     * Represents a blackstone block within Minecraft.
-     *
-     */
-    static readonly blackstone: BlockType;
-    /**
-     * @remarks
-     * Represents a blackstone double slab within Minecraft.
-     *
-     */
-    static readonly blackstoneDoubleSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a blackstone slab within Minecraft.
-     *
-     */
-    static readonly blackstoneSlab: BlockType;
-    /**
-     * @remarks
-     * Represents blackstone stairs within Minecraft.
-     *
-     */
-    static readonly blackstoneStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a blackstone wall within Minecraft.
-     *
-     */
-    static readonly blackstoneWall: BlockType;
-    static readonly blackWool: BlockType;
-    /**
-     * @remarks
-     * Represents a blast furnace within Minecraft.
-     *
-     */
-    static readonly blastFurnace: BlockType;
-    /**
-     * @remarks
-     * Represents a blue candle within Minecraft.
-     *
-     */
-    static readonly blueCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a blue candle cake within Minecraft.
-     *
-     */
-    static readonly blueCandleCake: BlockType;
-    static readonly blueCarpet: BlockType;
-    static readonly blueConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a blue glazed terracotta block within Minecraft.
-     *
-     */
-    static readonly blueGlazedTerracotta: BlockType;
-    /**
-     * @remarks
-     * Represents a blue ice block within Minecraft.
-     *
-     */
-    static readonly blueIce: BlockType;
-    static readonly blueShulkerBox: BlockType;
-    static readonly blueStainedGlass: BlockType;
-    static readonly blueStainedGlassPane: BlockType;
-    static readonly blueWool: BlockType;
-    /**
-     * @remarks
-     * Represents a bone block within Minecraft.
-     *
-     */
-    static readonly boneBlock: BlockType;
-    /**
-     * @remarks
-     * Represents an unbreakable border block within Minecraft.
-     *
-     */
-    static readonly bookshelf: BlockType;
-    /**
-     * @remarks
-     * Represents a border block within Minecraft.
-     *
-     */
-    static readonly borderBlock: BlockType;
-    static readonly brainCoral: BlockType;
-    /**
-     * @remarks
-     * Represents a brewing stand within Minecraft.
-     *
-     */
-    static readonly brewingStand: BlockType;
-    /**
-     * @remarks
-     * Represents a block of brick within Minecraft.
-     *
-     */
-    static readonly brickBlock: BlockType;
-    /**
-     * @remarks
-     * Represents brick stairs within Minecraft.
-     *
-     */
-    static readonly brickStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a brown candle within Minecraft.
-     *
-     */
-    static readonly brownCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a brown candle cake within Minecraft.
-     *
-     */
-    static readonly brownCandleCake: BlockType;
-    static readonly brownCarpet: BlockType;
-    static readonly brownConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a brown glazed terracotta block within Minecraft.
-     *
-     */
-    static readonly brownGlazedTerracotta: BlockType;
-    /**
-     * @remarks
-     * Represents a brown mushroom within Minecraft.
-     *
-     */
-    static readonly brownMushroom: BlockType;
-    /**
-     * @remarks
-     * Represents a block of brown mushroom within Minecraft.
-     *
-     */
-    static readonly brownMushroomBlock: BlockType;
-    static readonly brownShulkerBox: BlockType;
-    static readonly brownStainedGlass: BlockType;
-    static readonly brownStainedGlassPane: BlockType;
-    static readonly brownWool: BlockType;
-    /**
-     * @remarks
-     * Represents a column of bubbles within Minecraft.
-     *
-     */
-    static readonly bubbleColumn: BlockType;
-    static readonly bubbleCoral: BlockType;
-    /**
-     * @remarks
-     * Represents a block of budding amethyst within Minecraft.
-     *
-     */
-    static readonly buddingAmethyst: BlockType;
-    /**
-     * @remarks
-     * Represents a cactus within Minecraft.
-     *
-     */
-    static readonly cactus: BlockType;
-    /**
-     * @remarks
-     * Represents a cake within Minecraft.
-     *
-     */
-    static readonly cake: BlockType;
-    /**
-     * @remarks
-     * Represents a calcite block within Minecraft.
-     *
-     */
-    static readonly calcite: BlockType;
-    static readonly calibratedSculkSensor: BlockType;
-    /**
-     * @remarks
-     * Represents a camera within Minecraft Education Edition. It
-     * is not available in Minecraft Bedrock Edition.
-     *
-     */
-    static readonly camera: BlockType;
-    /**
-     * @remarks
-     * Represents a campfire within Minecraft.
-     *
-     */
-    static readonly campfire: BlockType;
-    /**
-     * @remarks
-     * Represents a candle within Minecraft.
-     *
-     */
-    static readonly candle: BlockType;
-    /**
-     * @remarks
-     * Represents a cake with candles within Minecraft.
-     *
-     */
-    static readonly candleCake: BlockType;
-    /**
-     * @remarks
-     * Represents carrots within Minecraft.
-     *
-     */
-    static readonly carrots: BlockType;
-    /**
-     * @remarks
-     * Represents a cartography table block within Minecraft.
-     *
-     */
-    static readonly cartographyTable: BlockType;
-    /**
-     * @remarks
-     * Represents a carved pumpkin within Minecraft.
-     *
-     */
-    static readonly carvedPumpkin: BlockType;
-    /**
-     * @remarks
-     * Represents a cauldron within Minecraft.
-     *
-     */
-    static readonly cauldron: BlockType;
-    /**
-     * @remarks
-     * Represents a set of cave vines within Minecraft.
-     *
-     */
-    static readonly caveVines: BlockType;
-    /**
-     * @remarks
-     * Represents the body of a set of cave vines with berries
-     * within Minecraft.
-     *
-     */
-    static readonly caveVinesBodyWithBerries: BlockType;
-    /**
-     * @remarks
-     * Represents the head of a set of cave vines with berries
-     * within Minecraft.
-     *
-     */
-    static readonly caveVinesHeadWithBerries: BlockType;
-    /**
-     * @remarks
-     * Represents a metallic chain within Minecraft.
-     *
-     */
-    static readonly chain: BlockType;
-    /**
-     * @remarks
-     * Represents a block that gives off heat but not light, within
-     * Minecraft Education Edition or Bedrock Edition with
-     * Education features.
-     *
-     */
-    static readonly chainCommandBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a chemical heat block within Minecraft.
-     *
-     */
-    static readonly chemicalHeat: BlockType;
-    /**
-     * @remarks
-     * Represents a chemistry table within Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly chemistryTable: BlockType;
-    static readonly cherryButton: BlockType;
-    static readonly cherryDoor: BlockType;
-    static readonly cherryDoubleSlab: BlockType;
-    static readonly cherryFence: BlockType;
-    static readonly cherryFenceGate: BlockType;
-    static readonly cherryHangingSign: BlockType;
-    static readonly cherryLeaves: BlockType;
-    static readonly cherryLog: BlockType;
-    static readonly cherryPlanks: BlockType;
-    static readonly cherryPressurePlate: BlockType;
-    static readonly cherrySapling: BlockType;
-    static readonly cherrySlab: BlockType;
-    static readonly cherryStairs: BlockType;
-    static readonly cherryStandingSign: BlockType;
-    static readonly cherryTrapdoor: BlockType;
-    static readonly cherryWallSign: BlockType;
-    static readonly cherryWood: BlockType;
-    /**
-     * @remarks
-     * Represents a chest within Minecraft.
-     *
-     */
-    static readonly chest: BlockType;
-    static readonly chiseledBookshelf: BlockType;
-    /**
-     * @remarks
-     * Represents a set of chiseled deepslate within Minecraft.
-     *
-     */
-    static readonly chiseledDeepslate: BlockType;
-    /**
-     * @remarks
-     * Represents a block of chiseled nether bricks within
-     * Minecraft.
-     *
-     */
-    static readonly chiseledNetherBricks: BlockType;
-    /**
-     * @remarks
-     * Represents a block of chiseled polished blackstone within
-     * Minecraft.
-     *
-     */
-    static readonly chiseledPolishedBlackstone: BlockType;
-    /**
-     * @remarks
-     * Represents a chorus flower within Minecraft.
-     *
-     */
-    static readonly chorusFlower: BlockType;
-    /**
-     * @remarks
-     * Represents a chorus plant within Minecraft.
-     *
-     */
-    static readonly chorusPlant: BlockType;
-    /**
-     * @remarks
-     * Represents a block of clay within Minecraft.
-     *
-     */
-    static readonly clay: BlockType;
-    static readonly clientRequestPlaceholderBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a block of solid coal within Minecraft.
-     *
-     */
-    static readonly coalBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a block with embedded coal ore within Minecraft.
-     *
-     */
-    static readonly coalOre: BlockType;
-    /**
-     * @remarks
-     * Represents a block of cobbled deepslate within Minecraft.
-     *
-     */
-    static readonly cobbledDeepslate: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of cobbled deepslate within
-     * Minecraft.
-     *
-     */
-    static readonly cobbledDeepslateDoubleSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of deepslate within Minecraft.
-     *
-     */
-    static readonly cobbledDeepslateSlab: BlockType;
-    /**
-     * @remarks
-     * Represents cobbled deepslate stairs within Minecraft.
-     *
-     */
-    static readonly cobbledDeepslateStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a cobbled deepslate wall within Minecraft.
-     *
-     */
-    static readonly cobbledDeepslateWall: BlockType;
-    /**
-     * @remarks
-     * Represents a block of cobblestone within Minecraft.
-     *
-     */
-    static readonly cobblestone: BlockType;
-    /**
-     * @remarks
-     * Represents a wall of cobblestone within Minecraft.
-     *
-     */
-    static readonly cobblestoneWall: BlockType;
-    /**
-     * @remarks
-     * Represents a set of cocoa beans (typically on a tree) within
-     * Minecraft.
-     *
-     */
-    static readonly cocoa: BlockType;
-    /**
-     * @remarks
-     * Represents blue/purple torches within Minecraft.
-     *
-     */
-    static readonly coloredTorchBp: BlockType;
-    /**
-     * @remarks
-     * Represents red/green torches within Minecraft.
-     *
-     */
-    static readonly coloredTorchRg: BlockType;
-    /**
-     * @remarks
-     * Represents a block that can run commands within Minecraft.
-     *
-     */
-    static readonly commandBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a composter block within Minecraft.
-     *
-     */
-    static readonly composter: BlockType;
-    /**
-     * @remarks
-     * Represents a block of concrete powder within Minecraft.
-     *
-     */
-    static readonly concretePowder: BlockType;
-    /**
-     * @remarks
-     * Represents a conduit block within Minecraft.
-     *
-     */
-    static readonly conduit: BlockType;
-    /**
-     * @remarks
-     * Represents a solid block of copper within Minecraft.
-     *
-     */
-    static readonly copperBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a block with embedded copper ore within
-     * Minecraft.
-     *
-     */
-    static readonly copperOre: BlockType;
-    /**
-     * @remarks
-     * Represents a solid block of coral within Minecraft.
-     *
-     */
-    static readonly coralBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a fan formation of coral within Minecraft.
-     *
-     */
-    static readonly coralFan: BlockType;
-    /**
-     * @remarks
-     * Represents a fan formation of dead coral within Minecraft.
-     *
-     */
-    static readonly coralFanDead: BlockType;
-    /**
-     * @remarks
-     * Represents a hanging fan formation of coral within
-     * Minecraft.
-     *
-     */
-    static readonly coralFanHang: BlockType;
-    /**
-     * @remarks
-     * Represents an alternate hanging fan formation of coral (#2)
-     * within Minecraft.
-     *
-     */
-    static readonly coralFanHang2: BlockType;
-    /**
-     * @remarks
-     * Represents an alternate hanging fan formation of coral (#3)
-     * within Minecraft.
-     *
-     */
-    static readonly coralFanHang3: BlockType;
-    /**
-     * @remarks
-     * Represents a block of cracked deepslate bricks within
-     * Minecraft.
-     *
-     */
-    static readonly crackedDeepslateBricks: BlockType;
-    /**
-     * @remarks
-     * Represents tiles of cracked deepslate within Minecraft.
-     *
-     */
-    static readonly crackedDeepslateTiles: BlockType;
-    /**
-     * @remarks
-     * Represents a block of cracked nether bricks within
-     * Minecraft.
-     *
-     */
-    static readonly crackedNetherBricks: BlockType;
-    /**
-     * @remarks
-     * Represents a block of cracked and polished blackstone bricks
-     * within Minecraft.
-     *
-     */
-    static readonly crackedPolishedBlackstoneBricks: BlockType;
-    /**
-     * @remarks
-     * Represents a crafting table within Minecraft.
-     *
-     */
-    static readonly craftingTable: BlockType;
-    /**
-     * @remarks
-     * Represents a crimson button within Minecraft.
-     *
-     */
-    static readonly crimsonButton: BlockType;
-    /**
-     * @remarks
-     * Represents a crimson door within Minecraft.
-     *
-     */
-    static readonly crimsonDoor: BlockType;
-    /**
-     * @remarks
-     * Represents a crimson double slab within Minecraft.
-     *
-     */
-    static readonly crimsonDoubleSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a crimson fence within Minecraft.
-     *
-     */
-    static readonly crimsonFence: BlockType;
-    /**
-     * @remarks
-     * Represents a crimson fence gate within Minecraft.
-     *
-     */
-    static readonly crimsonFenceGate: BlockType;
-    /**
-     * @remarks
-     * Represents a crimson fungus within Minecraft.
-     *
-     */
-    static readonly crimsonFungus: BlockType;
-    static readonly crimsonHangingSign: BlockType;
-    /**
-     * @remarks
-     * Represents crimson hyphae within Minecraft.
-     *
-     */
-    static readonly crimsonHyphae: BlockType;
-    /**
-     * @remarks
-     * Represents crimson nylium within Minecraft.
-     *
-     */
-    static readonly crimsonNylium: BlockType;
-    /**
-     * @remarks
-     * Represents a set of crimson planks within Minecraft.
-     *
-     */
-    static readonly crimsonPlanks: BlockType;
-    /**
-     * @remarks
-     * Represents a crimson pressure plate within Minecraft.
-     *
-     */
-    static readonly crimsonPressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a set of crimson roots within Minecraft.
-     *
-     */
-    static readonly crimsonRoots: BlockType;
-    /**
-     * @remarks
-     * Represents a crimson slab within Minecraft.
-     *
-     */
-    static readonly crimsonSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of crimson stairs within Minecraft.
-     *
-     */
-    static readonly crimsonStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a crimson standing sign within Minecraft.
-     *
-     */
-    static readonly crimsonStandingSign: BlockType;
-    /**
-     * @remarks
-     * Represents a crimson stem within Minecraft.
-     *
-     */
-    static readonly crimsonStem: BlockType;
-    /**
-     * @remarks
-     * Represents a crimson trapdoor within Minecraft.
-     *
-     */
-    static readonly crimsonTrapdoor: BlockType;
-    /**
-     * @remarks
-     * Represents a crimson wall sign within Minecraft.
-     *
-     */
-    static readonly crimsonWallSign: BlockType;
-    /**
-     * @remarks
-     * Represents crying obsidian within Minecraft.
-     *
-     */
-    static readonly cryingObsidian: BlockType;
-    /**
-     * @remarks
-     * Represents a cut copper block within Minecraft.
-     *
-     */
-    static readonly cutCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a cut copper slab within Minecraft.
-     *
-     */
-    static readonly cutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of cut copper stairs within Minecraft.
-     *
-     */
-    static readonly cutCopperStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a cyan-colored candle within Minecraft.
-     *
-     */
-    static readonly cyanCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a cake with a cyan-colored candle within
-     * Minecraft.
-     *
-     */
-    static readonly cyanCandleCake: BlockType;
-    static readonly cyanCarpet: BlockType;
-    static readonly cyanConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a block of cyan-colored glazed terracotta within
-     * Minecraft.
-     *
-     */
-    static readonly cyanGlazedTerracotta: BlockType;
-    static readonly cyanShulkerBox: BlockType;
-    static readonly cyanStainedGlass: BlockType;
-    static readonly cyanStainedGlassPane: BlockType;
-    static readonly cyanWool: BlockType;
-    /**
-     * @remarks
-     * Represents a dark oak button within Minecraft.
-     *
-     */
-    static readonly darkOakButton: BlockType;
-    /**
-     * @remarks
-     * Represents a dark oak door within Minecraft.
-     *
-     */
-    static readonly darkOakDoor: BlockType;
-    static readonly darkOakFence: BlockType;
-    /**
-     * @remarks
-     * Represents a dark oak fence gate within Minecraft.
-     *
-     */
-    static readonly darkOakFenceGate: BlockType;
-    static readonly darkOakHangingSign: BlockType;
-    static readonly darkOakLog: BlockType;
-    /**
-     * @remarks
-     * Represents a dark oak pressure plate within Minecraft.
-     *
-     */
-    static readonly darkOakPressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a set of dark oak stairs within Minecraft.
-     *
-     */
-    static readonly darkOakStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a dark oak standing sign within Minecraft.
-     *
-     */
-    static readonly darkoakStandingSign: BlockType;
-    /**
-     * @remarks
-     * Represents a dark oak trapdoor within Minecraft.
-     *
-     */
-    static readonly darkOakTrapdoor: BlockType;
-    /**
-     * @remarks
-     * Represents a dark oak wall sign within Minecraft.
-     *
-     */
-    static readonly darkoakWallSign: BlockType;
-    /**
-     * @remarks
-     * Represents a set of dark prismarine stairs within Minecraft.
-     *
-     */
-    static readonly darkPrismarineStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a daylight detector within Minecraft.
-     *
-     */
-    static readonly daylightDetector: BlockType;
-    /**
-     * @remarks
-     * Represents an inverted daylight detector within Minecraft.
-     *
-     */
-    static readonly daylightDetectorInverted: BlockType;
-    static readonly deadBrainCoral: BlockType;
-    static readonly deadBubbleCoral: BlockType;
-    /**
-     * @remarks
-     * Represents a dead bush within Minecraft.
-     *
-     */
-    static readonly deadbush: BlockType;
-    static readonly deadFireCoral: BlockType;
-    static readonly deadHornCoral: BlockType;
-    static readonly deadTubeCoral: BlockType;
-    static readonly decoratedPot: BlockType;
-    /**
-     * @remarks
-     * Represents a block of deepslate within Minecraft.
-     *
-     */
-    static readonly deepslate: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of deepslate brick within
-     * Minecraft.
-     *
-     */
-    static readonly deepslateBrickDoubleSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a block of deepslate bricks within Minecraft.
-     *
-     */
-    static readonly deepslateBricks: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of deepslate brick within Minecraft.
-     *
-     */
-    static readonly deepslateBrickSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of deepslate brick stairs within Minecraft.
-     *
-     */
-    static readonly deepslateBrickStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a deepslate brick wall within Minecraft.
-     *
-     */
-    static readonly deepslateBrickWall: BlockType;
-    /**
-     * @remarks
-     * Represents a block of deepslate with embedded coal ore
-     * within Minecraft.
-     *
-     */
-    static readonly deepslateCoalOre: BlockType;
-    /**
-     * @remarks
-     * Represents a block of deepslate with embedded copper ore
-     * within Minecraft.
-     *
-     */
-    static readonly deepslateCopperOre: BlockType;
-    /**
-     * @remarks
-     * Represents a block of deepslate with embedded diamond ore
-     * within Minecraft.
-     *
-     */
-    static readonly deepslateDiamondOre: BlockType;
-    /**
-     * @remarks
-     * Represents a block of deepslate with embedded emerald ore
-     * within Minecraft.
-     *
-     */
-    static readonly deepslateEmeraldOre: BlockType;
-    /**
-     * @remarks
-     * Represents a block of deepslate with embedded gold ore
-     * within Minecraft.
-     *
-     */
-    static readonly deepslateGoldOre: BlockType;
-    /**
-     * @remarks
-     * Represents a block of deepslate with embedded iron ore
-     * within Minecraft.
-     *
-     */
-    static readonly deepslateIronOre: BlockType;
-    /**
-     * @remarks
-     * Represents a block of deepslate with embedded lapis lazuli
-     * ore within Minecraft.
-     *
-     */
-    static readonly deepslateLapisOre: BlockType;
-    /**
-     * @remarks
-     * Represents a block of deepslate with embedded redstone ore
-     * within Minecraft.
-     *
-     */
-    static readonly deepslateRedstoneOre: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of tiled deepslate within
-     * Minecraft.
-     *
-     */
-    static readonly deepslateTileDoubleSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of deepslate tiles within Minecraft.
-     *
-     */
-    static readonly deepslateTiles: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of deepslate tiles within Minecraft.
-     *
-     */
-    static readonly deepslateTileSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of deepslate tile stairs within Minecraft.
-     *
-     */
-    static readonly deepslateTileStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a wall of deepslate tile within Minecraft.
-     *
-     */
-    static readonly deepslateTileWall: BlockType;
-    /**
-     * @remarks
-     * Represents a logical but generally invisible Deny logic
-     * block within Minecraft.
-     *
-     */
-    static readonly deny: BlockType;
-    /**
-     * @remarks
-     * Represents a detector rail within Minecraft.
-     *
-     */
-    static readonly detectorRail: BlockType;
-    /**
-     * @remarks
-     * Represents a block of diamond within Minecraft.
-     *
-     */
-    static readonly diamondBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a block with embedded diamond ore within
-     * Minecraft.
-     *
-     */
-    static readonly diamondOre: BlockType;
-    /**
-     * @remarks
-     * Represents a set of diorite stairs within Minecraft.
-     *
-     */
-    static readonly dioriteStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a block of dirt within Minecraft.
-     *
-     */
-    static readonly dirt: BlockType;
-    /**
-     * @remarks
-     * Represents a block of dirt with roots within Minecraft.
-     *
-     */
-    static readonly dirtWithRoots: BlockType;
-    /**
-     * @remarks
-     * Represents a dispenser within Minecraft.
-     *
-     */
-    static readonly dispenser: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of double cut copper within Minecraft.
-     *
-     */
-    static readonly doubleCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a double plant within Minecraft.
-     *
-     */
-    static readonly doublePlant: BlockType;
-    static readonly doubleStoneBlockSlab: BlockType;
-    static readonly doubleStoneBlockSlab2: BlockType;
-    static readonly doubleStoneBlockSlab3: BlockType;
-    static readonly doubleStoneBlockSlab4: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of stone within Minecraft.
-     *
-     */
-    static readonly doubleStoneSlab: BlockType;
-    /**
-     * @remarks
-     * Represents an alternate double slab of stone (#2) within
-     * Minecraft.
-     *
-     */
-    static readonly doubleStoneSlab2: BlockType;
-    /**
-     * @remarks
-     * Represents an alternate double slab of stone (#3) within
-     * Minecraft.
-     *
-     */
-    static readonly doubleStoneSlab3: BlockType;
-    /**
-     * @remarks
-     * Represents an alternate double slab of stone (#4) within
-     * Minecraft.
-     *
-     */
-    static readonly doubleStoneSlab4: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of wood within Minecraft.
-     *
-     */
-    static readonly doubleWoodenSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a dragon egg within Minecraft.
-     *
-     */
-    static readonly dragonEgg: BlockType;
-    /**
-     * @remarks
-     * Represents a block of dried kelp within Minecraft.
-     *
-     */
-    static readonly driedKelpBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a block of dripstone within Minecraft.
-     *
-     */
-    static readonly dripstoneBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a dropper within Minecraft.
-     *
-     */
-    static readonly dropper: BlockType;
-    /**
-     * @remarks
-     * Represents an element in Minecraft Education experiences.
-     *
-     */
-    static readonly element0: BlockType;
-    /**
-     * @remarks
-     * Represents the hydrogen element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element1: BlockType;
-    /**
-     * @remarks
-     * Represents the neon element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element10: BlockType;
-    /**
-     * @remarks
-     * Represents the fermium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element100: BlockType;
-    /**
-     * @remarks
-     * Represents the mendelevium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element101: BlockType;
-    /**
-     * @remarks
-     * Represents the nobelium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element102: BlockType;
-    /**
-     * @remarks
-     * Represents the lawrencium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element103: BlockType;
-    /**
-     * @remarks
-     * Represents the rutherfordium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element104: BlockType;
-    /**
-     * @remarks
-     * Represents the dubnium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element105: BlockType;
-    /**
-     * @remarks
-     * Represents the seaborgium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element106: BlockType;
-    /**
-     * @remarks
-     * Represents the bohrium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element107: BlockType;
-    /**
-     * @remarks
-     * Represents the hassium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element108: BlockType;
-    /**
-     * @remarks
-     * Represents the meitnerium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element109: BlockType;
-    /**
-     * @remarks
-     * Represents the sodium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element11: BlockType;
-    /**
-     * @remarks
-     * Represents the darmstadtium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element110: BlockType;
-    /**
-     * @remarks
-     * Represents the roentgenium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element111: BlockType;
-    /**
-     * @remarks
-     * Represents the copernicium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element112: BlockType;
-    /**
-     * @remarks
-     * Represents the nihonium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element113: BlockType;
-    /**
-     * @remarks
-     * Represents the flerovium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element114: BlockType;
-    /**
-     * @remarks
-     * Represents the moscovium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element115: BlockType;
-    /**
-     * @remarks
-     * Represents the livermorium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element116: BlockType;
-    /**
-     * @remarks
-     * Represents the tennessine element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element117: BlockType;
-    /**
-     * @remarks
-     * Represents the oganesson element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element118: BlockType;
-    /**
-     * @remarks
-     * Represents the magnesium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element12: BlockType;
-    /**
-     * @remarks
-     * Represents the aluminum element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element13: BlockType;
-    /**
-     * @remarks
-     * Represents the silicon element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element14: BlockType;
-    /**
-     * @remarks
-     * Represents the phosphorus element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element15: BlockType;
-    /**
-     * @remarks
-     * Represents the sulfur element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element16: BlockType;
-    /**
-     * @remarks
-     * Represents the chlorine element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element17: BlockType;
-    /**
-     * @remarks
-     * Represents the argon element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element18: BlockType;
-    /**
-     * @remarks
-     * Represents the potassium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element19: BlockType;
-    /**
-     * @remarks
-     * Represents the helium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element2: BlockType;
-    /**
-     * @remarks
-     * Represents the calcium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element20: BlockType;
-    /**
-     * @remarks
-     * Represents the scandium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element21: BlockType;
-    /**
-     * @remarks
-     * Represents the titanium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element22: BlockType;
-    /**
-     * @remarks
-     * Represents the vanadium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element23: BlockType;
-    /**
-     * @remarks
-     * Represents the chromium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element24: BlockType;
-    /**
-     * @remarks
-     * Represents the manganese element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element25: BlockType;
-    /**
-     * @remarks
-     * Represents the iron element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element26: BlockType;
-    /**
-     * @remarks
-     * Represents the cobalt element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element27: BlockType;
-    /**
-     * @remarks
-     * Represents the nickel element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element28: BlockType;
-    /**
-     * @remarks
-     * Represents the copper element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element29: BlockType;
-    /**
-     * @remarks
-     * Represents a lithium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element3: BlockType;
-    /**
-     * @remarks
-     * Represents the zinc element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element30: BlockType;
-    /**
-     * @remarks
-     * Represents the gallium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element31: BlockType;
-    /**
-     * @remarks
-     * Represents a germanium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element32: BlockType;
-    /**
-     * @remarks
-     * Represents the arsenic element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element33: BlockType;
-    /**
-     * @remarks
-     * Represents the selenium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element34: BlockType;
-    /**
-     * @remarks
-     * Represents the bromine element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element35: BlockType;
-    /**
-     * @remarks
-     * Represents the krypton element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element36: BlockType;
-    /**
-     * @remarks
-     * Represents the rubidium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element37: BlockType;
-    /**
-     * @remarks
-     * Represents the strontium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element38: BlockType;
-    /**
-     * @remarks
-     * Represents the yttrium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element39: BlockType;
-    /**
-     * @remarks
-     * Represents a beryllium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element4: BlockType;
-    /**
-     * @remarks
-     * Represents the zirconium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element40: BlockType;
-    /**
-     * @remarks
-     * Represents the niobium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element41: BlockType;
-    /**
-     * @remarks
-     * Represents the molybdenum element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element42: BlockType;
-    /**
-     * @remarks
-     * Represents the technetium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element43: BlockType;
-    /**
-     * @remarks
-     * Represents the ruthenium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element44: BlockType;
-    /**
-     * @remarks
-     * Represents the rhodium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element45: BlockType;
-    /**
-     * @remarks
-     * Represents the palladium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element46: BlockType;
-    /**
-     * @remarks
-     * Represents the silver element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element47: BlockType;
-    /**
-     * @remarks
-     * Represents the cadmium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element48: BlockType;
-    /**
-     * @remarks
-     * Represents the indium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element49: BlockType;
-    /**
-     * @remarks
-     * Represents the boron element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element5: BlockType;
-    /**
-     * @remarks
-     * Represents the tin element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element50: BlockType;
-    /**
-     * @remarks
-     * Represents the antimony element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element51: BlockType;
-    /**
-     * @remarks
-     * Represents the tellurium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element52: BlockType;
-    /**
-     * @remarks
-     * Represents the iodine element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element53: BlockType;
-    /**
-     * @remarks
-     * Represents the xenon element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element54: BlockType;
-    /**
-     * @remarks
-     * Represents the cesium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element55: BlockType;
-    /**
-     * @remarks
-     * Represents the barium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element56: BlockType;
-    /**
-     * @remarks
-     * Represents the lanthanum element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element57: BlockType;
-    /**
-     * @remarks
-     * Represents the cerium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element58: BlockType;
-    /**
-     * @remarks
-     * Represents the praseodymium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element59: BlockType;
-    /**
-     * @remarks
-     * Represents the carbon element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element6: BlockType;
-    /**
-     * @remarks
-     * Represents the neodymium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element60: BlockType;
-    /**
-     * @remarks
-     * Represents the promethium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element61: BlockType;
-    /**
-     * @remarks
-     * Represents the samarium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element62: BlockType;
-    /**
-     * @remarks
-     * Represents the europium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element63: BlockType;
-    /**
-     * @remarks
-     * Represents the gadolinium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element64: BlockType;
-    /**
-     * @remarks
-     * Represents a terbium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element65: BlockType;
-    /**
-     * @remarks
-     * Represents the dysprosium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element66: BlockType;
-    /**
-     * @remarks
-     * Represents the holmium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element67: BlockType;
-    /**
-     * @remarks
-     * Represents the erbium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element68: BlockType;
-    /**
-     * @remarks
-     * Represents the thulium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element69: BlockType;
-    /**
-     * @remarks
-     * Represents the nitrogen element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element7: BlockType;
-    /**
-     * @remarks
-     * Represents the ytterbium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element70: BlockType;
-    /**
-     * @remarks
-     * Represents the lutetium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element71: BlockType;
-    /**
-     * @remarks
-     * Represents a hafnium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element72: BlockType;
-    /**
-     * @remarks
-     * Represents the tantalum element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element73: BlockType;
-    /**
-     * @remarks
-     * Represents the tungsten element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element74: BlockType;
-    /**
-     * @remarks
-     * Represents the rhenium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element75: BlockType;
-    /**
-     * @remarks
-     * Represents the osmium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element76: BlockType;
-    /**
-     * @remarks
-     * Represents the iridium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element77: BlockType;
-    /**
-     * @remarks
-     * Represents the platinum element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element78: BlockType;
-    /**
-     * @remarks
-     * Represents the gold element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element79: BlockType;
-    /**
-     * @remarks
-     * Represents the oxygen element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element8: BlockType;
-    /**
-     * @remarks
-     * Represents the mercury element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element80: BlockType;
-    /**
-     * @remarks
-     * Represents the thallium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element81: BlockType;
-    /**
-     * @remarks
-     * Represents the lead element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element82: BlockType;
-    /**
-     * @remarks
-     * Represents the bismuth element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element83: BlockType;
-    /**
-     * @remarks
-     * Represents the polonium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element84: BlockType;
-    /**
-     * @remarks
-     * Represents the astatine element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element85: BlockType;
-    /**
-     * @remarks
-     * Represents the radon element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element86: BlockType;
-    /**
-     * @remarks
-     * Represents the francium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element87: BlockType;
-    /**
-     * @remarks
-     * Represents the radium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element88: BlockType;
-    /**
-     * @remarks
-     * Represents the actinium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element89: BlockType;
-    /**
-     * @remarks
-     * Represents the fluorine element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element9: BlockType;
-    /**
-     * @remarks
-     * Represents the thorium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element90: BlockType;
-    /**
-     * @remarks
-     * Represents the protactinium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element91: BlockType;
-    /**
-     * @remarks
-     * Represents the uranium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element92: BlockType;
-    /**
-     * @remarks
-     * Represents the neptunium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element93: BlockType;
-    /**
-     * @remarks
-     * Represents the plutonium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element94: BlockType;
-    /**
-     * @remarks
-     * Represents the americium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element95: BlockType;
-    /**
-     * @remarks
-     * Represents the curium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element96: BlockType;
-    /**
-     * @remarks
-     * Represents the berkelium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element97: BlockType;
-    /**
-     * @remarks
-     * Represents the californium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element98: BlockType;
-    /**
-     * @remarks
-     * Represents the einsteinium element in Minecraft Education
-     * experiences.
-     *
-     */
-    static readonly element99: BlockType;
-    /**
-     * @remarks
-     * Represents a block of emerald within Minecraft.
-     *
-     */
-    static readonly emeraldBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a block with embedded emerald ore within
-     * Minecraft.
-     *
-     */
-    static readonly emeraldOre: BlockType;
-    /**
-     * @remarks
-     * Represents an enchanting table within Minecraft.
-     *
-     */
-    static readonly enchantingTable: BlockType;
-    /**
-     * @remarks
-     * Represents an end bricks block within Minecraft.
-     *
-     */
-    static readonly endBricks: BlockType;
-    /**
-     * @remarks
-     * Represents a set of end brick stairs within Minecraft.
-     *
-     */
-    static readonly endBrickStairs: BlockType;
-    /**
-     * @remarks
-     * Represents an ender chest within Minecraft.
-     *
-     */
-    static readonly enderChest: BlockType;
-    /**
-     * @remarks
-     * Represents an end gateway within Minecraft.
-     *
-     */
-    static readonly endGateway: BlockType;
-    /**
-     * @remarks
-     * Represents an end portal block within Minecraft.
-     *
-     */
-    static readonly endPortal: BlockType;
-    /**
-     * @remarks
-     * Represents an end portal frame within Minecraft.
-     *
-     */
-    static readonly endPortalFrame: BlockType;
-    /**
-     * @remarks
-     * Represents an end rod within Minecraft.
-     *
-     */
-    static readonly endRod: BlockType;
-    /**
-     * @remarks
-     * Represents an end stone block within Minecraft.
-     *
-     */
-    static readonly endStone: BlockType;
-    /**
-     * @remarks
-     * Represents a block of exposed copper within Minecraft.
-     *
-     */
-    static readonly exposedCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a block of exposed cut copper within Minecraft.
-     *
-     */
-    static readonly exposedCutCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of exposed cut copper within Minecraft.
-     *
-     */
-    static readonly exposedCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of exposed cut copper stairs within
-     * Minecraft.
-     *
-     */
-    static readonly exposedCutCopperStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of exposed cut copper within
-     * Minecraft.
-     *
-     */
-    static readonly exposedDoubleCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a farmland block within Minecraft.
-     *
-     */
-    static readonly farmland: BlockType;
-    /**
-     * @remarks
-     * Represents a fence gate within Minecraft.
-     *
-     */
-    static readonly fenceGate: BlockType;
-    /**
-     * @remarks
-     * Represents a fire within Minecraft.
-     *
-     */
-    static readonly fire: BlockType;
-    static readonly fireCoral: BlockType;
-    /**
-     * @remarks
-     * Represents a fletching table within Minecraft.
-     *
-     */
-    static readonly fletchingTable: BlockType;
-    /**
-     * @remarks
-     * Represents a flowering azalea plant within Minecraft.
-     *
-     */
-    static readonly floweringAzalea: BlockType;
-    /**
-     * @remarks
-     * Represents a flower pot within Minecraft.
-     *
-     */
-    static readonly flowerPot: BlockType;
-    /**
-     * @remarks
-     * Represents flowing lava within Minecraft.
-     *
-     */
-    static readonly flowingLava: BlockType;
-    /**
-     * @remarks
-     * Represents flowing water within Minecraft.
-     *
-     */
-    static readonly flowingWater: BlockType;
-    /**
-     * @remarks
-     * Represents a frame within Minecraft.
-     *
-     */
-    static readonly frame: BlockType;
-    static readonly frogSpawn: BlockType;
-    /**
-     * @remarks
-     * Represents a frosted ice block within Minecraft.
-     *
-     */
-    static readonly frostedIce: BlockType;
-    /**
-     * @remarks
-     * Represents a furnace within Minecraft.
-     *
-     */
-    static readonly furnace: BlockType;
-    /**
-     * @remarks
-     * Represents a block of gilded blackstone within Minecraft.
-     *
-     */
-    static readonly gildedBlackstone: BlockType;
-    /**
-     * @remarks
-     * Represents a glass block within Minecraft.
-     *
-     */
-    static readonly glass: BlockType;
-    /**
-     * @remarks
-     * Represents a pane of glass within Minecraft.
-     *
-     */
-    static readonly glassPane: BlockType;
-    /**
-     * @remarks
-     * Represents a glowing frame within Minecraft.
-     *
-     */
-    static readonly glowFrame: BlockType;
-    /**
-     * @remarks
-     * Represents a glowing obsidian block within Minecraft.
-     *
-     */
-    static readonly glowingobsidian: BlockType;
-    /**
-     * @remarks
-     * Represents glow lichen within Minecraft.
-     *
-     */
-    static readonly glowLichen: BlockType;
-    /**
-     * @remarks
-     * Represents a block of glowstone within Minecraft.
-     *
-     */
-    static readonly glowstone: BlockType;
-    /**
-     * @remarks
-     * Represents a gold block within Minecraft.
-     *
-     */
-    static readonly goldBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a golden rail element within Minecraft.
-     *
-     */
-    static readonly goldenRail: BlockType;
-    /**
-     * @remarks
-     * Represents a block with embedded gold ore within Minecraft.
-     *
-     */
-    static readonly goldOre: BlockType;
-    /**
-     * @remarks
-     * Represents a set of granite stairs within Minecraft.
-     *
-     */
-    static readonly graniteStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a block of dirt and grass within Minecraft.
-     *
-     */
-    static readonly grass: BlockType;
-    /**
-     * @remarks
-     * Represents a block of dirt and grass with a path within
-     * Minecraft.
-     *
-     */
-    static readonly grassPath: BlockType;
-    /**
-     * @remarks
-     * Represents a block of gravel within Minecraft.
-     *
-     */
-    static readonly gravel: BlockType;
-    /**
-     * @remarks
-     * Represents a gray-colored candle within Minecraft.
-     *
-     */
-    static readonly grayCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a cake with gray-colored candle within Minecraft.
-     *
-     */
-    static readonly grayCandleCake: BlockType;
-    static readonly grayCarpet: BlockType;
-    static readonly grayConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a gray-colored block of glazed terracotta within
-     * Minecraft.
-     *
-     */
-    static readonly grayGlazedTerracotta: BlockType;
-    static readonly grayShulkerBox: BlockType;
-    static readonly grayStainedGlass: BlockType;
-    static readonly grayStainedGlassPane: BlockType;
-    static readonly grayWool: BlockType;
-    /**
-     * @remarks
-     * Represents a green-colored candle within Minecraft.
-     *
-     */
-    static readonly greenCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a green-colored candle cake within Minecraft.
-     *
-     */
-    static readonly greenCandleCake: BlockType;
-    static readonly greenCarpet: BlockType;
-    static readonly greenConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a green block of glazed terracotta within
-     * Minecraft.
-     *
-     */
-    static readonly greenGlazedTerracotta: BlockType;
-    static readonly greenShulkerBox: BlockType;
-    static readonly greenStainedGlass: BlockType;
-    static readonly greenStainedGlassPane: BlockType;
-    static readonly greenWool: BlockType;
-    /**
-     * @remarks
-     * Represents a grindstone within Minecraft.
-     *
-     */
-    static readonly grindstone: BlockType;
-    /**
-     * @remarks
-     * Represents a set of hanging roots within Minecraft.
-     *
-     */
-    static readonly hangingRoots: BlockType;
-    /**
-     * @remarks
-     * Represents a block of hardened clay within Minecraft.
-     *
-     */
-    static readonly hardenedClay: BlockType;
-    /**
-     * @remarks
-     * Represents a block of hard glass within Minecraft.
-     *
-     */
-    static readonly hardGlass: BlockType;
-    /**
-     * @remarks
-     * Represents a pane of hard glass within Minecraft.
-     *
-     */
-    static readonly hardGlassPane: BlockType;
-    /**
-     * @remarks
-     * Represents a stained hard glass block within Minecraft.
-     *
-     */
-    static readonly hardStainedGlass: BlockType;
-    /**
-     * @remarks
-     * Represents a stained pane of hard glass within Minecraft.
-     *
-     */
-    static readonly hardStainedGlassPane: BlockType;
-    /**
-     * @remarks
-     * Represents a block of hay within Minecraft.
-     *
-     */
-    static readonly hayBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a heavy weighted pressure plate within Minecraft.
-     *
-     */
-    static readonly heavyWeightedPressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a block of honey within Minecraft.
-     *
-     */
-    static readonly honeyBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a honeycomb block within Minecraft.
-     *
-     */
-    static readonly honeycombBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a hopper within Minecraft.
-     *
-     */
-    static readonly hopper: BlockType;
-    static readonly hornCoral: BlockType;
-    /**
-     * @remarks
-     * Represents a block of ice within Minecraft.
-     *
-     */
-    static readonly ice: BlockType;
-    /**
-     * @remarks
-     * Represents an infested block of deepslate within Minecraft.
-     *
-     */
-    static readonly infestedDeepslate: BlockType;
-    /**
-     * @remarks
-     * Represents an information update block within Minecraft.
-     *
-     */
-    static readonly infoUpdate: BlockType;
-    /**
-     * @remarks
-     * Represents an information update block within Minecraft.
-     *
-     */
-    static readonly infoUpdate2: BlockType;
-    /**
-     * @remarks
-     * Represents an invisible boundary bedrock block within
-     * Minecraft.
-     *
-     */
-    static readonly invisibleBedrock: BlockType;
-    /**
-     * @remarks
-     * Represents iron bars within Minecraft.
-     *
-     */
-    static readonly ironBars: BlockType;
-    /**
-     * @remarks
-     * Represents a block of iron within Minecraft.
-     *
-     */
-    static readonly ironBlock: BlockType;
-    /**
-     * @remarks
-     * Represents an iron door within Minecraft.
-     *
-     */
-    static readonly ironDoor: BlockType;
-    /**
-     * @remarks
-     * Represents a block with embedded iron ore within Minecraft.
-     *
-     */
-    static readonly ironOre: BlockType;
-    /**
-     * @remarks
-     * Represents an iron trapdoor within Minecraft.
-     *
-     */
-    static readonly ironTrapdoor: BlockType;
-    /**
-     * @remarks
-     * Represents a jigsaw within Minecraft.
-     *
-     */
-    static readonly jigsaw: BlockType;
-    /**
-     * @remarks
-     * Represents a jukebox within Minecraft.
-     *
-     */
-    static readonly jukebox: BlockType;
-    /**
-     * @remarks
-     * Represents jungle wood button within Minecraft.
-     *
-     */
-    static readonly jungleButton: BlockType;
-    /**
-     * @remarks
-     * Represents a jungle wood door within Minecraft.
-     *
-     */
-    static readonly jungleDoor: BlockType;
-    static readonly jungleFence: BlockType;
-    /**
-     * @remarks
-     * Represents a jungle wood fence gate within Minecraft.
-     *
-     */
-    static readonly jungleFenceGate: BlockType;
-    static readonly jungleHangingSign: BlockType;
-    static readonly jungleLog: BlockType;
-    /**
-     * @remarks
-     * Represents a jungle wood pressure plate within Minecraft.
-     *
-     */
-    static readonly junglePressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a set of jungle wood stairs within Minecraft.
-     *
-     */
-    static readonly jungleStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a jungle wood standing sign within Minecraft.
-     *
-     */
-    static readonly jungleStandingSign: BlockType;
-    /**
-     * @remarks
-     * Represents a jungle wood trapdoor within Minecraft.
-     *
-     */
-    static readonly jungleTrapdoor: BlockType;
-    /**
-     * @remarks
-     * Represents a jungle wood wall sign within Minecraft.
-     *
-     */
-    static readonly jungleWallSign: BlockType;
-    /**
-     * @remarks
-     * Represents a set of kelp within Minecraft.
-     *
-     */
-    static readonly kelp: BlockType;
-    /**
-     * @remarks
-     * Represents a ladder within Minecraft.
-     *
-     */
-    static readonly ladder: BlockType;
-    /**
-     * @remarks
-     * Represents a lantern within Minecraft.
-     *
-     */
-    static readonly lantern: BlockType;
-    /**
-     * @remarks
-     * Represents a block of lapis lazuli within Minecraft.
-     *
-     */
-    static readonly lapisBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a block with embedded lapis lazuli within
-     * Minecraft.
-     *
-     */
-    static readonly lapisOre: BlockType;
-    /**
-     * @remarks
-     * Represents a bud of large amethyst within Minecraft.
-     *
-     */
-    static readonly largeAmethystBud: BlockType;
-    /**
-     * @remarks
-     * Represents lava within Minecraft.
-     *
-     */
-    static readonly lava: BlockType;
-    /**
-     * @remarks
-     * Represents a set of leaves within Minecraft.
-     *
-     */
-    static readonly leaves: BlockType;
-    /**
-     * @remarks
-     * Represents an updated set of leaves within Minecraft.
-     *
-     */
-    static readonly leaves2: BlockType;
-    /**
-     * @remarks
-     * Represents a lectern within Minecraft.
-     *
-     */
-    static readonly lectern: BlockType;
-    /**
-     * @remarks
-     * Represents a lever within Minecraft.
-     *
-     */
-    static readonly lever: BlockType;
-    /**
-     * @remarks
-     * Represents a block of light within Minecraft.
-     *
-     */
-    static readonly lightBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a light blue candle within Minecraft.
-     *
-     */
-    static readonly lightBlueCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a light blue candle cake within Minecraft.
-     *
-     */
-    static readonly lightBlueCandleCake: BlockType;
-    static readonly lightBlueCarpet: BlockType;
-    static readonly lightBlueConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a light blue block of glazed terracotta within
-     * Minecraft.
-     *
-     */
-    static readonly lightBlueGlazedTerracotta: BlockType;
-    static readonly lightBlueShulkerBox: BlockType;
-    static readonly lightBlueStainedGlass: BlockType;
-    static readonly lightBlueStainedGlassPane: BlockType;
-    static readonly lightBlueWool: BlockType;
-    /**
-     * @remarks
-     * Represents a light gray candle within Minecraft.
-     *
-     */
-    static readonly lightGrayCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a light gray candle cake within Minecraft.
-     *
-     */
-    static readonly lightGrayCandleCake: BlockType;
-    static readonly lightGrayCarpet: BlockType;
-    static readonly lightGrayConcrete: BlockType;
-    static readonly lightGrayShulkerBox: BlockType;
-    static readonly lightGrayStainedGlass: BlockType;
-    static readonly lightGrayStainedGlassPane: BlockType;
-    static readonly lightGrayWool: BlockType;
-    /**
-     * @remarks
-     * Represents a lightning rod within Minecraft.
-     *
-     */
-    static readonly lightningRod: BlockType;
-    /**
-     * @remarks
-     * Represents a light weighted pressure plate within Minecraft.
-     *
-     */
-    static readonly lightWeightedPressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a lime candle within Minecraft.
-     *
-     */
-    static readonly limeCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a lime-colored candle cake within Minecraft.
-     *
-     */
-    static readonly limeCandleCake: BlockType;
-    static readonly limeCarpet: BlockType;
-    static readonly limeConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a lime-colored block of glazed terracotta within
-     * Minecraft.
-     *
-     */
-    static readonly limeGlazedTerracotta: BlockType;
-    static readonly limeShulkerBox: BlockType;
-    static readonly limeStainedGlass: BlockType;
-    static readonly limeStainedGlassPane: BlockType;
-    static readonly limeWool: BlockType;
-    /**
-     * @remarks
-     * Represents a lit blast furnace within Minecraft.
-     *
-     */
-    static readonly litBlastFurnace: BlockType;
-    /**
-     * @remarks
-     * Represents lit deepslate redstone ore within Minecraft.
-     *
-     */
-    static readonly litDeepslateRedstoneOre: BlockType;
-    /**
-     * @remarks
-     * Represents a lit furnace within Minecraft.
-     *
-     */
-    static readonly litFurnace: BlockType;
-    /**
-     * @remarks
-     * Represents a lit pumpkin within Minecraft.
-     *
-     */
-    static readonly litPumpkin: BlockType;
-    /**
-     * @remarks
-     * Represents a lit redstone lamp within Minecraft.
-     *
-     */
-    static readonly litRedstoneLamp: BlockType;
-    /**
-     * @remarks
-     * Represents lit redstone ore within Minecraft.
-     *
-     */
-    static readonly litRedstoneOre: BlockType;
-    /**
-     * @remarks
-     * Represents a lit smoker within Minecraft.
-     *
-     */
-    static readonly litSmoker: BlockType;
-    /**
-     * @remarks
-     * Represents a lodestone within Minecraft.
-     *
-     */
-    static readonly lodestone: BlockType;
-    /**
-     * @remarks
-     * Represents a loom within Minecraft.
-     *
-     */
-    static readonly loom: BlockType;
-    /**
-     * @remarks
-     * Represents a magenta candle within Minecraft.
-     *
-     */
-    static readonly magentaCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a magenta candle cake within Minecraft.
-     *
-     */
-    static readonly magentaCandleCake: BlockType;
-    static readonly magentaCarpet: BlockType;
-    static readonly magentaConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a block of magenta-colored glazed terracotta
-     * within Minecraft.
-     *
-     */
-    static readonly magentaGlazedTerracotta: BlockType;
-    static readonly magentaShulkerBox: BlockType;
-    static readonly magentaStainedGlass: BlockType;
-    static readonly magentaStainedGlassPane: BlockType;
-    static readonly magentaWool: BlockType;
-    /**
-     * @remarks
-     * Represents magma within Minecraft.
-     *
-     */
-    static readonly magma: BlockType;
-    static readonly mangroveButton: BlockType;
-    static readonly mangroveDoor: BlockType;
-    static readonly mangroveDoubleSlab: BlockType;
-    static readonly mangroveFence: BlockType;
-    static readonly mangroveFenceGate: BlockType;
-    static readonly mangroveHangingSign: BlockType;
-    static readonly mangroveLeaves: BlockType;
-    static readonly mangroveLog: BlockType;
-    static readonly mangrovePlanks: BlockType;
-    static readonly mangrovePressurePlate: BlockType;
-    static readonly mangrovePropagule: BlockType;
-    static readonly mangroveRoots: BlockType;
-    static readonly mangroveSlab: BlockType;
-    static readonly mangroveStairs: BlockType;
-    static readonly mangroveStandingSign: BlockType;
-    static readonly mangroveTrapdoor: BlockType;
-    static readonly mangroveWallSign: BlockType;
-    static readonly mangroveWood: BlockType;
-    /**
-     * @remarks
-     * Represents a medium-sized bud of amethyst within Minecraft.
-     *
-     */
-    static readonly mediumAmethystBud: BlockType;
-    /**
-     * @remarks
-     * Represents a block of melon within Minecraft.
-     *
-     */
-    static readonly melonBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a stem of melon within Minecraft.
-     *
-     */
-    static readonly melonStem: BlockType;
-    /**
-     * @remarks
-     * Represents a mob spawner within Minecraft.
-     *
-     */
-    static readonly mobSpawner: BlockType;
-    /**
-     * @remarks
-     * Represents a monster egg within Minecraft.
-     *
-     */
-    static readonly monsterEgg: BlockType;
-    /**
-     * @remarks
-     * Represents a block of moss within Minecraft.
-     *
-     */
-    static readonly mossBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a carpet of moss within Minecraft.
-     *
-     */
-    static readonly mossCarpet: BlockType;
-    /**
-     * @remarks
-     * Represents a block of cobblestone with moss within
-     * Minecraft.
-     *
-     */
-    static readonly mossyCobblestone: BlockType;
-    /**
-     * @remarks
-     * Represents a set of mossy cobblestone stairs within
-     * Minecraft.
-     *
-     */
-    static readonly mossyCobblestoneStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a set of mossy stone brick stairs within
-     * Minecraft.
-     *
-     */
-    static readonly mossyStoneBrickStairs: BlockType;
-    static readonly movingBlock: BlockType;
-    static readonly mud: BlockType;
-    static readonly mudBrickDoubleSlab: BlockType;
-    static readonly mudBricks: BlockType;
-    static readonly mudBrickSlab: BlockType;
-    static readonly mudBrickStairs: BlockType;
-    static readonly mudBrickWall: BlockType;
-    static readonly muddyMangroveRoots: BlockType;
-    /**
-     * @remarks
-     * Represents a mycelium plant within Minecraft.
-     *
-     */
-    static readonly mycelium: BlockType;
-    /**
-     * @remarks
-     * Represents a nether brick block within Minecraft.
-     *
-     */
-    static readonly netherBrick: BlockType;
-    /**
-     * @remarks
-     * Represents a nether brick fence within Minecraft.
-     *
-     */
-    static readonly netherBrickFence: BlockType;
-    /**
-     * @remarks
-     * Represents a set of nether brick stairs within Minecraft.
-     *
-     */
-    static readonly netherBrickStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a block of nether with embedded gold ore within
-     * Minecraft.
-     *
-     */
-    static readonly netherGoldOre: BlockType;
-    /**
-     * @remarks
-     * Represents a block of netherite within Minecraft.
-     *
-     */
-    static readonly netheriteBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a block of netherrack within Minecraft.
-     *
-     */
-    static readonly netherrack: BlockType;
-    /**
-     * @remarks
-     * Represents a nether rock within Minecraft.
-     *
-     */
-    static readonly netherreactor: BlockType;
-    /**
-     * @remarks
-     * Represents nether sprouts within Minecraft.
-     *
-     */
-    static readonly netherSprouts: BlockType;
-    /**
-     * @remarks
-     * Represents nether wart within Minecraft.
-     *
-     */
-    static readonly netherWart: BlockType;
-    /**
-     * @remarks
-     * Represents a block of nether wart within Minecraft.
-     *
-     */
-    static readonly netherWartBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a standard set of stone stairs within Minecraft.
-     *
-     */
-    static readonly normalStoneStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a note block within Minecraft.
-     *
-     */
-    static readonly noteblock: BlockType;
-    static readonly oakFence: BlockType;
-    static readonly oakHangingSign: BlockType;
-    static readonly oakLog: BlockType;
-    /**
-     * @remarks
-     * Represents a set of oak stairs within Minecraft.
-     *
-     */
-    static readonly oakStairs: BlockType;
-    /**
-     * @remarks
-     * Represents an observer within Minecraft.
-     *
-     */
-    static readonly observer: BlockType;
-    /**
-     * @remarks
-     * Represents an obsidian block within Minecraft.
-     *
-     */
-    static readonly obsidian: BlockType;
-    static readonly ochreFroglight: BlockType;
-    /**
-     * @remarks
-     * Represents an orange candle within Minecraft.
-     *
-     */
-    static readonly orangeCandle: BlockType;
-    /**
-     * @remarks
-     * Represents an orange candle cake within Minecraft.
-     *
-     */
-    static readonly orangeCandleCake: BlockType;
-    static readonly orangeCarpet: BlockType;
-    static readonly orangeConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a block of orange-colored glazed terracotta
-     * within Minecraft.
-     *
-     */
-    static readonly orangeGlazedTerracotta: BlockType;
-    static readonly orangeShulkerBox: BlockType;
-    static readonly orangeStainedGlass: BlockType;
-    static readonly orangeStainedGlassPane: BlockType;
-    static readonly orangeWool: BlockType;
-    /**
-     * @remarks
-     * Represents a block of oxidized copper within Minecraft.
-     *
-     */
-    static readonly oxidizedCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a block of oxidized cut copper within Minecraft.
-     *
-     */
-    static readonly oxidizedCutCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of oxidized cut copper within Minecraft.
-     *
-     */
-    static readonly oxidizedCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of oxidized cut copper stairs within
-     * Minecraft.
-     *
-     */
-    static readonly oxidizedCutCopperStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of oxidized cut copper within
-     * Minecraft.
-     *
-     */
-    static readonly oxidizedDoubleCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a block of packed ice within Minecraft.
-     *
-     */
-    static readonly packedIce: BlockType;
-    static readonly packedMud: BlockType;
-    static readonly pearlescentFroglight: BlockType;
-    /**
-     * @remarks
-     * Represents a pink candle within Minecraft.
-     *
-     */
-    static readonly pinkCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a pink candle cake within Minecraft.
-     *
-     */
-    static readonly pinkCandleCake: BlockType;
-    static readonly pinkCarpet: BlockType;
-    static readonly pinkConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a pink-colored block of glazed terracotta within
-     * Minecraft.
-     *
-     */
-    static readonly pinkGlazedTerracotta: BlockType;
-    static readonly pinkPetals: BlockType;
-    static readonly pinkShulkerBox: BlockType;
-    static readonly pinkStainedGlass: BlockType;
-    static readonly pinkStainedGlassPane: BlockType;
-    static readonly pinkWool: BlockType;
-    /**
-     * @remarks
-     * Represents a piston within Minecraft.
-     *
-     */
-    static readonly piston: BlockType;
-    static readonly pistonArmCollision: BlockType;
-    static readonly pitcherCrop: BlockType;
-    static readonly pitcherPlant: BlockType;
-    /**
-     * @remarks
-     * Represents a set of planks within Minecraft.
-     *
-     */
-    static readonly planks: BlockType;
-    /**
-     * @remarks
-     * Represents podzol within Minecraft.
-     *
-     */
-    static readonly podzol: BlockType;
-    /**
-     * @remarks
-     * Represents pointed dripstone within Minecraft.
-     *
-     */
-    static readonly pointedDripstone: BlockType;
-    /**
-     * @remarks
-     * Represents a set of polished andesite stairs within
-     * Minecraft.
-     *
-     */
-    static readonly polishedAndesiteStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a block of polished basalt within Minecraft.
-     *
-     */
-    static readonly polishedBasalt: BlockType;
-    /**
-     * @remarks
-     * Represents a block of polished blackstone within Minecraft.
-     *
-     */
-    static readonly polishedBlackstone: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of polished blackstone brick within
-     * Minecraft.
-     *
-     */
-    static readonly polishedBlackstoneBrickDoubleSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a block of polished blackstone bricks within
-     * Minecraft.
-     *
-     */
-    static readonly polishedBlackstoneBricks: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of polished blackstone within Minecraft.
-     *
-     */
-    static readonly polishedBlackstoneBrickSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of polished blackstone brick stairs within
-     * Minecraft.
-     *
-     */
-    static readonly polishedBlackstoneBrickStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a polished blackstone brick wall within
-     * Minecraft.
-     *
-     */
-    static readonly polishedBlackstoneBrickWall: BlockType;
-    /**
-     * @remarks
-     * Represents a polished blackstone button within Minecraft.
-     *
-     */
-    static readonly polishedBlackstoneButton: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of polished blackstone within
-     * Minecraft.
-     *
-     */
-    static readonly polishedBlackstoneDoubleSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a polished blackstone pressure plate within
-     * Minecraft.
-     *
-     */
-    static readonly polishedBlackstonePressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of polished blackstone within Minecraft.
-     *
-     */
-    static readonly polishedBlackstoneSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of polished blackstone stairs within
-     * Minecraft.
-     *
-     */
-    static readonly polishedBlackstoneStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a polished blackstone wall within Minecraft.
-     *
-     */
-    static readonly polishedBlackstoneWall: BlockType;
-    /**
-     * @remarks
-     * Represents a block of polished deepslate within Minecraft.
-     *
-     */
-    static readonly polishedDeepslate: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of polished deepslate within
-     * Minecraft.
-     *
-     */
-    static readonly polishedDeepslateDoubleSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of polished deepslate within Minecraft.
-     *
-     */
-    static readonly polishedDeepslateSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of polished deepslate stairs within
-     * Minecraft.
-     *
-     */
-    static readonly polishedDeepslateStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a wall of polished deepslate within Minecraft.
-     *
-     */
-    static readonly polishedDeepslateWall: BlockType;
-    /**
-     * @remarks
-     * Represents a block of polished diorite within Minecraft.
-     *
-     */
-    static readonly polishedDioriteStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a set of polished granite stairs within
-     * Minecraft.
-     *
-     */
-    static readonly polishedGraniteStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a portal within Minecraft.
-     *
-     */
-    static readonly portal: BlockType;
-    /**
-     * @remarks
-     * Represents a set of potatoes within Minecraft.
-     *
-     */
-    static readonly potatoes: BlockType;
-    /**
-     * @remarks
-     * Represents a block of powder snow within Minecraft.
-     *
-     */
-    static readonly powderSnow: BlockType;
-    /**
-     * @remarks
-     * Represents a powered comparator within Minecraft.
-     *
-     */
-    static readonly poweredComparator: BlockType;
-    /**
-     * @remarks
-     * Represents a powered repeater within Minecraft.
-     *
-     */
-    static readonly poweredRepeater: BlockType;
-    /**
-     * @remarks
-     * Represents a block of prismarine within Minecraft.
-     *
-     */
-    static readonly prismarine: BlockType;
-    /**
-     * @remarks
-     * Represents a set of prismarine brick stairs within
-     * Minecraft.
-     *
-     */
-    static readonly prismarineBricksStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a set of prismarine stairs within Minecraft.
-     *
-     */
-    static readonly prismarineStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a pumpkin within Minecraft.
-     *
-     */
-    static readonly pumpkin: BlockType;
-    /**
-     * @remarks
-     * Represents a pumpkin stem within Minecraft.
-     *
-     */
-    static readonly pumpkinStem: BlockType;
-    /**
-     * @remarks
-     * Represents a purple candle within Minecraft.
-     *
-     */
-    static readonly purpleCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a purple colored candle cake within Minecraft.
-     *
-     */
-    static readonly purpleCandleCake: BlockType;
-    static readonly purpleCarpet: BlockType;
-    static readonly purpleConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a purple-colored block of glazed terracotta
-     * within Minecraft.
-     *
-     */
-    static readonly purpleGlazedTerracotta: BlockType;
-    static readonly purpleShulkerBox: BlockType;
-    static readonly purpleStainedGlass: BlockType;
-    static readonly purpleStainedGlassPane: BlockType;
-    static readonly purpleWool: BlockType;
-    /**
-     * @remarks
-     * Represents a purpur block within Minecraft.
-     *
-     */
-    static readonly purpurBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a set of purpur stairs within Minecraft.
-     *
-     */
-    static readonly purpurStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a block of solid quartz within Minecraft.
-     *
-     */
-    static readonly quartzBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a block of solid quartz bricks within Minecraft.
-     *
-     */
-    static readonly quartzBricks: BlockType;
-    /**
-     * @remarks
-     * Represents a block with embedded quartz ore within
-     * Minecraft.
-     *
-     */
-    static readonly quartzOre: BlockType;
-    /**
-     * @remarks
-     * Represents a set of quartz stairs within Minecraft.
-     *
-     */
-    static readonly quartzStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a set of rails within Minecraft.
-     *
-     */
-    static readonly rail: BlockType;
-    /**
-     * @remarks
-     * Represents a block of raw copper within Minecraft.
-     *
-     */
-    static readonly rawCopperBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a block of raw gold within Minecraft.
-     *
-     */
-    static readonly rawGoldBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a block of raw iron within Minecraft.
-     *
-     */
-    static readonly rawIronBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a red candle within Minecraft.
-     *
-     */
-    static readonly redCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a red candle cake within Minecraft.
-     *
-     */
-    static readonly redCandleCake: BlockType;
-    static readonly redCarpet: BlockType;
-    static readonly redConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a red flower within Minecraft.
-     *
-     */
-    static readonly redFlower: BlockType;
-    /**
-     * @remarks
-     * Represents a red-colored block of glazed terracotta within
-     * Minecraft.
-     *
-     */
-    static readonly redGlazedTerracotta: BlockType;
-    /**
-     * @remarks
-     * Represents a red mushroom within Minecraft.
-     *
-     */
-    static readonly redMushroom: BlockType;
-    /**
-     * @remarks
-     * Represents a block of red mushroom within Minecraft.
-     *
-     */
-    static readonly redMushroomBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a block of red nether brick within Minecraft.
-     *
-     */
-    static readonly redNetherBrick: BlockType;
-    /**
-     * @remarks
-     * Represents a set of red nether brick stairs within
-     * Minecraft.
-     *
-     */
-    static readonly redNetherBrickStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a block of red sandstone within Minecraft.
-     *
-     */
-    static readonly redSandstone: BlockType;
-    /**
-     * @remarks
-     * Represents a set of red sandstone stairs within Minecraft.
-     *
-     */
-    static readonly redSandstoneStairs: BlockType;
-    static readonly redShulkerBox: BlockType;
-    static readonly redStainedGlass: BlockType;
-    static readonly redStainedGlassPane: BlockType;
-    /**
-     * @remarks
-     * Represents a block of redstone within Minecraft.
-     *
-     */
-    static readonly redstoneBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a redstone lamp within Minecraft.
-     *
-     */
-    static readonly redstoneLamp: BlockType;
-    /**
-     * @remarks
-     * Represents a block with embedded redstone ore within
-     * Minecraft.
-     *
-     */
-    static readonly redstoneOre: BlockType;
-    /**
-     * @remarks
-     * Represents a redstone torch within Minecraft.
-     *
-     */
-    static readonly redstoneTorch: BlockType;
-    /**
-     * @remarks
-     * Represents a redstone wire within Minecraft.
-     *
-     */
-    static readonly redstoneWire: BlockType;
-    static readonly redWool: BlockType;
-    /**
-     * @remarks
-     * Represents reeds within Minecraft.
-     *
-     */
-    static readonly reeds: BlockType;
-    static readonly reinforcedDeepslate: BlockType;
-    /**
-     * @remarks
-     * Represents a repeating command block within Minecraft.
-     *
-     */
-    static readonly repeatingCommandBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a reserved block within Minecraft.
-     *
-     */
-    static readonly reserved6: BlockType;
-    /**
-     * @remarks
-     * Represents a respawn anchor within Minecraft.
-     *
-     */
-    static readonly respawnAnchor: BlockType;
-    /**
-     * @remarks
-     * Represents a block of sand within Minecraft.
-     *
-     */
-    static readonly sand: BlockType;
-    /**
-     * @remarks
-     * Represents a block of sandstone within Minecraft.
-     *
-     */
-    static readonly sandstone: BlockType;
-    /**
-     * @remarks
-     * Represents a set of sandstone stairs within Minecraft.
-     *
-     */
-    static readonly sandstoneStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a sapling within Minecraft.
-     *
-     */
-    static readonly sapling: BlockType;
-    /**
-     * @remarks
-     * Represents a set of scaffolding within Minecraft.
-     *
-     */
-    static readonly scaffolding: BlockType;
-    static readonly sculk: BlockType;
-    static readonly sculkCatalyst: BlockType;
-    /**
-     * @remarks
-     * Represents a sculk sensor within Minecraft.
-     *
-     */
-    static readonly sculkSensor: BlockType;
-    static readonly sculkShrieker: BlockType;
-    static readonly sculkVein: BlockType;
-    /**
-     * @remarks
-     * Represents seagrass within Minecraft.
-     *
-     */
-    static readonly seagrass: BlockType;
-    /**
-     * @remarks
-     * Represents a sealantern within Minecraft.
-     *
-     */
-    static readonly seaLantern: BlockType;
-    /**
-     * @remarks
-     * Represents a seapickle within Minecraft.
-     *
-     */
-    static readonly seaPickle: BlockType;
-    /**
-     * @remarks
-     * Represents a shroom light within Minecraft.
-     *
-     */
-    static readonly shroomlight: BlockType;
-    /**
-     * @remarks
-     * Represents a silver-colored block of glazed terracotta
-     * within Minecraft.
-     *
-     */
-    static readonly silverGlazedTerracotta: BlockType;
-    /**
-     * @remarks
-     * Represents a skull within Minecraft.
-     *
-     */
-    static readonly skull: BlockType;
-    /**
-     * @remarks
-     * Represents slime within Minecraft.
-     *
-     */
-    static readonly slime: BlockType;
-    /**
-     * @remarks
-     * Represents a small bud of amethyst within Minecraft.
-     *
-     */
-    static readonly smallAmethystBud: BlockType;
-    /**
-     * @remarks
-     * Represents a small dripleaf block within Minecraft.
-     *
-     */
-    static readonly smallDripleafBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a smithing table within Minecraft.
-     *
-     */
-    static readonly smithingTable: BlockType;
-    /**
-     * @remarks
-     * Represents a smoker within Minecraft.
-     *
-     */
-    static readonly smoker: BlockType;
-    /**
-     * @remarks
-     * Represents a block of smooth basalt within Minecraft.
-     *
-     */
-    static readonly smoothBasalt: BlockType;
-    /**
-     * @remarks
-     * Represents a set of smooth quartz stairs within Minecraft.
-     *
-     */
-    static readonly smoothQuartzStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a set of smooth red sandstone stairs within
-     * Minecraft.
-     *
-     */
-    static readonly smoothRedSandstoneStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a set of smooth redstone stairs within Minecraft.
-     *
-     */
-    static readonly smoothSandstoneStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a smooth stone block within Minecraft.
-     *
-     */
-    static readonly smoothStone: BlockType;
-    static readonly snifferEgg: BlockType;
-    /**
-     * @remarks
-     * Represents snow within Minecraft.
-     *
-     */
-    static readonly snow: BlockType;
-    /**
-     * @remarks
-     * Represents a layer of snow within Minecraft.
-     *
-     */
-    static readonly snowLayer: BlockType;
-    /**
-     * @remarks
-     * Represents a soul campfire within Minecraft.
-     *
-     */
-    static readonly soulCampfire: BlockType;
-    /**
-     * @remarks
-     * Represents soul fire within Minecraft.
-     *
-     */
-    static readonly soulFire: BlockType;
-    /**
-     * @remarks
-     * Represents a soul lantern within Minecraft.
-     *
-     */
-    static readonly soulLantern: BlockType;
-    /**
-     * @remarks
-     * Represents a block of soul sand within Minecraft.
-     *
-     */
-    static readonly soulSand: BlockType;
-    /**
-     * @remarks
-     * Represents soul soil within Minecraft.
-     *
-     */
-    static readonly soulSoil: BlockType;
-    /**
-     * @remarks
-     * Represents a soul torch within Minecraft.
-     *
-     */
-    static readonly soulTorch: BlockType;
-    /**
-     * @remarks
-     * Represents a sponge within Minecraft.
-     *
-     */
-    static readonly sponge: BlockType;
-    /**
-     * @remarks
-     * Represents a spore blossom within Minecraft.
-     *
-     */
-    static readonly sporeBlossom: BlockType;
-    /**
-     * @remarks
-     * Represents a spruce wood button within Minecraft.
-     *
-     */
-    static readonly spruceButton: BlockType;
-    /**
-     * @remarks
-     * Represents a spruce wood door within Minecraft.
-     *
-     */
-    static readonly spruceDoor: BlockType;
-    static readonly spruceFence: BlockType;
-    /**
-     * @remarks
-     * Represents a spruce wood fence gate within Minecraft.
-     *
-     */
-    static readonly spruceFenceGate: BlockType;
-    static readonly spruceHangingSign: BlockType;
-    static readonly spruceLog: BlockType;
-    /**
-     * @remarks
-     * Represents a spruce wood pressure plate within Minecraft.
-     *
-     */
-    static readonly sprucePressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a set of spruce wood stairs within Minecraft.
-     *
-     */
-    static readonly spruceStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a spruce wood standing sign within Minecraft.
-     *
-     */
-    static readonly spruceStandingSign: BlockType;
-    /**
-     * @remarks
-     * Represents a spruce wood trapdoor within Minecraft.
-     *
-     */
-    static readonly spruceTrapdoor: BlockType;
-    /**
-     * @remarks
-     * Represents a spruce wood wall sign within Minecraft.
-     *
-     */
-    static readonly spruceWallSign: BlockType;
-    /**
-     * @remarks
-     * Represents a block of stained hardened clay within
-     * Minecraft.
-     *
-     */
-    static readonly stainedHardenedClay: BlockType;
-    /**
-     * @remarks
-     * Represents a standing banner within Minecraft.
-     *
-     */
-    static readonly standingBanner: BlockType;
-    /**
-     * @remarks
-     * Represents a standing sign within Minecraft.
-     *
-     */
-    static readonly standingSign: BlockType;
-    /**
-     * @remarks
-     * Represents a piston block with a sticky arm within
-     * Minecraft.
-     *
-     */
-    static readonly stickyPiston: BlockType;
-    static readonly stickyPistonArmCollision: BlockType;
-    /**
-     * @remarks
-     * Represents a block of stone within Minecraft.
-     *
-     */
-    static readonly stone: BlockType;
-    static readonly stoneBlockSlab: BlockType;
-    static readonly stoneBlockSlab2: BlockType;
-    static readonly stoneBlockSlab3: BlockType;
-    static readonly stoneBlockSlab4: BlockType;
-    /**
-     * @remarks
-     * Represents a block of stone brick within Minecraft.
-     *
-     */
-    static readonly stonebrick: BlockType;
-    /**
-     * @remarks
-     * Represents a set of stone brick stairs within Minecraft.
-     *
-     */
-    static readonly stoneBrickStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a stone button within Minecraft.
-     *
-     */
-    static readonly stoneButton: BlockType;
-    /**
-     * @remarks
-     * Represents a stonecutter within Minecraft.
-     *
-     */
-    static readonly stonecutter: BlockType;
-    /**
-     * @remarks
-     * Represents a stonecutter block within Minecraft.
-     *
-     */
-    static readonly stonecutterBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a stone pressure plate within Minecraft.
-     *
-     */
-    static readonly stonePressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of stone within Minecraft.
-     *
-     */
-    static readonly stoneSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a variant of a slab of stone (#2) within
-     * Minecraft.
-     *
-     */
-    static readonly stoneSlab2: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of stone (variant #3) within Minecraft.
-     *
-     */
-    static readonly stoneSlab3: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of stone (variant #4) within Minecraft.
-     *
-     */
-    static readonly stoneSlab4: BlockType;
-    /**
-     * @remarks
-     * Represents a set of stone stairs within Minecraft.
-     *
-     */
-    static readonly stoneStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a stripped acacia log within Minecraft.
-     *
-     */
-    static readonly strippedAcaciaLog: BlockType;
-    static readonly strippedBambooBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a stripped birch log within Minecraft.
-     *
-     */
-    static readonly strippedBirchLog: BlockType;
-    static readonly strippedCherryLog: BlockType;
-    static readonly strippedCherryWood: BlockType;
-    /**
-     * @remarks
-     * Represents stripped crimson hyphae within Minecraft.
-     *
-     */
-    static readonly strippedCrimsonHyphae: BlockType;
-    /**
-     * @remarks
-     * Represents a stripped crimson stem within Minecraft.
-     *
-     */
-    static readonly strippedCrimsonStem: BlockType;
-    /**
-     * @remarks
-     * Represents a stripped dark oak log within Minecraft.
-     *
-     */
-    static readonly strippedDarkOakLog: BlockType;
-    /**
-     * @remarks
-     * Represents a stripped jungle log within Minecraft.
-     *
-     */
-    static readonly strippedJungleLog: BlockType;
-    static readonly strippedMangroveLog: BlockType;
-    static readonly strippedMangroveWood: BlockType;
-    /**
-     * @remarks
-     * Represents a stripped oak log within Minecraft.
-     *
-     */
-    static readonly strippedOakLog: BlockType;
-    /**
-     * @remarks
-     * Represents a stripped spruce log within Minecraft.
-     *
-     */
-    static readonly strippedSpruceLog: BlockType;
-    /**
-     * @remarks
-     * Represents stripped warped hyphae within Minecraft.
-     *
-     */
-    static readonly strippedWarpedHyphae: BlockType;
-    /**
-     * @remarks
-     * Represents stripped warped stem within Minecraft.
-     *
-     */
-    static readonly strippedWarpedStem: BlockType;
-    /**
-     * @remarks
-     * Represents a structure block, which provides for the saving
-     * and loading of block structures, within Minecraft.
-     *
-     */
-    static readonly structureBlock: BlockType;
-    /**
-     * @remarks
-     * Represents a structure void within Minecraft.
-     *
-     */
-    static readonly structureVoid: BlockType;
-    static readonly suspiciousGravel: BlockType;
-    static readonly suspiciousSand: BlockType;
-    /**
-     * @remarks
-     * Represents a sweet berry bush within Minecraft.
-     *
-     */
-    static readonly sweetBerryBush: BlockType;
-    /**
-     * @remarks
-     * Represents tall grass within Minecraft.
-     *
-     */
-    static readonly tallgrass: BlockType;
-    /**
-     * @remarks
-     * Represents a target within Minecraft.
-     *
-     */
-    static readonly target: BlockType;
-    /**
-     * @remarks
-     * Represents tinted glass within Minecraft.
-     *
-     */
-    static readonly tintedGlass: BlockType;
-    /**
-     * @remarks
-     * Represents a block of TnT within Minecraft.
-     *
-     */
-    static readonly tnt: BlockType;
-    /**
-     * @remarks
-     * Represents a torch within Minecraft.
-     *
-     */
-    static readonly torch: BlockType;
-    static readonly torchflower: BlockType;
-    static readonly torchflowerCrop: BlockType;
-    /**
-     * @remarks
-     * Represents a trapdoor within Minecraft.
-     *
-     */
-    static readonly trapdoor: BlockType;
-    /**
-     * @remarks
-     * Represents a trapped chest within Minecraft.
-     *
-     */
-    static readonly trappedChest: BlockType;
-    static readonly tripWire: BlockType;
-    /**
-     * @remarks
-     * Represents a tripwire hook within Minecraft.
-     *
-     */
-    static readonly tripwireHook: BlockType;
-    static readonly tubeCoral: BlockType;
-    /**
-     * @remarks
-     * Represents a block of tuff within Minecraft.
-     *
-     */
-    static readonly tuff: BlockType;
-    /**
-     * @remarks
-     * Represents a turtle egg within Minecraft.
-     *
-     */
-    static readonly turtleEgg: BlockType;
-    /**
-     * @remarks
-     * Represents a set of twisting vines within Minecraft.
-     *
-     */
-    static readonly twistingVines: BlockType;
-    /**
-     * @remarks
-     * Represents an underwater torch within Minecraft.
-     *
-     */
-    static readonly underwaterTorch: BlockType;
-    /**
-     * @remarks
-     * Represents an undyed shulker box within Minecraft.
-     *
-     */
-    static readonly undyedShulkerBox: BlockType;
-    /**
-     * @remarks
-     * Represents an unknown block within Minecraft.
-     *
-     */
-    static readonly unknown: BlockType;
-    /**
-     * @remarks
-     * Represents an unlit redstone torch within Minecraft.
-     *
-     */
-    static readonly unlitRedstoneTorch: BlockType;
-    /**
-     * @remarks
-     * Represents an unpowered comparator within Minecraft.
-     *
-     */
-    static readonly unpoweredComparator: BlockType;
-    /**
-     * @remarks
-     * Represents an unpowered repeater within Minecraft.
-     *
-     */
-    static readonly unpoweredRepeater: BlockType;
-    static readonly verdantFroglight: BlockType;
-    /**
-     * @remarks
-     * Represents a set of vines within Minecraft.
-     *
-     */
-    static readonly vine: BlockType;
-    /**
-     * @remarks
-     * Represents a wall banner within Minecraft.
-     *
-     */
-    static readonly wallBanner: BlockType;
-    /**
-     * @remarks
-     * Represents a wall sign within Minecraft.
-     *
-     */
-    static readonly wallSign: BlockType;
-    /**
-     * @remarks
-     * Represents a warped button within Minecraft.
-     *
-     */
-    static readonly warpedButton: BlockType;
-    /**
-     * @remarks
-     * Represents a warped door within Minecraft.
-     *
-     */
-    static readonly warpedDoor: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of warped within Minecraft.
-     *
-     */
-    static readonly warpedDoubleSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a warped fence within Minecraft.
-     *
-     */
-    static readonly warpedFence: BlockType;
-    /**
-     * @remarks
-     * Represents a warped fence gate within Minecraft.
-     *
-     */
-    static readonly warpedFenceGate: BlockType;
-    /**
-     * @remarks
-     * Represents warped fungus within Minecraft.
-     *
-     */
-    static readonly warpedFungus: BlockType;
-    static readonly warpedHangingSign: BlockType;
-    /**
-     * @remarks
-     * Represents warped hyphae within Minecraft.
-     *
-     */
-    static readonly warpedHyphae: BlockType;
-    /**
-     * @remarks
-     * Represents warped nylium within Minecraft.
-     *
-     */
-    static readonly warpedNylium: BlockType;
-    /**
-     * @remarks
-     * Represents warped planks within Minecraft.
-     *
-     */
-    static readonly warpedPlanks: BlockType;
-    /**
-     * @remarks
-     * Represents a warped pressure plate within Minecraft.
-     *
-     */
-    static readonly warpedPressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a set of warped roots within Minecraft.
-     *
-     */
-    static readonly warpedRoots: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of warped material within Minecraft.
-     *
-     */
-    static readonly warpedSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of warped stairs within Minecraft.
-     *
-     */
-    static readonly warpedStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a warped standing sign within Minecraft.
-     *
-     */
-    static readonly warpedStandingSign: BlockType;
-    /**
-     * @remarks
-     * Represents a warped stem within Minecraft.
-     *
-     */
-    static readonly warpedStem: BlockType;
-    /**
-     * @remarks
-     * Represents a warped trapdoor within Minecraft.
-     *
-     */
-    static readonly warpedTrapdoor: BlockType;
-    /**
-     * @remarks
-     * Represents a warped wall sign within Minecraft.
-     *
-     */
-    static readonly warpedWallSign: BlockType;
-    /**
-     * @remarks
-     * Represents a warped wart block within Minecraft.
-     *
-     */
-    static readonly warpedWartBlock: BlockType;
-    /**
-     * @remarks
-     * Represents water within Minecraft.
-     *
-     */
-    static readonly water: BlockType;
-    /**
-     * @remarks
-     * Represents a water lily within Minecraft.
-     *
-     */
-    static readonly waterlily: BlockType;
-    /**
-     * @remarks
-     * Represents a block of waxed copper within Minecraft.
-     *
-     */
-    static readonly waxedCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a block of waxed cut copper within Minecraft.
-     *
-     */
-    static readonly waxedCutCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of waxed cut copper within Minecraft.
-     *
-     */
-    static readonly waxedCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of waxed cut copper stairs within
-     * Minecraft.
-     *
-     */
-    static readonly waxedCutCopperStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of waxed cut copper within
-     * Minecraft.
-     *
-     */
-    static readonly waxedDoubleCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a block of waxed exposed copper within Minecraft.
-     *
-     */
-    static readonly waxedExposedCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a block of waxed exposed cut copper within
-     * Minecraft.
-     *
-     */
-    static readonly waxedExposedCutCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of waxed exposed cut copper within
-     * Minecraft.
-     *
-     */
-    static readonly waxedExposedCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of waxed exposed cut copper stairs within
-     * Minecraft.
-     *
-     */
-    static readonly waxedExposedCutCopperStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of waxed exposed cut copper within
-     * Minecraft.
-     *
-     */
-    static readonly waxedExposedDoubleCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a block of waxed oxidized copper within
-     * Minecraft.
-     *
-     */
-    static readonly waxedOxidizedCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a block of waxed oxidized cut copper within
-     * Minecraft.
-     *
-     */
-    static readonly waxedOxidizedCutCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of waxed oxidized cut copper within
-     * Minecraft.
-     *
-     */
-    static readonly waxedOxidizedCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of waxed oxidized cut copper stairs within
-     * Minecraft.
-     *
-     */
-    static readonly waxedOxidizedCutCopperStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of waxed oxidized cut copper within
-     * Minecraft.
-     *
-     */
-    static readonly waxedOxidizedDoubleCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a block of waxed weathered copper within
-     * Minecraft.
-     *
-     */
-    static readonly waxedWeatheredCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a block of waxed weathered cut copper within
-     * Minecraft.
-     *
-     */
-    static readonly waxedWeatheredCutCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of waxed weathered cut copper within
-     * Minecraft.
-     *
-     */
-    static readonly waxedWeatheredCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of waxed weathered cut copper stairs within
-     * Minecraft.
-     *
-     */
-    static readonly waxedWeatheredCutCopperStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of waxed weathered cut copper
-     * within Minecraft.
-     *
-     */
-    static readonly waxedWeatheredDoubleCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a block of weathered copper within Minecraft.
-     *
-     */
-    static readonly weatheredCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a block of weathered cut copper within Minecraft.
-     *
-     */
-    static readonly weatheredCutCopper: BlockType;
-    /**
-     * @remarks
-     * Represents a slab of weathered cut copper within Minecraft.
-     *
-     */
-    static readonly weatheredCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a set of weathered cut copper stairs within
-     * Minecraft.
-     *
-     */
-    static readonly weatheredCutCopperStairs: BlockType;
-    /**
-     * @remarks
-     * Represents a double slab of weathered cut copper within
-     * Minecraft.
-     *
-     */
-    static readonly weatheredDoubleCutCopperSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a web within Minecraft.
-     *
-     */
-    static readonly web: BlockType;
-    /**
-     * @remarks
-     * Represents a set of weeping vines within Minecraft.
-     *
-     */
-    static readonly weepingVines: BlockType;
-    /**
-     * @remarks
-     * Represents wheat within Minecraft.
-     *
-     */
-    static readonly wheat: BlockType;
-    /**
-     * @remarks
-     * Represents a white candle within Minecraft.
-     *
-     */
-    static readonly whiteCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a white candle cake within Minecraft.
-     *
-     */
-    static readonly whiteCandleCake: BlockType;
-    static readonly whiteCarpet: BlockType;
-    static readonly whiteConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a block of white glazed terracotta within
-     * Minecraft.
-     *
-     */
-    static readonly whiteGlazedTerracotta: BlockType;
-    static readonly whiteShulkerBox: BlockType;
-    static readonly whiteStainedGlass: BlockType;
-    static readonly whiteStainedGlassPane: BlockType;
-    static readonly whiteWool: BlockType;
-    /**
-     * @remarks
-     * Represents a wither rose within Minecraft.
-     *
-     */
-    static readonly witherRose: BlockType;
-    /**
-     * @remarks
-     * Represents a block of wood within Minecraft.
-     *
-     */
-    static readonly wood: BlockType;
-    /**
-     * @remarks
-     * Represents a wooden button within Minecraft.
-     *
-     */
-    static readonly woodenButton: BlockType;
-    /**
-     * @remarks
-     * Represents a wooden door within Minecraft.
-     *
-     */
-    static readonly woodenDoor: BlockType;
-    /**
-     * @remarks
-     * Represents a wooden pressure plate within Minecraft.
-     *
-     */
-    static readonly woodenPressurePlate: BlockType;
-    /**
-     * @remarks
-     * Represents a wooden slab within Minecraft.
-     *
-     */
-    static readonly woodenSlab: BlockType;
-    /**
-     * @remarks
-     * Represents a yellow candle within Minecraft.
-     *
-     */
-    static readonly yellowCandle: BlockType;
-    /**
-     * @remarks
-     * Represents a yellow candle cake within Minecraft.
-     *
-     */
-    static readonly yellowCandleCake: BlockType;
-    static readonly yellowCarpet: BlockType;
-    static readonly yellowConcrete: BlockType;
-    /**
-     * @remarks
-     * Represents a yellow flower within Minecraft.
-     *
-     */
-    static readonly yellowFlower: BlockType;
-    /**
-     * @remarks
-     * Represents a yellow block of glazed terracotta within
-     * Minecraft.
-     *
-     */
-    static readonly yellowGlazedTerracotta: BlockType;
-    static readonly yellowShulkerBox: BlockType;
-    static readonly yellowStainedGlass: BlockType;
-    static readonly yellowStainedGlassPane: BlockType;
-    static readonly yellowWool: BlockType;
-    /**
-     * @remarks
-     * Returns a specific Minecraft block type given a type id.
-     *
-     */
-    static get(typeName: string): BlockType;
-    /**
-     * @remarks
-     * Returns an array of all block types within Minecraft.
-     *
-     */
-    static getAllBlockTypes(): BlockType[];
-}
-
-/**
  * DEPRECATED
  * Use @minecraft/vanilla-data.MinecraftDimensionTypes
  * A collection of default Minecraft dimension types.
@@ -14008,6 +9582,11 @@ export class Player extends Entity {
     private constructor();
     /**
      * @beta
+     * @throws This property can throw when used.
+     */
+    readonly camera: Camera;
+    /**
+     * @beta
      * @remarks
      * Whether the player is flying. For example, in Creative or
      * Spectator mode.
@@ -14564,46 +10143,154 @@ export class PressurePlatePushAfterEventSignal {
 
 /**
  * @beta
+ * Contains information related to a projectile hitting a
+ * block.
  */
-export class ProjectileHitAfterEvent {
+export class ProjectileHitBlockAfterEvent {
     private constructor();
+    /**
+     * @remarks
+     * Dimension where this projectile hit took place.
+     *
+     */
     readonly dimension: Dimension;
+    /**
+     * @remarks
+     * Direction vector of the projectile as it hit a block.
+     *
+     */
     readonly hitVector: Vector3;
+    /**
+     * @remarks
+     * Location where the projectile hit occurred.
+     *
+     */
     readonly location: Vector3;
+    /**
+     * @remarks
+     * Entity for the projectile that hit a block.
+     *
+     */
     readonly projectile: Entity;
-    readonly source: Entity;
     /**
      * @remarks
+     * Optional source entity that fired the projectile.
+     *
+     */
+    readonly source?: Entity;
+    /**
+     * @remarks
+     * Contains additional information about the block that was hit
+     * by the projectile.
+     *
      * This function can't be called in read-only mode.
      *
      */
-    getBlockHit(): BlockHitInformation | undefined;
-    /**
-     * @remarks
-     * This function can't be called in read-only mode.
-     *
-     */
-    getEntityHit(): EntityHitInformation | undefined;
+    getBlockHit(): BlockHitInformation;
 }
 
 /**
  * @beta
+ * Manages callbacks that are connected to when a projectile
+ * hits a block.
  */
-export class ProjectileHitAfterEventSignal {
+export class ProjectileHitBlockAfterEventSignal {
     private constructor();
     /**
      * @remarks
+     * Adds a callback that will be called when a projectile hits a
+     * block.
+     *
      * This function can't be called in read-only mode.
      *
      */
-    subscribe(callback: (arg: ProjectileHitAfterEvent) => void): (arg: ProjectileHitAfterEvent) => void;
+    subscribe(callback: (arg: ProjectileHitBlockAfterEvent) => void): (arg: ProjectileHitBlockAfterEvent) => void;
     /**
      * @remarks
+     * Removes a callback from being called when a projectile hits
+     * a block.
+     *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    unsubscribe(callback: (arg: ProjectileHitAfterEvent) => void): void;
+    unsubscribe(callback: (arg: ProjectileHitBlockAfterEvent) => void): void;
+}
+
+/**
+ * @beta
+ * Contains information related to a projectile hitting an
+ * entity.
+ */
+export class ProjectileHitEntityAfterEvent {
+    private constructor();
+    /**
+     * @remarks
+     * Dimension where this projectile hit took place.
+     *
+     */
+    readonly dimension: Dimension;
+    /**
+     * @remarks
+     * Direction vector of the projectile as it hit an entity.
+     *
+     */
+    readonly hitVector: Vector3;
+    /**
+     * @remarks
+     * Location where the projectile hit occurred.
+     *
+     */
+    readonly location: Vector3;
+    /**
+     * @remarks
+     * Entity for the projectile that hit an entity.
+     *
+     */
+    readonly projectile: Entity;
+    /**
+     * @remarks
+     * Optional source entity that fired the projectile.
+     *
+     */
+    readonly source?: Entity;
+    /**
+     * @remarks
+     * Contains additional information about an entity that was
+     * hit.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    getEntityHit(): EntityHitInformation;
+}
+
+/**
+ * @beta
+ * Manages callbacks that are connected to when a projectile
+ * hits an entity.
+ */
+export class ProjectileHitEntityAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * Adds a callback that will be called when a projectile hits
+     * an entity.
+     *
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(callback: (arg: ProjectileHitEntityAfterEvent) => void): (arg: ProjectileHitEntityAfterEvent) => void;
+    /**
+     * @remarks
+     * Removes a callback from being called when a projectile hits
+     * an entity.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: ProjectileHitEntityAfterEvent) => void): void;
 }
 
 /**
@@ -14659,38 +10346,33 @@ export class Scoreboard {
      *
      * This function can't be called in read-only mode.
      *
-     * @throws This function can throw errors.
      */
-    clearObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId): ScoreboardObjective;
+    clearObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId): ScoreboardObjective | undefined;
     /**
      * @remarks
      * Returns a specific objective (by id).
      *
      * @param objectiveId
      * Identifier of the objective.
-     * @throws This function can throw errors.
      */
-    getObjective(objectiveId: string): ScoreboardObjective;
+    getObjective(objectiveId: string): ScoreboardObjective | undefined;
     /**
      * @remarks
      * Returns an objective that occupies the specified display
      * slot.
      *
-     * @throws This function can throw errors.
      */
-    getObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId): ScoreboardObjectiveDisplayOptions;
+    getObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId): ScoreboardObjectiveDisplayOptions | undefined;
     /**
      * @remarks
      * Returns all defined objectives.
      *
-     * @throws This function can throw errors.
      */
     getObjectives(): ScoreboardObjective[];
     /**
      * @remarks
      * Returns all defined scoreboard identities.
      *
-     * @throws This function can throw errors.
      */
     getParticipants(): ScoreboardIdentity[];
     /**
@@ -16510,8 +12192,18 @@ export class WorldAfterEvents {
     readonly pressurePlatePush: PressurePlatePushAfterEventSignal;
     /**
      * @beta
+     * @remarks
+     * This event fires when a projectile hits a block.
+     *
      */
-    readonly projectileHit: ProjectileHitAfterEventSignal;
+    readonly projectileHitBlock: ProjectileHitBlockAfterEventSignal;
+    /**
+     * @beta
+     * @remarks
+     * This event fires when a projectile hits an entity.
+     *
+     */
+    readonly projectileHitEntity: ProjectileHitEntityAfterEventSignal;
     /**
      * @beta
      */
@@ -16550,6 +12242,7 @@ export class WorldAfterEvents {
 export class WorldBeforeEvents {
     private constructor();
     /**
+     * @beta
      * @remarks
      * This event is triggered after a chat message has been
      * broadcast or sent to players.
@@ -16572,6 +12265,7 @@ export class WorldBeforeEvents {
      */
     readonly chatSend: ChatSendBeforeEventSignal;
     /**
+     * @beta
      * @remarks
      * This event is fired when an entity event has been triggered
      * that will update the component definition state of an
@@ -16580,12 +12274,14 @@ export class WorldBeforeEvents {
      */
     readonly dataDrivenEntityTriggerEvent: DataDrivenEntityTriggerBeforeEventSignal;
     /**
+     * @beta
      * @remarks
      * This event is fired after an explosion occurs.
      *
      */
     readonly explosion: ExplosionBeforeEventSignal;
     /**
+     * @beta
      * @remarks
      * For custom items, this event is triggered when the
      * fundamental set of defined components for the item change.
@@ -16630,6 +12326,7 @@ export class WorldBeforeEvents {
      */
     readonly itemUseOn: ItemUseOnBeforeEventSignal;
     /**
+     * @beta
      * @remarks
      * This event fires when a piston expands or retracts.
      *
@@ -16875,6 +12572,31 @@ export interface BoundingBox {
      *
      */
     min: Vector3;
+}
+
+/**
+ * @beta
+ */
+export interface CameraEaseOptions {
+    easeTime?: number;
+    easeType?: EasingType;
+}
+
+/**
+ * @beta
+ */
+export interface CameraFadeOptions {
+    fadeColor?: ScriptColorRGB;
+    fadeTime?: CameraFadeTimeOptions;
+}
+
+/**
+ * @beta
+ */
+export interface CameraFadeTimeOptions {
+    fadeInTime: number;
+    fadeOutTime: number;
+    holdTime: number;
 }
 
 /**
@@ -17556,6 +13278,57 @@ export interface ScoreboardObjectiveDisplayOptions {
 
 /**
  * @beta
+ */
+export interface ScriptCameraDefaultOptions {
+    easeOptions: CameraEaseOptions;
+}
+
+/**
+ * @beta
+ */
+export interface ScriptCameraSetFacingOptions {
+    easeOptions?: CameraEaseOptions;
+    facingEntity: Entity;
+    location?: Vector3;
+}
+
+/**
+ * @beta
+ */
+export interface ScriptCameraSetLocationOptions {
+    easeOptions?: CameraEaseOptions;
+    location: Vector3;
+}
+
+/**
+ * @beta
+ */
+export interface ScriptCameraSetPosOptions {
+    easeOptions?: CameraEaseOptions;
+    facingLocation: Vector3;
+    location?: Vector3;
+}
+
+/**
+ * @beta
+ */
+export interface ScriptCameraSetRotOptions {
+    easeOptions?: CameraEaseOptions;
+    location?: Vector3;
+    rotation: Vector2;
+}
+
+/**
+ * @beta
+ */
+export interface ScriptColorRGB {
+    blue: number;
+    green: number;
+    red: number;
+}
+
+/**
+ * @beta
  * Contains additional options for registering a script event
  * event callback.
  */
@@ -17724,7 +13497,7 @@ export class CommandError extends Error {
  * @beta
  */
 // @ts-ignore Class inheritance allowed for native defined classes
-export class PositionInUnloadedChunkError extends Error {
+export class LocationInUnloadedChunkError extends Error {
     private constructor();
 }
 
@@ -17732,7 +13505,7 @@ export class PositionInUnloadedChunkError extends Error {
  * @beta
  */
 // @ts-ignore Class inheritance allowed for native defined classes
-export class PositionOutOfWorldBoundariesError extends Error {
+export class LocationOutOfWorldBoundariesError extends Error {
     private constructor();
 }
 
