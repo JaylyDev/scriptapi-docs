@@ -35,6 +35,13 @@ jobs:
           ADSENSE_CLIENT: ${{ secrets.ADSENSE_CLIENT }}
           MEASURE_ID: ${{ secrets.MEASURE_ID }}
 
+      - name: Upload Docs
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          add: ./lib
+          message: "Uploaded Script API Docs - ${{ github.event.inputs.add_version }}"
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -43,10 +50,3 @@ jobs:
           publish_dir: ./docs/.vuepress/dist
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Upload Docs
-        uses: EndBug/add-and-commit@v9
-        with:
-          default_author: github_actions
-          add: ./lib
-          message: "Uploaded Script API Docs - ${{ github.event.inputs.add_version }}"
