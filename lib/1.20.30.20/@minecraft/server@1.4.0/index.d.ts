@@ -947,6 +947,23 @@ export class Dimension {
      *     }
      *   }
      * ```
+     * @example getFilteredEntities.ts
+     * ```ts
+     * const entityQueryOptions: EntityQueryOptions = {
+     *     families: ["mob", "animal"],
+     *     excludeTypes: ["cow"],
+     *     maxDistance: 50,
+     *     excludeGameModes: [GameMode.Creative, GameMode.Spectator],
+     * };
+     *
+     * const filteredEntities = world
+     *     .getDimension("overworld")
+     *     .getEntities(entityQueryOptions);
+     * console.log(
+     *     "Filtered Entities:",
+     *     filteredEntities.map((entity) => entity.typeId)
+     * );
+     * ```
      */
     getEntities(options?: EntityQueryOptions): Entity[];
     /**
@@ -982,6 +999,24 @@ export class Dimension {
      * @returns
      * A player array.
      * @throws This function can throw errors.
+     * @example getFilteredPlayersInOverworld.ts
+     * ```ts
+     * const entityQueryOptions: EntityQueryOptions = {
+     *     maxDistance: 100,
+     *     scoreOptions: [
+     *         { objective: "kills", minScore: 10 },
+     *         { objective: "deaths", maxScore: 5 },
+     *     ],
+     * };
+     *
+     * const filteredPlayers = world
+     *     .getDimension("overworld")
+     *     .getPlayers(entityQueryOptions);
+     * console.log(
+     *     "Filtered Players in Overworld:",
+     *     filteredPlayers.map((player) => player.name)
+     * );
+     * ```
      */
     getPlayers(options?: EntityQueryOptions): Player[];
     /**
@@ -1523,63 +1558,6 @@ export class Entity {
      * @returns
      * Returns the component if it exists on the entity, otherwise
      * undefined.
-     * @example getAddRiderComponent.js
-     * ```js
-     * const getAddRiderComponent = entity.getComponent("addrider");
-     * getAddRiderComponent.entityType;
-     * getAddRiderComponent.spawnEvent;
-     * ```
-     * @example getAgeableComponent.js
-     * ```js
-     * const getAgeableComponent = entity.getComponent("ageable");
-     * getAgeableComponent.duration;
-     * const growUp = getAgeableComponent.growUp;
-     * getAgeableComponent.getDropItems();
-     * getAgeableComponent.getFeedItems();
-     * ```
-     * @example getBreathableComponent.js
-     * ```js
-     * const getBreathableComponent = entity.getComponent("breathable");
-     * getBreathableComponent.breathesAir;
-     * getBreathableComponent.breathesLava;
-     * getBreathableComponent.breathesSolids;
-     * getBreathableComponent.breathesWater;
-     * getBreathableComponent.generatesBubbles;
-     * getBreathableComponent.inhaleTime;
-     * getBreathableComponent.suffocateTime;
-     * getBreathableComponent.totalSupply;
-     * getBreathableComponent.getBreatheBlocks();
-     * getBreathableComponent.getNonBreatheBlocks();
-     * getBreathableComponent.setAirSupply(100); // Assuming 100 as an example value
-     * ```
-     * @example getEntityColorComponent.js
-     * ```js
-     * const getEntityColorComponent = entity.getComponent("color");
-     * getEntityColorComponent.value;
-     * ```
-     * @example getEntityEquipmentInventoryComponent.js
-     * ```js
-     * const getEntityEquipmentInventoryComponent = entity.getComponent(
-     *     "equipment_inventory"
-     * );
-     * getEntityEquipmentInventoryComponent.getEquipment(EquipmentSlot.MainHand);
-     * const equipmentSlot = EquipmentSlot.Head;
-     * getEntityEquipmentInventoryComponent.getEquipmentSlot(equipmentSlot);
-     * getEntityEquipmentInventoryComponent.setEquipment(EquipmentSlot.OffHand); // Assuming undefined (empty slot) as an example
-     * ```
-     * @example getEntityFlyingSpeedComponent.js
-     * ```js
-     * const getEntityFlyingSpeedComponent = entity.getComponent("flying_speed");
-     * getEntityFlyingSpeedComponent.value;
-     * ```
-     * @example getEntityHealableComponent.js
-     * ```js
-     * const getEntityHealableComponent = entity.getComponent("healable");
-     * getEntityHealableComponent.filters;
-     * getEntityHealableComponent.forceUse;
-     * getEntityHealableComponent.getFeedItems();
-     * getEntityHealableComponent.isValid();
-     * ```
      * @example getEntityHealthComponent.js
      * ```js
      * const getEntityHealthComponent = entity.getComponent("health");
@@ -1655,90 +1633,6 @@ export class Entity {
      * const getEntityItemComponent = itemEntity.getComponent("item");
      * getEntityItemComponent.itemStack;
      * getEntityItemComponent.isValid();
-     * ```
-     * @example getEntityLeashableComponent.js
-     * ```js
-     * const getEntityLeashableComponent = entity.getComponent("leashable");
-     * getEntityLeashableComponent.softDistance;
-     * getEntityLeashableComponent.leash(leashHolderEntity); // Assuming you have an 'leashHolderEntity' instance
-     * getEntityLeashableComponent.unleash();
-     * getEntityLeashableComponent.isValid();
-     * ```
-     * @example getEntityMarkVariantComponent.js
-     * ```js
-     * const getEntityMarkVariantComponent = entity.getComponent("mark_variant");
-     * getEntityMarkVariantComponent.value;
-     * getEntityMarkVariantComponent.isValid();
-     * ```
-     * @example getEntityMovementGlideComponent.js
-     * ```js
-     * const getEntityMovementGlideComponent = entity.getComponent("movement.glide");
-     * getEntityMovementGlideComponent.speedWhenTurning;
-     * getEntityMovementGlideComponent.startSpeed;
-     * getEntityMovementGlideComponent.isValid();
-     * ```
-     * @example getEntityMovementSwayComponent.js
-     * ```js
-     * const getEntityMovementSwayComponent = entity.getComponent("movement.sway");
-     * getEntityMovementSwayComponent.swayAmplitude;
-     * getEntityMovementSwayComponent.swayFrequency;
-     * getEntityMovementSwayComponent.isValid();
-     * ```
-     * @example getEntityNavigationComponent.js
-     * ```js
-     * const getEntityNavigationComponent = entity.getComponent("navigation");
-     * getEntityNavigationComponent.avoidDamageBlocks;
-     * getEntityNavigationComponent.avoidPortals;
-     * getEntityNavigationComponent.avoidSun;
-     * getEntityNavigationComponent.avoidWater;
-     * getEntityNavigationComponent.canBreach;
-     * getEntityNavigationComponent.canBreakDoors;
-     * getEntityNavigationComponent.canFloat;
-     * getEntityNavigationComponent.canJump;
-     * getEntityNavigationComponent.canOpenDoors;
-     * getEntityNavigationComponent.canOpenIronDoors;
-     * getEntityNavigationComponent.canPassDoors;
-     * getEntityNavigationComponent.canPathFromAir;
-     * getEntityNavigationComponent.canPathOverLava;
-     * getEntityNavigationComponent.canPathOverWater;
-     * getEntityNavigationComponent.canSink;
-     * getEntityNavigationComponent.canSwim;
-     * getEntityNavigationComponent.canWalk;
-     * getEntityNavigationComponent.canWalkInLava;
-     * getEntityNavigationComponent.isAmphibious;
-     * getEntityNavigationComponent.isValid();
-     * ```
-     * @example getEntityRideableComponent.js
-     * ```js
-     * const getEntityRideableComponent = entity.getComponent("rideable");
-     * getEntityRideableComponent.controllingSeat;
-     * getEntityRideableComponent.crouchingSkipInteract;
-     * getEntityRideableComponent.interactText;
-     * getEntityRideableComponent.pullInEntities;
-     * getEntityRideableComponent.riderCanInteract;
-     * getEntityRideableComponent.seatCount;
-     * getEntityRideableComponent.addRider(riderEntity); // Assuming you have an 'riderEntity' instance
-     * getEntityRideableComponent.ejectRider(riderEntity); // Assuming you have an 'riderEntity' instance
-     * getEntityRideableComponent.ejectRiders();
-     * getEntityRideableComponent.getFamilyTypes();
-     * getEntityRideableComponent.getRiders();
-     * getEntityRideableComponent.getSeats();
-     * getEntityRideableComponent.isValid();
-     * ```
-     * @example getEntityRidingComponent.js
-     * ```js
-     * const getEntityRidingComponent = entity.getComponent("riding");
-     * getEntityRidingComponent.entityRidingOn;
-     * getEntityRidingComponent.isValid();
-     * ```
-     * @example getEntityTameableComponent.js
-     * ```js
-     * ```
-     * @example getEntityVariantComponent.js
-     * ```js
-     * const getEntityVariantComponent = entity.getComponent("variant");
-     * getEntityVariantComponent.value;
-     * getEntityVariantComponent.isValid();
      * ```
      */
     getComponent(componentId: string): EntityComponent | undefined;
@@ -1867,6 +1761,13 @@ export class Entity {
      * @returns
      * Returns true if the specified component is present on this
      * entity.
+     * @example hasComponents.js
+     * ```js
+     * entity.hasComponent("tameable");
+     * entity.hasComponent("inventory");
+     * entity.hasComponent("addrider");
+     * entity.hasComponent("is_tamed");
+     * ```
      */
     hasComponent(componentId: string): boolean;
     /**
@@ -2192,6 +2093,11 @@ export class EntityCanPowerJumpComponent extends EntityComponent {
  * Defines the entity's color. Only works on certain entities
  * that have predefined color values (e.g., sheep, llama,
  * shulker).
+ * @example getEntityColorComponent.js
+ * ```js
+ * const getEntityColorComponent = entity.getComponent("color");
+ * getEntityColorComponent.value;
+ * ```
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityColorComponent extends EntityComponent {
@@ -2300,6 +2206,11 @@ export class EntityFloatsInLiquidComponent extends EntityComponent {
 /**
  * @beta
  * Represents the flying speed of an entity.
+ * @example getEntityFlyingSpeedComponent.js
+ * ```js
+ * const getEntityFlyingSpeedComponent = entity.getComponent("flying_speed");
+ * getEntityFlyingSpeedComponent.value;
+ * ```
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityFlyingSpeedComponent extends EntityComponent {
@@ -2356,6 +2267,14 @@ export class EntityGroundOffsetComponent extends EntityComponent {
 /**
  * @beta
  * Defines the interactions with this entity for healing it.
+ * @example getEntityHealableComponent.js
+ * ```js
+ * const getEntityHealableComponent = entity.getComponent("healable");
+ * getEntityHealableComponent.filters;
+ * getEntityHealableComponent.forceUse;
+ * getEntityHealableComponent.getFeedItems();
+ * getEntityHealableComponent.isValid();
+ * ```
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityHealableComponent extends EntityComponent {
@@ -2442,6 +2361,32 @@ export class EntityHealthChangedAfterEventSignal {
 /**
  * @beta
  * Defines the health properties of an entity.
+ * @example getEntityHealthComponent.js
+ * ```js
+ * const getEntityHealthComponent = entity.getComponent("health");
+ * getEntityHealthComponent.currentValue;
+ * getEntityHealthComponent.defaultValue;
+ * getEntityHealthComponent.effectiveMax;
+ * getEntityHealthComponent.effectiveMin;
+ * getEntityHealthComponent.resetToDefaultValue();
+ * getEntityHealthComponent.resetToMaxValue();
+ * getEntityHealthComponent.resetToMinValue();
+ * getEntityHealthComponent.setCurrentValue(100); // Assuming 100 as an example value
+ *
+ * // Custom function to check if the health attribute is within a valid range
+ * function isValidHealthValue(value) {
+ *     return (
+ *         value >= getEntityHealthComponent.effectiveMin &&
+ *         value <= getEntityHealthComponent.effectiveMax
+ *     );
+ * }
+ *
+ * // Example usage of the custom isValidHealthValue function
+ * const newHealthValue = 80;
+ * if (isValidHealthValue(newHealthValue)) {
+ *     getEntityHealthComponent.setCurrentValue(newHealthValue);
+ * }
+ * ```
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityHealthComponent extends EntityAttributeComponent {
@@ -2617,6 +2562,50 @@ export class EntityHurtAfterEventSignal {
 /**
  * @beta
  * Defines this entity's inventory properties.
+ * @example getEntityInventoryComponent.js
+ * ```js
+ * const getEntityInventoryComponent = entity.getComponent("inventory");
+ * getEntityInventoryComponent.additionalSlotsPerStrength;
+ * getEntityInventoryComponent.canBeSiphonedFrom;
+ * const inventoryContainer = getEntityInventoryComponent.container;
+ * getEntityInventoryComponent.containerType;
+ * getEntityInventoryComponent.inventorySize;
+ * getEntityInventoryComponent.private;
+ * getEntityInventoryComponent.restrictToOwner;
+ * getEntityInventoryComponent.isValid();
+ *
+ * // Custom function to add an item to the inventory
+ * function addItemToInventory(itemStack) {
+ *     return inventoryContainer.addItem(itemStack);
+ * }
+ *
+ * // Custom function to move an item within the inventory
+ * function moveItemWithinInventory(fromSlot, toSlot) {
+ *     inventoryContainer.moveItem(fromSlot, toSlot, inventoryContainer);
+ * }
+ *
+ * // Custom function to transfer an item from inventory to another container
+ * function transferItemToContainer(fromSlot, targetContainer) {
+ *     return inventoryContainer.transferItem(fromSlot, targetContainer);
+ * }
+ *
+ * // Example usage of the custom functions
+ * const newItemStack = new ItemStack("apple", 10); // Assuming "apple" is a valid item
+ * const addedItem = addItemToInventory(newItemStack);
+ * if (addedItem) {
+ *     console.log("Item added to inventory:", addedItem);
+ * }
+ *
+ * const sourceSlot = 2;
+ * const destinationSlot = 5;
+ * moveItemWithinInventory(sourceSlot, destinationSlot);
+ *
+ * const targetContainer = someOtherContainer; // Assuming 'someOtherContainer' is an instance of another container
+ * const transferredItem = transferItemToContainer(0, targetContainer);
+ * if (transferredItem) {
+ *     console.log("Item transferred to another container:", transferredItem);
+ * }
+ * ```
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityInventoryComponent extends EntityComponent {
@@ -2825,6 +2814,12 @@ export class EntityIsTamedComponent extends EntityComponent {
  * represents a free-floating item in the world. Lets you
  * retrieve the actual item stack contents via the itemStack
  * property.
+ * @example getEntityItemComponent.js
+ * ```js
+ * const getEntityItemComponent = itemEntity.getComponent("item");
+ * getEntityItemComponent.itemStack;
+ * getEntityItemComponent.isValid();
+ * ```
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityItemComponent extends EntityComponent {
@@ -2843,6 +2838,12 @@ export class EntityItemComponent extends EntityComponent {
  * @beta
  * Additional variant value. Can be used to further
  * differentiate variants.
+ * @example getEntityMarkVariantComponent.js
+ * ```js
+ * const getEntityMarkVariantComponent = entity.getComponent("mark_variant");
+ * getEntityMarkVariantComponent.value;
+ * getEntityMarkVariantComponent.isValid();
+ * ```
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMarkVariantComponent extends EntityComponent {
@@ -2991,6 +2992,12 @@ export class EntitySkinIdComponent extends EntityComponent {
  * @beta
  * Used to differentiate the component group of a variant of an
  * entity from others. (e.g. ocelot, villager).
+ * @example getEntityVariantComponent.js
+ * ```js
+ * const getEntityVariantComponent = entity.getComponent("variant");
+ * getEntityVariantComponent.value;
+ * getEntityVariantComponent.isValid();
+ * ```
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityVariantComponent extends EntityComponent {
@@ -4369,6 +4376,12 @@ export class Scoreboard {
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
+     * @example addObjective.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * world.scoreboard.addObjective("example", "example");
+     * ```
      */
     addObjective(objectiveId: string, displayName: string): ScoreboardObjective;
     /**
@@ -4385,6 +4398,12 @@ export class Scoreboard {
      *
      * @param objectiveId
      * Identifier of the objective.
+     * @example getPlayerMoneyObjective.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * const money = world.scoreboard.getObjective("money");
+     * ```
      */
     getObjective(objectiveId: string): ScoreboardObjective | undefined;
     /**
@@ -4413,6 +4432,12 @@ export class Scoreboard {
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
+     * @example removeMoney.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * world.scoreboard.removeObjective("money");
+     * ```
      */
     removeObjective(objectiveId: ScoreboardObjective | string): boolean;
     /**
@@ -4495,6 +4520,18 @@ export class ScoreboardObjective {
      * @param participant
      * Participant to apply the scoreboard value addition to.
      * @throws This function can throw errors.
+     * @example addPlayerMoney.js
+     * ```js
+     * const money = world.scoreboard.getObjective("money");
+     * const currentScore = money.addScore(player, 100);
+     * player.sendMessage(`Your current score is ${currentScore}`);
+     * ```
+     * @example removeScore.js
+     * ```js
+     * const money = world.scoreboard.getObjective("money");
+     * const currentScore = money.addScore(player, -100);
+     * player.sendMessage(`Your current score is ${currentScore}`);
+     * ```
      */
     addScore(participant: Entity | ScoreboardIdentity | string, scoreToAdd: number): number;
     /**
@@ -4519,6 +4556,18 @@ export class ScoreboardObjective {
      * participants.
      *
      * @throws This function can throw errors.
+     * @example topPlayer.ts
+     * ```ts
+     * import { world } from "@minecraft/server";
+     *
+     * const money = world.scoreboard.getObjective("money");
+     * var scoreArray = money.getScores();
+     * scoreArray.sort(function (a, b) {
+     *     return b.score - a.score;
+     * });
+     *
+     * console.log(scoreArray.map((score) => score.participant.displayName));
+     * ```
      */
     getScores(): ScoreboardScoreInfo[];
     /**
@@ -4553,6 +4602,12 @@ export class ScoreboardObjective {
      * @param score
      * New value of the score.
      * @throws This function can throw errors.
+     * @example resetMoney.js
+     * ```js
+     * const money = world.scoreboard.getObjective("money");
+     * money.setScore(player, 0);
+     * player.sendMessage(`Your score has been reset.`);
+     * ```
      */
     setScore(participant: Entity | ScoreboardIdentity | string, score: number): void;
 }
@@ -5034,7 +5089,13 @@ export class World {
      * Contains a set of events that are applicable to the entirety
      * of the world.  Event callbacks are called in a deferred
      * manner. Event callbacks are executed in read-write mode.
+     * @example sub_and_unsub.js
+     * ```js
+     * import { world } from "@minecraft/server";
      *
+     * const callback = world.beforeEvents.itemUse.subscribe((event) => {}); // your event
+     * world.beforeEvents.itemUse.unsubscribe(callback); // unsubscribe
+     * ```
      */
     readonly afterEvents: WorldAfterEvents;
     /**
@@ -5043,7 +5104,25 @@ export class World {
      * Contains a set of events that are applicable to the entirety
      * of the world. Event callbacks are called immediately. Event
      * callbacks are executed in read-only mode.
+     * @example privilege.js
+     * ```js
+     * import { world, system, TimeOfDay } from "@minecraft/server";
      *
+     * world.beforeEvents.chatSend.subscribe((event) => {
+     *     event.cancel = true;
+     *     // setTime changes world state, must be run after its execution by a tick
+     *     system.run(() => {
+     *         world.setTime(TimeOfDay.Night);
+     *     });
+     * });
+     * ```
+     * @example sub_and_unsub.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * const callback = world.afterEvents.buttonPush.subscribe((event) => {}); // event
+     * world.afterEvents.buttonPush.unsubscribe(callback); // unsubscribe
+     * ```
      */
     readonly beforeEvents: WorldBeforeEvents;
     /**
@@ -5115,6 +5194,21 @@ export class World {
      * A player array.
      * @throws
      * Throws if the provided EntityQueryOptions are invalid.
+     * @example getFilteredPlayers.ts
+     * ```ts
+     * const entityQueryOptions: EntityQueryOptions = {
+     *     minLevel: 10,
+     *     maxLevel: 30,
+     *     tags: ["team_red"],
+     *     excludeNames: ["Admin"],
+     * };
+     *
+     * const filteredPlayers = world.getPlayers(entityQueryOptions);
+     * console.log(
+     *     "Filtered Players:",
+     *     filteredPlayers.map((player) => player.name)
+     * );
+     * ```
      */
     getPlayers(options?: EntityQueryOptions): Player[];
     /**
@@ -5327,7 +5421,7 @@ export class WorldAfterEvents {
      * @beta
      * @remarks
      * This event fires when an entity dies.
-     * @example subscribe.js
+     * @example deathMessage.js
      * ```js
      * import { world } from "@minecraft/server";
      *
@@ -5351,7 +5445,23 @@ export class WorldAfterEvents {
      * @remarks
      * This event fires when an entity hits (that is, melee
      * attacks) a block.
+     * @example getDistance.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     * world.afterEvents.entityHitEntity.subscribe((event) => {
+     *     const location1 = event.damagingEntity.location;
+     *     const location2 = event.hitEntity.location;
      *
+     *     const distance = Math.pow(
+     *         Math.pow(location2.x - location1.x, 2) +
+     *             Math.pow(location2.y - location1.y, 2) +
+     *             Math.pow(location2.z - location1.z, 2),
+     *         0.5
+     *     );
+     *
+     *     console.log("Distance: " + distance + " blocks");
+     * });
+     * ```
      */
     readonly entityHitBlock: EntityHitBlockAfterEventSignal;
     /**
@@ -5359,7 +5469,23 @@ export class WorldAfterEvents {
      * @remarks
      * This event fires when an entity hits (that is, melee
      * attacks) another entity.
+     * @example getDistance.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     * world.afterEvents.entityHitBlock.subscribe((event) => {
+     *     const location1 = event.damagingEntity.location;
+     *     const location2 = event.hitBlock.location;
      *
+     *     const distance = Math.pow(
+     *         Math.pow(location2.x - location1.x, 2) +
+     *             Math.pow(location2.y - location1.y, 2) +
+     *             Math.pow(location2.z - location1.z, 2),
+     *         0.5
+     *     );
+     *
+     *     console.log("Distance: " + distance + " blocks");
+     * });
+     * ```
      */
     readonly entityHitEntity: EntityHitEntityAfterEventSignal;
     /**
