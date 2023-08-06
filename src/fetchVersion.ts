@@ -99,7 +99,7 @@ export async function getVersions(mcVersion: Version, module: string): Promise<s
   const versions: string[] = [];
   versions.push(latestBeta);
   if (!!latestRc) versions.push(...latestRc);
-  versions.push(...latestVersions);
+  else versions.push(latestVersions.shift());
 
   return versions;
 };
