@@ -41,6 +41,11 @@ export function splitVersion(versionString: string, platform: "npm" | "minecraft
 
 export type Version = `${string}.${string}.${string}` | `${string}.${string}.${string}-${string}`;
 export const versionRegex = /^\d+\.\d+\.\d+(\.\d+)?$/;
+/**
+ * Fetch latest version on all channels instead of fetching all release versions.
+ * @default false
+ */
+const LATEST_RELEASE_ONLY = true;
 
 /**
  * 
@@ -101,5 +106,7 @@ export async function getVersions(mcVersion: Version, module: string): Promise<s
   if (!!latestRc) versions.push(...latestRc);
   else versions.push(latestVersions.shift());
 
-  return versions;
+  // Setting it to latest release only to avoid deploying massive artifact
+  if (LATEST_RELEASE_ONLY) return versions.slice(0, 2);
+  else return versions;
 };
