@@ -45,7 +45,7 @@ export const versionRegex = /^\d+\.\d+\.\d+(\.\d+)?$/;
  * Fetch latest version on all channels instead of fetching all release versions.
  * @default false
  */
-const LATEST_RELEASE_ONLY = true;
+const LATEST_RELEASE_ONLY = false;
 
 /**
  * 
