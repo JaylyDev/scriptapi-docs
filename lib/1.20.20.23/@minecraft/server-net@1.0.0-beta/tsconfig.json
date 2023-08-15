@@ -1,0 +1,1 @@
+{"compilerOptions":{"module":"commonjs","lib":["es6"],"target":"es6","noEmit":true,"typeRoots":[],"types":[],"paths":{"@minecraft/server-admin":["../../@minecraft/server-admin@1.0.0-beta/index.d.ts"]}},"files":["index.d.ts"]}
