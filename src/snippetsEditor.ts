@@ -92,7 +92,7 @@ const prettierOptions: prettier.Options = {
   tabWidth: 4
 };
 
-const formatDocExample = (filepath: string, code: string) => path.basename(filepath) + '\n' + "```" + path.extname(filepath).slice(1) + '\n' + prettier.format(code, prettierOptions) + "```"
+const formatDocExample = (filepath: string, code: string) => path.basename(filepath) + '\n' + "```" + path.extname(filepath).slice(1) + '\n' + prettier.format(code.replace(/\/\*([\s\S]*?)\*\//g, ''), prettierOptions) + "```"
 
 function reader(tsPath: string, doc: JSDoc, module_name: string) {
   const dir = path.resolve('examples', module_name, tsPath.replace(/\./g, '/'));
@@ -140,7 +140,7 @@ function reader(tsPath: string, doc: JSDoc, module_name: string) {
 
     const jsdoctags = additionalExamples.map(filepath => {
       console.log(`Adding new example to ${tsPath} (${path.basename(filepath)})`);
-      const text = fs.readFileSync(filepath).toString();
+      const text = fs.readFileSync(filepath, { encoding: 'utf8' });
       const structure: JSDocTagStructure = {
         tagName: "example",
         kind: StructureKind.JSDocTag,

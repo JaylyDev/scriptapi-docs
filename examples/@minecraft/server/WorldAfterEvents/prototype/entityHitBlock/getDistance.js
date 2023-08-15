@@ -1,5 +1,6 @@
-world.afterEvents.entityHit.subscribe((event) => {
-  const location1 = event.entity.location;
+import { world } from "@minecraft/server";
+world.afterEvents.entityHitEntity.subscribe((event) => {
+  const location1 = event.damagingEntity.location;
   const location2 = event.hitEntity.location;
 
   const distance = Math.pow(
