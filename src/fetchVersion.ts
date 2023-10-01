@@ -41,11 +41,6 @@ export function splitVersion(versionString: string, platform: "npm" | "minecraft
 
 export type Version = `${string}.${string}.${string}` | `${string}.${string}.${string}-${string}`;
 export const versionRegex = /^\d+\.\d+\.\d+(\.\d+)?$/;
-/**
- * Fetch latest version on all channels instead of fetching all release versions.
- * @default false
- */
-const LATEST_RELEASE_ONLY = false;
 
 /**
  * 
@@ -82,17 +77,12 @@ export async function getVersions(mcVersion: Version, module: string): Promise<s
 
   const latestVersions = [undefined, ...versionsList.filter(v => semver.parse(v).prerelease.length === 0)];
 
-  let latestBeta: string | undefined;
-
-  while (!latestBeta) {
-    latestVersions.shift();
-    latestBeta = versionsList.find(v => {
-      const { moduleVersion, engineVersion } = splitVersion(v, "npm");
-      const latestVersion = latestVersions[0] ?? "0.0.0";
-      const [channel] = semver.parse(v).prerelease;
-      return channel === 'beta' && semver.compare(moduleVersion, latestVersion) > 0 && semver.compare(engineVersion, versionString) === 0
-    });
-  };
+  const latestBeta = versionsList.find(v => {
+    const { moduleVersion, engineVersion } = splitVersion(v, "npm");
+    const latestVersion = latestVersions[0] ?? "0.0.0";
+    const [channel] = semver.parse(v).prerelease;
+    return channel === 'beta' && semver.compare(moduleVersion, latestVersion) > 0 && (semver.compare(engineVersion, versionString) === 0 || semver.compare(engineVersion, versionString) < 0)
+  });
 
   const latestRc = versionsList.filter(v => {
     const { moduleVersion, engineVersion } = splitVersion(v, "npm");
@@ -101,12 +91,14 @@ export async function getVersions(mcVersion: Version, module: string): Promise<s
     return channel === 'rc' && semver.compare(moduleVersion, latestVersion) > 0 && semver.compare(engineVersion, versionString) === 0
   });
 
-  const versions: string[] = [];
-  versions.push(latestBeta);
-  if (!!latestRc) versions.push(...latestRc);
-  else versions.push(latestVersions.shift());
+  if (!latestBeta) console.error("No latest beta version found for '" + module + "'. Please check the version string or try again later.");
 
-  // Setting it to latest release only to avoid deploying massive artifact
-  if (LATEST_RELEASE_ONLY) return versions.slice(0, 2);
-  else return versions;
+  const versions: string[] = [];
+  if (!!latestBeta) versions.push(latestBeta);
+  if (!!latestRc) versions.push(...latestRc);
+  versions.push(...latestVersions);
+  
+  console.log(module, versionsList, versions);
+  
+  return versions.filter(v => !!v);
 };

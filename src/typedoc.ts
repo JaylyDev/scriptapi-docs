@@ -38,15 +38,13 @@ async function renderHtml (entryPoints: string[], version: string) {
   };
 
   // Make an application to execute typedoc
-  const app = new Application();
+  const app = await Application.bootstrap(options);
 
   // If you want TypeDoc to load tsconfig.json / typedoc.json files
   app.options.addReader(new TSConfigReader());
   app.options.addReader(new TypeDocReader());
   
-  app.bootstrap(options);
-  
-  const project = app.convert();
+  const project = await app.convert();
   await app.generateDocs(project, "./docs/.vuepress/dist/" + version);
 };
 

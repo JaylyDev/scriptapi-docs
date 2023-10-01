@@ -16,6 +16,7 @@ const scriptModules = [
   "@minecraft/server-admin",
   "@minecraft/server-gametest",
   "@minecraft/server-editor",
+  "@minecraft/common",
 ];
 
 const bundleModules = [
@@ -44,6 +45,7 @@ async function installScriptModules (version: Version) {
 
   await Promise.all([
     installModules(scriptModules, installModule, version),
+    // ignore @minecraft/vanilla-data for now
     installModules(bundleModules, installBundle, version),
   ]);    
   

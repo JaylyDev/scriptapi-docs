@@ -1,0 +1,1 @@
+player.sendMessage(`Your Location: ${player.location.x.toFixed(2)}, ${player.location.y.toFixed(2)}, ${player.location.z.toFixed(2)}`)
