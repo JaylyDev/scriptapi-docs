@@ -5,23 +5,9 @@ import { Application, TSConfigReader, TypeDocOptions, TypeDocReader } from "type
 import { splitVersion } from "./fetchVersion";
 import assert = require("assert");
 
-/**
- * @param {string} dir
- * @returns {IterableIterator<string>}
- */
-function* getFiles(dir: string): IterableIterator<string> {
-  const dirents = fs.readdirSync(dir, { withFileTypes: true });
-  for (const dirent of dirents) {
-    const res = path.resolve(dir, dirent.name);
-    if (dirent.isDirectory()) {
-      yield* getFiles(res);
-    } else {
-      yield res.replace(process.cwd(), ".").replace(/\\/g, "/");
-    }
-  }
-}
-
-async function renderHtml (entryPoints: string[], version: string) {
+export type LatestChannel = "preview" | "latest" | null;
+ 
+export async function renderHtml (entryPoints: string[], version: string, channel: LatestChannel) {
   const options: Partial<TypeDocOptions> = {
     entryPoints,
     entryPointStrategy: "packages",
@@ -45,21 +31,13 @@ async function renderHtml (entryPoints: string[], version: string) {
   app.options.addReader(new TypeDocReader());
   
   const project = await app.convert();
-  await app.generateDocs(project, "./docs/.vuepress/dist/" + version);
+  // generate docs
+  await app.generateDocs(project, "./docs/.vuepress/dist/" + (channel ?? version));
+  // create a copy of the docs folder, but folder name with version for backwards compability
+  if (channel) {
+    fs.copySync("./docs/.vuepress/dist/" + channel, "./docs/.vuepress/dist/" + version);
+  }
 };
-
-/**
- * Generate typedoc documentation for a specific version.
- * @param version 
- */
-export async function generateDocs (version: string) {
-  const entryPoints = [...getFiles("./lib/" + version)].filter((file) => file.endsWith(".d.ts") && !file.includes("internal")).map(v => path.dirname(v));
-
-  console.log("entryPoints", entryPoints);
-  console.log("version", version);
-
-  await renderHtml(entryPoints, version);
-}
 
 /**
  * This function must be called before uninstalling the module.

@@ -212,8 +212,6 @@ export function modifyExampleDocsSnippets(module_name: string, version: string) 
       // ignores Minecraft*Types
       if (tsPath.startsWith('Minecraft')) continue;
 
-      // console.log(tsPath, `${i + 1} of ${paths.length}`);
-
       const docs = node.getJsDocs();
       const dir = path.resolve('examples', module_name, tsPath.replace(/\./g, '/'));
 

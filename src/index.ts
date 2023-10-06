@@ -1,10 +1,9 @@
 import { Version } from "./fetchVersion";
 import { execSync } from "child_process";
 import * as dotenv from "dotenv";
-import { applyStatsCollection, generateDocsIndexPage } from "./docsPages";
+import { applyStatsCollection, generateDocsIndexPage, generateDocsUsingWorkers } from "./docsPages";
 import { installBundle, installModule } from "./installModules";
-import { existsSync, mkdirSync, readdirSync, rmSync } from "fs";
-import { generateDocs } from "./typedoc";
+import { existsSync, mkdirSync, rmSync } from "fs";
 import { modifyExampleDocsSnippets } from "./snippetsEditor";
 
 dotenv.config();
@@ -52,6 +51,7 @@ async function installScriptModules (version: Version) {
   console.log("Successfully retrieved all modules.");
 };
 
+
 async function generate_documentation(rebuild: boolean = true) {
   // otherwise if input has no version, it only builds the docs from existing types in lib folder
   if (rebuild) console.log("No version specified. Rebuilding the entire documentation...");
@@ -62,10 +62,7 @@ async function generate_documentation(rebuild: boolean = true) {
   console.log(execSync("npm run docs:build").toString());
   console.log("Successfully built docs at ./docs/.vuepress/dist");
 
-  const lib = readdirSync("./lib");
-  await Promise.allSettled(lib.map(libVer => new Promise((resolve, reject) => {
-    generateDocs(libVer).then(resolve).catch(reject);
-  })));
+  generateDocsUsingWorkers();
   
   if (statsCollectEnabled) {
     console.log("Applying stats collection to website.");
