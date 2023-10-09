@@ -28,5 +28,7 @@ async function generateDocs (version: string, channel: LatestChannel) {
 
   await renderHtml(entryPoints, version, channel);
 }
-generateDocs(workerData.libVer, workerData.channel);
-parentPort.postMessage({ libVer: workerData.libVer, channel: workerData.channel });
+// main entry
+generateDocs(workerData.libVer, workerData.channel).then(() => {
+  parentPort.postMessage({ libVer: workerData.libVer, channel: workerData.channel });
+});

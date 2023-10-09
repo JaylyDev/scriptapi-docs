@@ -62,7 +62,7 @@ async function generate_documentation(rebuild: boolean = true) {
   console.log(execSync("npm run docs:build").toString());
   console.log("Successfully built docs at ./docs/.vuepress/dist");
 
-  generateDocsUsingWorkers();
+  await generateDocsUsingWorkers();
   
   if (statsCollectEnabled) {
     console.log("Applying stats collection to website.");

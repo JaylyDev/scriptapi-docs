@@ -77,6 +77,7 @@ function getLatestVersions (versions: string[]) {
 export function generateDocsUsingWorkers() {
   const lib = fs.readdirSync("./lib");
   const { latestReleaseVersion, latestPreviewVersion } = getLatestVersions(lib);
+  let successCount = 0;
 
   if (isMainThread) {
     lib.forEach((libVer) => {
@@ -95,6 +96,7 @@ export function generateDocsUsingWorkers() {
       // Listen for messages from the worker
       worker.on('message', (message) => {
         console.log(`Worker finished for ${message.libVer} - ${message.channel}`);
+        successCount++;
       });
 
       // Listen for errors in the worker
@@ -109,5 +111,15 @@ export function generateDocsUsingWorkers() {
         }
       });
     });
-  }
+  };
+
+  return new Promise<number>((resolve) => {
+    // check if successCount equals to lib.length, if so resolve it with successCount
+    const interval = setInterval(() => {
+      if (successCount === lib.length) {
+        resolve(successCount);
+        clearInterval(interval);
+      }
+    }, 100);
+  });
 }
