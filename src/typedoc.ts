@@ -72,8 +72,19 @@ export function setupTypedoc (module_name: string, module_version: string, npm_v
 
   // script module dependencies
   for (const dependencyName in packageInfo.dependencies) {
-    const depednencyVersion = packageInfo.dependencies[dependencyName].replace(/\^|\~/, "");
-    const { moduleVersion } = splitVersion(depednencyVersion, "minecraft");
+    let moduleVersion: string;
+    const dependencyVersion = packageInfo.dependencies[dependencyName].replace(/\^|\~/, "");
+
+    if (dependencyName === "@minecraft/common") {
+      // This code has to be added until Mojang fixes their stupid dependency issues with @minecraft/common module
+      // Always use the latest version of @minecraft/common
+      const latestCommonModule = fs.readdirSync("./lib/1.20.60.20/@minecraft").reverse().find(v => v.startsWith("common"));
+      moduleVersion = latestCommonModule.replace('common@', '');
+    }
+    else {
+      moduleVersion = splitVersion(dependencyVersion, "minecraft").moduleVersion;
+    }
+
     tsconfig.compilerOptions.paths[dependencyName] = [`../../${dependencyName}@${moduleVersion}/index.d.ts`];
     readmeText.push(`- <p>${dependencyName}@${moduleVersion}</p>`, `\`\`\`json
 {

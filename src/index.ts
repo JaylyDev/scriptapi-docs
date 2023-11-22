@@ -1,12 +1,10 @@
 import { Version } from "./fetchVersion";
 import { execSync } from "child_process";
-import * as dotenv from "dotenv";
 import { applyStatsCollection, generateDocsIndexPage, generateDocsUsingWorkers } from "./docsPages";
 import { installBundle, installModule } from "./installModules";
-import { existsSync, mkdirSync, rmSync } from "fs";
+import { existsSync, mkdirSync, readdirSync, rmSync } from "fs";
 import { modifyExampleDocsSnippets } from "./snippetsEditor";
-
-dotenv.config();
+import axios from "axios";
 
 const scriptModules = [
   "@minecraft/server",
@@ -73,9 +71,42 @@ async function generate_documentation(rebuild: boolean = true) {
   console.log("Successfully generated documentation.");
 };
 
-async function main () {
-  const versions = typeof process.env.VERSION === "string" ? process.env.VERSION.split(/\s/) as Version[] : [] as Version[];
+interface MojangVersionMetadata { version: string, date: string, type?: "preview" };
+type MojangVersionJSON = { latest: MojangVersionMetadata }; 
+
+// please do not break the pipeline mammerla
+async function getMinecraftVersion() {
+  const branches = ["main", "preview"];
+  const responseDetails = await Promise.all(branches.map(branch => axios.get<MojangVersionJSON>(`https://raw.githubusercontent.com/Mojang/bedrock-samples/${branch}/version.json`)));
+  const versionStrings = responseDetails.map(r => r.data.latest.version);
+  const versions = versionStrings.map(r => r.split('.').map(v => parseInt(v)));
+  let latestPreview: Version | undefined;
+  let latestRelease: Version | undefined;
+
+  // sort whether version is preview or not
+  // if revision version is higher than 20, it's preview
+  // otherwise if version is between 0-19, it's stable
+  versions.forEach(v => {
+    if (v[3] >= 20 && !latestPreview) latestPreview = v.join('.') as Version;
+    else if (v[3] >= 0 && !latestRelease) {
+      v.pop();
+      latestRelease = v.join('.') as Version;
+    }
+  });
+
+  return { latestPreview, latestRelease };
+};
+
+function removeLatestPreviewDocs() {
+  for (const dir of readdirSync('./lib')) {
+    if (dir.split('.').length === 4) rmSync("./lib/" + dir, { recursive: true, force: true, maxRetries: 3 }); }
+};
+
+async function fetchNewDocs () {
+  const mcVersions = await getMinecraftVersion();
+  const versions = [mcVersions.latestRelease, mcVersions.latestPreview];
   if (!existsSync("./lib")) mkdirSync("./lib");
+  if (mcVersions.latestPreview) removeLatestPreviewDocs();
 
   // Check if the version is valid against schema, if so download the types and generate docs for that specific version
   // If version input exist but it's not valid, it throws error
@@ -89,8 +120,7 @@ async function main () {
     }
     else if (!!version) throw new Error(`Invalid version: ${version}. Accept '0.0.0' for stable, '0.0.0.0' for preview.`);
   }
-
-  await generate_documentation(versions.length === 0);
+  await generate_documentation(false);
 };
 
-main();
+fetchNewDocs();

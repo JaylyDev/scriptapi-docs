@@ -1,10 +1,9 @@
 name: Build Documentation
 on:
+  schedule: 
+    - cron: "00 17 * * 2-4"
   workflow_dispatch:
     inputs:
-      add_version:
-        description: "The version to add"
-        required: false
       remove_version:
         description: "The version to remove"
         required: false
@@ -16,16 +15,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set env variable
-        run: echo "VERSION=${{ github.event.inputs.add_version }}" >> $GITHUB_ENV
-
       - run: npm install
 
       # This is used when you were to remove old version and add a new version into lib
       - name: Remove existing docs
         if: ${{ github.event.inputs.remove_version != '' }}
-        run: rm -r -v ./lib/${{ github.event.inputs.remove_version }}
-
+        run: |
+          IFS=',' read -ra VERSIONS <<< "${{ github.event.inputs.remove_version }}"
+          for version in "${VERSIONS[@]}"; do
+            rm -r -v "./lib/${version}"
+          done
+    
       - name: Build source files
         run: tsc --build
 
@@ -49,4 +49,4 @@ jobs:
         with:
           default_author: github_actions
           add: ./lib
-          message: "Uploaded Script API Docs - ${{ github.event.inputs.add_version }}"
+          message: "Uploaded Script API Docs"
