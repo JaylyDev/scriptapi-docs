@@ -16,8 +16,10 @@ form.show(player).then((response) => {
   if (response.canceled) {
     player.sendMessage("Canceled due to " + response.cancelationReason);
   } else {
-    const [ dropdownValue, effectLevel, hideParticles ] = response.formValues;
-    if (typeof dropdownValue !== 'number' || typeof effectLevel !== 'number' || typeof hideParticles !== 'boolean') return player.sendMessage("Cannot process form result.");
-    player.addEffect(effectList[dropdownValue].id, 50, { amplifier: effectLevel, showParticles: !hideParticles });
+    const [ targetName, dropdownValue, effectLevel, hideParticles ] = response.formValues;
+    if (typeof dropdownValue !== 'string' || typeof dropdownValue !== 'number' || typeof effectLevel !== 'number' || typeof hideParticles !== 'boolean') return player.sendMessage("Cannot process form result.");
+    const target = world.getAllPlayers().find(player => player.name === targetName);
+    if(!(target instanceof Player)) return player.sendMessage("Target does not exist.");
+    target.addEffect(effectList[dropdownValue].id, 50, { amplifier: effectLevel, showParticles: !hideParticles });
   }
 });
