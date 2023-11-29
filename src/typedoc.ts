@@ -2,7 +2,7 @@ import { PackageJson } from "@npm/types";
 import * as fs from "fs-extra";
 import path = require("path");
 import { Application, TSConfigReader, TypeDocOptions, TypeDocReader } from "typedoc";
-import { splitVersion } from "./fetchVersion";
+import { Version, splitVersion } from "./fetchVersion";
 import assert = require("assert");
 
 export type LatestChannel = "preview" | "latest" | null;
@@ -42,7 +42,7 @@ export async function renderHtml (entryPoints: string[], version: string, channe
 /**
  * This function must be called before uninstalling the module.
  */
-export function setupTypedoc (module_name: string, module_version: string, npm_version: string, module_path: string) {
+export function setupTypedoc (module_name: string, module_version: string, npm_version: string, module_path: string, minecraft_version: Version, packageInfo: PackageJson) {
   const typedocJson: Partial<TypeDocOptions> = {
     basePath: "../../",
     entryPoints: ["./index.d.ts"],
@@ -67,7 +67,6 @@ export function setupTypedoc (module_name: string, module_version: string, npm_v
   };
   let readmeText = [`### Dependencies`];
   
-  const packageInfo = fs.readJSONSync(`./node_modules/${module_name}/package.json`) as PackageJson;
   assert(packageInfo.version === npm_version, new Error(`Package.json version is not the same as NPM version: ${packageInfo.version} != ${npm_version}`));
 
   // script module dependencies
@@ -78,7 +77,8 @@ export function setupTypedoc (module_name: string, module_version: string, npm_v
     if (dependencyName === "@minecraft/common") {
       // This code has to be added until Mojang fixes their stupid dependency issues with @minecraft/common module
       // Always use the latest version of @minecraft/common
-      const latestCommonModule = fs.readdirSync("./lib/1.20.60.20/@minecraft").reverse().find(v => v.startsWith("common"));
+      const scriptModules = fs.readdirSync("./lib/" + minecraft_version + "/@minecraft");
+      const latestCommonModule = scriptModules.reverse().find(v => v.startsWith("common"));
       moduleVersion = latestCommonModule.replace('common@', '');
     }
     else {

@@ -4,7 +4,6 @@ import * as fs from "fs-extra";
 import path = require("path");
 import { generateDtsBundle } from "dts-bundle-generator";
 import { PackageJson } from "@npm/types";
-import { setupTypedoc } from "./typedoc";
 
 /**
  * @deprecated
@@ -15,11 +14,22 @@ export interface PackageMetadata {
   npmVersion: string;
 };
 
+// For setting up typedoc dependencies
+export interface ModuleMetadata {
+  module_name: string,
+  moduleVersion: string,
+  npm_version: string,
+  module_path: string
+  version: Version,
+  packageInfo: PackageJson
+}
+
 /**
  * Installs all Script API native modules.
  */
-export async function installModule(module_name: string, version: Version) {  
+export async function installModule(module_name: string, version: Version): Promise<ModuleMetadata[]> {  
   const versions = await getVersions(version, module_name);
+  const scriptModules: ModuleMetadata[] = []
 
   for (const npm_version of versions) {
     // Install npm package, saving as peer dependencies to avoid conflicts.
@@ -33,13 +43,15 @@ export async function installModule(module_name: string, version: Version) {
     const module_path = `lib/${version}/${module_name}@${moduleVersion}`;
     if (!fs.existsSync(module_path)) fs.mkdirSync(module_path, { recursive: true });
     fs.copyFileSync(`node_modules/${module_name}/index.d.ts`, module_path + `/index.d.ts`);
+    const packageInfo = fs.readJSONSync(`./node_modules/${module_name}/package.json`) as PackageJson;
 
-    // Fetch depednencies
-    setupTypedoc(module_name, moduleVersion, npm_version, module_path);
+    scriptModules.push({ module_path, moduleVersion, npm_version, version, module_name, packageInfo });
 
     // Uninstall module
     execSync(`npm un ${module_name}`);
   };
+
+  return scriptModules;
 }
 
 /**
@@ -47,7 +59,7 @@ export async function installModule(module_name: string, version: Version) {
  * @param module_name 
  * @param version 
  */
-export async function installBundle(module_name: string, version: Version) {  
+export async function installBundle(module_name: string, version: Version): Promise<ModuleMetadata[]> {  
   const isPreview = version.split(".").length === 4;
   // If it's preview, format version from '0.0.0.0' to '0.0.0-preview.0', otherwise keep it same
   const module_version = isPreview ? version.replace(/\.(\d+)$/, '-preview.$1') : version;
@@ -64,17 +76,18 @@ export async function installBundle(module_name: string, version: Version) {
   if (!fs.existsSync(dirname)) fs.mkdirSync(dirname, { recursive: true });
   fs.copySync(`node_modules/${module_name}`, module_path);
 
-  const { types } = fs.readJSONSync(`./node_modules/${module_name}/package.json`) as PackageJson;
+  const packageInfo = fs.readJSONSync(`./node_modules/${module_name}/package.json`) as PackageJson;
   const [ bundledTypes ] = generateDtsBundle([{
-    filePath: path.resolve(module_path, types),
+    filePath: path.resolve(module_path, packageInfo.types),
     output: { noBanner: true },
   }]);
   const distPath = `${module_path}@${module_version}`;
   fs.mkdirSync(distPath, { recursive: true });
   fs.writeFileSync(`${distPath}/index.d.ts`, bundledTypes);
-  setupTypedoc(module_name, module_version, module_version, distPath);
 
   // Uninstall module
   execSync(`npm un ${module_name}`);
   fs.rmSync(module_path, { recursive: true });
+
+  return [{ module_name, moduleVersion: module_version, npm_version: module_version, module_path: distPath, version, packageInfo }];
 }
