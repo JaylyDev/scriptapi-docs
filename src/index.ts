@@ -1,9 +1,10 @@
 import { Version } from "./fetchVersion";
 import { execSync } from "child_process";
 import { applyStatsCollection, generateDocsIndexPage, generateDocsUsingWorkers } from "./docsPages";
-import { installBundle, installModule } from "./installModules";
+import { ModuleMetadata, installBundle, installModule } from "./installModules";
 import { existsSync, mkdirSync, readdirSync, rmSync } from "fs";
 import { modifyExampleDocsSnippets } from "./snippetsEditor";
+import { setupTypedoc } from "./typedoc";
 import axios from "axios";
 
 const scriptModules = [
@@ -22,16 +23,16 @@ const bundleModules = [
 
 const statsCollectEnabled = true;
 
-async function installModules(modules: string[], installFunction: (module_name: string, version: string) => Promise<void>, version: string) {
+async function installModules(modules: string[], installFunction: (module_name: string, version: string) => Promise<ModuleMetadata[]>, version: string) {
   const installPromises = modules.map(async (module_name) => {
     try {
-      await installFunction(module_name, version);
+      return await installFunction(module_name, version);
     } catch (error) {
       console.warn(`Failed to install ${module_name}@${version}.\n`, error);
     }
   });
 
-  await Promise.all(installPromises);
+  return await Promise.all(installPromises);
 }
 
 async function installScriptModules (version: Version) {
@@ -40,11 +41,23 @@ async function installScriptModules (version: Version) {
   // remove existing types for that version only
   rmSync("./lib/" + version, { recursive: true, force: true, maxRetries: 3 });
 
-  await Promise.all([
+  const result = await Promise.all([
     installModules(scriptModules, installModule, version),
     // ignore @minecraft/vanilla-data for now
     installModules(bundleModules, installBundle, version),
-  ]);    
+  ]);
+
+  for (const partialResult of result) {
+    for (const moduleMetadata of partialResult) {
+      if (!moduleMetadata) {
+        console.error("Failed to find script modules for version " + version);
+        continue;
+      };
+      for (const versionMetadata of moduleMetadata) {
+        setupTypedoc(versionMetadata.module_name, versionMetadata.moduleVersion, versionMetadata.npm_version, versionMetadata.module_path, versionMetadata.version, versionMetadata.packageInfo)
+      }
+    }
+  }
   
   console.log("Successfully retrieved all modules.");
 };

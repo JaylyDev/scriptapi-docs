@@ -8,6 +8,6 @@ For more detailed documentation, the changelog, and How-To Guide provided by Mic
 
 Relevant links:
 
-- Latest Release API references: [Jayly](https://jaylydev.github.io/) / [ScriptAPI Docs](https://jaylydev.github.io/scriptapi-docs) / [**Script API - Latest**](https://jaylydev.github.io/scriptapi-docs/latest)
+- Latest Release API references: [**Script API - Latest**](https://jaylydev.github.io/scriptapi-docs/latest)
 
-- Latest Preview API references: [Jayly](https://jaylydev.github.io/) / [ScriptAPI Docs](https://jaylydev.github.io/scriptapi-docs) / [**Script API - Preview**](https://jaylydev.github.io/scriptapi-docs/preview)
+- Latest Preview API references: [**Script API - Preview**](https://jaylydev.github.io/scriptapi-docs/preview)
