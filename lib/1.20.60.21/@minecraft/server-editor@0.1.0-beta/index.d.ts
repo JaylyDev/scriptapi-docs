@@ -14,7 +14,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-editor",
- *   "version": "0.1.0-beta.1.20.60-preview.20"
+ *   "version": "0.1.0-beta.1.20.60-preview.21"
  * }
  * ```
  *
@@ -940,6 +940,30 @@ export class Cursor {
     show(): void;
 }
 
+export class CursorPropertiesChangeAfterEvent {
+    private constructor();
+    readonly properties: CursorProperties;
+}
+
+export class CursorPropertyChangeAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: CursorPropertiesChangeAfterEvent) => void,
+    ): (arg: CursorPropertiesChangeAfterEvent) => void;
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: CursorPropertiesChangeAfterEvent) => void): void;
+}
+
 /**
  * Editor Extensions are the basis for all player specific,
  * editor specific functionality within the game.  Almost all
@@ -959,6 +983,31 @@ export class Cursor {
  */
 export class Extension {
     private constructor();
+    /**
+     * @remarks
+     * Default identifier for tool rail grouping. All modal tools
+     * created from the extension will use this.
+     *
+     */
+    readonly defaultToolGroupId: string;
+    /**
+     * @remarks
+     * Description specified during registration for the extension.
+     *
+     */
+    readonly description: string;
+    /**
+     * @remarks
+     * Name of the extension.
+     *
+     */
+    readonly name: string;
+    /**
+     * @remarks
+     * Notes specified during registration for the extension.
+     *
+     */
+    readonly notes: string;
 }
 
 /**
@@ -1000,11 +1049,11 @@ export class ExtensionContext {
     readonly cursor: Cursor;
     /**
      * @remarks
-     * The short unique name with which this extension was
-     * registered
+     * Contains information about the registered extension
+     * instance.
      *
      */
-    readonly extensionName: string;
+    readonly extensionInfo: Extension;
     /**
      * @remarks
      * The current player which is the subject of the extension
@@ -1045,6 +1094,7 @@ export class ExtensionContext {
  */
 export class ExtensionContextAfterEvents {
     private constructor();
+    readonly cursorPropertyChange: CursorPropertyChangeAfterEventSignal;
     /**
      * @remarks
      * This event triggers when the editor mode changes for the
@@ -1872,6 +1922,7 @@ export interface CursorProperties {
      *
      */
     outlineColor?: minecraftserver.RGBA;
+    projectThroughLiquid?: boolean;
     /**
      * @remarks
      * An enum representing the cursor target mode
@@ -1923,6 +1974,14 @@ export interface ExtensionOptionalParameters {
      *
      */
     notes?: string;
+    /**
+     * @remarks
+     * An optional custom identifier that will be used for all
+     * Modal Tools created from the registered extension.
+     * The length of the string is capped to 256 characters
+     *
+     */
+    toolGroupId?: string;
 }
 
 /**
