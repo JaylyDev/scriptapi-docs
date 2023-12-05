@@ -15,7 +15,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server",
- *   "version": "1.6.0"
+ *   "version": "1.7.0"
  * }
  * ```
  *
@@ -1437,7 +1437,6 @@ export class Block {
      */
     readonly z: number;
     /**
-     * @beta
      * @remarks
      * Returns the {@link Block} above this block (positive in the
      * Y direction).
@@ -1452,7 +1451,6 @@ export class Block {
      */
     above(steps?: number): Block | undefined;
     /**
-     * @beta
      * @remarks
      * Returns the {@link Block} below this block (negative in the
      * Y direction).
@@ -1467,7 +1465,6 @@ export class Block {
      */
     below(steps?: number): Block | undefined;
     /**
-     * @beta
      * @remarks
      * Returns the {@link @minecraft/server.Location} of the center
      * of this block on the X and Z axis.
@@ -1499,7 +1496,6 @@ export class Block {
      */
     canPlace(blockToPlace: BlockPermutation | BlockType | string, faceToPlaceOn?: Direction): boolean;
     /**
-     * @beta
      * @remarks
      * Returns the {@link @minecraft/server.Location} of the center
      * of this block on the X, Y, and Z axis.
@@ -1507,7 +1503,6 @@ export class Block {
      */
     center(): Vector3;
     /**
-     * @beta
      * @remarks
      * Returns the {@link Block} to the east of this block
      * (positive in the X direction).
@@ -1670,7 +1665,6 @@ export class Block {
      */
     isValid(): boolean;
     /**
-     * @beta
      * @remarks
      * Returns the {@link Block} to the north of this block
      * (negative in the Z direction).
@@ -1685,7 +1679,6 @@ export class Block {
      */
     north(steps?: number): Block | undefined;
     /**
-     * @beta
      * @remarks
      * Returns a block at an offset relative vector to this block.
      *
@@ -1740,7 +1733,6 @@ export class Block {
      */
     setType(blockType: BlockType | string): void;
     /**
-     * @beta
      * @remarks
      * Returns the {@link Block} to the south of this block
      * (positive in the Z direction).
@@ -1776,7 +1768,6 @@ export class Block {
      */
     trySetPermutation(permutation: BlockPermutation): boolean;
     /**
-     * @beta
      * @remarks
      * Returns the {@link Block} to the west of this block
      * (negative in the X direction).
@@ -2907,21 +2898,15 @@ export class ChatSendAfterEvent {
      * Message that is being broadcast.
      *
      */
-    readonly message: string;
+    message: string;
     /**
      * @remarks
      * Player that sent the chat message.
      *
      */
-    readonly sender: Player;
-    /**
-     * @remarks
-     * Optional list of players that will receive this message. If
-     * defined, this message is directly targeted to one or more
-     * players (i.e., is not broadcast.)
-     *
-     */
-    readonly targets?: Player[];
+    sender: Player;
+    sendToTargets: boolean;
+    getTargets(): Player[];
 }
 
 /**
@@ -2968,7 +2953,8 @@ export class ChatSendAfterEventSignal {
  * @beta
  * An event that fires as players enter chat messages.
  */
-export class ChatSendBeforeEvent {
+// @ts-ignore Class inheritance allowed for native defined classes
+export class ChatSendBeforeEvent extends ChatSendAfterEvent {
     private constructor();
     /**
      * @remarks
@@ -2977,26 +2963,7 @@ export class ChatSendBeforeEvent {
      *
      */
     cancel: boolean;
-    /**
-     * @remarks
-     * Message that is being broadcast.
-     *
-     */
-    readonly message: string;
-    /**
-     * @remarks
-     * Player that sent the chat message.
-     *
-     */
-    readonly sender: Player;
-    /**
-     * @remarks
-     * Optional list of players that will receive this message. If
-     * defined, this message is directly targeted to one or more
-     * players (i.e., is not broadcast.)
-     *
-     */
-    readonly targets?: Player[];
+    setTargets(players: Player[]): void;
 }
 
 /**
@@ -3904,7 +3871,6 @@ export class DataDrivenEntityTriggerBeforeEventSignal {
 export class Dimension {
     private constructor();
     /**
-     * @beta
      * @remarks
      * Height range of the dimension.
      *
@@ -3970,7 +3936,7 @@ export class Dimension {
      *   overworld.createExplosion(explodeNoBlocksLoc, 15, { breaksBlocks: false });
      * ```
      */
-    createExplosion(location: Vector3, radius: number, explosionOptions?: ExplosionOptions): boolean;
+    createExplosion(location: Vector3, radius: number, explosionOptions?: ExplosionOptions): void;
     /**
      * @beta
      * @remarks
@@ -4478,14 +4444,18 @@ export class EffectAddAfterEvent {
      * @remarks
      * Additional properties and details of the effect.
      *
+     * This property can't be edited in read-only mode.
+     *
      */
-    readonly effect: Effect;
+    effect: Effect;
     /**
      * @remarks
      * Entity that the effect is being added to.
      *
+     * This property can't be edited in read-only mode.
+     *
      */
-    readonly entity: Entity;
+    entity: Entity;
 }
 
 /**
@@ -5152,7 +5122,6 @@ export class Entity {
      */
     applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void;
     /**
-     * @beta
      * @remarks
      * Clears all dynamic properties that have been set on this
      * entity.
@@ -5377,7 +5346,6 @@ export class Entity {
      */
     getComponents(): EntityComponent[];
     /**
-     * @beta
      * @remarks
      * Returns a property value.
      *
@@ -5390,7 +5358,6 @@ export class Entity {
      */
     getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined;
     /**
-     * @beta
      * @remarks
      * Returns the available set of dynamic property identifiers
      * that have been used on this entity.
@@ -5401,7 +5368,6 @@ export class Entity {
      */
     getDynamicPropertyIds(): string[];
     /**
-     * @beta
      * @remarks
      * Returns the total size, in bytes, of all the dynamic
      * properties that are currently stored for this entity.  This
@@ -5597,7 +5563,6 @@ export class Entity {
      */
     kill(): boolean;
     /**
-     * @beta
      * @remarks
      * Matches the entity against the passed in options. Uses the
      * location of the entity for matching if the location is not
@@ -5625,7 +5590,6 @@ export class Entity {
      */
     playAnimation(animationName: string, options?: PlayAnimationOptions): void;
     /**
-     * @beta
      * @remarks
      * Immediately removes the entity from the world. The removed
      * entity will not perform a death animation or drop loot upon
@@ -5722,7 +5686,6 @@ export class Entity {
      */
     runCommandAsync(commandString: string): Promise<CommandResult>;
     /**
-     * @beta
      * @remarks
      * Sets a specified property to a value.
      *
@@ -6361,6 +6324,8 @@ export class EntityEquippableComponent extends EntityComponent {
      * @remarks
      * Gets the equipped item for the given EquipmentSlot.
      *
+     * This function can't be called in read-only mode.
+     *
      * @param equipmentSlot
      * The equipment slot. e.g. "head", "chest", "offhand"
      * @returns
@@ -6374,6 +6339,8 @@ export class EntityEquippableComponent extends EntityComponent {
      * @remarks
      * Gets the ContainerSlot corresponding to the given
      * EquipmentSlot.
+     *
+     * This function can't be called in read-only mode.
      *
      * @param equipmentSlot
      * The equipment slot. e.g. "head", "chest", "offhand".
@@ -8161,7 +8128,7 @@ export class EntityTypes {
      * Retrieves an iterator of all entity types within this world.
      *
      */
-    static getAll(): EntityType[];
+    static getAll(): EntityTypeIterator;
 }
 
 /**
@@ -8777,16 +8744,23 @@ export class ItemDurabilityComponent extends ItemComponent {
      *
      * This function can't be called in read-only mode.
      *
+     * @param unbreaking
+     * Unbreaking factor to consider in factoring the damage
+     * chance. Incoming unbreaking parameter must be greater than
+     * 0.
      * @throws This function can throw errors.
      */
-    getDamageChance(unbreakingEnchantmentLevel?: number): number;
+    getDamageChance(unbreaking?: number): number;
     /**
      * @remarks
+     * A range of numbers that describes the chance of the item
+     * losing durability.
+     *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
      */
-    getDamageChanceRange(): minecraftcommon.NumberRange;
+    getDamageRange(): minecraftcommon.NumberRange;
 }
 
 /**
@@ -8876,7 +8850,7 @@ export class ItemReleaseUseAfterEvent {
      * Returns the item stack that triggered this item event.
      *
      */
-    readonly itemStack?: ItemStack;
+    readonly itemStack: ItemStack;
     /**
      * @remarks
      * Returns the source entity that triggered this item event.
@@ -10424,50 +10398,6 @@ export class Player extends Entity {
     /**
      * @beta
      * @remarks
-     * Creates a new particle emitter at a specified location in
-     * the world. Only visible to the target player.
-     *
-     * This function can't be called in read-only mode.
-     *
-     * @param effectName
-     * Identifier of the particle to create.
-     * @param location
-     * The location at which to create the particle emitter.
-     * @param molangVariables
-     * A set of optional, customizable variables that can be
-     * adjusted for this particle.
-     * @throws This function can throw errors.
-     *
-     * {@link Error}
-     *
-     * {@link LocationInUnloadedChunkError}
-     *
-     * {@link LocationOutOfWorldBoundariesError}
-     * @example spawnParticle.ts
-     * ```typescript
-     * for (let i = 0; i < 100; i++) {
-     *   const molang = new mc.MolangVariableMap();
-     *
-     *   molang.setColorRGB("variable.color", {
-     *     red: Math.random(),
-     *     green: Math.random(),
-     *     blue: Math.random(),
-     *     alpha: 1,
-     *   });
-     *
-     *   let newLocation = {
-     *     x: targetLocation.x + Math.floor(Math.random() * 8) - 4,
-     *     y: targetLocation.y + Math.floor(Math.random() * 8) - 4,
-     *     z: targetLocation.z + Math.floor(Math.random() * 8) - 4,
-     *   };
-     *   player.spawnParticle("minecraft:colored_flame_particle", newLocation, molang);
-     * }
-     * ```
-     */
-    spawnParticle(effectName: string, location: Vector3, molangVariables?: MolangVariableMap): void;
-    /**
-     * @beta
-     * @remarks
      * Sets the item cooldown time for a particular cooldown
      * category.
      *
@@ -10685,7 +10615,6 @@ export class PlayerDimensionChangeAfterEventSignal {
 }
 
 /**
- * @beta
  * Contains information regarding an event after a player
  * interacts with a block.
  */
@@ -10726,7 +10655,6 @@ export class PlayerInteractWithBlockAfterEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to after a player
  * interacts with a block.
  */
@@ -10756,7 +10684,6 @@ export class PlayerInteractWithBlockAfterEventSignal {
 }
 
 /**
- * @beta
  * Contains information regarding an event before a player
  * interacts with a block.
  */
@@ -10803,7 +10730,6 @@ export class PlayerInteractWithBlockBeforeEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to before a player
  * interacts with a block.
  */
@@ -10833,7 +10759,6 @@ export class PlayerInteractWithBlockBeforeEventSignal {
 }
 
 /**
- * @beta
  * Contains information regarding an event after a player
  * interacts with an entity.
  */
@@ -10861,7 +10786,6 @@ export class PlayerInteractWithEntityAfterEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to after a player
  * interacts with an entity.
  */
@@ -10891,7 +10815,6 @@ export class PlayerInteractWithEntityAfterEventSignal {
 }
 
 /**
- * @beta
  * Contains information regarding an event before a player
  * interacts with an entity.
  */
@@ -10925,7 +10848,6 @@ export class PlayerInteractWithEntityBeforeEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to before a player
  * interacts with an entity.
  */
@@ -11041,17 +10963,11 @@ export class PlayerLeaveAfterEventSignal extends IPlayerLeaveAfterEventSignal {
     private constructor();
 }
 
-/**
- * @beta
- */
 export class PlayerLeaveBeforeEvent {
     private constructor();
     readonly player: Player;
 }
 
-/**
- * @beta
- */
 export class PlayerLeaveBeforeEventSignal {
     private constructor();
     /**
@@ -11141,7 +11057,12 @@ export class PlayerPlaceBlockBeforeEvent extends BlockEvent {
      *
      */
     readonly faceLocation: Vector3;
-    readonly permutationBeingPlaced: BlockPermutation;
+    /**
+     * @remarks
+     * The item being used to place the block.
+     *
+     */
+    itemStack: ItemStack;
     /**
      * @remarks
      * Player that is placing the block for this event.
@@ -12664,7 +12585,6 @@ export class World {
      */
     broadcastClientMessage(id: string, value: string): void;
     /**
-     * @beta
      * @remarks
      * Clears the set of dynamic properties declared for this
      * behavior pack within the world.
@@ -12735,7 +12655,6 @@ export class World {
      */
     getDimension(dimensionId: string): Dimension;
     /**
-     * @beta
      * @remarks
      * Returns a property value.
      *
@@ -12802,7 +12721,6 @@ export class World {
      */
     getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined;
     /**
-     * @beta
      * @remarks
      * Gets a set of dynamic property identifiers that have been
      * set in this world.
@@ -12812,7 +12730,6 @@ export class World {
      */
     getDynamicPropertyIds(): string[];
     /**
-     * @beta
      * @remarks
      * Gets the total byte count of dynamic properties. This could
      * potentially be used for your own analytics to ensure you're
@@ -12821,7 +12738,6 @@ export class World {
      */
     getDynamicPropertyTotalByteCount(): number;
     /**
-     * @beta
      * @remarks
      * Returns an entity based on the provided id.
      *
@@ -13049,7 +12965,6 @@ export class World {
      */
     setDefaultSpawnLocation(spawnLocation: Vector3): void;
     /**
-     * @beta
      * @remarks
      * Sets a specified property to a value.
      *
@@ -13206,13 +13121,52 @@ export class WorldAfterEvents {
     readonly chatSend: ChatSendAfterEventSignal;
     /**
      * @beta
-     * @remarks
-     * This event is fired when an entity event has been triggered
-     * that will update the component definition state of an
-     * entity.
+     * @example sheepEventListener.ts
+     * ```ts
+     * import { world, system, Entity } from "@minecraft/server";
      *
+     * const eventId = "minecraft:entity_spawned";
+     *
+     * system.runInterval(() => {
+     *     for (let player of world.getAllPlayers()) {
+     *         let [entityRaycaseHit] = player.getEntitiesFromViewDirection({
+     *             maxDistance: 150,
+     *         });
+     *         if (!entityRaycaseHit) continue;
+     *         let entity = entityRaycaseHit.entity;
+     *
+     *         if (entity?.typeId === "minecraft:sheep") {
+     *             listenTo(entity);
+     *             entity.triggerEvent(eventId);
+     *         }
+     *     }
+     * });
+     *
+     * function listenTo(entity: Entity) {
+     *     const callback = world.afterEvents.dataDrivenEntityTriggerEvent.subscribe(
+     *         (data) => {
+     *             world.afterEvents.dataDrivenEntityTriggerEvent.unsubscribe(
+     *                 callback
+     *             );
+     *
+     *             data.getModifiers().forEach((modifier) => {
+     *                 console.log(
+     *                     "ComponentGroupsToAdd:",
+     *                     modifier.getComponentGroupsToAdd()
+     *                 );
+     *                 console.log(
+     *                     "ComponentGroupsToRemove:",
+     *                     modifier.getComponentGroupsToRemove()
+     *                 );
+     *                 console.log("Triggers:", modifier.getTriggers());
+     *             });
+     *         },
+     *         { entities: [entity], eventTypes: [eventId] }
+     *     );
+     * }
+     * ```
      */
-    readonly dataDrivenEntityTrigger: DataDrivenEntityTriggerAfterEventSignal;
+    readonly dataDrivenEntityTriggerEvent: DataDrivenEntityTriggerAfterEventSignal;
     /**
      * @beta
      * @remarks
@@ -13768,7 +13722,6 @@ export class WorldBeforeEvents {
      */
     readonly playerInteractWithEntity: PlayerInteractWithEntityBeforeEventSignal;
     /**
-     * @beta
      * @remarks
      * Fires when a player leaves the game.
      *
@@ -14165,7 +14118,6 @@ export interface DefinitionModifier {
      */
     removedComponentGroups: string[];
     /**
-     * @beta
      * @remarks
      * The list of entity definition events that will be fired via
      * this update.
@@ -14824,8 +14776,7 @@ export interface RGB {
 /**
  * Represents a fully customizable color within Minecraft.
  */
-// @ts-ignore Class inheritance allowed for native defined classes
-export interface RGBA extends RGB {
+export interface RGBA {
     /**
      * @remarks
      * Determines a color's alpha (opacity) component. Valid values
@@ -14833,6 +14784,27 @@ export interface RGBA extends RGB {
      *
      */
     alpha: number;
+    /**
+     * @remarks
+     * Determines a color's blue component. Valid values are
+     * between 0 and 1.0.
+     *
+     */
+    blue: number;
+    /**
+     * @remarks
+     * Determines a color's green component. Valid values are
+     * between 0 and 1.0.
+     *
+     */
+    green: number;
+    /**
+     * @remarks
+     * Determines a color's red component. Valid values are between
+     * 0 and 1.0.
+     *
+     */
+    red: number;
 }
 
 /**
@@ -15032,7 +15004,6 @@ export const MoonPhaseCount = 8;
  */
 export const TicksPerDay = 24000;
 /**
- * @beta
  * @remarks
  * How many times the server ticks per second of real time.
  *
