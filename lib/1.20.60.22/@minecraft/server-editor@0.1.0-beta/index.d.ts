@@ -14,7 +14,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-editor",
- *   "version": "0.1.0-beta.1.20.50-stable"
+ *   "version": "0.1.0-beta.1.20.60-preview.22"
  * }
  * ```
  *
@@ -940,6 +940,30 @@ export class Cursor {
     show(): void;
 }
 
+export class CursorPropertiesChangeAfterEvent {
+    private constructor();
+    readonly properties: CursorProperties;
+}
+
+export class CursorPropertyChangeAfterEventSignal {
+    private constructor();
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     */
+    subscribe(
+        callback: (arg: CursorPropertiesChangeAfterEvent) => void,
+    ): (arg: CursorPropertiesChangeAfterEvent) => void;
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    unsubscribe(callback: (arg: CursorPropertiesChangeAfterEvent) => void): void;
+}
+
 /**
  * Editor Extensions are the basis for all player specific,
  * editor specific functionality within the game.  Almost all
@@ -959,6 +983,31 @@ export class Cursor {
  */
 export class Extension {
     private constructor();
+    /**
+     * @remarks
+     * Default identifier for tool rail grouping. All modal tools
+     * created from the extension will use this.
+     *
+     */
+    readonly defaultToolGroupId: string;
+    /**
+     * @remarks
+     * Description specified during registration for the extension.
+     *
+     */
+    readonly description: string;
+    /**
+     * @remarks
+     * Name of the extension.
+     *
+     */
+    readonly name: string;
+    /**
+     * @remarks
+     * Notes specified during registration for the extension.
+     *
+     */
+    readonly notes: string;
 }
 
 /**
@@ -998,7 +1047,13 @@ export class ExtensionContext {
      *
      */
     readonly cursor: Cursor;
-    readonly extensionName: string;
+    /**
+     * @remarks
+     * Contains information about the registered extension
+     * instance.
+     *
+     */
+    readonly extensionInfo: Extension;
     /**
      * @remarks
      * The current player which is the subject of the extension
@@ -1039,6 +1094,7 @@ export class ExtensionContext {
  */
 export class ExtensionContextAfterEvents {
     private constructor();
+    readonly cursorPropertyChange: CursorPropertyChangeAfterEventSignal;
     /**
      * @remarks
      * This event triggers when the editor mode changes for the
@@ -1184,6 +1240,13 @@ export class MinecraftEditor {
      * @throws This property can throw when used.
      */
     readonly log: Logger;
+    /**
+     * @remarks
+     * Allows querying and modifying some properties of the
+     * simulation.
+     *
+     */
+    readonly simulation: SimulationState;
     /**
      * @remarks
      * This is an internal command which interfaces with the native
@@ -1536,6 +1599,30 @@ export class SettingsManager {
 }
 
 /**
+ * Responsible for querying and modifying various properties of
+ * the simulation.
+ */
+export class SimulationState {
+    private constructor();
+    /**
+     * @remarks
+     * Returns `true` if mob simulation is paused.
+     *
+     */
+    isPaused(): boolean;
+    /**
+     * @remarks
+     * Sets the state of mob simulation.  If set to `true`, mobs
+     * are paused.
+     *
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    setPaused(isPaused: boolean): void;
+}
+
+/**
  * The Transaction Manager is responsible for tracking and
  * managing all of the registered transaction operations which
  * represent creator changes in the world.
@@ -1835,6 +1922,7 @@ export interface CursorProperties {
      *
      */
     outlineColor?: minecraftserver.RGBA;
+    projectThroughLiquid?: boolean;
     /**
      * @remarks
      * An enum representing the cursor target mode
@@ -1886,6 +1974,14 @@ export interface ExtensionOptionalParameters {
      *
      */
     notes?: string;
+    /**
+     * @remarks
+     * An optional custom identifier that will be used for all
+     * Modal Tools created from the registered extension.
+     * The length of the string is capped to 256 characters
+     *
+     */
+    toolGroupId?: string;
 }
 
 /**
@@ -2065,6 +2161,13 @@ export interface IGlobalInputManager {
 export interface IMenu {
     /**
      * @remarks
+     * If defined, the menu will show a checked or unchecked
+     * checkbox.
+     *
+     */
+    checked?: boolean;
+    /**
+     * @remarks
      * Unique ID for the menu
      *
      */
@@ -2087,6 +2190,12 @@ export interface IMenu {
  * Properties required to create a Menu
  */
 export interface IMenuCreationParams {
+    /**
+     * @remarks
+     * Whether the menu should show a checkmark
+     *
+     */
+    checked?: boolean;
     /**
      * @remarks
      * Loc ID (resolved on client)
@@ -2671,6 +2780,16 @@ export declare function executeLargeOperation(
     selection: Selection,
     operation: (blockLocation: minecraftserver.Vector3) => void,
 ): Promise<void>;
+/**
+ * @remarks
+ * Returns a string array of the default block types for the
+ * Block picker control. Can be used to further filter blocks
+ * from the Block picker.
+ *
+ * @returns
+ * Default allowed block list
+ */
+export declare function getBlockPickerDefaultAllowBlockList(): string[];
 /**
  * @remarks
  * Adds the resource pack editor prefix and returns the full

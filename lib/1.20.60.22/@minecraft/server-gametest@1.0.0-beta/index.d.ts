@@ -17,7 +17,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-gametest",
- *   "version": "1.0.0-internal.1.20.50-stable"
+ *   "version": "1.0.0-internal.1.20.60-preview.22"
  * }
  * ```
  *
@@ -35,6 +35,12 @@ export enum GameTestErrorType {
     SimulatedPlayerOutOfBounds = 'SimulatedPlayerOutOfBounds',
     Unknown = 'Unknown',
     Waiting = 'Waiting',
+}
+
+export enum LookDuration {
+    Continuous = 'Continuous',
+    Instant = 'Instant',
+    UntilMove = 'UntilMove',
 }
 
 /**
@@ -195,6 +201,12 @@ export class GameTestSequence {
      * method steps can be added.
      */
     thenWaitAfter(delayTicks: number, callback: () => void): GameTestSequence;
+}
+
+export class NavigationResult {
+    private constructor();
+    readonly isFullPath: boolean;
+    getPath(): minecraftserver.Vector3[];
 }
 
 /**
@@ -574,7 +586,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      *
      * @throws This function can throw errors.
      */
-    lookAtBlock(blockLocation: minecraftserver.Vector3): void;
+    lookAtBlock(blockLocation: minecraftserver.Vector3, duration?: LookDuration): void;
     /**
      * @remarks
      * Rotates the simulated player's head/body to look at the
@@ -584,7 +596,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      *
      * @throws This function can throw errors.
      */
-    lookAtEntity(entity: minecraftserver.Entity): void;
+    lookAtEntity(entity: minecraftserver.Entity, duration?: LookDuration): void;
     /**
      * @remarks
      * Rotates the simulated player's head/body to look at the
@@ -594,7 +606,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      *
      * @throws This function can throw errors.
      */
-    lookAtLocation(location: minecraftserver.Vector3): void;
+    lookAtLocation(location: minecraftserver.Vector3, duration?: LookDuration): void;
     /**
      * @remarks
      * Orders the simulated player to walk in the given direction
@@ -626,7 +638,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      *
      * @throws This function can throw errors.
      */
-    moveToBlock(blockLocation: minecraftserver.Vector3, speed?: number): void;
+    moveToBlock(blockLocation: minecraftserver.Vector3, options?: MoveToOptions): void;
     /**
      * @remarks
      * Orders the simulated player to move to the given location in
@@ -637,7 +649,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      *
      * @throws This function can throw errors.
      */
-    moveToLocation(location: minecraftserver.Vector3, speed?: number): void;
+    moveToLocation(location: minecraftserver.Vector3, options?: MoveToOptions): void;
     /**
      * @remarks
      * Orders the simulated player to move to a specific block
@@ -651,7 +663,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      *
      * @throws This function can throw errors.
      */
-    navigateToBlock(blockLocation: minecraftserver.Vector3, speed?: number): minecraftserver.NavigationResult;
+    navigateToBlock(blockLocation: minecraftserver.Vector3, speed?: number): NavigationResult;
     /**
      * @remarks
      * Will use navigation to follow the selected entity to within
@@ -662,7 +674,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      *
      * @throws This function can throw errors.
      */
-    navigateToEntity(entity: minecraftserver.Entity, speed?: number): minecraftserver.NavigationResult;
+    navigateToEntity(entity: minecraftserver.Entity, speed?: number): NavigationResult;
     /**
      * @remarks
      * Orders the simulated player to move to a specific location
@@ -676,7 +688,7 @@ export class SimulatedPlayer extends minecraftserver.Player {
      *
      * @throws This function can throw errors.
      */
-    navigateToLocation(location: minecraftserver.Vector3, speed?: number): minecraftserver.NavigationResult;
+    navigateToLocation(location: minecraftserver.Vector3, speed?: number): NavigationResult;
     /**
      * @remarks
      * Use navigation to follow the route provided via the
@@ -750,6 +762,13 @@ export class SimulatedPlayer extends minecraftserver.Player {
     setItem(itemStack: minecraftserver.ItemStack, slot: number, selectSlot?: boolean): boolean;
     /**
      * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    startBuild(slot?: number): void;
+    /**
+     * @remarks
      * Stops destroying the block that is currently being hit.
      *
      * This function can't be called in read-only mode.
@@ -757,6 +776,13 @@ export class SimulatedPlayer extends minecraftserver.Player {
      * @throws This function can throw errors.
      */
     stopBreakingBlock(): void;
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    stopBuild(): void;
     /**
      * @remarks
      * Causes the simulated player to stop flying.
@@ -2201,6 +2227,11 @@ export interface GameTestErrorContext {
     absolutePosition: minecraftserver.Vector3;
     relativePosition: minecraftserver.Vector3;
     tickCount: number;
+}
+
+export interface MoveToOptions {
+    faceTarget?: boolean;
+    speed?: number;
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes

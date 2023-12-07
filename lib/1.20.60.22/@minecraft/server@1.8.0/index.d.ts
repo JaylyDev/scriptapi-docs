@@ -15,7 +15,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server",
- *   "version": "1.6.0"
+ *   "version": "1.7.0"
  * }
  * ```
  *
@@ -422,6 +422,42 @@ export enum EquipmentSlot {
 }
 
 /**
+ * @beta
+ * Represents the type of fluid for use within a fluid
+ * containing block, like a cauldron.
+ */
+export enum FluidType {
+    /**
+     * @beta
+     * @remarks
+     * Represents lava as a type of fluid.
+     *
+     */
+    Lava = 'Lava',
+    /**
+     * @beta
+     * @remarks
+     * Represents a potion as a type of fluid.
+     *
+     */
+    Potion = 'Potion',
+    /**
+     * @beta
+     * @remarks
+     * Represents powder snow as a type of fluid.
+     *
+     */
+    PowderSnow = 'PowderSnow',
+    /**
+     * @beta
+     * @remarks
+     * Represents water as a type of fluida.
+     *
+     */
+    Water = 'Water',
+}
+
+/**
  * Represents a game mode for the current world experience.
  */
 export enum GameMode {
@@ -788,7 +824,6 @@ export class Block {
      */
     readonly z: number;
     /**
-     * @beta
      * @remarks
      * Returns the {@link Block} above this block (positive in the
      * Y direction).
@@ -803,7 +838,6 @@ export class Block {
      */
     above(steps?: number): Block | undefined;
     /**
-     * @beta
      * @remarks
      * Returns the {@link Block} below this block (negative in the
      * Y direction).
@@ -818,7 +852,6 @@ export class Block {
      */
     below(steps?: number): Block | undefined;
     /**
-     * @beta
      * @remarks
      * Returns the {@link @minecraft/server.Location} of the center
      * of this block on the X and Z axis.
@@ -826,7 +859,6 @@ export class Block {
      */
     bottomCenter(): Vector3;
     /**
-     * @beta
      * @remarks
      * Returns the {@link @minecraft/server.Location} of the center
      * of this block on the X, Y, and Z axis.
@@ -834,7 +866,6 @@ export class Block {
      */
     center(): Vector3;
     /**
-     * @beta
      * @remarks
      * Returns the {@link Block} to the east of this block
      * (positive in the X direction).
@@ -960,7 +991,6 @@ export class Block {
      */
     isValid(): boolean;
     /**
-     * @beta
      * @remarks
      * Returns the {@link Block} to the north of this block
      * (negative in the Z direction).
@@ -975,7 +1005,6 @@ export class Block {
      */
     north(steps?: number): Block | undefined;
     /**
-     * @beta
      * @remarks
      * Returns a block at an offset relative vector to this block.
      *
@@ -1011,7 +1040,6 @@ export class Block {
      */
     setPermutation(permutation: BlockPermutation): void;
     /**
-     * @beta
      * @remarks
      * Returns the {@link Block} to the south of this block
      * (positive in the Z direction).
@@ -1026,7 +1054,6 @@ export class Block {
      */
     south(steps?: number): Block | undefined;
     /**
-     * @beta
      * @remarks
      * Returns the {@link Block} to the west of this block
      * (negative in the X direction).
@@ -1163,6 +1190,17 @@ export class BlockPermutation {
      * ```
      */
     static resolve(blockName: string, states?: Record<string, boolean | number | string>): BlockPermutation;
+}
+
+/**
+ * @beta
+ * The type (or template) of a block. Does not contain
+ * permutation data (state) other than the type of block it
+ * represents. This type was introduced as of version
+ * 1.17.10.21.
+ */
+export class BlockType {
+    private constructor();
 }
 
 /**
@@ -1557,7 +1595,6 @@ export class DataDrivenEntityTriggerAfterEventSignal {
 export class Dimension {
     private constructor();
     /**
-     * @beta
      * @remarks
      * Height range of the dimension.
      *
@@ -2434,7 +2471,6 @@ export class Entity {
      */
     applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void;
     /**
-     * @beta
      * @remarks
      * Clears all dynamic properties that have been set on this
      * entity.
@@ -2615,7 +2651,6 @@ export class Entity {
      */
     getComponents(): EntityComponent[];
     /**
-     * @beta
      * @remarks
      * Returns a property value.
      *
@@ -2628,7 +2663,6 @@ export class Entity {
      */
     getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined;
     /**
-     * @beta
      * @remarks
      * Returns the available set of dynamic property identifiers
      * that have been used on this entity.
@@ -2639,7 +2673,6 @@ export class Entity {
      */
     getDynamicPropertyIds(): string[];
     /**
-     * @beta
      * @remarks
      * Returns the total size, in bytes, of all the dynamic
      * properties that are currently stored for this entity.  This
@@ -2835,7 +2868,6 @@ export class Entity {
      */
     kill(): boolean;
     /**
-     * @beta
      * @remarks
      * Matches the entity against the passed in options. Uses the
      * location of the entity for matching if the location is not
@@ -2848,7 +2880,6 @@ export class Entity {
      */
     matches(options: EntityQueryOptions): boolean;
     /**
-     * @beta
      * @remarks
      * Immediately removes the entity from the world. The removed
      * entity will not perform a death animation or drop loot upon
@@ -2945,7 +2976,6 @@ export class Entity {
      */
     runCommandAsync(commandString: string): Promise<CommandResult>;
     /**
-     * @beta
      * @remarks
      * Sets a specified property to a value.
      *
@@ -4364,7 +4394,6 @@ export class EntityWantsJockeyComponent extends EntityComponent {
 }
 
 /**
- * @beta
  * Contains information regarding an explosion that has
  * happened.
  */
@@ -4391,7 +4420,6 @@ export class ExplosionAfterEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to when an explosion
  * occurs.
  */
@@ -4419,7 +4447,6 @@ export class ExplosionAfterEventSignal {
 }
 
 /**
- * @beta
  * Contains information regarding an explosion that has
  * happened.
  */
@@ -4444,7 +4471,6 @@ export class ExplosionBeforeEvent extends ExplosionAfterEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to before an explosion
  * occurs.
  */
@@ -6102,7 +6128,6 @@ export class PlayerDimensionChangeAfterEventSignal {
 }
 
 /**
- * @beta
  * Contains information regarding an event after a player
  * interacts with a block.
  */
@@ -6143,7 +6168,6 @@ export class PlayerInteractWithBlockAfterEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to after a player
  * interacts with a block.
  */
@@ -6173,7 +6197,6 @@ export class PlayerInteractWithBlockAfterEventSignal {
 }
 
 /**
- * @beta
  * Contains information regarding an event before a player
  * interacts with a block.
  */
@@ -6220,7 +6243,6 @@ export class PlayerInteractWithBlockBeforeEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to before a player
  * interacts with a block.
  */
@@ -6250,7 +6272,6 @@ export class PlayerInteractWithBlockBeforeEventSignal {
 }
 
 /**
- * @beta
  * Contains information regarding an event after a player
  * interacts with an entity.
  */
@@ -6278,7 +6299,6 @@ export class PlayerInteractWithEntityAfterEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to after a player
  * interacts with an entity.
  */
@@ -6308,7 +6328,6 @@ export class PlayerInteractWithEntityAfterEventSignal {
 }
 
 /**
- * @beta
  * Contains information regarding an event before a player
  * interacts with an entity.
  */
@@ -6342,7 +6361,6 @@ export class PlayerInteractWithEntityBeforeEvent {
 }
 
 /**
- * @beta
  * Manages callbacks that are connected to before a player
  * interacts with an entity.
  */
@@ -6432,17 +6450,11 @@ export class PlayerLeaveAfterEventSignal extends IPlayerLeaveAfterEventSignal {
     private constructor();
 }
 
-/**
- * @beta
- */
 export class PlayerLeaveBeforeEvent {
     private constructor();
     readonly player: Player;
 }
 
-/**
- * @beta
- */
 export class PlayerLeaveBeforeEventSignal {
     private constructor();
     /**
@@ -6812,7 +6824,7 @@ export class Scoreboard {
      * world.scoreboard.addObjective("example", "example");
      * ```
      */
-    addObjective(objectiveId: string, displayName: string): ScoreboardObjective;
+    addObjective(objectiveId: string, displayName?: string): ScoreboardObjective;
     /**
      * @remarks
      * Clears the objective that occupies a display slot.
@@ -7564,7 +7576,6 @@ export class World {
      */
     readonly scoreboard: Scoreboard;
     /**
-     * @beta
      * @remarks
      * Clears the set of dynamic properties declared for this
      * behavior pack within the world.
@@ -7635,7 +7646,6 @@ export class World {
      */
     getDimension(dimensionId: string): Dimension;
     /**
-     * @beta
      * @remarks
      * Returns a property value.
      *
@@ -7702,7 +7712,6 @@ export class World {
      */
     getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined;
     /**
-     * @beta
      * @remarks
      * Gets a set of dynamic property identifiers that have been
      * set in this world.
@@ -7712,7 +7721,6 @@ export class World {
      */
     getDynamicPropertyIds(): string[];
     /**
-     * @beta
      * @remarks
      * Gets the total byte count of dynamic properties. This could
      * potentially be used for your own analytics to ensure you're
@@ -7721,7 +7729,6 @@ export class World {
      */
     getDynamicPropertyTotalByteCount(): number;
     /**
-     * @beta
      * @remarks
      * Returns an entity based on the provided id.
      *
@@ -7949,7 +7956,6 @@ export class World {
      */
     setDefaultSpawnLocation(spawnLocation: Vector3): void;
     /**
-     * @beta
      * @remarks
      * Sets a specified property to a value.
      *
@@ -8431,7 +8437,6 @@ export class WorldBeforeEvents {
      */
     readonly playerBreakBlock: PlayerBreakBlockBeforeEventSignal;
     /**
-     * @beta
      * @remarks
      * Fires when a player leaves the game.
      *
@@ -9412,7 +9417,6 @@ export class LocationOutOfWorldBoundariesError extends Error {
  */
 export const MoonPhaseCount = 8;
 /**
- * @beta
  * @remarks
  * How many times the server ticks per second of real time.
  *
