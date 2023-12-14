@@ -17,7 +17,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-gametest",
- *   "version": "1.0.0-internal.1.20.60-preview.22"
+ *   "version": "1.0.0-internal.1.20.60-preview.23"
  * }
  * ```
  *

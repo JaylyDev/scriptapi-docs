@@ -14,7 +14,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-editor",
- *   "version": "0.1.0-beta.1.20.60-preview.22"
+ *   "version": "0.1.0-beta.1.20.60-preview.23"
  * }
  * ```
  *
@@ -1638,6 +1638,17 @@ export class TransactionManager {
     private constructor();
     /**
      * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    addUserDefinedOperation(
+        transactionHandlerId: UserDefinedTransactionHandlerId,
+        operationData: string,
+        operationName?: string,
+    ): void;
+    /**
+     * @remarks
      * Commit all of the transaction operations currently attached
      * to the open transaction record to the manager.  These will
      * be added as a single transaction manager entry.
@@ -1667,6 +1678,16 @@ export class TransactionManager {
      * @throws This function can throw errors.
      */
     commitTrackedChanges(): number;
+    /**
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     */
+    createUserDefinedTransactionHandler(
+        undoClosure: (arg: string) => void,
+        redoClosure: (arg: string) => void,
+    ): UserDefinedTransactionHandlerId;
     /**
      * @remarks
      * Discard the currently open transaction without committing it
@@ -1826,6 +1847,54 @@ export class TransactionManager {
      * @throws This function can throw errors.
      */
     undoSize(): number;
+}
+
+/**
+ * A strongly typed transaction handle to enforce type safety
+ * when adding user defined transactions.<br> This transaction
+ * handle becomes the context for adding the transaction to the
+ * transaction manager.<br> You can obtain one of these handles
+ * by calling {@link registerUserDefinedTransactionHandler}
+ */
+export declare class UserDefinedTransactionHandle<T> {
+    /**
+     * @remarks
+     * Constructs a new instance of the
+     * `UserDefinedTransactionHandle` class
+     *
+     */
+    constructor(nativeHandle: UserDefinedTransactionHandlerId, transactionManager: TransactionManager);
+    /**
+     * @remarks
+     * Add a user defined transaction operation to the transaction
+     * manager with a payload of the specified type. This allows
+     * the extension to open a transaction, and insert custom data
+     * objects into the transaction log which are stored until an
+     * undo or redo event occurs. The payload data added here is
+     * stored and then passed to the undo/redo handlers (registered
+     * with {@link registerUserDefinedTransactionHandler}) when an
+     * undo/redo event is requested. NOTE:<br> Transactions can
+     * contain multiple operations - you can open a transaction and
+     * add any (reasonable) number of operations to it (of the same
+     * or differing types) before committing to the transaction
+     * log. NOTE/WARNING:<br> The payload data is serialized to
+     * JSON before being inserted into the transaction log and the
+     * underlying implementation uses the JSON.stringify() function
+     * to serialize the data. Any non-primitive data, such as
+     * classes or minecraft native objects will not serialize to
+     * JSON properly, so you should avoid using them as payload
+     * data.
+     *
+     * @param payload
+     * The data object to be inserted into the transaction log.
+     * @param transactionName
+     * A string name that will be associated with this operation
+     */
+    addUserDefinedOperation(payload: T, transactionName: string): void;
+}
+
+export class UserDefinedTransactionHandlerId {
+    private constructor();
 }
 
 /**
@@ -2018,6 +2087,7 @@ export interface PlaytestGameOptions {
     showCoordinates?: boolean;
     spawnPosition?: minecraftserver.Vector3;
     timeOfDay?: number;
+    weather?: number;
 }
 
 /**
@@ -2815,4 +2885,56 @@ export declare function registerEditorExtension<PerPlayerStorageType = Record<st
     shutdownFunction: ShutdownFunctionType<PerPlayerStorageType>,
     options?: IRegisterExtensionOptionalParameters,
 ): Extension;
+/**
+ * @remarks
+ * Creates a strongly typed transaction handle to enforce type
+ * safety when adding user defined transactions. This function
+ * is a wrapper around the more generalized transaction manager
+ * API for script based transactions. Any Editor Extension that
+ * needs to insert data into the transaction log for undo/redo
+ * should use this function to create a handler for the
+ * specific type of data that needs to be inserted. When a
+ * transaction is undone/redone, the associated handler
+ * function will be invoked with a copy of the payload data
+ * that was inserted into the log. As a general rule,
+ * transaction data should contain 2 things:<br> 1. The data
+ * that will be used to perform the operation we're trying to
+ * record<br> 2. The data that will be used to restore the
+ * state of the program to what it was before the
+ * operation.<br> NOTE/WARNING:<br> The payload data is
+ * serialized to JSON before being inserted into the
+ * transaction log and the underlying implementation uses the
+ * JSON.stringify() function to serialize the data. Any
+ * non-primitive data, such as classes or minecraft native
+ * objects will not serialize to JSON properly, so you should
+ * avoid using them as payload data.
+ *
+ * @param transactionManager
+ * A reference to the TransactionManager (from the extension
+ * context for your extension)
+ * @param undoHandler
+ * A function that will be invoked when the transaction is
+ * undone. The function will be passed a copy of the payload
+ * data that was inserted into the transaction log.
+ * @param redoHandler
+ * A function that will be invoked when the transaction is
+ * redone. The function will be passed a copy of the payload
+ * data that was inserted into the transaction log.
+ * @returns
+ * - {@link UserDefinedTransactionHandle} - A strongly typed
+ * transaction handle that can be used to add transactions to
+ * the transaction manager.
+ */
+export declare function registerUserDefinedTransactionHandler<T>(
+    transactionManager: TransactionManager,
+    undoHandler: (payload: T) => void,
+    redoHandler: (payload: T) => void,
+): UserDefinedTransactionHandle<T>;
+/**
+ * @remarks
+ * Small utility for getting a string from an unknown exception
+ * type
+ *
+ */
+export declare function stringFromException(e: unknown): string;
 export const editor: MinecraftEditor;
