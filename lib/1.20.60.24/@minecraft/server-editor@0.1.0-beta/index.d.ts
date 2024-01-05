@@ -14,7 +14,7 @@
  * ```json
  * {
  *   "module_name": "@minecraft/server-editor",
- *   "version": "0.1.0-beta.1.20.60-preview.23"
+ *   "version": "0.1.0-beta.1.20.60-preview.24"
  * }
  * ```
  *
@@ -2249,7 +2249,6 @@ export interface IMenu {
      */
     readonly submenu: IMenu[];
     addItem(params: IMenuCreationParams, action?: RegisteredAction<NoArgsAction>): IMenu;
-    addSeparator(): IMenu;
     dispose(): void;
     hide(): void;
     replaceAction(action: RegisteredAction<NoArgsAction>): void;
@@ -2449,16 +2448,6 @@ export interface IPropertyItemOptions {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
-export interface IPropertyItemOptionsBlocks extends IPropertyItemOptions {
-    /**
-     * @remarks
-     * The allowed blocks for the Block Picker.
-     *
-     */
-    allowedBlocks?: string[];
-}
-
-// @ts-ignore Class inheritance allowed for native defined classes
 export interface IPropertyItemOptionsButton extends IPropertyItemOptions {
     /**
      * @remarks
@@ -2466,6 +2455,16 @@ export interface IPropertyItemOptionsButton extends IPropertyItemOptions {
      *
      */
     variant?: ButtonVariant;
+}
+
+// @ts-ignore Class inheritance allowed for native defined classes
+export interface IPropertyItemOptionsDataPicker extends IPropertyItemOptions {
+    /**
+     * @remarks
+     * Used to hold the entries allowed in the block/entity picker
+     *
+     */
+    allowedEntries?: string[];
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -2609,7 +2608,7 @@ export interface IPropertyPane {
     addBlockPicker<T extends PropertyBag, Prop extends keyof T & string>(
         obj: T,
         property: Prop,
-        options?: IPropertyItemOptionsBlocks,
+        options?: IPropertyItemOptionsDataPicker,
     ): IPropertyItem<T, Prop>;
     /**
      * @remarks
@@ -2651,6 +2650,16 @@ export interface IPropertyPane {
         obj: T,
         property: Prop,
         options?: IPropertyItemOptionsDropdown,
+    ): IPropertyItem<T, Prop>;
+    /**
+     * @remarks
+     * Adds an EntityPicker item to the pane.
+     *
+     */
+    addEntityPicker<T extends PropertyBag, Prop extends keyof T & string>(
+        obj: T,
+        property: Prop,
+        options?: IPropertyItemOptionsDataPicker,
     ): IPropertyItem<T, Prop>;
     /**
      * @remarks
@@ -2765,6 +2774,13 @@ export interface IRegisterExtensionOptionalParameters {
      *
      */
     notes?: string;
+    /**
+     * @remarks
+     * An optional custom group identifier that will be used for
+     * all Modal Tools created from the registered extension.
+     *
+     */
+    toolGroupId?: string;
 }
 
 export interface IStatusBarItem {

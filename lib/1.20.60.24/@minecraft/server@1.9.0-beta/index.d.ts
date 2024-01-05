@@ -37,11 +37,36 @@ export enum BlockComponentTypes {
 
 /**
  * @beta
+ * An enumeration describing the state of a block piston.
  */
 export enum BlockPistonState {
+    /**
+     * @beta
+     * @remarks
+     * Whether the piston is fully expanded.
+     *
+     */
     Expanded = 'Expanded',
+    /**
+     * @beta
+     * @remarks
+     * Whether the piston is in the process of expanding.
+     *
+     */
     Expanding = 'Expanding',
+    /**
+     * @beta
+     * @remarks
+     * Whether the piston is fully retracted.
+     *
+     */
     Retracted = 'Retracted',
+    /**
+     * @beta
+     * @remarks
+     * Whether the piston is in the process of retracting.
+     *
+     */
     Retracting = 'Retracting',
 }
 
@@ -861,11 +886,37 @@ export enum GameMode {
 
 /**
  * @beta
+ * The types of item components that are accessible via
+ * function ItemStack.getComponent.
  */
 export enum ItemComponentTypes {
+    /**
+     * @beta
+     * @remarks
+     * The minecraft:cooldown component.
+     *
+     */
     Cooldown = 'minecraft:cooldown',
+    /**
+     * @beta
+     * @remarks
+     * The minecraft:durability component.
+     *
+     */
     Durability = 'minecraft:durability',
+    /**
+     * @beta
+     * @remarks
+     * The minecraft:enchantable component.
+     *
+     */
     Enchantable = 'minecraft:enchantable',
+    /**
+     * @beta
+     * @remarks
+     * The minecraft:food component.
+     *
+     */
     Food = 'minecraft:food',
 }
 
@@ -1326,6 +1377,23 @@ export type ItemComponentTypeMap = {
 };
 
 /**
+ * @beta
+ */
+export class BiomeType {
+    private constructor();
+    readonly id: string;
+}
+
+/**
+ * @beta
+ */
+export class BiomeTypes {
+    private constructor();
+    static get(typeName: string): BiomeType | undefined;
+    static getAll(): BiomeType[];
+}
+
+/**
  * Represents a block in a dimension. A block represents a
  * unique X, Y, and Z within a dimension and get/sets the state
  * of the block at that location. This type was significantly
@@ -1384,10 +1452,13 @@ export class Block {
      * @remarks
      * Returns or sets whether this block has a liquid on it.
      *
-     * This property can't be edited in read-only mode.
+     * @throws This property can throw when used.
      *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
      */
-    isWaterlogged: boolean;
+    readonly isWaterlogged: boolean;
     /**
      * @remarks
      * Coordinates of the specified block.
@@ -1678,6 +1749,17 @@ export class Block {
      */
     isValid(): boolean;
     /**
+     * @beta
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    matches(blockName: string, states?: Record<string, boolean | number | string>): boolean;
+    /**
      * @remarks
      * Returns the {@link Block} to the north of this block
      * (negative in the Z direction).
@@ -1745,6 +1827,20 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      */
     setType(blockType: BlockType | string): void;
+    /**
+     * @beta
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link Error}
+     *
+     * {@link LocationInUnloadedChunkError}
+     *
+     * {@link LocationOutOfWorldBoundariesError}
+     */
+    setWaterlogged(isWaterlogged: boolean): void;
     /**
      * @remarks
      * Returns the {@link Block} to the south of this block
@@ -2193,6 +2289,9 @@ export class BlockPistonComponent extends BlockComponent {
      */
     readonly isMoving: boolean;
     /**
+     * @remarks
+     * The current state of the piston.
+     *
      * @throws This property can throw when used.
      */
     readonly state: BlockPistonState;
@@ -2206,6 +2305,10 @@ export class BlockPistonComponent extends BlockComponent {
      */
     getAttachedBlocks(): Block[];
     /**
+     * @remarks
+     * Retrieves a set of block locations that this piston is
+     * connected with.
+     *
      * @throws This function can throw errors.
      */
     getAttachedBlocksLocations(): Vector3[];
@@ -2337,30 +2440,53 @@ export class BlockSignComponent extends BlockComponent {
      * The side of the sign the message will be set on. If not
      * provided, the message will be set on the front side of the
      * sign.
-     * @throws This function can throw errors.
+     * @throws
+     * Throws if the provided message is greater than 512
+     * characters in length.
      * @example SetRawMessage.ts
      * ```typescript
-     * const helloWorldMessage: RawMessage = { text: 'Hello World' };
+     * const signLocation: Vector3 = { x: 0, y: -60, z: 0 }; // Replace with your sign's coordinates
+     * const block = world.getDimension("overworld").getBlock(signLocation);
+     * if (!block) {
+     *   world.sendMessage("Could not find a block at specified location.");
+     *   return;
+     * }
+     * const sign = block.getComponent("minecraft:sign") as BlockSignComponent;
+     * const helloWorldMessage: RawMessage = { text: "Hello World" };
      * sign.setText(helloWorldMessage);
      *
      * // Sign text will be saved as a RawText
-     * const result: RawText = sign.getRawText();
-     * JSON.stringify(result); // { rawtext: [{ text: 'Hello World' }] };
+     * const result = sign.getRawText();
+     * world.sendMessage(JSON.stringify(result)); // { rawtext: [{ text: 'Hello World' }] };
      * ```
      * @example SetRawText.ts
      * ```typescript
-     * const helloWorldText: RawText = { rawtext: [{ text: 'Hello World' }] };
+     * const signLocation: Vector3 = { x: 0, y: -60, z: 0 }; // Replace with your sign's coordinates
+     * const block = world.getDimension("overworld").getBlock(signLocation);
+     * if (!block) {
+     *   world.sendMessage("Could not find a block at specified location.");
+     *   return;
+     * }
+     * const sign = block.getComponent("minecraft:sign") as BlockSignComponent;
+     * const helloWorldText: RawText = { rawtext: [{ text: "Hello World" }] };
      * sign.setText(helloWorldText);
      *
      * // There will be no data transformation unlike calling setText with a RawMessage
-     * const result: RawText = sign.getRawText();
-     * JSON.stringify(result); // { rawtext: [{ text: 'Hello World' }] };
+     * const result = sign.getRawText();
+     * world.sendMessage(JSON.stringify(result)); // { rawtext: [{ text: 'Hello World' }] };
      * ```
      * @example SetString.ts
      * ```typescript
+     * const signLocation: Vector3 = { x: 0, y: -60, z: 0 }; // Replace with your sign's coordinates
+     * const block = world.getDimension("overworld").getBlock(signLocation);
+     * if (!block) {
+     *   world.sendMessage("Could not find a block at specified location.");
+     *   return;
+     * }
+     * const sign = block.getComponent("minecraft:sign") as BlockSignComponent;
      * // Set sign to say 'Hello'
-     * sign.setText('Hello');
-     * sign.getText(); // 'Hello'
+     * sign.setText("Hello World");
+     * world.sendMessage(sign.getText() ?? "undefined"); // 'Hello World'
      * ```
      */
     setText(message: RawMessage | RawText | string, side?: SignSide): void;
@@ -3618,19 +3744,49 @@ export class ContainerSlot {
      */
     readonly typeId?: string;
     /**
-     * @throws This function can throw errors.
+     * @remarks
+     * Clears all dynamic properties that have been set on this
+     * item stack.
+     *
+     * @throws
+     * Throws if the slot's container is invalid.
      */
     clearDynamicProperties(): void;
     /**
-     * @throws This function can throw errors.
+     * @remarks
+     * Returns a property value.
+     *
+     * @param identifier
+     * The property identifier.
+     * @returns
+     * Returns the value for the property, or undefined if the
+     * property has not been set.
+     * @throws
+     * Throws if the slot's container is invalid.
      */
     getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined;
     /**
-     * @throws This function can throw errors.
+     * @remarks
+     * Returns the available set of dynamic property identifiers
+     * that have been used on this item stack.
+     *
+     * @returns
+     * A string array of the dynamic properties set on this entity.
+     * @throws
+     * Throws if the slot's container is invalid.
      */
     getDynamicPropertyIds(): string[];
     /**
-     * @throws This function can throw errors.
+     * @remarks
+     * Returns the total size, in bytes, of all the dynamic
+     * properties that are currently stored for this entity. This
+     * includes the size of both the key and the value.  This can
+     * be useful for diagnosing performance warning signs - if, for
+     * example, an entity has many megabytes of associated dynamic
+     * properties, it may be slow to load on various devices.
+     *
+     * @throws
+     * Throws if the slot's container is invalid.
      */
     getDynamicPropertyTotalByteCount(): number;
     /**
@@ -3641,7 +3797,8 @@ export class ContainerSlot {
      * @returns
      * Returns a copy of the item in the slot. Returns undefined if
      * the slot is empty.
-     * @throws This function can throw errors.
+     * @throws
+     * Throws if the slot's container is invalid.
      */
     getItem(): ItemStack | undefined;
     /**
@@ -3663,7 +3820,8 @@ export class ContainerSlot {
      * @returns
      * Returns all tags for the item in the slot. Return an empty
      * array if the the slot is empty.
-     * @throws This function can throw errors.
+     * @throws
+     * Throws if the slot's container is invalid.
      */
     getTags(): string[];
     /**
@@ -3675,7 +3833,8 @@ export class ContainerSlot {
      * @returns
      * Returns false when the slot is empty or the item in the slot
      * does not have the given tag.
-     * @throws This function can throw errors.
+     * @throws
+     * Throws if the slot's container is invalid.
      */
     hasTag(tag: string): boolean;
     /**
@@ -3735,7 +3894,15 @@ export class ContainerSlot {
      */
     setCanPlaceOn(blockIdentifiers?: string[]): void;
     /**
-     * @throws This function can throw errors.
+     * @remarks
+     * Sets a specified property to a value.
+     *
+     * @param identifier
+     * The property identifier.
+     * @param value
+     * Data value of the property to set.
+     * @throws
+     * Throws if the slot's container is invalid.
      */
     setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void;
     /**
@@ -3747,7 +3914,8 @@ export class ContainerSlot {
      *
      * @param itemStack
      * The ItemStack to be placed in the slot.
-     * @throws This function can throw errors.
+     * @throws
+     * Throws if the slot's container is invalid.
      */
     setItem(itemStack?: ItemStack): void;
     /**
@@ -4003,6 +4171,18 @@ export class Dimension {
         block: BlockPermutation | BlockType | string,
         options?: BlockFillOptions,
     ): number;
+    /**
+     * @beta
+     * @remarks
+     * This function can't be called in read-only mode.
+     *
+     * @throws This function can throw errors.
+     *
+     * {@link minecraftcommon.EngineError}
+     *
+     * {@link Error}
+     */
+    findClosestBiome(pos: Vector3, biomeToFind: BiomeType | string, options?: BiomeSearchOptions): Vector3 | undefined;
     /**
      * @remarks
      * Returns a block instance at the given location.
@@ -4653,7 +4833,8 @@ export class EnchantmentType {
 
 /**
  * @beta
- * Provides a list of enchantment types.
+ * Contains a catalog of Minecraft Enchantment Types that are
+ * available in this world.
  */
 export class EnchantmentTypes {
     private constructor();
@@ -5261,11 +5442,11 @@ export class Entity {
     /**
      * @remarks
      * Returns the total size, in bytes, of all the dynamic
-     * properties that are currently stored for this entity.  This
-     * can be useful for diagnosing performance warning signs - if,
-     * for example, an entity has many megabytes of associated
-     * dynamic properties, it may be slow to load on various
-     * devices.
+     * properties that are currently stored for this entity. This
+     * includes the size of both the key and the value.  This can
+     * be useful for diagnosing performance warning signs - if, for
+     * example, an entity has many megabytes of associated dynamic
+     * properties, it may be slow to load on various devices.
      *
      * @throws This function can throw errors.
      */
@@ -5347,8 +5528,10 @@ export class Entity {
     getRotation(): Vector2;
     /**
      * @remarks
+     * Returns all tags associated with the entity.
+     *
      * @returns
-     * Returns all tags associated with an entity.
+     * An array containing all tags as strings.
      * @throws This function can throw errors.
      */
     getTags(): string[];
@@ -5459,10 +5642,13 @@ export class Entity {
      * location of the entity for matching if the location is not
      * specified in the passed in EntityQueryOptions.
      *
+     * @param options
+     * The query to perform the match against.
      * @returns
      * Returns true if the entity matches the criteria in the
      * passed in EntityQueryOptions, otherwise it returns false.
-     * @throws This function can throw errors.
+     * @throws
+     * Throws if the query options are misconfigured.
      */
     matches(options: EntityQueryOptions): boolean;
     /**
@@ -7510,90 +7696,143 @@ export class EntityOnFireComponent extends EntityComponent {
 
 /**
  * @beta
+ * The projectile component controls the properties of a
+ * projectile entity and allows it to be shot in a given
+ * direction.
+ * This component is present when the entity has the
+ * minecraft:projectile component.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityProjectileComponent extends EntityComponent {
     private constructor();
     /**
      * @remarks
+     * The fraction of the projectile's speed maintained every tick
+     * while traveling through air.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     airInertia: number;
     /**
      * @remarks
+     * If true, the entity will be set on fire when hurt. The
+     * default burn duration is 5 seconds. This duration can be
+     * modified via the onFireTime property. The entity will not
+     * catch fire if immune or if the entity is wet.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     catchFireOnHurt: boolean;
     /**
      * @remarks
+     * If true, the projectile will spawn crit particles when hit
+     * by a player. E.g. Player attacking a Shulker bullet.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     critParticlesOnProjectileHurt: boolean;
     /**
      * @remarks
+     * If true, the projectile will be destroyed when it takes
+     * damage. E.g. Player attacking a Shulker bullet.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     destroyOnProjectileHurt: boolean;
     /**
      * @remarks
+     * The gravity applied to the projectile. When the entity is
+     * not on the ground, subtracts this amount from the
+     * projectile’s change in vertical position every tick. The
+     * higher the value, the faster the projectile falls. If
+     * negative, the entity will rise instead of fall.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     gravity: number;
     /**
      * @remarks
+     * The sound that plays when the projectile hits an entity.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     hitEntitySound?: string;
     /**
      * @remarks
+     * The sound that plays when the projectile hits a block.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     hitGroundSound?: string;
     /**
      * @remarks
+     * The particle that spawns when the projectile hits something.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     hitParticle?: string;
     /**
      * @remarks
+     * If true and the weather is thunder and the entity has line
+     * of sight to the sky, the entity will be struck by lightning
+     * when hit. E.g. A thrown Trident with the Channeling
+     * enchantment.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     lightningStrikeOnHit: boolean;
     /**
      * @remarks
+     * The fraction of the projectile's speed maintained every tick
+     * while traveling through a liquid.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     liquidInertia: number;
     /**
      * @remarks
+     * Duration in seconds that the entity hit will be on fire for
+     * when catchFireOnHurt is set to true.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     onFireTime: number;
     /**
      * @remarks
+     * The owner of the projectile. This is used to determine what
+     * the projectile can collide with and damage. It also
+     * determines which entity is assigned as the attacker.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     owner?: Entity;
     /**
      * @remarks
+     * If true, the projectile will bounce off mobs when no damage
+     * is taken. E.g. A spawning wither.
+     *
      * This property can't be edited in read-only mode.
      *
      */
     shouldBounceOnHit: boolean;
     /**
      * @remarks
+     * If true, the projectile will stop moving when an entity is
+     * hit as thought it had been blocked. E.g. Thrown trident on
+     * hit behavior.
+     *
      * This property can't be edited in read-only mode.
      *
      */
@@ -7601,9 +7840,18 @@ export class EntityProjectileComponent extends EntityComponent {
     static readonly componentId = 'minecraft:projectile';
     /**
      * @remarks
+     * Shoots the projectile with a given velocity. The projectile
+     * will be shot from its current location.
+     *
      * This function can't be called in read-only mode.
      *
-     * @throws This function can throw errors.
+     * @param velocity
+     * The velocity to fire the projectile. This controls both the
+     * speed and direction which which the projectile will be shot.
+     * @param options
+     * Optional configuration for the shoot.
+     * @throws
+     * Throws if the component or entity no longer exist.
      */
     shoot(velocity: Vector3, options?: ProjectileShootOptions): void;
 }
@@ -8570,7 +8818,7 @@ export class ItemCooldownComponent extends ItemComponent {
     readonly cooldownCategory: string;
     /**
      * @remarks
-     * Amount of time, in ticks, that remain for this item
+     * Amount of time, in ticks, it will take this item to
      * cooldown.
      *
      * @throws This property can throw when used.
@@ -8732,6 +8980,11 @@ export class ItemDurabilityComponent extends ItemComponent {
     getDamageChance(unbreakingEnchantmentLevel?: number): number;
     /**
      * @remarks
+     * Returns the min and max variables used by the damage chance
+     * formula:
+     * chance = (min + ((max - min) / (unbreaking + 1)))
+     *
+     *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
@@ -8741,6 +8994,8 @@ export class ItemDurabilityComponent extends ItemComponent {
 
 /**
  * @beta
+ * When present on an item, this item can have enchantments
+ * applied to it.
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class ItemEnchantableComponent extends ItemComponent {
@@ -8748,9 +9003,24 @@ export class ItemEnchantableComponent extends ItemComponent {
     static readonly componentId = 'minecraft:enchantable';
     /**
      * @remarks
+     * Adds an enchantment to the item stack.
+     *
      * This function can't be called in read-only mode.
      *
-     * @throws This function can throw errors.
+     * @param enchantment
+     * The enchantment interface to be added.
+     * @throws
+     * ScriptItemEnchantmentUnknownIdError: Exception thrown if the
+     * enchantment type does not exist.
+     *
+     * ScriptItemEnchantmentLevelOutOfBoundsError: Exception thrown
+     * if the enchantment level is outside the allowable range for
+     * the given enchantment type.
+     *
+     * ScriptItemEnchantmentTypeNotCompatibleError: Exception
+     * thrown if the enchantment is not compatible with the item
+     * stack.
+     *
      *
      * {@link EnchantmentLevelOutOfBoundsError}
      *
@@ -8763,9 +9033,24 @@ export class ItemEnchantableComponent extends ItemComponent {
     addEnchantment(enchantment: Enchantment): void;
     /**
      * @remarks
+     * Adds a list of enchantments to the item stack.
+     *
      * This function can't be called in read-only mode.
      *
-     * @throws This function can throw errors.
+     * @param enchantments
+     * The list of enchantments to be added.
+     * @throws
+     * ScriptItemEnchantmentUnknownIdError: Exception thrown if any
+     * enchantment type does not exist.
+     *
+     * ScriptItemEnchantmentLevelOutOfBoundsError: Exception thrown
+     * if any enchantment level is outside the allowable range for
+     * the given enchantment type.
+     *
+     * ScriptItemEnchantmentTypeNotCompatibleError: Exception
+     * thrown if any enchantment is not compatible with the item
+     * stack.
+     *
      *
      * {@link EnchantmentLevelOutOfBoundsError}
      *
@@ -8777,7 +9062,23 @@ export class ItemEnchantableComponent extends ItemComponent {
      */
     addEnchantments(enchantments: Enchantment[]): void;
     /**
-     * @throws This function can throw errors.
+     * @remarks
+     * Checks whether an enchantment can be added to the item
+     * stack.
+     *
+     * @param enchantment
+     * The enchantment interface to be added.
+     * @returns
+     * Returns true if the enchantment can be added to the item
+     * stack.
+     * @throws
+     * ScriptItemEnchantmentUnknownIdError: Exception thrown if the
+     * enchantment type does not exist.
+     *
+     * ScriptItemEnchantmentLevelOutOfBoundsError: Exception thrown
+     * if the enchantment level is outside the allowable range for
+     * the given enchantment type.
+     *
      *
      * {@link EnchantmentLevelOutOfBoundsError}
      *
@@ -8785,23 +9086,50 @@ export class ItemEnchantableComponent extends ItemComponent {
      */
     canAddEnchantment(enchantment: Enchantment): boolean;
     /**
-     * @throws This function can throw errors.
+     * @remarks
+     * Gets the enchantment of a given type from the item stack.
+     *
+     * @param enchantmentType
+     * The enchantment type to get.
+     * @returns
+     * Returns the enchantment if it exists on the item stack.
+     * @throws
+     * ScriptItemEnchantmentUnknownIdError: Exception thrown if the
+     * enchantment type does not exist.
+     *
      *
      * {@link EnchantmentTypeUnknownIdError}
      */
     getEnchantment(enchantmentType: EnchantmentType | string): Enchantment | undefined;
     /**
+     * @remarks
+     * Gets all enchantments on the item stack.
+     *
+     * @returns
+     * Returns a list of enchantments on the item stack.
      * @throws This function can throw errors.
      */
     getEnchantments(): Enchantment[];
     /**
-     * @throws This function can throw errors.
+     * @remarks
+     * Checks whether an item stack has a given enchantment type.
+     *
+     * @param enchantmentType
+     * The enchantment type to check for.
+     * @returns
+     * Returns true if the item stack has the enchantment type.
+     * @throws
+     * ScriptItemEnchantmentUnknownIdError: Exception thrown if the
+     * enchantment type does not exist.
+     *
      *
      * {@link EnchantmentTypeUnknownIdError}
      */
     hasEnchantment(enchantmentType: EnchantmentType | string): boolean;
     /**
      * @remarks
+     * Removes all enchantments applied to this item stack.
+     *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
@@ -8809,9 +9137,16 @@ export class ItemEnchantableComponent extends ItemComponent {
     removeAllEnchantments(): void;
     /**
      * @remarks
+     * Removes an enchantment of the given type.
+     *
      * This function can't be called in read-only mode.
      *
-     * @throws This function can throw errors.
+     * @param enchantmentType
+     * The enchantment type to remove.
+     * @throws
+     * ScriptItemEnchantmentUnknownIdError: Exception thrown if the
+     * enchantment type does not exist.
+     *
      *
      * {@link EnchantmentTypeUnknownIdError}
      *
@@ -9016,6 +9351,10 @@ export class ItemStack {
     constructor(itemType: ItemType | string, amount?: number);
     /**
      * @beta
+     * @remarks
+     * Clears all dynamic properties that have been set on this
+     * item stack.
+     *
      */
     clearDynamicProperties(): void;
     /**
@@ -9082,14 +9421,36 @@ export class ItemStack {
     getComponents(): ItemComponent[];
     /**
      * @beta
+     * @remarks
+     * Returns a property value.
+     *
+     * @param identifier
+     * The property identifier.
+     * @returns
+     * Returns the value for the property, or undefined if the
+     * property has not been set.
      */
     getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined;
     /**
      * @beta
+     * @remarks
+     * Returns the available set of dynamic property identifiers
+     * that have been used on this entity.
+     *
+     * @returns
+     * A string array of the dynamic properties set on this entity.
      */
     getDynamicPropertyIds(): string[];
     /**
      * @beta
+     * @remarks
+     * Returns the total size, in bytes, of all the dynamic
+     * properties that are currently stored for this entity. This
+     * includes the size of both the key and the value.  This can
+     * be useful for diagnosing performance warning signs - if, for
+     * example, an entity has many megabytes of associated dynamic
+     * properties, it may be slow to load on various devices.
+     *
      */
     getDynamicPropertyTotalByteCount(): number;
     /**
@@ -9189,7 +9550,16 @@ export class ItemStack {
     setCanPlaceOn(blockIdentifiers?: string[]): void;
     /**
      * @beta
-     * @throws This function can throw errors.
+     * @remarks
+     * Sets a specified property to a value. Note: This function
+     * only works with non-stackable items.
+     *
+     * @param identifier
+     * The property identifier.
+     * @param value
+     * Data value of the property to set.
+     * @throws
+     * Throws if the item stack is stackable.
      */
     setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void;
     /**
@@ -9915,52 +10285,45 @@ export class PistonActivateAfterEventSignal {
      *
      * @example pistonAfterEvent.ts
      * ```typescript
-     *   // set up a couple of piston blocks
-     *   let piston = overworld.getBlock(targetLocation);
-     *   let button = overworld.getBlock({ x: targetLocation.x, y: targetLocation.y + 1, z: targetLocation.z });
+     * // set up a couple of piston blocks
+     * let piston = overworld.getBlock(targetLocation);
+     * let button = overworld.getBlock({
+     *   x: targetLocation.x,
+     *   y: targetLocation.y + 1,
+     *   z: targetLocation.z,
+     * });
      *
-     *   if (piston === undefined || button === undefined) {
-     *     log("Could not find block at location.");
-     *     return -1;
-     *   }
+     * if (piston === undefined || button === undefined) {
+     *   log("Could not find block at location.");
+     *   return -1;
+     * }
      *
-     *   piston.setPermutation(mc.BlockPermutation.resolve('piston').withState('facing_direction', 3));
-     *   button.setPermutation(mc.BlockPermutation.resolve('acacia_button').withState('facing_direction', 1));
+     * piston.setPermutation(
+     *   mc.BlockPermutation.resolve("piston").withState("facing_direction", 3)
+     * );
+     * button.setPermutation(
+     *   mc.BlockPermutation.resolve("acacia_button").withState("facing_direction", 1)
+     * );
      *
-     *   mc.world.afterEvents.pistonActivate.subscribe((pistonEvent: mc.PistonActivateAfterEvent) => {
+     * mc.world.afterEvents.pistonActivate.subscribe(
+     *   (pistonEvent: mc.PistonActivateAfterEvent) => {
      *     let eventLoc = pistonEvent.piston.block.location;
      *
-     *     if (eventLoc.x === targetLocation.x && eventLoc.y === targetLocation.y && eventLoc.z === targetLocation.z) {
+     *     if (
+     *       eventLoc.x === targetLocation.x &&
+     *       eventLoc.y === targetLocation.y &&
+     *       eventLoc.z === targetLocation.z
+     *     ) {
      *       log(
      *         "Piston event at " +
      *           mc.system.currentTick +
      *           (pistonEvent.piston.isMoving ? " Moving" : "") +
-     *           (pistonEvent.piston.isExpanding ? " Expanding" : "") +
-     *           (pistonEvent.piston.isExpanded ? " Expanded" : "") +
-     *           (pistonEvent.piston.isRetracting ? " Retracting" : "") +
-     *           (pistonEvent.piston.isRetracted ? " Retracted" : "")
+     *           " State: " +
+     *           pistonEvent.piston.state
      *       );
      *     }
-     *   });
-     * ```
-     * @example pistonEvent.ts
-     * ```typescript
-     * let canceled = false;
-     *
-     * const pistonLoc: mc.Vector3 = {
-     *   x: Math.floor(targetLocation.x) + 1,
-     *   y: Math.floor(targetLocation.y) + 2,
-     *   z: Math.floor(targetLocation.z) + 1,
-     * };
-     *
-     * const pistonCallback = mc.world.beforeEvents.pistonActivate.subscribe((pistonEvent: mc.PistonActivateBeforeEvent) => {
-     *   if (pistonEvent.piston.location.equals(pistonLoc)) {
-     *     log("Cancelling piston event");
-     *     pistonEvent.cancel = true;
-     *     canceled = true;
      *   }
-     * });
-     *
+     * );
      * ```
      */
     subscribe(callback: (arg: PistonActivateAfterEvent) => void): (arg: PistonActivateAfterEvent) => void;
@@ -10108,9 +10471,15 @@ export class Player extends Entity {
     /**
      * @beta
      * @remarks
+     * Eats an item, providing the item's hunger and saturation
+     * effects to the player. Can only be used on food items.
+     *
      * This function can't be called in read-only mode.
      *
-     * @throws This function can throw errors.
+     * @param itemStack
+     * The item to eat.
+     * @throws
+     * Throws if the item is not a food item.
      */
     eatItem(itemStack: ItemStack): void;
     /**
@@ -10939,21 +11308,40 @@ export class PlayerLeaveAfterEventSignal extends IPlayerLeaveAfterEventSignal {
     private constructor();
 }
 
+/**
+ * Contains information regarding a player that is leaving the
+ * world.
+ */
 export class PlayerLeaveBeforeEvent {
     private constructor();
+    /**
+     * @remarks
+     * The leaving player.
+     *
+     */
     readonly player: Player;
 }
 
+/**
+ * Manages callbacks that are connected to a player leaving the
+ * world.
+ */
 export class PlayerLeaveBeforeEventSignal {
     private constructor();
     /**
      * @remarks
+     * Adds a callback that will be called when a player leaves the
+     * world.
+     *
      * This function can't be called in read-only mode.
      *
      */
     subscribe(callback: (arg: PlayerLeaveBeforeEvent) => void): (arg: PlayerLeaveBeforeEvent) => void;
     /**
      * @remarks
+     * Removes a callback that will be called when a player leaves
+     * the world.
+     *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
@@ -11033,6 +11421,11 @@ export class PlayerPlaceBlockBeforeEvent extends BlockEvent {
      *
      */
     readonly faceLocation: Vector3;
+    /**
+     * @remarks
+     * The block permutation that is being placed.
+     *
+     */
     readonly permutationBeingPlaced: BlockPermutation;
     /**
      * @remarks
@@ -11899,6 +12292,10 @@ export class System {
      */
     readonly currentTick: number;
     /**
+     * @beta
+     */
+    clearJob(jobId: number): void;
+    /**
      * @remarks
      * Cancels the execution of a function run that was previously
      * scheduled via the `run` function.
@@ -11970,6 +12367,10 @@ export class System {
      * ```
      */
     runInterval(callback: () => void, tickInterval?: number): number;
+    /**
+     * @beta
+     */
+    runJob(generator: Generator<void, void, void>): number;
     /**
      * @remarks
      * Runs a set of code at a future time specified by tickDelay.
@@ -13704,6 +14105,13 @@ export class WorldInitializeAfterEventSignal {
 }
 
 /**
+ * @beta
+ */
+export interface BiomeSearchOptions {
+    boundingSize?: Vector3;
+}
+
+/**
  * Contains optional parameters for registering a block event.
  */
 export interface BlockEventOptions {
@@ -14085,8 +14493,8 @@ export interface DimensionLocation {
 
 /**
  * @beta
- * This class represents a specific leveled enchantment that is
- * applied to an item.
+ * This interface represents a specific leveled enchantment
+ * that is applied to an item.
  */
 export interface Enchantment {
     /**
@@ -14564,6 +14972,11 @@ export interface PlayAnimationOptions {
      *
      */
     nextState?: string;
+    /**
+     * @remarks
+     * A list of players the animation will be visible to.
+     *
+     */
     players?: string[];
     /**
      * @remarks

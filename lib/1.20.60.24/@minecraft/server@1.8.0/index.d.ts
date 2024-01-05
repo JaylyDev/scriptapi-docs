@@ -1130,6 +1130,18 @@ export class BlockInventoryComponent extends BlockComponent {
 export class BlockPermutation {
     private constructor();
     /**
+     * @beta
+     * @remarks
+     * Gets a state for the permutation.
+     *
+     * @param stateName
+     * Name of the block state who's value is to be returned.
+     * @returns
+     * Returns the state if the permutation has it, else
+     * `undefined`.
+     */
+    getState(stateName: string): boolean | number | string | undefined;
+    /**
      * @remarks
      * Returns a boolean whether a specified permutation matches
      * this permutation. If states is not specified, matches checks
@@ -1139,6 +1151,19 @@ export class BlockPermutation {
      * An optional set of states to compare against.
      */
     matches(blockName: string, states?: Record<string, boolean | number | string>): boolean;
+    /**
+     * @beta
+     * @remarks
+     * Returns a derived BlockPermutation with a specific property
+     * set.
+     *
+     * @param name
+     * Identifier of the block property.
+     * @param value
+     * Value of the block property.
+     * @throws This function can throw errors.
+     */
+    withState(name: string, value: boolean | number | string): BlockPermutation;
     /**
      * @remarks
      * Given a type identifier and an optional set of properties,
@@ -2675,11 +2700,11 @@ export class Entity {
     /**
      * @remarks
      * Returns the total size, in bytes, of all the dynamic
-     * properties that are currently stored for this entity.  This
-     * can be useful for diagnosing performance warning signs - if,
-     * for example, an entity has many megabytes of associated
-     * dynamic properties, it may be slow to load on various
-     * devices.
+     * properties that are currently stored for this entity. This
+     * includes the size of both the key and the value.  This can
+     * be useful for diagnosing performance warning signs - if, for
+     * example, an entity has many megabytes of associated dynamic
+     * properties, it may be slow to load on various devices.
      *
      * @throws This function can throw errors.
      */
@@ -2761,8 +2786,10 @@ export class Entity {
     getRotation(): Vector2;
     /**
      * @remarks
+     * Returns all tags associated with the entity.
+     *
      * @returns
-     * Returns all tags associated with an entity.
+     * An array containing all tags as strings.
      * @throws This function can throw errors.
      */
     getTags(): string[];
@@ -2873,10 +2900,13 @@ export class Entity {
      * location of the entity for matching if the location is not
      * specified in the passed in EntityQueryOptions.
      *
+     * @param options
+     * The query to perform the match against.
      * @returns
      * Returns true if the entity matches the criteria in the
      * passed in EntityQueryOptions, otherwise it returns false.
-     * @throws This function can throw errors.
+     * @throws
+     * Throws if the query options are misconfigured.
      */
     matches(options: EntityQueryOptions): boolean;
     /**
@@ -6450,21 +6480,40 @@ export class PlayerLeaveAfterEventSignal extends IPlayerLeaveAfterEventSignal {
     private constructor();
 }
 
+/**
+ * Contains information regarding a player that is leaving the
+ * world.
+ */
 export class PlayerLeaveBeforeEvent {
     private constructor();
+    /**
+     * @remarks
+     * The leaving player.
+     *
+     */
     readonly player: Player;
 }
 
+/**
+ * Manages callbacks that are connected to a player leaving the
+ * world.
+ */
 export class PlayerLeaveBeforeEventSignal {
     private constructor();
     /**
      * @remarks
+     * Adds a callback that will be called when a player leaves the
+     * world.
+     *
      * This function can't be called in read-only mode.
      *
      */
     subscribe(callback: (arg: PlayerLeaveBeforeEvent) => void): (arg: PlayerLeaveBeforeEvent) => void;
     /**
      * @remarks
+     * Removes a callback that will be called when a player leaves
+     * the world.
+     *
      * This function can't be called in read-only mode.
      *
      * @throws This function can throw errors.
