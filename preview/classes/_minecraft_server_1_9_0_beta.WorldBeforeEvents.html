@@ -37,7 +37,7 @@ error. (e.g., dimension.spawnEntity)</p>
 <ul class="tsd-hierarchy">
 <li><span class="target">WorldBeforeEvents</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14264">@minecraft/server@1.9.0-beta/index.d.ts:14264</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L13929">@minecraft/server@1.9.0-beta/index.d.ts:13929</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -72,7 +72,7 @@ error. (e.g., dimension.spawnEntity)</p>
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_9_0_beta.WorldBeforeEvents.html" class="tsd-signature-type tsd-kind-class">WorldBeforeEvents</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14265">@minecraft/server@1.9.0-beta/index.d.ts:14265</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L13930">@minecraft/server@1.9.0-beta/index.d.ts:13930</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member"><a id="chatSend" class="tsd-anchor"></a>
@@ -83,11 +83,11 @@ error. (e.g., dimension.spawnEntity)</p>
 broadcast or sent to players.</p>
 
 <h4>Example</h4><p>subscribe.js</p>
-<pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">WeatherType</span><span class="hl-0">, </span><span class="hl-4">system</span><span class="hl-0">, </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-4">beforeEvents</span><span class="hl-0">.</span><span class="hl-4">chatSend</span><span class="hl-0">.</span><span class="hl-5">subscribe</span><span class="hl-0">((</span><span class="hl-4">event</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">const</span><span class="hl-0"> { </span><span class="hl-7">message</span><span class="hl-0">, </span><span class="hl-7">sender</span><span class="hl-0"> } = </span><span class="hl-4">event</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-6">const</span><span class="hl-0"> { </span><span class="hl-7">dimension</span><span class="hl-0"> } = </span><span class="hl-4">sender</span><span class="hl-0">;</span><br/><br/><span class="hl-0">    </span><span class="hl-3">if</span><span class="hl-0"> (</span><span class="hl-4">message</span><span class="hl-0"> === </span><span class="hl-2">&quot;!weather clear&quot;</span><span class="hl-0">) {</span><br/><span class="hl-0">        </span><span class="hl-4">event</span><span class="hl-0">.</span><span class="hl-4">cancel</span><span class="hl-0"> = </span><span class="hl-6">true</span><span class="hl-0">;</span><br/><span class="hl-0">        </span><span class="hl-4">system</span><span class="hl-0">.</span><span class="hl-5">run</span><span class="hl-0">(() </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">            </span><span class="hl-4">dimension</span><span class="hl-0">.</span><span class="hl-5">setWeather</span><span class="hl-0">(</span><span class="hl-4">WeatherType</span><span class="hl-0">.</span><span class="hl-4">Clear</span><span class="hl-0">);</span><br/><span class="hl-0">        });</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span>
+<pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">WeatherType</span><span class="hl-0">, </span><span class="hl-6">system</span><span class="hl-0">, </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">beforeEvents</span><span class="hl-0">.</span><span class="hl-6">chatSend</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> { </span><span class="hl-4">message</span><span class="hl-0">, </span><span class="hl-4">sender</span><span class="hl-0"> } = </span><span class="hl-6">event</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> { </span><span class="hl-4">dimension</span><span class="hl-0"> } = </span><span class="hl-6">sender</span><span class="hl-0">;</span><br/><br/><span class="hl-0">    </span><span class="hl-11">if</span><span class="hl-0"> (</span><span class="hl-6">message</span><span class="hl-0"> === </span><span class="hl-2">&quot;!weather clear&quot;</span><span class="hl-0">) {</span><br/><span class="hl-0">        </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">cancel</span><span class="hl-0"> = </span><span class="hl-3">true</span><span class="hl-0">;</span><br/><span class="hl-0">        </span><span class="hl-6">system</span><span class="hl-0">.</span><span class="hl-8">run</span><span class="hl-0">(() </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">            </span><span class="hl-6">dimension</span><span class="hl-0">.</span><span class="hl-8">setWeather</span><span class="hl-0">(</span><span class="hl-6">WeatherType</span><span class="hl-0">.</span><span class="hl-6">Clear</span><span class="hl-0">);</span><br/><span class="hl-0">        });</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14288">@minecraft/server@1.9.0-beta/index.d.ts:14288</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L13953">@minecraft/server@1.9.0-beta/index.d.ts:13953</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="dataDrivenEntityTriggerEvent" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>data<wbr/>Driven<wbr/>Entity<wbr/>Trigger<wbr/>Event</span><a href="#dataDrivenEntityTriggerEvent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">data<wbr/>Driven<wbr/>Entity<wbr/>Trigger<wbr/>Event</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_9_0_beta.DataDrivenEntityTriggerBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">DataDrivenEntityTriggerBeforeEventSignal</a></div>
@@ -97,7 +97,7 @@ that will update the component definition state of an
 entity.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14297">@minecraft/server@1.9.0-beta/index.d.ts:14297</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L13962">@minecraft/server@1.9.0-beta/index.d.ts:13962</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="effectAdd" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>effect<wbr/>Add</span><a href="#effectAdd" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">effect<wbr/>Add</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_9_0_beta.EffectAddBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">EffectAddBeforeEventSignal</a></div>
@@ -106,7 +106,7 @@ entity.</p>
 entity.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14305">@minecraft/server@1.9.0-beta/index.d.ts:14305</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L13970">@minecraft/server@1.9.0-beta/index.d.ts:13970</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="entityRemove" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>entity<wbr/>Remove</span><a href="#entityRemove" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">entity<wbr/>Remove</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_9_0_beta.EntityRemoveBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">EntityRemoveBeforeEventSignal</a></div>
@@ -115,7 +115,7 @@ entity.</p>
 example, unloaded or removed after being killed.)</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14312">@minecraft/server@1.9.0-beta/index.d.ts:14312</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L13977">@minecraft/server@1.9.0-beta/index.d.ts:13977</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="explosion" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>explosion</span><a href="#explosion" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">explosion</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_9_0_beta.ExplosionBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">ExplosionBeforeEventSignal</a></div>
@@ -123,7 +123,7 @@ example, unloaded or removed after being killed.)</p>
 <h4>Remarks</h4><p>This event is fired after an explosion occurs.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14319">@minecraft/server@1.9.0-beta/index.d.ts:14319</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L13984">@minecraft/server@1.9.0-beta/index.d.ts:13984</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="itemDefinitionEvent" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>item<wbr/>Definition<wbr/>Event</span><a href="#itemDefinitionEvent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Definition<wbr/>Event</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_9_0_beta.ItemDefinitionBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemDefinitionBeforeEventSignal</a></div>
@@ -134,7 +134,7 @@ Note that this event is only fired for custom data-driven
 items.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14329">@minecraft/server@1.9.0-beta/index.d.ts:14329</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L13994">@minecraft/server@1.9.0-beta/index.d.ts:13994</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="itemUse" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Use</span><a href="#itemUse" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Use</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_9_0_beta.ItemUseBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemUseBeforeEventSignal</a></div>
@@ -143,7 +143,7 @@ items.</p>
 player.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14336">@minecraft/server@1.9.0-beta/index.d.ts:14336</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14001">@minecraft/server@1.9.0-beta/index.d.ts:14001</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="itemUseOn" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Use<wbr/>On</span><a href="#itemUseOn" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Use<wbr/>On</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_9_0_beta.ItemUseOnBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemUseOnBeforeEventSignal</a></div>
@@ -152,11 +152,11 @@ player.</p>
 player.</p>
 
 <h4>Example</h4><p>subscribe.ts</p>
-<pre><code class="language-ts"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0">, </span><span class="hl-4">Player</span><span class="hl-0">, </span><span class="hl-4">BlockPermutation</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-8">// Subscribe to the itemUseOn event before it happens</span><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-4">beforeEvents</span><span class="hl-0">.</span><span class="hl-4">itemUseOn</span><span class="hl-0">.</span><span class="hl-5">subscribe</span><span class="hl-0">((</span><span class="hl-4">event</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">const</span><span class="hl-0"> { </span><span class="hl-7">source</span><span class="hl-0">, </span><span class="hl-7">block</span><span class="hl-0">, </span><span class="hl-7">itemStack</span><span class="hl-0"> } = </span><span class="hl-4">event</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-3">if</span><span class="hl-0"> (!(</span><span class="hl-4">source</span><span class="hl-0"> </span><span class="hl-6">instanceof</span><span class="hl-0"> </span><span class="hl-11">Player</span><span class="hl-0">)) </span><span class="hl-3">return</span><span class="hl-0">;</span><br/><br/><span class="hl-0">    </span><span class="hl-4">source</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-2">&quot;You used &quot;</span><span class="hl-0"> + </span><span class="hl-4">itemStack</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0"> + </span><span class="hl-2">&quot; on &quot;</span><span class="hl-0"> + </span><span class="hl-4">block</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0">);</span><br/><br/><span class="hl-0">    </span><span class="hl-8">// If the item is a diamond, set the block to be a diamond block</span><br/><span class="hl-0">    </span><span class="hl-3">if</span><span class="hl-0"> (</span><span class="hl-4">itemStack</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0"> === </span><span class="hl-2">&quot;minecraft:diamond&quot;</span><span class="hl-0">) {</span><br/><span class="hl-0">        </span><span class="hl-4">block</span><span class="hl-0">.</span><span class="hl-5">setPermutation</span><span class="hl-0">(</span><br/><span class="hl-0">            </span><span class="hl-4">BlockPermutation</span><span class="hl-0">.</span><span class="hl-5">resolve</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:diamond_block&quot;</span><span class="hl-0">)</span><br/><span class="hl-0">        );</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span>
+<pre><code class="language-ts"><span class="hl-11">import</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">world</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">MinecraftBlockTypes</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">MinecraftItemTypes</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">Player</span><span class="hl-0">,</span><br/><span class="hl-0">} </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-10">// Subscribe to the itemUseOn event before it happens</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">beforeEvents</span><span class="hl-0">.</span><span class="hl-6">itemUseOn</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> { </span><span class="hl-4">source</span><span class="hl-0">, </span><span class="hl-4">block</span><span class="hl-0">, </span><span class="hl-4">itemStack</span><span class="hl-0"> } = </span><span class="hl-6">event</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-11">if</span><span class="hl-0"> (!(</span><span class="hl-6">source</span><span class="hl-0"> </span><span class="hl-3">instanceof</span><span class="hl-0"> </span><span class="hl-5">Player</span><span class="hl-0">)) </span><span class="hl-11">return</span><span class="hl-0">;</span><br/><br/><span class="hl-0">    </span><span class="hl-6">source</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><span class="hl-2">&quot;You used &quot;</span><span class="hl-0"> + </span><span class="hl-6">itemStack</span><span class="hl-0">.</span><span class="hl-6">typeId</span><span class="hl-0"> + </span><span class="hl-2">&quot; on &quot;</span><span class="hl-0"> + </span><span class="hl-6">block</span><span class="hl-0">.</span><span class="hl-6">typeId</span><span class="hl-0">);</span><br/><br/><span class="hl-0">    </span><span class="hl-10">// If the item is a diamond, set the block to be a diamond block</span><br/><span class="hl-0">    </span><span class="hl-11">if</span><span class="hl-0"> (</span><span class="hl-6">itemStack</span><span class="hl-0">.</span><span class="hl-6">typeId</span><span class="hl-0"> === </span><span class="hl-6">MinecraftItemTypes</span><span class="hl-0">.</span><span class="hl-6">diamond</span><span class="hl-0">.</span><span class="hl-6">id</span><span class="hl-0">) {</span><br/><span class="hl-0">        </span><span class="hl-6">block</span><span class="hl-0">.</span><span class="hl-8">setType</span><span class="hl-0">(</span><span class="hl-6">MinecraftBlockTypes</span><span class="hl-0">.</span><span class="hl-6">diamondBlock</span><span class="hl-0">);</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14361">@minecraft/server@1.9.0-beta/index.d.ts:14361</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14029">@minecraft/server@1.9.0-beta/index.d.ts:14029</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="playerBreakBlock" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>player<wbr/>Break<wbr/>Block</span><a href="#playerBreakBlock" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Break<wbr/>Block</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_9_0_beta.PlayerBreakBlockBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerBreakBlockBeforeEventSignal</a></div>
@@ -164,7 +164,7 @@ player.</p>
 <h4>Remarks</h4><p>This event fires before a block is broken by a player.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14367">@minecraft/server@1.9.0-beta/index.d.ts:14367</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14035">@minecraft/server@1.9.0-beta/index.d.ts:14035</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="playerInteractWithBlock" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>player<wbr/>Interact<wbr/>With<wbr/>Block</span><a href="#playerInteractWithBlock" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Interact<wbr/>With<wbr/>Block</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_9_0_beta.PlayerInteractWithBlockBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerInteractWithBlockBeforeEventSignal</a></div>
@@ -172,7 +172,7 @@ player.</p>
 <h4>Remarks</h4><p>Fires before a player interacts with a block.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14374">@minecraft/server@1.9.0-beta/index.d.ts:14374</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14042">@minecraft/server@1.9.0-beta/index.d.ts:14042</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="playerInteractWithEntity" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>player<wbr/>Interact<wbr/>With<wbr/>Entity</span><a href="#playerInteractWithEntity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Interact<wbr/>With<wbr/>Entity</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_9_0_beta.PlayerInteractWithEntityBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerInteractWithEntityBeforeEventSignal</a></div>
@@ -180,7 +180,7 @@ player.</p>
 <h4>Remarks</h4><p>Fires before a player interacts with an entity.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14381">@minecraft/server@1.9.0-beta/index.d.ts:14381</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14049">@minecraft/server@1.9.0-beta/index.d.ts:14049</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="playerLeave" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>player<wbr/>Leave</span><a href="#playerLeave" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Leave</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_9_0_beta.PlayerLeaveBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerLeaveBeforeEventSignal</a></div>
@@ -188,7 +188,7 @@ player.</p>
 <h4>Remarks</h4><p>Fires when a player leaves the game.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14387">@minecraft/server@1.9.0-beta/index.d.ts:14387</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14055">@minecraft/server@1.9.0-beta/index.d.ts:14055</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="playerPlaceBlock" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>player<wbr/>Place<wbr/>Block</span><a href="#playerPlaceBlock" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Place<wbr/>Block</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_9_0_beta.PlayerPlaceBlockBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerPlaceBlockBeforeEventSignal</a></div>
@@ -196,7 +196,7 @@ player.</p>
 <h4>Remarks</h4><p>This event fires before a block is placed by a player.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14394">@minecraft/server@1.9.0-beta/index.d.ts:14394</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.60.24/@minecraft/server@1.9.0-beta/index.d.ts#L14062">@minecraft/server@1.9.0-beta/index.d.ts:14062</a></li></ul></aside></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

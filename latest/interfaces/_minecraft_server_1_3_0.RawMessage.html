@@ -29,7 +29,7 @@
 </div>
 <div class="tsd-comment tsd-typography">
 <h4>Example</h4><p>deathMessage.ts</p>
-<pre><code class="language-ts"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">RawText</span><span class="hl-0">, </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-4">afterEvents</span><span class="hl-0">.</span><span class="hl-4">entityDie</span><span class="hl-0">.</span><span class="hl-5">subscribe</span><span class="hl-0">((</span><span class="hl-4">event</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">rawtext</span><span class="hl-0">: </span><span class="hl-11">RawText</span><span class="hl-0"> = {</span><br/><span class="hl-0">        </span><span class="hl-4">rawtext:</span><span class="hl-0"> [</span><br/><span class="hl-0">            { </span><span class="hl-4">text:</span><span class="hl-0"> </span><span class="hl-2">&quot;§a&quot;</span><span class="hl-0"> },</span><br/><span class="hl-0">            {</span><br/><span class="hl-0">                </span><span class="hl-4">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;death.attack.generic&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">                </span><span class="hl-4">with:</span><span class="hl-0"> [</span><span class="hl-4">event</span><span class="hl-0">.</span><span class="hl-4">deadEntity</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0">],</span><br/><span class="hl-0">            },</span><br/><span class="hl-0">        ],</span><br/><span class="hl-0">    };</span><br/><span class="hl-0">    </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-4">rawtext</span><span class="hl-0">);</span><br/><span class="hl-0">});</span>
+<pre><code class="language-ts"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">RawText</span><span class="hl-0">, </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">entityDie</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">rawtext</span><span class="hl-0">: </span><span class="hl-5">RawText</span><span class="hl-0"> = {</span><br/><span class="hl-0">        </span><span class="hl-6">rawtext:</span><span class="hl-0"> [</span><br/><span class="hl-0">            { </span><span class="hl-6">text:</span><span class="hl-0"> </span><span class="hl-2">&quot;§a&quot;</span><span class="hl-0"> },</span><br/><span class="hl-0">            {</span><br/><span class="hl-0">                </span><span class="hl-6">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;death.attack.generic&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">                </span><span class="hl-6">with:</span><span class="hl-0"> [</span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">deadEntity</span><span class="hl-0">.</span><span class="hl-6">typeId</span><span class="hl-0">],</span><br/><span class="hl-0">            },</span><br/><span class="hl-0">        ],</span><br/><span class="hl-0">    };</span><br/><span class="hl-0">    </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><span class="hl-6">rawtext</span><span class="hl-0">);</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
 </div></section>
 <section class="tsd-panel tsd-hierarchy">
@@ -37,7 +37,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">RawMessage</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3753">@minecraft/server@1.3.0/index.d.ts:3753</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3656">@minecraft/server@1.3.0/index.d.ts:3656</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -57,7 +57,7 @@
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>rawtext</span><a href="#rawtext" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><g stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" id="icon-anchor"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path></g></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">rawtext</span><span class="tsd-signature-symbol">?:</span> <a href="_minecraft_server_1_3_0.RawMessage.html" class="tsd-signature-type tsd-kind-interface">RawMessage</a><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3754">@minecraft/server@1.3.0/index.d.ts:3754</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3657">@minecraft/server@1.3.0/index.d.ts:3657</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="score" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>score</span><a href="#score" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">score</span><span class="tsd-signature-symbol">?:</span> <a href="_minecraft_server_1_3_0.RawMessageScore.html" class="tsd-signature-type tsd-kind-interface">RawMessageScore</a></div>
@@ -66,7 +66,7 @@
 score.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3761">@minecraft/server@1.3.0/index.d.ts:3761</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3664">@minecraft/server@1.3.0/index.d.ts:3664</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="text" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>text</span><a href="#text" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">text</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -74,7 +74,7 @@ score.</p>
 <h4>Remarks</h4><p>Provides a string literal value to use.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3767">@minecraft/server@1.3.0/index.d.ts:3767</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3670">@minecraft/server@1.3.0/index.d.ts:3670</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="translate" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>translate</span><a href="#translate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">translate</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -84,12 +84,12 @@ available resource in the players&#39; language which matches
 the token, will get translated on the client.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3775">@minecraft/server@1.3.0/index.d.ts:3775</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3678">@minecraft/server@1.3.0/index.d.ts:3678</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="with" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>with</span><a href="#with" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">with</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="_minecraft_server_1_3_0.RawMessage.html" class="tsd-signature-type tsd-kind-interface">RawMessage</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/375e8e5/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3776">@minecraft/server@1.3.0/index.d.ts:3776</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/41a580f/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3679">@minecraft/server@1.3.0/index.d.ts:3679</a></li></ul></aside></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
