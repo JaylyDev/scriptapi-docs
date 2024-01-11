@@ -390,11 +390,11 @@ block.</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 
 <h4>Example</h4><p>getBlockInventoryComponent.js</p>
-<pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">ItemStack</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">getEntityInventoryComponent</span><span class="hl-0"> = </span><span class="hl-4">block</span><span class="hl-0">.</span><span class="hl-5">getComponent</span><span class="hl-0">(</span><span class="hl-2">&quot;inventory&quot;</span><span class="hl-0">);</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">inventoryContainer</span><span class="hl-0"> = </span><span class="hl-4">getEntityInventoryComponent</span><span class="hl-0">.</span><span class="hl-4">container</span><span class="hl-0">;</span><br/><br/><span class="hl-8">// Custom function to add an item to the inventory</span><br/><span class="hl-6">function</span><span class="hl-0"> </span><span class="hl-5">addItemToInventory</span><span class="hl-0">(</span><span class="hl-4">itemStack</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-3">return</span><span class="hl-0"> </span><span class="hl-4">inventoryContainer</span><span class="hl-0">.</span><span class="hl-5">addItem</span><span class="hl-0">(</span><span class="hl-4">itemStack</span><span class="hl-0">);</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-8">// Custom function to move an item within the inventory</span><br/><span class="hl-6">function</span><span class="hl-0"> </span><span class="hl-5">moveItemWithinInventory</span><span class="hl-0">(</span><span class="hl-4">fromSlot</span><span class="hl-0">, </span><span class="hl-4">toSlot</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-4">inventoryContainer</span><span class="hl-0">.</span><span class="hl-5">moveItem</span><span class="hl-0">(</span><span class="hl-4">fromSlot</span><span class="hl-0">, </span><span class="hl-4">toSlot</span><span class="hl-0">, </span><span class="hl-4">inventoryContainer</span><span class="hl-0">);</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-8">// Custom function to transfer an item from inventory to another container</span><br/><span class="hl-6">function</span><span class="hl-0"> </span><span class="hl-5">transferItemToContainer</span><span class="hl-0">(</span><span class="hl-4">fromSlot</span><span class="hl-0">, </span><span class="hl-4">targetContainer</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-3">return</span><span class="hl-0"> </span><span class="hl-4">inventoryContainer</span><span class="hl-0">.</span><span class="hl-5">transferItem</span><span class="hl-0">(</span><span class="hl-4">fromSlot</span><span class="hl-0">, </span><span class="hl-4">targetContainer</span><span class="hl-0">);</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-8">// Example usage of the custom functions</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">newItemStack</span><span class="hl-0"> = </span><span class="hl-6">new</span><span class="hl-0"> </span><span class="hl-5">ItemStack</span><span class="hl-0">(</span><span class="hl-2">&quot;apple&quot;</span><span class="hl-0">, </span><span class="hl-9">10</span><span class="hl-0">); </span><span class="hl-8">// Assuming &quot;apple&quot; is a valid item</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">addedItem</span><span class="hl-0"> = </span><span class="hl-5">addItemToInventory</span><span class="hl-0">(</span><span class="hl-4">newItemStack</span><span class="hl-0">);</span><br/><span class="hl-3">if</span><span class="hl-0"> (</span><span class="hl-4">addedItem</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Item added to inventory:&quot;</span><span class="hl-0">, </span><span class="hl-4">addedItem</span><span class="hl-0">);</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">sourceSlot</span><span class="hl-0"> = </span><span class="hl-9">2</span><span class="hl-0">;</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">destinationSlot</span><span class="hl-0"> = </span><span class="hl-9">5</span><span class="hl-0">;</span><br/><span class="hl-5">moveItemWithinInventory</span><span class="hl-0">(</span><span class="hl-4">sourceSlot</span><span class="hl-0">, </span><span class="hl-4">destinationSlot</span><span class="hl-0">);</span><br/><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">targetContainer</span><span class="hl-0"> = </span><span class="hl-4">someOtherContainer</span><span class="hl-0">; </span><span class="hl-8">// Assuming &#39;someOtherContainer&#39; is an instance of another container</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">transferredItem</span><span class="hl-0"> = </span><span class="hl-5">transferItemToContainer</span><span class="hl-0">(</span><span class="hl-9">0</span><span class="hl-0">, </span><span class="hl-4">targetContainer</span><span class="hl-0">);</span><br/><span class="hl-3">if</span><span class="hl-0"> (</span><span class="hl-4">transferredItem</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Item transferred to another container:&quot;</span><span class="hl-0">, </span><span class="hl-4">transferredItem</span><span class="hl-0">);</span><br/><span class="hl-0">}</span>
+<pre><code class="language-js"><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">getEntityInventoryComponent</span><span class="hl-0"> = </span><span class="hl-6">block</span><span class="hl-0">.</span><span class="hl-8">getComponent</span><span class="hl-0">(</span><span class="hl-2">&quot;inventory&quot;</span><span class="hl-0">);</span><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">inventoryContainer</span><span class="hl-0"> = </span><span class="hl-6">getEntityInventoryComponent</span><span class="hl-0">.</span><span class="hl-6">container</span><span class="hl-0">;</span><br/><br/><span class="hl-10">// Custom function to add an item to the inventory</span><br/><span class="hl-3">function</span><span class="hl-0"> </span><span class="hl-8">addItemToInventory</span><span class="hl-0">(</span><span class="hl-6">itemStack</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-11">return</span><span class="hl-0"> </span><span class="hl-6">inventoryContainer</span><span class="hl-0">.</span><span class="hl-8">addItem</span><span class="hl-0">(</span><span class="hl-6">itemStack</span><span class="hl-0">);</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-10">// Custom function to move an item within the inventory</span><br/><span class="hl-3">function</span><span class="hl-0"> </span><span class="hl-8">moveItemWithinInventory</span><span class="hl-0">(</span><span class="hl-6">fromSlot</span><span class="hl-0">, </span><span class="hl-6">toSlot</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-6">inventoryContainer</span><span class="hl-0">.</span><span class="hl-8">moveItem</span><span class="hl-0">(</span><span class="hl-6">fromSlot</span><span class="hl-0">, </span><span class="hl-6">toSlot</span><span class="hl-0">, </span><span class="hl-6">inventoryContainer</span><span class="hl-0">);</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-10">// Custom function to transfer an item from inventory to another container</span><br/><span class="hl-3">function</span><span class="hl-0"> </span><span class="hl-8">transferItemToContainer</span><span class="hl-0">(</span><span class="hl-6">fromSlot</span><span class="hl-0">, </span><span class="hl-6">targetContainer</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-11">return</span><span class="hl-0"> </span><span class="hl-6">inventoryContainer</span><span class="hl-0">.</span><span class="hl-8">transferItem</span><span class="hl-0">(</span><span class="hl-6">fromSlot</span><span class="hl-0">, </span><span class="hl-6">targetContainer</span><span class="hl-0">);</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-10">// Example usage of the custom functions</span><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">newItemStack</span><span class="hl-0"> = </span><span class="hl-3">new</span><span class="hl-0"> </span><span class="hl-8">ItemStack</span><span class="hl-0">(</span><span class="hl-2">&quot;apple&quot;</span><span class="hl-0">, </span><span class="hl-7">10</span><span class="hl-0">); </span><span class="hl-10">// Assuming &quot;apple&quot; is a valid item</span><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">addedItem</span><span class="hl-0"> = </span><span class="hl-8">addItemToInventory</span><span class="hl-0">(</span><span class="hl-6">newItemStack</span><span class="hl-0">);</span><br/><span class="hl-11">if</span><span class="hl-0"> (</span><span class="hl-6">addedItem</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Item added to inventory:&quot;</span><span class="hl-0">, </span><span class="hl-6">addedItem</span><span class="hl-0">);</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">sourceSlot</span><span class="hl-0"> = </span><span class="hl-7">2</span><span class="hl-0">;</span><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">destinationSlot</span><span class="hl-0"> = </span><span class="hl-7">5</span><span class="hl-0">;</span><br/><span class="hl-8">moveItemWithinInventory</span><span class="hl-0">(</span><span class="hl-6">sourceSlot</span><span class="hl-0">, </span><span class="hl-6">destinationSlot</span><span class="hl-0">);</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">targetContainer</span><span class="hl-0"> = </span><span class="hl-6">someOtherContainer</span><span class="hl-0">; </span><span class="hl-10">// Assuming &#39;someOtherContainer&#39; is an instance of another container</span><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">transferredItem</span><span class="hl-0"> = </span><span class="hl-8">transferItemToContainer</span><span class="hl-0">(</span><span class="hl-7">0</span><span class="hl-0">, </span><span class="hl-6">targetContainer</span><span class="hl-0">);</span><br/><span class="hl-11">if</span><span class="hl-0"> (</span><span class="hl-6">transferredItem</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Item transferred to another container:&quot;</span><span class="hl-0">, </span><span class="hl-6">transferredItem</span><span class="hl-0">);</span><br/><span class="hl-0">}</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1662</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1660</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getItemStack" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Item<wbr/>Stack</span><a href="#getItemStack" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -425,7 +425,7 @@ be used with Container/ContainerSlot APIs.</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1684</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1682</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getRedstonePower" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Redstone<wbr/>Power</span><a href="#getRedstonePower" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -442,7 +442,7 @@ this block.</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1699</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1697</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getTags" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Tags</span><a href="#getTags" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -458,7 +458,7 @@ this block.</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1713</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1711</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="hasTag" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>has<wbr/>Tag</span><a href="#hasTag" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -483,11 +483,11 @@ specific tag.</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 
 <h4>Example</h4><p>check_block_tags.js</p>
-<pre><code class="language-typescript"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-8">// Fetch the block</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">block</span><span class="hl-0"> = </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;overworld&quot;</span><span class="hl-0">).</span><span class="hl-5">getBlock</span><span class="hl-0">({ </span><span class="hl-4">x:</span><span class="hl-0"> </span><span class="hl-9">1</span><span class="hl-0">, </span><span class="hl-4">y:</span><span class="hl-0"> </span><span class="hl-9">2</span><span class="hl-0">, </span><span class="hl-4">z:</span><span class="hl-0"> </span><span class="hl-9">3</span><span class="hl-0"> });</span><br/><br/><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">`Block is dirt: </span><span class="hl-6">${</span><span class="hl-4">block</span><span class="hl-10">.</span><span class="hl-5">hasTag</span><span class="hl-10">(</span><span class="hl-2">&quot;dirt&quot;</span><span class="hl-10">)</span><span class="hl-6">}</span><span class="hl-2">`</span><span class="hl-0">);</span><br/><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">`Block is wood: </span><span class="hl-6">${</span><span class="hl-4">block</span><span class="hl-10">.</span><span class="hl-5">hasTag</span><span class="hl-10">(</span><span class="hl-2">&quot;wood&quot;</span><span class="hl-10">)</span><span class="hl-6">}</span><span class="hl-2">`</span><span class="hl-0">);</span><br/><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">`Block is stone: </span><span class="hl-6">${</span><span class="hl-4">block</span><span class="hl-10">.</span><span class="hl-5">hasTag</span><span class="hl-10">(</span><span class="hl-2">&quot;stone&quot;</span><span class="hl-10">)</span><span class="hl-6">}</span><span class="hl-2">`</span><span class="hl-0">);</span>
+<pre><code class="language-typescript"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-10">// Fetch the block</span><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">block</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;overworld&quot;</span><span class="hl-0">).</span><span class="hl-8">getBlock</span><span class="hl-0">({ </span><span class="hl-6">x:</span><span class="hl-0"> </span><span class="hl-7">1</span><span class="hl-0">, </span><span class="hl-6">y:</span><span class="hl-0"> </span><span class="hl-7">2</span><span class="hl-0">, </span><span class="hl-6">z:</span><span class="hl-0"> </span><span class="hl-7">3</span><span class="hl-0"> });</span><br/><br/><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">`Block is dirt: </span><span class="hl-3">${</span><span class="hl-6">block</span><span class="hl-9">.</span><span class="hl-8">hasTag</span><span class="hl-9">(</span><span class="hl-2">&quot;dirt&quot;</span><span class="hl-9">)</span><span class="hl-3">}</span><span class="hl-2">`</span><span class="hl-0">);</span><br/><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">`Block is wood: </span><span class="hl-3">${</span><span class="hl-6">block</span><span class="hl-9">.</span><span class="hl-8">hasTag</span><span class="hl-9">(</span><span class="hl-2">&quot;wood&quot;</span><span class="hl-9">)</span><span class="hl-3">}</span><span class="hl-2">`</span><span class="hl-0">);</span><br/><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">`Block is stone: </span><span class="hl-3">${</span><span class="hl-6">block</span><span class="hl-9">.</span><span class="hl-8">hasTag</span><span class="hl-9">(</span><span class="hl-2">&quot;stone&quot;</span><span class="hl-9">)</span><span class="hl-3">}</span><span class="hl-2">`</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1742</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1740</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="isValid" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>is<wbr/>Valid</span><a href="#isValid" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -501,7 +501,7 @@ specific tag.</p>
 block will no longer be valid.)</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1752</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1750</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="matches" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>matches</span><a href="#matches" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -522,7 +522,7 @@ block will no longer be valid.)</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1763</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1761</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="north" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>north</span><a href="#north" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -545,7 +545,7 @@ block will no longer be valid.)</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1777</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1775</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="offset" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>offset</span><a href="#offset" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -571,7 +571,7 @@ relative chunk is not loaded yet.)</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1795</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1793</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="setPermutation" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Permutation</span><a href="#setPermutation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -596,7 +596,7 @@ permutation.</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1812</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1810</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="setType" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Type</span><a href="#setType" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -621,7 +621,7 @@ minecraft:powered_repeater.</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1831</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1829</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="setWaterlogged" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Waterlogged</span><a href="#setWaterlogged" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -642,7 +642,7 @@ minecraft:powered_repeater.</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1845</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1843</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="south" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>south</span><a href="#south" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -665,7 +665,7 @@ minecraft:powered_repeater.</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1859</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1857</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="trySetPermutation" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>try<wbr/>Set<wbr/>Permutation</span><a href="#trySetPermutation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -692,7 +692,7 @@ permutation by first checking if the placement is valid.</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1880</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1878</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="west" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>west</span><a href="#west" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -715,7 +715,7 @@ permutation by first checking if the placement is valid.</p>
 <p><a href="_minecraft_server_1_9_0_beta.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class">LocationOutOfWorldBoundariesError</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1894</li></ul></aside></li></ul></section></section></div>
+<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:1892</li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

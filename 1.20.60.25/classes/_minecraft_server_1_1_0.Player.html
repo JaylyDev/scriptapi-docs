@@ -35,7 +35,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">Player</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:496</li></ul></aside>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:452</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -72,7 +72,7 @@
 <h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_1_0.Player.html" class="tsd-signature-type tsd-kind-class">Player</a></h4><aside class="tsd-sources">
 <p>Overrides <a href="_minecraft_server_1_1_0.Entity.html">Entity</a>.<a href="_minecraft_server_1_1_0.Entity.html#constructor">constructor</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:497</li></ul></aside></li></ul></section></section>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:453</li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="dimension" class="tsd-anchor"></a>
@@ -82,14 +82,10 @@
 <h4>Remarks</h4><p>Dimension that the entity is currently within.</p>
 
 <h4>Throws</h4><p>This property can throw when used.</p>
-
-<h4>Example</h4><p>spawnTnt.js</p>
-<pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">ItemStack</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-4">dimension</span><span class="hl-0">.</span><span class="hl-5">spawnItem</span><span class="hl-0">(</span><br/><span class="hl-0">    </span><span class="hl-6">new</span><span class="hl-0"> </span><span class="hl-5">ItemStack</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:diamond_sword&quot;</span><span class="hl-0">),</span><br/><span class="hl-0">    </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-4">location</span><br/><span class="hl-0">);</span>
-</code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="_minecraft_server_1_1_0.Entity.html">Entity</a>.<a href="_minecraft_server_1_1_0.Entity.html#dimension">dimension</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:337</li></ul></aside></section>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:328</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="id" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>id</span><a href="#id" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">id</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -100,14 +96,10 @@ meaning should be inferred from the value and structure of
 this unique identifier - do not parse or interpret it.</p>
 
 <h4>Throws</h4><p>This property can throw when used.</p>
-
-<h4>Example</h4><p>trapEntity.js</p>
-<pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">id</span><span class="hl-0"> = </span><span class="hl-2">&quot;-0123456789101&quot;</span><span class="hl-0">; </span><span class="hl-8">// entity.id</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">entity</span><span class="hl-0"> = </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getEntity</span><span class="hl-0">(</span><span class="hl-4">id</span><span class="hl-0">);</span><br/><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">runCommandAsync</span><span class="hl-0">(</span><span class="hl-2">&quot;say hello&quot;</span><span class="hl-0">);</span>
-</code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="_minecraft_server_1_1_0.Entity.html">Entity</a>.<a href="_minecraft_server_1_1_0.Entity.html#id">id</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:355</li></ul></aside></section>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:338</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="location" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>location</span><a href="#location" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">location</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/_minecraft_server_1_1_0.Vector3.html" class="tsd-signature-type tsd-kind-interface">Vector3</a></div>
@@ -115,14 +107,10 @@ this unique identifier - do not parse or interpret it.</p>
 <h4>Remarks</h4><p>Current location of the entity.</p>
 
 <h4>Throws</h4><p>This property can throw when used.</p>
-
-<h4>Example</h4><p>showLocation.js</p>
-<pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-4">afterEvents</span><span class="hl-0">.</span><span class="hl-4">buttonPush</span><span class="hl-0">.</span><span class="hl-5">subscribe</span><span class="hl-0">((</span><span class="hl-4">event</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-3">if</span><span class="hl-0"> (</span><span class="hl-4">event</span><span class="hl-0">.</span><span class="hl-4">source</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0"> === </span><span class="hl-2">&quot;minecraft:player&quot;</span><span class="hl-0">) {</span><br/><span class="hl-0">        </span><span class="hl-4">event</span><span class="hl-0">.</span><span class="hl-4">source</span><span class="hl-0">.</span><span class="hl-5">kill</span><span class="hl-0">();</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span>
-</code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="_minecraft_server_1_1_0.Entity.html">Entity</a>.<a href="_minecraft_server_1_1_0.Entity.html#location">location</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:372</li></ul></aside></section>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:345</li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="name" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">name</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -132,7 +120,7 @@ this unique identifier - do not parse or interpret it.</p>
 <h4>Throws</h4><p>This property can throw when used.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:504</li></ul></aside></section>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:460</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="nameTag" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>name<wbr/>Tag</span><a href="#nameTag" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">name<wbr/>Tag</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -142,7 +130,7 @@ this unique identifier - do not parse or interpret it.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="_minecraft_server_1_1_0.Entity.html">Entity</a>.<a href="_minecraft_server_1_1_0.Entity.html#nameTag">nameTag</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:380</li></ul></aside></section>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:353</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="typeId" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>type<wbr/>Id</span><a href="#typeId" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">type<wbr/>Id</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -151,14 +139,10 @@ this unique identifier - do not parse or interpret it.</p>
 &#39;minecraft:skeleton&#39;.</p>
 
 <h4>Throws</h4><p>This property can throw when used.</p>
-
-<h4>Example</h4><p>showLocation.js</p>
-<pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">system</span><span class="hl-0">, </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-8">// This event triggers when world is loaded</span><br/><span class="hl-4">system</span><span class="hl-0">.</span><span class="hl-5">runInterval</span><span class="hl-0">(() </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">entity</span><span class="hl-0"> = </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;overworld&quot;</span><span class="hl-0">).</span><span class="hl-5">getEntities</span><span class="hl-0">()[</span><span class="hl-9">0</span><span class="hl-0">];</span><br/><span class="hl-0">    </span><span class="hl-8">// Finally, show that location as title</span><br/><span class="hl-0">    </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">runCommandAsync</span><span class="hl-0">(</span><br/><span class="hl-0">        </span><span class="hl-2">`title @a actionbar X: </span><span class="hl-6">${</span><span class="hl-4">Math</span><span class="hl-10">.</span><span class="hl-5">floor</span><span class="hl-10">(</span><br/><span class="hl-10">            </span><span class="hl-4">entity</span><span class="hl-10">.</span><span class="hl-4">location</span><span class="hl-10">.</span><span class="hl-4">x</span><br/><span class="hl-10">        )</span><span class="hl-6">}</span><span class="hl-2"> | Y: </span><span class="hl-6">${</span><span class="hl-4">Math</span><span class="hl-10">.</span><span class="hl-5">floor</span><span class="hl-10">(</span><span class="hl-4">entity</span><span class="hl-10">.</span><span class="hl-4">location</span><span class="hl-10">.</span><span class="hl-4">y</span><span class="hl-10">)</span><span class="hl-6">}</span><span class="hl-2"> | Z: </span><span class="hl-6">${</span><span class="hl-4">Math</span><span class="hl-10">.</span><span class="hl-5">floor</span><span class="hl-10">(</span><br/><span class="hl-10">            </span><span class="hl-4">entity</span><span class="hl-10">.</span><span class="hl-4">location</span><span class="hl-10">.</span><span class="hl-4">z</span><br/><span class="hl-10">        )</span><span class="hl-6">}</span><span class="hl-2">`</span><br/><span class="hl-0">    );</span><br/><span class="hl-0">});</span>
-</code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="_minecraft_server_1_1_0.Entity.html">Entity</a>.<a href="_minecraft_server_1_1_0.Entity.html#typeId">typeId</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:405</li></ul></aside></section></section>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:361</li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="getHeadLocation" class="tsd-anchor"></a>
@@ -176,7 +160,7 @@ entity.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="_minecraft_server_1_1_0.Entity.html">Entity</a>.<a href="_minecraft_server_1_1_0.Entity.html#getHeadLocation">getHeadLocation</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:415</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:371</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="getVelocity" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Velocity</span><a href="#getVelocity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -191,7 +175,7 @@ entity.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="_minecraft_server_1_1_0.Entity.html">Entity</a>.<a href="_minecraft_server_1_1_0.Entity.html#getVelocity">getVelocity</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:424</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:380</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="getViewDirection" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>View<wbr/>Direction</span><a href="#getViewDirection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -206,7 +190,7 @@ entity.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="_minecraft_server_1_1_0.Entity.html">Entity</a>.<a href="_minecraft_server_1_1_0.Entity.html#getViewDirection">getViewDirection</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:433</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:389</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="runCommandAsync" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>run<wbr/>Command<wbr/>Async</span><a href="#runCommandAsync" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -233,7 +217,7 @@ asynchronous commands that can be run in a given tick.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="_minecraft_server_1_1_0.Entity.html">Entity</a>.<a href="_minecraft_server_1_1_0.Entity.html#runCommandAsync">runCommandAsync</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:450</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:406</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="sendMessage" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>send<wbr/>Message</span><a href="#sendMessage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -256,23 +240,23 @@ in an invalid format. For example, if an empty <code>name</code> string
 is provided to <code>score</code>.</p>
 
 <h4>Example</h4><p>nestedTranslation.ts</p>
-<pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-8">// Displays &quot;Apple or Coal&quot;</span><br/><span class="hl-0">       </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">rawMessage</span><span class="hl-0"> = {</span><br/><span class="hl-0">         </span><span class="hl-4">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;accessibility.list.or.two&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">         </span><span class="hl-4">with:</span><span class="hl-0"> { </span><span class="hl-4">rawtext:</span><span class="hl-0"> [{ </span><span class="hl-4">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;item.apple.name&quot;</span><span class="hl-0"> }, { </span><span class="hl-4">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;item.coal.name&quot;</span><span class="hl-0"> }] },</span><br/><span class="hl-0">       };</span><br/><span class="hl-0">       </span><span class="hl-4">player</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-4">rawMessage</span><span class="hl-0">);</span><br/>
+<pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-10">// Displays &quot;Apple or Coal&quot;</span><br/><span class="hl-0">       </span><span class="hl-3">let</span><span class="hl-0"> </span><span class="hl-6">rawMessage</span><span class="hl-0"> = {</span><br/><span class="hl-0">         </span><span class="hl-6">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;accessibility.list.or.two&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">         </span><span class="hl-6">with:</span><span class="hl-0"> { </span><span class="hl-6">rawtext:</span><span class="hl-0"> [{ </span><span class="hl-6">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;item.apple.name&quot;</span><span class="hl-0"> }, { </span><span class="hl-6">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;item.coal.name&quot;</span><span class="hl-0"> }] },</span><br/><span class="hl-0">       };</span><br/><span class="hl-0">       </span><span class="hl-6">player</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><span class="hl-6">rawMessage</span><span class="hl-0">);</span><br/>
 </code><button>Copy</button></pre>
 
 <h4>Example</h4><p>scoreWildcard.ts</p>
-<pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-8">// Displays the player&#39;s score for objective &quot;obj&quot;. Each player will see their own score.</span><br/><span class="hl-0">       </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">rawMessage</span><span class="hl-0"> = { </span><span class="hl-4">score:</span><span class="hl-0"> { </span><span class="hl-4">name:</span><span class="hl-0"> </span><span class="hl-2">&quot;*&quot;</span><span class="hl-0">, </span><span class="hl-4">objective:</span><span class="hl-0"> </span><span class="hl-2">&quot;obj&quot;</span><span class="hl-0"> } };</span><br/><span class="hl-0">       </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-4">rawMessage</span><span class="hl-0">);</span><br/>
+<pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-10">// Displays the player&#39;s score for objective &quot;obj&quot;. Each player will see their own score.</span><br/><span class="hl-0">       </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">rawMessage</span><span class="hl-0"> = { </span><span class="hl-6">score:</span><span class="hl-0"> { </span><span class="hl-6">name:</span><span class="hl-0"> </span><span class="hl-2">&quot;*&quot;</span><span class="hl-0">, </span><span class="hl-6">objective:</span><span class="hl-0"> </span><span class="hl-2">&quot;obj&quot;</span><span class="hl-0"> } };</span><br/><span class="hl-0">       </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><span class="hl-6">rawMessage</span><span class="hl-0">);</span><br/>
 </code><button>Copy</button></pre>
 
 <h4>Example</h4><p>simpleString.ts</p>
-<pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-8">// Displays &quot;Hello, world!&quot;</span><br/><span class="hl-0">       </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-2">&quot;Hello, world!&quot;</span><span class="hl-0">);</span><br/>
+<pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-10">// Displays &quot;Hello, world!&quot;</span><br/><span class="hl-0">       </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><span class="hl-2">&quot;Hello, world!&quot;</span><span class="hl-0">);</span><br/>
 </code><button>Copy</button></pre>
 
 <h4>Example</h4><p>translation.ts</p>
-<pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-8">// Displays &quot;First or Second&quot;</span><br/><span class="hl-0">       </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">rawMessage</span><span class="hl-0"> = { </span><span class="hl-4">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;accessibility.list.or.two&quot;</span><span class="hl-0">, </span><span class="hl-4">with:</span><span class="hl-0"> [</span><span class="hl-2">&quot;First&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;Second&quot;</span><span class="hl-0">] };</span><br/><span class="hl-0">       </span><span class="hl-4">player</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-4">rawMessage</span><span class="hl-0">);</span><br/>
+<pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-10">// Displays &quot;First or Second&quot;</span><br/><span class="hl-0">       </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">rawMessage</span><span class="hl-0"> = { </span><span class="hl-6">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;accessibility.list.or.two&quot;</span><span class="hl-0">, </span><span class="hl-6">with:</span><span class="hl-0"> [</span><span class="hl-2">&quot;First&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;Second&quot;</span><span class="hl-0">] };</span><br/><span class="hl-0">       </span><span class="hl-6">player</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><span class="hl-6">rawMessage</span><span class="hl-0">);</span><br/>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.1.0/index.d.ts:548</li></ul></aside></li></ul></section></section></div>
+<li>Defined in @minecraft/server@1.1.0/index.d.ts:504</li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

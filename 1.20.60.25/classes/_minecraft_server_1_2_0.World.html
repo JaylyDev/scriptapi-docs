@@ -34,7 +34,7 @@ dimensions and the environment of Minecraft.</p>
 <ul class="tsd-hierarchy">
 <li><span class="target">World</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.2.0/index.d.ts:2165</li></ul></aside>
+<li>Defined in @minecraft/server@1.2.0/index.d.ts:2087</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -64,7 +64,7 @@ dimensions and the environment of Minecraft.</p>
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_2_0.World.html" class="tsd-signature-type tsd-kind-class">World</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.2.0/index.d.ts:2166</li></ul></aside></li></ul></section></section>
+<li>Defined in @minecraft/server@1.2.0/index.d.ts:2088</li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member"><a id="getAllPlayers" class="tsd-anchor"></a>
@@ -79,7 +79,7 @@ dimensions and the environment of Minecraft.</p>
 <h4>Throws</h4><p>This function can throw errors.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.2.0/index.d.ts:2173</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.2.0/index.d.ts:2095</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getDimension" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Dimension</span><a href="#getDimension" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -98,19 +98,19 @@ dimensions and the environment of Minecraft.</p>
 <h4>Throws</h4><p>Throws if the given dimension name is invalid</p>
 
 <h4>Example</h4><p>getNether.js</p>
-<pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;nether&quot;</span><span class="hl-0">);</span>
+<pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;nether&quot;</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
 
 <h4>Example</h4><p>getOverworld.js</p>
-<pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;overworld&quot;</span><span class="hl-0">);</span>
+<pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;overworld&quot;</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
 
 <h4>Example</h4><p>getTheEnd.js</p>
-<pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;the_end&quot;</span><span class="hl-0">);</span>
+<pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;the_end&quot;</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.2.0/index.d.ts:2201</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.2.0/index.d.ts:2123</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getPlayers" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Players</span><a href="#getPlayers" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -133,15 +133,15 @@ defined via the EntityQueryOptions set of filter criteria.</p>
 <h4>Throws</h4><p>This function can throw errors.</p>
 
 <h4>Example</h4><p>getFamily.js</p>
-<pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getPlayers</span><span class="hl-0">({ </span><span class="hl-4">families:</span><span class="hl-0"> [</span><span class="hl-2">&quot;player&quot;</span><span class="hl-0">] });</span>
+<pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getPlayers</span><span class="hl-0">({ </span><span class="hl-6">families:</span><span class="hl-0"> [</span><span class="hl-2">&quot;player&quot;</span><span class="hl-0">] });</span>
 </code><button>Copy</button></pre>
 
 <h4>Example</h4><p>getFilteredPlayers.ts</p>
-<pre><code class="language-ts"><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">entityQueryOptions</span><span class="hl-0">: </span><span class="hl-11">EntityQueryOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">minLevel:</span><span class="hl-0"> </span><span class="hl-9">10</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">maxLevel:</span><span class="hl-0"> </span><span class="hl-9">30</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">tags:</span><span class="hl-0"> [</span><span class="hl-2">&quot;team_red&quot;</span><span class="hl-0">],</span><br/><span class="hl-0">    </span><span class="hl-4">excludeNames:</span><span class="hl-0"> [</span><span class="hl-2">&quot;Admin&quot;</span><span class="hl-0">],</span><br/><span class="hl-0">};</span><br/><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">filteredPlayers</span><span class="hl-0"> = </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getPlayers</span><span class="hl-0">(</span><span class="hl-4">entityQueryOptions</span><span class="hl-0">);</span><br/><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><br/><span class="hl-0">    </span><span class="hl-2">&quot;Filtered Players:&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">filteredPlayers</span><span class="hl-0">.</span><span class="hl-5">map</span><span class="hl-0">((</span><span class="hl-4">player</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> </span><span class="hl-4">player</span><span class="hl-0">.</span><span class="hl-4">name</span><span class="hl-0">)</span><br/><span class="hl-0">);</span>
+<pre><code class="language-ts"><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">entityQueryOptions</span><span class="hl-0">: </span><span class="hl-5">EntityQueryOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-6">minLevel:</span><span class="hl-0"> </span><span class="hl-7">10</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">maxLevel:</span><span class="hl-0"> </span><span class="hl-7">30</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">tags:</span><span class="hl-0"> [</span><span class="hl-2">&quot;team_red&quot;</span><span class="hl-0">],</span><br/><span class="hl-0">    </span><span class="hl-6">excludeNames:</span><span class="hl-0"> [</span><span class="hl-2">&quot;Admin&quot;</span><span class="hl-0">],</span><br/><span class="hl-0">};</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">filteredPlayers</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getPlayers</span><span class="hl-0">(</span><span class="hl-6">entityQueryOptions</span><span class="hl-0">);</span><br/><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><br/><span class="hl-0">    </span><span class="hl-2">&quot;Filtered Players:&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">filteredPlayers</span><span class="hl-0">.</span><span class="hl-8">map</span><span class="hl-0">((</span><span class="hl-6">player</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> </span><span class="hl-6">player</span><span class="hl-0">.</span><span class="hl-6">name</span><span class="hl-0">)</span><br/><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.2.0/index.d.ts:2234</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.2.0/index.d.ts:2156</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="playMusic" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>play<wbr/>Music</span><a href="#playMusic" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -162,7 +162,7 @@ defined via the EntityQueryOptions set of filter criteria.</p>
 <h4>Throws</h4><p>This function can throw errors.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.2.0/index.d.ts:2243</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.2.0/index.d.ts:2165</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="playSound" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>play<wbr/>Sound</span><a href="#playSound" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -185,7 +185,7 @@ defined via the EntityQueryOptions set of filter criteria.</p>
 <h4>Throws</h4><p>This function can throw errors.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.2.0/index.d.ts:2252</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.2.0/index.d.ts:2174</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="queueMusic" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>queue<wbr/>Music</span><a href="#queueMusic" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -207,7 +207,7 @@ not playing, a music track will play.</p>
 <h4>Throws</h4><p>This function can throw errors.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.2.0/index.d.ts:2262</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.2.0/index.d.ts:2184</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="sendMessage" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>send<wbr/>Message</span><a href="#sendMessage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -229,23 +229,23 @@ in an invalid format. For example, if an empty <code>name</code> string
 is provided to <code>score</code>.</p>
 
 <h4>Example</h4><p>nestedTranslation.ts</p>
-<pre><code class="language-typescript"><span class="hl-8">// Displays &quot;Apple or Coal&quot;</span><br/><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">rawMessage</span><span class="hl-0"> = {</span><br/><span class="hl-0">  </span><span class="hl-4">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;accessibility.list.or.two&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-4">with:</span><span class="hl-0"> { </span><span class="hl-4">rawtext:</span><span class="hl-0"> [{ </span><span class="hl-4">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;item.apple.name&quot;</span><span class="hl-0"> }, { </span><span class="hl-4">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;item.coal.name&quot;</span><span class="hl-0"> }] },</span><br/><span class="hl-0">};</span><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-4">rawMessage</span><span class="hl-0">);</span>
+<pre><code class="language-typescript"><span class="hl-10">// Displays &quot;Apple or Coal&quot;</span><br/><span class="hl-3">let</span><span class="hl-0"> </span><span class="hl-6">rawMessage</span><span class="hl-0"> = {</span><br/><span class="hl-0">  </span><span class="hl-6">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;accessibility.list.or.two&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-6">with:</span><span class="hl-0"> { </span><span class="hl-6">rawtext:</span><span class="hl-0"> [{ </span><span class="hl-6">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;item.apple.name&quot;</span><span class="hl-0"> }, { </span><span class="hl-6">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;item.coal.name&quot;</span><span class="hl-0"> }] },</span><br/><span class="hl-0">};</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><span class="hl-6">rawMessage</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
 
 <h4>Example</h4><p>scoreWildcard.ts</p>
-<pre><code class="language-typescript"><span class="hl-8">// Displays the player&#39;s score for objective &quot;obj&quot;. Each player will see their own score.</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">rawMessage</span><span class="hl-0"> = { </span><span class="hl-4">score:</span><span class="hl-0"> { </span><span class="hl-4">name:</span><span class="hl-0"> </span><span class="hl-2">&quot;*&quot;</span><span class="hl-0">, </span><span class="hl-4">objective:</span><span class="hl-0"> </span><span class="hl-2">&quot;obj&quot;</span><span class="hl-0"> } };</span><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-4">rawMessage</span><span class="hl-0">);</span>
+<pre><code class="language-typescript"><span class="hl-10">// Displays the player&#39;s score for objective &quot;obj&quot;. Each player will see their own score.</span><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">rawMessage</span><span class="hl-0"> = { </span><span class="hl-6">score:</span><span class="hl-0"> { </span><span class="hl-6">name:</span><span class="hl-0"> </span><span class="hl-2">&quot;*&quot;</span><span class="hl-0">, </span><span class="hl-6">objective:</span><span class="hl-0"> </span><span class="hl-2">&quot;obj&quot;</span><span class="hl-0"> } };</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><span class="hl-6">rawMessage</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
 
 <h4>Example</h4><p>simpleString.ts</p>
-<pre><code class="language-typescript"><span class="hl-8">// Displays &quot;Hello, world!&quot;</span><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-2">&quot;Hello, world!&quot;</span><span class="hl-0">);</span>
+<pre><code class="language-typescript"><span class="hl-10">// Displays &quot;Hello, world!&quot;</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><span class="hl-2">&quot;Hello, world!&quot;</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
 
 <h4>Example</h4><p>translation.ts</p>
-<pre><code class="language-typescript"><span class="hl-8">// Displays &quot;First or Second&quot;</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">rawMessage</span><span class="hl-0"> = { </span><span class="hl-4">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;accessibility.list.or.two&quot;</span><span class="hl-0">, </span><span class="hl-4">with:</span><span class="hl-0"> [</span><span class="hl-2">&quot;First&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;Second&quot;</span><span class="hl-0">] };</span><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-4">rawMessage</span><span class="hl-0">);</span>
+<pre><code class="language-typescript"><span class="hl-10">// Displays &quot;First or Second&quot;</span><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">rawMessage</span><span class="hl-0"> = { </span><span class="hl-6">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;accessibility.list.or.two&quot;</span><span class="hl-0">, </span><span class="hl-6">with:</span><span class="hl-0"> [</span><span class="hl-2">&quot;First&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;Second&quot;</span><span class="hl-0">] };</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><span class="hl-6">rawMessage</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.2.0/index.d.ts:2300</li></ul></aside></li></ul></section>
+<li>Defined in @minecraft/server@1.2.0/index.d.ts:2222</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="stopMusic" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>stop<wbr/>Music</span><a href="#stopMusic" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -257,7 +257,7 @@ is provided to <code>score</code>.</p>
 <p>This function can&#39;t be called in read-only mode.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.2.0/index.d.ts:2308</li></ul></aside></li></ul></section></section></div>
+<li>Defined in @minecraft/server@1.2.0/index.d.ts:2230</li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
