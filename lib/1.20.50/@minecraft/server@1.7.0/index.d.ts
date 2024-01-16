@@ -87,38 +87,71 @@ export enum DisplaySlotId {
     Sidebar = 'Sidebar',
 }
 
+/** */
 export enum EasingType {
+    /** */
     InBack = 'InBack',
+    /** */
     InBounce = 'InBounce',
+    /** */
     InCirc = 'InCirc',
+    /** */
     InCubic = 'InCubic',
+    /** */
     InElastic = 'InElastic',
+    /** */
     InExpo = 'InExpo',
+    /** */
     InOutBack = 'InOutBack',
+    /** */
     InOutBounce = 'InOutBounce',
+    /** */
     InOutCirc = 'InOutCirc',
+    /** */
     InOutCubic = 'InOutCubic',
+    /** */
     InOutElastic = 'InOutElastic',
+    /** */
     InOutExpo = 'InOutExpo',
+    /** */
     InOutQuad = 'InOutQuad',
+    /** */
     InOutQuart = 'InOutQuart',
+    /** */
     InOutQuint = 'InOutQuint',
+    /** */
     InOutSine = 'InOutSine',
+    /** */
     InQuad = 'InQuad',
+    /** */
     InQuart = 'InQuart',
+    /** */
     InQuint = 'InQuint',
+    /** */
     InSine = 'InSine',
+    /** */
     Linear = 'Linear',
+    /** */
     OutBack = 'OutBack',
+    /** */
     OutBounce = 'OutBounce',
+    /** */
     OutCirc = 'OutCirc',
+    /** */
     OutCubic = 'OutCubic',
+    /** */
     OutElastic = 'OutElastic',
+    /** */
     OutExpo = 'OutExpo',
+    /** */
     OutQuad = 'OutQuad',
+    /** */
     OutQuart = 'OutQuart',
+    /** */
     OutQuint = 'OutQuint',
+    /** */
     OutSine = 'OutSine',
+    /** */
     Spring = 'Spring',
 }
 
@@ -139,6 +172,7 @@ export enum EntityDamageCause {
      *
      */
     blockExplosion = 'blockExplosion',
+    /** */
     campfire = 'campfire',
     /**
      * @remarks
@@ -268,8 +302,11 @@ export enum EntityDamageCause {
      *
      */
     projectile = 'projectile',
+    /** */
     ramAttack = 'ramAttack',
+    /** */
     sonicBoom = 'sonicBoom',
+    /** */
     soulCampfire = 'soulCampfire',
     /**
      * @remarks
@@ -3242,6 +3279,7 @@ export class EntityDieAfterEventSignal {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityEquippableComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:equippable';
     /**
      * @remarks
@@ -3379,6 +3417,7 @@ export class EntityHealableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly forceUse: boolean;
+    /** */
     static readonly componentId = 'minecraft:healable';
     /**
      * @remarks
@@ -3480,6 +3519,7 @@ export class EntityHealthChangedAfterEventSignal {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityHealthComponent extends EntityAttributeComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:health';
 }
 
@@ -8380,6 +8420,7 @@ export interface BlockRaycastOptions {
     maxDistance?: number;
 }
 
+/** */
 export interface CameraDefaultOptions {
     /**
      * @remarks
@@ -8449,26 +8490,41 @@ export interface CameraFadeTimeOptions {
     holdTime: number;
 }
 
+/** */
 export interface CameraSetFacingOptions {
+    /** */
     easeOptions?: CameraEaseOptions;
+    /** */
     facingEntity: Entity;
+    /** */
     location?: Vector3;
 }
 
+/** */
 export interface CameraSetLocationOptions {
+    /** */
     easeOptions?: CameraEaseOptions;
+    /** */
     location: Vector3;
 }
 
+/** */
 export interface CameraSetPosOptions {
+    /** */
     easeOptions?: CameraEaseOptions;
+    /** */
     facingLocation: Vector3;
+    /** */
     location?: Vector3;
 }
 
+/** */
 export interface CameraSetRotOptions {
+    /** */
     easeOptions?: CameraEaseOptions;
+    /** */
     location?: Vector3;
+    /** */
     rotation: Vector2;
 }
 
@@ -9203,16 +9259,19 @@ export interface WorldSoundOptions {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class CommandError extends Error {
     private constructor();
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class LocationInUnloadedChunkError extends Error {
     private constructor();
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class LocationOutOfWorldBoundariesError extends Error {
     private constructor();
 }

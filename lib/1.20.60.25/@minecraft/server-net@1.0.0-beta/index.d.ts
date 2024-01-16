@@ -69,6 +69,7 @@ export enum HttpRequestMethod {
     Put = 'Put',
 }
 
+/** */
 export class HttpClient {
     private constructor();
     /**

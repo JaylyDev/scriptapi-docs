@@ -24,16 +24,27 @@
  */
 import * as minecraftcommon from '@minecraft/common';
 import * as minecraftserver from '@minecraft/server';
+/** */
 export enum GameTestErrorType {
+    /** */
     Assert = 'Assert',
+    /** */
     AssertAtPosition = 'AssertAtPosition',
+    /** */
     ExecutionTimeout = 'ExecutionTimeout',
+    /** */
     ExhaustedAttempts = 'ExhaustedAttempts',
+    /** */
     FailConditionsMet = 'FailConditionsMet',
+    /** */
     LevelStateModificationFailed = 'LevelStateModificationFailed',
+    /** */
     MethodNotImplemented = 'MethodNotImplemented',
+    /** */
     SimulatedPlayerOutOfBounds = 'SimulatedPlayerOutOfBounds',
+    /** */
     Unknown = 'Unknown',
+    /** */
     Waiting = 'Waiting',
 }
 
@@ -960,6 +971,7 @@ export class Tags {
      *
      */
     static readonly suiteDisabled = 'suite:disabled';
+    /** */
     static readonly suiteNextUpdate = 'suite:nextupdate';
 }
 
@@ -2223,9 +2235,13 @@ export class Test {
     worldLocation(relativeLocation: minecraftserver.Vector3): minecraftserver.Vector3;
 }
 
+/** */
 export interface GameTestErrorContext {
+    /** */
     absolutePosition: minecraftserver.Vector3;
+    /** */
     relativePosition: minecraftserver.Vector3;
+    /** */
     tickCount: number;
 }
 
@@ -2235,10 +2251,14 @@ export interface MoveToOptions {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class GameTestError extends Error {
     private constructor();
+    /** */
     context?: GameTestErrorContext;
+    /** */
     messageParameters: string[];
+    /** */
     type: GameTestErrorType;
 }
 

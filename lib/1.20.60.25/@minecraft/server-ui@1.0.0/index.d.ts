@@ -48,9 +48,13 @@
  *
  */
 import * as minecraftserver from '@minecraft/server';
+/** */
 export enum FormRejectReason {
+    /** */
     MalformedResponse = 'MalformedResponse',
+    /** */
     PlayerQuit = 'PlayerQuit',
+    /** */
     ServerShutdown = 'ServerShutdown',
 }
 
@@ -363,7 +367,9 @@ export class ModalFormResponse extends FormResponse {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class FormRejectError extends Error {
     private constructor();
+    /** */
     reason: FormRejectReason;
 }

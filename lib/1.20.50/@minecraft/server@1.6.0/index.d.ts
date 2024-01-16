@@ -636,11 +636,17 @@ export enum ScriptEventSource {
  * day.
  */
 export enum TimeOfDay {
+    /** */
     Day = 1000,
+    /** */
     Noon = 6000,
+    /** */
     Sunset = 12000,
+    /** */
     Night = 13000,
+    /** */
     Midnight = 18000,
+    /** */
     Sunrise = 23000,
 }
 
@@ -2950,6 +2956,7 @@ export class EntityDieAfterEventSignal {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityEquippableComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:equippable';
     /**
      * @remarks
@@ -3087,6 +3094,7 @@ export class EntityHealableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly forceUse: boolean;
+    /** */
     static readonly componentId = 'minecraft:healable';
     /**
      * @remarks
@@ -3188,6 +3196,7 @@ export class EntityHealthChangedAfterEventSignal {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityHealthComponent extends EntityAttributeComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:health';
 }
 
@@ -8449,16 +8458,19 @@ export interface WorldSoundOptions {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class CommandError extends Error {
     private constructor();
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class LocationInUnloadedChunkError extends Error {
     private constructor();
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class LocationOutOfWorldBoundariesError extends Error {
     private constructor();
 }

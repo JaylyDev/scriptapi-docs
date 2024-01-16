@@ -1958,6 +1958,7 @@ export class EntityHealableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly forceUse: boolean;
+    /** */
     static readonly componentId = 'minecraft:healable';
     /**
      * @remarks
@@ -2002,6 +2003,7 @@ export class EntityHealableComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityHealthComponent extends EntityAttributeComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:health';
 }
 

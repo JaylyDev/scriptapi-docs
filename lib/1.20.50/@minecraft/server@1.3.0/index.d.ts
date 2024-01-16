@@ -21,36 +21,67 @@
  *
  */
 export enum EntityDamageCause {
+    /** */
     anvil = 'anvil',
+    /** */
     blockExplosion = 'blockExplosion',
+    /** */
     charging = 'charging',
+    /** */
     contact = 'contact',
+    /** */
     drowning = 'drowning',
+    /** */
     entityAttack = 'entityAttack',
+    /** */
     entityExplosion = 'entityExplosion',
+    /** */
     fall = 'fall',
+    /** */
     fallingBlock = 'fallingBlock',
+    /** */
     fire = 'fire',
+    /** */
     fireTick = 'fireTick',
+    /** */
     fireworks = 'fireworks',
+    /** */
     flyIntoWall = 'flyIntoWall',
+    /** */
     freezing = 'freezing',
+    /** */
     lava = 'lava',
+    /** */
     lightning = 'lightning',
+    /** */
     magic = 'magic',
+    /** */
     magma = 'magma',
+    /** */
     none = 'none',
+    /** */
     override = 'override',
+    /** */
     piston = 'piston',
+    /** */
     projectile = 'projectile',
+    /** */
     stalactite = 'stalactite',
+    /** */
     stalagmite = 'stalagmite',
+    /** */
     starve = 'starve',
+    /** */
     suffocation = 'suffocation',
+    /** */
     suicide = 'suicide',
+    /** */
     temperature = 'temperature',
+    /** */
     thorns = 'thorns',
+    /** */
     'void' = 'void',
+    /** */
     wither = 'wither',
 }
 
@@ -1756,6 +1787,7 @@ export class EntityAttributeComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityBaseMovementComponent extends EntityComponent {
     private constructor();
+    /** */
     readonly maxTurn: number;
 }
 
@@ -3751,6 +3783,7 @@ export interface PlayerSoundOptions {
  * ```
  */
 export interface RawMessage {
+    /** */
     rawtext?: RawMessage[];
     /**
      * @remarks
@@ -3773,6 +3806,7 @@ export interface RawMessage {
      *
      */
     translate?: string;
+    /** */
     with?: string[] | RawMessage;
 }
 

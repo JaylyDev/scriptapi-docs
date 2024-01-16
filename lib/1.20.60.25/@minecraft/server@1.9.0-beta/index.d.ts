@@ -25,13 +25,21 @@ import * as minecraftcommon from '@minecraft/common';
  * @beta
  */
 export enum BlockComponentTypes {
+    /** */
     Inventory = 'minecraft:inventory',
+    /** */
     LavaContainer = 'minecraft:lavaContainer',
+    /** */
     Piston = 'minecraft:piston',
+    /** */
     PotionContainer = 'minecraft:potionContainer',
+    /** */
     RecordPlayer = 'minecraft:recordPlayer',
+    /** */
     Sign = 'minecraft:sign',
+    /** */
     SnowContainer = 'minecraft:snowContainer',
+    /** */
     WaterContainer = 'minecraft:waterContainer',
 }
 
@@ -373,38 +381,71 @@ export enum DyeColor {
     Yellow = 'Yellow',
 }
 
+/** */
 export enum EasingType {
+    /** */
     InBack = 'InBack',
+    /** */
     InBounce = 'InBounce',
+    /** */
     InCirc = 'InCirc',
+    /** */
     InCubic = 'InCubic',
+    /** */
     InElastic = 'InElastic',
+    /** */
     InExpo = 'InExpo',
+    /** */
     InOutBack = 'InOutBack',
+    /** */
     InOutBounce = 'InOutBounce',
+    /** */
     InOutCirc = 'InOutCirc',
+    /** */
     InOutCubic = 'InOutCubic',
+    /** */
     InOutElastic = 'InOutElastic',
+    /** */
     InOutExpo = 'InOutExpo',
+    /** */
     InOutQuad = 'InOutQuad',
+    /** */
     InOutQuart = 'InOutQuart',
+    /** */
     InOutQuint = 'InOutQuint',
+    /** */
     InOutSine = 'InOutSine',
+    /** */
     InQuad = 'InQuad',
+    /** */
     InQuart = 'InQuart',
+    /** */
     InQuint = 'InQuint',
+    /** */
     InSine = 'InSine',
+    /** */
     Linear = 'Linear',
+    /** */
     OutBack = 'OutBack',
+    /** */
     OutBounce = 'OutBounce',
+    /** */
     OutCirc = 'OutCirc',
+    /** */
     OutCubic = 'OutCubic',
+    /** */
     OutElastic = 'OutElastic',
+    /** */
     OutExpo = 'OutExpo',
+    /** */
     OutQuad = 'OutQuad',
+    /** */
     OutQuart = 'OutQuart',
+    /** */
     OutQuint = 'OutQuint',
+    /** */
     OutSine = 'OutSine',
+    /** */
     Spring = 'Spring',
 }
 
@@ -412,68 +453,130 @@ export enum EasingType {
  * @beta
  */
 export enum EntityComponentTypes {
+    /** */
     AddRider = 'minecraft:addrider',
+    /** */
     Ageable = 'minecraft:ageable',
+    /** */
     Breathable = 'minecraft:breathable',
+    /** */
     CanClimb = 'minecraft:can_climb',
+    /** */
     CanFly = 'minecraft:can_fly',
+    /** */
     CanPowerJump = 'minecraft:can_power_jump',
+    /** */
     Color = 'minecraft:color',
+    /** */
     Equippable = 'minecraft:equippable',
+    /** */
     FireImmune = 'minecraft:fire_immune',
+    /** */
     FloatsInLiquid = 'minecraft:floats_in_liquid',
+    /** */
     FlyingSpeed = 'minecraft:flying_speed',
+    /** */
     FrictionModifier = 'minecraft:friction_modifier',
+    /** */
     GroundOffset = 'minecraft:ground_offset',
+    /** */
     Healable = 'minecraft:healable',
+    /** */
     Health = 'minecraft:health',
+    /** */
     Inventory = 'minecraft:inventory',
+    /** */
     IsBaby = 'minecraft:is_baby',
+    /** */
     IsCharged = 'minecraft:is_charged',
+    /** */
     IsChested = 'minecraft:is_chested',
+    /** */
     IsDyeable = 'minecraft:is_dyeable',
+    /** */
     IsHiddenWhenInvisible = 'minecraft:is_hidden_when_invisible',
+    /** */
     IsIgnited = 'minecraft:is_ignited',
+    /** */
     IsIllagerCaptain = 'minecraft:is_illager_captain',
+    /** */
     IsSaddled = 'minecraft:is_saddled',
+    /** */
     IsShaking = 'minecraft:is_shaking',
+    /** */
     IsSheared = 'minecraft:is_sheared',
+    /** */
     IsStackable = 'minecraft:is_stackable',
+    /** */
     IsStunned = 'minecraft:is_stunned',
+    /** */
     IsTamed = 'minecraft:is_tamed',
+    /** */
     Item = 'minecraft:item',
+    /** */
     LavaMovement = 'minecraft:lava_movement',
+    /** */
     Leashable = 'minecraft:leashable',
+    /** */
     MarkVariant = 'minecraft:mark_variant',
+    /** */
     MountTaming = 'minecraft:tamemount',
+    /** */
     Movement = 'minecraft:movement',
+    /** */
     MovementAmphibious = 'minecraft:movement.amphibious',
+    /** */
     MovementBasic = 'minecraft:movement.basic',
+    /** */
     MovementFly = 'minecraft:movement.fly',
+    /** */
     MovementGeneric = 'minecraft:movement.generic',
+    /** */
     MovementGlide = 'minecraft:movement.glide',
+    /** */
     MovementHover = 'minecraft:movement.hover',
+    /** */
     MovementJump = 'minecraft:movement.jump',
+    /** */
     MovementSkip = 'minecraft:movement.skip',
+    /** */
     MovementSway = 'minecraft:movement.sway',
+    /** */
     NavigationClimb = 'minecraft:navigation.climb',
+    /** */
     NavigationFloat = 'minecraft:navigation.float',
+    /** */
     NavigationFly = 'minecraft:navigation.fly',
+    /** */
     NavigationGeneric = 'minecraft:navigation.generic',
+    /** */
     NavigationHover = 'minecraft:navigation.hover',
+    /** */
     NavigationWalk = 'minecraft:navigation.walk',
+    /** */
     Npc = 'minecraft:npc',
+    /** */
     OnFire = 'minecraft:onfire',
     Projectile = 'minecraft:projectile',
+    /** */
     PushThrough = 'minecraft:push_through',
+    /** */
     Rideable = 'minecraft:rideable',
+    /** */
     Riding = 'minecraft:riding',
+    /** */
     Scale = 'minecraft:scale',
+    /** */
     SkinId = 'minecraft:skin_id',
+    /** */
     Strength = 'minecraft:strength',
+    /** */
     Tameable = 'minecraft:tameable',
+    /** */
     UnderwaterMovement = 'minecraft:underwater_movement',
+    /** */
     Variant = 'minecraft:variant',
+    /** */
     WantsJockey = 'minecraft:wants_jockey',
 }
 
@@ -494,6 +597,7 @@ export enum EntityDamageCause {
      *
      */
     blockExplosion = 'blockExplosion',
+    /** */
     campfire = 'campfire',
     /**
      * @remarks
@@ -623,8 +727,11 @@ export enum EntityDamageCause {
      *
      */
     projectile = 'projectile',
+    /** */
     ramAttack = 'ramAttack',
+    /** */
     sonicBoom = 'sonicBoom',
+    /** */
     soulCampfire = 'soulCampfire',
     /**
      * @remarks
@@ -2044,6 +2151,7 @@ export class BlockInventoryComponent extends BlockComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class BlockLavaContainerComponent extends BlockLiquidContainerComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:lavaContainer';
 }
 
@@ -2298,6 +2406,7 @@ export class BlockPistonComponent extends BlockComponent {
      * @throws This property can throw when used.
      */
     readonly state: BlockPistonState;
+    /** */
     static readonly componentId = 'minecraft:piston';
     /**
      * @remarks
@@ -2325,6 +2434,7 @@ export class BlockPistonComponent extends BlockComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class BlockPotionContainerComponent extends BlockLiquidContainerComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:potionContainer';
     /**
      * @remarks
@@ -2344,6 +2454,7 @@ export class BlockPotionContainerComponent extends BlockLiquidContainerComponent
 // @ts-ignore Class inheritance allowed for native defined classes
 export class BlockRecordPlayerComponent extends BlockComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:recordPlayer';
     /**
      * @remarks
@@ -2390,6 +2501,7 @@ export class BlockSignComponent extends BlockComponent {
      * @throws This property can throw when used.
      */
     readonly isWaxed: boolean;
+    /** */
     static readonly componentId = 'minecraft:sign';
     /**
      * @remarks
@@ -2528,6 +2640,7 @@ export class BlockSignComponent extends BlockComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class BlockSnowContainerComponent extends BlockLiquidContainerComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:snowContainer';
 }
 
@@ -2775,6 +2888,7 @@ export class BlockVolumeUtils {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class BlockWaterContainerComponent extends BlockLiquidContainerComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:waterContainer';
     /**
      * @remarks
@@ -6201,6 +6315,7 @@ export class EntityAddRiderComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly spawnEvent: string;
+    /** */
     static readonly componentId = 'minecraft:addrider';
 }
 
@@ -6236,6 +6351,7 @@ export class EntityAgeableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly growUp: Trigger;
+    /** */
     static readonly componentId = 'minecraft:ageable';
     /**
      * @remarks
@@ -6429,6 +6545,7 @@ export class EntityBreathableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly totalSupply: number;
+    /** */
     static readonly componentId = 'minecraft:breathable';
     /**
      * @remarks
@@ -6630,6 +6747,7 @@ export class EntityDieAfterEventSignal {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityEquippableComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:equippable';
     /**
      * @remarks
@@ -6788,6 +6906,7 @@ export class EntityHealableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly forceUse: boolean;
+    /** */
     static readonly componentId = 'minecraft:healable';
     /**
      * @remarks
@@ -6889,6 +7008,7 @@ export class EntityHealthChangedAfterEventSignal {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityHealthComponent extends EntityAttributeComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:health';
 }
 
@@ -7360,6 +7480,7 @@ export class EntityIterator implements Iterable<Entity> {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityLavaMovementComponent extends EntityAttributeComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:lava_movement';
 }
 
@@ -7388,6 +7509,7 @@ export class EntityLeashableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly softDistance: number;
+    /** */
     static readonly componentId = 'minecraft:leashable';
     /**
      * @remarks
@@ -7493,6 +7615,7 @@ export class EntityMarkVariantComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMountTamingComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:tamemount';
     /**
      * @remarks
@@ -7535,6 +7658,7 @@ export class EntityMovementBasicComponent extends EntityBaseMovementComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementComponent extends EntityAttributeComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:movement';
 }
 
@@ -7587,6 +7711,7 @@ export class EntityMovementGlideComponent extends EntityBaseMovementComponent {
      * @throws This property can throw when used.
      */
     readonly startSpeed: number;
+    /** */
     static readonly componentId = 'minecraft:movement.glide';
 }
 
@@ -7651,6 +7776,7 @@ export class EntityMovementSwayComponent extends EntityBaseMovementComponent {
      * @throws This property can throw when used.
      */
     readonly swayFrequency: number;
+    /** */
     static readonly componentId = 'minecraft:movement.sway';
 }
 
@@ -7686,6 +7812,7 @@ export class EntityMovementSwayComponent extends EntityBaseMovementComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityNavigationClimbComponent extends EntityNavigationComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:navigation.climb';
 }
 
@@ -7879,6 +8006,7 @@ export class EntityNavigationComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityNavigationFloatComponent extends EntityNavigationComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:navigation.float';
 }
 
@@ -7914,6 +8042,7 @@ export class EntityNavigationFloatComponent extends EntityNavigationComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityNavigationFlyComponent extends EntityNavigationComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:navigation.fly';
 }
 
@@ -7950,6 +8079,7 @@ export class EntityNavigationFlyComponent extends EntityNavigationComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityNavigationGenericComponent extends EntityNavigationComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:navigation.generic';
 }
 
@@ -7986,6 +8116,7 @@ export class EntityNavigationGenericComponent extends EntityNavigationComponent 
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityNavigationHoverComponent extends EntityNavigationComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:navigation.hover';
 }
 
@@ -8021,6 +8152,7 @@ export class EntityNavigationHoverComponent extends EntityNavigationComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityNavigationWalkComponent extends EntityNavigationComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:navigation.walk';
 }
 
@@ -8057,6 +8189,7 @@ export class EntityNpcComponent extends EntityComponent {
      *
      */
     skinIndex: number;
+    /** */
     static readonly componentId = 'minecraft:npc';
 }
 
@@ -8073,6 +8206,7 @@ export class EntityOnFireComponent extends EntityComponent {
      *
      */
     readonly onFireTicksRemaining: number;
+    /** */
     static readonly componentId = 'minecraft:onfire';
 }
 
@@ -8437,6 +8571,7 @@ export class EntityRideableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly seatCount: number;
+    /** */
     static readonly componentId = 'minecraft:rideable';
     /**
      * @remarks
@@ -8518,6 +8653,7 @@ export class EntityRidingComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly entityRidingOn: Entity;
+    /** */
     static readonly componentId = 'minecraft:riding';
 }
 
@@ -8650,6 +8786,7 @@ export class EntityStrengthComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly value: number;
+    /** */
     static readonly componentId = 'minecraft:strength';
 }
 
@@ -8674,6 +8811,7 @@ export class EntityTameableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly probability: number;
+    /** */
     static readonly componentId = 'minecraft:tameable';
     /**
      * @remarks
@@ -8759,6 +8897,7 @@ export class EntityTypes {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityUnderwaterMovementComponent extends EntityAttributeComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:underwater_movement';
 }
 
@@ -9211,6 +9350,7 @@ export class ItemCooldownComponent extends ItemComponent {
      * @throws This property can throw when used.
      */
     readonly cooldownTicks: number;
+    /** */
     static readonly componentId = 'minecraft:cooldown';
     /**
      * @remarks
@@ -9354,6 +9494,7 @@ export class ItemDurabilityComponent extends ItemComponent {
      * @throws This property can throw when used.
      */
     readonly maxDurability: number;
+    /** */
     static readonly componentId = 'minecraft:durability';
     /**
      * @remarks
@@ -9584,6 +9725,7 @@ export class ItemFoodComponent extends ItemComponent {
      * @throws This property can throw when used.
      */
     readonly usingConvertsTo: string;
+    /** */
     static readonly componentId = 'minecraft:food';
 }
 
@@ -14805,26 +14947,41 @@ export interface CameraFadeTimeOptions {
     holdTime: number;
 }
 
+/** */
 export interface CameraSetFacingOptions {
+    /** */
     easeOptions?: CameraEaseOptions;
+    /** */
     facingEntity: Entity;
+    /** */
     location?: Vector3;
 }
 
+/** */
 export interface CameraSetLocationOptions {
+    /** */
     easeOptions?: CameraEaseOptions;
+    /** */
     location: Vector3;
 }
 
+/** */
 export interface CameraSetPosOptions {
+    /** */
     easeOptions?: CameraEaseOptions;
+    /** */
     facingLocation: Vector3;
+    /** */
     location?: Vector3;
 }
 
+/** */
 export interface CameraSetRotOptions {
+    /** */
     easeOptions?: CameraEaseOptions;
+    /** */
     location?: Vector3;
+    /** */
     rotation: Vector2;
 }
 
@@ -15758,6 +15915,7 @@ export interface WorldSoundOptions {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class CommandError extends Error {
     private constructor();
 }
@@ -15795,11 +15953,13 @@ export class InvalidContainerSlotError extends Error {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class LocationInUnloadedChunkError extends Error {
     private constructor();
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class LocationOutOfWorldBoundariesError extends Error {
     private constructor();
 }

@@ -2378,6 +2378,7 @@ export class EntityDieAfterEventSignal {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityEquippableComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:equippable';
     /**
      * @remarks
@@ -2515,6 +2516,7 @@ export class EntityHealableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly forceUse: boolean;
+    /** */
     static readonly componentId = 'minecraft:healable';
     /**
      * @remarks
@@ -2616,6 +2618,7 @@ export class EntityHealthChangedAfterEventSignal {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityHealthComponent extends EntityAttributeComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:health';
 }
 
@@ -6955,16 +6958,19 @@ export interface WorldSoundOptions {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class CommandError extends Error {
     private constructor();
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class LocationInUnloadedChunkError extends Error {
     private constructor();
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class LocationOutOfWorldBoundariesError extends Error {
     private constructor();
 }

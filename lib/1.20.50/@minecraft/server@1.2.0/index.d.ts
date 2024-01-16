@@ -77,6 +77,7 @@ export enum GameMode {
      *
      */
     creative = 'creative',
+    /** */
     spectator = 'spectator',
     /**
      * @remarks
@@ -2573,10 +2574,15 @@ export interface PlayerSoundOptions {
  * ```
  */
 export interface RawMessage {
+    /** */
     rawtext?: RawMessage[];
+    /** */
     score?: RawMessageScore;
+    /** */
     text?: string;
+    /** */
     translate?: string;
+    /** */
     with?: string[] | RawMessage;
 }
 

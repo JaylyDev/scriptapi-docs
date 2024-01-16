@@ -88,36 +88,67 @@ export enum DisplaySlotId {
 
 /** */
 export enum EntityDamageCause {
+    /** */
     anvil = 'anvil',
+    /** */
     blockExplosion = 'blockExplosion',
+    /** */
     charging = 'charging',
+    /** */
     contact = 'contact',
+    /** */
     drowning = 'drowning',
+    /** */
     entityAttack = 'entityAttack',
+    /** */
     entityExplosion = 'entityExplosion',
+    /** */
     fall = 'fall',
+    /** */
     fallingBlock = 'fallingBlock',
+    /** */
     fire = 'fire',
+    /** */
     fireTick = 'fireTick',
+    /** */
     fireworks = 'fireworks',
+    /** */
     flyIntoWall = 'flyIntoWall',
+    /** */
     freezing = 'freezing',
+    /** */
     lava = 'lava',
+    /** */
     lightning = 'lightning',
+    /** */
     magic = 'magic',
+    /** */
     magma = 'magma',
+    /** */
     none = 'none',
+    /** */
     override = 'override',
+    /** */
     piston = 'piston',
+    /** */
     projectile = 'projectile',
+    /** */
     stalactite = 'stalactite',
+    /** */
     stalagmite = 'stalagmite',
+    /** */
     starve = 'starve',
+    /** */
     suffocation = 'suffocation',
+    /** */
     suicide = 'suicide',
+    /** */
     temperature = 'temperature',
+    /** */
     thorns = 'thorns',
+    /** */
     'void' = 'void',
+    /** */
     wither = 'wither',
 }
 
@@ -2323,6 +2354,7 @@ export class EntityHealableComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly forceUse: boolean;
+    /** */
     static readonly componentId = 'minecraft:healable';
     /**
      * @remarks
@@ -2424,6 +2456,7 @@ export class EntityHealthChangedAfterEventSignal {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityHealthComponent extends EntityAttributeComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:health';
 }
 
