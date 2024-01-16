@@ -28,7 +28,11 @@
 <div class="tsd-comment tsd-typography"><p>Provides access to a mob&#39;s equipment slots. This component
 exists for all mob entities.</p>
 </div>
-<div class="tsd-comment tsd-typography"></div></section>
+<div class="tsd-comment tsd-typography">
+<h4>Example</h4><p>equippable.js</p>
+<pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">EquipmentSlot</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">equippable</span><span class="hl-0"> = </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">getComponent</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:equippable&quot;</span><span class="hl-0">);</span><br/><span class="hl-4">equippable</span><span class="hl-0">.</span><span class="hl-5">getEquipment</span><span class="hl-0">(</span><span class="hl-4">EquipmentSlot</span><span class="hl-0">.</span><span class="hl-4">Mainhand</span><span class="hl-0">);</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">equipmentSlot</span><span class="hl-0"> = </span><span class="hl-4">EquipmentSlot</span><span class="hl-0">.</span><span class="hl-4">Head</span><span class="hl-0">;</span><br/><span class="hl-4">equippable</span><span class="hl-0">.</span><span class="hl-5">getEquipmentSlot</span><span class="hl-0">(</span><span class="hl-4">equipmentSlot</span><span class="hl-0">);</span><br/><span class="hl-4">equippable</span><span class="hl-0">.</span><span class="hl-5">setEquipment</span><span class="hl-0">(</span><span class="hl-4">EquipmentSlot</span><span class="hl-0">.</span><span class="hl-4">Offhand</span><span class="hl-0">); </span><span class="hl-8">// Assuming undefined (empty slot) as an example</span>
+</code><button>Copy</button></pre>
+</div></section>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
@@ -36,7 +40,7 @@ exists for all mob entities.</p>
 <ul class="tsd-hierarchy">
 <li><span class="target">EntityEquippableComponent</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:6461</li></ul></aside>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/0eb3034/lib/1.20.60.25/@minecraft/server@1.9.0-beta/index.d.ts#L6631">@minecraft/server@1.9.0-beta/index.d.ts:6631</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -69,7 +73,7 @@ exists for all mob entities.</p>
 <h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_9_0_beta.EntityEquippableComponent.html" class="tsd-signature-type tsd-kind-class">EntityEquippableComponent</a></h4><aside class="tsd-sources">
 <p>Overrides <a href="_minecraft_server_1_9_0_beta.EntityComponent.html">EntityComponent</a>.<a href="_minecraft_server_1_9_0_beta.EntityComponent.html#constructor">constructor</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:6462</li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/0eb3034/lib/1.20.60.25/@minecraft/server@1.9.0-beta/index.d.ts#L6632">@minecraft/server@1.9.0-beta/index.d.ts:6632</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="entity" class="tsd-anchor"></a>
@@ -81,7 +85,7 @@ undefined if it has been removed.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="_minecraft_server_1_9_0_beta.EntityComponent.html">EntityComponent</a>.<a href="_minecraft_server_1_9_0_beta.EntityComponent.html#entity">entity</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:6371</li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/0eb3034/lib/1.20.60.25/@minecraft/server@1.9.0-beta/index.d.ts#L6531">@minecraft/server@1.9.0-beta/index.d.ts:6531</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="typeId" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>type<wbr/>Id</span><a href="#typeId" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">type<wbr/>Id</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -90,12 +94,12 @@ undefined if it has been removed.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="_minecraft_server_1_9_0_beta.EntityComponent.html">EntityComponent</a>.<a href="_minecraft_server_1_9_0_beta.EntityComponent.html#typeId">typeId</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:3167</li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/0eb3034/lib/1.20.60.25/@minecraft/server@1.9.0-beta/index.d.ts#L3170">@minecraft/server@1.9.0-beta/index.d.ts:3170</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="componentId" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>component<wbr/>Id</span><a href="#componentId" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">component<wbr/>Id</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;minecraft:equippable&quot;</span><span class="tsd-signature-symbol"> = &#39;minecraft:equippable&#39;</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:6463</li></ul></aside></section></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/0eb3034/lib/1.20.60.25/@minecraft/server@1.9.0-beta/index.d.ts#L6633">@minecraft/server@1.9.0-beta/index.d.ts:6633</a></li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member"><a id="getEquipment" class="tsd-anchor"></a>
@@ -119,7 +123,7 @@ empty, returns undefined.</p>
 <h4>Throws</h4><p>This function can throw errors.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:6475</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/0eb3034/lib/1.20.60.25/@minecraft/server@1.9.0-beta/index.d.ts#L6645">@minecraft/server@1.9.0-beta/index.d.ts:6645</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getEquipmentSlot" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Equipment<wbr/>Slot</span><a href="#getEquipmentSlot" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -142,7 +146,7 @@ EquipmentSlot.</p>
 <h4>Throws</h4><p>This function can throw errors.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:6489</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/0eb3034/lib/1.20.60.25/@minecraft/server@1.9.0-beta/index.d.ts#L6659">@minecraft/server@1.9.0-beta/index.d.ts:6659</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="isValid" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>is<wbr/>Valid</span><a href="#isValid" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -158,7 +162,7 @@ component.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="_minecraft_server_1_9_0_beta.EntityComponent.html">EntityComponent</a>.<a href="_minecraft_server_1_9_0_beta.EntityComponent.html#isValid">isValid</a></p>
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:3178</li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/0eb3034/lib/1.20.60.25/@minecraft/server@1.9.0-beta/index.d.ts#L3181">@minecraft/server@1.9.0-beta/index.d.ts:3181</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="setEquipment" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Equipment</span><a href="#setEquipment" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -183,7 +187,7 @@ component.</p>
 <h4>Throws</h4><p>This function can throw errors.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:6502</li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/0eb3034/lib/1.20.60.25/@minecraft/server@1.9.0-beta/index.d.ts#L6672">@minecraft/server@1.9.0-beta/index.d.ts:6672</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

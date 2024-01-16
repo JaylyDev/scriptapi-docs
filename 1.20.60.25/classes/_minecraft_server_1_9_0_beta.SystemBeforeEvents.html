@@ -37,7 +37,7 @@ error.</p>
 <ul class="tsd-hierarchy">
 <li><span class="target">SystemBeforeEvents</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:12516</li></ul></aside>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/0eb3034/lib/1.20.60.25/@minecraft/server@1.9.0-beta/index.d.ts#L12839">@minecraft/server@1.9.0-beta/index.d.ts:12839</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -60,7 +60,7 @@ error.</p>
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_9_0_beta.SystemBeforeEvents.html" class="tsd-signature-type tsd-kind-class">SystemBeforeEvents</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:12517</li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/0eb3034/lib/1.20.60.25/@minecraft/server@1.9.0-beta/index.d.ts#L12840">@minecraft/server@1.9.0-beta/index.d.ts:12840</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member"><a id="watchdogTerminate" class="tsd-anchor"></a>
@@ -74,11 +74,11 @@ To prevent shutdown, set the event&#39;s cancel property to
 true.</p>
 
 <h4>Example</h4><p>cancelTerminate.js</p>
-<pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">system</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">system</span><span class="hl-0">.</span><span class="hl-6">beforeEvents</span><span class="hl-0">.</span><span class="hl-6">watchdogTerminate</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">cancel</span><span class="hl-0"> = </span><span class="hl-3">true</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">warn</span><span class="hl-0">(</span><br/><span class="hl-0">        </span><span class="hl-2">`[Watchdog] Canceled critical exception of type &#39;</span><span class="hl-3">${</span><span class="hl-6">event</span><span class="hl-9">.</span><span class="hl-6">cancelationReason</span><span class="hl-3">}</span><span class="hl-2">`</span><br/><span class="hl-0">    );</span><br/><span class="hl-0">});</span>
+<pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">system</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">system</span><span class="hl-0">.</span><span class="hl-4">beforeEvents</span><span class="hl-0">.</span><span class="hl-4">watchdogTerminate</span><span class="hl-0">.</span><span class="hl-5">subscribe</span><span class="hl-0">((</span><span class="hl-4">event</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-4">event</span><span class="hl-0">.</span><span class="hl-4">cancel</span><span class="hl-0"> = </span><span class="hl-6">true</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">warn</span><span class="hl-0">(</span><br/><span class="hl-0">        </span><span class="hl-2">`[Watchdog] Canceled critical exception of type &#39;</span><span class="hl-6">${</span><span class="hl-4">event</span><span class="hl-10">.</span><span class="hl-4">terminateReason</span><span class="hl-6">}</span><span class="hl-2">`</span><br/><span class="hl-0">    );</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in @minecraft/server@1.9.0-beta/index.d.ts:12537</li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs/blob/0eb3034/lib/1.20.60.25/@minecraft/server@1.9.0-beta/index.d.ts#L12860">@minecraft/server@1.9.0-beta/index.d.ts:12860</a></li></ul></aside></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
