@@ -1,6 +1,6 @@
 import { world } from "@minecraft/server";
 
-world.afterEvents.blockBreak.subscribe((event) => {
+world.afterEvents.playerBreakBlock.subscribe((event) => {
   const { brokenBlockPermutation, player } = event;
 
   if (brokenBlockPermutation.type.id === "minecraft:grass") {

@@ -1,4 +1,4 @@
-import { world, MinecraftBlockTypes, MinecraftItemTypes, Player } from "@minecraft/server";
+import { world, Player, BlockPermutation } from "@minecraft/server";
 
 // Subscribe to the itemUseOn event before it happens
 world.beforeEvents.itemUseOn.subscribe((event) => {
@@ -8,7 +8,7 @@ world.beforeEvents.itemUseOn.subscribe((event) => {
   source.sendMessage("You used " + itemStack.typeId + " on " + block.typeId);
 
   // If the item is a diamond, set the block to be a diamond block
-  if (itemStack.typeId === MinecraftItemTypes.diamond.id) {
-    block.setType(MinecraftBlockTypes.diamondBlock);
+  if (itemStack.typeId === "minecraft:diamond") {
+    block.setPermutation(BlockPermutation.resolve("minecraft:diamond_block"));
   }
 });

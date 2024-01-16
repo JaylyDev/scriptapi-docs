@@ -21,18 +21,24 @@
 // @ts-ignore Class inheritance allowed for native defined classes
 export class ArgumentOutOfBoundsError extends Error {
     private constructor();
+    /** */
     maxValue: number;
+    /** */
     minValue: number;
+    /** */
     value: number;
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class EngineError extends Error {
     private constructor();
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export class InvalidArgumentError extends Error {
     private constructor();
+    /** */
     index: number;
 }

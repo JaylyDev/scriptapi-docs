@@ -231,16 +231,16 @@ export class Dimension {
      * ```
      * @example getFilteredEntities.ts
      * ```ts
-     * const entityQueryOptions: EntityQueryOptions = {
+     * import { GameMode } from "@minecraft/server";
+     *
+     * const options: EntityQueryOptions = {
      *     families: ["mob", "animal"],
      *     excludeTypes: ["cow"],
      *     maxDistance: 50,
-     *     excludeGameModes: [GameMode.Creative, GameMode.Spectator],
+     *     excludeGameModes: [GameMode.creative, GameMode.spectator],
      * };
      *
-     * const filteredEntities = world
-     *     .getDimension("overworld")
-     *     .getEntities(entityQueryOptions);
+     * const filteredEntities = world.getDimension("overworld").getEntities(options);
      * console.log(
      *     "Filtered Entities:",
      *     filteredEntities.map((entity) => entity.typeId)
@@ -324,6 +324,14 @@ export class Entity {
      * Dimension that the entity is currently within.
      *
      * @throws This property can throw when used.
+     * @example spawnTnt.js
+     * ```js
+     * import { ItemStack } from "@minecraft/server";
+     * entity.dimension.spawnItem(
+     *     new ItemStack("minecraft:diamond_sword"),
+     *     entity.location
+     * );
+     * ```
      */
     readonly dimension: Dimension;
     /**
@@ -334,6 +342,14 @@ export class Entity {
      * this unique identifier - do not parse or interpret it.
      *
      * @throws This property can throw when used.
+     * @example trapEntity.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * const id = "-0123456789101"; // entity.id
+     * const entity = world.getEntity(id);
+     * entity.runCommandAsync("say hello");
+     * ```
      */
     readonly id: string;
     /**
@@ -341,6 +357,16 @@ export class Entity {
      * Current location of the entity.
      *
      * @throws This property can throw when used.
+     * @example showLocation.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * world.afterEvents.buttonPush.subscribe((event) => {
+     *     if (event.source.typeId === "minecraft:player") {
+     *         event.source.kill();
+     *     }
+     * });
+     * ```
      */
     readonly location: Vector3;
     /**
@@ -357,6 +383,23 @@ export class Entity {
      * 'minecraft:skeleton'.
      *
      * @throws This property can throw when used.
+     * @example showLocation.js
+     * ```js
+     * import { system, world } from "@minecraft/server";
+     *
+     * // This event triggers when world is loaded
+     * system.runInterval(() => {
+     *     const entity = world.getDimension("overworld").getEntities()[0];
+     *     // Finally, show that location as title
+     *     entity.runCommandAsync(
+     *         `title @a actionbar X: ${Math.floor(
+     *             entity.location.x
+     *         )} | Y: ${Math.floor(entity.location.y)} | Z: ${Math.floor(
+     *             entity.location.z
+     *         )}`
+     *     );
+     * });
+     * ```
      */
     readonly typeId: string;
     /**

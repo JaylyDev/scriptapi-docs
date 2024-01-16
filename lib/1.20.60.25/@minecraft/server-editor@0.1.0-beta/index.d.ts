@@ -2185,6 +2185,7 @@ export interface IDisposable {
     teardown(): void;
 }
 
+/** */
 export interface IDropdownItem {
     /**
      * @remarks
@@ -2228,6 +2229,7 @@ export interface IGlobalInputManager {
     ): void;
 }
 
+/** */
 export interface IMenu {
     /**
      * @remarks
@@ -2279,6 +2281,7 @@ export interface IMenuCreationParams {
     name: string;
 }
 
+/** */
 export interface IModalTool {
     /**
      * @remarks
@@ -2303,6 +2306,7 @@ export interface IModalTool {
     unregisterInputBindings(): void;
 }
 
+/** */
 export interface IModalToolContainer {
     /**
      * @remarks
@@ -2362,6 +2366,7 @@ export interface IPlayerLogger {
     warning(message: string): void;
 }
 
+/** */
 export interface IPropertyItem<T extends PropertyBag, Prop extends keyof T & string> {
     /**
      * @remarks
@@ -2414,6 +2419,7 @@ export interface IPropertyItem<T extends PropertyBag, Prop extends keyof T & str
     dispose(): void;
 }
 
+/** */
 export interface IPropertyItemOptions {
     /**
      * @remarks
@@ -2448,6 +2454,7 @@ export interface IPropertyItemOptions {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export interface IPropertyItemOptionsButton extends IPropertyItemOptions {
     /**
      * @remarks
@@ -2468,6 +2475,7 @@ export interface IPropertyItemOptionsDataPicker extends IPropertyItemOptions {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export interface IPropertyItemOptionsDropdown extends IPropertyItemOptions {
     /**
      * @remarks
@@ -2478,6 +2486,7 @@ export interface IPropertyItemOptionsDropdown extends IPropertyItemOptions {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export interface IPropertyItemOptionsNumber extends IPropertyItemOptions {
     /**
      * @remarks
@@ -2500,6 +2509,7 @@ export interface IPropertyItemOptionsNumber extends IPropertyItemOptions {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export interface IPropertyItemOptionsSubPane extends IPropertyItemOptions {
     /**
      * @remarks
@@ -2510,6 +2520,7 @@ export interface IPropertyItemOptionsSubPane extends IPropertyItemOptions {
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
+/** */
 export interface IPropertyItemOptionsVector3 extends IPropertyItemOptions {
     /**
      * @remarks
@@ -2783,6 +2794,7 @@ export interface IRegisterExtensionOptionalParameters {
     toolGroupId?: string;
 }
 
+/** */
 export interface IStatusBarItem {
     /**
      * @remarks

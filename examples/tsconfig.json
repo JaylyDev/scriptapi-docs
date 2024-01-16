@@ -2,6 +2,14 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
-    "noEmit": true
-  }
+    "noEmit": true,
+    "module": "es2020",
+    "target": "es2021",
+    "moduleResolution": "node"
+  },
+  "include": [
+    "types/server_global.d.ts",
+    "types/server-ui_global.d.ts",
+    "./@minecraft/**/*"
+  ]
 }

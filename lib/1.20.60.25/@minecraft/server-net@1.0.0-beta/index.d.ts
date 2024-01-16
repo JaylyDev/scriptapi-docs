@@ -24,6 +24,7 @@
  */
 import * as minecraftcommon from '@minecraft/common';
 import * as minecraftserveradmin from '@minecraft/server-admin';
+/** */
 export enum HttpRequestMethod {
     /**
      * @remarks

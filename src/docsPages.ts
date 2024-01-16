@@ -25,7 +25,7 @@ export function generateDocsIndexPage (location: string) {
     indexMd += docsRedirectUrl(folder) + "\n";
   };
 
-  fs.writeFileSync(location, indexMd);
+  fs.writeFile(location, indexMd, console.error);
 };
 
 export function applyStatsCollection () {
@@ -45,7 +45,7 @@ export function applyStatsCollection () {
     if (path.extname(filePath) !== ".html") continue;
     const file = fs.readFileSync(filePath, "utf8");
     const newFile = file.replace("</head>", googleAnalyticsCode + "</head>");
-    fs.writeFileSync(filePath, newFile);
+    fs.writeFile(filePath, newFile, console.error);
     successCount++;
   };
 

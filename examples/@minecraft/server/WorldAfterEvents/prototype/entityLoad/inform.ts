@@ -1,5 +1,5 @@
 // Subscribe to the EntityLoadAfterEvent
-const entityLoadSubscription = world.afterEvents.entityLoad.subscribe((event: EntityLoadAfterEvent) => {
+const entityLoadSubscription = world.afterEvents.entityLoad.subscribe((event) => {
   // Handle the entity load event
   console.log(`Entity loaded: ${event.entity.typeId}`);
 });

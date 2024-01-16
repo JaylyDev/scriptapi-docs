@@ -16,13 +16,13 @@ system.runInterval(() => {
 });
 
 function listenTo(entity: Entity) {
-  const callback = world.afterEvents.dataDrivenEntityTriggerEvent.subscribe((data) => {
-    world.afterEvents.dataDrivenEntityTriggerEvent.unsubscribe(callback);
+  const callback = world.afterEvents.dataDrivenEntityTrigger.subscribe((data) => {
+    world.afterEvents.dataDrivenEntityTrigger.unsubscribe(callback);
 
     data.getModifiers().forEach((modifier) => {
-      console.log('ComponentGroupsToAdd:', modifier.getComponentGroupsToAdd());
-      console.log('ComponentGroupsToRemove:', modifier.getComponentGroupsToRemove());
-      console.log('Triggers:', modifier.getTriggers());
+      console.log('ComponentGroupsToAdd:', modifier.addedComponentGroups);
+      console.log('ComponentGroupsToRemove:', modifier.removedComponentGroups);
+      console.log('Triggers:', modifier.triggers);
     });
   }, { entities: [entity], eventTypes: [eventId] });
 };

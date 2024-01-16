@@ -71,12 +71,37 @@ export class Entity {
      * meaning should be inferred from the value and structure of
      * this unique identifier - do not parse or interpret it.
      * @throws This property can throw when used.
+     * @example trapEntity.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * const id = "-0123456789101"; // entity.id
+     * const entity = world.getEntity(id);
+     * entity.runCommandAsync("say hello");
+     * ```
      */
     readonly id: string;
     /**
      * Unique identifier of the type of the entity - for example,
      * 'minecraft:skeleton'.
      * @throws This property can throw when used.
+     * @example showLocation.js
+     * ```js
+     * import { system, world } from "@minecraft/server";
+     *
+     * // This event triggers when world is loaded
+     * system.runInterval(() => {
+     *     const entity = world.getDimension("overworld").getEntities()[0];
+     *     // Finally, show that location as title
+     *     entity.runCommandAsync(
+     *         `title @a actionbar X: ${Math.floor(
+     *             entity.location.x
+     *         )} | Y: ${Math.floor(entity.location.y)} | Z: ${Math.floor(
+     *             entity.location.z
+     *         )}`
+     *     );
+     * });
+     * ```
      */
     readonly typeId: string;
     /**

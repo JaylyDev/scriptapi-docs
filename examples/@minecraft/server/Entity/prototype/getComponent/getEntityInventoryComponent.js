@@ -1,3 +1,5 @@
+import { ItemStack } from "@minecraft/server";
+
 const getEntityInventoryComponent = entity.getComponent("inventory");
 getEntityInventoryComponent.additionalSlotsPerStrength;
 getEntityInventoryComponent.canBeSiphonedFrom;

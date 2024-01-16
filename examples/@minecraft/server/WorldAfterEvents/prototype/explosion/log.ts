@@ -1,5 +1,5 @@
 // Subscribe to the ExplosionAfterEvent
-const explosionSubscription = world.afterEvents.explosion.subscribe((event: ExplosionAfterEvent) => {
+const explosionSubscription = world.afterEvents.explosion.subscribe((event) => {
   console.log(`Explosion occurred in dimension ${event.dimension.id}`);
 
   if (event.source) {

@@ -1,3 +1,5 @@
+import { ItemStack } from "@minecraft/server";
+
 const getEntityInventoryComponent = block.getComponent("inventory");
 const inventoryContainer = getEntityInventoryComponent.container;
 

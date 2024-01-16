@@ -279,17 +279,12 @@ export class Container {
      * @throws This function can throw errors.
      * @example add_diamond_sword.ts
      * ```ts
-     * import {
-     *     EntityInventoryComponent,
-     *     ItemStack,
-     *     MinecraftItemTypes,
-     *     world,
-     * } from "@minecraft/server";
+     * import { EntityInventoryComponent, ItemStack, world } from "@minecraft/server";
      * for (const player of world.getAllPlayers()) {
      *     const inventory = player.getComponent(
      *         "inventory"
      *     ) as EntityInventoryComponent;
-     *     const item = new ItemStack(MinecraftItemTypes.diamondSword, 10);
+     *     const item = new ItemStack("minecraft:diamond_sword", 10);
      *     inventory.container.addItem(item);
      * }
      * ```
@@ -370,17 +365,12 @@ export class Container {
      * out of bounds.
      * @example set_mainhand.ts
      * ```ts
-     * import {
-     *     EntityInventoryComponent,
-     *     ItemStack,
-     *     MinecraftItemTypes,
-     *     world,
-     * } from "@minecraft/server";
+     * import { EntityInventoryComponent, ItemStack, world } from "@minecraft/server";
      * for (const player of world.getAllPlayers()) {
      *     const inventory = player.getComponent(
      *         "inventory"
      *     ) as EntityInventoryComponent;
-     *     const item = new ItemStack(MinecraftItemTypes.diamondSword, 10);
+     *     const item = new ItemStack("minecraft:diamond_sword", 10);
      *     inventory.container.setItem(0, item);
      * }
      * ```
@@ -492,16 +482,16 @@ export class Dimension {
      * ```
      * @example getFilteredEntities.ts
      * ```ts
-     * const entityQueryOptions: EntityQueryOptions = {
+     * import { GameMode } from "@minecraft/server";
+     *
+     * const options: EntityQueryOptions = {
      *     families: ["mob", "animal"],
      *     excludeTypes: ["cow"],
      *     maxDistance: 50,
-     *     excludeGameModes: [GameMode.Creative, GameMode.Spectator],
+     *     excludeGameModes: [GameMode.creative, GameMode.spectator],
      * };
      *
-     * const filteredEntities = world
-     *     .getDimension("overworld")
-     *     .getEntities(entityQueryOptions);
+     * const filteredEntities = world.getDimension("overworld").getEntities(options);
      * console.log(
      *     "Filtered Entities:",
      *     filteredEntities.map((entity) => entity.typeId)
@@ -586,6 +576,14 @@ export class Entity {
      * Dimension that the entity is currently within.
      *
      * @throws This property can throw when used.
+     * @example spawnTnt.js
+     * ```js
+     * import { ItemStack } from "@minecraft/server";
+     * entity.dimension.spawnItem(
+     *     new ItemStack("minecraft:diamond_sword"),
+     *     entity.location
+     * );
+     * ```
      */
     readonly dimension: Dimension;
     /**
@@ -596,6 +594,14 @@ export class Entity {
      * this unique identifier - do not parse or interpret it.
      *
      * @throws This property can throw when used.
+     * @example trapEntity.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * const id = "-0123456789101"; // entity.id
+     * const entity = world.getEntity(id);
+     * entity.runCommandAsync("say hello");
+     * ```
      */
     readonly id: string;
     /**
@@ -603,6 +609,16 @@ export class Entity {
      * Current location of the entity.
      *
      * @throws This property can throw when used.
+     * @example showLocation.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * world.afterEvents.buttonPush.subscribe((event) => {
+     *     if (event.source.typeId === "minecraft:player") {
+     *         event.source.kill();
+     *     }
+     * });
+     * ```
      */
     readonly location: Vector3;
     /**
@@ -619,6 +635,23 @@ export class Entity {
      * 'minecraft:skeleton'.
      *
      * @throws This property can throw when used.
+     * @example showLocation.js
+     * ```js
+     * import { system, world } from "@minecraft/server";
+     *
+     * // This event triggers when world is loaded
+     * system.runInterval(() => {
+     *     const entity = world.getDimension("overworld").getEntities()[0];
+     *     // Finally, show that location as title
+     *     entity.runCommandAsync(
+     *         `title @a actionbar X: ${Math.floor(
+     *             entity.location.x
+     *         )} | Y: ${Math.floor(entity.location.y)} | Z: ${Math.floor(
+     *             entity.location.z
+     *         )}`
+     *     );
+     * });
+     * ```
      */
     readonly typeId: string;
     /**
@@ -748,6 +781,8 @@ export class Entity {
      * ```
      * @example getEntityInventoryComponent.js
      * ```js
+     * import { ItemStack } from "@minecraft/server";
+     *
      * const getEntityInventoryComponent = entity.getComponent("inventory");
      * getEntityInventoryComponent.additionalSlotsPerStrength;
      * getEntityInventoryComponent.canBeSiphonedFrom;
@@ -835,6 +870,11 @@ export class Entity {
      * @returns
      * Returns the current rotation component of this entity.
      * @throws This function can throw errors.
+     * @example jaylyTag.js
+     * ```js
+     * const tags = entity.getTags();
+     * const jaylyTag = tags.find((tag) => tag.startsWith("jayly:"));
+     * ```
      */
     getTags(): string[];
     /**
@@ -1840,7 +1880,7 @@ export class ItemStack {
      * ```
      * @example maxDurability.js
      * ```js
-     * let durabilityComp = itemStack.getComponent("durability");
+     * let durabilityComp = item.getComponent("durability");
      * durabilityComp.damage;
      * durabilityComp.maxDurability;
      * ```

@@ -1,3 +1,3 @@
-let durabilityComp = itemStack.getComponent("durability");
+let durabilityComp = item.getComponent("durability");
 durabilityComp.damage;
 durabilityComp.maxDurability;

@@ -900,6 +900,8 @@ export class Block {
      * {@link LocationOutOfWorldBoundariesError}
      * @example getBlockInventoryComponent.js
      * ```js
+     * import { ItemStack } from "@minecraft/server";
+     *
      * const getEntityInventoryComponent = block.getComponent("inventory");
      * const inventoryContainer = getEntityInventoryComponent.container;
      *
@@ -1118,6 +1120,7 @@ export class BlockInventoryComponent extends BlockComponent {
      * @throws This property can throw when used.
      */
     readonly container?: Container;
+    /** */
     static readonly componentId = 'minecraft:inventory';
 }
 
@@ -1383,17 +1386,12 @@ export class Container {
      * @throws This function can throw errors.
      * @example add_diamond_sword.ts
      * ```ts
-     * import {
-     *     EntityInventoryComponent,
-     *     ItemStack,
-     *     MinecraftItemTypes,
-     *     world,
-     * } from "@minecraft/server";
+     * import { EntityInventoryComponent, ItemStack, world } from "@minecraft/server";
      * for (const player of world.getAllPlayers()) {
      *     const inventory = player.getComponent(
      *         "inventory"
      *     ) as EntityInventoryComponent;
-     *     const item = new ItemStack(MinecraftItemTypes.diamondSword, 10);
+     *     const item = new ItemStack("minecraft:diamond_sword", 10);
      *     inventory.container.addItem(item);
      * }
      * ```
@@ -1482,17 +1480,12 @@ export class Container {
      * out of bounds.
      * @example set_mainhand.ts
      * ```ts
-     * import {
-     *     EntityInventoryComponent,
-     *     ItemStack,
-     *     MinecraftItemTypes,
-     *     world,
-     * } from "@minecraft/server";
+     * import { EntityInventoryComponent, ItemStack, world } from "@minecraft/server";
      * for (const player of world.getAllPlayers()) {
      *     const inventory = player.getComponent(
      *         "inventory"
      *     ) as EntityInventoryComponent;
-     *     const item = new ItemStack(MinecraftItemTypes.diamondSword, 10);
+     *     const item = new ItemStack("minecraft:diamond_sword", 10);
      *     inventory.container.setItem(0, item);
      * }
      * ```
@@ -1737,16 +1730,16 @@ export class Dimension {
      * ```
      * @example getFilteredEntities.ts
      * ```ts
-     * const entityQueryOptions: EntityQueryOptions = {
+     * import { GameMode } from "@minecraft/server";
+     *
+     * const options: EntityQueryOptions = {
      *     families: ["mob", "animal"],
      *     excludeTypes: ["cow"],
      *     maxDistance: 50,
-     *     excludeGameModes: [GameMode.Creative, GameMode.Spectator],
+     *     excludeGameModes: [GameMode.creative, GameMode.spectator],
      * };
      *
-     * const filteredEntities = world
-     *     .getDimension("overworld")
-     *     .getEntities(entityQueryOptions);
+     * const filteredEntities = world.getDimension("overworld").getEntities(options);
      * console.log(
      *     "Filtered Entities:",
      *     filteredEntities.map((entity) => entity.typeId)
@@ -2195,6 +2188,14 @@ export class Entity {
      * Dimension that the entity is currently within.
      *
      * @throws This property can throw when used.
+     * @example spawnTnt.js
+     * ```js
+     * import { ItemStack } from "@minecraft/server";
+     * entity.dimension.spawnItem(
+     *     new ItemStack("minecraft:diamond_sword"),
+     *     entity.location
+     * );
+     * ```
      */
     readonly dimension: Dimension;
     /**
@@ -2205,7 +2206,14 @@ export class Entity {
      * this unique identifier - do not parse or interpret it. This
      * property is accessible even if {@link Entity.isValid} is
      * false.
+     * @example trapEntity.js
+     * ```js
+     * import { world } from "@minecraft/server";
      *
+     * const id = "-0123456789101"; // entity.id
+     * const entity = world.getEntity(id);
+     * entity.runCommandAsync("say hello");
+     * ```
      */
     readonly id: string;
     /**
@@ -2215,6 +2223,16 @@ export class Entity {
      * stone wall.
      *
      * @throws This property can throw when used.
+     * @example debug.js
+     * ```js
+     * system.runInterval(() => {
+     *     const entity = world.getEntity("unique_id");
+     *     if (entity.isSneaking) {
+     *         // force entity not to sneak
+     *         entity.isSneaking = false;
+     *     }
+     * });
+     * ```
      */
     readonly isClimbing: boolean;
     /**
@@ -2223,6 +2241,10 @@ export class Entity {
      * greater than 1 while gliding.
      *
      * @throws This property can throw when used.
+     * @example debug.js
+     * ```js
+     * entity.runCommandAsync("say isClimbing: " + entity.isClimbing);
+     * ```
      */
     readonly isFalling: boolean;
     /**
@@ -2252,7 +2274,10 @@ export class Entity {
      * and more quietly.
      *
      * This property can't be edited in read-only mode.
-     *
+     * @example debug.js
+     * ```js
+     * entity.runCommandAsync("say isClimbing: " + entity.isClimbing);
+     * ```
      */
     isSneaking: boolean;
     /**
@@ -2277,6 +2302,16 @@ export class Entity {
      * Current location of the entity.
      *
      * @throws This property can throw when used.
+     * @example showLocation.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * world.afterEvents.buttonPush.subscribe((event) => {
+     *     if (event.source.typeId === "minecraft:player") {
+     *         event.source.kill();
+     *     }
+     * });
+     * ```
      */
     readonly location: Vector3;
     /**
@@ -2299,7 +2334,23 @@ export class Entity {
      * Identifier of the type of the entity - for example,
      * 'minecraft:skeleton'. This property is accessible even if
      * {@link Entity.isValid} is false.
+     * @example showLocation.js
+     * ```js
+     * import { system, world } from "@minecraft/server";
      *
+     * // This event triggers when world is loaded
+     * system.runInterval(() => {
+     *     const entity = world.getDimension("overworld").getEntities()[0];
+     *     // Finally, show that location as title
+     *     entity.runCommandAsync(
+     *         `title @a actionbar X: ${Math.floor(
+     *             entity.location.x
+     *         )} | Y: ${Math.floor(entity.location.y)} | Z: ${Math.floor(
+     *             entity.location.z
+     *         )}`
+     *     );
+     * });
+     * ```
      */
     readonly typeId: string;
     /**
@@ -2501,6 +2552,10 @@ export class Entity {
      * entity.
      *
      * @throws This function can throw errors.
+     * @example resetStats.js
+     * ```js
+     * entity.clearDynamicProperties();
+     * ```
      */
     clearDynamicProperties(): void;
     /**
@@ -2606,6 +2661,8 @@ export class Entity {
      * ```
      * @example getEntityInventoryComponent.js
      * ```js
+     * import { ItemStack } from "@minecraft/server";
+     *
      * const getEntityInventoryComponent = entity.getComponent("inventory");
      * getEntityInventoryComponent.additionalSlotsPerStrength;
      * getEntityInventoryComponent.canBeSiphonedFrom;
@@ -2685,6 +2742,25 @@ export class Entity {
      * Returns the value for the property, or undefined if the
      * property has not been set.
      * @throws This function can throw errors.
+     * @example entityRespawn.js
+     * ```js
+     * import { system, world } from "@minecraft/server";
+     *
+     * world.afterEvents.entitySpawn.subscribe((event) => {
+     *     event.entity.setDynamicProperty("spawn_location", event.entity.location); // set location spawn
+     * });
+     *
+     * world.beforeEvents.entityRemove.subscribe((event) => {
+     *     // @ts-ignore
+     *     const location = event.removedEntity.getDynamicProperty("spawn_location"); // get location spawn
+     *     system.run(() => {
+     *         event.removedEntity.dimension.spawnEntity(
+     *             event.removedEntity.typeId,
+     *             location
+     *         );
+     *     });
+     * });
+     * ```
      */
     getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined;
     /**
@@ -2722,6 +2798,17 @@ export class Entity {
      * effect is not present, or throws an error if the effect does
      * not exist.
      * @throws This function can throw errors.
+     * @example getEntityEffectInfo.js
+     * ```js
+     * import { world } from "@minecraft/server";
+     *
+     * const entities = world.getDimension("overworld").getEntities();
+     * for (const entity of entities) {
+     *     entity.getEffects().forEach((effect) => {
+     *         console.log(effect.typeId, effect.amplifier, effect.duration);
+     *     });
+     * }
+     * ```
      */
     getEffect(effectType: EffectType | string): Effect | undefined;
     /**
@@ -2731,6 +2818,12 @@ export class Entity {
      * @returns
      * List of effects.
      * @throws This function can throw errors.
+     * @example getEntityEffectInfo.js
+     * ```js
+     * const effect = entity.getEffect("invisibility");
+     * effect.amplifier;
+     * effect.duration;
+     * ```
      */
     getEffects(): Effect[];
     /**
@@ -2744,6 +2837,24 @@ export class Entity {
      * Returns a set of entities from the direction that this
      * entity is looking at.
      * @throws This function can throw errors.
+     * @example entityView.ts
+     * ```ts
+     * import type { EntityRaycastOptions } from "@minecraft/server";
+     *
+     * // Optional: Configure ray cast options
+     * const raycastOptions: EntityRaycastOptions = {
+     *     maxDistance: 10, // Set your desired maximum distance
+     * };
+     *
+     * // Perform the ray cast
+     * const entitiesInView = entity.getEntitiesFromViewDirection(raycastOptions);
+     *
+     * // Log the results
+     * entitiesInView.forEach((hit) => {
+     *     console.log(`Entity hit at distance ${hit.distance} blocks.`);
+     *     console.log("Entity details:", hit.entity); // You can access properties/methods of the hit entity
+     * });
+     * ```
      */
     getEntitiesFromViewDirection(options?: EntityRaycastOptions): EntityRaycastHit[];
     /**
@@ -2772,6 +2883,11 @@ export class Entity {
      * returned.
      * @throws
      * Throws if the entity is invalid.
+     * @example getRotationOffset.js
+     * ```js
+     * entity.setProperty("create:rotation_offset", 1);
+     * console.warn(entity.getProperty("create:rotation_offset"));
+     * ```
      */
     getProperty(identifier: string): boolean | number | string | undefined;
     /**
@@ -2782,6 +2898,12 @@ export class Entity {
      * Returns a Vec2 containing the rotation of this entity (in
      * degrees).
      * @throws This function can throw errors.
+     * @example getRotation.js
+     * ```js
+     * const rotation = entity.getRotation();
+     * rotation.x;
+     * rotation.y;
+     * ```
      */
     getRotation(): Vector2;
     /**
@@ -2791,6 +2913,11 @@ export class Entity {
      * @returns
      * An array containing all tags as strings.
      * @throws This function can throw errors.
+     * @example jaylyTag.js
+     * ```js
+     * const tags = entity.getTags();
+     * const jaylyTag = tags.find((tag) => tag.startsWith("jayly:"));
+     * ```
      */
     getTags(): string[];
     /**
@@ -2907,6 +3034,11 @@ export class Entity {
      * passed in EntityQueryOptions, otherwise it returns false.
      * @throws
      * Throws if the query options are misconfigured.
+     * @example isSpectator.js
+     * ```js
+     * import { GameMode } from "@minecraft/server";
+     * entity.matches({ gameMode: GameMode.spectator });
+     * ```
      */
     matches(options: EntityQueryOptions): boolean;
     /**
@@ -3014,6 +3146,25 @@ export class Entity {
      * @param value
      * Data value of the property to set.
      * @throws This function can throw errors.
+     * @example entityRespawn.js
+     * ```js
+     * import { system, world } from "@minecraft/server";
+     *
+     * world.afterEvents.entitySpawn.subscribe((event) => {
+     *     event.entity.setDynamicProperty("spawn_location", event.entity.location); // set location spawn
+     * });
+     *
+     * world.beforeEvents.entityRemove.subscribe((event) => {
+     *     // @ts-ignore
+     *     const location = event.removedEntity.getDynamicProperty("spawn_location"); // get location spawn
+     *     system.run(() => {
+     *         event.removedEntity.dimension.spawnEntity(
+     *             event.removedEntity.typeId,
+     *             location
+     *         );
+     *     });
+     * });
+     * ```
      */
     setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void;
     /**
@@ -3037,6 +3188,11 @@ export class Entity {
      * (int, float properties).
      * Throws if the provided string value does not match the set
      * of accepted enum values (enum properties
+     * @example getRotationOffset.js
+     * ```js
+     * tileEntity.setProperty("create:rotation_offset", 1);
+     * console.warn(tileEntity.getProperty("create:rotation_offset"));
+     * ```
      */
     setProperty(identifier: string, value: boolean | number | string): void;
     /**
@@ -3246,6 +3402,7 @@ export class EntityBaseMovementComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityCanClimbComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:can_climb';
 }
 
@@ -3257,6 +3414,7 @@ export class EntityCanClimbComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityCanFlyComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:can_fly';
 }
 
@@ -3267,6 +3425,7 @@ export class EntityCanFlyComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityCanPowerJumpComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:can_power_jump';
 }
 
@@ -3291,6 +3450,7 @@ export class EntityColorComponent extends EntityComponent {
      *
      */
     value: number;
+    /** */
     static readonly componentId = 'minecraft:color';
 }
 
@@ -3362,6 +3522,16 @@ export class EntityDieAfterEventSignal {
 /**
  * Provides access to a mob's equipment slots. This component
  * exists for all mob entities.
+ * @example equippable.js
+ * ```js
+ * import { EquipmentSlot } from "@minecraft/server";
+ *
+ * const equippable = entity.getComponent("minecraft:equippable");
+ * equippable.getEquipment(EquipmentSlot.Mainhand);
+ * const equipmentSlot = EquipmentSlot.Head;
+ * equippable.getEquipmentSlot(equipmentSlot);
+ * equippable.setEquipment(EquipmentSlot.Offhand); // Assuming undefined (empty slot) as an example
+ * ```
  */
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityEquippableComponent extends EntityComponent {
@@ -3401,6 +3571,7 @@ export class EntityEquippableComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityFireImmuneComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:fire_immune';
 }
 
@@ -3411,6 +3582,7 @@ export class EntityFireImmuneComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityFloatsInLiquidComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:floats_in_liquid';
 }
 
@@ -3433,6 +3605,7 @@ export class EntityFlyingSpeedComponent extends EntityComponent {
      *
      */
     value: number;
+    /** */
     static readonly componentId = 'minecraft:flying_speed';
 }
 
@@ -3451,6 +3624,7 @@ export class EntityFrictionModifierComponent extends EntityComponent {
      *
      */
     value: number;
+    /** */
     static readonly componentId = 'minecraft:friction_modifier';
 }
 
@@ -3471,6 +3645,7 @@ export class EntityGroundOffsetComponent extends EntityComponent {
      *
      */
     value: number;
+    /** */
     static readonly componentId = 'minecraft:ground_offset';
 }
 
@@ -3862,6 +4037,7 @@ export class EntityInventoryComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly restrictToOwner: boolean;
+    /** */
     static readonly componentId = 'minecraft:inventory';
 }
 
@@ -3872,6 +4048,7 @@ export class EntityInventoryComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsBabyComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_baby';
 }
 
@@ -3882,6 +4059,7 @@ export class EntityIsBabyComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsChargedComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_charged';
 }
 
@@ -3892,6 +4070,7 @@ export class EntityIsChargedComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsChestedComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_chested';
 }
 
@@ -3902,6 +4081,7 @@ export class EntityIsChestedComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsDyeableComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_dyeable';
 }
 
@@ -3912,6 +4092,7 @@ export class EntityIsDyeableComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsHiddenWhenInvisibleComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_hidden_when_invisible';
 }
 
@@ -3922,6 +4103,7 @@ export class EntityIsHiddenWhenInvisibleComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsIgnitedComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_ignited';
 }
 
@@ -3932,6 +4114,7 @@ export class EntityIsIgnitedComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsIllagerCaptainComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_illager_captain';
 }
 
@@ -3942,6 +4125,7 @@ export class EntityIsIllagerCaptainComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsSaddledComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_saddled';
 }
 
@@ -3952,6 +4136,7 @@ export class EntityIsSaddledComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsShakingComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_shaking';
 }
 
@@ -3962,6 +4147,7 @@ export class EntityIsShakingComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsShearedComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_sheared';
 }
 
@@ -3972,6 +4158,7 @@ export class EntityIsShearedComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsStackableComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_stackable';
 }
 
@@ -3982,6 +4169,7 @@ export class EntityIsStackableComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsStunnedComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_stunned';
 }
 
@@ -3992,6 +4180,7 @@ export class EntityIsStunnedComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityIsTamedComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:is_tamed';
 }
 
@@ -4017,6 +4206,7 @@ export class EntityItemComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly itemStack: ItemStack;
+    /** */
     static readonly componentId = 'minecraft:item';
 }
 
@@ -4090,6 +4280,7 @@ export class EntityMarkVariantComponent extends EntityComponent {
      *
      */
     value: number;
+    /** */
     static readonly componentId = 'minecraft:mark_variant';
 }
 
@@ -4100,6 +4291,7 @@ export class EntityMarkVariantComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementAmphibiousComponent extends EntityBaseMovementComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:movement.amphibious';
 }
 
@@ -4109,6 +4301,7 @@ export class EntityMovementAmphibiousComponent extends EntityBaseMovementCompone
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementBasicComponent extends EntityBaseMovementComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:movement.basic';
 }
 
@@ -4118,6 +4311,7 @@ export class EntityMovementBasicComponent extends EntityBaseMovementComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementFlyComponent extends EntityBaseMovementComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:movement.fly';
 }
 
@@ -4128,6 +4322,7 @@ export class EntityMovementFlyComponent extends EntityBaseMovementComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementGenericComponent extends EntityBaseMovementComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:movement.generic';
 }
 
@@ -4137,6 +4332,7 @@ export class EntityMovementGenericComponent extends EntityBaseMovementComponent 
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementHoverComponent extends EntityBaseMovementComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:movement.hover';
 }
 
@@ -4147,6 +4343,7 @@ export class EntityMovementHoverComponent extends EntityBaseMovementComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementJumpComponent extends EntityBaseMovementComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:movement.jump';
 }
 
@@ -4157,6 +4354,7 @@ export class EntityMovementJumpComponent extends EntityBaseMovementComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityMovementSkipComponent extends EntityBaseMovementComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:movement.skip';
 }
 
@@ -4174,6 +4372,7 @@ export class EntityPushThroughComponent extends EntityComponent {
      *
      */
     value: number;
+    /** */
     static readonly componentId = 'minecraft:push_through';
 }
 
@@ -4299,6 +4498,7 @@ export class EntityScaleComponent extends EntityComponent {
      *
      */
     value: number;
+    /** */
     static readonly componentId = 'minecraft:scale';
 }
 
@@ -4317,6 +4517,7 @@ export class EntitySkinIdComponent extends EntityComponent {
      *
      */
     value: number;
+    /** */
     static readonly componentId = 'minecraft:skin_id';
 }
 
@@ -4410,6 +4611,7 @@ export class EntityVariantComponent extends EntityComponent {
      * @throws This property can throw when used.
      */
     readonly value: number;
+    /** */
     static readonly componentId = 'minecraft:variant';
 }
 
@@ -4420,6 +4622,7 @@ export class EntityVariantComponent extends EntityComponent {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class EntityWantsJockeyComponent extends EntityComponent {
     private constructor();
+    /** */
     static readonly componentId = 'minecraft:wants_jockey';
 }
 
@@ -4980,7 +5183,7 @@ export class ItemStack {
      * ```
      * @example maxDurability.js
      * ```js
-     * let durabilityComp = itemStack.getComponent("durability");
+     * let durabilityComp = item.getComponent("durability");
      * durabilityComp.damage;
      * durabilityComp.maxDurability;
      * ```
@@ -7600,7 +7803,7 @@ export class World {
      *     event.cancel = true;
      *     // setTime changes world state, must be run after its execution by a tick
      *     system.run(() => {
-     *         world.setTime(TimeOfDay.Night);
+     *         world.setTimeOfDay(TimeOfDay.Night);
      *     });
      * });
      * ```
@@ -8235,7 +8438,7 @@ export class WorldAfterEvents {
      * ```ts
      * // Subscribe to the EntityLoadAfterEvent
      * const entityLoadSubscription = world.afterEvents.entityLoad.subscribe(
-     *     (event: EntityLoadAfterEvent) => {
+     *     (event) => {
      *         // Handle the entity load event
      *         console.log(`Entity loaded: ${event.entity.typeId}`);
      *     }
@@ -8325,7 +8528,22 @@ export class WorldAfterEvents {
     /**
      * @remarks
      * This event fires for a block that is broken by a player.
+     * @example subscribe.js
+     * ```js
+     * import { world } from "@minecraft/server";
      *
+     * world.afterEvents.playerBreakBlock.subscribe((event) => {
+     *     const { brokenBlockPermutation, player } = event;
+     *
+     *     if (brokenBlockPermutation.type.id === "minecraft:grass") {
+     *         player.sendMessage("You broke a grass block!");
+     *     }
+     *
+     *     if (brokenBlockPermutation.type.id === "minecraft:stone") {
+     *         player.sendMessage("You broke a stone block!");
+     *     }
+     * });
+     * ```
      */
     readonly playerBreakBlock: PlayerBreakBlockAfterEventSignal;
     /**
@@ -8353,7 +8571,7 @@ export class WorldAfterEvents {
     /**
      * @remarks
      * This event fires when a player leaves a world.
-     * @example subscribe.js
+     * @example leaveMessage.js
      * ```js
      * import { world } from "@minecraft/server";
      * world.afterEvents.playerLeave.subscribe(({ playerId, playerName }) => {
@@ -8457,12 +8675,7 @@ export class WorldBeforeEvents {
      * player.
      * @example subscribe.ts
      * ```ts
-     * import {
-     *     world,
-     *     MinecraftBlockTypes,
-     *     MinecraftItemTypes,
-     *     Player,
-     * } from "@minecraft/server";
+     * import { world, Player, BlockPermutation } from "@minecraft/server";
      *
      * // Subscribe to the itemUseOn event before it happens
      * world.beforeEvents.itemUseOn.subscribe((event) => {
@@ -8472,8 +8685,10 @@ export class WorldBeforeEvents {
      *     source.sendMessage("You used " + itemStack.typeId + " on " + block.typeId);
      *
      *     // If the item is a diamond, set the block to be a diamond block
-     *     if (itemStack.typeId === MinecraftItemTypes.diamond.id) {
-     *         block.setType(MinecraftBlockTypes.diamondBlock);
+     *     if (itemStack.typeId === "minecraft:diamond") {
+     *         block.setPermutation(
+     *             BlockPermutation.resolve("minecraft:diamond_block")
+     *         );
      *     }
      * });
      * ```
@@ -8590,6 +8805,7 @@ export interface BlockRaycastOptions {
     maxDistance?: number;
 }
 
+/** */
 export interface CameraDefaultOptions {
     /**
      * @remarks

@@ -1,0 +1,1 @@
+entity.runCommandAsync('say isClimbing: ' + entity.isClimbing)

@@ -3,7 +3,6 @@ import { world } from "@minecraft/server";
 const effectAddSubscription = world.afterEvents.effectAdd.subscribe(
     (event) => {
         console.log("Effect:", event.effect);
-        console.log("Effect State:", event.effectState);
         console.log("Entity:", event.entity);
 
         // Your custom handling for the effect added event

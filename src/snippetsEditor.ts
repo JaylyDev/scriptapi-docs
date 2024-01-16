@@ -124,13 +124,11 @@ function reader(tsPath: string, doc: JSDoc, module_name: string) {
   // };
 
   // Make a reserved.json file, includes examples snippets in original typing already
-  if (exampleDocs.length > 0) {
-    const reserved = {
-      reserved_files: exampleDocs.map(v => v.filename)
-    };
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.resolve(dir, 'reserved.json'), JSON.stringify(reserved, null, 2));
-  }
+  const reserved = {
+    reserved_files: exampleDocs.map(v => v.filename)
+  };
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  fs.writeFile(path.resolve(dir, 'reserved.json'), JSON.stringify(reserved, null, 2), console.error);
 
   // Insert examples to typings
   if (fs.existsSync(dir)) {
