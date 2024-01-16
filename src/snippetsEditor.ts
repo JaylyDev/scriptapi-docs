@@ -96,7 +96,7 @@ const formatDocExample = (filepath: string, code: string) => path.basename(filep
 
 function reader(tsPath: string, doc: JSDoc, module_name: string) {
   const dir = path.resolve('examples', module_name, tsPath.replace(/\./g, '/'));
-  const exampleDocs: JSDocExample[] = getExistingExampleDoc(doc);
+  const exampleDocs: JSDocExample[] = doc ? getExistingExampleDoc(doc) : [];
 
   // get examples from typings and save to file
   // let changed = false;
@@ -218,7 +218,7 @@ export function modifyExampleDocsSnippets(module_name: string, version: string) 
         docs.push(doc);
       };
 
-      if (docs.length > 0) reader(tsPath, docs[docs.length - 1], module_name);
+      reader(tsPath, docs[docs.length - 1], module_name);
     }
     sourceFile.saveSync();
     console.log(`Saved file to ${sourceFile.getFilePath()}`);

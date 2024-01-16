@@ -25,7 +25,7 @@ export function generateDocsIndexPage (location: string) {
     indexMd += docsRedirectUrl(folder) + "\n";
   };
 
-  fs.writeFile(location, indexMd, console.error);
+  fs.writeFileSync(location, indexMd);
 };
 
 export function applyStatsCollection () {
