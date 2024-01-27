@@ -37,7 +37,7 @@ error. (e.g., dimension.spawnEntity)</p>
 <ul class="tsd-hierarchy">
 <li><span class="target">WorldBeforeEvents</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/79155c3/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8119">@minecraft/server@1.7.0/index.d.ts:8119</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/cc7d4f7/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8119">@minecraft/server@1.7.0/index.d.ts:8119</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -64,7 +64,7 @@ error. (e.g., dimension.spawnEntity)</p>
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_7_0.WorldBeforeEvents.html" class="tsd-signature-type tsd-kind-class">WorldBeforeEvents</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/79155c3/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8120">@minecraft/server@1.7.0/index.d.ts:8120</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/cc7d4f7/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8120">@minecraft/server@1.7.0/index.d.ts:8120</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member"><a id="entityRemove" class="tsd-anchor"></a>
@@ -75,7 +75,7 @@ error. (e.g., dimension.spawnEntity)</p>
 example, unloaded or removed after being killed.)</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/79155c3/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8127">@minecraft/server@1.7.0/index.d.ts:8127</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/cc7d4f7/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8127">@minecraft/server@1.7.0/index.d.ts:8127</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="itemUse" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Use</span><a href="#itemUse" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Use</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0.ItemUseBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemUseBeforeEventSignal</a></div>
@@ -84,7 +84,7 @@ example, unloaded or removed after being killed.)</p>
 player.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/79155c3/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8134">@minecraft/server@1.7.0/index.d.ts:8134</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/cc7d4f7/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8134">@minecraft/server@1.7.0/index.d.ts:8134</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="itemUseOn" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Use<wbr/>On</span><a href="#itemUseOn" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Use<wbr/>On</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0.ItemUseOnBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemUseOnBeforeEventSignal</a></div>
@@ -93,11 +93,11 @@ player.</p>
 player.</p>
 
 <h4>Example</h4><p>subscribe.ts</p>
-<pre><code class="language-ts"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0">, </span><span class="hl-4">Player</span><span class="hl-0">, </span><span class="hl-4">BlockPermutation</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-8">// Subscribe to the itemUseOn event before it happens</span><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-4">beforeEvents</span><span class="hl-0">.</span><span class="hl-4">itemUseOn</span><span class="hl-0">.</span><span class="hl-7">subscribe</span><span class="hl-0">((</span><span class="hl-4">event</span><span class="hl-0">) </span><span class="hl-5">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-5">const</span><span class="hl-0"> { </span><span class="hl-6">source</span><span class="hl-0">, </span><span class="hl-6">block</span><span class="hl-0">, </span><span class="hl-6">itemStack</span><span class="hl-0"> } = </span><span class="hl-4">event</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-3">if</span><span class="hl-0"> (!(</span><span class="hl-4">source</span><span class="hl-0"> </span><span class="hl-5">instanceof</span><span class="hl-0"> </span><span class="hl-11">Player</span><span class="hl-0">)) </span><span class="hl-3">return</span><span class="hl-0">;</span><br/><br/><span class="hl-0">    </span><span class="hl-4">source</span><span class="hl-0">.</span><span class="hl-7">sendMessage</span><span class="hl-0">(</span><span class="hl-2">&quot;You used &quot;</span><span class="hl-0"> + </span><span class="hl-4">itemStack</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0"> + </span><span class="hl-2">&quot; on &quot;</span><span class="hl-0"> + </span><span class="hl-4">block</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0">);</span><br/><br/><span class="hl-0">    </span><span class="hl-8">// If the item is a diamond, set the block to be a diamond block</span><br/><span class="hl-0">    </span><span class="hl-3">if</span><span class="hl-0"> (</span><span class="hl-4">itemStack</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0"> === </span><span class="hl-2">&quot;minecraft:diamond&quot;</span><span class="hl-0">) {</span><br/><span class="hl-0">        </span><span class="hl-4">block</span><span class="hl-0">.</span><span class="hl-7">setPermutation</span><span class="hl-0">(</span><br/><span class="hl-0">            </span><span class="hl-4">BlockPermutation</span><span class="hl-0">.</span><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:diamond_block&quot;</span><span class="hl-0">)</span><br/><span class="hl-0">        );</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span>
+<pre><code class="language-ts"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0">, </span><span class="hl-4">Player</span><span class="hl-0">, </span><span class="hl-4">BlockPermutation</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-8">// Subscribe to the itemUseOn event before it happens</span><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-4">beforeEvents</span><span class="hl-0">.</span><span class="hl-4">itemUseOn</span><span class="hl-0">.</span><span class="hl-5">subscribe</span><span class="hl-0">((</span><span class="hl-4">event</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">const</span><span class="hl-0"> { </span><span class="hl-7">source</span><span class="hl-0">, </span><span class="hl-7">block</span><span class="hl-0">, </span><span class="hl-7">itemStack</span><span class="hl-0"> } = </span><span class="hl-4">event</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-3">if</span><span class="hl-0"> (!(</span><span class="hl-4">source</span><span class="hl-0"> </span><span class="hl-6">instanceof</span><span class="hl-0"> </span><span class="hl-11">Player</span><span class="hl-0">)) </span><span class="hl-3">return</span><span class="hl-0">;</span><br/><br/><span class="hl-0">    </span><span class="hl-4">source</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-2">&quot;You used &quot;</span><span class="hl-0"> + </span><span class="hl-4">itemStack</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0"> + </span><span class="hl-2">&quot; on &quot;</span><span class="hl-0"> + </span><span class="hl-4">block</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0">);</span><br/><br/><span class="hl-0">    </span><span class="hl-8">// If the item is a diamond, set the block to be a diamond block</span><br/><span class="hl-0">    </span><span class="hl-3">if</span><span class="hl-0"> (</span><span class="hl-4">itemStack</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0"> === </span><span class="hl-2">&quot;minecraft:diamond&quot;</span><span class="hl-0">) {</span><br/><span class="hl-0">        </span><span class="hl-4">block</span><span class="hl-0">.</span><span class="hl-5">setPermutation</span><span class="hl-0">(</span><br/><span class="hl-0">            </span><span class="hl-4">BlockPermutation</span><span class="hl-0">.</span><span class="hl-5">resolve</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:diamond_block&quot;</span><span class="hl-0">)</span><br/><span class="hl-0">        );</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/79155c3/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8159">@minecraft/server@1.7.0/index.d.ts:8159</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/cc7d4f7/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8159">@minecraft/server@1.7.0/index.d.ts:8159</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="playerBreakBlock" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>player<wbr/>Break<wbr/>Block</span><a href="#playerBreakBlock" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Break<wbr/>Block</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0.PlayerBreakBlockBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerBreakBlockBeforeEventSignal</a></div>
@@ -105,7 +105,7 @@ player.</p>
 <h4>Remarks</h4><p>This event fires before a block is broken by a player.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/79155c3/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8165">@minecraft/server@1.7.0/index.d.ts:8165</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/cc7d4f7/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8165">@minecraft/server@1.7.0/index.d.ts:8165</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="playerLeave" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>player<wbr/>Leave</span><a href="#playerLeave" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Leave</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0.PlayerLeaveBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerLeaveBeforeEventSignal</a></div>
@@ -113,7 +113,7 @@ player.</p>
 <h4>Remarks</h4><p>Fires when a player leaves the game.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/79155c3/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8171">@minecraft/server@1.7.0/index.d.ts:8171</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/cc7d4f7/lib/1.20.70.20/@minecraft/server@1.7.0/index.d.ts#L8171">@minecraft/server@1.7.0/index.d.ts:8171</a></li></ul></aside></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -142,13 +142,24 @@ player.</p>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../index.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)"></path></g></svg><span>Script API -<wbr/> v1.20.70.20</span></a>
 <ul class="tsd-small-nested-navigation">
-<li><a href="../modules/_minecraft_common_1_2_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/common@1.2.0</span></a></li>
-<li><a href="../modules/_minecraft_common_1_1_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/common@1.1.0</span></a></li>
 <li><a href="../modules/_minecraft_common_1_0_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/common@1.0.0</span></a></li>
+<li><a href="../modules/_minecraft_common_1_1_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/common@1.1.0</span></a></li>
+<li><a href="../modules/_minecraft_common_1_2_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/common@1.2.0</span></a></li>
 <li><a href="../modules/_minecraft_debug_utilities_1_0_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/debug-<wbr/>utilities@1.0.0-<wbr/>beta</span></a></li>
-<li><a href="../modules/_minecraft_server_1_10_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.10.0-<wbr/>beta</span></a></li>
-<li><a href="../modules/_minecraft_server_1_9_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.9.0</span></a></li>
-<li><a href="../modules/_minecraft_server_1_8_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.8.0</span></a></li>
+<li><a href="../modules/_minecraft_server_admin_1_0_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>admin@1.0.0-<wbr/>beta</span></a></li>
+<li><a href="../modules/_minecraft_server_editor_0_1_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>editor@0.1.0-<wbr/>beta</span></a></li>
+<li><a href="../modules/_minecraft_server_gametest_1_0_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>gametest@1.0.0-<wbr/>beta</span></a></li>
+<li><a href="../modules/_minecraft_server_net_1_0_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>net@1.0.0-<wbr/>beta</span></a></li>
+<li><a href="../modules/_minecraft_server_ui_1_0_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>ui@1.0.0</span></a></li>
+<li><a href="../modules/_minecraft_server_ui_1_1_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>ui@1.1.0</span></a></li>
+<li><a href="../modules/_minecraft_server_ui_1_2_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>ui@1.2.0-<wbr/>beta</span></a></li>
+<li><a href="../modules/_minecraft_server_1_0_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.0.0</span></a></li>
+<li><a href="../modules/_minecraft_server_1_1_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.1.0</span></a></li>
+<li><a href="../modules/_minecraft_server_1_2_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.2.0</span></a></li>
+<li><a href="../modules/_minecraft_server_1_3_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.3.0</span></a></li>
+<li><a href="../modules/_minecraft_server_1_4_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.4.0</span></a></li>
+<li><a href="../modules/_minecraft_server_1_5_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.5.0</span></a></li>
+<li><a href="../modules/_minecraft_server_1_6_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.6.0</span></a></li>
 <li>
 <details class="tsd-index-accordion" open data-key="@minecraft/server@1.7.0"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg><a href="../modules/_minecraft_server_1_7_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.7.0</span></a></summary>
 <div class="tsd-accordion-details">
@@ -369,20 +380,9 @@ player.</p>
 <li><a href="../variables/_minecraft_server_1_7_0.TicksPerSecond.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>Ticks<wbr/>Per<wbr/>Second</span></a></li>
 <li><a href="../variables/_minecraft_server_1_7_0.system-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>system</span></a></li>
 <li><a href="../variables/_minecraft_server_1_7_0.world-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>world</span></a></li></ul></div></details></li>
-<li><a href="../modules/_minecraft_server_1_6_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.6.0</span></a></li>
-<li><a href="../modules/_minecraft_server_1_5_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.5.0</span></a></li>
-<li><a href="../modules/_minecraft_server_1_4_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.4.0</span></a></li>
-<li><a href="../modules/_minecraft_server_1_3_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.3.0</span></a></li>
-<li><a href="../modules/_minecraft_server_1_2_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.2.0</span></a></li>
-<li><a href="../modules/_minecraft_server_1_1_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.1.0</span></a></li>
-<li><a href="../modules/_minecraft_server_1_0_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.0.0</span></a></li>
-<li><a href="../modules/_minecraft_server_admin_1_0_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>admin@1.0.0-<wbr/>beta</span></a></li>
-<li><a href="../modules/_minecraft_server_editor_0_1_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>editor@0.1.0-<wbr/>beta</span></a></li>
-<li><a href="../modules/_minecraft_server_gametest_1_0_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>gametest@1.0.0-<wbr/>beta</span></a></li>
-<li><a href="../modules/_minecraft_server_net_1_0_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>net@1.0.0-<wbr/>beta</span></a></li>
-<li><a href="../modules/_minecraft_server_ui_1_2_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>ui@1.2.0-<wbr/>beta</span></a></li>
-<li><a href="../modules/_minecraft_server_ui_1_1_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>ui@1.1.0</span></a></li>
-<li><a href="../modules/_minecraft_server_ui_1_0_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>ui@1.0.0</span></a></li>
+<li><a href="../modules/_minecraft_server_1_8_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.8.0</span></a></li>
+<li><a href="../modules/_minecraft_server_1_9_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.9.0</span></a></li>
+<li><a href="../modules/_minecraft_server_1_10_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.10.0-<wbr/>beta</span></a></li>
 <li><a href="../modules/_minecraft_vanilla_data_1_20_70_preview_20.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/vanilla-<wbr/>data@1.20.70-<wbr/>preview.20</span></a></li></ul></nav></div></div></div>
 <div class="tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" rel="noopener" target="_blank">TypeDoc</a></p></div>
