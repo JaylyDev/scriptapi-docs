@@ -32,9 +32,7 @@ dimensions and the environment of Minecraft.</p>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><span class="target">World</span></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3052">@minecraft/server@1.3.0/index.d.ts:3052</a></li></ul></aside>
+<li><span class="target">World</span></li></ul></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -62,9 +60,7 @@ dimensions and the environment of Minecraft.</p>
 <ul class="tsd-signatures tsd-is-private">
 <li class="tsd-signature tsd-anchor-link" id="constructor.new_World"><span class="tsd-kind-constructor-signature">new <wbr/>World</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_minecraft_server_1_3_0.World.html" class="tsd-signature-type tsd-kind-class">World</a><a href="#constructor.new_World" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_3_0.World.html" class="tsd-signature-type tsd-kind-class">World</a></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3053">@minecraft/server@1.3.0/index.d.ts:3053</a></li></ul></aside></li></ul></section></section>
+<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_3_0.World.html" class="tsd-signature-type tsd-kind-class">World</a></h4></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member"><a id="getAllPlayers" class="tsd-anchor"></a>
@@ -77,9 +73,7 @@ dimensions and the environment of Minecraft.</p>
 <h4>Remarks</h4><p>Returns an array of all active players within the world.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3060">@minecraft/server@1.3.0/index.d.ts:3060</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getDimension" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Dimension</span><a href="#getDimension" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -111,9 +105,7 @@ dimensions and the environment of Minecraft.</p>
 <h4>Example</h4><p>getTheEnd.js</p>
 <pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;the_end&quot;</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3091">@minecraft/server@1.3.0/index.d.ts:3091</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getPlayers" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Players</span><a href="#getPlayers" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -142,9 +134,7 @@ defined via the EntityQueryOptions set of filter criteria.</p>
 <h4>Example</h4><p>getFilteredPlayers.ts</p>
 <pre><code class="language-ts"><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">entityQueryOptions</span><span class="hl-0">: </span><span class="hl-11">EntityQueryOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">minLevel:</span><span class="hl-0"> </span><span class="hl-9">10</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">maxLevel:</span><span class="hl-0"> </span><span class="hl-9">30</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">tags:</span><span class="hl-0"> [</span><span class="hl-2">&quot;team_red&quot;</span><span class="hl-0">],</span><br/><span class="hl-0">    </span><span class="hl-4">excludeNames:</span><span class="hl-0"> [</span><span class="hl-2">&quot;Admin&quot;</span><span class="hl-0">],</span><br/><span class="hl-0">};</span><br/><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">filteredPlayers</span><span class="hl-0"> = </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getPlayers</span><span class="hl-0">(</span><span class="hl-4">entityQueryOptions</span><span class="hl-0">);</span><br/><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><br/><span class="hl-0">    </span><span class="hl-2">&quot;Filtered Players:&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">filteredPlayers</span><span class="hl-0">.</span><span class="hl-5">map</span><span class="hl-0">((</span><span class="hl-4">player</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> </span><span class="hl-4">player</span><span class="hl-0">.</span><span class="hl-4">name</span><span class="hl-0">)</span><br/><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3125">@minecraft/server@1.3.0/index.d.ts:3125</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="playMusic" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>play<wbr/>Music</span><a href="#playMusic" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -167,9 +157,7 @@ defined via the EntityQueryOptions set of filter criteria.</p>
 <h4>Example</h4><p>playMusicAndSound.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">  </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">players</span><span class="hl-0"> = </span><span class="hl-4">mc</span><span class="hl-0">.</span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getPlayers</span><span class="hl-0">();</span><br/><br/><span class="hl-0">  </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">musicOptions</span><span class="hl-0">: </span><span class="hl-11">mc</span><span class="hl-0">.</span><span class="hl-11">MusicOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">fade:</span><span class="hl-0"> </span><span class="hl-9">0.5</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">loop:</span><span class="hl-0"> </span><span class="hl-6">true</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">volume:</span><span class="hl-0"> </span><span class="hl-9">1.0</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><span class="hl-0">  </span><span class="hl-4">mc</span><span class="hl-0">.</span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">playMusic</span><span class="hl-0">(</span><span class="hl-2">&quot;music.menu&quot;</span><span class="hl-0">, </span><span class="hl-4">musicOptions</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">worldSoundOptions</span><span class="hl-0">: </span><span class="hl-11">mc</span><span class="hl-0">.</span><span class="hl-11">WorldSoundOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">pitch:</span><span class="hl-0"> </span><span class="hl-9">0.5</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">volume:</span><span class="hl-0"> </span><span class="hl-9">4.0</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><span class="hl-0">  </span><span class="hl-4">mc</span><span class="hl-0">.</span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">playSound</span><span class="hl-0">(</span><span class="hl-2">&quot;ambient.weather.thunder&quot;</span><span class="hl-0">, </span><span class="hl-4">targetLocation</span><span class="hl-0">, </span><span class="hl-4">worldSoundOptions</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">playerSoundOptions</span><span class="hl-0">: </span><span class="hl-11">mc</span><span class="hl-0">.</span><span class="hl-11">PlayerSoundOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">pitch:</span><span class="hl-0"> </span><span class="hl-9">1.0</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">volume:</span><span class="hl-0"> </span><span class="hl-9">1.0</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><br/><span class="hl-0">  </span><span class="hl-4">players</span><span class="hl-0">[</span><span class="hl-9">0</span><span class="hl-0">].</span><span class="hl-5">playSound</span><span class="hl-0">(</span><span class="hl-2">&quot;bucket.fill_water&quot;</span><span class="hl-0">, </span><span class="hl-4">playerSoundOptions</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3158">@minecraft/server@1.3.0/index.d.ts:3158</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="playSound" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>play<wbr/>Sound</span><a href="#playSound" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -197,9 +185,7 @@ An error will be thrown if volume is less than 0.0.</p>
 <h4>Example</h4><p>playMusicAndSound.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">  </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">players</span><span class="hl-0"> = </span><span class="hl-4">mc</span><span class="hl-0">.</span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getPlayers</span><span class="hl-0">();</span><br/><br/><span class="hl-0">  </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">musicOptions</span><span class="hl-0">: </span><span class="hl-11">mc</span><span class="hl-0">.</span><span class="hl-11">MusicOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">fade:</span><span class="hl-0"> </span><span class="hl-9">0.5</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">loop:</span><span class="hl-0"> </span><span class="hl-6">true</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">volume:</span><span class="hl-0"> </span><span class="hl-9">1.0</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><span class="hl-0">  </span><span class="hl-4">mc</span><span class="hl-0">.</span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">playMusic</span><span class="hl-0">(</span><span class="hl-2">&quot;music.menu&quot;</span><span class="hl-0">, </span><span class="hl-4">musicOptions</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">worldSoundOptions</span><span class="hl-0">: </span><span class="hl-11">mc</span><span class="hl-0">.</span><span class="hl-11">WorldSoundOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">pitch:</span><span class="hl-0"> </span><span class="hl-9">0.5</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">volume:</span><span class="hl-0"> </span><span class="hl-9">4.0</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><span class="hl-0">  </span><span class="hl-4">mc</span><span class="hl-0">.</span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">playSound</span><span class="hl-0">(</span><span class="hl-2">&quot;ambient.weather.thunder&quot;</span><span class="hl-0">, </span><span class="hl-4">targetLocation</span><span class="hl-0">, </span><span class="hl-4">worldSoundOptions</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">playerSoundOptions</span><span class="hl-0">: </span><span class="hl-11">mc</span><span class="hl-0">.</span><span class="hl-11">PlayerSoundOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">pitch:</span><span class="hl-0"> </span><span class="hl-9">1.0</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">volume:</span><span class="hl-0"> </span><span class="hl-9">1.0</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><br/><span class="hl-0">  </span><span class="hl-4">players</span><span class="hl-0">[</span><span class="hl-9">0</span><span class="hl-0">].</span><span class="hl-5">playSound</span><span class="hl-0">(</span><span class="hl-2">&quot;bucket.fill_water&quot;</span><span class="hl-0">, </span><span class="hl-4">playerSoundOptions</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3195">@minecraft/server@1.3.0/index.d.ts:3195</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="queueMusic" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>queue<wbr/>Music</span><a href="#queueMusic" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -220,9 +206,7 @@ not playing, a music track will play.</p>
 
 <h4>Throws</h4><p>An error will be thrown if volume is less than 0.0.
 An error will be thrown if fade is less than 0.0.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3208">@minecraft/server@1.3.0/index.d.ts:3208</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="sendMessage" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>send<wbr/>Message</span><a href="#sendMessage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -258,9 +242,7 @@ is provided to <code>score</code>.</p>
 <h4>Example</h4><p>translation.ts</p>
 <pre><code class="language-typescript"><span class="hl-8">// Displays &quot;First or Second&quot;</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">rawMessage</span><span class="hl-0"> = { </span><span class="hl-4">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;accessibility.list.or.two&quot;</span><span class="hl-0">, </span><span class="hl-4">with:</span><span class="hl-0"> [</span><span class="hl-2">&quot;First&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;Second&quot;</span><span class="hl-0">] };</span><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-4">rawMessage</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3246">@minecraft/server@1.3.0/index.d.ts:3246</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="stopMusic" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>stop<wbr/>Music</span><a href="#stopMusic" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -270,9 +252,7 @@ is provided to <code>score</code>.</p>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Stops any music tracks from playing.</p>
 <p>This function can&#39;t be called in read-only mode.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.3.0/index.d.ts#L3254">@minecraft/server@1.3.0/index.d.ts:3254</a></li></ul></aside></li></ul></section></section></div>
+</div></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

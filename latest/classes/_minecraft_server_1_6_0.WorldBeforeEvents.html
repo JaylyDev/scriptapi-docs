@@ -35,9 +35,7 @@ error. (e.g., dimension.spawnEntity)</p>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><span class="target">WorldBeforeEvents</span></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.6.0/index.d.ts#L7375">@minecraft/server@1.6.0/index.d.ts:7375</a></li></ul></aside>
+<li><span class="target">WorldBeforeEvents</span></li></ul></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -61,9 +59,7 @@ error. (e.g., dimension.spawnEntity)</p>
 <ul class="tsd-signatures tsd-is-private">
 <li class="tsd-signature tsd-anchor-link" id="constructor.new_WorldBeforeEvents"><span class="tsd-kind-constructor-signature">new <wbr/>World<wbr/>Before<wbr/>Events</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_minecraft_server_1_6_0.WorldBeforeEvents.html" class="tsd-signature-type tsd-kind-class">WorldBeforeEvents</a><a href="#constructor.new_WorldBeforeEvents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_6_0.WorldBeforeEvents.html" class="tsd-signature-type tsd-kind-class">WorldBeforeEvents</a></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.6.0/index.d.ts#L7376">@minecraft/server@1.6.0/index.d.ts:7376</a></li></ul></aside></li></ul></section></section>
+<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_6_0.WorldBeforeEvents.html" class="tsd-signature-type tsd-kind-class">WorldBeforeEvents</a></h4></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member"><a id="entityRemove" class="tsd-anchor"></a>
@@ -72,18 +68,14 @@ error. (e.g., dimension.spawnEntity)</p>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Fires before an entity is removed from the world (for
 example, unloaded or removed after being killed.)</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.6.0/index.d.ts#L7383">@minecraft/server@1.6.0/index.d.ts:7383</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="itemUse" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Use</span><a href="#itemUse" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Use</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_6_0.ItemUseBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemUseBeforeEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires when an item is successfully used by a
 player.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.6.0/index.d.ts#L7390">@minecraft/server@1.6.0/index.d.ts:7390</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="itemUseOn" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Use<wbr/>On</span><a href="#itemUseOn" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Use<wbr/>On</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_6_0.ItemUseOnBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemUseOnBeforeEventSignal</a></div>
@@ -94,17 +86,13 @@ player.</p>
 <h4>Example</h4><p>subscribe.ts</p>
 <pre><code class="language-ts"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0">, </span><span class="hl-4">Player</span><span class="hl-0">, </span><span class="hl-4">BlockPermutation</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-8">// Subscribe to the itemUseOn event before it happens</span><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-4">beforeEvents</span><span class="hl-0">.</span><span class="hl-4">itemUseOn</span><span class="hl-0">.</span><span class="hl-5">subscribe</span><span class="hl-0">((</span><span class="hl-4">event</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">const</span><span class="hl-0"> { </span><span class="hl-7">source</span><span class="hl-0">, </span><span class="hl-7">block</span><span class="hl-0">, </span><span class="hl-7">itemStack</span><span class="hl-0"> } = </span><span class="hl-4">event</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-3">if</span><span class="hl-0"> (!(</span><span class="hl-4">source</span><span class="hl-0"> </span><span class="hl-6">instanceof</span><span class="hl-0"> </span><span class="hl-11">Player</span><span class="hl-0">)) </span><span class="hl-3">return</span><span class="hl-0">;</span><br/><br/><span class="hl-0">    </span><span class="hl-4">source</span><span class="hl-0">.</span><span class="hl-5">sendMessage</span><span class="hl-0">(</span><span class="hl-2">&quot;You used &quot;</span><span class="hl-0"> + </span><span class="hl-4">itemStack</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0"> + </span><span class="hl-2">&quot; on &quot;</span><span class="hl-0"> + </span><span class="hl-4">block</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0">);</span><br/><br/><span class="hl-0">    </span><span class="hl-8">// If the item is a diamond, set the block to be a diamond block</span><br/><span class="hl-0">    </span><span class="hl-3">if</span><span class="hl-0"> (</span><span class="hl-4">itemStack</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0"> === </span><span class="hl-2">&quot;minecraft:diamond&quot;</span><span class="hl-0">) {</span><br/><span class="hl-0">        </span><span class="hl-4">block</span><span class="hl-0">.</span><span class="hl-5">setPermutation</span><span class="hl-0">(</span><br/><span class="hl-0">            </span><span class="hl-4">BlockPermutation</span><span class="hl-0">.</span><span class="hl-5">resolve</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:diamond_block&quot;</span><span class="hl-0">)</span><br/><span class="hl-0">        );</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.6.0/index.d.ts#L7415">@minecraft/server@1.6.0/index.d.ts:7415</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="playerBreakBlock" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>player<wbr/>Break<wbr/>Block</span><a href="#playerBreakBlock" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Break<wbr/>Block</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_6_0.PlayerBreakBlockBeforeEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerBreakBlockBeforeEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires before a block is broken by a player.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.6.0/index.d.ts#L7421">@minecraft/server@1.6.0/index.d.ts:7421</a></li></ul></aside></section></section></div>
+</div></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

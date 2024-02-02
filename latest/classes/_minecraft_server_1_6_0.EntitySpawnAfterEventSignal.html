@@ -32,9 +32,7 @@ happens when an entity spawns.</p>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><span class="target">EntitySpawnAfterEventSignal</span></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.6.0/index.d.ts#L3859">@minecraft/server@1.6.0/index.d.ts:3859</a></li></ul></aside>
+<li><span class="target">EntitySpawnAfterEventSignal</span></li></ul></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -56,9 +54,7 @@ happens when an entity spawns.</p>
 <ul class="tsd-signatures tsd-is-private">
 <li class="tsd-signature tsd-anchor-link" id="constructor.new_EntitySpawnAfterEventSignal"><span class="tsd-kind-constructor-signature">new <wbr/>Entity<wbr/>Spawn<wbr/>After<wbr/>Event<wbr/>Signal</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_minecraft_server_1_6_0.EntitySpawnAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">EntitySpawnAfterEventSignal</a><a href="#constructor.new_EntitySpawnAfterEventSignal" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_6_0.EntitySpawnAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">EntitySpawnAfterEventSignal</a></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.6.0/index.d.ts#L3860">@minecraft/server@1.6.0/index.d.ts:3860</a></li></ul></aside></li></ul></section></section>
+<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_6_0.EntitySpawnAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">EntitySpawnAfterEventSignal</a></h4></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member"><a id="subscribe" class="tsd-anchor"></a>
@@ -113,9 +109,7 @@ entity spawns.</p>
 <h4>Example</h4><p>runEntitySpawnEvent.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">  </span><span class="hl-8">// register a new function that is called when a new entity is created.</span><br/><span class="hl-0">  </span><span class="hl-4">mc</span><span class="hl-0">.</span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-4">afterEvents</span><span class="hl-0">.</span><span class="hl-4">entitySpawn</span><span class="hl-0">.</span><span class="hl-5">subscribe</span><span class="hl-0">((</span><span class="hl-4">entityEvent</span><span class="hl-0">: </span><span class="hl-11">mc</span><span class="hl-0">.</span><span class="hl-11">EntitySpawnAfterEvent</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-3">if</span><span class="hl-0"> (</span><span class="hl-4">entityEvent</span><span class="hl-0"> &amp;&amp; </span><span class="hl-4">entityEvent</span><span class="hl-0">.</span><span class="hl-4">entity</span><span class="hl-0">) {</span><br/><span class="hl-0">      </span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">`New entity of type &#39;</span><span class="hl-6">${</span><span class="hl-4">entityEvent</span><span class="hl-10">.</span><span class="hl-4">entity</span><span class="hl-10">.</span><span class="hl-4">typeId</span><span class="hl-6">}</span><span class="hl-2">&#39; created!`</span><span class="hl-0">, </span><span class="hl-9">1</span><span class="hl-0">);</span><br/><span class="hl-0">    } </span><span class="hl-3">else</span><span class="hl-0"> {</span><br/><span class="hl-0">      </span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">`The entity event didn&#39;t work as expected.`</span><span class="hl-0">, -</span><span class="hl-9">1</span><span class="hl-0">);</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">  });</span><br/><br/><span class="hl-0">  </span><span class="hl-4">mc</span><span class="hl-0">.</span><span class="hl-4">system</span><span class="hl-0">.</span><span class="hl-5">runTimeout</span><span class="hl-0">(() </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-5">createOldHorse</span><span class="hl-0">(</span><span class="hl-4">log</span><span class="hl-0">, </span><span class="hl-4">targetLocation</span><span class="hl-0">);</span><br/><span class="hl-0">  }, </span><span class="hl-9">20</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.6.0/index.d.ts#L3886">@minecraft/server@1.6.0/index.d.ts:3886</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="unsubscribe" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>unsubscribe</span><a href="#unsubscribe" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -147,9 +141,7 @@ subscription event.</p>
 <p>This function can&#39;t be called in read-only mode.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.6.0/index.d.ts#L3899">@minecraft/server@1.6.0/index.d.ts:3899</a></li></ul></aside></li></ul></section></section></div>
+</div></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

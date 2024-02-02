@@ -34,9 +34,7 @@ other moving objects like minecarts) in the world.</p>
 <ul class="tsd-hierarchy">
 <li><span class="target">Entity</span>
 <ul class="tsd-hierarchy">
-<li><a href="_minecraft_server_1_4_0.Player.html" class="tsd-signature-type tsd-kind-class">Player</a></li></ul></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1212">@minecraft/server@1.4.0/index.d.ts:1212</a></li></ul></aside>
+<li><a href="_minecraft_server_1_4_0.Player.html" class="tsd-signature-type tsd-kind-class">Player</a></li></ul></li></ul></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -91,9 +89,7 @@ other moving objects like minecarts) in the world.</p>
 <ul class="tsd-signatures tsd-is-private">
 <li class="tsd-signature tsd-anchor-link" id="constructor.new_Entity"><span class="tsd-kind-constructor-signature">new <wbr/>Entity</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_minecraft_server_1_4_0.Entity.html" class="tsd-signature-type tsd-kind-class">Entity</a><a href="#constructor.new_Entity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_4_0.Entity.html" class="tsd-signature-type tsd-kind-class">Entity</a></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1213">@minecraft/server@1.4.0/index.d.ts:1213</a></li></ul></aside></li></ul></section></section>
+<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_4_0.Entity.html" class="tsd-signature-type tsd-kind-class">Entity</a></h4></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member"><a id="dimension" class="tsd-anchor"></a>
@@ -107,9 +103,7 @@ other moving objects like minecarts) in the world.</p>
 <h4>Example</h4><p>spawnTnt.js</p>
 <pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">ItemStack</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-4">dimension</span><span class="hl-0">.</span><span class="hl-5">spawnItem</span><span class="hl-0">(</span><br/><span class="hl-0">    </span><span class="hl-6">new</span><span class="hl-0"> </span><span class="hl-5">ItemStack</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:diamond_sword&quot;</span><span class="hl-0">),</span><br/><span class="hl-0">    </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-4">location</span><br/><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1228">@minecraft/server@1.4.0/index.d.ts:1228</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="id" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>id</span><a href="#id" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">id</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -124,9 +118,7 @@ false.</p>
 <h4>Example</h4><p>trapEntity.js</p>
 <pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">id</span><span class="hl-0"> = </span><span class="hl-2">&quot;-0123456789101&quot;</span><span class="hl-0">; </span><span class="hl-8">// entity.id</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">entity</span><span class="hl-0"> = </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getEntity</span><span class="hl-0">(</span><span class="hl-4">id</span><span class="hl-0">);</span><br/><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">runCommandAsync</span><span class="hl-0">(</span><span class="hl-2">&quot;say hello&quot;</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1246">@minecraft/server@1.4.0/index.d.ts:1246</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="location" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>location</span><a href="#location" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">location</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/_minecraft_server_1_4_0.Vector3.html" class="tsd-signature-type tsd-kind-interface">Vector3</a></div>
@@ -138,27 +130,21 @@ false.</p>
 <h4>Example</h4><p>showLocation.js</p>
 <pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-4">afterEvents</span><span class="hl-0">.</span><span class="hl-4">buttonPush</span><span class="hl-0">.</span><span class="hl-5">subscribe</span><span class="hl-0">((</span><span class="hl-4">event</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-3">if</span><span class="hl-0"> (</span><span class="hl-4">event</span><span class="hl-0">.</span><span class="hl-4">source</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0"> === </span><span class="hl-2">&quot;minecraft:player&quot;</span><span class="hl-0">) {</span><br/><span class="hl-0">        </span><span class="hl-4">event</span><span class="hl-0">.</span><span class="hl-4">source</span><span class="hl-0">.</span><span class="hl-5">kill</span><span class="hl-0">();</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1263">@minecraft/server@1.4.0/index.d.ts:1263</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="nameTag" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>name<wbr/>Tag</span><a href="#nameTag" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">name<wbr/>Tag</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Given name of the entity.</p>
 <p>This property can&#39;t be edited in read-only mode.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1271">@minecraft/server@1.4.0/index.d.ts:1271</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="scoreboardIdentity" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>scoreboard<wbr/>Identity</span><a href="#scoreboardIdentity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">scoreboard<wbr/>Identity</span><span class="tsd-signature-symbol">?:</span> <a href="_minecraft_server_1_4_0.ScoreboardIdentity.html" class="tsd-signature-type tsd-kind-class">ScoreboardIdentity</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Returns a scoreboard identity that represents this entity.
 Will remain valid when the entity is killed.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1278">@minecraft/server@1.4.0/index.d.ts:1278</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="typeId" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>type<wbr/>Id</span><a href="#typeId" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">type<wbr/>Id</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -170,9 +156,7 @@ Will remain valid when the entity is killed.</p>
 <h4>Example</h4><p>showLocation.js</p>
 <pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">system</span><span class="hl-0">, </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-8">// This event triggers when world is loaded</span><br/><span class="hl-4">system</span><span class="hl-0">.</span><span class="hl-5">runInterval</span><span class="hl-0">(() </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">entity</span><span class="hl-0"> = </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;overworld&quot;</span><span class="hl-0">).</span><span class="hl-5">getEntities</span><span class="hl-0">()[</span><span class="hl-9">0</span><span class="hl-0">];</span><br/><span class="hl-0">    </span><span class="hl-8">// Finally, show that location as title</span><br/><span class="hl-0">    </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">runCommandAsync</span><span class="hl-0">(</span><br/><span class="hl-0">        </span><span class="hl-2">`title @a actionbar X: </span><span class="hl-6">${</span><span class="hl-4">Math</span><span class="hl-10">.</span><span class="hl-5">floor</span><span class="hl-10">(</span><br/><span class="hl-10">            </span><span class="hl-4">entity</span><span class="hl-10">.</span><span class="hl-4">location</span><span class="hl-10">.</span><span class="hl-4">x</span><br/><span class="hl-10">        )</span><span class="hl-6">}</span><span class="hl-2"> | Y: </span><span class="hl-6">${</span><span class="hl-4">Math</span><span class="hl-10">.</span><span class="hl-5">floor</span><span class="hl-10">(</span><span class="hl-4">entity</span><span class="hl-10">.</span><span class="hl-4">location</span><span class="hl-10">.</span><span class="hl-4">y</span><span class="hl-10">)</span><span class="hl-6">}</span><span class="hl-2"> | Z: </span><span class="hl-6">${</span><span class="hl-4">Math</span><span class="hl-10">.</span><span class="hl-5">floor</span><span class="hl-10">(</span><br/><span class="hl-10">            </span><span class="hl-4">entity</span><span class="hl-10">.</span><span class="hl-4">location</span><span class="hl-10">.</span><span class="hl-4">z</span><br/><span class="hl-10">        )</span><span class="hl-6">}</span><span class="hl-2">`</span><br/><span class="hl-0">    );</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1302">@minecraft/server@1.4.0/index.d.ts:1302</a></li></ul></aside></section></section>
+</div></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member"><a id="addEffect" class="tsd-anchor"></a>
@@ -216,9 +200,7 @@ does not exist.</p>
 <h4>Example</h4><p>quickFoxLazyDog.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">  </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">overworld</span><span class="hl-0"> = </span><span class="hl-4">mc</span><span class="hl-0">.</span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;overworld&quot;</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">fox</span><span class="hl-0"> = </span><span class="hl-4">overworld</span><span class="hl-0">.</span><span class="hl-5">spawnEntity</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:fox&quot;</span><span class="hl-0">, {</span><br/><span class="hl-0">    </span><span class="hl-4">x:</span><span class="hl-0"> </span><span class="hl-4">targetLocation</span><span class="hl-0">.</span><span class="hl-4">x</span><span class="hl-0"> + </span><span class="hl-9">1</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">y:</span><span class="hl-0"> </span><span class="hl-4">targetLocation</span><span class="hl-0">.</span><span class="hl-4">y</span><span class="hl-0"> + </span><span class="hl-9">2</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">z:</span><span class="hl-0"> </span><span class="hl-4">targetLocation</span><span class="hl-0">.</span><span class="hl-4">z</span><span class="hl-0"> + </span><span class="hl-9">3</span><span class="hl-0">,</span><br/><span class="hl-0">  });</span><br/><br/><span class="hl-0">  </span><span class="hl-4">fox</span><span class="hl-0">.</span><span class="hl-5">addEffect</span><span class="hl-0">(</span><span class="hl-2">&quot;speed&quot;</span><span class="hl-0">, </span><span class="hl-9">10</span><span class="hl-0">, {</span><br/><span class="hl-0">    </span><span class="hl-4">amplifier:</span><span class="hl-0"> </span><span class="hl-9">2</span><span class="hl-0">,</span><br/><span class="hl-0">  });</span><br/><span class="hl-0">  </span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Created a fox.&quot;</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">wolf</span><span class="hl-0"> = </span><span class="hl-4">overworld</span><span class="hl-0">.</span><span class="hl-5">spawnEntity</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:wolf&quot;</span><span class="hl-0">, {</span><br/><span class="hl-0">    </span><span class="hl-4">x:</span><span class="hl-0"> </span><span class="hl-4">targetLocation</span><span class="hl-0">.</span><span class="hl-4">x</span><span class="hl-0"> + </span><span class="hl-9">4</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">y:</span><span class="hl-0"> </span><span class="hl-4">targetLocation</span><span class="hl-0">.</span><span class="hl-4">y</span><span class="hl-0"> + </span><span class="hl-9">2</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">z:</span><span class="hl-0"> </span><span class="hl-4">targetLocation</span><span class="hl-0">.</span><span class="hl-4">z</span><span class="hl-0"> + </span><span class="hl-9">3</span><span class="hl-0">,</span><br/><span class="hl-0">  });</span><br/><span class="hl-0">  </span><span class="hl-4">wolf</span><span class="hl-0">.</span><span class="hl-5">addEffect</span><span class="hl-0">(</span><span class="hl-2">&quot;slowness&quot;</span><span class="hl-0">, </span><span class="hl-9">10</span><span class="hl-0">, {</span><br/><span class="hl-0">    </span><span class="hl-4">amplifier:</span><span class="hl-0"> </span><span class="hl-9">2</span><span class="hl-0">,</span><br/><span class="hl-0">  });</span><br/><span class="hl-0">  </span><span class="hl-4">wolf</span><span class="hl-0">.</span><span class="hl-4">isSneaking</span><span class="hl-0"> = </span><span class="hl-6">true</span><span class="hl-0">;</span><br/><span class="hl-0">  </span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Created a sneaking wolf.&quot;</span><span class="hl-0">, </span><span class="hl-9">1</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1360">@minecraft/server@1.4.0/index.d.ts:1360</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="addTag" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Tag</span><a href="#addTag" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -244,9 +226,7 @@ fail if the tag already exists on the entity.</p>
 <h4>Example</h4><p>tagsQuery.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">  </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">mobs</span><span class="hl-0"> = [</span><span class="hl-2">&quot;creeper&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;skeleton&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;sheep&quot;</span><span class="hl-0">];</span><br/><br/><span class="hl-0">  </span><span class="hl-8">// create some sample mob data</span><br/><span class="hl-0">  </span><span class="hl-3">for</span><span class="hl-0"> (</span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">i</span><span class="hl-0"> = </span><span class="hl-9">0</span><span class="hl-0">; </span><span class="hl-4">i</span><span class="hl-0"> &lt; </span><span class="hl-9">10</span><span class="hl-0">; </span><span class="hl-4">i</span><span class="hl-0">++) {</span><br/><span class="hl-0">    </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">mobTypeId</span><span class="hl-0"> = </span><span class="hl-4">mobs</span><span class="hl-0">[</span><span class="hl-4">i</span><span class="hl-0"> % </span><span class="hl-4">mobs</span><span class="hl-0">.</span><span class="hl-4">length</span><span class="hl-0">];</span><br/><span class="hl-0">    </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">entity</span><span class="hl-0"> = </span><span class="hl-4">overworld</span><span class="hl-0">.</span><span class="hl-5">spawnEntity</span><span class="hl-0">(</span><span class="hl-4">mobTypeId</span><span class="hl-0">, </span><span class="hl-4">targetLocation</span><span class="hl-0">);</span><br/><span class="hl-0">    </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">addTag</span><span class="hl-0">(</span><span class="hl-2">&quot;mobparty.&quot;</span><span class="hl-0"> + </span><span class="hl-4">mobTypeId</span><span class="hl-0">);</span><br/><span class="hl-0">  }</span><br/><br/><span class="hl-0">  </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">eqo</span><span class="hl-0">: </span><span class="hl-11">mc</span><span class="hl-0">.</span><span class="hl-11">EntityQueryOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">tags:</span><span class="hl-0"> [</span><span class="hl-2">&quot;mobparty.skeleton&quot;</span><span class="hl-0">],</span><br/><span class="hl-0">  };</span><br/><br/><span class="hl-0">  </span><span class="hl-3">for</span><span class="hl-0"> (</span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">entity</span><span class="hl-0"> </span><span class="hl-6">of</span><span class="hl-0"> </span><span class="hl-4">overworld</span><span class="hl-0">.</span><span class="hl-5">getEntities</span><span class="hl-0">(</span><span class="hl-4">eqo</span><span class="hl-0">)) {</span><br/><span class="hl-0">    </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">kill</span><span class="hl-0">();</span><br/><span class="hl-0">  }</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1394">@minecraft/server@1.4.0/index.d.ts:1394</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="applyDamage" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>apply<wbr/>Damage</span><a href="#applyDamage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -286,9 +266,7 @@ less than or equal to 0.</p>
 <h4>Example</h4><p>damageEntity.js</p>
 <pre><code class="language-js"><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">damageApplied</span><span class="hl-0"> = </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">applyDamage</span><span class="hl-0">(</span><span class="hl-9">10</span><span class="hl-0">);</span><br/><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">`Damage applied: </span><span class="hl-6">${</span><span class="hl-4">damageApplied</span><span class="hl-6">}</span><span class="hl-2">`</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1439">@minecraft/server@1.4.0/index.d.ts:1439</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="applyImpulse" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>apply<wbr/>Impulse</span><a href="#applyImpulse" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -312,9 +290,7 @@ entity.</p>
 <h4>Example</h4><p>applyImpulse.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">  </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">zombie</span><span class="hl-0"> = </span><span class="hl-4">overworld</span><span class="hl-0">.</span><span class="hl-5">spawnEntity</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:zombie&quot;</span><span class="hl-0">, </span><span class="hl-4">targetLocation</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-4">zombie</span><span class="hl-0">.</span><span class="hl-5">clearVelocity</span><span class="hl-0">();</span><br/><br/><span class="hl-0">  </span><span class="hl-8">// throw the zombie up in the air</span><br/><span class="hl-0">  </span><span class="hl-4">zombie</span><span class="hl-0">.</span><span class="hl-5">applyImpulse</span><span class="hl-0">({ </span><span class="hl-4">x:</span><span class="hl-0"> </span><span class="hl-9">0</span><span class="hl-0">, </span><span class="hl-4">y:</span><span class="hl-0"> </span><span class="hl-9">0.5</span><span class="hl-0">, </span><span class="hl-4">z:</span><span class="hl-0"> </span><span class="hl-9">0</span><span class="hl-0"> });</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1460">@minecraft/server@1.4.0/index.d.ts:1460</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="applyKnockback" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>apply<wbr/>Knockback</span><a href="#applyKnockback" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -350,9 +326,7 @@ entity.</p>
 <h4>Example</h4><p>bounceSkeletons.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">  </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">mobs</span><span class="hl-0"> = [</span><span class="hl-2">&quot;creeper&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;skeleton&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;sheep&quot;</span><span class="hl-0">];</span><br/><br/><span class="hl-0">  </span><span class="hl-8">// create some sample mob data</span><br/><span class="hl-0">  </span><span class="hl-3">for</span><span class="hl-0"> (</span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">i</span><span class="hl-0"> = </span><span class="hl-9">0</span><span class="hl-0">; </span><span class="hl-4">i</span><span class="hl-0"> &lt; </span><span class="hl-9">10</span><span class="hl-0">; </span><span class="hl-4">i</span><span class="hl-0">++) {</span><br/><span class="hl-0">    </span><span class="hl-4">overworld</span><span class="hl-0">.</span><span class="hl-5">spawnEntity</span><span class="hl-0">(</span><span class="hl-4">mobs</span><span class="hl-0">[</span><span class="hl-4">i</span><span class="hl-0"> % </span><span class="hl-4">mobs</span><span class="hl-0">.</span><span class="hl-4">length</span><span class="hl-0">], </span><span class="hl-4">targetLocation</span><span class="hl-0">);</span><br/><span class="hl-0">  }</span><br/><br/><span class="hl-0">  </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">eqo</span><span class="hl-0">: </span><span class="hl-11">mc</span><span class="hl-0">.</span><span class="hl-11">EntityQueryOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">type:</span><span class="hl-0"> </span><span class="hl-2">&quot;skeleton&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><br/><span class="hl-0">  </span><span class="hl-3">for</span><span class="hl-0"> (</span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">entity</span><span class="hl-0"> </span><span class="hl-6">of</span><span class="hl-0"> </span><span class="hl-4">overworld</span><span class="hl-0">.</span><span class="hl-5">getEntities</span><span class="hl-0">(</span><span class="hl-4">eqo</span><span class="hl-0">)) {</span><br/><span class="hl-0">    </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">applyKnockback</span><span class="hl-0">(</span><span class="hl-9">0</span><span class="hl-0">, </span><span class="hl-9">0</span><span class="hl-0">, </span><span class="hl-9">0</span><span class="hl-0">, </span><span class="hl-9">1</span><span class="hl-0">);</span><br/><span class="hl-0">  }</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1495">@minecraft/server@1.4.0/index.d.ts:1495</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="clearVelocity" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>clear<wbr/>Velocity</span><a href="#clearVelocity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -369,9 +343,7 @@ this method may not have an impact on Players.</p>
 <h4>Example</h4><p>applyImpulse.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">  </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">zombie</span><span class="hl-0"> = </span><span class="hl-4">overworld</span><span class="hl-0">.</span><span class="hl-5">spawnEntity</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:zombie&quot;</span><span class="hl-0">, </span><span class="hl-4">targetLocation</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-4">zombie</span><span class="hl-0">.</span><span class="hl-5">clearVelocity</span><span class="hl-0">();</span><br/><br/><span class="hl-0">  </span><span class="hl-8">// throw the zombie up in the air</span><br/><span class="hl-0">  </span><span class="hl-4">zombie</span><span class="hl-0">.</span><span class="hl-5">applyImpulse</span><span class="hl-0">({ </span><span class="hl-4">x:</span><span class="hl-0"> </span><span class="hl-9">0</span><span class="hl-0">, </span><span class="hl-4">y:</span><span class="hl-0"> </span><span class="hl-9">0.5</span><span class="hl-0">, </span><span class="hl-4">z:</span><span class="hl-0"> </span><span class="hl-9">0</span><span class="hl-0"> });</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1514">@minecraft/server@1.4.0/index.d.ts:1514</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getBlockFromViewDirection" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Block<wbr/>From<wbr/>View<wbr/>Direction</span><a href="#getBlockFromViewDirection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -400,9 +372,7 @@ this entity is looking at.</p>
 <h4>Example</h4><p>setBedrock.js</p>
 <pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">BlockPermutation</span><span class="hl-0">, </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">entity</span><span class="hl-0"> = </span><span class="hl-4">world</span><br/><span class="hl-0">    .</span><span class="hl-5">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;overworld&quot;</span><span class="hl-0">)</span><br/><span class="hl-0">    .</span><span class="hl-5">spawnEntity</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:fox&quot;</span><span class="hl-0">, { </span><span class="hl-4">x:</span><span class="hl-0"> </span><span class="hl-9">0</span><span class="hl-0">, </span><span class="hl-4">y:</span><span class="hl-0"> </span><span class="hl-9">0</span><span class="hl-0">, </span><span class="hl-4">z:</span><span class="hl-0"> </span><span class="hl-9">0</span><span class="hl-0"> });</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">blockHit</span><span class="hl-0"> = </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">getBlockFromViewDirection</span><span class="hl-0">();</span><br/><br/><span class="hl-3">if</span><span class="hl-0"> (</span><span class="hl-4">blockHit</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-4">blockHit</span><span class="hl-0">.</span><span class="hl-4">block</span><span class="hl-0">.</span><span class="hl-5">setPermutation</span><span class="hl-0">(</span><br/><span class="hl-0">        </span><span class="hl-4">BlockPermutation</span><span class="hl-0">.</span><span class="hl-5">resolve</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:bedrock&quot;</span><span class="hl-0">)</span><br/><span class="hl-0">    );</span><br/><span class="hl-0">} </span><span class="hl-3">else</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">&quot;No block in view direction.&quot;</span><span class="hl-0">);</span><br/><span class="hl-0">}</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1557">@minecraft/server@1.4.0/index.d.ts:1557</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getComponent" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Component</span><a href="#getComponent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -436,9 +406,7 @@ for an entity.</p>
 <h4>Example</h4><p>getEntityItemComponent.js</p>
 <pre><code class="language-js"><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">getEntityItemComponent</span><span class="hl-0"> = </span><span class="hl-4">itemEntity</span><span class="hl-0">.</span><span class="hl-5">getComponent</span><span class="hl-0">(</span><span class="hl-2">&quot;item&quot;</span><span class="hl-0">);</span><br/><span class="hl-4">getEntityItemComponent</span><span class="hl-0">.</span><span class="hl-4">itemStack</span><span class="hl-0">;</span><br/><span class="hl-4">getEntityItemComponent</span><span class="hl-0">.</span><span class="hl-5">isValid</span><span class="hl-0">();</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1650">@minecraft/server@1.4.0/index.d.ts:1650</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getComponents" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Components</span><a href="#getComponents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -454,9 +422,7 @@ and supported by the API.</p>
 <h4>Example</h4><p>getComponents.js</p>
 <pre><code class="language-js"><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">components</span><span class="hl-0"> = </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">getComponents</span><span class="hl-0">();</span><br/><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><br/><span class="hl-0">    </span><span class="hl-2">`Number of components: </span><span class="hl-6">${</span><span class="hl-4">components</span><span class="hl-10">.</span><span class="hl-4">length</span><span class="hl-6">}</span><span class="hl-2">: </span><span class="hl-6">${</span><span class="hl-4">components</span><span class="hl-10">.</span><span class="hl-5">map</span><span class="hl-10">(</span><br/><span class="hl-10">        (</span><span class="hl-4">component</span><span class="hl-10">) </span><span class="hl-6">=&gt;</span><span class="hl-10"> </span><span class="hl-4">component</span><span class="hl-10">.</span><span class="hl-4">typeId</span><br/><span class="hl-10">    )</span><span class="hl-6">}</span><span class="hl-2">`</span><br/><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1669">@minecraft/server@1.4.0/index.d.ts:1669</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getEffect" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Effect</span><a href="#getEffect" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -483,9 +449,7 @@ error if the effect does not exist.</p>
 <h4>Example</h4><p>getEntityEffectInfo.js</p>
 <pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">entities</span><span class="hl-0"> = </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;overworld&quot;</span><span class="hl-0">).</span><span class="hl-5">getEntities</span><span class="hl-0">();</span><br/><span class="hl-3">for</span><span class="hl-0"> (</span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">entity</span><span class="hl-0"> </span><span class="hl-6">of</span><span class="hl-0"> </span><span class="hl-4">entities</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">getEffects</span><span class="hl-0">().</span><span class="hl-5">forEach</span><span class="hl-0">((</span><span class="hl-4">effect</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">        </span><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-4">effect</span><span class="hl-0">.</span><span class="hl-4">typeId</span><span class="hl-0">, </span><span class="hl-4">effect</span><span class="hl-0">.</span><span class="hl-4">amplifier</span><span class="hl-0">, </span><span class="hl-4">effect</span><span class="hl-0">.</span><span class="hl-4">duration</span><span class="hl-0">);</span><br/><span class="hl-0">    });</span><br/><span class="hl-0">}</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1695">@minecraft/server@1.4.0/index.d.ts:1695</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getEffects" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Effects</span><a href="#getEffects" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -501,9 +465,7 @@ error if the effect does not exist.</p>
 <h4>Example</h4><p>getEntityEffectInfo.js</p>
 <pre><code class="language-js"><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">effect</span><span class="hl-0"> = </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">getEffect</span><span class="hl-0">(</span><span class="hl-2">&quot;invisibility&quot;</span><span class="hl-0">);</span><br/><span class="hl-4">effect</span><span class="hl-0">.</span><span class="hl-4">amplifier</span><span class="hl-0">;</span><br/><span class="hl-4">effect</span><span class="hl-0">.</span><span class="hl-4">duration</span><span class="hl-0">;</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1710">@minecraft/server@1.4.0/index.d.ts:1710</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getEntitiesFromViewDirection" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Entities<wbr/>From<wbr/>View<wbr/>Direction</span><a href="#getEntitiesFromViewDirection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -528,9 +490,7 @@ performing a ray cast from the view of this entity.</p>
 <h4>Example</h4><p>entityView.ts</p>
 <pre><code class="language-ts"><span class="hl-3">import</span><span class="hl-0"> </span><span class="hl-3">type</span><span class="hl-0"> { </span><span class="hl-4">EntityRaycastOptions</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-8">// Optional: Configure ray cast options</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">raycastOptions</span><span class="hl-0">: </span><span class="hl-11">EntityRaycastOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">maxDistance:</span><span class="hl-0"> </span><span class="hl-9">10</span><span class="hl-0">, </span><span class="hl-8">// Set your desired maximum distance</span><br/><span class="hl-0">};</span><br/><br/><span class="hl-8">// Perform the ray cast</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">entitiesInView</span><span class="hl-0"> = </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">getEntitiesFromViewDirection</span><span class="hl-0">(</span><span class="hl-4">raycastOptions</span><span class="hl-0">);</span><br/><br/><span class="hl-8">// Log the results</span><br/><span class="hl-4">entitiesInView</span><span class="hl-0">.</span><span class="hl-5">forEach</span><span class="hl-0">((</span><span class="hl-4">hit</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">`Entity hit at distance </span><span class="hl-6">${</span><span class="hl-4">hit</span><span class="hl-10">.</span><span class="hl-4">distance</span><span class="hl-6">}</span><span class="hl-2"> blocks.`</span><span class="hl-0">);</span><br/><span class="hl-0">    </span><span class="hl-4">console</span><span class="hl-0">.</span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Entity details:&quot;</span><span class="hl-0">, </span><span class="hl-4">hit</span><span class="hl-0">.</span><span class="hl-4">entity</span><span class="hl-0">); </span><span class="hl-8">// You can access properties/methods of the hit entity</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1741">@minecraft/server@1.4.0/index.d.ts:1741</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getHeadLocation" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Head<wbr/>Location</span><a href="#getHeadLocation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -544,9 +504,7 @@ entity.</p>
 entity.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1752">@minecraft/server@1.4.0/index.d.ts:1752</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getTags" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Tags</span><a href="#getTags" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -562,9 +520,7 @@ entity.</p>
 <h4>Example</h4><p>jaylyTag.js</p>
 <pre><code class="language-js"><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">tags</span><span class="hl-0"> = </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">getTags</span><span class="hl-0">();</span><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">jaylyTag</span><span class="hl-0"> = </span><span class="hl-4">tags</span><span class="hl-0">.</span><span class="hl-5">find</span><span class="hl-0">((</span><span class="hl-4">tag</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> </span><span class="hl-4">tag</span><span class="hl-0">.</span><span class="hl-5">startsWith</span><span class="hl-0">(</span><span class="hl-2">&quot;jayly:&quot;</span><span class="hl-0">));</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1766">@minecraft/server@1.4.0/index.d.ts:1766</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getVelocity" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Velocity</span><a href="#getVelocity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -580,9 +536,7 @@ entity.</p>
 <h4>Example</h4><p>getFireworkVelocity.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">  </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">fireworkRocket</span><span class="hl-0"> = </span><span class="hl-4">overworld</span><span class="hl-0">.</span><span class="hl-5">spawnEntity</span><span class="hl-0">(</span><span class="hl-2">&quot;minecraft:fireworks_rocket&quot;</span><span class="hl-0">, </span><span class="hl-4">targetLocation</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-4">mc</span><span class="hl-0">.</span><span class="hl-4">system</span><span class="hl-0">.</span><span class="hl-5">runTimeout</span><span class="hl-0">(() </span><span class="hl-6">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">velocity</span><span class="hl-0"> = </span><span class="hl-4">fireworkRocket</span><span class="hl-0">.</span><span class="hl-5">getVelocity</span><span class="hl-0">();</span><br/><br/><span class="hl-0">    </span><span class="hl-5">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Velocity of firework is: (x: &quot;</span><span class="hl-0"> + </span><span class="hl-4">velocity</span><span class="hl-0">.</span><span class="hl-4">x</span><span class="hl-0"> + </span><span class="hl-2">&quot;, y:&quot;</span><span class="hl-0"> + </span><span class="hl-4">velocity</span><span class="hl-0">.</span><span class="hl-4">y</span><span class="hl-0"> + </span><span class="hl-2">&quot;, z:&quot;</span><span class="hl-0"> + </span><span class="hl-4">velocity</span><span class="hl-0">.</span><span class="hl-4">z</span><span class="hl-0"> + </span><span class="hl-2">&quot;)&quot;</span><span class="hl-0">);</span><br/><span class="hl-0">  }, </span><span class="hl-9">5</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1785">@minecraft/server@1.4.0/index.d.ts:1785</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getViewDirection" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>View<wbr/>Direction</span><a href="#getViewDirection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -594,9 +548,7 @@ entity.</p>
 <h4>Remarks</h4><p>Returns the current view direction of the entity.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1794">@minecraft/server@1.4.0/index.d.ts:1794</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="hasComponent" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>has<wbr/>Component</span><a href="#hasComponent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -621,9 +573,7 @@ entity.</p>
 <h4>Example</h4><p>hasComponents.js</p>
 <pre><code class="language-js"><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">hasComponent</span><span class="hl-0">(</span><span class="hl-2">&quot;tameable&quot;</span><span class="hl-0">);</span><br/><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">hasComponent</span><span class="hl-0">(</span><span class="hl-2">&quot;inventory&quot;</span><span class="hl-0">);</span><br/><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">hasComponent</span><span class="hl-0">(</span><span class="hl-2">&quot;addrider&quot;</span><span class="hl-0">);</span><br/><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">hasComponent</span><span class="hl-0">(</span><span class="hl-2">&quot;is_tamed&quot;</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1815">@minecraft/server@1.4.0/index.d.ts:1815</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="hasTag" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>has<wbr/>Tag</span><a href="#hasTag" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -642,9 +592,7 @@ entity.</p>
 <h4>Remarks</h4><p>Returns whether an entity has a particular tag.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1826">@minecraft/server@1.4.0/index.d.ts:1826</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="isValid" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>is<wbr/>Valid</span><a href="#isValid" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -656,9 +604,7 @@ entity.</p>
 <h4>Remarks</h4><p>Returns whether the entity can be manipulated by script. A
 Player is considered valid when it&#39;s EntityLifetimeState is
 set to Loaded.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1836">@minecraft/server@1.4.0/index.d.ts:1836</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="kill" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>kill</span><a href="#kill" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -676,9 +622,7 @@ dead), otherwise it returns false.</p>
 <h4>Example</h4><p>tagsQuery.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">  </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">mobs</span><span class="hl-0"> = [</span><span class="hl-2">&quot;creeper&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;skeleton&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;sheep&quot;</span><span class="hl-0">];</span><br/><br/><span class="hl-0">  </span><span class="hl-8">// create some sample mob data</span><br/><span class="hl-0">  </span><span class="hl-3">for</span><span class="hl-0"> (</span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">i</span><span class="hl-0"> = </span><span class="hl-9">0</span><span class="hl-0">; </span><span class="hl-4">i</span><span class="hl-0"> &lt; </span><span class="hl-9">10</span><span class="hl-0">; </span><span class="hl-4">i</span><span class="hl-0">++) {</span><br/><span class="hl-0">    </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">mobTypeId</span><span class="hl-0"> = </span><span class="hl-4">mobs</span><span class="hl-0">[</span><span class="hl-4">i</span><span class="hl-0"> % </span><span class="hl-4">mobs</span><span class="hl-0">.</span><span class="hl-4">length</span><span class="hl-0">];</span><br/><span class="hl-0">    </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">entity</span><span class="hl-0"> = </span><span class="hl-4">overworld</span><span class="hl-0">.</span><span class="hl-5">spawnEntity</span><span class="hl-0">(</span><span class="hl-4">mobTypeId</span><span class="hl-0">, </span><span class="hl-4">targetLocation</span><span class="hl-0">);</span><br/><span class="hl-0">    </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">addTag</span><span class="hl-0">(</span><span class="hl-2">&quot;mobparty.&quot;</span><span class="hl-0"> + </span><span class="hl-4">mobTypeId</span><span class="hl-0">);</span><br/><span class="hl-0">  }</span><br/><br/><span class="hl-0">  </span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">eqo</span><span class="hl-0">: </span><span class="hl-11">mc</span><span class="hl-0">.</span><span class="hl-11">EntityQueryOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">tags:</span><span class="hl-0"> [</span><span class="hl-2">&quot;mobparty.skeleton&quot;</span><span class="hl-0">],</span><br/><span class="hl-0">  };</span><br/><br/><span class="hl-0">  </span><span class="hl-3">for</span><span class="hl-0"> (</span><span class="hl-6">let</span><span class="hl-0"> </span><span class="hl-4">entity</span><span class="hl-0"> </span><span class="hl-6">of</span><span class="hl-0"> </span><span class="hl-4">overworld</span><span class="hl-0">.</span><span class="hl-5">getEntities</span><span class="hl-0">(</span><span class="hl-4">eqo</span><span class="hl-0">)) {</span><br/><span class="hl-0">    </span><span class="hl-4">entity</span><span class="hl-0">.</span><span class="hl-5">kill</span><span class="hl-0">();</span><br/><span class="hl-0">  }</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1867">@minecraft/server@1.4.0/index.d.ts:1867</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="removeEffect" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>remove<wbr/>Effect</span><a href="#removeEffect" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -700,9 +644,7 @@ false if the effect is not present.</p>
 <p>This function can&#39;t be called in read-only mode.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1882">@minecraft/server@1.4.0/index.d.ts:1882</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="removeTag" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>remove<wbr/>Tag</span><a href="#removeTag" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -722,9 +664,7 @@ false if the effect is not present.</p>
 <p>This function can&#39;t be called in read-only mode.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1895">@minecraft/server@1.4.0/index.d.ts:1895</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="runCommand" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>run<wbr/>Command</span><a href="#runCommand" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -748,9 +688,7 @@ successful.</p>
 <h4>Throws</h4><p>This function can throw errors.</p>
 <p><a href="_minecraft_server_1_4_0.CommandError.html" class="tsd-kind-class">CommandError</a></p>
 <p>Error</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1914">@minecraft/server@1.4.0/index.d.ts:1914</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="runCommandAsync" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>run<wbr/>Command<wbr/>Async</span><a href="#runCommandAsync" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -773,9 +711,7 @@ this entity. Note that there is a maximum queue of 128
 asynchronous commands that can be run in a given tick.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1929">@minecraft/server@1.4.0/index.d.ts:1929</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="teleport" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>teleport</span><a href="#teleport" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -810,9 +746,7 @@ asynchronous commands that can be run in a given tick.</p>
 <h4>Example</h4><p>teleportFacing.js</p>
 <pre><code class="language-js"><span class="hl-4">player</span><span class="hl-0">.</span><span class="hl-5">teleport</span><span class="hl-0">(</span><br/><span class="hl-0">    { </span><span class="hl-4">x:</span><span class="hl-0"> </span><span class="hl-9">0</span><span class="hl-0">, </span><span class="hl-4">y:</span><span class="hl-0"> </span><span class="hl-9">0</span><span class="hl-0">, </span><span class="hl-4">z:</span><span class="hl-0"> </span><span class="hl-9">0</span><span class="hl-0"> },</span><br/><span class="hl-0">    {</span><br/><span class="hl-0">        </span><span class="hl-4">dimension:</span><span class="hl-0"> </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-5">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;nether&quot;</span><span class="hl-0">),</span><br/><span class="hl-0">        </span><span class="hl-4">teleportFacing:</span><span class="hl-0"> { </span><span class="hl-4">x:</span><span class="hl-0"> </span><span class="hl-9">100</span><span class="hl-0">, </span><span class="hl-4">y:</span><span class="hl-0"> </span><span class="hl-9">100</span><span class="hl-0">, </span><span class="hl-4">z:</span><span class="hl-0"> </span><span class="hl-9">100</span><span class="hl-0"> },</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1978">@minecraft/server@1.4.0/index.d.ts:1978</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="tryTeleport" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>try<wbr/>Teleport</span><a href="#tryTeleport" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -840,9 +774,7 @@ destination.)</p>
 <p>This function can&#39;t be called in read-only mode.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/8396d76/lib/1.20.50/@minecraft/server@1.4.0/index.d.ts#L1997">@minecraft/server@1.4.0/index.d.ts:1997</a></li></ul></aside></li></ul></section></section></div>
+</div></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
