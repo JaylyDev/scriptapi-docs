@@ -8014,6 +8014,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_10_0.EntityType</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_10_0.EntityTypeFamilyComponent</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_10_0.EntityTypes</loc>
     </url>
     <url>
@@ -8057,6 +8060,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_10_0.InvalidContainerSlotError</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_10_0.InvalidStructureError</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_10_0.ItemCompleteUseAfterEvent</loc>
@@ -8281,6 +8287,12 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_10_0.ScriptEventCommandMessageAfterEventSignal</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_10_0.Structure</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_10_0.StructureManager</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_10_0.System</loc>
     </url>
     <url>
@@ -8332,13 +8344,34 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockComponent</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockComponentEntityFallOnEvent</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockComponentOnPlaceEvent</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockComponentPlayerDestroyEvent</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockComponentPlayerInteractEvent</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockComponentPlayerPlaceBeforeEvent</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockComponentRandomTickEvent</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockComponentRegistry</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockComponentStepOffEvent</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockComponentStepOnEvent</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockComponentTickEvent</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockEvent</loc>
@@ -8387,9 +8420,6 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockType</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockTypeRegistry</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.BlockTypes</loc>
@@ -8839,7 +8869,28 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.ItemComponent</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.ItemComponentRegistry</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.ItemComponentUseEvent</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.ItemCooldownComponent</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.ItemCustomComponentAlreadyRegisteredError</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.ItemCustomComponentNameError</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.ItemCustomComponentReloadNewComponentError</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.ItemCustomComponentReloadNewEventError</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.ItemCustomComponentReloadVersionError</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/classes/_minecraft_server_1_11_0_beta.ItemDurabilityComponent</loc>
@@ -12694,6 +12745,18 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_server_1_10_0.SignSide</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_server_1_10_0.StructureAnimationMode</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_server_1_10_0.StructureMirrorAxis</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_server_1_10_0.StructureRotation</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_server_1_10_0.StructureSaveMode</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_server_1_10_0.TimeOfDay</loc>
     </url>
     <url>
@@ -13150,34 +13213,34 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_server_ui_1_2_0_beta.FormRejectReason</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftBiomeTypes</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftBiomeTypes</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftBlockTypes</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftBlockTypes</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftCameraPresetsTypes</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftCameraPresetsTypes</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftCooldownCategoryTypes</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftCooldownCategoryTypes</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftDimensionTypes</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftDimensionTypes</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftEffectTypes</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftEffectTypes</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftEnchantmentTypes</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftEnchantmentTypes</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftEntityTypes</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftEntityTypes</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftFeatureTypes</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftFeatureTypes</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftItemTypes</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/enums/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftItemTypes</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/functions/_minecraft_debug_utilities_1_0_0_beta.disableWatchdog</loc>
@@ -13330,6 +13393,12 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_10_0.ScriptEventMessageFilterOptions</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_10_0.StructureCreateOptions</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_10_0.StructurePlaceOptions</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_10_0.TeleportOptions</loc>
     </url>
     <url>
@@ -13456,6 +13525,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_11_0_beta.GreaterThanOrEqualsComparison</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_11_0_beta.ItemCustomComponent</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_11_0_beta.LessThanComparison</loc>
     </url>
     <url>
@@ -13501,13 +13573,13 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_11_0_beta.ScriptEventMessageFilterOptions</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_11_0_beta.SpawnEntityOptions</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_11_0_beta.StructureCreateOptions</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_11_0_beta.StructurePlaceOptions</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_11_0_beta.StructureReadOptions</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/interfaces/_minecraft_server_1_11_0_beta.TeleportOptions</loc>
@@ -14401,7 +14473,7 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_ui_1_2_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_vanilla_data_1_20_80_preview_22</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_vanilla_data_1_20_80_preview_23</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_server_1_11_0_beta.BlockComponentTypeMap</loc>
@@ -14485,1681 +14557,1690 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_server_editor_0_1_0_beta.UnregisterInputBindingCallback</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaFenceGateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaFenceGateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaHangingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaHangingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaLeavesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaLeavesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaPressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaPressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaSaplingStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaSaplingStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaStandingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaStandingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaWallSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaWallSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AcaciaWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AcaciaWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ActivatorRailStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ActivatorRailStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AmethystClusterStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AmethystClusterStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AndesiteStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AndesiteStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AnvilStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AnvilStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AzaleaLeavesFloweredStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AzaleaLeavesFloweredStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.AzaleaLeavesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.AzaleaLeavesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooFenceGateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooFenceGateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooHangingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooHangingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooMosaicDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooMosaicDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooMosaicSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooMosaicSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooMosaicStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooMosaicStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooPressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooPressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooSaplingStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooSaplingStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooStandingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooStandingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BambooWallSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BambooWallSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BarrelStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BarrelStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BasaltStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BasaltStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BedStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BedStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BedrockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BedrockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BeeNestStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BeeNestStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BeehiveStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BeehiveStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BeetrootStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BeetrootStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BellStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BellStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BigDripleafStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BigDripleafStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchFenceGateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchFenceGateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchHangingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchHangingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchLeavesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchLeavesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchPressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchPressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchSaplingStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchSaplingStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchStandingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchStandingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchWallSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchWallSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BirchWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BirchWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlackCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlackCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlackCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlackCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlackGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlackGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlackstoneDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlackstoneDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlackstoneSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlackstoneSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlackstoneStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlackstoneStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlackstoneWallStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlackstoneWallStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlastFurnaceStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlastFurnaceStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlockStateMapping</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlockStateMapping</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlockStateSuperset</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlockStateSuperset</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlueCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlueCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlueCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlueCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BlueGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BlueGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BoneBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BoneBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BorderBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BorderBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BrainCoralFanStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BrainCoralFanStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BrewingStandStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BrewingStandStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BrickStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BrickStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BrownCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BrownCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BrownCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BrownCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BrownGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BrownGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BrownMushroomBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BrownMushroomBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BubbleColumnStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BubbleColumnStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.BubbleCoralFanStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.BubbleCoralFanStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CactusStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CactusStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CalibratedSculkSensorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CalibratedSculkSensorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CampfireStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CampfireStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CarrotsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CarrotsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CarvedPumpkinStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CarvedPumpkinStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CauldronStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CauldronStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CaveVinesBodyWithBerriesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CaveVinesBodyWithBerriesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CaveVinesHeadWithBerriesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CaveVinesHeadWithBerriesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CaveVinesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CaveVinesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ChainCommandBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ChainCommandBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ChainStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ChainStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ChemistryTableStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ChemistryTableStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryFenceGateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryFenceGateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryHangingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryHangingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryLeavesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryLeavesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryPressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryPressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherrySaplingStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherrySaplingStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherrySlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherrySlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryStandingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryStandingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryWallSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryWallSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CherryWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CherryWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ChestStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ChestStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ChiseledBookshelfStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ChiseledBookshelfStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ChorusFlowerStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ChorusFlowerStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CobbledDeepslateDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CobbledDeepslateDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CobbledDeepslateSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CobbledDeepslateSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CobbledDeepslateStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CobbledDeepslateStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CobbledDeepslateWallStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CobbledDeepslateWallStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CobblestoneWallStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CobblestoneWallStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CocoaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CocoaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ColoredTorchBpStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ColoredTorchBpStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ColoredTorchRgStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ColoredTorchRgStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CommandBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CommandBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ComposterStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ComposterStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CopperBulbStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CopperBulbStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CopperDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CopperDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CopperTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CopperTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CoralBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CoralBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CoralFanDeadStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CoralFanHang2States</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CoralFanHang2States</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CoralFanHang3States</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CoralFanHang3States</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CoralFanHangStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CoralFanHangStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrafterStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrafterStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonFenceGateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonFenceGateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonHangingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonHangingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonHyphaeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonHyphaeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonPressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonPressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonStandingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonStandingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonStemStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonStemStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CrimsonWallSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CrimsonWallSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CutCopperStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CutCopperStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CyanCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CyanCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CyanCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CyanCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.CyanGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.CyanGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakFenceGateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakFenceGateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakHangingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakHangingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakLeavesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakLeavesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakPressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakPressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakSaplingStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakSaplingStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkOakWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkOakWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkPrismarineStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkPrismarineStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkoakStandingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkoakStandingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DarkoakWallSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DarkoakWallSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DaylightDetectorInvertedStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DaylightDetectorInvertedStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DaylightDetectorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DaylightDetectorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeadBrainCoralFanStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DecoratedPotStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeadBubbleCoralFanStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DeepslateBrickDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeadFireCoralFanStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DeepslateBrickSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeadHornCoralFanStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DeepslateBrickStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeadTubeCoralFanStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DeepslateBrickWallStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DecoratedPotStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DeepslateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeepslateBrickDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DeepslateTileDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeepslateBrickSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DeepslateTileSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeepslateBrickStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DeepslateTileStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeepslateBrickWallStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DeepslateTileWallStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeepslateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DetectorRailStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeepslateTileDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DioriteStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeepslateTileSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DirtStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeepslateTileStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DispenserStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DeepslateTileWallStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DoubleCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DetectorRailStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DoublePlantStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DioriteStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DoubleStoneBlockSlab2States</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DirtStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DoubleStoneBlockSlab3States</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DispenserStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DoubleStoneBlockSlab4States</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DoubleCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DoubleStoneBlockSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DoublePlantStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.DropperStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DoubleStoneBlockSlab2States</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.EndBrickStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DoubleStoneBlockSlab3States</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.EndPortalFrameStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DoubleStoneBlockSlab4States</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.EndRodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DoubleStoneBlockSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.EnderChestStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.DropperStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ExposedCopperBulbStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.EndBrickStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ExposedCopperDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.EndPortalFrameStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ExposedCopperTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.EndRodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ExposedCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.EnderChestStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ExposedCutCopperStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ExposedCopperBulbStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ExposedDoubleCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ExposedCopperDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.FarmlandStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ExposedCopperTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.FenceGateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ExposedCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.FireCoralFanStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ExposedCutCopperStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.FireStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ExposedDoubleCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.FlowerPotStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.FarmlandStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.FlowingLavaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.FenceGateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.FlowingWaterStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.FireCoralFanStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.FrameStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.FireStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.FrostedIceStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.FlowerPotStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.FurnaceStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.FlowingLavaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.GlowFrameStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.FlowingWaterStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.GlowLichenStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.FrameStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.GoldenRailStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.FrostedIceStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.GraniteStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.FurnaceStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.GrayCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.GlowFrameStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.GrayCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.GlowLichenStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.GrayGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.GoldenRailStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.GreenCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.GraniteStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.GreenCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.GrayCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.GreenGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.GrayCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.GrindstoneStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.GrayGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.HayBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.GreenCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.HeavyWeightedPressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.GreenCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.HopperStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.GreenGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.HornCoralFanStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.GrindstoneStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.InfestedDeepslateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.HayBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.IronDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.HeavyWeightedPressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.IronTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.HopperStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JigsawStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.HornCoralFanStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.InfestedDeepslateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.IronDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.IronTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleFenceGateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JigsawStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleHangingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleLeavesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JunglePressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleFenceGateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleSaplingStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleHangingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleLeavesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleStandingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JunglePressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleSaplingStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleWallSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.JungleWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.KelpStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleStandingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LadderStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LanternStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleWallSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LargeAmethystBudStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.JungleWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LavaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.KelpStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LecternStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LadderStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LeverStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LanternStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LightBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LargeAmethystBudStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LightBlueCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LavaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LightBlueCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LecternStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LightBlueGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LeverStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LightGrayCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LightBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LightGrayCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LightBlueCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LightWeightedPressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LightBlueCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LightningRodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LightBlueGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LimeCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LightGrayCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LimeCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LightGrayCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LimeGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LightWeightedPressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LitBlastFurnaceStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LightningRodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LitFurnaceStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LimeCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LitPumpkinStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LimeCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LitSmokerStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LimeGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.LoomStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LitBlastFurnaceStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MagentaCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LitFurnaceStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MagentaCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LitPumpkinStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MagentaGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LitSmokerStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.LoomStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MagentaCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MagentaCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveFenceGateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MagentaGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveHangingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveLeavesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangrovePressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveFenceGateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangrovePropaguleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveHangingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveLeavesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveStandingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangrovePressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangrovePropaguleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveWallSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MangroveWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MediumAmethystBudStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveStandingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MelonStemStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftBiomeTypesUnion</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveWallSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftBlockTypesUnion</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MangroveWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftCameraPresetsTypesUnion</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MediumAmethystBudStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftCooldownCategoryTypesUnion</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MelonStemStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftDimensionTypesUnion</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftBiomeTypesUnion</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftEffectTypesUnion</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftBlockTypesUnion</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftEnchantmentTypesUnion</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftCameraPresetsTypesUnion</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftEntityTypesUnion</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftCooldownCategoryTypesUnion</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftFeatureTypesUnion</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftDimensionTypesUnion</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MinecraftItemTypesUnion</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftEffectTypesUnion</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MonsterEggStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftEnchantmentTypesUnion</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MossyCobblestoneStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftEntityTypesUnion</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MossyStoneBrickStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftFeatureTypesUnion</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MudBrickDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MinecraftItemTypesUnion</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MudBrickSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MonsterEggStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MudBrickStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MossyCobblestoneStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MudBrickWallStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MossyStoneBrickStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.MuddyMangroveRootsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MudBrickDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.NetherBrickStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MudBrickSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.NetherWartStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MudBrickStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.NormalStoneStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MudBrickWallStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OakDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.MuddyMangroveRootsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OakHangingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.NetherBrickStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OakLeavesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.NetherWartStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OakLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.NormalStoneStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OakSaplingStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OakDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OakSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OakHangingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OakStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OakLeavesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OakWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OakLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ObserverStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OakSaplingStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OchreFroglightStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OakSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OrangeCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OakStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OrangeCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OakWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OrangeGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ObserverStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OxidizedCopperBulbStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OchreFroglightStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OxidizedCopperDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OrangeCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OxidizedCopperTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OrangeCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OxidizedCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OrangeGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OxidizedCutCopperStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OxidizedCopperBulbStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.OxidizedDoubleCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OxidizedCopperDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PearlescentFroglightStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OxidizedCopperTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PinkCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OxidizedCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PinkCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OxidizedCutCopperStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PinkGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.OxidizedDoubleCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PinkPetalsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PearlescentFroglightStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PistonArmCollisionStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PinkCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PistonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PinkCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PitcherCropStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PinkGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PitcherPlantStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PinkPetalsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PointedDripstoneStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PistonArmCollisionStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedAndesiteStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PistonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedBasaltStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PitcherCropStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedBlackstoneBrickDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PitcherPlantStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedBlackstoneBrickSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PointedDripstoneStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedBlackstoneBrickStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedAndesiteStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedBlackstoneBrickWallStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedBasaltStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedBlackstoneButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedBlackstoneBrickDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedBlackstoneDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedBlackstoneBrickSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedBlackstonePressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedBlackstoneBrickStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedBlackstoneSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedBlackstoneBrickWallStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedBlackstoneStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedBlackstoneButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedBlackstoneWallStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedBlackstoneDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedDeepslateDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedBlackstonePressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedDeepslateSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedBlackstoneSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedDeepslateStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedBlackstoneStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedDeepslateWallStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedBlackstoneWallStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedDioriteStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedDeepslateDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedGraniteStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedDeepslateSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedTuffDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedDeepslateStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedTuffSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedDeepslateWallStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedTuffStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedDioriteStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PolishedTuffWallStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedGraniteStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PortalStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedTuffDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PotatoesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedTuffSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PoweredComparatorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedTuffStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PoweredRepeaterStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PolishedTuffWallStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PrismarineBricksStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PortalStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PrismarineStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PotatoesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PrismarineStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PoweredComparatorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PumpkinStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PoweredRepeaterStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PumpkinStemStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PrismarineBricksStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PurpleCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PrismarineStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PurpleCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PrismarineStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PurpleGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PumpkinStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PurpurBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PumpkinStemStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.PurpurStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PurpleCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.QuartzBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PurpleCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.QuartzStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PurpleGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RailStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PurpurBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RedCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.PurpurStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RedCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.QuartzBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RedFlowerStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.QuartzStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RedGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.RailStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RedMushroomBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.RedCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RedNetherBrickStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.RedCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RedSandstoneStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.RedGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RedSandstoneStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.RedMushroomBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RedstoneTorchStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.RedNetherBrickStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RedstoneWireStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.RedSandstoneStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ReedsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.RedSandstoneStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RepeatingCommandBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.RedstoneTorchStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.RespawnAnchorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.RedstoneWireStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SandStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ReedsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SandstoneStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.RepeatingCommandBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SandstoneStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.RespawnAnchorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.ScaffoldingStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SandStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SculkCatalystStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SandstoneStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SculkSensorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SandstoneStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SculkShriekerStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.ScaffoldingStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SculkVeinStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SculkCatalystStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SeaPickleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SculkSensorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SeagrassStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SculkShriekerStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SilverGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SculkVeinStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SkullStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SeaPickleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SmallAmethystBudStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SeagrassStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SmallDripleafBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SilverGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SmokerStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SkullStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SmoothQuartzStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SmallAmethystBudStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SmoothRedSandstoneStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SmallDripleafBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SmoothSandstoneStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SmokerStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SnifferEggStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SmoothQuartzStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SnowLayerStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SmoothRedSandstoneStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SoulCampfireStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SmoothSandstoneStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SoulFireStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SnifferEggStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SoulLanternStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SnowLayerStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SoulTorchStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SoulCampfireStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpongeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SoulFireStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SoulLanternStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SoulTorchStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpongeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceFenceGateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceHangingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceLeavesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceFenceGateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SprucePressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceHangingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceSaplingStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceLeavesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SprucePressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceStandingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceSaplingStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceWallSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SpruceWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceStandingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StandingBannerStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StandingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceWallSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StickyPistonArmCollisionStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SpruceWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StickyPistonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StandingBannerStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StoneBlockSlab2States</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StandingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StoneBlockSlab3States</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StickyPistonArmCollisionStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StoneBlockSlab4States</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StickyPistonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StoneBlockSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StoneBlockSlab2States</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StoneBrickStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StoneBlockSlab3States</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StoneButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StoneBlockSlab4States</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StonePressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StoneBlockSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StoneStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StoneBrickStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StonebrickStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StoneButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StonecutterBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StonePressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedAcaciaLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StoneStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedAcaciaWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StonebrickStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedBambooBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StonecutterBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedBirchLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedAcaciaLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedBirchWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedAcaciaWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedCherryLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedBambooBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedCherryWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedBirchLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedCrimsonHyphaeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedBirchWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedCrimsonStemStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedCherryLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedDarkOakLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedCherryWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedDarkOakWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedCrimsonHyphaeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedJungleLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedCrimsonStemStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedJungleWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedDarkOakLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedMangroveLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedDarkOakWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedMangroveWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedJungleLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedOakLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedJungleWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedOakWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedMangroveLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedSpruceLogStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedMangroveWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedSpruceWoodStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedOakLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedWarpedHyphaeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedOakWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StrippedWarpedStemStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedSpruceLogStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StructureBlockStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedSpruceWoodStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.StructureVoidStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedWarpedHyphaeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SuspiciousGravelStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StrippedWarpedStemStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SuspiciousSandStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StructureBlockStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.SweetBerryBushStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.StructureVoidStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TallgrassStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SuspiciousGravelStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TntStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SuspiciousSandStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TorchStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.SweetBerryBushStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TorchflowerCropStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TallgrassStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TntStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TrappedChestStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TorchStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TrialSpawnerStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TorchflowerCropStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TripWireStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TripwireHookStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TrappedChestStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TubeCoralFanStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TrialSpawnerStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TuffBrickDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TripWireStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TuffBrickSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TripwireHookStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TuffBrickStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TubeCoralFanStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TuffBrickWallStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TuffBrickDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TuffDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TuffBrickSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TuffSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TuffBrickStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TuffStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TuffBrickWallStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TuffWallStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TuffDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TurtleEggStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TuffSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.TwistingVinesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TuffStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.UnderwaterTorchStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TuffWallStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.UnlitRedstoneTorchStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TurtleEggStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.UnpoweredComparatorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.TwistingVinesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.UnpoweredRepeaterStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.UnderwaterTorchStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.VaultStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.UnlitRedstoneTorchStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.VerdantFroglightStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.UnpoweredComparatorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.VineStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.UnpoweredRepeaterStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WallBannerStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.VaultStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WallSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.VerdantFroglightStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.VineStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WallBannerStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedDoubleSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WallSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedFenceGateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedHangingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedHyphaeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedDoubleSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedPressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedFenceGateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedHangingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedHyphaeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedStandingSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedPressurePlateStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedStemStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WarpedWallSignStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedStandingSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaterStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedStemStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedCopperBulbStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedCopperDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WarpedWallSignStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedCopperTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaterStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedCopperBulbStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedCutCopperStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedCopperDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedDoubleCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedCopperTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedExposedCopperBulbStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedExposedCopperDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedCutCopperStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedExposedCopperTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedDoubleCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedExposedCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedExposedCopperBulbStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedExposedCutCopperStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedExposedCopperDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedExposedDoubleCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedExposedCopperTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedOxidizedCopperBulbStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedExposedCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedOxidizedCopperDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedExposedCutCopperStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedOxidizedCopperTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedExposedDoubleCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedOxidizedCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedOxidizedCopperBulbStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedOxidizedCutCopperStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedOxidizedCopperDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedOxidizedDoubleCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedOxidizedCopperTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedWeatheredCopperBulbStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedOxidizedCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedWeatheredCopperDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedOxidizedCutCopperStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedWeatheredCopperTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedOxidizedDoubleCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedWeatheredCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedWeatheredCopperBulbStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedWeatheredCutCopperStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedWeatheredCopperDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WaxedWeatheredDoubleCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedWeatheredCopperTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WeatheredCopperBulbStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedWeatheredCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WeatheredCopperDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedWeatheredCutCopperStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WeatheredCopperTrapdoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WaxedWeatheredDoubleCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WeatheredCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WeatheredCopperBulbStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WeatheredCutCopperStairsStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WeatheredCopperDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WeatheredDoubleCutCopperSlabStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WeatheredCopperTrapdoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WeepingVinesStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WeatheredCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WheatStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WeatheredCutCopperStairsStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WhiteCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WeatheredDoubleCutCopperSlabStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WhiteCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WeepingVinesStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WhiteGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WheatStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WoodenButtonStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WhiteCandleCakeStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WoodenDoorStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WhiteCandleStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.WoodenPressurePlateStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WhiteGlazedTerracottaStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.YellowCandleCakeStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WoodenButtonStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.YellowCandleStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WoodenDoorStates</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_22.YellowGlazedTerracottaStates</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.WoodenPressurePlateStates</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.YellowCandleCakeStates</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.YellowCandleStates</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/types/_minecraft_vanilla_data_1_20_80_preview_23.YellowGlazedTerracottaStates</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/variables/_minecraft_server_1_0_0.system-1</loc>
