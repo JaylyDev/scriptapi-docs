@@ -32,9 +32,7 @@ of the World.</p>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><span class="target">WorldAfterEvents</span></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12702">@minecraft/server@1.7.0-beta/index.d.ts:12702</a></li></ul></aside>
+<li><span class="target">WorldAfterEvents</span></li></ul></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -96,9 +94,7 @@ of the World.</p>
 <ul class="tsd-signatures tsd-is-private">
 <li class="tsd-signature tsd-anchor-link" id="constructor.new_WorldAfterEvents"><span class="tsd-kind-constructor-signature">new <wbr/>World<wbr/>After<wbr/>Events</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_minecraft_server_1_7_0_beta.WorldAfterEvents.html" class="tsd-signature-type tsd-kind-class">WorldAfterEvents</a><a href="#constructor.new_WorldAfterEvents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_7_0_beta.WorldAfterEvents.html" class="tsd-signature-type tsd-kind-class">WorldAfterEvents</a></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12703">@minecraft/server@1.7.0-beta/index.d.ts:12703</a></li></ul></aside></li></ul></section></section>
+<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_7_0_beta.WorldAfterEvents.html" class="tsd-signature-type tsd-kind-class">WorldAfterEvents</a></h4></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member"><a id="blockExplode" class="tsd-anchor"></a>
@@ -112,9 +108,7 @@ destroyed.</p>
 <h4>Example</h4><p>setBlockBack.ts</p>
 <pre><code class="language-ts"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0">, </span><span class="hl-6">BlockExplodeAfterEvent</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">blockExplode</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">: </span><span class="hl-5">BlockExplodeAfterEvent</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Block:&quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">block</span><span class="hl-0">);</span><br/><span class="hl-0">    </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Dimension:&quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">dimension</span><span class="hl-0">);</span><br/><span class="hl-0">    </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Exploded Block Permutation:&quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">explodedBlockPermutation</span><span class="hl-0">);</span><br/><span class="hl-0">    </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Source:&quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">source</span><span class="hl-0">);</span><br/><br/><span class="hl-0">    </span><span class="hl-10">// set block back</span><br/><span class="hl-0">    </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">block</span><span class="hl-0">.</span><span class="hl-8">setPermutation</span><span class="hl-0">(</span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">explodedBlockPermutation</span><span class="hl-0">);</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12725">@minecraft/server@1.7.0-beta/index.d.ts:12725</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="buttonPush" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>button<wbr/>Push</span><a href="#buttonPush" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">button<wbr/>Push</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ButtonPushAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ButtonPushAfterEventSignal</a></div>
@@ -124,9 +118,7 @@ destroyed.</p>
 <h4>Example</h4><p>subscribe.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">buttonPush</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Button: &quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">block</span><span class="hl-0">.</span><span class="hl-6">typeId</span><span class="hl-0">);</span><br/><span class="hl-0">    </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Dimension: &quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">dimension</span><span class="hl-0">.</span><span class="hl-6">id</span><span class="hl-0">);</span><br/><span class="hl-0">    </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Source: &quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">source</span><span class="hl-0">.</span><span class="hl-6">typeId</span><span class="hl-0">);</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12740">@minecraft/server@1.7.0-beta/index.d.ts:12740</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="chatSend" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>chat<wbr/>Send</span><a href="#chatSend" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">chat<wbr/>Send</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ChatSendAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ChatSendAfterEventSignal</a></div>
@@ -137,9 +129,7 @@ broadcast or sent to players.</p>
 <h4>Example</h4><p>subscribe.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">WeatherType</span><span class="hl-0">, </span><span class="hl-6">system</span><span class="hl-0">, </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">chatObjective</span><span class="hl-0"> =</span><br/><span class="hl-0">    </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">scoreboard</span><span class="hl-0">.</span><span class="hl-8">getObjective</span><span class="hl-0">(</span><span class="hl-2">&quot;chat&quot;</span><span class="hl-0">) ??</span><br/><span class="hl-0">    </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">scoreboard</span><span class="hl-0">.</span><span class="hl-8">addObjective</span><span class="hl-0">(</span><span class="hl-2">&quot;chat&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;chat&quot;</span><span class="hl-0">);</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">chatSend</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> { </span><span class="hl-4">sender</span><span class="hl-0"> } = </span><span class="hl-6">event</span><span class="hl-0">;</span><br/><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">score</span><span class="hl-0"> = </span><span class="hl-6">chatObjective</span><span class="hl-0">.</span><span class="hl-8">hasParticipant</span><span class="hl-0">(</span><span class="hl-6">sender</span><span class="hl-0">)</span><br/><span class="hl-0">        ? </span><span class="hl-6">chatObjective</span><span class="hl-0">.</span><span class="hl-8">getScore</span><span class="hl-0">(</span><span class="hl-6">sender</span><span class="hl-0">.</span><span class="hl-6">scoreboardIdentity</span><span class="hl-0">)</span><br/><span class="hl-0">        : </span><span class="hl-7">0</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-6">chatObjective</span><span class="hl-0">.</span><span class="hl-8">setScore</span><span class="hl-0">(</span><span class="hl-6">sender</span><span class="hl-0">, </span><span class="hl-6">score</span><span class="hl-0"> + </span><span class="hl-7">1</span><span class="hl-0">);</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12764">@minecraft/server@1.7.0-beta/index.d.ts:12764</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="dataDrivenEntityTriggerEvent" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>data<wbr/>Driven<wbr/>Entity<wbr/>Trigger<wbr/>Event</span><a href="#dataDrivenEntityTriggerEvent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">data<wbr/>Driven<wbr/>Entity<wbr/>Trigger<wbr/>Event</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.DataDrivenEntityTriggerAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">DataDrivenEntityTriggerAfterEventSignal</a></div>
@@ -151,9 +141,7 @@ entity.</p>
 <h4>Example</h4><p>sheepEventListener.ts</p>
 <pre><code class="language-ts"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0">, </span><span class="hl-6">system</span><span class="hl-0">, </span><span class="hl-6">Entity</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">eventId</span><span class="hl-0"> = </span><span class="hl-2">&quot;minecraft:entity_spawned&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">system</span><span class="hl-0">.</span><span class="hl-8">runInterval</span><span class="hl-0">(() </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-11">for</span><span class="hl-0"> (</span><span class="hl-3">let</span><span class="hl-0"> </span><span class="hl-6">player</span><span class="hl-0"> </span><span class="hl-3">of</span><span class="hl-0"> </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getAllPlayers</span><span class="hl-0">()) {</span><br/><span class="hl-0">        </span><span class="hl-3">let</span><span class="hl-0"> [</span><span class="hl-6">entityRaycaseHit</span><span class="hl-0">] = </span><span class="hl-6">player</span><span class="hl-0">.</span><span class="hl-8">getEntitiesFromViewDirection</span><span class="hl-0">({</span><br/><span class="hl-0">            </span><span class="hl-6">maxDistance:</span><span class="hl-0"> </span><span class="hl-7">150</span><span class="hl-0">,</span><br/><span class="hl-0">        });</span><br/><span class="hl-0">        </span><span class="hl-11">if</span><span class="hl-0"> (!</span><span class="hl-6">entityRaycaseHit</span><span class="hl-0">) </span><span class="hl-11">continue</span><span class="hl-0">;</span><br/><span class="hl-0">        </span><span class="hl-3">let</span><span class="hl-0"> </span><span class="hl-6">entity</span><span class="hl-0"> = </span><span class="hl-6">entityRaycaseHit</span><span class="hl-0">.</span><span class="hl-6">entity</span><span class="hl-0">;</span><br/><br/><span class="hl-0">        </span><span class="hl-11">if</span><span class="hl-0"> (</span><span class="hl-6">entity</span><span class="hl-0">?.</span><span class="hl-6">typeId</span><span class="hl-0"> === </span><span class="hl-2">&quot;minecraft:sheep&quot;</span><span class="hl-0">) {</span><br/><span class="hl-0">            </span><span class="hl-8">listenTo</span><span class="hl-0">(</span><span class="hl-6">entity</span><span class="hl-0">);</span><br/><span class="hl-0">            </span><span class="hl-6">entity</span><span class="hl-0">.</span><span class="hl-8">triggerEvent</span><span class="hl-0">(</span><span class="hl-6">eventId</span><span class="hl-0">);</span><br/><span class="hl-0">        }</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span><br/><br/><span class="hl-3">function</span><span class="hl-0"> </span><span class="hl-8">listenTo</span><span class="hl-0">(</span><span class="hl-6">entity</span><span class="hl-0">: </span><span class="hl-5">Entity</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">callback</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">dataDrivenEntityTriggerEvent</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">(</span><br/><span class="hl-0">        (</span><span class="hl-6">data</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">            </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">dataDrivenEntityTriggerEvent</span><span class="hl-0">.</span><span class="hl-8">unsubscribe</span><span class="hl-0">(</span><br/><span class="hl-0">                </span><span class="hl-6">callback</span><br/><span class="hl-0">            );</span><br/><br/><span class="hl-0">            </span><span class="hl-6">data</span><span class="hl-0">.</span><span class="hl-8">getModifiers</span><span class="hl-0">().</span><span class="hl-8">forEach</span><span class="hl-0">((</span><span class="hl-6">modifier</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">                </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><br/><span class="hl-0">                    </span><span class="hl-2">&quot;ComponentGroupsToAdd:&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">                    </span><span class="hl-6">modifier</span><span class="hl-0">.</span><span class="hl-8">getComponentGroupsToAdd</span><span class="hl-0">()</span><br/><span class="hl-0">                );</span><br/><span class="hl-0">                </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><br/><span class="hl-0">                    </span><span class="hl-2">&quot;ComponentGroupsToRemove:&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">                    </span><span class="hl-6">modifier</span><span class="hl-0">.</span><span class="hl-8">getComponentGroupsToRemove</span><span class="hl-0">()</span><br/><span class="hl-0">                );</span><br/><span class="hl-0">                </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Triggers:&quot;</span><span class="hl-0">, </span><span class="hl-6">modifier</span><span class="hl-0">.</span><span class="hl-8">getTriggers</span><span class="hl-0">());</span><br/><span class="hl-0">            });</span><br/><span class="hl-0">        },</span><br/><span class="hl-0">        { </span><span class="hl-6">entities:</span><span class="hl-0"> [</span><span class="hl-6">entity</span><span class="hl-0">], </span><span class="hl-6">eventTypes:</span><span class="hl-0"> [</span><span class="hl-6">eventId</span><span class="hl-0">] }</span><br/><span class="hl-0">    );</span><br/><span class="hl-0">}</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12816">@minecraft/server@1.7.0-beta/index.d.ts:12816</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="effectAdd" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>effect<wbr/>Add</span><a href="#effectAdd" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">effect<wbr/>Add</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.EffectAddAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">EffectAddAfterEventSignal</a></div>
@@ -164,9 +152,7 @@ an entity.</p>
 <h4>Example</h4><p>effectAdd.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">effectAddSubscription</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">effectAdd</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">(</span><br/><span class="hl-0">    (</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">        </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Effect:&quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">effect</span><span class="hl-0">);</span><br/><span class="hl-0">        </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Effect State:&quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">effectState</span><span class="hl-0">);</span><br/><span class="hl-0">        </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Entity:&quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">entity</span><span class="hl-0">);</span><br/><br/><span class="hl-0">        </span><span class="hl-10">// Your custom handling for the effect added event</span><br/><span class="hl-0">        </span><span class="hl-10">// Example: Notify players, update UI, etc.</span><br/><span class="hl-0">    },</span><br/><span class="hl-0">    {</span><br/><span class="hl-0">        </span><span class="hl-10">// Optionally provide EntityEventOptions to filter entities or entity types</span><br/><span class="hl-0">        </span><span class="hl-6">entities:</span><span class="hl-0"> [],</span><br/><span class="hl-0">        </span><span class="hl-6">entityTypes:</span><span class="hl-0"> [</span><span class="hl-2">&quot;minecraft:creeper&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;minecraft:player&quot;</span><span class="hl-0">], </span><span class="hl-10">// Array of entity type IDs</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">);</span><br/><br/><span class="hl-10">// Later, you can unsubscribe when needed</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">effectAdd</span><span class="hl-0">.</span><span class="hl-8">unsubscribe</span><span class="hl-0">(</span><span class="hl-6">effectAddSubscription</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12846">@minecraft/server@1.7.0-beta/index.d.ts:12846</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="entityDie" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>entity<wbr/>Die</span><a href="#entityDie" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">entity<wbr/>Die</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.EntityDieAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">EntityDieAfterEventSignal</a></div>
@@ -176,9 +162,7 @@ an entity.</p>
 <h4>Example</h4><p>deathMessage.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">entityDie</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><br/><span class="hl-0">        </span><span class="hl-2">`</span><span class="hl-3">${</span><span class="hl-6">event</span><span class="hl-9">.</span><span class="hl-6">deadEntity</span><span class="hl-9">.</span><span class="hl-6">typeId</span><span class="hl-3">}</span><span class="hl-2"> died from </span><span class="hl-3">${</span><span class="hl-6">event</span><span class="hl-9">.</span><span class="hl-6">damageSource</span><span class="hl-3">}</span><span class="hl-2">!`</span><br/><span class="hl-0">    );</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12861">@minecraft/server@1.7.0-beta/index.d.ts:12861</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="entityHealthChanged" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>entity<wbr/>Health<wbr/>Changed</span><a href="#entityHealthChanged" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">entity<wbr/>Health<wbr/>Changed</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.EntityHealthChangedAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">EntityHealthChangedAfterEventSignal</a></div>
@@ -188,9 +172,7 @@ an entity.</p>
 <h4>Example</h4><p>logger.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">healthChangedSubscription</span><span class="hl-0"> =</span><br/><span class="hl-0">    </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">entityHealthChanged</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">(</span><br/><span class="hl-0">        (</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">            </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Entity:&quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">entity</span><span class="hl-0">);</span><br/><span class="hl-0">            </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Old Health:&quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">oldValue</span><span class="hl-0">);</span><br/><span class="hl-0">            </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;New Health:&quot;</span><span class="hl-0">, </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">newValue</span><span class="hl-0">);</span><br/><br/><span class="hl-0">            </span><span class="hl-10">// Your custom handling for entity health change event</span><br/><span class="hl-0">            </span><span class="hl-10">// Example: Display a message, update UI, etc.</span><br/><span class="hl-0">        },</span><br/><span class="hl-0">        {</span><br/><span class="hl-0">            </span><span class="hl-10">// Optionally provide EntityEventOptions to filter entities or entity types</span><br/><span class="hl-0">            </span><span class="hl-6">entities:</span><span class="hl-0"> [],</span><br/><span class="hl-0">            </span><span class="hl-6">entityTypes:</span><span class="hl-0"> [</span><span class="hl-2">&quot;minecraft:player&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;minecraft:zombie&quot;</span><span class="hl-0">], </span><span class="hl-10">// Array of entity type IDs</span><br/><span class="hl-0">        }</span><br/><span class="hl-0">    );</span><br/><br/><span class="hl-10">// Later, you can unsubscribe when needed</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">entityHealthChanged</span><span class="hl-0">.</span><span class="hl-8">unsubscribe</span><span class="hl-0">(</span><span class="hl-6">healthChangedSubscription</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12890">@minecraft/server@1.7.0-beta/index.d.ts:12890</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="entityHitBlock" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>entity<wbr/>Hit<wbr/>Block</span><a href="#entityHitBlock" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">entity<wbr/>Hit<wbr/>Block</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.EntityHitBlockAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">EntityHitBlockAfterEventSignal</a></div>
@@ -201,9 +183,7 @@ attacks) a block.</p>
 <h4>Example</h4><p>getDistance.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">entityHitEntity</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">location1</span><span class="hl-0"> = </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">damagingEntity</span><span class="hl-0">.</span><span class="hl-6">location</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">location2</span><span class="hl-0"> = </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">hitEntity</span><span class="hl-0">.</span><span class="hl-6">location</span><span class="hl-0">;</span><br/><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">distance</span><span class="hl-0"> = </span><span class="hl-6">Math</span><span class="hl-0">.</span><span class="hl-8">pow</span><span class="hl-0">(</span><br/><span class="hl-0">        </span><span class="hl-6">Math</span><span class="hl-0">.</span><span class="hl-8">pow</span><span class="hl-0">(</span><span class="hl-6">location2</span><span class="hl-0">.</span><span class="hl-6">x</span><span class="hl-0"> - </span><span class="hl-6">location1</span><span class="hl-0">.</span><span class="hl-6">x</span><span class="hl-0">, </span><span class="hl-7">2</span><span class="hl-0">) +</span><br/><span class="hl-0">            </span><span class="hl-6">Math</span><span class="hl-0">.</span><span class="hl-8">pow</span><span class="hl-0">(</span><span class="hl-6">location2</span><span class="hl-0">.</span><span class="hl-6">y</span><span class="hl-0"> - </span><span class="hl-6">location1</span><span class="hl-0">.</span><span class="hl-6">y</span><span class="hl-0">, </span><span class="hl-7">2</span><span class="hl-0">) +</span><br/><span class="hl-0">            </span><span class="hl-6">Math</span><span class="hl-0">.</span><span class="hl-8">pow</span><span class="hl-0">(</span><span class="hl-6">location2</span><span class="hl-0">.</span><span class="hl-6">z</span><span class="hl-0"> - </span><span class="hl-6">location1</span><span class="hl-0">.</span><span class="hl-6">z</span><span class="hl-0">, </span><span class="hl-7">2</span><span class="hl-0">),</span><br/><span class="hl-0">        </span><span class="hl-7">0.5</span><br/><span class="hl-0">    );</span><br/><br/><span class="hl-0">    </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Distance: &quot;</span><span class="hl-0"> + </span><span class="hl-6">distance</span><span class="hl-0"> + </span><span class="hl-2">&quot; blocks&quot;</span><span class="hl-0">);</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12913">@minecraft/server@1.7.0-beta/index.d.ts:12913</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="entityHitEntity" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>entity<wbr/>Hit<wbr/>Entity</span><a href="#entityHitEntity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">entity<wbr/>Hit<wbr/>Entity</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.EntityHitEntityAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">EntityHitEntityAfterEventSignal</a></div>
@@ -214,9 +194,7 @@ attacks) another entity.</p>
 <h4>Example</h4><p>getDistance.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">entityHitBlock</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">location1</span><span class="hl-0"> = </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">damagingEntity</span><span class="hl-0">.</span><span class="hl-6">location</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">location2</span><span class="hl-0"> = </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">hitBlock</span><span class="hl-0">.</span><span class="hl-6">location</span><span class="hl-0">;</span><br/><br/><span class="hl-0">    </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">distance</span><span class="hl-0"> = </span><span class="hl-6">Math</span><span class="hl-0">.</span><span class="hl-8">pow</span><span class="hl-0">(</span><br/><span class="hl-0">        </span><span class="hl-6">Math</span><span class="hl-0">.</span><span class="hl-8">pow</span><span class="hl-0">(</span><span class="hl-6">location2</span><span class="hl-0">.</span><span class="hl-6">x</span><span class="hl-0"> - </span><span class="hl-6">location1</span><span class="hl-0">.</span><span class="hl-6">x</span><span class="hl-0">, </span><span class="hl-7">2</span><span class="hl-0">) +</span><br/><span class="hl-0">            </span><span class="hl-6">Math</span><span class="hl-0">.</span><span class="hl-8">pow</span><span class="hl-0">(</span><span class="hl-6">location2</span><span class="hl-0">.</span><span class="hl-6">y</span><span class="hl-0"> - </span><span class="hl-6">location1</span><span class="hl-0">.</span><span class="hl-6">y</span><span class="hl-0">, </span><span class="hl-7">2</span><span class="hl-0">) +</span><br/><span class="hl-0">            </span><span class="hl-6">Math</span><span class="hl-0">.</span><span class="hl-8">pow</span><span class="hl-0">(</span><span class="hl-6">location2</span><span class="hl-0">.</span><span class="hl-6">z</span><span class="hl-0"> - </span><span class="hl-6">location1</span><span class="hl-0">.</span><span class="hl-6">z</span><span class="hl-0">, </span><span class="hl-7">2</span><span class="hl-0">),</span><br/><span class="hl-0">        </span><span class="hl-7">0.5</span><br/><span class="hl-0">    );</span><br/><br/><span class="hl-0">    </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">&quot;Distance: &quot;</span><span class="hl-0"> + </span><span class="hl-6">distance</span><span class="hl-0"> + </span><span class="hl-2">&quot; blocks&quot;</span><span class="hl-0">);</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12936">@minecraft/server@1.7.0-beta/index.d.ts:12936</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="entityHurt" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>entity<wbr/>Hurt</span><a href="#entityHurt" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">entity<wbr/>Hurt</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.EntityHurtAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">EntityHurtAfterEventSignal</a></div>
@@ -226,9 +204,7 @@ attacks) another entity.</p>
 <h4>Example</h4><p>entityHurt.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">Player</span><span class="hl-0">, </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">entityHurt</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-11">if</span><span class="hl-0"> (</span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">hurtEntity</span><span class="hl-0"> </span><span class="hl-3">instanceof</span><span class="hl-0"> </span><span class="hl-5">Player</span><span class="hl-0">) {</span><br/><span class="hl-0">        </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">hurtEntity</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><br/><span class="hl-0">            </span><span class="hl-2">&quot;You were hurt from &quot;</span><span class="hl-0"> + </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">damageSource</span><span class="hl-0">.</span><span class="hl-6">cause</span><span class="hl-0"> + </span><span class="hl-2">&quot;!&quot;</span><br/><span class="hl-0">        );</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12952">@minecraft/server@1.7.0-beta/index.d.ts:12952</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="entityLoad" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>entity<wbr/>Load</span><a href="#entityLoad" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">entity<wbr/>Load</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.EntityLoadAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">EntityLoadAfterEventSignal</a></div>
@@ -238,26 +214,20 @@ attacks) another entity.</p>
 <h4>Example</h4><p>inform.ts</p>
 <pre><code class="language-ts"><span class="hl-10">// Subscribe to the EntityLoadAfterEvent</span><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">entityLoadSubscription</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">entityLoad</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">(</span><br/><span class="hl-0">    (</span><span class="hl-6">event</span><span class="hl-0">: </span><span class="hl-5">EntityLoadAfterEvent</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">        </span><span class="hl-10">// Handle the entity load event</span><br/><span class="hl-0">        </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">`Entity loaded: </span><span class="hl-3">${</span><span class="hl-6">event</span><span class="hl-9">.</span><span class="hl-6">entity</span><span class="hl-9">.</span><span class="hl-6">typeId</span><span class="hl-3">}</span><span class="hl-2">`</span><span class="hl-0">);</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">);</span><br/><br/><span class="hl-10">// ... Later in your code, when you want to unsubscribe</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">entityLoad</span><span class="hl-0">.</span><span class="hl-8">unsubscribe</span><span class="hl-0">(</span><span class="hl-6">entityLoadSubscription</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12970">@minecraft/server@1.7.0-beta/index.d.ts:12970</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="entityRemove" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>entity<wbr/>Remove</span><a href="#entityRemove" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">entity<wbr/>Remove</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.EntityRemoveAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">EntityRemoveAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Fires when an entity is removed (for example, potentially
 unloaded, or removed after being killed).</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12977">@minecraft/server@1.7.0-beta/index.d.ts:12977</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="entitySpawn" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>entity<wbr/>Spawn</span><a href="#entitySpawn" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">entity<wbr/>Spawn</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.EntitySpawnAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">EntitySpawnAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires when an entity is spawned.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L12983">@minecraft/server@1.7.0-beta/index.d.ts:12983</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="explosion" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>explosion</span><a href="#explosion" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">explosion</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ExplosionAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ExplosionAfterEventSignal</a></div>
@@ -267,17 +237,13 @@ unloaded, or removed after being killed).</p>
 <h4>Example</h4><p>log.ts</p>
 <pre><code class="language-ts"><span class="hl-10">// Subscribe to the ExplosionAfterEvent</span><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">explosionSubscription</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">explosion</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">(</span><br/><span class="hl-0">    (</span><span class="hl-6">event</span><span class="hl-0">: </span><span class="hl-5">ExplosionAfterEvent</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">        </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">`Explosion occurred in dimension </span><span class="hl-3">${</span><span class="hl-6">event</span><span class="hl-9">.</span><span class="hl-6">dimension</span><span class="hl-9">.</span><span class="hl-6">id</span><span class="hl-3">}</span><span class="hl-2">`</span><span class="hl-0">);</span><br/><br/><span class="hl-0">        </span><span class="hl-11">if</span><span class="hl-0"> (</span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-6">source</span><span class="hl-0">) {</span><br/><span class="hl-0">            </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">`Explosion source: </span><span class="hl-3">${</span><span class="hl-6">event</span><span class="hl-9">.</span><span class="hl-6">source</span><span class="hl-9">.</span><span class="hl-6">typeId</span><span class="hl-3">}</span><span class="hl-2">`</span><span class="hl-0">);</span><br/><span class="hl-0">        } </span><span class="hl-11">else</span><span class="hl-0"> {</span><br/><span class="hl-0">            </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">`Explosion source: None`</span><span class="hl-0">);</span><br/><span class="hl-0">        }</span><br/><br/><span class="hl-0">        </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">impactedBlocks</span><span class="hl-0"> = </span><span class="hl-6">event</span><span class="hl-0">.</span><span class="hl-8">getImpactedBlocks</span><span class="hl-0">();</span><br/><span class="hl-0">        </span><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><span class="hl-2">`Impacted blocks: </span><span class="hl-3">${</span><span class="hl-4">JSON</span><span class="hl-9">.</span><span class="hl-8">stringify</span><span class="hl-9">(</span><span class="hl-6">impactedBlocks</span><span class="hl-9">)</span><span class="hl-3">}</span><span class="hl-2">`</span><span class="hl-0">);</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">);</span><br/><br/><span class="hl-10">// ... Later in your code, when you want to unsubscribe</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">explosion</span><span class="hl-0">.</span><span class="hl-8">unsubscribe</span><span class="hl-0">(</span><span class="hl-6">explosionSubscription</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13010">@minecraft/server@1.7.0-beta/index.d.ts:13010</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="itemCompleteUse" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Complete<wbr/>Use</span><a href="#itemCompleteUse" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Complete<wbr/>Use</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ItemCompleteUseAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemCompleteUseAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires when a chargeable item completes charging.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13016">@minecraft/server@1.7.0-beta/index.d.ts:13016</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="itemDefinitionEvent" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>item<wbr/>Definition<wbr/>Event</span><a href="#itemDefinitionEvent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Definition<wbr/>Event</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ItemDefinitionAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemDefinitionAfterEventSignal</a></div>
@@ -286,26 +252,20 @@ unloaded, or removed after being killed).</p>
 fundamental set of defined components for the item change.
 Note that this event is only fired for custom data-driven
 items.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13026">@minecraft/server@1.7.0-beta/index.d.ts:13026</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="itemReleaseUse" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Release<wbr/>Use</span><a href="#itemReleaseUse" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Release<wbr/>Use</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ItemReleaseUseAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemReleaseUseAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires when a chargeable item is released from
 charging.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13033">@minecraft/server@1.7.0-beta/index.d.ts:13033</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="itemStartUse" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Start<wbr/>Use</span><a href="#itemStartUse" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Start<wbr/>Use</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ItemStartUseAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemStartUseAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires when a chargeable item starts charging.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13039">@minecraft/server@1.7.0-beta/index.d.ts:13039</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="itemStartUseOn" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Start<wbr/>Use<wbr/>On</span><a href="#itemStartUseOn" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Start<wbr/>Use<wbr/>On</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ItemStartUseOnAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemStartUseOnAfterEventSignal</a></div>
@@ -315,17 +275,13 @@ places a block by pressing the Use Item / Place Block
 button. If multiple blocks are placed, this event will only
 occur once at the beginning of the block placement. Note:
 This event cannot be used with Hoe or Axe items.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13049">@minecraft/server@1.7.0-beta/index.d.ts:13049</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="itemStopUse" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Stop<wbr/>Use</span><a href="#itemStopUse" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Stop<wbr/>Use</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ItemStopUseAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemStopUseAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires when a chargeable item stops charging.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13055">@minecraft/server@1.7.0-beta/index.d.ts:13055</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="itemStopUseOn" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Stop<wbr/>Use<wbr/>On</span><a href="#itemStopUseOn" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Stop<wbr/>Use<wbr/>On</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ItemStopUseOnAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemStopUseOnAfterEventSignal</a></div>
@@ -333,80 +289,60 @@ This event cannot be used with Hoe or Axe items.</p>
 <h4>Remarks</h4><p>This event fires when a player releases the Use Item / Place
 Block button after successfully using an item. Note: This
 event cannot be used with Hoe or Axe items.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13063">@minecraft/server@1.7.0-beta/index.d.ts:13063</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="itemUse" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Use</span><a href="#itemUse" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Use</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ItemUseAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemUseAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires when an item is successfully used by a
 player.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13070">@minecraft/server@1.7.0-beta/index.d.ts:13070</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="itemUseOn" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>item<wbr/>Use<wbr/>On</span><a href="#itemUseOn" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">item<wbr/>Use<wbr/>On</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ItemUseOnAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ItemUseOnAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires when an item is used on a block by a
 player.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13077">@minecraft/server@1.7.0-beta/index.d.ts:13077</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="leverAction" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>lever<wbr/>Action</span><a href="#leverAction" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">lever<wbr/>Action</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.LeverActionAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">LeverActionAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>A lever has been pulled.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13083">@minecraft/server@1.7.0-beta/index.d.ts:13083</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="messageReceive" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>message<wbr/>Receive</span><a href="#messageReceive" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">message<wbr/>Receive</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ServerMessageAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ServerMessageAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event is an internal implementation detail, and is
 otherwise not currently functional.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13091">@minecraft/server@1.7.0-beta/index.d.ts:13091</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="pistonActivate" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>piston<wbr/>Activate</span><a href="#pistonActivate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">piston<wbr/>Activate</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.PistonActivateAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">PistonActivateAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires when a piston expands or retracts.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13098">@minecraft/server@1.7.0-beta/index.d.ts:13098</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="playerBreakBlock" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>player<wbr/>Break<wbr/>Block</span><a href="#playerBreakBlock" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Break<wbr/>Block</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.PlayerBreakBlockAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerBreakBlockAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires for a block that is broken by a player.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13104">@minecraft/server@1.7.0-beta/index.d.ts:13104</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="playerDimensionChange" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>player<wbr/>Dimension<wbr/>Change</span><a href="#playerDimensionChange" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Dimension<wbr/>Change</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.PlayerDimensionChangeAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerDimensionChangeAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Fires when a player moved to a different dimension.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13110">@minecraft/server@1.7.0-beta/index.d.ts:13110</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="playerInteractWithBlock" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>player<wbr/>Interact<wbr/>With<wbr/>Block</span><a href="#playerInteractWithBlock" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Interact<wbr/>With<wbr/>Block</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.PlayerInteractWithBlockAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerInteractWithBlockAfterEventSignal</a></div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13114">@minecraft/server@1.7.0-beta/index.d.ts:13114</a></li></ul></aside></section>
+<div class="tsd-comment tsd-typography"></div></section>
 <section class="tsd-panel tsd-member"><a id="playerInteractWithEntity" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>player<wbr/>Interact<wbr/>With<wbr/>Entity</span><a href="#playerInteractWithEntity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Interact<wbr/>With<wbr/>Entity</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.PlayerInteractWithEntityAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerInteractWithEntityAfterEventSignal</a></div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13118">@minecraft/server@1.7.0-beta/index.d.ts:13118</a></li></ul></aside></section>
+<div class="tsd-comment tsd-typography"></div></section>
 <section class="tsd-panel tsd-member"><a id="playerJoin" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>player<wbr/>Join</span><a href="#playerJoin" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Join</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.PlayerJoinAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerJoinAfterEventSignal</a></div>
@@ -418,9 +354,7 @@ a player is spawned the first time within a world.</p>
 <h4>Example</h4><p>subscribe.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">playerJoin</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">(({ </span><span class="hl-6">playerId</span><span class="hl-0">, </span><span class="hl-6">playerName</span><span class="hl-0"> }) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><br/><span class="hl-0">        </span><span class="hl-2">`Player </span><span class="hl-3">${</span><span class="hl-6">playerName</span><span class="hl-3">}</span><span class="hl-2"> (</span><span class="hl-3">${</span><span class="hl-6">playerId</span><span class="hl-3">}</span><span class="hl-2">) has just joined the world.`</span><br/><span class="hl-0">    );</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13134">@minecraft/server@1.7.0-beta/index.d.ts:13134</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="playerLeave" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>player<wbr/>Leave</span><a href="#playerLeave" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Leave</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.PlayerLeaveAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerLeaveAfterEventSignal</a></div>
@@ -430,17 +364,13 @@ a player is spawned the first time within a world.</p>
 <h4>Example</h4><p>subscribe.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">playerLeave</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">(({ </span><span class="hl-6">playerId</span><span class="hl-0">, </span><span class="hl-6">playerName</span><span class="hl-0"> }) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><br/><span class="hl-0">        </span><span class="hl-2">`Player </span><span class="hl-3">${</span><span class="hl-6">playerName</span><span class="hl-3">}</span><span class="hl-2"> (</span><span class="hl-3">${</span><span class="hl-6">playerId</span><span class="hl-3">}</span><span class="hl-2">) has just left the world.`</span><br/><span class="hl-0">    );</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13148">@minecraft/server@1.7.0-beta/index.d.ts:13148</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="playerPlaceBlock" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>player<wbr/>Place<wbr/>Block</span><a href="#playerPlaceBlock" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Place<wbr/>Block</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.PlayerPlaceBlockAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerPlaceBlockAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires for a block that is placed by a player.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13154">@minecraft/server@1.7.0-beta/index.d.ts:13154</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="playerSpawn" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>player<wbr/>Spawn</span><a href="#playerSpawn" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">player<wbr/>Spawn</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.PlayerSpawnAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">PlayerSpawnAfterEventSignal</a></div>
@@ -452,68 +382,52 @@ the player is spawning right after join vs. a respawn.</p>
 <h4>Example</h4><p>initialSpawn.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">playerSpawn</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">eventData</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-3">let</span><span class="hl-0"> { </span><span class="hl-6">player</span><span class="hl-0">, </span><span class="hl-6">initialSpawn</span><span class="hl-0"> } = </span><span class="hl-6">eventData</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-11">if</span><span class="hl-0"> (!</span><span class="hl-6">initialSpawn</span><span class="hl-0">) </span><span class="hl-11">return</span><span class="hl-0">;</span><br/><br/><span class="hl-0">    </span><span class="hl-10">// This runs when the player joins the game for the first time!</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13172">@minecraft/server@1.7.0-beta/index.d.ts:13172</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="pressurePlatePop" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>pressure<wbr/>Plate<wbr/>Pop</span><a href="#pressurePlatePop" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">pressure<wbr/>Plate<wbr/>Pop</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.PressurePlatePopAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">PressurePlatePopAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>A pressure plate has popped back up (i.e., there are no
 entities on the pressure plate.)</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13179">@minecraft/server@1.7.0-beta/index.d.ts:13179</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="pressurePlatePush" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>pressure<wbr/>Plate<wbr/>Push</span><a href="#pressurePlatePush" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">pressure<wbr/>Plate<wbr/>Push</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.PressurePlatePushAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">PressurePlatePushAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>A pressure plate has pushed (at least one entity has moved
 onto a pressure plate.)</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13186">@minecraft/server@1.7.0-beta/index.d.ts:13186</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="projectileHitBlock" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>projectile<wbr/>Hit<wbr/>Block</span><a href="#projectileHitBlock" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">projectile<wbr/>Hit<wbr/>Block</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ProjectileHitBlockAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ProjectileHitBlockAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires when a projectile hits a block.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13192">@minecraft/server@1.7.0-beta/index.d.ts:13192</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="projectileHitEntity" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>projectile<wbr/>Hit<wbr/>Entity</span><a href="#projectileHitEntity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">projectile<wbr/>Hit<wbr/>Entity</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.ProjectileHitEntityAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">ProjectileHitEntityAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event fires when a projectile hits an entity.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13198">@minecraft/server@1.7.0-beta/index.d.ts:13198</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="targetBlockHit" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>target<wbr/>Block<wbr/>Hit</span><a href="#targetBlockHit" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">target<wbr/>Block<wbr/>Hit</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.TargetBlockHitAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">TargetBlockHitAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>A target block was hit.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13204">@minecraft/server@1.7.0-beta/index.d.ts:13204</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="tripWireTrip" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>trip<wbr/>Wire<wbr/>Trip</span><a href="#tripWireTrip" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">trip<wbr/>Wire<wbr/>Trip</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.TripWireTripAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">TripWireTripAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>A trip wire was tripped.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13210">@minecraft/server@1.7.0-beta/index.d.ts:13210</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="weatherChange" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>weather<wbr/>Change</span><a href="#weatherChange" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">weather<wbr/>Change</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.WeatherChangeAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">WeatherChangeAfterEventSignal</a></div>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>This event will be triggered when the weather changes within
 Minecraft.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13218">@minecraft/server@1.7.0-beta/index.d.ts:13218</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="worldInitialize" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <code class="tsd-tag ts-flagBeta">Beta</code> <span>world<wbr/>Initialize</span><a href="#worldInitialize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">world<wbr/>Initialize</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_7_0_beta.WorldInitializeAfterEventSignal.html" class="tsd-signature-type tsd-kind-class">WorldInitializeAfterEventSignal</a></div>
@@ -521,9 +435,7 @@ Minecraft.</p>
 <h4>Remarks</h4><p>This event fires when the script environment is initialized
 on a World. In addition, you can register dynamic properties
 within the scope of a world Initialize event.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.7.0-beta/index.d.ts#L13227">@minecraft/server@1.7.0-beta/index.d.ts:13227</a></li></ul></aside></section></section></div>
+</div></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

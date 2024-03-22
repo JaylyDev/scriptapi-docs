@@ -32,9 +32,7 @@ dimensions and the environment of Minecraft.</p>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><span class="target">World</span></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L4961">@minecraft/server@1.4.0/index.d.ts:4961</a></li></ul></aside>
+<li><span class="target">World</span></li></ul></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -75,9 +73,7 @@ dimensions and the environment of Minecraft.</p>
 <ul class="tsd-signatures tsd-is-private">
 <li class="tsd-signature tsd-anchor-link" id="constructor.new_World"><span class="tsd-kind-constructor-signature">new <wbr/>World</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_minecraft_server_1_4_0.World.html" class="tsd-signature-type tsd-kind-class">World</a><a href="#constructor.new_World" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_4_0.World.html" class="tsd-signature-type tsd-kind-class">World</a></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L4962">@minecraft/server@1.4.0/index.d.ts:4962</a></li></ul></aside></li></ul></section></section>
+<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_4_0.World.html" class="tsd-signature-type tsd-kind-class">World</a></h4></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member"><a id="afterEvents" class="tsd-anchor"></a>
@@ -91,9 +87,7 @@ manner. Event callbacks are executed in read-write mode.</p>
 <h4>Example</h4><p>sub_and_unsub.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">callback</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">beforeEvents</span><span class="hl-0">.</span><span class="hl-6">itemUse</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {}); </span><span class="hl-10">// your event</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">beforeEvents</span><span class="hl-0">.</span><span class="hl-6">itemUse</span><span class="hl-0">.</span><span class="hl-8">unsubscribe</span><span class="hl-0">(</span><span class="hl-6">callback</span><span class="hl-0">); </span><span class="hl-10">// unsubscribe</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L4976">@minecraft/server@1.4.0/index.d.ts:4976</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="beforeEvents" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>before<wbr/>Events</span><a href="#beforeEvents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">before<wbr/>Events</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_4_0.WorldBeforeEvents.html" class="tsd-signature-type tsd-kind-class">WorldBeforeEvents</a></div>
@@ -109,9 +103,7 @@ callbacks are executed in read-only mode.</p>
 <h4>Example</h4><p>sub_and_unsub.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">callback</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">buttonPush</span><span class="hl-0">.</span><span class="hl-8">subscribe</span><span class="hl-0">((</span><span class="hl-6">event</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> {}); </span><span class="hl-10">// event</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">afterEvents</span><span class="hl-0">.</span><span class="hl-6">buttonPush</span><span class="hl-0">.</span><span class="hl-8">unsubscribe</span><span class="hl-0">(</span><span class="hl-6">callback</span><span class="hl-0">); </span><span class="hl-10">// unsubscribe</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5002">@minecraft/server@1.4.0/index.d.ts:5002</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member"><a id="scoreboard" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>scoreboard</span><a href="#scoreboard" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">scoreboard</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1_4_0.Scoreboard.html" class="tsd-signature-type tsd-kind-class">Scoreboard</a></div>
@@ -122,9 +114,7 @@ world.</p>
 <h4>Example</h4><p>getScoreboard.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">money</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">scoreboard</span><span class="hl-0">.</span><span class="hl-8">getObjective</span><span class="hl-0">(</span><span class="hl-2">&quot;money&quot;</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5013">@minecraft/server@1.4.0/index.d.ts:5013</a></li></ul></aside></section></section>
+</div></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member"><a id="getAbsoluteTime" class="tsd-anchor"></a>
@@ -135,9 +125,7 @@ world.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Returns the absolute time since the start of the world.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5019">@minecraft/server@1.4.0/index.d.ts:5019</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getAllPlayers" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>All<wbr/>Players</span><a href="#getAllPlayers" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -148,9 +136,7 @@ world.</p>
 <h4>Remarks</h4><p>Returns an array of all active players within the world.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5026">@minecraft/server@1.4.0/index.d.ts:5026</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getDay" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Day</span><a href="#getDay" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -161,9 +147,7 @@ number of ticks per day. New worlds start at day 0.</p>
 
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Returns the current day.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5035">@minecraft/server@1.4.0/index.d.ts:5035</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getDefaultSpawnLocation" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Default<wbr/>Spawn<wbr/>Location</span><a href="#getDefaultSpawnLocation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -175,9 +159,7 @@ not fixed and will be determined by surrounding blocks.</p>
 
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Returns the default Overworld spawn location.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5045">@minecraft/server@1.4.0/index.d.ts:5045</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getDimension" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Dimension</span><a href="#getDimension" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -209,9 +191,7 @@ not fixed and will be determined by surrounding blocks.</p>
 <h4>Example</h4><p>getTheEnd.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;the_end&quot;</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5076">@minecraft/server@1.4.0/index.d.ts:5076</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getPlayers" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Players</span><a href="#getPlayers" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -240,9 +220,7 @@ defined via the EntityQueryOptions set of filter criteria.</p>
 <h4>Example</h4><p>getFilteredPlayers.ts</p>
 <pre><code class="language-ts"><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">entityQueryOptions</span><span class="hl-0">: </span><span class="hl-5">EntityQueryOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-6">minLevel:</span><span class="hl-0"> </span><span class="hl-7">10</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">maxLevel:</span><span class="hl-0"> </span><span class="hl-7">30</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">tags:</span><span class="hl-0"> [</span><span class="hl-2">&quot;team_red&quot;</span><span class="hl-0">],</span><br/><span class="hl-0">    </span><span class="hl-6">excludeNames:</span><span class="hl-0"> [</span><span class="hl-2">&quot;Admin&quot;</span><span class="hl-0">],</span><br/><span class="hl-0">};</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">filteredPlayers</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getPlayers</span><span class="hl-0">(</span><span class="hl-6">entityQueryOptions</span><span class="hl-0">);</span><br/><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><br/><span class="hl-0">    </span><span class="hl-2">&quot;Filtered Players:&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">filteredPlayers</span><span class="hl-0">.</span><span class="hl-8">map</span><span class="hl-0">((</span><span class="hl-6">player</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> </span><span class="hl-6">player</span><span class="hl-0">.</span><span class="hl-6">name</span><span class="hl-0">)</span><br/><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5110">@minecraft/server@1.4.0/index.d.ts:5110</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getTimeOfDay" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Time<wbr/>Of<wbr/>Day</span><a href="#getTimeOfDay" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -252,9 +230,7 @@ defined via the EntityQueryOptions set of filter criteria.</p>
 
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Returns the time of day.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5118">@minecraft/server@1.4.0/index.d.ts:5118</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="playMusic" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>play<wbr/>Music</span><a href="#playMusic" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -277,9 +253,7 @@ defined via the EntityQueryOptions set of filter criteria.</p>
 <h4>Example</h4><p>playMusicAndSound.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">  </span><span class="hl-3">let</span><span class="hl-0"> </span><span class="hl-6">players</span><span class="hl-0"> = </span><span class="hl-6">mc</span><span class="hl-0">.</span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getPlayers</span><span class="hl-0">();</span><br/><br/><span class="hl-0">  </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">musicOptions</span><span class="hl-0">: </span><span class="hl-5">mc</span><span class="hl-0">.</span><span class="hl-5">MusicOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-6">fade:</span><span class="hl-0"> </span><span class="hl-7">0.5</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">loop:</span><span class="hl-0"> </span><span class="hl-3">true</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">volume:</span><span class="hl-0"> </span><span class="hl-7">1.0</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><span class="hl-0">  </span><span class="hl-6">mc</span><span class="hl-0">.</span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">playMusic</span><span class="hl-0">(</span><span class="hl-2">&quot;music.menu&quot;</span><span class="hl-0">, </span><span class="hl-6">musicOptions</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">worldSoundOptions</span><span class="hl-0">: </span><span class="hl-5">mc</span><span class="hl-0">.</span><span class="hl-5">WorldSoundOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-6">pitch:</span><span class="hl-0"> </span><span class="hl-7">0.5</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">volume:</span><span class="hl-0"> </span><span class="hl-7">4.0</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><span class="hl-0">  </span><span class="hl-6">mc</span><span class="hl-0">.</span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">playSound</span><span class="hl-0">(</span><span class="hl-2">&quot;ambient.weather.thunder&quot;</span><span class="hl-0">, </span><span class="hl-6">targetLocation</span><span class="hl-0">, </span><span class="hl-6">worldSoundOptions</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">playerSoundOptions</span><span class="hl-0">: </span><span class="hl-5">mc</span><span class="hl-0">.</span><span class="hl-5">PlayerSoundOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-6">pitch:</span><span class="hl-0"> </span><span class="hl-7">1.0</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">volume:</span><span class="hl-0"> </span><span class="hl-7">1.0</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><br/><span class="hl-0">  </span><span class="hl-6">players</span><span class="hl-0">[</span><span class="hl-7">0</span><span class="hl-0">].</span><span class="hl-8">playSound</span><span class="hl-0">(</span><span class="hl-2">&quot;bucket.fill_water&quot;</span><span class="hl-0">, </span><span class="hl-6">playerSoundOptions</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5151">@minecraft/server@1.4.0/index.d.ts:5151</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="playSound" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>play<wbr/>Sound</span><a href="#playSound" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -307,9 +281,7 @@ An error will be thrown if volume is less than 0.0.</p>
 <h4>Example</h4><p>playMusicAndSound.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">  </span><span class="hl-3">let</span><span class="hl-0"> </span><span class="hl-6">players</span><span class="hl-0"> = </span><span class="hl-6">mc</span><span class="hl-0">.</span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getPlayers</span><span class="hl-0">();</span><br/><br/><span class="hl-0">  </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">musicOptions</span><span class="hl-0">: </span><span class="hl-5">mc</span><span class="hl-0">.</span><span class="hl-5">MusicOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-6">fade:</span><span class="hl-0"> </span><span class="hl-7">0.5</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">loop:</span><span class="hl-0"> </span><span class="hl-3">true</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">volume:</span><span class="hl-0"> </span><span class="hl-7">1.0</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><span class="hl-0">  </span><span class="hl-6">mc</span><span class="hl-0">.</span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">playMusic</span><span class="hl-0">(</span><span class="hl-2">&quot;music.menu&quot;</span><span class="hl-0">, </span><span class="hl-6">musicOptions</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">worldSoundOptions</span><span class="hl-0">: </span><span class="hl-5">mc</span><span class="hl-0">.</span><span class="hl-5">WorldSoundOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-6">pitch:</span><span class="hl-0"> </span><span class="hl-7">0.5</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">volume:</span><span class="hl-0"> </span><span class="hl-7">4.0</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><span class="hl-0">  </span><span class="hl-6">mc</span><span class="hl-0">.</span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">playSound</span><span class="hl-0">(</span><span class="hl-2">&quot;ambient.weather.thunder&quot;</span><span class="hl-0">, </span><span class="hl-6">targetLocation</span><span class="hl-0">, </span><span class="hl-6">worldSoundOptions</span><span class="hl-0">);</span><br/><br/><span class="hl-0">  </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">playerSoundOptions</span><span class="hl-0">: </span><span class="hl-5">mc</span><span class="hl-0">.</span><span class="hl-5">PlayerSoundOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-6">pitch:</span><span class="hl-0"> </span><span class="hl-7">1.0</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">volume:</span><span class="hl-0"> </span><span class="hl-7">1.0</span><span class="hl-0">,</span><br/><span class="hl-0">  };</span><br/><br/><span class="hl-0">  </span><span class="hl-6">players</span><span class="hl-0">[</span><span class="hl-7">0</span><span class="hl-0">].</span><span class="hl-8">playSound</span><span class="hl-0">(</span><span class="hl-2">&quot;bucket.fill_water&quot;</span><span class="hl-0">, </span><span class="hl-6">playerSoundOptions</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5188">@minecraft/server@1.4.0/index.d.ts:5188</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="queueMusic" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>queue<wbr/>Music</span><a href="#queueMusic" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -332,9 +304,7 @@ not playing, a music track will play.</p>
 
 <h4>Throws</h4><p>An error will be thrown if volume is less than 0.0.
 An error will be thrown if fade is less than 0.0.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5203">@minecraft/server@1.4.0/index.d.ts:5203</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="sendMessage" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>send<wbr/>Message</span><a href="#sendMessage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -370,9 +340,7 @@ is provided to <code>score</code>.</p>
 <h4>Example</h4><p>translation.ts</p>
 <pre><code class="language-typescript"><span class="hl-10">// Displays &quot;First or Second&quot;</span><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">rawMessage</span><span class="hl-0"> = { </span><span class="hl-6">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;accessibility.list.or.two&quot;</span><span class="hl-0">, </span><span class="hl-6">with:</span><span class="hl-0"> [</span><span class="hl-2">&quot;First&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;Second&quot;</span><span class="hl-0">] };</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><span class="hl-6">rawMessage</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5241">@minecraft/server@1.4.0/index.d.ts:5241</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="setAbsoluteTime" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Absolute<wbr/>Time</span><a href="#setAbsoluteTime" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -393,9 +361,7 @@ is provided to <code>score</code>.</p>
 <h4>Example</h4><p>setDay.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">TimeOfDay</span><span class="hl-0">, </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">setAbsoluteTime</span><span class="hl-0">(</span><span class="hl-6">TimeOfDay</span><span class="hl-0">.</span><span class="hl-6">Noon</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5256">@minecraft/server@1.4.0/index.d.ts:5256</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="setDefaultSpawnLocation" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Default<wbr/>Spawn<wbr/>Location</span><a href="#setDefaultSpawnLocation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -421,9 +387,7 @@ within the overworld dimension.</p>
 <h4>Example</h4><p>setWorldSpawn.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">setDefaultSpawnLocation</span><span class="hl-0">({</span><br/><span class="hl-0">    </span><span class="hl-6">x:</span><span class="hl-0"> </span><span class="hl-7">0</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">y:</span><span class="hl-0"> -</span><span class="hl-7">64</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">z:</span><span class="hl-0"> </span><span class="hl-7">0</span><span class="hl-0">,</span><br/><span class="hl-0">});</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5283">@minecraft/server@1.4.0/index.d.ts:5283</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="setTimeOfDay" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Time<wbr/>Of<wbr/>Day</span><a href="#setTimeOfDay" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -443,9 +407,7 @@ within the overworld dimension.</p>
 
 <h4>Throws</h4><p>Throws if the provided time of day is not within the valid
 range.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5296">@minecraft/server@1.4.0/index.d.ts:5296</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="stopMusic" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>stop<wbr/>Music</span><a href="#stopMusic" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -455,9 +417,7 @@ range.</p>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Stops any music tracks from playing.</p>
 <p>This function can&#39;t be called in read-only mode.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.4.0/index.d.ts#L5304">@minecraft/server@1.4.0/index.d.ts:5304</a></li></ul></aside></li></ul></section></section></div>
+</div></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

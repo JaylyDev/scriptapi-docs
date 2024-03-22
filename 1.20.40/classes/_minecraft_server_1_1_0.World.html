@@ -32,9 +32,7 @@ dimensions and the environment of Minecraft.</p>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><span class="target">World</span></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.1.0/index.d.ts#L603">@minecraft/server@1.1.0/index.d.ts:603</a></li></ul></aside>
+<li><span class="target">World</span></li></ul></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -58,9 +56,7 @@ dimensions and the environment of Minecraft.</p>
 <ul class="tsd-signatures tsd-is-protected">
 <li class="tsd-signature tsd-anchor-link" id="constructor.new_World"><span class="tsd-kind-constructor-signature">new <wbr/>World</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_minecraft_server_1_1_0.World.html" class="tsd-signature-type tsd-kind-class">World</a><a href="#constructor.new_World" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_1_0.World.html" class="tsd-signature-type tsd-kind-class">World</a></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.1.0/index.d.ts#L604">@minecraft/server@1.1.0/index.d.ts:604</a></li></ul></aside></li></ul></section></section>
+<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1_1_0.World.html" class="tsd-signature-type tsd-kind-class">World</a></h4></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member"><a id="getAllPlayers" class="tsd-anchor"></a>
@@ -74,9 +70,7 @@ dimensions and the environment of Minecraft.</p>
 <p>This function can&#39;t be called in read-only mode.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.1.0/index.d.ts#L613">@minecraft/server@1.1.0/index.d.ts:613</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getDimension" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Dimension</span><a href="#getDimension" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -106,9 +100,7 @@ dimensions and the environment of Minecraft.</p>
 <h4>Example</h4><p>getTheEnd.js</p>
 <pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getDimension</span><span class="hl-0">(</span><span class="hl-2">&quot;the_end&quot;</span><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.1.0/index.d.ts#L643">@minecraft/server@1.1.0/index.d.ts:643</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getPlayers" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Players</span><a href="#getPlayers" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -138,9 +130,7 @@ defined via the EntityQueryOptions set of filter criteria.</p>
 <h4>Example</h4><p>getFilteredPlayers.ts</p>
 <pre><code class="language-ts"><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">entityQueryOptions</span><span class="hl-0">: </span><span class="hl-5">EntityQueryOptions</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-6">minLevel:</span><span class="hl-0"> </span><span class="hl-7">10</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">maxLevel:</span><span class="hl-0"> </span><span class="hl-7">30</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">tags:</span><span class="hl-0"> [</span><span class="hl-2">&quot;team_red&quot;</span><span class="hl-0">],</span><br/><span class="hl-0">    </span><span class="hl-6">excludeNames:</span><span class="hl-0"> [</span><span class="hl-2">&quot;Admin&quot;</span><span class="hl-0">],</span><br/><span class="hl-0">};</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">filteredPlayers</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">getPlayers</span><span class="hl-0">(</span><span class="hl-6">entityQueryOptions</span><span class="hl-0">);</span><br/><span class="hl-6">console</span><span class="hl-0">.</span><span class="hl-8">log</span><span class="hl-0">(</span><br/><span class="hl-0">    </span><span class="hl-2">&quot;Filtered Players:&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-6">filteredPlayers</span><span class="hl-0">.</span><span class="hl-8">map</span><span class="hl-0">((</span><span class="hl-6">player</span><span class="hl-0">) </span><span class="hl-3">=&gt;</span><span class="hl-0"> </span><span class="hl-6">player</span><span class="hl-0">.</span><span class="hl-6">name</span><span class="hl-0">)</span><br/><span class="hl-0">);</span>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.1.0/index.d.ts#L678">@minecraft/server@1.1.0/index.d.ts:678</a></li></ul></aside></li></ul></section>
+</div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="sendMessage" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>send<wbr/>Message</span><a href="#sendMessage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -177,9 +167,7 @@ is provided to <code>score</code>.</p>
 <h4>Example</h4><p>translation.ts</p>
 <pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-10">// Displays &quot;First or Second&quot;</span><br/><span class="hl-0">       </span><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">rawMessage</span><span class="hl-0"> = { </span><span class="hl-6">translate:</span><span class="hl-0"> </span><span class="hl-2">&quot;accessibility.list.or.two&quot;</span><span class="hl-0">, </span><span class="hl-6">with:</span><span class="hl-0"> [</span><span class="hl-2">&quot;First&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;Second&quot;</span><span class="hl-0">] };</span><br/><span class="hl-0">       </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-8">sendMessage</span><span class="hl-0">(</span><span class="hl-6">rawMessage</span><span class="hl-0">);</span><br/>
 </code><button>Copy</button></pre>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/JaylyDev/scriptapi-docs-generator/blob/65b1c10/lib/1.20.40/@minecraft/server@1.1.0/index.d.ts#L722">@minecraft/server@1.1.0/index.d.ts:722</a></li></ul></aside></li></ul></section></section></div>
+</div></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
