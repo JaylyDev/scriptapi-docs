@@ -91,9 +91,6 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_1_0_0</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_1_10_0</loc>
-    </url>
-    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_1_11_0_beta</loc>
     </url>
     <url>
@@ -143,8 +140,5 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_ui_1_2_0_beta</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_vanilla_data_1_20_80_preview_23</loc>
     </url>
   </urlset>
