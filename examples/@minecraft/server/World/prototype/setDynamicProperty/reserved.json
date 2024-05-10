@@ -1,6 +1,0 @@
-{
-  "reserved_files": [
-    "incrementProperty.ts",
-    "incrementPropertyInJsonBlob.ts"
-  ]
-}
