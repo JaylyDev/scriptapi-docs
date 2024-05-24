@@ -10,6 +10,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_debug_utilities_1_0_0_beta</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_math</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_1_10_0</loc>
     </url>
     <url>
@@ -34,7 +37,7 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_ui_1_2_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_vanilla_data_1_20_80</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_vanilla_data</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/index</loc>
@@ -44,6 +47,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_debug_utilities_1_0_0_beta</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_math</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_1_12_0</loc>
@@ -70,6 +76,6 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_ui_1_2_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_vanilla_data_1_21_10_preview_20</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_vanilla_data</loc>
     </url>
   </urlset>
