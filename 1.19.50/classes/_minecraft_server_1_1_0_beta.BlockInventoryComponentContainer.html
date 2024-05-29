@@ -131,9 +131,9 @@ does not change or clear the contents of the specified slot.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
 
-<h4>Example</h4><p>getItem.js</p>
-<pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-9">itemStack</span><span class="hl-0"> = </span><span class="hl-3">rightChestContainer</span><span class="hl-0">.</span><span class="hl-4">getItem</span><span class="hl-0">(</span><span class="hl-7">0</span><span class="hl-0">);</span><br/><span class="hl-0">       </span><span class="hl-3">test</span><span class="hl-0">.</span><span class="hl-4">assert</span><span class="hl-0">(</span><span class="hl-3">itemStack</span><span class="hl-0">.</span><span class="hl-3">id</span><span class="hl-0"> === </span><span class="hl-2">&quot;apple&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;Expected apple&quot;</span><span class="hl-0">);</span><br/><span class="hl-0">       </span><span class="hl-3">test</span><span class="hl-0">.</span><span class="hl-4">assert</span><span class="hl-0">(</span><span class="hl-3">itemStack</span><span class="hl-0">.</span><span class="hl-3">amount</span><span class="hl-0"> === </span><span class="hl-7">10</span><span class="hl-0">, </span><span class="hl-2">&quot;Expected 10 apples&quot;</span><span class="hl-0">);</span>
-</code><button>Copy</button></pre>
+<h4>Example</h4><details><summary>getItem.js</summary>
+<p><pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-9">itemStack</span><span class="hl-0"> = </span><span class="hl-3">rightChestContainer</span><span class="hl-0">.</span><span class="hl-4">getItem</span><span class="hl-0">(</span><span class="hl-7">0</span><span class="hl-0">);</span><br/><span class="hl-0">       </span><span class="hl-3">test</span><span class="hl-0">.</span><span class="hl-4">assert</span><span class="hl-0">(</span><span class="hl-3">itemStack</span><span class="hl-0">.</span><span class="hl-3">id</span><span class="hl-0"> === </span><span class="hl-2">&quot;apple&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;Expected apple&quot;</span><span class="hl-0">);</span><br/><span class="hl-0">       </span><span class="hl-3">test</span><span class="hl-0">.</span><span class="hl-4">assert</span><span class="hl-0">(</span><span class="hl-3">itemStack</span><span class="hl-0">.</span><span class="hl-3">amount</span><span class="hl-0"> === </span><span class="hl-7">10</span><span class="hl-0">, </span><span class="hl-2">&quot;Expected 10 apples&quot;</span><span class="hl-0">);</span>
+</code><button>Copy</button></pre></p></details>
 </div><aside class="tsd-sources">
 <p>Overrides <a href="_minecraft_server_1_1_0_beta.Container.html">Container</a>.<a href="_minecraft_server_1_1_0_beta.Container.html#getItem">getItem</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="setItem" class="tsd-anchor"></a>
@@ -186,9 +186,9 @@ container as this source.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
 
-<h4>Example</h4><p>swapItems.js</p>
-<pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-3">rightChestContainer</span><span class="hl-0">.</span><span class="hl-4">swapItems</span><span class="hl-0">(</span><span class="hl-7">1</span><span class="hl-0">, </span><span class="hl-7">0</span><span class="hl-0">, </span><span class="hl-3">leftChestContainer</span><span class="hl-0">); </span><span class="hl-10">// swap item in slot 1 of rightChestContainer with item in slot 0 of leftChestContainer</span><br/>
-</code><button>Copy</button></pre>
+<h4>Example</h4><details><summary>swapItems.js</summary>
+<p><pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-3">rightChestContainer</span><span class="hl-0">.</span><span class="hl-4">swapItems</span><span class="hl-0">(</span><span class="hl-7">1</span><span class="hl-0">, </span><span class="hl-7">0</span><span class="hl-0">, </span><span class="hl-3">leftChestContainer</span><span class="hl-0">); </span><span class="hl-10">// swap item in slot 1 of rightChestContainer with item in slot 0 of leftChestContainer</span><br/>
+</code><button>Copy</button></pre></p></details>
 </div><aside class="tsd-sources">
 <p>Overrides <a href="_minecraft_server_1_1_0_beta.Container.html">Container</a>.<a href="_minecraft_server_1_1_0_beta.Container.html#swapItems">swapItems</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="transferItem" class="tsd-anchor"></a>
@@ -217,9 +217,9 @@ containers.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
 
-<h4>Example</h4><p>transferItem.js</p>
-<pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-3">rightChestContainer</span><span class="hl-0">.</span><span class="hl-4">transferItem</span><span class="hl-0">(</span><span class="hl-7">0</span><span class="hl-0">, </span><span class="hl-7">4</span><span class="hl-0">, </span><span class="hl-3">chestCartContainer</span><span class="hl-0">); </span><span class="hl-10">// transfer the apple from the right chest to a chest cart</span><br/>
-</code><button>Copy</button></pre>
+<h4>Example</h4><details><summary>transferItem.js</summary>
+<p><pre><code class="language-typescript"><span class="hl-0">       </span><span class="hl-3">rightChestContainer</span><span class="hl-0">.</span><span class="hl-4">transferItem</span><span class="hl-0">(</span><span class="hl-7">0</span><span class="hl-0">, </span><span class="hl-7">4</span><span class="hl-0">, </span><span class="hl-3">chestCartContainer</span><span class="hl-0">); </span><span class="hl-10">// transfer the apple from the right chest to a chest cart</span><br/>
+</code><button>Copy</button></pre></p></details>
 </div><aside class="tsd-sources">
 <p>Overrides <a href="_minecraft_server_1_1_0_beta.Container.html">Container</a>.<a href="_minecraft_server_1_1_0_beta.Container.html#transferItem">transferItem</a></p></aside></li></ul></section></section></div>
 <div class="col-sidebar">
