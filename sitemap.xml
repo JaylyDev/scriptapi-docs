@@ -1,438 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/index</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_common_1_2_0.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_common_1_2_0</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_debug_utilities_1_0_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_debug_utilities_1_0_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_math.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_math</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_1_12_0.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_1_10_0</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_1_13_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_1_11_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_admin_1_0_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_editor_0_1_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_editor_0_1_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_gametest_1_0_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_net_1_0_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_net_1_0_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_ui_1_1_0.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_ui_1_1_0</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_ui_1_2_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_ui_1_2_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_vanilla_data.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_vanilla_data</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/meta/useful-links.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/index</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_common_1_2_0</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_common_1_2_0.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_debug_utilities_1_0_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_debug_utilities_1_0_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_math</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_math.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_1_12_0</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_1_10_0.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_1_13_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_1_11_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_admin_1_0_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_editor_0_1_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_editor_0_1_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_gametest_1_0_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_net_1_0_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_net_1_0_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_ui_1_1_0</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_ui_1_1_0.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_ui_1_2_0_beta</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server_ui_1_2_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_vanilla_data.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/features/dynamic-properties.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/features/script-eval.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/features/secrets-and-variables.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/modules/_minecraft_common_1_2_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/modules/_minecraft_debug_utilities_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/modules/_minecraft_math.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/modules/_minecraft_server_1_10_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/modules/_minecraft_server_1_11_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/modules/_minecraft_server_editor_0_1_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/modules/_minecraft_server_net_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/modules/_minecraft_server_ui_1_1_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/modules/_minecraft_server_ui_1_2_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.80/modules/_minecraft_vanilla_data.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.70/</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.70/modules/_minecraft_common_1_2_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.70/modules/_minecraft_debug_utilities_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.70/modules/_minecraft_server_1_10_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.70/modules/_minecraft_server_1_9_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.70/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.70/modules/_minecraft_server_editor_0_1_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.70/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.70/modules/_minecraft_server_net_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.70/modules/_minecraft_server_ui_1_1_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.70/modules/_minecraft_server_ui_1_2_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.70/modules/_minecraft_vanilla_data_1_20_70.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.60/</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.60/modules/_minecraft_common_1_1_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.60/modules/_minecraft_server_1_8_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.60/modules/_minecraft_server_1_9_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.60/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.60/modules/_minecraft_server_editor_0_1_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.60/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.60/modules/_minecraft_server_net_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.60/modules/_minecraft_server_ui_1_1_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.60/modules/_minecraft_server_ui_1_2_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.60/modules/_minecraft_vanilla_data_1_20_60.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.50/</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.50/modules/_minecraft_common_1_1_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.50/modules/_minecraft_server_1_7_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.50/modules/_minecraft_server_1_8_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.50/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.50/modules/_minecraft_server_editor_0_1_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.50/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.50/modules/_minecraft_server_net_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.50/modules/_minecraft_server_ui_1_1_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.50/modules/_minecraft_server_ui_1_2_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.50/modules/_minecraft_vanilla_data_1_20_50.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.40/</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.40/modules/_minecraft_common_1_0_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.40/modules/_minecraft_server_1_6_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.40/modules/_minecraft_server_1_7_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.40/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.40/modules/_minecraft_server_editor_0_1_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.40/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.40/modules/_minecraft_server_net_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.40/modules/_minecraft_server_ui_1_1_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.40/modules/_minecraft_server_ui_1_2_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.40/modules/_minecraft_vanilla_data_1_20_40.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.30/</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.30/modules/_minecraft_server_1_5_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.30/modules/_minecraft_server_1_6_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.30/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.30/modules/_minecraft_server_editor_0_1_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.30/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.30/modules/_minecraft_server_net_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.30/modules/_minecraft_server_ui_1_1_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.30/modules/_minecraft_server_ui_1_2_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.30/modules/_minecraft_vanilla_data_1_20_30.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.10/</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.10/modules/_minecraft_server_1_3_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.10/modules/_minecraft_server_1_4_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.10/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.10/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.10/modules/_minecraft_server_net_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.10/modules/_minecraft_server_ui_1_1_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.10/modules/_minecraft_server_ui_1_2_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.10/modules/_minecraft_vanilla_data_1_20_10.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.0/</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.0/modules/_minecraft_server_1_2_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.0/modules/_minecraft_server_1_3_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.0/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.0/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.0/modules/_minecraft_server_net_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.0/modules/_minecraft_server_ui_1_0_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.0/modules/_minecraft_server_ui_1_1_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.20.0/modules/_minecraft_vanilla_data_1_20_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.80/</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.80/modules/_minecraft_server_1_1_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.80/modules/_minecraft_server_1_2_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.80/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.80/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.80/modules/_minecraft_server_net_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.80/modules/_minecraft_server_ui_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.80/modules/_minecraft_vanilla_data_1_19_80.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.70/</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.70/modules/_minecraft_server_1_0_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.70/modules/_minecraft_server_1_1_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.70/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.70/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.70/modules/_minecraft_server_net_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.70/modules/_minecraft_server_ui_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.60/</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.60/modules/_minecraft_server_1_0_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.60/modules/_minecraft_server_1_1_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.60/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.60/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.60/modules/_minecraft_server_net_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.60/modules/_minecraft_server_ui_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.50/</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.50/modules/_minecraft_server_1_0_0.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.50/modules/_minecraft_server_1_1_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.50/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.50/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.50/modules/_minecraft_server_net_1_0_0_beta.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/1.19.50/modules/_minecraft_server_ui_1_0_0_beta.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_vanilla_data</loc>
     </url>
   </urlset>
