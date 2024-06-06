@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Scoreboard | Script API - v1.20.30</title><meta name="description" content="Documentation for Script API - v1.20.30"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><!-- Google tag (gtag.js) -->
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Scoreboard | Script API - v1.20.30</title><meta name="description" content="Documentation for Script API - v1.20.30"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><meta property="og:image" content="https://jaylydev.github.io/icon.png"/><meta property="og:type" content="article"/><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3X0X9VRB2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -81,9 +81,9 @@
 
 <h4>Throws</h4><p>This function can throw errors.</p>
 
-<h4>Example</h4><p>addObjective.js</p>
-<pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">scoreboard</span><span class="hl-0">.</span><span class="hl-8">addObjective</span><span class="hl-0">(</span><span class="hl-2">&quot;example&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;example&quot;</span><span class="hl-0">);</span>
-</code><button>Copy</button></pre>
+<h4>Example</h4><details><summary>addObjective.js</summary>
+<p><pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">scoreboard</span><span class="hl-0">.</span><span class="hl-8">addObjective</span><span class="hl-0">(</span><span class="hl-2">&quot;example&quot;</span><span class="hl-0">, </span><span class="hl-2">&quot;example&quot;</span><span class="hl-0">);</span>
+</code><button>Copy</button></pre></p></details>
 </div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="clearObjectiveAtDisplaySlot" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>clear<wbr/>Objective<wbr/>At<wbr/>Display<wbr/>Slot</span><a href="#clearObjectiveAtDisplaySlot" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
@@ -116,9 +116,9 @@
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Returns a specific objective (by id).</p>
 
-<h4>Example</h4><p>getPlayerMoneyObjective.js</p>
-<pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">money</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">scoreboard</span><span class="hl-0">.</span><span class="hl-8">getObjective</span><span class="hl-0">(</span><span class="hl-2">&quot;money&quot;</span><span class="hl-0">);</span>
-</code><button>Copy</button></pre>
+<h4>Example</h4><details><summary>getPlayerMoneyObjective.js</summary>
+<p><pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-3">const</span><span class="hl-0"> </span><span class="hl-4">money</span><span class="hl-0"> = </span><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">scoreboard</span><span class="hl-0">.</span><span class="hl-8">getObjective</span><span class="hl-0">(</span><span class="hl-2">&quot;money&quot;</span><span class="hl-0">);</span>
+</code><button>Copy</button></pre></p></details>
 </div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getObjectiveAtDisplaySlot" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Objective<wbr/>At<wbr/>Display<wbr/>Slot</span><a href="#getObjectiveAtDisplaySlot" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
@@ -170,9 +170,9 @@ slot.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
 
-<h4>Example</h4><p>removeMoney.js</p>
-<pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">scoreboard</span><span class="hl-0">.</span><span class="hl-8">removeObjective</span><span class="hl-0">(</span><span class="hl-2">&quot;money&quot;</span><span class="hl-0">);</span>
-</code><button>Copy</button></pre>
+<h4>Example</h4><details><summary>removeMoney.js</summary>
+<p><pre><code class="language-js"><span class="hl-11">import</span><span class="hl-0"> { </span><span class="hl-6">world</span><span class="hl-0"> } </span><span class="hl-11">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-6">world</span><span class="hl-0">.</span><span class="hl-6">scoreboard</span><span class="hl-0">.</span><span class="hl-8">removeObjective</span><span class="hl-0">(</span><span class="hl-2">&quot;money&quot;</span><span class="hl-0">);</span>
+</code><button>Copy</button></pre></p></details>
 </div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="setObjectiveAtDisplaySlot" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Objective<wbr/>At<wbr/>Display<wbr/>Slot</span><a href="#setObjectiveAtDisplaySlot" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
@@ -565,6 +565,5 @@ additional display settings.</p>
 <li><a href="../variables/_minecraft_server_1_6_0_beta.system-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>system</span></a></li>
 <li><a href="../variables/_minecraft_server_1_6_0_beta.world-1.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>world</span></a></li></ul></div></details></li>
 <li><a href="../modules/_minecraft_vanilla_data_1_20_30.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/vanilla-<wbr/>data@1.20.30</span></a></li></ul></nav></div></div></div>
-<div class="tsd-generator">
-<p>Generated using <a href="https://typedoc.org/" rel="noopener" target="_blank">TypeDoc</a></p></div>
+
 <div class="overlay"></div></body></html>
