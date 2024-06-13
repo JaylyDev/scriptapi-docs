@@ -73,67 +73,37 @@ the editor evolves.</p>
 <ul class="tsd-signatures">
 <li class="tsd-signature notranslate" id="menu.menu-1"><span class="tsd-signature-symbol">get</span> menu<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_minecraft_server_editor_0_1_0_beta.IMenu.html" class="tsd-signature-type notranslate tsd-kind-interface">IMenu</a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_editor_0_1_0_beta.IMenu.html" class="tsd-signature-type notranslate tsd-kind-interface">IMenu</a></h4>
-<div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Get a reference to the menu component that was automatically
-created for the tool This generally only happens if the tool
-is a global tool (i.e. has a pane and does not have a tool
-rail component) In this case a menu item is automatically
-created and some visibility controls are inserted. If you
-have additional menu options you want to add, this is the
-ideal control to add children to</p>
-</div></li></ul></section>
+<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_editor_0_1_0_beta.IMenu.html" class="tsd-signature-type notranslate tsd-kind-interface">IMenu</a></h4></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="name" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="tsd-signature notranslate" id="name.name-1"><span class="tsd-signature-symbol">get</span> name<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type notranslate">string</span></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">string</span></h4>
-<div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Get the tool name</p>
-</div></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">string</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="pane" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>pane</span><a href="#pane" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="tsd-signature notranslate" id="pane.pane-1"><span class="tsd-signature-symbol">get</span> pane<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_minecraft_server_editor_0_1_0_beta.ISimpleToolPaneComponent.html" class="tsd-signature-type notranslate tsd-kind-interface">ISimpleToolPaneComponent</a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_editor_0_1_0_beta.ISimpleToolPaneComponent.html" class="tsd-signature-type notranslate tsd-kind-interface">ISimpleToolPaneComponent</a></h4>
-<div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Get a reference to the root (primary) property pane
-component - if no component was requested, this function
-will throw an error</p>
-</div></li></ul></section>
+<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_editor_0_1_0_beta.ISimpleToolPaneComponent.html" class="tsd-signature-type notranslate tsd-kind-interface">ISimpleToolPaneComponent</a></h4></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="session" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>session</span><a href="#session" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="tsd-signature notranslate" id="session.session-1"><span class="tsd-signature-symbol">get</span> session<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../types/_minecraft_server_editor_0_1_0_beta.IPlayerUISession.html" class="tsd-signature-type notranslate tsd-kind-type-alias">IPlayerUISession</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type notranslate ">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type notranslate">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type notranslate">never</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="../types/_minecraft_server_editor_0_1_0_beta.IPlayerUISession.html" class="tsd-signature-type notranslate tsd-kind-type-alias">IPlayerUISession</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type notranslate ">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type notranslate">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type notranslate">never</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
-<div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Get a reference to the IPlayerUISession. This is the primary
-interface to the editor UI and all of the editor extension
-controls</p>
-</div></li></ul></section>
+<h4 class="tsd-returns-title">Returns <a href="../types/_minecraft_server_editor_0_1_0_beta.IPlayerUISession.html" class="tsd-signature-type notranslate tsd-kind-type-alias">IPlayerUISession</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type notranslate ">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type notranslate">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type notranslate">never</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="statusBar" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>status<wbr/>Bar</span><a href="#statusBar" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="tsd-signature notranslate" id="statusBar.statusBar-1"><span class="tsd-signature-symbol">get</span> statusBar<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_minecraft_server_editor_0_1_0_beta.ISimpleToolStatusBarComponent.html" class="tsd-signature-type notranslate tsd-kind-interface">ISimpleToolStatusBarComponent</a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_editor_0_1_0_beta.ISimpleToolStatusBarComponent.html" class="tsd-signature-type notranslate tsd-kind-interface">ISimpleToolStatusBarComponent</a></h4>
-<div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Get a reference to the status bar component - if no
-component was requested, this function will throw an error</p>
-</div></li></ul></section>
+<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_editor_0_1_0_beta.ISimpleToolStatusBarComponent.html" class="tsd-signature-type notranslate tsd-kind-interface">ISimpleToolStatusBarComponent</a></h4></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="toolRail" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>tool<wbr/>Rail</span><a href="#toolRail" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="tsd-signature notranslate" id="toolRail.toolRail-1"><span class="tsd-signature-symbol">get</span> toolRail<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_minecraft_server_editor_0_1_0_beta.ISimpleToolRailComponent.html" class="tsd-signature-type notranslate tsd-kind-interface">ISimpleToolRailComponent</a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_editor_0_1_0_beta.ISimpleToolRailComponent.html" class="tsd-signature-type notranslate tsd-kind-interface">ISimpleToolRailComponent</a></h4>
-<div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Get a reference to the tool rail component - if no component
-was requested, this function will throw an error</p>
-</div></li></ul></section></section>
+<h4 class="tsd-returns-title">Returns <a href="_minecraft_server_editor_0_1_0_beta.ISimpleToolRailComponent.html" class="tsd-signature-type notranslate tsd-kind-interface">ISimpleToolRailComponent</a></h4></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member"><a id="findPane" class="tsd-anchor"></a>
@@ -148,8 +118,7 @@ was requested, this function will throw an error</p>
 <h5><span class="tsd-kind-parameter notranslate">idString</span>: <span class="tsd-signature-type notranslate">string</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="_minecraft_server_editor_0_1_0_beta.ISimpleToolPaneComponent.html" class="tsd-signature-type notranslate tsd-kind-interface">ISimpleToolPaneComponent</a></h4>
 <div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Find a pane or subpane by it&#39;s unique ID.</p>
-</div></li></ul></section>
+<h4>Remarks</h4></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="hidePane" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>hide<wbr/>Pane</span><a href="#hidePane" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -162,13 +131,7 @@ was requested, this function will throw an error</p>
 <h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter notranslate">idString</span>: <span class="tsd-signature-type notranslate">string</span></h5><code class="tsd-tag ts-flagOptional">Optional</code> </li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4>
 <div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Hide a particular pane or subpane by it&#39;s unique ID. If no
-ID is provided (or cannot be found) the function will throw
-an error Although the parent pane is used to execute the
-visibility request, the hidePane function will NOT affect
-the visibility of any sibling panes -- so it is possible to
-hide all of the child panes of a parent using this function</p>
-</div></li></ul></section>
+<h4>Remarks</h4></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="logDebug" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>log<wbr/>Debug</span><a href="#logDebug" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -181,9 +144,7 @@ hide all of the child panes of a parent using this function</p>
 <h5><span class="tsd-kind-parameter notranslate">message</span>: <span class="tsd-signature-type notranslate">string</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4>
 <div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Send a tagged Debug log message to the console. The tag will
-contain the tool name</p>
-</div></li></ul></section>
+<h4>Remarks</h4></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="logError" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>log<wbr/>Error</span><a href="#logError" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -196,9 +157,7 @@ contain the tool name</p>
 <h5><span class="tsd-kind-parameter notranslate">message</span>: <span class="tsd-signature-type notranslate">string</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4>
 <div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Send a tagged Error log message to the console. The tag will
-contain the tool name</p>
-</div></li></ul></section>
+<h4>Remarks</h4></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="logInfo" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>log<wbr/>Info</span><a href="#logInfo" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -211,9 +170,7 @@ contain the tool name</p>
 <h5><span class="tsd-kind-parameter notranslate">message</span>: <span class="tsd-signature-type notranslate">string</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4>
 <div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Send a tagged Informational log message to the console. The
-tag will contain the tool name</p>
-</div></li></ul></section>
+<h4>Remarks</h4></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="logWarn" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>log<wbr/>Warn</span><a href="#logWarn" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -226,9 +183,7 @@ tag will contain the tool name</p>
 <h5><span class="tsd-kind-parameter notranslate">message</span>: <span class="tsd-signature-type notranslate">string</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4>
 <div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Send a tagged Warning log message to the console. The tag
-will contain the tool name</p>
-</div></li></ul></section>
+<h4>Remarks</h4></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="showPane" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>show<wbr/>Pane</span><a href="#showPane" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -241,14 +196,7 @@ will contain the tool name</p>
 <h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter notranslate">idString</span>: <span class="tsd-signature-type notranslate">string</span></h5><code class="tsd-tag ts-flagOptional">Optional</code> </li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4>
 <div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Show a particular pane or subpane by it&#39;s unique ID. If no
-ID is provided (or cannot be found) the function will throw
-an error Note that the showPane function (when used with a
-child pane) will use the parent pane to execute the
-visibility request. In this case, if the child panes are
-marked as mututally exclusive, then the siblings of the
-requested pane will be hidden</p>
-</div></li></ul></section>
+<h4>Remarks</h4></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="showPaneExclusively" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>show<wbr/>Pane<wbr/>Exclusively</span><a href="#showPaneExclusively" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -261,10 +209,7 @@ requested pane will be hidden</p>
 <h5><span class="tsd-kind-parameter notranslate">idString</span>: <span class="tsd-signature-type notranslate">string</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4>
 <div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>Much like the showPane function, but will hide all other
-panes that are not the requested pane irrespective of the
-exclusivity setting</p>
-</div></li></ul></section>
+<h4>Remarks</h4></div></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="teardown" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>teardown</span><a href="#teardown" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -272,12 +217,7 @@ exclusivity setting</p>
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4>
 <div class="tsd-comment tsd-typography">
-<h4>Remarks</h4><p>A teardown function implemented by the ISimpleTool
-implementation, and is called by the system during editor
-extension shutdown. Don&#39;t override this function - instead,
-implement the onTeardown event in the ISimpleToolOptions
-structure</p>
-</div></li></ul></section></section></div>
+<h4>Remarks</h4></div></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -324,8 +264,6 @@ structure</p>
 <ul class="tsd-nested-navigation">
 <li><a href="../enums/_minecraft_server_editor_0_1_0_beta.ActionTypes.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-8"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-enum)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.45 16V7.24H14.49V8.224H10.518V10.936H14.07V11.908H10.518V15.016H14.49V16H9.45Z" fill="var(--color-text)"></path></g></svg><span>Action<wbr/>Types</span></a></li>
 <li><a href="../enums/_minecraft_server_editor_0_1_0_beta.BlockPaletteItemType.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg><span>Block<wbr/>Palette<wbr/>Item<wbr/>Type</span></a></li>
-<li><a href="../enums/_minecraft_server_editor_0_1_0_beta.BrushPipelineOperationType.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg><span>Brush<wbr/>Pipeline<wbr/>Operation<wbr/>Type</span></a></li>
-<li><a href="../enums/_minecraft_server_editor_0_1_0_beta.CoreActionBarItemType.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg><span>Core<wbr/>Action<wbr/>Bar<wbr/>Item<wbr/>Type</span></a></li>
 <li><a href="../enums/_minecraft_server_editor_0_1_0_beta.CoreMenuType.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg><span>Core<wbr/>Menu<wbr/>Type</span></a></li>
 <li><a href="../enums/_minecraft_server_editor_0_1_0_beta.CursorControlMode.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg><span>Cursor<wbr/>Control<wbr/>Mode</span></a></li>
 <li><a href="../enums/_minecraft_server_editor_0_1_0_beta.CursorTargetMode.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg><span>Cursor<wbr/>Target<wbr/>Mode</span></a></li>
@@ -350,13 +288,9 @@ structure</p>
 <li><a href="../classes/_minecraft_server_editor_0_1_0_beta.BlockPalette.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Block<wbr/>Palette</span></a></li>
 <li><a href="../classes/_minecraft_server_editor_0_1_0_beta.BlockPaletteManager.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Block<wbr/>Palette<wbr/>Manager</span></a></li>
 <li><a href="../classes/_minecraft_server_editor_0_1_0_beta.BrushShapeManager.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Brush<wbr/>Shape<wbr/>Manager</span></a></li>
-<li><a href="../classes/_minecraft_server_editor_0_1_0_beta.ClipboardChangeAfterEvent.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Clipboard<wbr/>Change<wbr/>After<wbr/>Event</span></a></li>
-<li><a href="../classes/_minecraft_server_editor_0_1_0_beta.ClipboardChangeAfterEventSignal.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Clipboard<wbr/>Change<wbr/>After<wbr/>Event<wbr/>Signal</span></a></li>
 <li><a href="../classes/_minecraft_server_editor_0_1_0_beta.ClipboardItem.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Clipboard<wbr/>Item</span></a></li>
 <li><a href="../classes/_minecraft_server_editor_0_1_0_beta.ClipboardManager.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Clipboard<wbr/>Manager</span></a></li>
 <li><a href="../classes/_minecraft_server_editor_0_1_0_beta.Cursor.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Cursor</span></a></li>
-<li><a href="../classes/_minecraft_server_editor_0_1_0_beta.CursorAttachmentPropertiesChangeAfterEvent.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Cursor<wbr/>Attachment<wbr/>Properties<wbr/>Change<wbr/>After<wbr/>Event</span></a></li>
-<li><a href="../classes/_minecraft_server_editor_0_1_0_beta.CursorAttachmentPropertyChangeAfterEventSignal.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Cursor<wbr/>Attachment<wbr/>Property<wbr/>Change<wbr/>After<wbr/>Event<wbr/>Signal</span></a></li>
 <li><a href="../classes/_minecraft_server_editor_0_1_0_beta.CursorPropertiesChangeAfterEvent.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Cursor<wbr/>Properties<wbr/>Change<wbr/>After<wbr/>Event</span></a></li>
 <li><a href="../classes/_minecraft_server_editor_0_1_0_beta.CursorPropertyChangeAfterEventSignal.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Cursor<wbr/>Property<wbr/>Change<wbr/>After<wbr/>Event<wbr/>Signal</span></a></li>
 <li><a href="../classes/_minecraft_server_editor_0_1_0_beta.CustomWidget.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Custom<wbr/>Widget</span></a></li>
@@ -392,18 +326,13 @@ structure</p>
 <li><a href="../classes/_minecraft_server_editor_0_1_0_beta.WidgetManager.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Widget<wbr/>Manager</span></a></li>
 <li><a href="../classes/_minecraft_server_editor_0_1_0_beta.WidgetStateChangeEventData.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Widget<wbr/>State<wbr/>Change<wbr/>Event<wbr/>Data</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.ActionManager.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-256"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)"></path></g></svg><span>Action<wbr/>Manager</span></a></li>
-<li><a href="_minecraft_server_editor_0_1_0_beta.BrushPipelineOperation.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Brush<wbr/>Pipeline<wbr/>Operation</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.BrushShape.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Brush<wbr/>Shape</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.BuiltInUIManager.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Built<wbr/>InUIManager</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.ClipboardWriteOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Clipboard<wbr/>Write<wbr/>Options</span></a></li>
-<li><a href="_minecraft_server_editor_0_1_0_beta.CursorAttachmentProperties.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Cursor<wbr/>Attachment<wbr/>Properties</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.CursorProperties.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Cursor<wbr/>Properties</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.CustomWidgetCreateOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Custom<wbr/>Widget<wbr/>Create<wbr/>Options</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.EventSink.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Event<wbr/>Sink</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.ExtensionOptionalParameters.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Extension<wbr/>Optional<wbr/>Parameters</span></a></li>
-<li><a href="_minecraft_server_editor_0_1_0_beta.IActionBar.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IAction<wbr/>Bar</span></a></li>
-<li><a href="_minecraft_server_editor_0_1_0_beta.IActionBarItem.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IAction<wbr/>Bar<wbr/>Item</span></a></li>
-<li><a href="_minecraft_server_editor_0_1_0_beta.IActionBarItemCreationParams.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IAction<wbr/>Bar<wbr/>Item<wbr/>Creation<wbr/>Params</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.IDisposable.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IDisposable</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.IDropdownItem.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IDropdown<wbr/>Item</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.IDropdownPropertyItemMixIn.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IDropdown<wbr/>Property<wbr/>Item<wbr/>Mix<wbr/>In</span></a></li>
@@ -419,7 +348,6 @@ structure</p>
 <li><a href="_minecraft_server_editor_0_1_0_beta.IPropertyItemOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IProperty<wbr/>Item<wbr/>Options</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.IPropertyItemOptionsBool.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IProperty<wbr/>Item<wbr/>Options<wbr/>Bool</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.IPropertyItemOptionsButton.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IProperty<wbr/>Item<wbr/>Options<wbr/>Button</span></a></li>
-<li><a href="_minecraft_server_editor_0_1_0_beta.IPropertyItemOptionsColorPicker.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IProperty<wbr/>Item<wbr/>Options<wbr/>Color<wbr/>Picker</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.IPropertyItemOptionsDataPicker.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IProperty<wbr/>Item<wbr/>Options<wbr/>Data<wbr/>Picker</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.IPropertyItemOptionsDropdown.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IProperty<wbr/>Item<wbr/>Options<wbr/>Dropdown</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.IPropertyItemOptionsImage.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IProperty<wbr/>Item<wbr/>Options<wbr/>Image</span></a></li>
@@ -446,7 +374,6 @@ structure</p>
 <li><a href="_minecraft_server_editor_0_1_0_beta.ModalToolCreationParameters.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Modal<wbr/>Tool<wbr/>Creation<wbr/>Parameters</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.PlaytestGameOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Playtest<wbr/>Game<wbr/>Options</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.ProjectExportOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Project<wbr/>Export<wbr/>Options</span></a></li>
-<li><a href="_minecraft_server_editor_0_1_0_beta.SettingsUIElementOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>SettingsUIElement<wbr/>Options</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.WidgetCreateOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Widget<wbr/>Create<wbr/>Options</span></a></li>
 <li><a href="_minecraft_server_editor_0_1_0_beta.WidgetGroupCreateOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Widget<wbr/>Group<wbr/>Create<wbr/>Options</span></a></li>
 <li><a href="../types/_minecraft_server_editor_0_1_0_beta.Action.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-2097152"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-type-alias)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.31 16V8.224H8.91V7.24H14.79V8.224H12.39V16H11.31Z" fill="var(--color-text)"></path></g></svg><span>Action</span></a></li>
@@ -477,7 +404,6 @@ structure</p>
 <li><a href="../variables/_minecraft_server_editor_0_1_0_beta.editor.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-32"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-variable)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.106 16L8.85 7.24H9.966L11.454 13.192C11.558 13.608 11.646 13.996 11.718 14.356C11.79 14.708 11.842 14.976 11.874 15.16C11.906 14.976 11.954 14.708 12.018 14.356C12.09 13.996 12.178 13.608 12.282 13.192L13.758 7.24H14.85L12.582 16H11.106Z" fill="var(--color-text)"></path></g></svg><span>editor</span></a></li>
 <li><a href="../functions/_minecraft_server_editor_0_1_0_beta.bindDataSource.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-64"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-function)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.39 16V7.24H14.55V8.224H10.446V11.128H14.238V12.112H10.47V16H9.39Z" fill="var(--color-text)"></path></g></svg><span>bind<wbr/>Data<wbr/>Source</span></a></li>
 <li><a href="../functions/_minecraft_server_editor_0_1_0_beta.executeLargeOperation.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>execute<wbr/>Large<wbr/>Operation</span></a></li>
-<li><a href="../functions/_minecraft_server_editor_0_1_0_beta.executeLargeOperationFromIterator.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>execute<wbr/>Large<wbr/>Operation<wbr/>From<wbr/>Iterator</span></a></li>
 <li><a href="../functions/_minecraft_server_editor_0_1_0_beta.getBlockPickerDefaultAllowBlockList.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>get<wbr/>Block<wbr/>Picker<wbr/>Default<wbr/>Allow<wbr/>Block<wbr/>List</span></a></li>
 <li><a href="../functions/_minecraft_server_editor_0_1_0_beta.getLocalizationId.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>get<wbr/>Localization<wbr/>Id</span></a></li>
 <li><a href="../functions/_minecraft_server_editor_0_1_0_beta.registerEditorExtension.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>register<wbr/>Editor<wbr/>Extension</span></a></li>
@@ -485,10 +411,10 @@ structure</p>
 <li><a href="../functions/_minecraft_server_editor_0_1_0_beta.stringFromException.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>string<wbr/>From<wbr/>Exception</span></a></li></ul></div></details></li>
 <li><a href="../modules/_minecraft_server_gametest_1_0_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>gametest@1.0.0-<wbr/>beta</span></a></li>
 <li><a href="../modules/_minecraft_server_net_1_0_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>net@1.0.0-<wbr/>beta</span></a></li>
+<li><a href="../modules/_minecraft_server_ui_1_2_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>ui@1.2.0-<wbr/>beta</span></a></li>
 <li><a href="../modules/_minecraft_server_ui_1_2_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>ui@1.2.0</span></a></li>
-<li><a href="../modules/_minecraft_server_ui_1_3_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server-<wbr/>ui@1.3.0-<wbr/>beta</span></a></li>
+<li><a href="../modules/_minecraft_server_1_12_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.12.0-<wbr/>beta</span></a></li>
 <li><a href="../modules/_minecraft_server_1_12_0.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.12.0</span></a></li>
-<li><a href="../modules/_minecraft_server_1_13_0_beta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/server@1.13.0-<wbr/>beta</span></a></li>
 <li><a href="../modules/_minecraft_vanilla_data.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/vanilla-<wbr/>data</span></a></li>
 <li><a href="../modules/_minecraft_math.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg><span>@minecraft/math</span></a></li></ul></nav></div></div></div>
 <div class="overlay"></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3X0X9VRB2"></script><script>window.dataLayer = window.dataLayer || [];
