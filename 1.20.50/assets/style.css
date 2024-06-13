@@ -1377,3 +1377,9 @@ img {
         top: 42px;
     }
 }
+body > .skiptranslate {
+    display: none;
+}
+body {
+    top: 0px !important; 
+}
