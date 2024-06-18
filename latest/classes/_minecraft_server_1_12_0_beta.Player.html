@@ -24,11 +24,7 @@ function googleTranslateElementInit() {
 <section class="tsd-panel tsd-comment">
 <div class="tsd-comment tsd-typography"><p>Represents a player within the world.</p>
 </div>
-<div class="tsd-comment tsd-typography">
-<h4>Example</h4><details><summary class="notranslate">messageEveryPlayer.js</summary>
-<p><pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-3">for</span><span class="hl-0"> (</span><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">player</span><span class="hl-0"> </span><span class="hl-5">of</span><span class="hl-0"> </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-7">getAllPlayers</span><span class="hl-0">()) {</span><br/><span class="hl-0">    </span><span class="hl-4">player</span><span class="hl-0">.</span><span class="hl-7">sendMessage</span><span class="hl-0">(</span><span class="hl-2">`Hello, </span><span class="hl-5">${</span><span class="hl-4">player</span><span class="hl-11">.</span><span class="hl-4">name</span><span class="hl-5">}</span><span class="hl-2">!`</span><span class="hl-0">);</span><br/><span class="hl-0">}</span>
-</code><button>Copy</button></pre></p></details>
-</div></section>
+<div class="tsd-comment tsd-typography"></div></section>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy notranslate">
@@ -1044,10 +1040,6 @@ performing a ray cast from the view of this entity.</p>
 <h4 class="tsd-returns-title">Returns <a href="../enums/_minecraft_server_1_12_0_beta.GameMode.html" class="tsd-signature-type notranslate tsd-kind-enum">GameMode</a></h4>
 <div class="tsd-comment tsd-typography">
 <h4>Throws</h4><p>This function can throw errors.</p>
-
-<h4>Example</h4><details><summary class="notranslate">displayGameMode.js</summary>
-<p><pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-3">for</span><span class="hl-0"> (</span><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">player</span><span class="hl-0"> </span><span class="hl-5">of</span><span class="hl-0"> </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-7">getAllPlayers</span><span class="hl-0">()) {</span><br/><span class="hl-0">    </span><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">gameMode</span><span class="hl-0"> = </span><span class="hl-4">player</span><span class="hl-0">.</span><span class="hl-7">getGameMode</span><span class="hl-0">();</span><br/><span class="hl-0">    </span><span class="hl-4">player</span><span class="hl-0">.</span><span class="hl-7">sendMessage</span><span class="hl-0">(</span><span class="hl-2">`Your game mode is </span><span class="hl-5">${</span><span class="hl-4">gameMode</span><span class="hl-5">}</span><span class="hl-2">`</span><span class="hl-0">);</span><br/><span class="hl-0">}</span>
-</code><button>Copy</button></pre></p></details>
 </div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="getHeadLocation" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>get<wbr/>Head<wbr/>Location</span><a href="#getHeadLocation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
@@ -1690,10 +1682,6 @@ is provided to <code>score</code>.</p>
 <h4>Remarks</h4><p>This function can&#39;t be called in read-only mode.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
-
-<h4>Example</h4><details><summary class="notranslate">setCreativeMode.js</summary>
-<p><pre><code class="language-js"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">GameMode</span><span class="hl-0">, </span><span class="hl-4">world</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-3">for</span><span class="hl-0"> (</span><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">player</span><span class="hl-0"> </span><span class="hl-5">of</span><span class="hl-0"> </span><span class="hl-4">world</span><span class="hl-0">.</span><span class="hl-7">getAllPlayers</span><span class="hl-0">()) {</span><br/><span class="hl-0">    </span><span class="hl-4">player</span><span class="hl-0">.</span><span class="hl-7">setGameMode</span><span class="hl-0">(</span><span class="hl-4">GameMode</span><span class="hl-0">.</span><span class="hl-4">creative</span><span class="hl-0">);</span><br/><span class="hl-0">}</span>
-</code><button>Copy</button></pre></p></details>
 </div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="setOnFire" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link notranslate"><span>set<wbr/>On<wbr/>Fire</span><a href="#setOnFire" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
