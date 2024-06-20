@@ -1335,10 +1335,10 @@ img {
 }
 @media (min-width: 770px) and (max-width: 1399px) {
     .col-sidebar {
-        max-height: calc(100vh - 2rem - 42px);
+        max-height: calc(100vh - 2rem - 84px);
         overflow: auto;
         position: sticky;
-        top: 42px;
+        top: 84px;
         padding-top: 1rem;
     }
     .site-menu {
@@ -1371,10 +1371,10 @@ img {
 
     .page-menu,
     .site-menu {
-        max-height: calc(100vh - 2rem - 42px);
+        max-height: calc(100vh - 2rem - 84px);
         overflow: auto;
         position: sticky;
-        top: 42px;
+        top: 84px;
     }
 }
 body > .skiptranslate {
