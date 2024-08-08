@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_common_1_2_0.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_debug_utilities_1_0_0_beta.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_math.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_1_14_0.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_1_15_0_beta.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_admin_1_0_0_beta.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_editor_0_1_0_beta.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_gametest_1_0_0_beta.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_net_1_0_0_beta.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_ui_1_3_0.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_server_ui_1_4_0_beta.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/modules/_minecraft_vanilla_data.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/meta/cdn-links.html</loc>
     </url>
     <url>
