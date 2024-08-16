@@ -1,8 +1,10 @@
+import { world } from "@minecraft/server";
+
 // Subscribe to the EntityLoadAfterEvent
 const entityLoadSubscription = world.afterEvents.entityLoad.subscribe((event) => {
   // Handle the entity load event
-  console.log(`Entity loaded: ${event.entity.typeId}`);
+  world.sendMessage(`Entity loaded: ${event.entity.typeId}`);
+  // Unsubscribe so the message doesn't appear after fired
+  world.afterEvents.entityLoad.unsubscribe(entityLoadSubscription);
+  
 });
-
-// ... Later in your code, when you want to unsubscribe
-world.afterEvents.entityLoad.unsubscribe(entityLoadSubscription);

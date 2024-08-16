@@ -1,3 +1,7 @@
+import { world } from "@minecraft/server";
+import { MessageFormData } from "@minecraft/server-ui";
+// Find player with admin tag
+let player = world.getPlayers({ tags: ["admin"] })[0];
 let form = new MessageFormData();
 form.title("Higher Random Tick Warning");
 form.body("Are you sure you want to run this command:\n/gamerule randomtickspeed 1000\nThis can cause lag to the world");
