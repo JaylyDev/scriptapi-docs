@@ -17,17 +17,46 @@ function googleTranslateElementInit() {
 <div class="col-content">
 <div class="tsd-page-title notranslate">
 <h2>Script API - v1.21.0</h2></div>
-<div class="tsd-panel tsd-typography"><a id="md:script-api-references" class="tsd-anchor"></a><h1><a href="#md:script-api-references">Script API References</a></h1><p>Landing page for Minecraft Bedrock Script API Reference, containing documentation and general infomation related to experimental and stable Minecraft Script APIs.</p>
-<a id="md:documentation" class="tsd-anchor"></a><h2><a href="#md:documentation">Documentation</a></h2><p>For more detailed documentation, the changelog, and How-To Guide provided by Microsoft, see <a href="https://learn.microsoft.com/minecraft/creator/scriptapi/">Script API Documentation Homepage | Microsoft Learn</a>.</p>
-<p>Relevant links:</p>
+<div class="tsd-panel tsd-typography"><a id="md:script-api-references" class="tsd-anchor"></a><h1><a href="#md:script-api-references">Script API References</a></h1><p>Landing page for Minecraft Bedrock Script API Reference, containing documentation related to experimental and stable Minecraft Script APIs to interact with a Minecraft world programmatically.</p>
+<p>The libraries of Script APIs are grouped under the <code>@minecraft</code> scope on Minecraft and npm.</p>
+<a id="md:documentation" class="tsd-anchor"></a><h2><a href="#md:documentation">Documentation</a></h2><p>Visit one of the following links to view the full documentation that matches your Minecraft version.</p>
 <ul>
-<li><p><a href="/"><strong>Website Homepage</strong></a> / <a href="/scriptapi-docs/"><strong>Script API Docs Homepage</strong></a></p>
-</li>
-<li><p>Latest Release API references: <a href="/scriptapi-docs/latest"><strong>Script API - Latest</strong></a></p>
-</li>
-<li><p>Latest Preview API references: <a href="/scriptapi-docs/preview"><strong>Script API - Preview</strong></a></p>
-</li>
+<li>Minecraft: Bedrock Edition API references: <a href="./latest/"><strong>Script API - Latest</strong></a></li>
+<li>Minecraft: Bedrock Edition Preview API references: <a href="./preview/"><strong>Script API - Preview</strong></a></li>
+<li><a href="/scriptapi-docs/"><strong>Script API Documentation Homepage</strong></a></li>
 </ul>
+<a id="md:minecraft-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-module">Minecraft Module</a></h2><p>The main script module for Script API is <code>@minecraft/server</code>. Core library features:</p>
+<ul>
+<li>Manipulate a Minecraft world, including entities, blocks, dimensions, and more.</li>
+<li>Events - Execute code when a specific event in a Minecraft occurs.</li>
+<li>Storage - Storage for entities, items and world that is accessible with only script API.</li>
+</ul>
+<a id="md:minecraft-ui-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-ui-module">Minecraft UI Module</a></h2><p>The <code>@minecraft/server-ui</code> module helps you build simple form or dialogs to players.</p>
+<p><strong>Action Forms</strong> - A form with a list of buttons with captions and images for presenting a set of options to a player.</p>
+<p align="center">
+  <img src="/scriptapi-docs/assets/minecraft/ActionFormData.png" />
+</p>
+
+<p><strong>Message Forms</strong> - A form with two-button that are functional for Yes/No or OK/Cancel questions.</p>
+<p align="center">
+  <img src="/scriptapi-docs/assets/minecraft/MessageFormData.png" />
+</p>
+
+<p><strong>Modal Forms</strong> - A more flexible &quot;questionnaire-style&quot; list of controls in a form that can be used to take input.</p>
+<p align="center">
+  <img src="/scriptapi-docs/assets/minecraft/ModalFormData.png" />
+</p>
+
+<a id="md:gametest-framework" class="tsd-anchor"></a><h2><a href="#md:gametest-framework">GameTest Framework</a></h2><p>GameTest Framework is a toolset available to creators to build and test any new content using the <code>@minecraft/server-gametest</code> script module and the <code>/gametest</code> command in Minecraft. Each GameTest is broken into the following:</p>
+<ul>
+<li>Register a test: create an environment to conduct a test.</li>
+<li>Setup a test: Setup the environment to run the test.</li>
+<li>Validate a test: Evaluates whether a test passed or failed.</li>
+</ul>
+<a id="md:minecraft-http-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-http-module">Minecraft HTTP module</a></h2><p>Use the Script API to send HTTP requests to the internet using the <code>@minecraft/server-net</code> module.</p>
+<a id="md:minecraft-editor-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-editor-module">Minecraft Editor Module</a></h2><p>The Minecraft Editor API allows creators to create their own extensions for Minecraft Editor engine. Created on top of Ore UI.</p>
+<a id="md:server-admin-module" class="tsd-anchor"></a><h2><a href="#md:server-admin-module">Server Admin Module</a></h2><p>Load configuration of variables and secrets in Bedrock Dedicated Server folder using Script API.</p>
+<a id="md:debug-utilities-module" class="tsd-anchor"></a><h2><a href="#md:debug-utilities-module">Debug Utilities Module</a></h2><p>A Script API module that is used for debugging purposes.</p>
 </div></div>
 <div class="col-sidebar">
 <div class="page-menu">
@@ -53,7 +82,14 @@ function googleTranslateElementInit() {
 <li><a href="#md:script-api-references"><span>Script API <wbr/>References</span></a></li>
 <li>
 <ul>
-<li><a href="#md:documentation"><span>Documentation</span></a></li></ul></li></ul></li></ul></div></details><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2533146760921020" crossorigin="anonymous"></script>
+<li><a href="#md:documentation"><span>Documentation</span></a></li>
+<li><a href="#md:minecraft-module"><span>Minecraft <wbr/>Module</span></a></li>
+<li><a href="#md:minecraft-ui-module"><span>Minecraft UI <wbr/>Module</span></a></li>
+<li><a href="#md:gametest-framework"><span>Game<wbr/>Test <wbr/>Framework</span></a></li>
+<li><a href="#md:minecraft-http-module"><span>Minecraft HTTP module</span></a></li>
+<li><a href="#md:minecraft-editor-module"><span>Minecraft <wbr/>Editor <wbr/>Module</span></a></li>
+<li><a href="#md:server-admin-module"><span>Server <wbr/>Admin <wbr/>Module</span></a></li>
+<li><a href="#md:debug-utilities-module"><span>Debug <wbr/>Utilities <wbr/>Module</span></a></li></ul></li></ul></li></ul></div></details><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2533146760921020" crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
 style="display:block; text-align:center; padding-top:1rem;"
 data-ad-layout="in-article"
