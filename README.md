@@ -14,9 +14,30 @@ The `examples` folder contains code snippets for usage of script API features, w
 
 There are folders with a README file, which indicates that there is a missing example towards that component within  Script API documentation and we encourage you to help us. Check out the [Contribute Page](./examples/README.md) for further instructions.
 
+Example - The `bridgeEgg.js` file saved in `/examples/@minecraft/server/Block/prototype/isAir` folder with the following content:
+
+```js
+import { world, system, BlockPermutation } from "@minecraft/server";
+
+// bridge egg
+world.afterEvents.entitySpawn.subscribe(({ entity }) => {
+    if (entity.typeId === "minecraft:egg") {
+      const id = system.runInterval(() => {
+        const block = entity.dimension.getBlock(entity.location).below();
+        if (block.isAir) block.setPermutation(BlockPermutation.resolve("minecraft:wool"));
+        else system.clearRun(id);
+      });
+    }
+});
+```
+
+will be in the API reference in this format:
+
+![Example image](./media/example_image.png)
+
 ## Build and Test code
 
-Currently the documentation and guides written for the website and the examples for the API references are open sourced.
+Currently the documentation and guides written for the website and the examples for the API references are open sourced only. We may release more stuff here in the future.
 
 ## Contributing
 
