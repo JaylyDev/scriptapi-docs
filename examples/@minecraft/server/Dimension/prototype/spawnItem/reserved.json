@@ -1,6 +1,5 @@
 {
   "reserved_files": [
-    "itemStacks.ts",
-    "spawnItem.ts"
+    "spawnFeatherItem.ts"
   ]
 }

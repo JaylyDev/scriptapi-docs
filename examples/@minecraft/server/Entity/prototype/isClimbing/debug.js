@@ -1,7 +1,8 @@
+import { system, world } from "@minecraft/server";
+
 system.runInterval(() => {
-  const entity = world.getEntity('unique_id');
-  if (entity.isSneaking) {
-    // force entity not to sneak
+  for (const entity of world.getDimension('overworld').getEntities()) {
+    // Force entity to not sneak
     entity.isSneaking = false;
   }
 })

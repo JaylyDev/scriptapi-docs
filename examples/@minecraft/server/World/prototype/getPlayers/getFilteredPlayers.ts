@@ -1,3 +1,5 @@
+import { EntityQueryOptions, world } from "@minecraft/server";
+
 const entityQueryOptions: EntityQueryOptions = {
   minLevel: 10,
   maxLevel: 30,

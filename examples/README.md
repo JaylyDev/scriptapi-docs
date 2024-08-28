@@ -1,6 +1,4 @@
-This folder contains code snippets for usage of script API features, which they're featured in GitHub pages when deployed.
-
-This feature is experimental and it's subject to change, so please avoid taking any significant dependencies on the structure of the files.
+The `examples` folder contains code snippets for usage of script API features, which they're featured in API references generated using [TypeDoc](https://typedoc.org/) within GitHub Pages when deployed.
 
 ## File structure
 

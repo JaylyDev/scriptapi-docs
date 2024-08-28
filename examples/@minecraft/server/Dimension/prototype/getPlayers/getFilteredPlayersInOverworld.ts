@@ -1,3 +1,5 @@
+import { EntityQueryOptions, world } from "@minecraft/server";
+
 const entityQueryOptions: EntityQueryOptions = {
   maxDistance: 100,
   scoreOptions: [

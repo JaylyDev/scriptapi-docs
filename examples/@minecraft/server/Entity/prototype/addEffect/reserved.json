@@ -1,6 +1,6 @@
 {
   "reserved_files": [
-    "addEffect.js",
+    "poisonVillager.ts",
     "quickFoxLazyDog.ts"
   ]
 }

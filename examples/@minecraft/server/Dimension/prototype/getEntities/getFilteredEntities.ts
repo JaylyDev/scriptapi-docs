@@ -1,4 +1,4 @@
-import { GameMode } from "@minecraft/server";
+import { EntityQueryOptions, GameMode, world } from "@minecraft/server";
 
 const options: EntityQueryOptions = {
   families: ["mob", "animal"],

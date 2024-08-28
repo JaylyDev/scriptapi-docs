@@ -1,3 +1,5 @@
+import { world } from "@minecraft/server";
+
 // Subscribe to the ExplosionAfterEvent
 const explosionSubscription = world.afterEvents.explosion.subscribe((event) => {
   console.log(`Explosion occurred in dimension ${event.dimension.id}`);

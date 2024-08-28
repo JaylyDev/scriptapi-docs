@@ -1,4 +1,4 @@
-import { TicksPerSecond } from "@minecraft/server";
+import { TicksPerSecond, system } from "@minecraft/server";
 
 system.runTimeout(() => {
   console.log("Running callback function after delay...");

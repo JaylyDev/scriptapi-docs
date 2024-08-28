@@ -16,3 +16,5 @@ dist
 /docs/index.md
 
 .env
+
+/docs/.vuepress
