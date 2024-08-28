@@ -1,13 +1,25 @@
-## Script API References
+## Jayly's Script API References
 
-Landing page containing documentation of experimental and stable Script APIs for Minecraft: Bedrock Edition.
+Jayly's Script API References is a set of documentation of experimental and stable Script APIs for Minecraft: Bedrock Edition.
 
-## Documentation
+Visit https://jaylydev.github.io/scriptapi-docs/ to view the full documentation.
 
-For more detailed documentation, the changelog, and How-To Guide provided by Microsoft, see [Script API Documentation Homepage | Microsoft Learn](https://learn.microsoft.com/minecraft/creator/scriptapi/).
+## Docs Folder
 
-Relevant links:
+The `docs` folder contains guides and technical documentation related to Minecraft's Bedrock Script API. This section of the website is powered by VitePress along with the Script API Docs homepage.
 
-- Latest Release API references: [**Script API - Latest**](https://jaylydev.github.io/scriptapi-docs/latest)
+## API Examples
 
-- Latest Preview API references: [**Script API - Preview**](https://jaylydev.github.io/scriptapi-docs/preview)
+The `examples` folder contains code snippets for usage of script API features, which they're featured in API references generated using [TypeDoc](https://typedoc.org/) within GitHub Pages when deployed.
+
+There are folders with a README file, which indicates that there is a missing example towards that component within  Script API documentation and we encourage you to help us. Check out the [Contribute Page](./examples/README.md) for further instructions.
+
+## Build and Test code
+
+Currently the documentation and guides written for the website and the examples for the API references are open sourced.
+
+## Contributing
+
+Feel free to submit GitHub issues and pull requests for suggestions on improving the Script API examples in the repository. We are working on tools to manage these suggestions and sync changes to our internal repository.
+
+If you want to help contributing this repository or you have some questions, feel free to [Join the Discord](https://discord.gg/SuhGvZEXb4)
