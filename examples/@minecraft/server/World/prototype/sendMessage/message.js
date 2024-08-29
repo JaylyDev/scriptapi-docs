@@ -2,8 +2,11 @@
 
 import { world } from "@minecraft/server";
 
-// Subscribe to the `playerJoin` event, which is triggered when a player joins the world
-world.afterEvents.playerJoin.subscribe(eventData => {
+// Subscribe to the `playerSpawn` event, which is triggered when a player joins the world
+world.afterEvents.playerSpawn.subscribe(eventData => {
+	// ignore if player respawns
+	if (! eventData.initialSpawn ) return;
+	
     const player = eventData.player;
 
     // Construct a welcome message for the player who just joined
