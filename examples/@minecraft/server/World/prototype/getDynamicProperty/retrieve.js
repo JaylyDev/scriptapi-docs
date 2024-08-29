@@ -8,8 +8,11 @@ world.afterEvents.playerJoin.subscribe(eventData => {
     const player = eventData.player;
     
     // Attempt to retrieve a custom dynamic property 
-    const playerId = world.getDynamicProperty("playerId");
+    const playersCount = world.getDynamicProperty("playersCount");
+    
+    // If the property doesn't exist
+    playersCount ??= 0
 
-    // If the property doesn't exist, set a default value 
-    player.setDynamicProperty("playerId", player.id);
+    // set a default value 
+    player.setDynamicProperty("playersCount", playersCount + 1 );
 });
