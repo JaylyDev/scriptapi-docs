@@ -71,7 +71,27 @@ function googleTranslateElementInit() {
 <blockquote>
 <p>Bedrock Editor in Minecraft Preview v1.21.30 (August 2024)</p>
 </blockquote>
-<p>The Minecraft Editor or the <code>@minecraft/server-editor</code> module is a built-in JavaScript library for building complex tools based on components provided by the Minecraft Editor API, created on top of Ore UI.</p>
+<p>The Minecraft Editor or the <code>@minecraft/server-editor</code> module is a built-in JavaScript library for building complex tools based on components provided by the Minecraft Editor API, created on top of Ore UI. This module is broken into the following:</p>
+<ul>
+<li><p>Components: The editor API lets you render Ore UI components on the client in Minecraft.</p>
+</li>
+<li><p>Keyboard and Mouse Inputs: Register key and mouse button bindings to interact with the extension.</p>
+</li>
+<li><p>Editor Extension Events: Execute code when an event specific to an Editor&#39;s action occurs.</p>
+</li>
+<li><p>Client Widgets: Performs a function when moving a pointer object.</p>
+<video width="1280" height="720" controls>
+  <source src="/scriptapi-docs/assets/minecraft/ClientWidgetUpdate.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<blockquote>
+<p>Source: <a href="https://github.com/Mojang/minecraft-editor/discussions/192">Release 0.7.0 (1.21.30.23): Personalization Update</a></p>
+</blockquote>
+</li>
+<li><p>Access to many more Editor-only features using the API: Undo/redo transactions, trigger test world, export project, access clipboard, and many more.</p>
+</li>
+</ul>
 <p>The Minecraft Editor module is heavily used on an Editor Extension, a set of resource pack and behavior packs (like <code>.mcaddon</code> files but for editor) loaded into Editor at start up time.</p>
 <p>Keep in mind this API can only be used with Minecraft: Bedrock Editor engine loaded, which is only accessible in Bedrock Preview on Windows.</p>
 <a id="md:server-admin-module" class="tsd-anchor"></a><h2><a href="#md:server-admin-module">Server Admin Module</a></h2><p>Load configuration of variables and secrets in Bedrock Dedicated Server folder using Script API.</p>
