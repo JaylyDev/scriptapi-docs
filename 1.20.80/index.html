@@ -28,24 +28,40 @@ function googleTranslateElementInit() {
 <li><p><a href="/scriptapi-docs/"><strong>Script API Documentation Homepage</strong></a></p>
 </li>
 </ul>
-<a id="md:minecraft-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-module">Minecraft Module</a></h2><p>The main script module for Script API is <code>@minecraft/server</code>. Core library features:</p>
+<a id="md:minecraft-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-module">Minecraft Module</a></h2><p>The Minecraft module, also known as <code>@minecraft/server</code> module, is the main script module to manipulate a Minecraft world. Here are some programmatic features that are available in the Minecraft module:</p>
+<a id="md:common-capabilities" class="tsd-anchor"></a><h3><a href="#md:common-capabilities">Common Capabilities</a></h3><p>Here are some core features the module provides:</p>
 <ul>
 <li>Manipulate a Minecraft world, including entities, blocks, dimensions, and more.</li>
-<li>Events - Execute code when a specific event in a Minecraft occurs.</li>
-<li>Storage - Storage for entities, items and world that is accessible with only script API.</li>
+<li>Register Custom Components for blocks and items.</li>
+<li>Provides input and device infomation for a Minecraft player&#39;s client instance.</li>
+<li>Changes game rules that apply to the world.</li>
+<li>Controls player&#39;s camera view.</li>
+<li>Use the System API to process long running operations.</li>
+</ul>
+<a id="md:events" class="tsd-anchor"></a><h3><a href="#md:events">Events</a></h3><p>The Minecraft module allows you to respond to specific event occurs in Minecraft using event handlers in JavaScript. Event handlers are callback routines made by you. They are triggered in response to an interaction, like when a player interacts with an entity.</p>
+<p>Minecraft Script API&#39;s events are broken down into following categories:</p>
+<ul>
+<li>System Events: Event handlers are triggered when a system-level operation is triggered.</li>
+<li>World Events: Event handlers are triggered when an event happens within a Minecraft world.</li>
+</ul>
+<a id="md:data-storage" class="tsd-anchor"></a><h3><a href="#md:data-storage">Data Storage</a></h3><p>The Minecraft module also provides mechanisms for script plugins to store data, in key/value pairs, in a Minecraft world.</p>
+<p>The two mechanisms within Minecraft world storage (accessible through Script API) are as follows:</p>
+<ul>
+<li>Dynamic Properties: Maintains a separate storage for entities, items and world, that is accessible with only script API per behavior pack.</li>
+<li>Scoreboards: Stores the score of entities in objectives. An objective tracks a single statistic for entities.</li>
 </ul>
 <a id="md:minecraft-ui-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-ui-module">Minecraft UI Module</a></h2><p>The <code>@minecraft/server-ui</code> module helps you build simple form or dialogs to players.</p>
-<p><strong>Action Forms</strong> - A form with a list of buttons with captions and images for presenting a set of options to a player.</p>
+<a id="md:action-forms" class="tsd-anchor"></a><h3><a href="#md:action-forms">Action Forms</a></h3><p>A form with a list of buttons with captions and images for presenting a set of options to a player.</p>
 <p align="center">
   <img src="/scriptapi-docs/assets/minecraft/ActionFormData.png" />
 </p>
 
-<p><strong>Message Forms</strong> - A form with two-button that are functional for Yes/No or OK/Cancel questions.</p>
+<a id="md:message-forms" class="tsd-anchor"></a><h3><a href="#md:message-forms">Message Forms</a></h3><p>A form with two-button that are functional for Yes/No or OK/Cancel questions.</p>
 <p align="center">
   <img src="/scriptapi-docs/assets/minecraft/MessageFormData.png" />
 </p>
 
-<p><strong>Modal Forms</strong> - A more flexible &quot;questionnaire-style&quot; list of controls in a form that can be used to take input.</p>
+<a id="md:modal-forms" class="tsd-anchor"></a><h3><a href="#md:modal-forms">Modal Forms</a></h3><p>A more flexible &quot;questionnaire-style&quot; list of controls in a form that can be used to take input.</p>
 <p align="center">
   <img src="/scriptapi-docs/assets/minecraft/ModalFormData.png" />
 </p>
@@ -69,15 +85,22 @@ function googleTranslateElementInit() {
 </p>
 
 <blockquote>
-<p>Bedrock Editor in Minecraft Preview v1.21.30 (August 2024)</p>
+<p>Bedrock Editor with <a href="https://aka.ms/editorsamples">Editor Samples Add-On</a> in Minecraft Preview v1.21.30 (August 2024)</p>
 </blockquote>
-<p>The Minecraft Editor or the <code>@minecraft/server-editor</code> module is a built-in JavaScript library for building complex tools based on components provided by the Minecraft Editor API, created on top of Ore UI.</p>
-<p>The Minecraft Editor module is heavily used on an Editor Extension, a set of resource pack and behavior packs (like <code>.mcaddon</code> files but for editor) loaded into Editor at start up time.</p>
-<p>Keep in mind this API can only be used with Minecraft: Bedrock Editor engine loaded, which is only accessible in Bedrock Preview on Windows.</p>
+<p>The Minecraft Editor or the <code>@minecraft/server-editor</code> module is a built-in JavaScript library for Editor extensions to build complex tools to build, edit, and test worlds. Currently, this API is only accessible in Bedrock Preview on Windows.</p>
+<p>An Editor extension is a set of resource pack and behavior packs, like <code>.mcaddon</code> files but for Editor, uses this API to perform most actions in the Bedrock Editor.</p>
+<p>Here are some examples of what you can achieve with the Extension API:</p>
+<ul>
+<li>Add built-in Ore UI components &amp; views in the editor UI.</li>
+<li>Create custom tools in the Editor panel.</li>
+<li>Register custom actions and hotkeys to use a tool.</li>
+<li>Export and playtest an Editor project as playable world.</li>
+</ul>
 <a id="md:server-admin-module" class="tsd-anchor"></a><h2><a href="#md:server-admin-module">Server Admin Module</a></h2><p>Load configuration of variables and secrets in Bedrock Dedicated Server folder using Script API.</p>
 <a id="md:debug-utilities-module" class="tsd-anchor"></a><h2><a href="#md:debug-utilities-module">Debug Utilities Module</a></h2><p>A Script API module that is used for debugging purposes. Currently features:</p>
 <ul>
-<li>Disable performance watchdog timing warnings.</li>
+<li>Configure performance watchdog timing warnings for a plugin.</li>
+<li>Provide access to performance-related infomation for script runtimes.</li>
 </ul>
 </div></div>
 <div class="col-sidebar">
@@ -106,7 +129,17 @@ function googleTranslateElementInit() {
 <ul>
 <li><a href="#md:documentation"><span>Documentation</span></a></li>
 <li><a href="#md:minecraft-module"><span>Minecraft <wbr/>Module</span></a></li>
+<li>
+<ul>
+<li><a href="#md:common-capabilities"><span>Common <wbr/>Capabilities</span></a></li>
+<li><a href="#md:events"><span>Events</span></a></li>
+<li><a href="#md:data-storage"><span>Data <wbr/>Storage</span></a></li></ul></li>
 <li><a href="#md:minecraft-ui-module"><span>Minecraft UI <wbr/>Module</span></a></li>
+<li>
+<ul>
+<li><a href="#md:action-forms"><span>Action <wbr/>Forms</span></a></li>
+<li><a href="#md:message-forms"><span>Message <wbr/>Forms</span></a></li>
+<li><a href="#md:modal-forms"><span>Modal <wbr/>Forms</span></a></li></ul></li>
 <li><a href="#md:gametest-framework"><span>Game<wbr/>Test <wbr/>Framework</span></a></li>
 <li><a href="#md:minecraft-http-module"><span>Minecraft HTTP module</span></a></li>
 <li><a href="#md:minecraft-editor-module"><span>Minecraft <wbr/>Editor <wbr/>Module</span></a></li>
