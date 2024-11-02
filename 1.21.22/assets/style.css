@@ -1383,3 +1383,7 @@ body > .skiptranslate {
 body {
     top: 0px !important; 
 }
+.adsbygoogle {
+    padding-bottom: 0.67rem;
+    filter: blur(10px);
+}
