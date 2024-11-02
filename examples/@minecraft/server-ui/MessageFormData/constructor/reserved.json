@@ -1,5 +1,6 @@
 {
   "reserved_files": [
-    "messageFormSimple.ts"
+    "showBasicMessageForm.ts",
+    "showTranslatedMessageForm.ts"
   ]
 }

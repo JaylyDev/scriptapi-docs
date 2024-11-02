@@ -1,5 +1,9 @@
 {
   "reserved_files": [
-    "sendMessagesToPlayer.ts"
+    "nestedTranslation.ts",
+    "scoreWildcard.ts",
+    "sendBasicMessage.ts",
+    "sendPlayerMessages.ts",
+    "sendTranslatedMessage.ts"
   ]
 }

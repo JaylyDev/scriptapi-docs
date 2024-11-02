@@ -1,6 +1,7 @@
 {
   "reserved_files": [
-    "checkFeatherNearby.ts",
-    "tagsQuery.ts"
+    "bounceSkeletons.ts",
+    "tagsQuery.ts",
+    "testThatEntityIsFeatherItem.ts"
   ]
 }

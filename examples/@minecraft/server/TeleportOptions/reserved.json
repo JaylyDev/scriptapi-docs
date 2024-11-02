@@ -1,5 +1,6 @@
 {
   "reserved_files": [
+    "teleport.ts",
     "teleportMovement.ts"
   ]
 }

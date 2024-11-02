@@ -1,6 +1,7 @@
 {
   "reserved_files": [
     "addTranslatedSign.ts",
-    "showTranslatedMessageForm.ts"
+    "showTranslatedMessageForm.ts",
+    "addTranslatedSign.ts"
   ]
 }

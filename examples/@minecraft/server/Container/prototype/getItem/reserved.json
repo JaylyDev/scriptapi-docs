@@ -1,5 +1,5 @@
 {
   "reserved_files": [
-    "getItem.ts"
+    "getFirstHotbarItem.ts"
   ]
 }

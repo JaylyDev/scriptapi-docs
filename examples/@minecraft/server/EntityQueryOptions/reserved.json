@@ -1,0 +1,12 @@
+{
+  "reserved_files": [
+    "blockConditional.ts",
+    "findEntitiesHavingPropertyEqualsTo.ts",
+    "playSoundChained.ts",
+    "setScoreboardChained.ts",
+    "summonMobChained.ts",
+    "bounceSkeletons.ts",
+    "tagsQuery.ts",
+    "testThatEntityIsFeatherItem.ts"
+  ]
+}

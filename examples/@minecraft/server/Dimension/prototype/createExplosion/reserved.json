@@ -1,5 +1,7 @@
 {
   "reserved_files": [
+    "createExplosion.ts",
+    "createNoBlockExplosion.ts",
     "createExplosions.ts"
   ]
 }

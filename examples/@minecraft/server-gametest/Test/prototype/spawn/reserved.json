@@ -1,6 +1,8 @@
 {
   "reserved_files": [
     "simpleMobTest.ts",
-    "spawnAdultPig.js"
+    "simpleMobGameTest.ts",
+    "phantomsShouldFlyFromCats.ts",
+    "minibiomes.ts"
   ]
 }

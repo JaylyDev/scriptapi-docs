@@ -1,6 +1,7 @@
 {
   "reserved_files": [
-    "createOldHorse.ts",
-    "quickFoxLazyDog.ts"
+    "spawnAdultHorse.ts",
+    "quickFoxLazyDog.ts",
+    "triggerEvent.ts"
   ]
 }
