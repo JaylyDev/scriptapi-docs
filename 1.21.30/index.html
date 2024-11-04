@@ -15,16 +15,15 @@ function googleTranslateElementInit() {
 <div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div><div class="tsd-toolbar-contents container"><div id="google_translate" style="height: 24px !important;overflow: hidden !important; padding: 0rem 0.5rem;"></div></header>
 <div class="container container-main">
 <div class="col-content"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2533146760921020" crossorigin="anonymous"></script><ins class="adsbygoogle"
-     style="display:block;"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-f9+4w+7x-eg+3a"
      data-ad-client="ca-pub-2533146760921020"
-     data-ad-slot="9981621827"
-     data-ad-format="horizontal"
-     data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+     data-ad-slot="4316521743"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 <div class="tsd-page-title notranslate">
 <h2>Script API - v1.21.30</h2></div>
-<div class="tsd-panel tsd-typography"><a id="md:script-api-references" class="tsd-anchor"></a><h1><a href="#md:script-api-references">Script API References</a></h1><p>Landing page for Minecraft Bedrock Script API Reference, containing documentation related to experimental and stable Minecraft Script APIs to interact with a Minecraft world programmatically.</p>
-<p>The libraries of Script APIs are grouped under the <code>@minecraft</code> scope on Minecraft and npm.</p>
-<a id="md:documentation" class="tsd-anchor"></a><h2><a href="#md:documentation">Documentation</a></h2><p>Visit one of the following links to view the full documentation that matches your Minecraft version.</p>
+<div class="tsd-panel tsd-typography"><a id="md:script-api-references" class="tsd-anchor"></a><h1><a href="#md:script-api-references">Script API References</a></h1><p>The landing page for Minecraft Bedrock Script API Reference contains documentation related to experimental and stable Minecraft Script APIs that interact with a Minecraft world programmatically.</p>
+<p>Visit one of the following links to view the full documentation that matches your Minecraft version.</p>
 <ul>
 <li><p>Minecraft: Bedrock Edition API references: <a href="/scriptapi-docs/latest"><strong>Script API - Latest</strong></a></p>
 </li>
@@ -33,29 +32,26 @@ function googleTranslateElementInit() {
 <li><p><a href="/scriptapi-docs/"><strong>Script API Documentation Homepage</strong></a></p>
 </li>
 </ul>
-<a id="md:minecraft-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-module">Minecraft Module</a></h2><p>The Minecraft module, also known as <code>@minecraft/server</code> module, is the main script module to manipulate a Minecraft world.</p>
-<p>Here are some core features the module provides:</p>
+<a id="md:minecraft-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-module">Minecraft Module</a></h2><p>The Minecraft module, or the <code>@minecraft/server</code> module, is the main script module to manipulate a Minecraft world, including entities, blocks, dimensions, and more. Here are some features that you can integrate with a script plugin.</p>
+<a id="md:customize-gameplay" class="tsd-anchor"></a><h3><a href="#md:customize-gameplay">Customize Gameplay</a></h3><p>A script plugin can customize the experience of gameplay in Minecraft, through accessing and modifying the state of a Minecraft world. From changing weather and game rules for an in-game world to modifying a player&#39;s attributes.</p>
+<p>Explore the <code>World</code> class to see all the features you can manipulate within the world.</p>
+<a id="md:receiving-events" class="tsd-anchor"></a><h3><a href="#md:receiving-events">Receiving Events</a></h3><p>The Script API can receive events sent by Minecraft to script plugins. An event represents something that is happening inside of a Minecraft world, like a player interacting with an entity. They can be used to create more engaging experiences for players.</p>
+<p>Minecraft Script API&#39;s events are broken down into the following categories:</p>
 <ul>
-<li>Manipulate a Minecraft world, including entities, blocks, dimensions, and more.</li>
-<li>Register Custom Components for blocks and items.</li>
-<li>Provides input and device infomation for a Minecraft player&#39;s client instance.</li>
-<li>Changes game rules that apply to the world.</li>
-<li>Controls player&#39;s camera view.</li>
-<li>Use the System API to process long running operations.</li>
+<li><strong>System Events</strong>: Event handlers are triggered when a system-level operation is initiated.</li>
+<li><strong>World Events</strong>: Event handlers are triggered when an event happens within a Minecraft world.</li>
 </ul>
-<a id="md:events" class="tsd-anchor"></a><h3><a href="#md:events">Events</a></h3><p>The Minecraft module allows you to respond to specific event occurs in Minecraft using event handlers in JavaScript. Event handlers are callback routines made by you. They are triggered in response to an interaction, like when a player interacts with an entity.</p>
-<p>Minecraft Script API&#39;s events are broken down into following categories:</p>
-<ul>
-<li>System Events: Event handlers are triggered when a system-level operation is triggered.</li>
-<li>World Events: Event handlers are triggered when an event happens within a Minecraft world.</li>
-</ul>
-<a id="md:data-storage" class="tsd-anchor"></a><h3><a href="#md:data-storage">Data Storage</a></h3><p>The Minecraft module also provides mechanisms for script plugins to store data, in key/value pairs, in a Minecraft world.</p>
+<a id="md:component-management" class="tsd-anchor"></a><h3><a href="#md:component-management">Component Management</a></h3><p>The API offers some control over components of an entity, a block, or an item. This includes modifying an inventory container, and player attributes.</p>
+<p>A behavior pack can also use Custom Components on blocks and items to create an immersive experience for players. Script plugins can create their functionality across specific blocks and items.</p>
+<a id="md:storing-data-in-a-minecraft-world" class="tsd-anchor"></a><h3><a href="#md:storing-data-in-a-minecraft-world">Storing Data in a Minecraft World</a></h3><p>The Minecraft module also provides mechanisms for script plugins to store data. The data are stored in a Minecraft world in key/value pairs.</p>
 <p>The two mechanisms within Minecraft world storage (accessible through Script API) are as follows:</p>
 <ul>
-<li>Dynamic Properties: Maintains a separate storage for entities, items and world, that is accessible with only script API per behavior pack.</li>
-<li>Scoreboards: Stores the score of entities in objectives. An objective tracks a single statistic for entities.</li>
+<li><strong>Dynamic Properties</strong>: Maintains a separate storage for entities, items and world, that is accessible with only script API per behavior pack.</li>
+<li><strong>Scoreboards</strong>: Stores the score of entities in objectives. An objective tracks a single statistic for entities.</li>
+<li><strong>Entity Properties</strong>: Save data or store values on entities that can be optionally read by Resource Packs.</li>
 </ul>
-<a id="md:minecraft-ui-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-ui-module">Minecraft UI Module</a></h2><p>The <code>@minecraft/server-ui</code> module helps you build simple form or dialogs to players.</p>
+<a id="md:and-many-more" class="tsd-anchor"></a><h3><a href="#md:and-many-more">And many more</a></h3><p>There are a lot of features available in that script module for you to explore. You should probably start making your app.</p>
+<a id="md:minecraft-ui-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-ui-module">Minecraft UI Module</a></h2><p>The <code>@minecraft/server-ui</code> module helps you build simple forms or dialogs, and send them to players. This allows script plugins to collect form-like data in Minecraft.</p>
 <a id="md:action-forms" class="tsd-anchor"></a><h3><a href="#md:action-forms">Action Forms</a></h3><p>A form with a list of buttons with captions and images for presenting a set of options to a player.</p>
 <p align="center">
   <img src="/scriptapi-docs/assets/minecraft/ActionFormData.png" />
@@ -76,15 +72,14 @@ function googleTranslateElementInit() {
 </p>
 
 <blockquote>
-<p>One of the sample GameTests from <a href="https://github.com/microsoft/minecraft-gametests/">Microsoft sample GameTest repository on GitHub</a></p>
+<p>One of the sample GameTests from <a href="https://github.com/microsoft/minecraft-gametests/">Microsoft&#39;s sample GameTest repository on GitHub</a></p>
 </blockquote>
 <p>GameTest Framework is a toolset available to creators to build and test any new content using the <code>@minecraft/server-gametest</code> script module and the <code>/gametest</code> command in Minecraft. Each GameTest is broken into the following:</p>
 <ul>
-<li>Register a test: create an environment to conduct a test.</li>
-<li>Setup a test: Setup the environment to run the test.</li>
-<li>Validate a test: Evaluates whether a test passed or failed.</li>
+<li><strong>Register a test</strong>: create an environment to conduct a test.</li>
+<li><strong>Setup a test</strong>: Setup the environment to run the test.</li>
+<li><strong>Validate a test</strong>: Evaluate whether a test passed or failed.</li>
 </ul>
-<a id="md:minecraft-http-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-http-module">Minecraft HTTP module</a></h2><p>Use the Script API to send HTTP requests to the internet using the <code>@minecraft/server-net</code> module.</p>
 <a id="md:minecraft-editor-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-editor-module">Minecraft Editor Module</a></h2><p align="center">
   <img src="/scriptapi-docs/assets/minecraft/editor.png" />
 </p>
@@ -99,13 +94,18 @@ function googleTranslateElementInit() {
 <li>Add built-in Ore UI components &amp; views in the editor UI.</li>
 <li>Create custom tools in the Editor panel.</li>
 <li>Register custom actions and hotkeys to use a tool.</li>
-<li>Export and playtest an Editor project as playable world.</li>
+<li>Export and playtest an Editor project as a playable world.</li>
 </ul>
-<a id="md:server-admin-module" class="tsd-anchor"></a><h2><a href="#md:server-admin-module">Server Admin Module</a></h2><p>Load configuration of variables and secrets in Bedrock Dedicated Server folder using Script API.</p>
+<a id="md:minecraft-net-module" class="tsd-anchor"></a><h2><a href="#md:minecraft-net-module">Minecraft net module</a></h2><p>The <code>@minecraft/server-net</code> module in Minecraft Bedrock&#39;s Script API allows for server-based HTTP request handling and packet handling specifically within a Bedrock Dedicated Server.</p>
+<a id="md:server-admin-module" class="tsd-anchor"></a><h2><a href="#md:server-admin-module">Server Admin Module</a></h2><p>The <code>@minecraft/server-admin</code> module manages the administration in a Bedrock Dedicated Server. Its current capabilities include:</p>
+<ul>
+<li>Load configuration of variables and secrets in the Bedrock Dedicated Server folder.</li>
+<li>Transfer a player to another Bedrock server.</li>
+</ul>
 <a id="md:debug-utilities-module" class="tsd-anchor"></a><h2><a href="#md:debug-utilities-module">Debug Utilities Module</a></h2><p>A Script API module that is used for debugging purposes. Currently features:</p>
 <ul>
 <li>Configure performance watchdog timing warnings for a plugin.</li>
-<li>Provide access to performance-related infomation for script runtimes.</li>
+<li>Provide access to performance-related information for script runtimes.</li>
 </ul>
 </div></div>
 <div class="col-sidebar">
@@ -132,12 +132,14 @@ function googleTranslateElementInit() {
 <li><a href="#md:script-api-references"><span>Script API <wbr/>References</span></a></li>
 <li>
 <ul>
-<li><a href="#md:documentation"><span>Documentation</span></a></li>
 <li><a href="#md:minecraft-module"><span>Minecraft <wbr/>Module</span></a></li>
 <li>
 <ul>
-<li><a href="#md:events"><span>Events</span></a></li>
-<li><a href="#md:data-storage"><span>Data <wbr/>Storage</span></a></li></ul></li>
+<li><a href="#md:customize-gameplay"><span>Customize <wbr/>Gameplay</span></a></li>
+<li><a href="#md:receiving-events"><span>Receiving <wbr/>Events</span></a></li>
+<li><a href="#md:component-management"><span>Component <wbr/>Management</span></a></li>
+<li><a href="#md:storing-data-in-a-minecraft-world"><span>Storing <wbr/>Data in a <wbr/>Minecraft <wbr/>World</span></a></li>
+<li><a href="#md:and-many-more"><span>And many more</span></a></li></ul></li>
 <li><a href="#md:minecraft-ui-module"><span>Minecraft UI <wbr/>Module</span></a></li>
 <li>
 <ul>
@@ -145,8 +147,8 @@ function googleTranslateElementInit() {
 <li><a href="#md:message-forms"><span>Message <wbr/>Forms</span></a></li>
 <li><a href="#md:modal-forms"><span>Modal <wbr/>Forms</span></a></li></ul></li>
 <li><a href="#md:gametest-framework"><span>Game<wbr/>Test <wbr/>Framework</span></a></li>
-<li><a href="#md:minecraft-http-module"><span>Minecraft HTTP module</span></a></li>
 <li><a href="#md:minecraft-editor-module"><span>Minecraft <wbr/>Editor <wbr/>Module</span></a></li>
+<li><a href="#md:minecraft-net-module"><span>Minecraft net module</span></a></li>
 <li><a href="#md:server-admin-module"><span>Server <wbr/>Admin <wbr/>Module</span></a></li>
 <li><a href="#md:debug-utilities-module"><span>Debug <wbr/>Utilities <wbr/>Module</span></a></li></ul></li></ul></li></ul></div></details></div>
 <div class="site-menu notranslate">
