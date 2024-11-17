@@ -63,6 +63,10 @@ function googleTranslateElementInit() {
 <h4>Remarks</h4><p>This function can&#39;t be called in read-only mode.</p>
 
 <h4>Throws</h4><p>This function can throw errors.</p>
+
+<h4>Example</h4><details><summary class="notranslate">closePlayerForm.ts</summary>
+<p><pre><code class="language-ts"><span class="hl-4">import</span><span class="hl-0"> { </span><span class="hl-5">Player</span><span class="hl-0"> } </span><span class="hl-4">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">;</span><br/><span class="hl-4">import</span><span class="hl-0"> { </span><span class="hl-5">uiManager</span><span class="hl-0"> } </span><span class="hl-4">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@minecraft/server-ui&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-10">/**</span><br/><span class="hl-10"> * which closes all modal/message/action forms from a player</span><br/><span class="hl-10"> * </span><span class="hl-6">@param</span><span class="hl-10"> </span><span class="hl-5">player</span><span class="hl-10"> Player to close the form to</span><br/><span class="hl-10"> */</span><br/><span class="hl-6">function</span><span class="hl-0"> </span><span class="hl-3">closeForm</span><span class="hl-0">(</span><span class="hl-5">player</span><span class="hl-0">: </span><span class="hl-8">Player</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-5">uiManager</span><span class="hl-0">.</span><span class="hl-3">closeAllForms</span><span class="hl-0">(</span><span class="hl-5">player</span><span class="hl-0">);</span><br/><span class="hl-0">}</span>
+</code><button>Copy</button></pre></p></details>
 </div></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
