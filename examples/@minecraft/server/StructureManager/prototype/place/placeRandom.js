@@ -29,4 +29,5 @@ function getRandomStructure() {
 
 const structure = getRandomStructure();
 const player = world.getPlayers()[0];
+// Place structure on player's location
 world.structureManager.place(structure, player.dimension, player.location, { animationMode: StructureAnimationMode.Blocks, animationSeconds: 15 });
