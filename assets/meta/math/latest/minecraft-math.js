@@ -135,6 +135,64 @@ var Vector3Utils = class _Vector3Utils {
     const tb = Math.sin(t * theta) / sinTheta;
     return _Vector3Utils.add(_Vector3Utils.scale(a, ta), _Vector3Utils.scale(b, tb));
   }
+  /**
+   * multiply
+   *
+   * Element-wise multiplication of two vectors together.
+   * Not to be confused with {@link Vector3Utils.dot} product or {@link Vector3Utils.cross} product
+   */
+  static multiply(a, b) {
+    return {
+      x: a.x * b.x,
+      y: a.y * b.y,
+      z: a.z * b.z
+    };
+  }
+  /**
+   * rotateX
+   *
+   * Rotates the vector around the x axis counterclockwise (left hand rule)
+   * @param a - Angle in radians
+   */
+  static rotateX(v, a) {
+    let cos = Math.cos(a);
+    let sin = Math.sin(a);
+    return {
+      x: v.x,
+      y: v.y * cos - v.z * sin,
+      z: v.z * cos + v.y * sin
+    };
+  }
+  /**
+   * rotateY
+   *
+   * Rotates the vector around the y axis counterclockwise (left hand rule)
+   * @param a - Angle in radians
+   */
+  static rotateY(v, a) {
+    let cos = Math.cos(a);
+    let sin = Math.sin(a);
+    return {
+      x: v.x * cos + v.z * sin,
+      y: v.y,
+      z: v.z * cos - v.x * sin
+    };
+  }
+  /**
+   * rotateZ
+   *
+   * Rotates the vector around the z axis counterclockwise (left hand rule)
+   * @param a - Angle in radians
+   */
+  static rotateZ(v, a) {
+    let cos = Math.cos(a);
+    let sin = Math.sin(a);
+    return {
+      x: v.x * cos - v.y * sin,
+      y: v.y * cos + v.x * sin,
+      z: v.z
+    };
+  }
 };
 var Vector2Utils = class {
   /**
@@ -293,6 +351,42 @@ var Vector3Builder = class {
    */
   slerp(vec, t) {
     return this.assign(Vector3Utils.slerp(this, vec, t));
+  }
+  /**
+   * multiply
+   *
+   * Element-wise multiplication of two vectors together.
+   * Not to be confused with {@link Vector3Builder.dot} product or {@link Vector3Builder.cross} product
+   */
+  multiply(vec) {
+    return this.assign(Vector3Utils.multiply(this, vec));
+  }
+  /**
+   * rotateX
+   *
+   * Rotates the vector around the x axis counterclockwise (left hand rule)
+   * @param a - Angle in radians
+   */
+  rotateX(a) {
+    return this.assign(Vector3Utils.rotateX(this, a));
+  }
+  /**
+   * rotateY
+   *
+   * Rotates the vector around the y axis counterclockwise (left hand rule)
+   * @param a - Angle in radians
+   */
+  rotateY(a) {
+    return this.assign(Vector3Utils.rotateY(this, a));
+  }
+  /**
+   * rotateZ
+   *
+   * Rotates the vector around the z axis counterclockwise (left hand rule)
+   * @param a - Angle in radians
+   */
+  rotateZ(a) {
+    return this.assign(Vector3Utils.rotateZ(this, a));
   }
 };
 var Vector2Builder = class {
