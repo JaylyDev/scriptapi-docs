@@ -1,35 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="VuePress 2.0.0-rc.2">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.18" />
     <style>
       :root {
-        --c-bg: #fff;
+        --vp-c-bg: #fff;
       }
-      html.dark {
-        --c-bg: #22272e;
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
       }
-      html, body {
-        background-color: var(--c-bg);
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
       }
     </style>
     <script>
-      const userMode = localStorage.getItem('vuepress-color-scheme');
-			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
-				document.documentElement.classList.toggle('dark', true);
-			}
+      const userMode = localStorage.getItem('vuepress-color-scheme')
+      const systemDarkMode =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (userMode === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (userMode === 'dark' || systemDarkMode) {
+        document.documentElement.dataset.theme = 'dark'
+      }
     </script>
     <meta property="og:type" content="article"><meta property="og:image" content="https://jaylydev.github.io/icon.png"><script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3X0X9VRB2"></script><script>  window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-Q3X0X9VRB2');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2533146760921020"></script><title>JaylyMC</title><meta name="description" content="">
-    <link rel="preload" href="/scriptapi-docs/assets/style-ChAJ6-OW.css" as="style"><link rel="stylesheet" href="/scriptapi-docs/assets/style-ChAJ6-OW.css">
-    <link rel="modulepreload" href="/scriptapi-docs/assets/app-cO4OSEzs.js"><link rel="modulepreload" href="/scriptapi-docs/assets/404.html-Dr_hljQG.js"><link rel="modulepreload" href="/scriptapi-docs/assets/404.html-5sy5zeZP.js">
-    <link rel="prefetch" href="/scriptapi-docs/assets/index.html-DzC2f2jz.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/dynamic-properties.html-DE8J7vgU.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/index.html-Cw_ZmLlL.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/script-eval.html-B--3azqQ.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/secrets-and-variables.html-BhPOBTGD.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/cdn-links.html-aMpPKAQl.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/index.html-BEhGZ_M9.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/resource-links.html-CojzMJTw.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/index.html-BERVqMPa.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/dynamic-properties.html-D07_2BbD.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/index.html-CmyB9iuh.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/script-eval.html-BOjdOhRa.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/secrets-and-variables.html-CUsGov1b.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/cdn-links.html-COvLGiR8.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/index.html-EIOGpGfO.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/resource-links.html-BaMd_xc0.js" as="script">
+    <link rel="preload" href="/scriptapi-docs/assets/style-BcjDHv8t.css" as="style"><link rel="stylesheet" href="/scriptapi-docs/assets/style-BcjDHv8t.css">
+    <link rel="modulepreload" href="/scriptapi-docs/assets/app-Df0PJo8o.js"><link rel="modulepreload" href="/scriptapi-docs/assets/404.html-W4IygQcf.js">
+    <link rel="prefetch" href="/scriptapi-docs/assets/index.html-39Qz7eET.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/custom-components.html-MVnJCSoF.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/dynamic-properties.html-C6iILSfd.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/index.html-BuruhQHE.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/script-eval.html-2XyCH28l.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/secrets-and-variables.html-jwB_zMt5.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/cdn-links.html-C9tKmPkY.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/index.html-NnaHxs97.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/resource-links.html-B2-LuZNd.js" as="script"><link rel="prefetch" href="/scriptapi-docs/assets/setupDevtools-7MC2TMWH-DETrd0Ri.js" as="script">
   <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({ pageLanguage: "en", layout: google.translate.TranslateElement.InlineLayout.VERTICAL, }, "google_translate");
@@ -37,7 +46,7 @@ function googleTranslateElementInit() {
 </script>
 <script type="text/javascript" async src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script><meta property="og:image" content="https://jaylydev.github.io/icon.png"/><meta property="og:type" content="article"/></head>
   <body>
-    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>How did we get here?</blockquote><a href="/scriptapi-docs/" class="">Take me home</a></div></main></div><!----><!--]--></div>
-    <script type="module" src="/scriptapi-docs/assets/app-cO4OSEzs.js" defer></script>
+    <div id="app"><!--[--><div class="vp-theme-container" vp-container data-v-67c08c1d><main class="page" data-v-67c08c1d><div class="theme-default-content" vp-content data-v-67c08c1d><h1 data-v-67c08c1d>404</h1><blockquote data-v-67c08c1d>That&#39;s a Four-Oh-Four.</blockquote><a class="route-link" href="/scriptapi-docs/" data-v-67c08c1d>Take me home</a></div></main></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/scriptapi-docs/assets/app-Df0PJo8o.js" defer></script>
   </body>
 </html>
