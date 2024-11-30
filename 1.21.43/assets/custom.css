@@ -8,6 +8,12 @@ body {
     top: 0px !important;
 }
 
+/* Google Ads */
+
+.col-content > .adsbygoogle {
+    margin-bottom: 0.67rem;
+}
+
 /* Footer styles */
 
 .footer-container {
