@@ -14,4 +14,14 @@ function listenForCodeCopies() {
   });  
 }
 
+function loadAds() {
+  setTimeout(() => {
+    const ads = document.querySelectorAll("ins.adsbygoogle");
+    ads.forEach(() => {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    });
+  }, 1000);
+}
+
 listenForCodeCopies();
+loadAds();
