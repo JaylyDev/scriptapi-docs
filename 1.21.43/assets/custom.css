@@ -28,7 +28,7 @@ footer {
     max-height: max-content;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px){
     .footer-container {
         flex-direction: row;
     }
