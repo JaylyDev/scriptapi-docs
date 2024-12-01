@@ -14,9 +14,14 @@ function listenForCodeCopies() {
 
 function loadAds() {
   setTimeout(() => {
-    (adsbygoogle = window.adsbygoogle || []).push({});
+    const ads = document.querySelectorAll("ins.adsbygoogle");
+    ads.forEach((ad) => {
+      if (ad.className.includes("adsbygoogle-noablate")) return;
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    });
   }, 1000);
 }
+
 
 listenForCodeCopies();
 loadAds();
