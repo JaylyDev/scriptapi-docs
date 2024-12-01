@@ -2,9 +2,7 @@ function listenForCodeCopies() {
   document.querySelectorAll("pre > button").forEach((button) => {
     button.addEventListener("click", () => {
       if (button.previousElementSibling instanceof HTMLDetailsElement) {
-        if (button.previousElementSibling.open) {
-          return;
-        }
+        if (button.previousElementSibling.open) return;
         button.previousElementSibling.open = true;
         navigator.clipboard.writeText(
           button.previousElementSibling.innerText.trim()
@@ -16,10 +14,7 @@ function listenForCodeCopies() {
 
 function loadAds() {
   setTimeout(() => {
-    const ads = document.querySelectorAll("ins.adsbygoogle");
-    ads.forEach(() => {
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    });
+    (adsbygoogle = window.adsbygoogle || []).push({});
   }, 1000);
 }
 
