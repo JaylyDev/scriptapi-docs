@@ -22,6 +22,5 @@ function loadAds() {
   }, 1000);
 }
 
-
 listenForCodeCopies();
 loadAds();
