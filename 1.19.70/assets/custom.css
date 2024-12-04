@@ -8,6 +8,38 @@ body {
     top: 0px !important;
 }
 
+/* one sidebar */
+@media (min-width: 770px) and (max-width: 1399px) {
+    .col-sidebar {
+        top: 84px;
+    }
+}
+
+/* two sidebars */
+@media (min-width: 1200px) {
+    .page-menu,
+    .site-menu {
+        top: 84px;
+    }
+}
+
+/* Google Ads */
+
+ins.adsbygoogle.jaylyanchor {
+    display: inline-block;
+    width: 300px;
+    height: 50px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+@media (max-width: 1000px) {
+    ins.adsbygoogle.jaylyanchor {
+        display: none !important;
+    }
+}
+
 /* Footer styles */
 
 .footer-container {
@@ -28,7 +60,7 @@ footer {
     max-height: max-content;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
     .footer-container {
         flex-direction: row;
     }
