@@ -25,7 +25,7 @@ body {
 
 /* Google Ads */
 
-ins.adsbygoogle.jaylyanchor {
+ins.adsbygoogle.jaylybanner {
     display: inline-block;
     width: 300px;
     height: 50px;
@@ -34,8 +34,8 @@ ins.adsbygoogle.jaylyanchor {
     right: 0px;
 }
 
-@media (max-width: 1000px) {
-    ins.adsbygoogle.jaylyanchor {
+@media (min-width: 1000px) {
+    ins.adsbygoogle.jaylyfooter {
         display: none !important;
     }
 }
