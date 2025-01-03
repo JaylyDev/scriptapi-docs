@@ -1,0 +1,18 @@
+name: Report a script example issue
+description: Report an issue with our custom script examples
+labels: ["bug", "documentation"]
+body:
+  - type: textarea
+    id: examples
+    attributes:
+      label: Script Examples
+      description: Provide a list of source URL of script examples that show the problem you are reporting.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Details
+      description: If possible, please provide extended details about the issue.
+      value: "Script example is incorrect."
+    validations:
+      required: true
