@@ -17,92 +17,86 @@
     --dark-hl-7: #4FC1FF;
     --light-hl-8: #267F99;
     --dark-hl-8: #4EC9B0;
-    --light-hl-9: #098658;
-    --dark-hl-9: #B5CEA8;
-    --light-hl-10: #008000;
-    --dark-hl-10: #6A9955;
-    --light-hl-11: #000000FF;
-    --dark-hl-11: #D4D4D4;
+    --light-hl-9: #001080;
+    --dark-hl-9: #569CD6;
+    --light-hl-10: #001080;
+    --dark-hl-10: #4FC1FF;
+    --light-hl-11: #795E26;
+    --dark-hl-11: #C586C0;
     --light-hl-12: #000000;
-    --dark-hl-12: #9CDCFE;
+    --dark-hl-12: #C586C0;
     --light-hl-13: #000000;
-    --dark-hl-13: #DCDCAA;
-    --light-hl-14: #795E26;
-    --dark-hl-14: #9CDCFE;
-    --light-hl-15: #AF00DB;
-    --dark-hl-15: #D4D4D4;
-    --light-hl-16: #0000FF;
-    --dark-hl-16: #9CDCFE;
-    --light-hl-17: #AF00DB;
-    --dark-hl-17: #DCDCAA;
-    --light-hl-18: #000000;
-    --dark-hl-18: #6A9955;
-    --light-hl-19: #0000FF;
-    --dark-hl-19: #D4D4D4;
-    --light-hl-20: #001080;
-    --dark-hl-20: #D4D4D4;
-    --light-hl-21: #795E26;
-    --dark-hl-21: #D4D4D4;
-    --light-hl-22: #EE0000;
-    --dark-hl-22: #D7BA7D;
-    --light-hl-23: #008000;
-    --dark-hl-23: #569CD6;
-    --light-hl-24: #008000;
+    --dark-hl-13: #569CD6;
+    --light-hl-14: #001080;
+    --dark-hl-14: #C586C0;
+    --light-hl-15: #098658;
+    --dark-hl-15: #B5CEA8;
+    --light-hl-16: #008000;
+    --dark-hl-16: #6A9955;
+    --light-hl-17: #000000FF;
+    --dark-hl-17: #D4D4D4;
+    --light-hl-18: #A31515;
+    --dark-hl-18: #D4D4D4;
+    --light-hl-19: #EE0000;
+    --dark-hl-19: #D7BA7D;
+    --light-hl-20: #000000;
+    --dark-hl-20: #CE9178;
+    --light-hl-21: #001080;
+    --dark-hl-21: #CE9178;
+    --light-hl-22: #0000FF;
+    --dark-hl-22: #9CDCFE;
+    --light-hl-23: #0070C1;
+    --dark-hl-23: #9CDCFE;
+    --light-hl-24: #001080;
     --dark-hl-24: #D4D4D4;
-    --light-hl-25: #008000;
-    --dark-hl-25: #4FC1FF;
-    --light-hl-26: #008000;
-    --dark-hl-26: #9CDCFE;
-    --light-hl-27: #008000;
-    --dark-hl-27: #DCDCAA;
-    --light-hl-28: #008000;
-    --dark-hl-28: #CE9178;
-    --light-hl-29: #008000;
-    --dark-hl-29: #B5CEA8;
-    --light-hl-30: #000000;
-    --dark-hl-30: #C586C0;
+    --light-hl-25: #795E26;
+    --dark-hl-25: #D4D4D4;
+    --light-hl-26: #001080;
+    --dark-hl-26: #DCDCAA;
+    --light-hl-27: #000000;
+    --dark-hl-27: #9CDCFE;
+    --light-hl-28: #098658;
+    --dark-hl-28: #9CDCFE;
+    --light-hl-29: #000000;
+    --dark-hl-29: #DCDCAA;
+    --light-hl-30: #A31515;
+    --dark-hl-30: #DCDCAA;
     --light-hl-31: #0000FF;
-    --dark-hl-31: #C586C0;
-    --light-hl-32: #001080;
-    --dark-hl-32: #C586C0;
-    --light-hl-33: #098658;
-    --dark-hl-33: #C586C0;
-    --light-hl-34: #000000;
-    --dark-hl-34: #569CD6;
-    --light-hl-35: #001080;
-    --dark-hl-35: #569CD6;
-    --light-hl-36: #001080;
-    --dark-hl-36: #4FC1FF;
-    --light-hl-37: #795E26;
-    --dark-hl-37: #C586C0;
-    --light-hl-38: #000000;
-    --dark-hl-38: #CE9178;
-    --light-hl-39: #001080;
-    --dark-hl-39: #CE9178;
-    --light-hl-40: #795E26;
-    --dark-hl-40: #CE9178;
-    --light-hl-41: #A31515;
-    --dark-hl-41: #9CDCFE;
-    --light-hl-42: #A31515;
-    --dark-hl-42: #D4D4D4;
-    --light-hl-43: #000000;
-    --dark-hl-43: #F44747;
-    --light-hl-44: #008000;
-    --dark-hl-44: #C586C0;
-    --light-hl-45: #001080;
-    --dark-hl-45: #6A9955;
-    --light-hl-46: #795E26;
-    --dark-hl-46: #6A9955;
-    --light-hl-47: #0000FF;
-    --dark-hl-47: #6A9955;
-    --light-hl-48: #AF00DB;
+    --dark-hl-31: #D4D4D4;
+    --light-hl-32: #AF00DB;
+    --dark-hl-32: #DCDCAA;
+    --light-hl-33: #795E26;
+    --dark-hl-33: #9CDCFE;
+    --light-hl-34: #795E26;
+    --dark-hl-34: #B5CEA8;
+    --light-hl-35: #000000;
+    --dark-hl-35: #6A9955;
+    --light-hl-36: #0000FF;
+    --dark-hl-36: #6A9955;
+    --light-hl-37: #0070C1;
+    --dark-hl-37: #6A9955;
+    --light-hl-38: #001080;
+    --dark-hl-38: #6A9955;
+    --light-hl-39: #795E26;
+    --dark-hl-39: #6A9955;
+    --light-hl-40: #A31515;
+    --dark-hl-40: #6A9955;
+    --light-hl-41: #AF00DB;
+    --dark-hl-41: #D4D4D4;
+    --light-hl-42: #AF00DB;
+    --dark-hl-42: #9CDCFE;
+    --light-hl-43: #AF00DB;
+    --dark-hl-43: #CE9178;
+    --light-hl-44: #000000;
+    --dark-hl-44: #B5CEA8;
+    --light-hl-45: #0000FF;
+    --dark-hl-45: #DCDCAA;
+    --light-hl-46: #0070C1;
+    --dark-hl-46: #DCDCAA;
+    --light-hl-47: #0070C1;
+    --dark-hl-47: #569CD6;
+    --light-hl-48: #795E26;
     --dark-hl-48: #569CD6;
-    --light-hl-49: #AF00DB;
-    --dark-hl-49: #4FC1FF;
-    --light-hl-50: #AF00DB;
-    --dark-hl-50: #9CDCFE;
-    --light-hl-51: #000000;
-    --dark-hl-51: #4FC1FF;
     --light-code-background: #FFFFFF;
     --dark-code-background: #1E1E1E;
 }
@@ -157,9 +151,6 @@
     --hl-46: var(--light-hl-46);
     --hl-47: var(--light-hl-47);
     --hl-48: var(--light-hl-48);
-    --hl-49: var(--light-hl-49);
-    --hl-50: var(--light-hl-50);
-    --hl-51: var(--light-hl-51);
     --code-background: var(--light-code-background);
 } }
 
@@ -213,9 +204,6 @@
     --hl-46: var(--dark-hl-46);
     --hl-47: var(--dark-hl-47);
     --hl-48: var(--dark-hl-48);
-    --hl-49: var(--dark-hl-49);
-    --hl-50: var(--dark-hl-50);
-    --hl-51: var(--dark-hl-51);
     --code-background: var(--dark-code-background);
 } }
 
@@ -269,9 +257,6 @@
     --hl-46: var(--light-hl-46);
     --hl-47: var(--light-hl-47);
     --hl-48: var(--light-hl-48);
-    --hl-49: var(--light-hl-49);
-    --hl-50: var(--light-hl-50);
-    --hl-51: var(--light-hl-51);
     --code-background: var(--light-code-background);
 }
 
@@ -325,9 +310,6 @@
     --hl-46: var(--dark-hl-46);
     --hl-47: var(--dark-hl-47);
     --hl-48: var(--dark-hl-48);
-    --hl-49: var(--dark-hl-49);
-    --hl-50: var(--dark-hl-50);
-    --hl-51: var(--dark-hl-51);
     --code-background: var(--dark-code-background);
 }
 
@@ -380,7 +362,4 @@
 .hl-46 { color: var(--hl-46); }
 .hl-47 { color: var(--hl-47); }
 .hl-48 { color: var(--hl-48); }
-.hl-49 { color: var(--hl-49); }
-.hl-50 { color: var(--hl-50); }
-.hl-51 { color: var(--hl-51); }
 pre, code { background: var(--code-background); }
