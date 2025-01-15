@@ -9,58 +9,60 @@
     --dark-hl-3: #569CD6;
     --light-hl-4: #0070C1;
     --dark-hl-4: #4FC1FF;
-    --light-hl-5: #A31515;
-    --dark-hl-5: #D4D4D4;
-    --light-hl-6: #A31515;
-    --dark-hl-6: #569CD6;
-    --light-hl-7: #A31515;
-    --dark-hl-7: #4FC1FF;
-    --light-hl-8: #A31515;
-    --dark-hl-8: #4EC9B0;
-    --light-hl-9: #A31515;
-    --dark-hl-9: #9CDCFE;
-    --light-hl-10: #A31515;
-    --dark-hl-10: #B5CEA8;
-    --light-hl-11: #CD3131;
-    --dark-hl-11: #D4D4D4;
-    --light-hl-12: #001080;
-    --dark-hl-12: #9CDCFE;
-    --light-hl-13: #795E26;
-    --dark-hl-13: #DCDCAA;
-    --light-hl-14: #098658;
-    --dark-hl-14: #B5CEA8;
-    --light-hl-15: #000000FF;
-    --dark-hl-15: #D4D4D4;
-    --light-hl-16: #000000;
-    --dark-hl-16: #CE9178;
-    --light-hl-17: #008000;
-    --dark-hl-17: #6A9955;
-    --light-hl-18: #AF00DB;
-    --dark-hl-18: #C586C0;
-    --light-hl-19: #267F99;
-    --dark-hl-19: #4EC9B0;
-    --light-hl-20: #EE0000;
-    --dark-hl-20: #D7BA7D;
-    --light-hl-21: #000000;
+    --light-hl-5: #267F99;
+    --dark-hl-5: #4EC9B0;
+    --light-hl-6: #001080;
+    --dark-hl-6: #9CDCFE;
+    --light-hl-7: #098658;
+    --dark-hl-7: #B5CEA8;
+    --light-hl-8: #795E26;
+    --dark-hl-8: #DCDCAA;
+    --light-hl-9: #000000FF;
+    --dark-hl-9: #D4D4D4;
+    --light-hl-10: #008000;
+    --dark-hl-10: #6A9955;
+    --light-hl-11: #AF00DB;
+    --dark-hl-11: #C586C0;
+    --light-hl-12: #098658;
+    --dark-hl-12: #D4D4D4;
+    --light-hl-13: #098658;
+    --dark-hl-13: #9CDCFE;
+    --light-hl-14: #001080;
+    --dark-hl-14: #569CD6;
+    --light-hl-15: #001080;
+    --dark-hl-15: #4FC1FF;
+    --light-hl-16: #795E26;
+    --dark-hl-16: #C586C0;
+    --light-hl-17: #000000;
+    --dark-hl-17: #9CDCFE;
+    --light-hl-18: #000000;
+    --dark-hl-18: #DCDCAA;
+    --light-hl-19: #001080;
+    --dark-hl-19: #D4D4D4;
+    --light-hl-20: #001080;
+    --dark-hl-20: #C586C0;
+    --light-hl-21: #001080;
     --dark-hl-21: #DCDCAA;
-    --light-hl-22: #001080;
-    --dark-hl-22: #DCDCAA;
-    --light-hl-23: #008000;
-    --dark-hl-23: #CE9178;
-    --light-hl-24: #008000;
-    --dark-hl-24: #F44747;
+    --light-hl-22: #EE0000;
+    --dark-hl-22: #D7BA7D;
+    --light-hl-23: #795E26;
+    --dark-hl-23: #D4D4D4;
+    --light-hl-24: #0000FF;
+    --dark-hl-24: #D4D4D4;
     --light-hl-25: #AF00DB;
     --dark-hl-25: #DCDCAA;
-    --light-hl-26: #0000FF;
-    --dark-hl-26: #9CDCFE;
-    --light-hl-27: #001080;
-    --dark-hl-27: #D4D4D4;
+    --light-hl-26: #000000;
+    --dark-hl-26: #6A9955;
+    --light-hl-27: #000000;
+    --dark-hl-27: #CE9178;
     --light-hl-28: #795E26;
-    --dark-hl-28: #D4D4D4;
-    --light-hl-29: #000000;
-    --dark-hl-29: #9CDCFE;
-    --light-hl-30: #267F99;
-    --dark-hl-30: #9CDCFE;
+    --dark-hl-28: #CE9178;
+    --light-hl-29: #795E26;
+    --dark-hl-29: #569CD6;
+    --light-hl-30: #000000;
+    --dark-hl-30: #569CD6;
+    --light-hl-31: #A31515;
+    --dark-hl-31: #D4D4D4;
     --light-code-background: #FFFFFF;
     --dark-code-background: #1E1E1E;
 }
@@ -97,6 +99,7 @@
     --hl-28: var(--light-hl-28);
     --hl-29: var(--light-hl-29);
     --hl-30: var(--light-hl-30);
+    --hl-31: var(--light-hl-31);
     --code-background: var(--light-code-background);
 } }
 
@@ -132,6 +135,7 @@
     --hl-28: var(--dark-hl-28);
     --hl-29: var(--dark-hl-29);
     --hl-30: var(--dark-hl-30);
+    --hl-31: var(--dark-hl-31);
     --code-background: var(--dark-code-background);
 } }
 
@@ -167,6 +171,7 @@
     --hl-28: var(--light-hl-28);
     --hl-29: var(--light-hl-29);
     --hl-30: var(--light-hl-30);
+    --hl-31: var(--light-hl-31);
     --code-background: var(--light-code-background);
 }
 
@@ -202,6 +207,7 @@
     --hl-28: var(--dark-hl-28);
     --hl-29: var(--dark-hl-29);
     --hl-30: var(--dark-hl-30);
+    --hl-31: var(--dark-hl-31);
     --code-background: var(--dark-code-background);
 }
 
@@ -236,4 +242,5 @@
 .hl-28 { color: var(--hl-28); }
 .hl-29 { color: var(--hl-29); }
 .hl-30 { color: var(--hl-30); }
+.hl-31 { color: var(--hl-31); }
 pre, code { background: var(--code-background); }
