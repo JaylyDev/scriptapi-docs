@@ -8,6 +8,22 @@ body {
     top: 0px !important;
 }
 
+/* Google Adsense */
+
+ins.adsbygoogle.sidebar {
+    display: inline-block;
+    width: 300px;
+    height: 250px;
+}
+
+@media (max-width: 770px) {
+    ins.adsbygoogle.sidebar {
+        display: inline-block;
+        width: 100%;
+        height: 280px;
+    }
+}
+
 /* one sidebar */
 @media (min-width: 770px) and (max-width: 1399px) {
     .col-sidebar {
