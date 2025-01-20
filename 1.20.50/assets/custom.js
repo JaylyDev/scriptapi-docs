@@ -19,7 +19,7 @@ function loadAds() {
       if (ad.className.includes("adsbygoogle-noablate")) return;
       (adsbygoogle = window.adsbygoogle || []).push({});
     });
-  }, 1000);
+  }, 3000);
 }
 
 function googleTranslateElementInit() {
