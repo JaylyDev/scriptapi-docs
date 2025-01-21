@@ -13,7 +13,7 @@ function listenForCodeCopies() {
 }
 
 function loadAds() {
-  document.onload(() => {
+  document.addEventListener('load', () => {
     const ads = document.querySelectorAll("ins.adsbygoogle");
     ads.forEach((ad) => {
       if (ad.className.includes("adsbygoogle-noablate")) return;
