@@ -24,49 +24,37 @@
     --light-hl-11: #267F99;
     --dark-hl-11: #4EC9B0;
     --light-hl-12: #000000;
-    --dark-hl-12: #CE9178;
-    --light-hl-13: #008000;
-    --dark-hl-13: #CE9178;
-    --light-hl-14: #008000;
-    --dark-hl-14: #F44747;
-    --light-hl-15: #AF00DB;
-    --dark-hl-15: #DCDCAA;
-    --light-hl-16: #0000FF;
-    --dark-hl-16: #9CDCFE;
-    --light-hl-17: #001080;
+    --dark-hl-12: #9CDCFE;
+    --light-hl-13: #795E26;
+    --dark-hl-13: #9CDCFE;
+    --light-hl-14: #0000FF;
+    --dark-hl-14: #9CDCFE;
+    --light-hl-15: #EE0000;
+    --dark-hl-15: #D7BA7D;
+    --light-hl-16: #001080;
+    --dark-hl-16: #D4D4D4;
+    --light-hl-17: #098658;
     --dark-hl-17: #D4D4D4;
-    --light-hl-18: #795E26;
-    --dark-hl-18: #D4D4D4;
-    --light-hl-19: #000000;
+    --light-hl-18: #A31515;
+    --dark-hl-18: #9CDCFE;
+    --light-hl-19: #000000FF;
     --dark-hl-19: #9CDCFE;
-    --light-hl-20: #267F99;
-    --dark-hl-20: #9CDCFE;
-    --light-hl-21: #EE0000;
-    --dark-hl-21: #D7BA7D;
-    --light-hl-22: #A31515;
-    --dark-hl-22: #D4D4D4;
-    --light-hl-23: #A31515;
-    --dark-hl-23: #9CDCFE;
-    --light-hl-24: #A31515;
-    --dark-hl-24: #DCDCAA;
-    --light-hl-25: #001080;
-    --dark-hl-25: #CE9178;
-    --light-hl-26: #A31515;
-    --dark-hl-26: #4FC1FF;
-    --light-hl-27: #CD3131;
-    --dark-hl-27: #D4D4D4;
-    --light-hl-28: #001080;
-    --dark-hl-28: #C586C0;
-    --light-hl-29: #000000;
-    --dark-hl-29: #DCDCAA;
-    --light-hl-30: #001080;
-    --dark-hl-30: #569CD6;
-    --light-hl-31: #001080;
-    --dark-hl-31: #4EC9B0;
-    --light-hl-32: #795E26;
-    --dark-hl-32: #C586C0;
-    --light-hl-33: #000000;
-    --dark-hl-33: #569CD6;
+    --light-hl-20: #000000;
+    --dark-hl-20: #DCDCAA;
+    --light-hl-21: #A31515;
+    --dark-hl-21: #DCDCAA;
+    --light-hl-22: #001080;
+    --dark-hl-22: #DCDCAA;
+    --light-hl-23: #000000;
+    --dark-hl-23: #B5CEA8;
+    --light-hl-24: #000000;
+    --dark-hl-24: #6A9955;
+    --light-hl-25: #795E26;
+    --dark-hl-25: #569CD6;
+    --light-hl-26: #000000;
+    --dark-hl-26: #569CD6;
+    --light-hl-27: #001080;
+    --dark-hl-27: #569CD6;
     --light-code-background: #FFFFFF;
     --dark-code-background: #1E1E1E;
 }
@@ -100,12 +88,6 @@
     --hl-25: var(--light-hl-25);
     --hl-26: var(--light-hl-26);
     --hl-27: var(--light-hl-27);
-    --hl-28: var(--light-hl-28);
-    --hl-29: var(--light-hl-29);
-    --hl-30: var(--light-hl-30);
-    --hl-31: var(--light-hl-31);
-    --hl-32: var(--light-hl-32);
-    --hl-33: var(--light-hl-33);
     --code-background: var(--light-code-background);
 } }
 
@@ -138,12 +120,6 @@
     --hl-25: var(--dark-hl-25);
     --hl-26: var(--dark-hl-26);
     --hl-27: var(--dark-hl-27);
-    --hl-28: var(--dark-hl-28);
-    --hl-29: var(--dark-hl-29);
-    --hl-30: var(--dark-hl-30);
-    --hl-31: var(--dark-hl-31);
-    --hl-32: var(--dark-hl-32);
-    --hl-33: var(--dark-hl-33);
     --code-background: var(--dark-code-background);
 } }
 
@@ -176,12 +152,6 @@
     --hl-25: var(--light-hl-25);
     --hl-26: var(--light-hl-26);
     --hl-27: var(--light-hl-27);
-    --hl-28: var(--light-hl-28);
-    --hl-29: var(--light-hl-29);
-    --hl-30: var(--light-hl-30);
-    --hl-31: var(--light-hl-31);
-    --hl-32: var(--light-hl-32);
-    --hl-33: var(--light-hl-33);
     --code-background: var(--light-code-background);
 }
 
@@ -214,12 +184,6 @@
     --hl-25: var(--dark-hl-25);
     --hl-26: var(--dark-hl-26);
     --hl-27: var(--dark-hl-27);
-    --hl-28: var(--dark-hl-28);
-    --hl-29: var(--dark-hl-29);
-    --hl-30: var(--dark-hl-30);
-    --hl-31: var(--dark-hl-31);
-    --hl-32: var(--dark-hl-32);
-    --hl-33: var(--dark-hl-33);
     --code-background: var(--dark-code-background);
 }
 
@@ -251,10 +215,4 @@
 .hl-25 { color: var(--hl-25); }
 .hl-26 { color: var(--hl-26); }
 .hl-27 { color: var(--hl-27); }
-.hl-28 { color: var(--hl-28); }
-.hl-29 { color: var(--hl-29); }
-.hl-30 { color: var(--hl-30); }
-.hl-31 { color: var(--hl-31); }
-.hl-32 { color: var(--hl-32); }
-.hl-33 { color: var(--hl-33); }
 pre, code { background: var(--code-background); }
