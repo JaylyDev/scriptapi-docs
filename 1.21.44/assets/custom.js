@@ -13,13 +13,13 @@ function listenForCodeCopies() {
 }
 
 function loadAds() {
-  document.addEventListener('load', () => {
+  setTimeout(() => {
     const ads = document.querySelectorAll("ins.adsbygoogle");
     ads.forEach((ad) => {
       if (ad.className.includes("adsbygoogle-noablate")) return;
       (adsbygoogle = window.adsbygoogle || []).push({});
     });
-  })
+  }, 1000);
 }
 
 function googleTranslateElementInit() {
