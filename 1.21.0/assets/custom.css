@@ -8,6 +8,28 @@ body {
     top: 0px !important;
 }
 
+/* Google Adsense */
+
+ins.adsbygoogle.sidebar, ins.adsbygoogle.sidebar-top {
+    display: inline-block;
+    width: 300px;
+    height: 250px;
+}
+
+@media (max-width: 770px) {
+    ins.adsbygoogle.sidebar, ins.adsbygoogle.sidebar-top {
+        width: 100%;
+        height: 280px;
+    }
+}
+
+@media (max-width: 1200px) and (max-height: 900px) {
+    ins.adsbygoogle.sidebar-top {
+        width: 100%;
+        height: 50px;
+    }
+}
+
 /* one sidebar */
 @media (min-width: 770px) and (max-width: 1399px) {
     .col-sidebar {
