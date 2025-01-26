@@ -13,7 +13,7 @@ Dynamic properties are tied to a behavior pack's header UUID. Since behavior pac
 
 ## Installation
 
-Requires `@minecraft/server@1.7.0` or above.
+Requires `@minecraft/server` version `1.7.0` or above.
 
 ```json
 {
@@ -50,7 +50,7 @@ import { world } from "@minecraft/server";
 world.setDynamicProperty("key", 10);
 ```
 
-> The numeric value must be a signed 64-bit integer, ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (inclusive).
+> The numeric value must be a signed 64-bit float, ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (inclusive).
 
 Save a boolean property value:
 
@@ -77,9 +77,12 @@ DynamicProperties
 Details (LevelDB Format):
 
 <table>
+<tbody>
 <tr>
 <td><strong>Key</strong></td> <td><strong>Value (NBT)</strong></td>
 </tr>
+</tbody>
+<tbody>
 <tr>
 <td>DynamicProperties</td>
 <td>
@@ -94,6 +97,7 @@ Details (LevelDB Format):
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Set Property (Entity)
@@ -124,7 +128,7 @@ Save a numeric property value:
 player.setDynamicProperty("key", 10);
 ```
 
-> The numeric value must be a signed 64-bit integer, ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (inclusive).
+> The numeric value must be a signed 64-bit float, ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (inclusive).
 
 Save a boolean property value:
 
@@ -150,9 +154,12 @@ Player
 Details (LevelDB Format):
 
 <table>
+<tbody>
 <tr>
 <td><strong>Key</strong></td> <td><strong>Value (NBT)</strong></td>
 </tr>
+</tbody>
+<tbody>
 <tr>
 <td>&lt;Entity&gt;</td>
 <td>
@@ -169,6 +176,7 @@ Details (LevelDB Format):
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Set Property (Item)
@@ -201,7 +209,7 @@ Save a numeric property value:
 item.setDynamicProperty("key", 10);
 ```
 
-> The numeric value must be a signed 64-bit integer, ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (inclusive).
+> The numeric value must be a signed 64-bit float, ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (inclusive).
 
 Save a boolean property value:
 
@@ -415,7 +423,7 @@ The process for getting total byte count for an item or an entity is the same th
 
 ## Q&A
 
-Questions and answers about dynamic properties extracted from [Scripting and Editor Q&A 2023/09/22](https://wiki.bedrock.dev/scripting/scripting-editor-qna.html) from Bedrock Wiki. Check out there for Q&A related to other parts of Minecraft Script API.
+Questions and answers about Dynamic Properties are extracted from [Scripting and Editor Q&A 2023/09/22](https://wiki.bedrock.dev/scripting/scripting-editor-qna.html) from Bedrock Wiki. Check out there for Q&A related to other parts of Minecraft Script API.
 
 ### Scripting API storage system
 
@@ -432,14 +440,14 @@ Questions and answers about dynamic properties extracted from [Scripting and Edi
 - **Q**: Access to item IDs from the ItemStack Class?
 - **A**: Unlike entities, item stacks can get copied around, merged and split so it's difficult to assign a reliable ID. As an alternative, we might consider adding item tags at runtime or simply wait until dynamic properties are available on items.
 
-We'd love to hear the specific scenarios around why item IDs would be useful.
+  We'd love to hear the specific scenarios around why item IDs would be useful.
 
 - **Q**: A new data structure for saving data upon leaving the world
 - **A**: As mentioned above, entity and world dynamic properties are our current solution for storage. We recently lifted size restrictions on dynamic properties and are working towards getting the APIs into a stable release for all creators.
 
-File APIs are something we've been discussing. One of our main goals is to get players off of scoreboards for storage, so let us know if there's anything we can do.
+  File APIs are something we've been discussing. One of our main goals is to get players off of scoreboards for storage, so let us know if there's anything we can do.
 
-I'll take a note of the realms UUID issue.
+  I'll take a note of the realms UUID issue.
 
 - **A**: Per the original question above, we've also been a little hesitant to add a worldUnloadingSaveAllYourStuff event because we can't control all the unload dynamic of unloading at all times on all platforms (to say nothing of things like crashes, etc.) So I think our recommended strategy is to use things like dynamic properties to persist state as you go. That has it is own downsides for sure (can be painful to make your code robust against). tl:dr; I'm not sure we have a strategy we love about how to save lots of game state; we'll have to evolve this strategy to see where your feedback takes us. We may yet still have some world unload events where I could see some "persistence" happening
 
@@ -449,10 +457,10 @@ I'll take a note of the realms UUID issue.
   would it be possible to cache/save dynamic data in a block in the future?
 - **A**: I might recommend dynamic properties or entity properties (sometimes referred to as 'actor properties') as the way of persisting state.
 
-I think we'd want to bring concepts like dynamic properties to itemstacks and blocks (though blocks can maybe be equivalently done by storing properties at the world level with coordinates in them.) ItemStacks and Blocks need a bit more infrastructure under the covers though which makes this a bit longer in the pipeline.
-(and also blocks have block states which might be a good way to store simple data for a block.)
+  I think we'd want to bring concepts like dynamic properties to itemstacks and blocks (though blocks can maybe be equivalently done by storing properties at the world level with coordinates in them.) ItemStacks and Blocks need a bit more infrastructure under the covers though which makes this a bit longer in the pipeline.
+  (and also blocks have block states which might be a good way to store simple data for a block.)
 
-### Dynamic Properties
+### More Data Types on Dynamic Properties
 
 - **Q**: Can we expect some improvements to Dynamic Properties, with more complex types in the future such as:
   Items: We are not able to serialize item to string properly because we dont have access to all data related to these types

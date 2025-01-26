@@ -1,6 +1,6 @@
 // Script by WavePlayz
 
-import { system, world } from "@minecraft/server";
+import { Player, system, world } from "@minecraft/server";
 
 // Subscribe to the entityHurt event, which triggers whenever an entity takes damage
 world.afterEvents.entityHurt.subscribe(async eventData => {
@@ -8,7 +8,7 @@ world.afterEvents.entityHurt.subscribe(async eventData => {
     const { hurtEntity, damage } = eventData;
     
     // Wait for a number of game ticks equal to the damage value before proceeding
-    await system.waitTick(damage);
+    await system.waitTicks(damage);
     
     // Attempt to get the health component of the hurt entity
     const health = hurtEntity.getComponent("health");
@@ -18,6 +18,8 @@ world.afterEvents.entityHurt.subscribe(async eventData => {
         health.resetToMaxValue();  // Reset the entity's health to full
         
         // Send a message to the entity (if it supports receiving messages)
-        hurtEntity.sendMessage?.("Health reset");
+        if (hurtEntity instanceof Player) {
+            hurtEntity.sendMessage("Health reset");
+        }
     }
 });

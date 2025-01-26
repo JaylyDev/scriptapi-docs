@@ -1,7 +1,8 @@
-import { world } from "@minecraft/server";
+import { Player, world } from "@minecraft/server";
 
 world.afterEvents.buttonPush.subscribe((event) => {
-  if (event.source.typeId === 'minecraft:player') {
-    event.source.kill();
+  if (event.source instanceof Player) {
+    const { x, y, z } = event.source.location;
+    event.source.sendMessage(`Your location: ${x}, ${y}, ${z}`);
   }
 })
