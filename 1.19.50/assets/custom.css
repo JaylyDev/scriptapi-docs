@@ -10,21 +10,21 @@ body {
 
 /* Google Adsense */
 
-ins.adsbygoogle.sidebar {
-    display: inline-block;
-    width: 100%;
-    height: 50px;
-}
-
-ins.adsbygoogle.manual {
+.sidebar {
     display: inline-block;
     width: 100%;
     height: 250px;
 }
 
-@media (max-width: 770px) {
-    ins.adsbygoogle.manual {
-        height: 280px;
+.header {
+    display: inline-block;
+    width: 728px;
+    height: 90px;
+}
+
+@media (max-width: 1449px) {
+    .header {
+        display: none;
     }
 }
 
