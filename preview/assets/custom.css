@@ -40,3 +40,7 @@ ins.adsbygoogle.sidebar {
   padding: 0;
   margin: 0;
 }
+#tsd-search .results li {
+  min-width: 770px;
+  width: 100%;
+}
