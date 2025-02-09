@@ -2,10 +2,16 @@
 
 import { system, world } from "@minecraft/server";
 
-// Variable to hold the job reference for later management
+/**
+ * Variable to hold the job reference for later management
+ * @type {number}
+ */
 let job;
 
-// A generator function to continuously monitor if any players are sneaking
+/**
+ * A generator function to continuously monitor if any players are sneaking
+ * @returns {Generator<void, void, void>}
+ */
 function* generatorFunction() {
     // Infinite loop to create a long-running task
     while (true) {

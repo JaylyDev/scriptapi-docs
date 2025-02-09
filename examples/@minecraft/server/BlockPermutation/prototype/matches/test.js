@@ -2,7 +2,11 @@
 
 import { world } from "@minecraft/server"; 
 
-// Function to check if a given block is red wool
+/**
+ * Function to check if a given block is red wool
+ * @param {import('@minecraft/server').Block} block 
+ * @returns true if a given block is red wool
+ */
 function isRedWool(block) {
     // Define the type id of block we are checking for
     let typeId = "wool";

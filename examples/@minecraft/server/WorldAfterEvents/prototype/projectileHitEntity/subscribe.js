@@ -1,6 +1,6 @@
 // Script by WavePlayz
 
-import { world } from "@minecraft/server";
+import { Player, world } from "@minecraft/server";
 
 // Subscribe to the `projectileHitEntity` event, which is triggered when a projectile hits an entity
 world.afterEvents.projectileHitEntity.subscribe(eventData => {
@@ -11,7 +11,7 @@ world.afterEvents.projectileHitEntity.subscribe(eventData => {
     const hitEntity = eventData.getEntityHit()?.entity;
     
     // Check if the hitEntity is valid
-    if (hitEntity) {
+    if (hitEntity && source instanceof Player) {
         // Extract the x, y, and z coordinates from the hitEntity's location
         const { x, y, z } = hitEntity.location;
         

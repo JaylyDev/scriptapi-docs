@@ -2,7 +2,10 @@
 
 import { system, world } from "@minecraft/server";
 
-let interval
+/**
+ * @type {number}
+ */
+let interval;
 
 // A function to check if any player in the world is sneaking
 function looper() {

@@ -3,7 +3,7 @@
 import { world } from "@minecraft/server"; 
 
 // Function to convert seconds to ticks (1 second = 20 ticks in Minecraft)
-let secsToTicks = secs => secs * 20;
+let secsToTicks = (/** @type {number} */ secs) => secs * 20;
 
 // Subscribe to the event that triggers when a player places a block
 world.afterEvents.playerPlaceBlock.subscribe(eventData => {

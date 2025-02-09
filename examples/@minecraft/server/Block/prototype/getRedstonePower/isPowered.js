@@ -2,7 +2,11 @@
 
 import { world } from "@minecraft/server"; 
 
-// Function to check if a given block is powered by redstone
+/**
+ * Function to check if a given block is powered by redstone
+ * @param {import('@minecraft/server').Block} block 
+ * @returns true if a given block is powered by redstone
+ */
 function isBlockPowered(block) {
     // Get the redstone power level of the block
     // The 'getRedstonePower' method returns a number representing the power level

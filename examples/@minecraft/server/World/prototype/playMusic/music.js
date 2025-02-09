@@ -2,8 +2,8 @@
 
 import { world } from "@minecraft/server";
 
-// Subscribe to the `playerJoin` event, which is triggered when a player joins the world
-world.afterEvents.playerJoin.subscribe(eventData => {
+// Subscribe to the `playerSpawn` event, which is triggered when a player joins the world
+world.afterEvents.playerSpawn.subscribe(eventData => {
     const player = eventData.player;
 
     // Play a music track for the player when they join the world

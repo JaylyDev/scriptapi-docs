@@ -3,11 +3,29 @@
     "allowJs": true,
     "checkJs": true,
     "noEmit": true,
-    "module": "es2020",
-    "target": "es2021",
-    "moduleResolution": "node"
+    "target": "es2023",
+    "moduleResolution": "Node",
+    "module": "es2022",
+    "declaration": false,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "pretty": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "allowUnreachableCode": true,
+    "allowUnusedLabels": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": false,
+    "noImplicitUseStrict": false,
+    "rootDir": "./",
+    "baseUrl": "./",
+    "listFiles": false,
+    "noEmitHelpers": true,
+    "skipLibCheck": true,
+    "lib": ["es2015", "ES2016"],
   },
-  "include": [
-    "./@minecraft/**/*"
-  ]
+  "include": ["@minecraft/**/*", "types/*.d.ts"],
+  "exclude": ["lib", "dist", "node_modules"],
+  "compileOnSave": false
 }

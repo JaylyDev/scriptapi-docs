@@ -5,8 +5,11 @@ const overworld = world.getDimension('overworld');
 const volume = new BlockVolume({ x: 0, y: overworld.heightRange.min, z: 0 }, { x: 15, y: overworld.heightRange.max, z: 15 });
 const locations = overworld.getBlocks(volume, { excludeTypes: ['minecraft:air'] }, false);
 
-// A simple generator that replace non-air blocks to cobblestone at chunk (0, 0),
-// yielding after each block placement.
+/**
+ * A simple generator that replace non-air blocks to cobblestone at chunk (0, 0),
+ * yielding after each block placement.
+ * @returns {Generator<void, void, void>} A generator that yields after each block placement.
+ */
 function* blockPlacingGenerator() {
   for (const location of locations.getBlockLocationIterator()) {
     const block = overworld.getBlock(location);

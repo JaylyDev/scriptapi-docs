@@ -2,7 +2,10 @@
 
 import { system, world } from "@minecraft/server";
 
-// A generator function to check if any player in the world is sneaking
+/**
+ * A generator function to continuously monitor if any players are sneaking
+ * @returns {Generator<void, void, void>}
+ */
 function* generatorFunction() {
 	// Long running task
 	while (true) {
