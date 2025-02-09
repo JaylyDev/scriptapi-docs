@@ -9,7 +9,6 @@ ins.adsbygoogle.manual,
 ins.adsbygoogle.sidebar {
   display: inline-block;
   width: 100%;
-  height: 250px;
 }
 @media (max-width: 770px) {
   ins.adsbygoogle.manual,
@@ -45,4 +44,7 @@ ins.adsbygoogle[data-ad-status=unfilled] {
 }
 #tsd-search .results li {
   min-width: 770px;
+}
+.tsd-anchor {
+  top: -142px;
 }
