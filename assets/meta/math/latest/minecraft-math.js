@@ -218,8 +218,6 @@ var VECTOR3_WEST = { x: -1, y: 0, z: 0 };
 var VECTOR3_EAST = { x: 1, y: 0, z: 0 };
 var VECTOR3_NORTH = { x: 0, y: 0, z: 1 };
 var VECTOR3_SOUTH = { x: 0, y: 0, z: -1 };
-var VECTOR3_HALF = { x: 0.5, y: 0.5, z: 0.5 };
-var VECTOR3_NEGATIVE_ONE = { x: -1, y: -1, z: -1 };
 
 // lib/vector3/vectorWrapper.js
 var Vector3Builder = class {
@@ -415,9 +413,7 @@ export {
   VECTOR3_DOWN,
   VECTOR3_EAST,
   VECTOR3_FORWARD,
-  VECTOR3_HALF,
   VECTOR3_LEFT,
-  VECTOR3_NEGATIVE_ONE,
   VECTOR3_NORTH,
   VECTOR3_ONE,
   VECTOR3_RIGHT,
