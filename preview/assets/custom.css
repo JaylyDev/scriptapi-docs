@@ -8,8 +8,13 @@ body {
 ins.adsbygoogle.manual,
 ins.adsbygoogle.sidebar {
   display: inline-block;
-  height: 280px;
   width: 100%;
+}
+@media (max-width: 770px) {
+  ins.adsbygoogle.manual,
+  ins.adsbygoogle.sidebar {
+    height: 280px;
+  }
 }
 @media (max-width: 1200px) and (max-height: 900px) {
   ins.adsbygoogle.sidebar {
