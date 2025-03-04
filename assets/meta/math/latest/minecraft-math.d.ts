@@ -201,13 +201,13 @@ export declare class Vector3Builder implements Vector3 {
      *
      * Adds the vector v to this, returning itself.
      */
-    add(v: Vector3): this;
+    add(v: Partial<Vector3>): this;
     /**
      * subtract
      *
      * Subtracts the vector v from this, returning itself.
      */
-    subtract(v: Vector3): this;
+    subtract(v: Partial<Vector3>): this;
     /** scale
      *
      * Scales this by the passed in value, returning itself.
@@ -326,13 +326,13 @@ export declare class Vector3Utils {
      *
      * Add two vectors to produce a new vector
      */
-    static add(v1: Vector3, v2: Vector3): Vector3;
+    static add(v1: Vector3, v2: Partial<Vector3>): Vector3;
     /**
      * subtract
      *
      * Subtract two vectors to produce a new vector (v1-v2)
      */
-    static subtract(v1: Vector3, v2: Vector3): Vector3;
+    static subtract(v1: Vector3, v2: Partial<Vector3>): Vector3;
     /** scale
      *
      * Multiple all entries in a vector by a single scalar value producing a new vector
