@@ -5,25 +5,6 @@ body > .skiptranslate {
 body {
   top: 0px !important;
 }
-ins.adsbygoogle.manual,
-ins.adsbygoogle.sidebar {
-  display: inline-block;
-  width: 100%;
-}
-@media (max-width: 770px) {
-  ins.adsbygoogle.manual,
-  ins.adsbygoogle.sidebar {
-    height: 280px;
-  }
-}
-@media (max-width: 1200px) and (max-height: 900px) {
-  ins.adsbygoogle.sidebar {
-    height: 50px;
-  }
-}
-ins.adsbygoogle[data-ad-status=unfilled] {
-  display: none !important;
-}
 @media (min-width: 770px) and (max-width: 1399px) {
   .col-sidebar {
     top: 84px;
