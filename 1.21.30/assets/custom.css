@@ -27,7 +27,7 @@ body {
   min-width: 770px;
 }
 .tsd-anchor {
-  top: -142px;
+  scroll-margin-top: 100px;
 }
 ins.adsbygoogle.manual,
 ins.adsbygoogle.sidebar {
