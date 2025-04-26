@@ -28,6 +28,7 @@ body {
 }
 .tsd-anchor {
   scroll-margin-top: 100px;
+  top: 0px;
 }
 ins.adsbygoogle.manual,
 ins.adsbygoogle.sidebar {
