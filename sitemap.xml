@@ -10,7 +10,7 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/meta/index.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/meta/resource-links.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/meta/scripting-v1-docs.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/hierarchy.html</loc>
@@ -4661,6 +4661,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/features/script-eval.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/features/script-privileges.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/features/secrets-and-variables.html</loc>
