@@ -22,6 +22,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_diagnostics.sentry.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_math.VECTOR3_BACK.html</loc>
     </url>
     <url>
@@ -82,7 +85,7 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-net.http.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-ui.uiManager-3.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-ui.uiManager.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server.HudElementsCount.html</loc>
@@ -100,10 +103,10 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server.TicksPerSecond.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server.system-3.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server.system.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server.world-3.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server.world.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_server-editor.Action.html</loc>
@@ -3685,9 +3688,6 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.ModalFormResponse.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.UIManager-2.html</loc>
-    </url>
-    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.UIManager.html</loc>
     </url>
     <url>
@@ -4663,9 +4663,6 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.StructureManager.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.System-2.html</loc>
-    </url>
-    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.System.html</loc>
     </url>
     <url>
@@ -4712,9 +4709,6 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.WeatherChangeBeforeEventSignal.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.World-2.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.World.html</loc>
