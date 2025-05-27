@@ -9,12 +9,22 @@ import type { Vector3 } from '@minecraft/server';
 export declare function clampNumber(val: number, min: number, max: number): number;
 
 /**
+ * zero
+ *
+ * A vector representing the value of 0 in all directions (0,0)
+ *
+ * @public
+ */
+export declare const VECTOR2_ZERO: Vector2;
+
+/**
  * Vector2 wrapper class which can be used as a Vector2 for APIs on \@minecraft/server which require a Vector2.
  * @public
  */
 export declare class Vector2Builder implements Vector2 {
     x: number;
     y: number;
+    constructor(vecStr: string, delim?: string);
     constructor(vec: Vector2, arg?: never);
     constructor(x: number, y: number);
     toString(options?: {
@@ -38,6 +48,15 @@ export declare class Vector2Utils {
         decimals?: number;
         delimiter?: string;
     }): string;
+    /**
+     * fromString
+     *
+     * Gets a Vector2 from the string representation produced by {@link Vector3Utils.toString}. If any numeric value is not a number
+     * or the format is invalid, undefined is returned.
+     * @param str - The string to parse
+     * @param delimiter - The delimiter used to separate the components. Defaults to the same as the default for {@link Vector3Utils.toString}
+     */
+    static fromString(str: string, delimiter?: string): Vector2 | undefined;
 }
 
 /**
@@ -184,6 +203,7 @@ export declare class Vector3Builder implements Vector3 {
     x: number;
     y: number;
     z: number;
+    constructor(vecStr: string, delim?: string, arg2?: never);
     constructor(vec: Vector3, arg?: never, arg2?: never);
     constructor(x: number, y: number, z: number);
     /**
@@ -383,6 +403,15 @@ export declare class Vector3Utils {
         decimals?: number;
         delimiter?: string;
     }): string;
+    /**
+     * fromString
+     *
+     * Gets a Vector3 from the string representation produced by {@link Vector3Utils.toString}. If any numeric value is not a number
+     * or the format is invalid, undefined is returned.
+     * @param str - The string to parse
+     * @param delimiter - The delimiter used to separate the components. Defaults to the same as the default for {@link Vector3Utils.toString}
+     */
+    static fromString(str: string, delimiter?: string): Vector3 | undefined;
     /**
      * clamp
      *

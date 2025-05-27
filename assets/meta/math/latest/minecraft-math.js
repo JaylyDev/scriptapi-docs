@@ -50,11 +50,7 @@ var Vector3Utils = class _Vector3Utils {
    * Calculate the cross product of two vectors. Returns a new vector.
    */
   static cross(a, b) {
-    return {
-      x: a.y * b.z - a.z * b.y,
-      y: a.z * b.x - a.x * b.z,
-      z: a.x * b.y - a.y * b.x
-    };
+    return { x: a.y * b.z - a.z * b.y, y: a.z * b.x - a.x * b.z, z: a.x * b.y - a.y * b.x };
   }
   /**
    * magnitude
@@ -100,6 +96,25 @@ var Vector3Utils = class _Vector3Utils {
     return str.join(options?.delimiter ?? ", ");
   }
   /**
+   * fromString
+   *
+   * Gets a Vector3 from the string representation produced by {@link Vector3Utils.toString}. If any numeric value is not a number
+   * or the format is invalid, undefined is returned.
+   * @param str - The string to parse
+   * @param delimiter - The delimiter used to separate the components. Defaults to the same as the default for {@link Vector3Utils.toString}
+   */
+  static fromString(str, delimiter = ",") {
+    const parts = str.split(delimiter);
+    if (parts.length !== 3) {
+      return void 0;
+    }
+    const output = parts.map((part) => parseFloat(part));
+    if (output.some((part) => isNaN(part))) {
+      return void 0;
+    }
+    return { x: output[0], y: output[1], z: output[2] };
+  }
+  /**
    * clamp
    *
    * Clamps the components of a vector to limits to produce a new vector
@@ -117,11 +132,7 @@ var Vector3Utils = class _Vector3Utils {
    * Constructs a new vector using linear interpolation on each component from two vectors.
    */
   static lerp(a, b, t) {
-    return {
-      x: a.x + (b.x - a.x) * t,
-      y: a.y + (b.y - a.y) * t,
-      z: a.z + (b.z - a.z) * t
-    };
+    return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, z: a.z + (b.z - a.z) * t };
   }
   /**
    * slerp
@@ -142,11 +153,7 @@ var Vector3Utils = class _Vector3Utils {
    * Not to be confused with {@link Vector3Utils.dot} product or {@link Vector3Utils.cross} product
    */
   static multiply(a, b) {
-    return {
-      x: a.x * b.x,
-      y: a.y * b.y,
-      z: a.z * b.z
-    };
+    return { x: a.x * b.x, y: a.y * b.y, z: a.z * b.z };
   }
   /**
    * rotateX
@@ -157,11 +164,7 @@ var Vector3Utils = class _Vector3Utils {
   static rotateX(v, a) {
     let cos = Math.cos(a);
     let sin = Math.sin(a);
-    return {
-      x: v.x,
-      y: v.y * cos - v.z * sin,
-      z: v.z * cos + v.y * sin
-    };
+    return { x: v.x, y: v.y * cos - v.z * sin, z: v.z * cos + v.y * sin };
   }
   /**
    * rotateY
@@ -172,11 +175,7 @@ var Vector3Utils = class _Vector3Utils {
   static rotateY(v, a) {
     let cos = Math.cos(a);
     let sin = Math.sin(a);
-    return {
-      x: v.x * cos + v.z * sin,
-      y: v.y,
-      z: v.z * cos - v.x * sin
-    };
+    return { x: v.x * cos + v.z * sin, y: v.y, z: v.z * cos - v.x * sin };
   }
   /**
    * rotateZ
@@ -187,11 +186,7 @@ var Vector3Utils = class _Vector3Utils {
   static rotateZ(v, a) {
     let cos = Math.cos(a);
     let sin = Math.sin(a);
-    return {
-      x: v.x * cos - v.y * sin,
-      y: v.y * cos + v.x * sin,
-      z: v.z
-    };
+    return { x: v.x * cos - v.y * sin, y: v.y * cos + v.x * sin, z: v.z };
   }
 };
 var Vector2Utils = class {
@@ -204,6 +199,25 @@ var Vector2Utils = class {
     const decimals = options?.decimals ?? 2;
     const str = [v.x.toFixed(decimals), v.y.toFixed(decimals)];
     return str.join(options?.delimiter ?? ", ");
+  }
+  /**
+   * fromString
+   *
+   * Gets a Vector2 from the string representation produced by {@link Vector3Utils.toString}. If any numeric value is not a number
+   * or the format is invalid, undefined is returned.
+   * @param str - The string to parse
+   * @param delimiter - The delimiter used to separate the components. Defaults to the same as the default for {@link Vector3Utils.toString}
+   */
+  static fromString(str, delimiter = ",") {
+    const parts = str.split(delimiter);
+    if (parts.length !== 2) {
+      return void 0;
+    }
+    const output = parts.map((part) => parseFloat(part));
+    if (output.some((part) => isNaN(part))) {
+      return void 0;
+    }
+    return { x: output[0], y: output[1] };
   }
 };
 var VECTOR3_UP = { x: 0, y: 1, z: 0 };
@@ -220,20 +234,32 @@ var VECTOR3_NORTH = { x: 0, y: 0, z: 1 };
 var VECTOR3_SOUTH = { x: 0, y: 0, z: -1 };
 var VECTOR3_HALF = { x: 0.5, y: 0.5, z: 0.5 };
 var VECTOR3_NEGATIVE_ONE = { x: -1, y: -1, z: -1 };
+var VECTOR2_ZERO = { x: 0, y: 0 };
 
 // lib/vector3/vectorWrapper.js
 var Vector3Builder = class {
   x;
   y;
   z;
-  constructor(first, y, z) {
+  constructor(first, second, z) {
     if (typeof first === "object") {
       this.x = first.x;
       this.y = first.y;
       this.z = first.z;
+    } else if (typeof first === "string") {
+      const parsed = Vector3Utils.fromString(first, second ?? ",");
+      if (!parsed) {
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
+        return;
+      }
+      this.x = parsed.x;
+      this.y = parsed.y;
+      this.z = parsed.z;
     } else {
       this.x = first;
-      this.y = y ?? 0;
+      this.y = second ?? 0;
       this.z = z ?? 0;
     }
   }
@@ -397,13 +423,22 @@ var Vector3Builder = class {
 var Vector2Builder = class {
   x;
   y;
-  constructor(first, y) {
+  constructor(first, second) {
     if (typeof first === "object") {
       this.x = first.x;
       this.y = first.y;
+    } else if (typeof first === "string") {
+      const parsed = Vector2Utils.fromString(first, second ?? ",");
+      if (!parsed) {
+        this.x = 0;
+        this.y = 0;
+        return;
+      }
+      this.x = parsed.x;
+      this.y = parsed.y;
     } else {
       this.x = first;
-      this.y = y ?? 0;
+      this.y = second ?? 0;
     }
   }
   toString(options) {
@@ -411,6 +446,7 @@ var Vector2Builder = class {
   }
 };
 export {
+  VECTOR2_ZERO,
   VECTOR3_BACK,
   VECTOR3_DOWN,
   VECTOR3_EAST,
