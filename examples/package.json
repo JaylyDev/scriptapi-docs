@@ -1,12 +1,12 @@
 {
   "overrides": {
-    "@minecraft/server": "1.18.0-beta.1.21.60-preview.28",
-    "@minecraft/vanilla-data": "1.21.60-preview.28"
+    "@minecraft/server": "beta",
+    "@minecraft/vanilla-data": "preview"
   },
   "dependencies": {
-    "@minecraft/debug-utilities": "^1.0.0-beta.1.21.60-preview.28",
-    "@minecraft/math": "^2.0.1",
-    "@minecraft/server-gametest": "1.0.0-beta.1.21.60-preview.28",
-    "@minecraft/server-ui": "^1.4.0-beta.1.21.60-preview.28"
+    "@minecraft/debug-utilities": "beta",
+    "@minecraft/math": "latest",
+    "@minecraft/server-gametest": "beta",
+    "@minecraft/server-ui": "beta"
   }
 }

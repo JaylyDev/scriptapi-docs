@@ -4,7 +4,7 @@
     "checkJs": true,
     "noEmit": true,
     "target": "es2023",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "module": "es2022",
     "declaration": false,
     "noLib": false,
@@ -23,7 +23,7 @@
     "listFiles": false,
     "noEmitHelpers": true,
     "skipLibCheck": true,
-    "lib": ["es2015", "ES2016"],
+    "types": []
   },
   "include": ["@minecraft/**/*", "types/*.d.ts"],
   "exclude": ["lib", "dist", "node_modules"],
