@@ -51,29 +51,82 @@
 <p><code>@minecraft/diagnostics</code> (<a href="https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_diagnostics.html">docs</a>) - A module allows script modules to connect their script packs to Sentry. This enables remote error tracking and monitoring for script packs.</p>
 </li>
 </ul>
-<h2 id="discover-api-features" class="tsd-anchor-link notranslate">Discover API features<a href="#discover-api-features" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Learn about different features Script API provides and explore the reference documentation to bring your idea to life.</p>
-<p><strong>Control many things in your Minecraft world</strong></p>
-<p>A script plugin can access and modify the state of a Minecraft world. From changing weather and game rules for an in-game world, to modifying attributes of a block, entity, or a player.</p>
-<p><strong>Receiving Events</strong></p>
-<p>The Script API can receive events sent by Minecraft to script plugins. An event represents something that is happening inside of a Minecraft world, like a player interacting with an entity. They can be used to create more engaging experiences for players.</p>
-<p>Minecraft Script API's events are broken down into the following categories:</p>
-<ul>
-<li><strong>System Events</strong>: Event handlers are triggered when a system-level operation is initiated.</li>
-<li><strong>World Events</strong>: Event handlers are triggered when an event happens within a Minecraft world.</li>
-</ul>
-<p><strong>Modify Component</strong></p>
-<p>The API offers some control over components of an entity, a block, or an item stack. This includes modifying an inventory container of a player or a block.</p>
-<p>A behavior pack can also use Custom Components on blocks and items to create an immersive experience for players. Script plugins can create their functionality across specific blocks and items.</p>
-<p><strong>Storing Data in a Minecraft World</strong></p>
-<p>A script plugins to store data using the following APIs in <code>@minecraft/server</code> module.</p>
-<p>The three mechanisms within Minecraft world storage (accessible through Script API) are as follows:</p>
-<ul>
-<li><strong>Dynamic Properties</strong>: Maintains a separate storage for entities, items and world, that is accessible with only script API per behavior pack.</li>
-<li><strong>Scoreboards</strong>: Stores the score of entities in objectives. An objective tracks a single statistic for entities.</li>
-<li><strong>Entity Properties</strong>: Save data or store values on entities that can be optionally read by Resource Packs.</li>
-</ul>
-<p><strong>Block / Item Custom Components</strong></p>
-<p>Use the scripting APIs to handle the custom block or item event scenarios that were originally part of &quot;Holiday Creator Features&quot;.</p>
+<h2 id="platform-differences" class="tsd-anchor-link notranslate">Platform Differences<a href="#platform-differences" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>There are several script API modules in Bedrock Edition that are exclusive to certain platforms due to capability restrictions on different platforms. Here is a table of the features that are available only on certain platforms as of <strong>Minecraft release 1.21.90</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Modules</th>
+<th style="text-align:center">Client / Single-player</th>
+<th style="text-align:center">Bedrock Dedicated Server</th>
+<th style="text-align:center">Realms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@minecraft/common</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>@minecraft/debug-utilities</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes <em>(Note 3)</em></td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>@minecraft/diagnostics</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes <em>(Note 3)</em></td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>@minecraft/server</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>@minecraft/server-admin</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>@minecraft/server-editor</td>
+<td style="text-align:center">Yes <em>(Note 1)</em></td>
+<td style="text-align:center">Yes <em>(Note 2)</em></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>@minecraft/server-gametest</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>@minecraft/server-net</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes <em>(Note 3)</em></td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>@minecraft/server-ui</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ol>
+<li>Requires Bedrock Editor. The editor can be opened from the &quot;Creator Tools&quot; tab.</li>
+<li>Requires Bedrock Editor. Launch the <code>bedrock_server.exe</code> to enable editor with the command line, like this:<pre><code><span class="hl-0">bedrock_server</span><span class="hl-1">.</span><span class="hl-0">exe</span><span class="hl-1"> </span><span class="hl-0">Editor</span><span class="hl-1">=</span><span class="hl-2">true</span>
+</code><button>Copy</button></pre>
+
+</li>
+<li>Script module must be enabled manually in &quot;permissions.json&quot; file.</li>
+</ol>
 <hr>
 <p>Check out my add-ons if you want.</p>
 <ul>
@@ -84,7 +137,7 @@
 <p><a href="/posts/statistics/"><strong>Bedrock Statistics</strong></a> - Track in-game statistics like Java Edition.</p>
 </li>
 </ul>
-</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2533146760921020" data-ad-slot="7014545383" data-ad-format="auto" data-full-width-responsive="true"></ins></div><div class="col-sidebar"><div class="page-menu"><ins class="adsbygoogle sidebar" data-ad-client="ca-pub-2533146760921020" data-ad-slot="4332513781"></ins><ins class="adsbygoogle manual" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2533146760921020" data-ad-slot="9602449199"></ins><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details notranslate"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-deprecated" name="deprecated"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Deprecated</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details notranslate"><a href="#api-versioning"><span>API <wbr/>Versioning</span></a><a href="#script-modules"><span>Script <wbr/>Modules</span></a><a href="#discover-api-features"><span>Discover <wbr/>API features</span></a></div></details></div><div class="site-menu notranslate"><nav class="tsd-navigation"><a href="modules.html">Script API - v1.19.50</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">
+</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2533146760921020" data-ad-slot="7014545383" data-ad-format="auto" data-full-width-responsive="true"></ins></div><div class="col-sidebar"><div class="page-menu"><ins class="adsbygoogle sidebar" data-ad-client="ca-pub-2533146760921020" data-ad-slot="4332513781"></ins><ins class="adsbygoogle manual" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2533146760921020" data-ad-slot="9602449199"></ins><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details notranslate"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-deprecated" name="deprecated"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Deprecated</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details notranslate"><a href="#api-versioning"><span>API <wbr/>Versioning</span></a><a href="#script-modules"><span>Script <wbr/>Modules</span></a><a href="#platform-differences"><span>Platform <wbr/>Differences</span></a></div></details></div><div class="site-menu notranslate"><nav class="tsd-navigation"><a href="modules.html">Script API - v1.19.50</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">
   Generated using TypeDoc and Microsoft Creator Docs
   <br />Not affiliated with Mojang or Microsoft
 </p>

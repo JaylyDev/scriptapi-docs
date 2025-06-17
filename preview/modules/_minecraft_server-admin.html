@@ -8,32 +8,31 @@ and secrets in JSON files in the Bedrock Dedicated Server
 folder. These types cannot be used on Minecraft clients or
 within Minecraft Realms.</p>
 <p>Manifest Details</p>
-<pre><code class="json"><span class="hl-0">{</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;module_name&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;@minecraft/server-admin&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;version&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;1.0.0-beta&quot;</span><br/><span class="hl-0">}</span>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-3">&quot;module_name&quot;</span><span class="hl-1">: </span><span class="hl-4">&quot;@minecraft/server-admin&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-3">&quot;version&quot;</span><span class="hl-1">: </span><span class="hl-4">&quot;1.0.0-beta&quot;</span><br/><span class="hl-1">}</span>
 </code><button type="button">Copy</button></pre>
 
 </div><div class="tsd-comment tsd-typography"></div></section><section class="tsd-panel tsd-typography"><h3 id="dependencies" class="tsd-anchor-link notranslate">Dependencies<a href="#dependencies" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><p><strong>@minecraft/common</strong> (Optional in Manifest Details)</p>
 <ul>
 <li>Requires <strong>v1.1.0</strong> or above</li>
 </ul>
-<pre><code class="json"><span class="hl-0">{</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;module_name&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;@minecraft/common&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;version&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;1.1.0&quot;</span><br/><span class="hl-0">}</span>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-3">&quot;module_name&quot;</span><span class="hl-1">: </span><span class="hl-4">&quot;@minecraft/common&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-3">&quot;version&quot;</span><span class="hl-1">: </span><span class="hl-4">&quot;1.1.0&quot;</span><br/><span class="hl-1">}</span>
 </code><button type="button">Copy</button></pre>
 
 <p><strong>@minecraft/server</strong> (Required one of the following in Manifest Details)</p>
 <ul>
 <li>Requires <strong>v1.17.0</strong> up to, but not including, v2.0.0</li>
 </ul>
-<pre><code class="json"><span class="hl-0">{</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;module_name&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;version&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;1.17.0&quot;</span><br/><span class="hl-0">}</span>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-3">&quot;module_name&quot;</span><span class="hl-1">: </span><span class="hl-4">&quot;@minecraft/server&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-3">&quot;version&quot;</span><span class="hl-1">: </span><span class="hl-4">&quot;1.17.0&quot;</span><br/><span class="hl-1">}</span>
 </code><button type="button">Copy</button></pre>
 
 <ul>
 <li>Requires <strong>v2.0.0</strong> up to, but not including, v3.0.0</li>
 </ul>
-<pre><code class="json"><span class="hl-0">{</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;module_name&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;@minecraft/server&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;version&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;2.0.0&quot;</span><br/><span class="hl-0">}</span>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-3">&quot;module_name&quot;</span><span class="hl-1">: </span><span class="hl-4">&quot;@minecraft/server&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-3">&quot;version&quot;</span><span class="hl-1">: </span><span class="hl-4">&quot;2.0.0&quot;</span><br/><span class="hl-1">}</span>
 </code><button type="button">Copy</button></pre>
 
-<p><strong>@minecraft/vanilla-data</strong> (Required in Manifest Details)</p>
 <h3 id="installation" class="tsd-anchor-link notranslate">Installation<a href="#installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Install type definition for <code>@minecraft/server-admin</code> module using npm:</p>
-<pre><code class="bash"><span class="hl-3">npm</span><span class="hl-0"> </span><span class="hl-2">i</span><span class="hl-0"> </span><span class="hl-2">@minecraft/server-admin@1.0.0-beta.1.21.100-preview.20</span>
+<pre><code class="bash"><span class="hl-5">npm</span><span class="hl-1"> </span><span class="hl-4">i</span><span class="hl-1"> </span><span class="hl-4">@minecraft/server-admin@1.0.0-beta.1.21.100-preview.20</span>
 </code><button type="button">Copy</button></pre>
 
 </section><details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Classes"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h2>Classes</h2></summary><dl class="tsd-member-summaries notranslate"><dt class="tsd-member-summary" id="adminbeforeevents"><span class="tsd-member-summary-name"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Class"><use href="../assets/icons.svg#icon-128"></use></svg><a href="../classes/_minecraft_server-admin.AdminBeforeEvents.html">AdminBeforeEvents</a><a href="#adminbeforeevents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></span></dt><dd class="tsd-member-summary"></dd><dt class="tsd-member-summary" id="asyncplayerjoinbeforeevent"><span class="tsd-member-summary-name"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Class"><use href="../assets/icons.svg#icon-128"></use></svg><a href="../classes/_minecraft_server-admin.AsyncPlayerJoinBeforeEvent.html">AsyncPlayerJoinBeforeEvent</a><a href="#asyncplayerjoinbeforeevent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></span></dt><dd class="tsd-member-summary"><div class="tsd-comment tsd-typography"><p>The data available before a player joins the world.</p>
