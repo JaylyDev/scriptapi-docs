@@ -162,8 +162,8 @@ var Vector3Utils = class _Vector3Utils {
    * @param a - Angle in radians
    */
   static rotateX(v, a) {
-    let cos = Math.cos(a);
-    let sin = Math.sin(a);
+    const cos = Math.cos(a);
+    const sin = Math.sin(a);
     return { x: v.x, y: v.y * cos - v.z * sin, z: v.z * cos + v.y * sin };
   }
   /**
@@ -173,8 +173,8 @@ var Vector3Utils = class _Vector3Utils {
    * @param a - Angle in radians
    */
   static rotateY(v, a) {
-    let cos = Math.cos(a);
-    let sin = Math.sin(a);
+    const cos = Math.cos(a);
+    const sin = Math.sin(a);
     return { x: v.x * cos + v.z * sin, y: v.y, z: v.z * cos - v.x * sin };
   }
   /**
@@ -184,8 +184,8 @@ var Vector3Utils = class _Vector3Utils {
    * @param a - Angle in radians
    */
   static rotateZ(v, a) {
-    let cos = Math.cos(a);
-    let sin = Math.sin(a);
+    const cos = Math.cos(a);
+    const sin = Math.sin(a);
     return { x: v.x * cos - v.y * sin, y: v.y * cos + v.x * sin, z: v.z };
   }
 };
