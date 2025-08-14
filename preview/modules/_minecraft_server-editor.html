@@ -112,10 +112,6 @@ As part of the global execution context, the scripts are
 free to register any number of extensions.
 An Editor Extension is defined a name, an activation
 function and a shutdown function.</p>
-<p>It is not recommended to directly use this function as the
-contract is not guaranteed to be stable, instead prefer
-<a href="../functions/_minecraft_server-editor.registerEditorExtension.html" class="tsd-kind-function">registerEditorExtension</a> as it provides additional
-functionality and a stable contract.</p>
 </div></dd><dt class="tsd-member-summary" id="extensioncontext"><span class="tsd-member-summary-name"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Class"><use href="../assets/icons.svg#icon-128"></use></svg><a href="../classes/_minecraft_server-editor.ExtensionContext.html">ExtensionContext</a><a href="#extensioncontext" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></span></dt><dd class="tsd-member-summary"><div class="tsd-comment tsd-typography"><p>The extension context is a native (C++) object created for
 each registered Editor Extension, when a player connection
 is established with the server.
