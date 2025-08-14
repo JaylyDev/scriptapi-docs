@@ -1,5 +1,5 @@
 
-## Other Example
+## Example for @minecraft/server v2
 
 The following example (updated of the above - bounceSkeleton.ts) spawns several mobs, then applies a knockback to all skeletons.
 
