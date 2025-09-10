@@ -43,22 +43,28 @@
     --dark-hl-20: #C586C0;
     --light-hl-21: #267F99;
     --dark-hl-21: #4EC9B0;
-    --light-hl-22: #001080;
-    --dark-hl-22: #DCDCAA;
-    --light-hl-23: #795E26;
+    --light-hl-22: #0070C1;
+    --dark-hl-22: #D4D4D4;
+    --light-hl-23: #0070C1;
     --dark-hl-23: #569CD6;
-    --light-hl-24: #795E26;
-    --dark-hl-24: #4FC1FF;
-    --light-hl-25: #795E26;
-    --dark-hl-25: #9CDCFE;
+    --light-hl-24: #0070C1;
+    --dark-hl-24: #9CDCFE;
+    --light-hl-25: #0070C1;
+    --dark-hl-25: #DCDCAA;
     --light-hl-26: #098658;
     --dark-hl-26: #B5CEA8;
-    --light-hl-27: #008000;
-    --dark-hl-27: #6A9955;
-    --light-hl-28: #000000FF;
-    --dark-hl-28: #D4D4D4;
-    --light-hl-29: #EE0000;
-    --dark-hl-29: #D7BA7D;
+    --light-hl-27: #000000;
+    --dark-hl-27: #DCDCAA;
+    --light-hl-28: #000000;
+    --dark-hl-28: #CE9178;
+    --light-hl-29: #795E26;
+    --dark-hl-29: #9CDCFE;
+    --light-hl-30: #008000;
+    --dark-hl-30: #6A9955;
+    --light-hl-31: #000000FF;
+    --dark-hl-31: #D4D4D4;
+    --light-hl-32: #EE0000;
+    --dark-hl-32: #D7BA7D;
     --light-code-background: #FFFFFF;
     --dark-code-background: #1E1E1E;
 }
@@ -94,6 +100,9 @@
     --hl-27: var(--light-hl-27);
     --hl-28: var(--light-hl-28);
     --hl-29: var(--light-hl-29);
+    --hl-30: var(--light-hl-30);
+    --hl-31: var(--light-hl-31);
+    --hl-32: var(--light-hl-32);
     --code-background: var(--light-code-background);
 } }
 
@@ -128,6 +137,9 @@
     --hl-27: var(--dark-hl-27);
     --hl-28: var(--dark-hl-28);
     --hl-29: var(--dark-hl-29);
+    --hl-30: var(--dark-hl-30);
+    --hl-31: var(--dark-hl-31);
+    --hl-32: var(--dark-hl-32);
     --code-background: var(--dark-code-background);
 } }
 
@@ -162,6 +174,9 @@
     --hl-27: var(--light-hl-27);
     --hl-28: var(--light-hl-28);
     --hl-29: var(--light-hl-29);
+    --hl-30: var(--light-hl-30);
+    --hl-31: var(--light-hl-31);
+    --hl-32: var(--light-hl-32);
     --code-background: var(--light-code-background);
 }
 
@@ -196,6 +211,9 @@
     --hl-27: var(--dark-hl-27);
     --hl-28: var(--dark-hl-28);
     --hl-29: var(--dark-hl-29);
+    --hl-30: var(--dark-hl-30);
+    --hl-31: var(--dark-hl-31);
+    --hl-32: var(--dark-hl-32);
     --code-background: var(--dark-code-background);
 }
 
@@ -229,4 +247,7 @@
 .hl-27 { color: var(--hl-27); }
 .hl-28 { color: var(--hl-28); }
 .hl-29 { color: var(--hl-29); }
+.hl-30 { color: var(--hl-30); }
+.hl-31 { color: var(--hl-31); }
+.hl-32 { color: var(--hl-32); }
 pre, code { background: var(--code-background); }
