@@ -71,7 +71,7 @@ with slash.</p>
 from the command.</p>
 <div class="tsd-comment tsd-typography"><div class="tsd-tag-remarks"><h4 class="tsd-anchor-link notranslate" id="remarks-7">Remarks<a href="#remarks-7" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Runs a command synchronously using the context of the
 broader dimenion.</p>
-<p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">read-only mode</a>.</p>
+<p>This function can't be called in read-only mode.</p>
 </div><div class="tsd-tag-throws"><h4 class="tsd-anchor-link notranslate" id="throws-3">Throws<a href="#throws-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Throws an exception if the command fails due to incorrect
 parameters or command syntax, or in erroneous cases for the
 command. Note that in many cases, if the command does not
@@ -96,7 +96,7 @@ method will not throw an exception.</p>
 is provided, the duration will be set to a random duration
 between 300 and 900 seconds.</p>
 </div><div class="tsd-comment tsd-typography"></div></li></ul></div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4><div class="tsd-comment tsd-typography"><div class="tsd-tag-remarks"><h4 class="tsd-anchor-link notranslate" id="remarks-9">Remarks<a href="#remarks-9" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Sets the current weather within the dimension</p>
-<p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">read-only mode</a>.</p>
+<p>This function can't be called in read-only mode.</p>
 </div><div class="tsd-tag-throws"><h4 class="tsd-anchor-link notranslate" id="throws-5">Throws<a href="#throws-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can throw errors.</p>
 </div></div></div></li></ul></section><section class="tsd-panel tsd-member"><h3 class="tsd-anchor-link notranslate" id="spawnentity"><span>spawn<wbr/>Entity</span><a href="#spawnentity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link notranslate" id="spawnentity-1"><span class="tsd-kind-call-signature">spawnEntity</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter notranslate">identifier</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter notranslate">location</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/_minecraft_server_1.6.0.Vector3.html" class="tsd-signature-type notranslate tsd-kind-interface">Vector3</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server_1.6.0.Entity.html" class="tsd-signature-type notranslate tsd-kind-class">Entity</a><a href="#spawnentity-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter notranslate">identifier</span>: <span class="tsd-signature-type notranslate">string</span></span><div class="tsd-comment tsd-typography"><p>Identifier of the type of entity to spawn. If no namespace
 is specified, 'minecraft:' is assumed.</p>
@@ -104,7 +104,7 @@ is specified, 'minecraft:' is assumed.</p>
 </div><div class="tsd-comment tsd-typography"></div></li></ul></div><h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1.6.0.Entity.html" class="tsd-signature-type notranslate tsd-kind-class">Entity</a></h4><p>Newly created entity at the specified location.</p>
 <div class="tsd-comment tsd-typography"><div class="tsd-tag-remarks"><h4 class="tsd-anchor-link notranslate" id="remarks-10">Remarks<a href="#remarks-10" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Creates a new entity (e.g., a mob) at the specified
 location.</p>
-<p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">read-only mode</a>.</p>
+<p>This function can't be called in read-only mode.</p>
 </div><div class="tsd-tag-throws"><h4 class="tsd-anchor-link notranslate" id="throws-6">Throws<a href="#throws-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can throw errors.</p>
 <p><a href="_minecraft_server_1.6.0.LocationInUnloadedChunkError.html" class="tsd-kind-class notranslate">LocationInUnloadedChunkError</a></p>
 <p><a href="_minecraft_server_1.6.0.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class notranslate">LocationOutOfWorldBoundariesError</a></p>
@@ -121,7 +121,7 @@ location.</p>
 </div><div class="tsd-comment tsd-typography"></div></li></ul></div><h4 class="tsd-returns-title">Returns <a href="_minecraft_server_1.6.0.Entity.html" class="tsd-signature-type notranslate tsd-kind-class">Entity</a></h4><p>Newly created item stack entity at the specified location.</p>
 <div class="tsd-comment tsd-typography"><div class="tsd-tag-remarks"><h4 class="tsd-anchor-link notranslate" id="remarks-11">Remarks<a href="#remarks-11" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Creates a new item stack as an entity at the specified
 location.</p>
-<p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">read-only mode</a>.</p>
+<p>This function can't be called in read-only mode.</p>
 </div><div class="tsd-tag-throws"><h4 class="tsd-anchor-link notranslate" id="throws-7">Throws<a href="#throws-7" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can throw errors.</p>
 <p><a href="_minecraft_server_1.6.0.LocationInUnloadedChunkError.html" class="tsd-kind-class notranslate">LocationInUnloadedChunkError</a></p>
 <p><a href="_minecraft_server_1.6.0.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class notranslate">LocationOutOfWorldBoundariesError</a></p>
@@ -137,7 +137,7 @@ location.</p>
 adjusted for this particle.</p>
 </div><div class="tsd-comment tsd-typography"></div></li></ul></div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4><div class="tsd-comment tsd-typography"><div class="tsd-tag-remarks"><h4 class="tsd-anchor-link notranslate" id="remarks-12">Remarks<a href="#remarks-12" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Creates a new particle emitter at a specified location in
 the world.</p>
-<p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">read-only mode</a>.</p>
+<p>This function can't be called in read-only mode.</p>
 </div><div class="tsd-tag-throws"><h4 class="tsd-anchor-link notranslate" id="throws-8">Throws<a href="#throws-8" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can throw errors.</p>
 <p><a href="_minecraft_server_1.6.0.LocationInUnloadedChunkError.html" class="tsd-kind-class notranslate">LocationInUnloadedChunkError</a></p>
 <p><a href="_minecraft_server_1.6.0.LocationOutOfWorldBoundariesError.html" class="tsd-kind-class notranslate">LocationOutOfWorldBoundariesError</a></p>
