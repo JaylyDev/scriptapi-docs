@@ -274,6 +274,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.AcaciaSaplingStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.AcaciaShelfStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.AcaciaSlabStates.html</loc>
     </url>
     <url>
@@ -352,6 +355,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.BambooSaplingStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.BambooShelfStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.BambooSlabStates.html</loc>
     </url>
     <url>
@@ -422,6 +428,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.BirchSaplingStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.BirchShelfStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.BirchSlabStates.html</loc>
@@ -571,9 +580,6 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.ChainCommandBlockStates.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.ChainStates.html</loc>
-    </url>
-    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CherryButtonStates.html</loc>
     </url>
     <url>
@@ -599,6 +605,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CherrySaplingStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CherryShelfStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CherrySlabStates.html</loc>
@@ -682,10 +691,22 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CopperBulbStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CopperChainStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CopperChestStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CopperDoorStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CopperGolemStatueStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CopperLanternStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CopperTorchStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CopperTrapdoorStates.html</loc>
@@ -719,6 +740,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CrimsonPressurePlateStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CrimsonShelfStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CrimsonSlabStates.html</loc>
@@ -794,6 +818,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.DarkOakSaplingStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.DarkOakShelfStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.DarkOakSlabStates.html</loc>
@@ -946,10 +973,19 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.ExposedCopperBulbStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.ExposedCopperChainStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.ExposedCopperChestStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.ExposedCopperDoorStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.ExposedCopperGolemStatueStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.ExposedCopperLanternStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.ExposedCopperTrapdoorStates.html</loc>
@@ -962,6 +998,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.ExposedDoubleCutCopperSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.ExposedLightningRodStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.FarmlandStates.html</loc>
@@ -1057,6 +1096,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.InfestedDeepslateStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.IronChainStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.IronDoorStates.html</loc>
     </url>
     <url>
@@ -1091,6 +1133,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.JungleSaplingStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.JungleShelfStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.JungleSlabStates.html</loc>
@@ -1225,6 +1270,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.MangrovePropaguleStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.MangroveShelfStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.MangroveSlabStates.html</loc>
     </url>
     <url>
@@ -1282,13 +1330,10 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.MinecraftItemTypesUnion.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.MinecraftPotionDeliveryTypesUnion.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.MinecraftPotionEffectTypesUnion.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.MinecraftPotionLiquidTypesUnion.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.MinecraftPotionModifierTypesUnion.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.MossyCobblestoneDoubleSlabStates.html</loc>
@@ -1372,6 +1417,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.OakSaplingStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.OakShelfStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.OakSlabStates.html</loc>
     </url>
     <url>
@@ -1399,10 +1447,19 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.OxidizedCopperBulbStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.OxidizedCopperChainStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.OxidizedCopperChestStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.OxidizedCopperDoorStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.OxidizedCopperGolemStatueStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.OxidizedCopperLanternStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.OxidizedCopperTrapdoorStates.html</loc>
@@ -1415,6 +1472,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.OxidizedDoubleCutCopperSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.OxidizedLightningRodStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PaleHangingMossStates.html</loc>
@@ -1448,6 +1508,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PaleOakSaplingStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PaleOakShelfStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PaleOakSlabStates.html</loc>
@@ -1876,6 +1939,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SpruceSaplingStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SpruceShelfStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SpruceSlabStates.html</loc>
     </url>
     <url>
@@ -2128,6 +2194,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WarpedPressurePlateStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WarpedShelfStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WarpedSlabStates.html</loc>
     </url>
     <url>
@@ -2152,10 +2221,19 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedCopperBulbStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedCopperChainStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedCopperChestStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedCopperDoorStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedCopperGolemStatueStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedCopperLanternStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedCopperTrapdoorStates.html</loc>
@@ -2173,10 +2251,19 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedExposedCopperBulbStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedExposedCopperChainStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedExposedCopperChestStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedExposedCopperDoorStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedExposedCopperGolemStatueStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedExposedCopperLanternStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedExposedCopperTrapdoorStates.html</loc>
@@ -2191,13 +2278,28 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedExposedDoubleCutCopperSlabStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedExposedLightningRodStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedLightningRodStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedOxidizedCopperBulbStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedOxidizedCopperChainStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedOxidizedCopperChestStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedOxidizedCopperDoorStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedOxidizedCopperGolemStatueStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedOxidizedCopperLanternStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedOxidizedCopperTrapdoorStates.html</loc>
@@ -2212,13 +2314,25 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedOxidizedDoubleCutCopperSlabStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedOxidizedLightningRodStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedWeatheredCopperBulbStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedWeatheredCopperChainStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedWeatheredCopperChestStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedWeatheredCopperDoorStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedWeatheredCopperGolemStatueStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedWeatheredCopperLanternStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedWeatheredCopperTrapdoorStates.html</loc>
@@ -2233,13 +2347,25 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedWeatheredDoubleCutCopperSlabStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WaxedWeatheredLightningRodStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WeatheredCopperBulbStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WeatheredCopperChainStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WeatheredCopperChestStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WeatheredCopperDoorStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WeatheredCopperGolemStatueStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WeatheredCopperLanternStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WeatheredCopperTrapdoorStates.html</loc>
@@ -2252,6 +2378,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WeatheredDoubleCutCopperSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WeatheredLightningRodStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.WeepingVinesStates.html</loc>
@@ -2339,6 +2468,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_debug-utilities.RuntimeStats.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_diagnostics.SentryCaptureContext.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_diagnostics.SentryOptions.html</loc>
@@ -2444,6 +2576,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IComboBoxPropertyItem.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IComboBoxPropertyItemEntry.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IComboBoxPropertyItemOptions.html</loc>
@@ -2671,6 +2806,12 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-gametest.MoveToOptions.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-gametest.PlayerPersonaPiece.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-gametest.PlayerSkinData.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-net.PacketEventOptions.html</loc>
     </url>
     <url>
@@ -2812,6 +2953,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.ExplosionOptions.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.GetBlocksStandingOnOptions.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.GreaterThanComparison.html</loc>
     </url>
     <url>
@@ -2857,7 +3001,7 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.PlayerSoundOptions.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.PotionOptions.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.PlayerSwingEventOptions.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.ProjectileShootOptions.html</loc>
@@ -2962,13 +3106,25 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-editor.stringFromException.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-gametest.getPlayerSkin.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-gametest.register.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-gametest.registerAsync.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_diagnostics.SentryBreadcrumbLevel.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-gametest.setAfterBatchCallback.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-gametest.setBeforeBatchCallback.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-gametest.spawnSimulatedPlayer.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_diagnostics.SentryEventLevel.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.ActionTypes.html</loc>
@@ -3038,6 +3194,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.ExportResult.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.FlattenMode.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.GamePublishSetting.html</loc>
@@ -3136,10 +3295,19 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.WorldGeneratorType.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-gametest.GameTestCompletedErrorReason.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-gametest.GameTestErrorType.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-gametest.LookDuration.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-gametest.PersonaArmSize.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-gametest.PersonaPieceType.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-net.HttpRequestMethod.html</loc>
@@ -3239,6 +3407,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server.GraphicsMode.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server.HeldItemOption.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server.HudElement.html</loc>
@@ -3361,13 +3532,10 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_vanilla-data.MinecraftItemTypes.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_vanilla-data.MinecraftPotionDeliveryTypes.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_vanilla-data.MinecraftPotionEffectTypes.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_vanilla-data.MinecraftPotionLiquidTypes.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_vanilla-data.MinecraftPotionModifierTypes.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_common.ArgumentOutOfBoundsError.html</loc>
@@ -3464,6 +3632,12 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.BlockPaletteManager.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.BlockPaletteSelectedItemChangeAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.BlockPaletteSelectedItemChangeAfterEventSignal.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.BlockUtilities.html</loc>
@@ -3583,6 +3757,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.ProbabilityBlockPaletteItem.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.ProjectAfterEvents.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.PyramidBrushShape.html</loc>
     </url>
     <url>
@@ -3617,6 +3794,12 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.SimulationState.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.SimulationStateAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.SimulationStateChangeAfterEventSignal.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.SingleBlockBrushShape.html</loc>
@@ -3707,6 +3890,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-gametest.FenceConnectivity.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-gametest.GameTestCompletedError.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-gametest.GameTestError.html</loc>
@@ -4025,6 +4211,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EffectTypes.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EmptyLootItem.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EnchantmentLevelOutOfBoundsError.html</loc>
@@ -4372,6 +4561,12 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.InvalidIteratorError.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.InvalidPotionDeliveryTypeError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.InvalidPotionEffectTypeError.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.InvalidStructureError.html</loc>
     </url>
     <url>
@@ -4522,7 +4717,28 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.LocationOutOfWorldBoundariesError.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.LootItem.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.LootPool.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.LootPoolEntry.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.LootPoolTiers.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.LootTable.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.LootTableEntry.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.LootTableManager.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.LootTableReference.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.MessageReceiveAfterEvent.html</loc>
@@ -4532,6 +4748,12 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.NamespaceNameError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PackSettingChangeAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PackSettingChangeAfterEventSignal.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PistonActivateAfterEvent.html</loc>
@@ -4681,13 +4903,16 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PlayerSpawnAfterEventSignal.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PlayerSwingStartAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PlayerSwingStartAfterEventSignal.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PotionDeliveryType.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PotionEffectType.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PotionLiquidType.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PotionModifierType.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.Potions.html</loc>
