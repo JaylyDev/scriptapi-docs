@@ -37,22 +37,20 @@
     --dark-hl-17: #D4D4D4;
     --light-hl-18: #001080;
     --dark-hl-18: #4FC1FF;
-    --light-hl-19: #795E26;
-    --dark-hl-19: #C586C0;
-    --light-hl-20: #267F99;
-    --dark-hl-20: #4EC9B0;
-    --light-hl-21: #000000;
-    --dark-hl-21: #9CDCFE;
+    --light-hl-19: #267F99;
+    --dark-hl-19: #4EC9B0;
+    --light-hl-20: #000000FF;
+    --dark-hl-20: #D4D4D4;
+    --light-hl-21: #795E26;
+    --dark-hl-21: #D4D4D4;
     --light-hl-22: #000000;
-    --dark-hl-22: #DCDCAA;
-    --light-hl-23: #000000FF;
-    --dark-hl-23: #D4D4D4;
-    --light-hl-24: #001080;
-    --dark-hl-24: #C586C0;
-    --light-hl-25: #098658;
-    --dark-hl-25: #B5CEA8;
-    --light-hl-26: #EE0000;
-    --dark-hl-26: #D7BA7D;
+    --dark-hl-22: #6A9955;
+    --light-hl-23: #795E26;
+    --dark-hl-23: #6A9955;
+    --light-hl-24: #098658;
+    --dark-hl-24: #B5CEA8;
+    --light-hl-25: #EE0000;
+    --dark-hl-25: #D7BA7D;
     --light-code-background: #FFFFFF;
     --dark-code-background: #1E1E1E;
 }
@@ -84,7 +82,6 @@
     --hl-23: var(--light-hl-23);
     --hl-24: var(--light-hl-24);
     --hl-25: var(--light-hl-25);
-    --hl-26: var(--light-hl-26);
     --code-background: var(--light-code-background);
 } }
 
@@ -115,7 +112,6 @@
     --hl-23: var(--dark-hl-23);
     --hl-24: var(--dark-hl-24);
     --hl-25: var(--dark-hl-25);
-    --hl-26: var(--dark-hl-26);
     --code-background: var(--dark-code-background);
 } }
 
@@ -146,7 +142,6 @@
     --hl-23: var(--light-hl-23);
     --hl-24: var(--light-hl-24);
     --hl-25: var(--light-hl-25);
-    --hl-26: var(--light-hl-26);
     --code-background: var(--light-code-background);
 }
 
@@ -177,7 +172,6 @@
     --hl-23: var(--dark-hl-23);
     --hl-24: var(--dark-hl-24);
     --hl-25: var(--dark-hl-25);
-    --hl-26: var(--dark-hl-26);
     --code-background: var(--dark-code-background);
 }
 
@@ -207,5 +201,4 @@
 .hl-23 { color: var(--hl-23); }
 .hl-24 { color: var(--hl-24); }
 .hl-25 { color: var(--hl-25); }
-.hl-26 { color: var(--hl-26); }
 pre, code { background: var(--code-background); }
