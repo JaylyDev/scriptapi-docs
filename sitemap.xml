@@ -4,19 +4,16 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/index.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/meta/cdn-links.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/index.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/meta/index.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/meta/cdn-links.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/meta/scripting-v1-docs.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/hierarchy.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/index.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules.html</loc>
@@ -7547,9 +7544,6 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/features/dynamic-properties.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/features/index.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/features/script-eval.html</loc>
