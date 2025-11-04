@@ -79,6 +79,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-admin.variables.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-editor-private-bindings.editorInternal.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-editor.editor.html</loc>
     </url>
     <url>
@@ -110,6 +113,12 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server.world.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_gameplay-utilities.MinecraftAfterEventSignalKeys.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_gameplay-utilities.MinecraftAfterEventSignals.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_server-editor.Action.html</loc>
@@ -2431,10 +2440,16 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_diagnostics.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_gameplay-utilities.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_math.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server-admin.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server-editor-private-bindings.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/modules/_minecraft_server-editor.html</loc>
@@ -2473,10 +2488,40 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_diagnostics.SentryOptions.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_gameplay-utilities.EventPromise.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-admin.TransferPlayerIpPortOptions.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-admin.TransferPlayerNetherNetOptions.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor-private-bindings.DataTransferCollectionNameData.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor-private-bindings.EditorJigsawSection.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor-private-bindings.EditorRealmsWorld.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor-private-bindings.EditorRealmsWorldSlot.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor-private-bindings.EditorRegistryFile.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor-private-bindings.InputBindingInfo.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor-private-bindings.PersistenceGroupCreationOptions.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor-private-bindings.PersistenceQueryGroupOptions.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor-private-bindings.ProjectRegionOptions.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.ActionManager.html</loc>
@@ -3094,6 +3139,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_debug-utilities.disableWatchdogTimingWarnings.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_gameplay-utilities.nextEvent.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_math.clampNumber.html</loc>
     </url>
     <url>
@@ -3152,6 +3200,27 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_diagnostics.SentryEventLevel.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor-private-bindings.EditorRealmsServiceAvailability.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor-private-bindings.JigsawJsonType.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor-private-bindings.PersistenceGroupType.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor-private-bindings.PersistenceScope.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor-private-bindings.ProjectRegionAvailabilityMode.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor-private-bindings.RealmsServiceStatus.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor-private-bindings.RealmsWorldUploadResult.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.ActionTypes.html</loc>
@@ -3647,6 +3716,75 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-admin.ServerVariables.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataStore.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataStoreActionBarContainer.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataStoreActionContainer.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataStoreAfterEvents.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataStoreMenuContainer.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataStoreModalToolActivationChangedEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataStoreModalToolActivationChangedEventSignal.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataStoreModalToolContainer.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataStorePaneContainer.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataStorePayloadAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataStorePayloadAfterEventSignal.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataTransferManager.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.DataTransferRequestResponse.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.InputService.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.InternalPersistenceManager.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.InternalPlayerServiceContext.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.JigsawService.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.MinecraftEditorInternal.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.PersistenceGroup.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.PersistenceGroupItem.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.ProjectRegion.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.ProjectRegionManager.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor-private-bindings.RealmsService.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.AudioSettings.html</loc>
