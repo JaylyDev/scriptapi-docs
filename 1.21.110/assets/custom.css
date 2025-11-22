@@ -31,7 +31,6 @@ body {
   top: 0px;
 }
 .jayly-ad-container {
-  display: flex;
   min-width: 320px;
   width: 100%;
   height: 110px;
