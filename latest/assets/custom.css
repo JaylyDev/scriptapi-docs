@@ -36,14 +36,13 @@ body {
   height: 115px;
   background-color: var(--color-background);
   position: sticky;
-  top: 0;
+  top: -20px;
   z-index: 100;
-  overflow: hidden;
 }
 .jayly-ad-container span {
   color: gray;
   display: block;
-  font-size: 8px;
+  font-size: 10px;
   z-index: 101;
 }
 ins.adsbygoogle {
