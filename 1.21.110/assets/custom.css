@@ -50,14 +50,8 @@ ins.adsbygoogle {
   width: 320px;
   height: 100px;
 }
-ins.adsbygoogle > iframe {
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
-}
 iframe {
   aspect-ratio: 16/9;
   width: 100%;
   height: 100%;
-  margin-top: 16px;
-  margin-bottom: 16px;
 }
