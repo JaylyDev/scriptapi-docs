@@ -33,24 +33,27 @@ body {
 .jayly-ad-container {
   min-width: 320px;
   width: 100%;
-  height: 110px;
+  height: 115px;
   background-color: var(--color-background);
   position: sticky;
   top: 0;
   z-index: 100;
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
   overflow: hidden;
 }
 .jayly-ad-container span {
   color: gray;
-  font-size: 10px;
+  display: block;
+  font-size: 8px;
   z-index: 101;
 }
 ins.adsbygoogle {
   display: inline-block;
   width: 320px;
   height: 100px;
+}
+ins.adsbygoogle > iframe {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }
 iframe {
   aspect-ratio: 16/9;
