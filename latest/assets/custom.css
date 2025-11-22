@@ -36,8 +36,11 @@ body {
   height: 115px;
   background-color: var(--color-background);
   position: sticky;
-  top: -20px;
   z-index: 100;
+  top: -20px;
+  padding-top: 20px;
+  display: grid;
+  place-items: center;
 }
 .jayly-ad-container span {
   color: gray;
