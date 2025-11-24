@@ -53,6 +53,26 @@ ins.adsbygoogle {
   width: 320px;
   height: 100px;
 }
+.jayly-ad-container-content {
+  width: 100%;
+  background-color: var(--color-background);
+  display: grid;
+  place-items: center;
+  padding: 10px 0;
+  min-height: 100px;
+  margin-bottom: 2rem;
+}
+.jayly-ad-container-content span {
+  color: gray;
+  display: block;
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+.jayly-ad-container-content ins.adsbygoogle {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 iframe {
   aspect-ratio: 16/9;
   width: 100%;
