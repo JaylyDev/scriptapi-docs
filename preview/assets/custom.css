@@ -42,6 +42,17 @@ body {
   display: grid;
   place-items: center;
 }
+.jayly-ad-page-menu {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .jayly-ad-col-sidebar {
+    display: none;
+  }
+  .jayly-ad-page-menu {
+    display: block;
+  }
+}
 .jayly-ad-container span {
   color: gray;
   display: block;
@@ -66,7 +77,6 @@ ins.adsbygoogle {
   color: gray;
   display: block;
   font-size: 10px;
-  margin-bottom: 4px;
 }
 .jayly-ad-container-content ins.adsbygoogle {
   display: block;
