@@ -69,9 +69,6 @@ ins.adsbygoogle {
   background-color: var(--color-background);
   display: grid;
   place-items: center;
-  padding: 10px 0;
-  min-height: 100px;
-  margin-bottom: 2rem;
 }
 .jayly-ad-container-content span {
   color: gray;
