@@ -70,6 +70,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_math.VECTOR3_ZERO.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_math.VECTORXZ_ZERO.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-admin.beforeEvents.html</loc>
     </url>
     <url>
@@ -3853,6 +3856,12 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_diagnostics.SentryUninitializedError.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_math.AABBInvalidExtentError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_math.AABBUtils.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_math.Vector2Builder.html</loc>
     </url>
     <url>
@@ -3863,6 +3872,12 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_math.Vector3Utils.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_math.VectorXZBuilder.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_math.VectorXZUtils.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-admin.AdminBeforeEvents.html</loc>
