@@ -43,9 +43,13 @@
   color: inherit;
 }
 .kofi-widget-title .kofi-title-icon {
+  display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
   flex-shrink: 0;
+  background-color: #60a5fa;
+  -webkit-mask: url(https://jaylydev.github.io/scriptapi-docs/assets/td/coffee.svg) center / contain no-repeat;
+  mask: url(https://jaylydev.github.io/scriptapi-docs/assets/td/coffee.svg) center / contain no-repeat;
 }
 .kofi-widget-subtitle {
   margin: 0;
