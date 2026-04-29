@@ -1,0 +1,41 @@
+[**Script API - v1.26.10**](../../../README.md)
+
+***
+
+[Script API - v1.26.10](../../../packages.md) / [@minecraft/server-editor](../README.md) / WidgetMouseButtonEventData
+
+# Class: WidgetMouseButtonEventData
+
+## Constructors
+
+### Constructor
+
+> `private` **new WidgetMouseButtonEventData**(): `WidgetMouseButtonEventData`
+
+#### Returns
+
+`WidgetMouseButtonEventData`
+
+## Properties
+
+### action
+
+> `readonly` **action**: [`WidgetMouseButtonActionType`](../enumerations/WidgetMouseButtonActionType.md)
+
+***
+
+### altPressed
+
+> `readonly` **altPressed**: `boolean`
+
+***
+
+### controlPressed
+
+> `readonly` **controlPressed**: `boolean`
+
+***
+
+### shiftPressed
+
+> `readonly` **shiftPressed**: `boolean`

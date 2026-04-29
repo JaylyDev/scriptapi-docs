@@ -1,0 +1,88 @@
+[**Script API - v1.26.20.28**](../../../README.md)
+
+***
+
+[Script API - v1.26.20.28](../../../packages.md) / [@minecraft/server](../README-1.md) / PlayerGameModeChangeBeforeEvent
+
+# Class: PlayerGameModeChangeBeforeEvent
+
+Contains information regarding an event before a player
+interacts with an entity.
+
+## Source
+
+```ts
+export class PlayerGameModeChangeBeforeEvent {
+    private constructor();
+    cancel: boolean;
+    readonly fromGameMode: GameMode;
+    readonly player: Player;
+    toGameMode: GameMode;
+}
+```
+
+## Constructors
+
+### Constructor
+
+> `private` **new PlayerGameModeChangeBeforeEvent**(): `PlayerGameModeChangeBeforeEvent`
+
+#### Returns
+
+`PlayerGameModeChangeBeforeEvent`
+
+## Properties
+
+### cancel
+
+> **cancel**: `boolean`
+
+#### Remarks
+
+If set to true the game mode change will be cancelled.
+
+#### World Ready
+
+This property can't be read in early-execution mode.
+
+***
+
+### fromGameMode
+
+> `readonly` **fromGameMode**: [`GameMode`](../enumerations/GameMode-1.md)
+
+#### Remarks
+
+The current game mode.
+
+#### World Ready
+
+This property can't be read in early-execution mode.
+
+***
+
+### player
+
+> `readonly` **player**: [`Player`](Player-1.md)
+
+#### Remarks
+
+Source Player for this event.
+
+#### World Ready
+
+This property can't be read in early-execution mode.
+
+***
+
+### toGameMode
+
+> **toGameMode**: [`GameMode`](../enumerations/GameMode-1.md)
+
+#### Remarks
+
+The game mode being changed to.
+
+#### World Ready
+
+This property can't be read in early-execution mode.

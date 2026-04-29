@@ -1,0 +1,19 @@
+[**Script API - v1.26.0**](../../../README.md)
+
+***
+
+[Script API - v1.26.0](../../../packages.md) / [@minecraft/server-editor-bindings](../README.md) / BlockMaskList
+
+# Interface: BlockMaskList
+
+## Properties
+
+### blockList
+
+> **blockList**: (`string` \| [`BlockPermutation`](../../server/classes/BlockPermutation.md) \| [`BlockType`](../../server/classes/BlockType.md))[]
+
+***
+
+### maskType
+
+> **maskType**: [`BlockMaskListType`](../enumerations/BlockMaskListType.md)

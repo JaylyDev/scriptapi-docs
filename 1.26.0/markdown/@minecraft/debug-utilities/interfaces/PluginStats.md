@@ -1,0 +1,13 @@
+[**Script API - v1.26.0**](../../../README.md)
+
+***
+
+[Script API - v1.26.0](../../../packages.md) / [@minecraft/debug-utilities](../README.md) / PluginStats
+
+# Interface: PluginStats
+
+## Properties
+
+### plugins
+
+> **plugins**: [`HandleCounts`](HandleCounts.md)[]

@@ -1,0 +1,32 @@
+[**Script API - v1.26.10**](../../../README.md)
+
+***
+
+[Script API - v1.26.10](../../../packages.md) / [@minecraft/server](../README-1.md) / ObjectiveSortOrder
+
+# Enumeration: ObjectiveSortOrder
+
+Used for specifying a sort order for how to display an
+objective and its list of participants.
+
+## Enumeration Members
+
+### Ascending
+
+> **Ascending**: `0`
+
+#### Remarks
+
+Objective participant list is displayed in ascending (e.g.,
+A-Z) order.
+
+***
+
+### Descending
+
+> **Descending**: `1`
+
+#### Remarks
+
+Objective participant list is displayed in descending (e.g.,
+Z-A) order.

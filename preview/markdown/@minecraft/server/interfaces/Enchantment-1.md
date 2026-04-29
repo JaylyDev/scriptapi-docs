@@ -1,0 +1,39 @@
+[**Script API - v1.26.20.28**](../../../README.md)
+
+***
+
+[Script API - v1.26.20.28](../../../packages.md) / [@minecraft/server](../README-1.md) / Enchantment
+
+# Interface: Enchantment
+
+This interface represents a specific leveled enchantment
+that is applied to an item.
+
+## Source
+
+```ts
+export interface Enchantment {
+    level: number;
+    type: EnchantmentType;
+}
+```
+
+## Properties
+
+### level
+
+> **level**: `number`
+
+#### Remarks
+
+The level of this enchantment instance.
+
+***
+
+### type
+
+> **type**: [`EnchantmentType`](../classes/EnchantmentType-1.md)
+
+#### Remarks
+
+The enchantment type of this instance.

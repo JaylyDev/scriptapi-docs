@@ -1,0 +1,73 @@
+[**Script API - v1.26.20.28**](../../../README.md)
+
+***
+
+[Script API - v1.26.20.28](../../../packages.md) / [@minecraft/server](../README.md) / EntityHurtAfterEvent
+
+# Class: EntityHurtAfterEvent
+
+Contains information related to an entity getting hurt.
+
+## Source
+
+```ts
+export class EntityHurtAfterEvent {
+    private constructor();
+    readonly damage: number;
+    readonly damageSource: EntityDamageSource;
+    readonly hurtEntity: Entity;
+}
+```
+
+## Constructors
+
+### Constructor
+
+> `private` **new EntityHurtAfterEvent**(): `EntityHurtAfterEvent`
+
+#### Returns
+
+`EntityHurtAfterEvent`
+
+## Properties
+
+### damage
+
+> `readonly` **damage**: `number`
+
+#### Remarks
+
+Describes the amount of damage caused.
+
+#### World Ready
+
+This property can't be read in early-execution mode.
+
+***
+
+### damageSource
+
+> `readonly` **damageSource**: [`EntityDamageSource`](../interfaces/EntityDamageSource.md)
+
+#### Remarks
+
+Source information on the entity that may have applied this
+damage.
+
+#### World Ready
+
+This property can't be read in early-execution mode.
+
+***
+
+### hurtEntity
+
+> `readonly` **hurtEntity**: [`Entity`](Entity.md)
+
+#### Remarks
+
+Entity that was hurt.
+
+#### World Ready
+
+This property can't be read in early-execution mode.

@@ -1,0 +1,27 @@
+[**Script API - v1.26.0**](../../../README.md)
+
+***
+
+[Script API - v1.26.0](../../../packages.md) / [@minecraft/server-editor-private-bindings](../README.md) / ProjectAfterEvents
+
+# Class: ProjectAfterEvents
+
+## Constructors
+
+### Constructor
+
+> `private` **new ProjectAfterEvents**(): `ProjectAfterEvents`
+
+#### Returns
+
+`ProjectAfterEvents`
+
+## Properties
+
+### simulationStateChange
+
+> `readonly` **simulationStateChange**: [`SimulationStateChangeAfterEventSignal`](SimulationStateChangeAfterEventSignal.md)
+
+#### Remarks
+
+This property can be read in early-execution mode.

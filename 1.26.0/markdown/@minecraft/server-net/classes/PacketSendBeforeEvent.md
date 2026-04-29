@@ -1,0 +1,55 @@
+[**Script API - v1.26.0**](../../../README.md)
+
+***
+
+[Script API - v1.26.0](../../../packages.md) / [@minecraft/server-net](../README.md) / PacketSendBeforeEvent
+
+# Class: PacketSendBeforeEvent
+
+Sent as the server sends a network packet to clients.  If
+cancelled, the server will not send the network packet to
+the receiving clients.
+
+## Constructors
+
+### Constructor
+
+> `private` **new PacketSendBeforeEvent**(): `PacketSendBeforeEvent`
+
+#### Returns
+
+`PacketSendBeforeEvent`
+
+## Properties
+
+### cancel
+
+> **cancel**: `boolean`
+
+***
+
+### packetId
+
+> `readonly` **packetId**: [`PacketId`](../enumerations/PacketId.md)
+
+#### Remarks
+
+The type of network packet.
+
+#### World Ready
+
+This property can't be read in early-execution mode.
+
+***
+
+### recipients
+
+> `readonly` **recipients**: ([`Player`](../../server/classes/Player.md) \| `undefined`)[]
+
+#### Remarks
+
+Which clients the network packet is being sent to.
+
+#### World Ready
+
+This property can't be read in early-execution mode.

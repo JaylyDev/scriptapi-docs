@@ -1,0 +1,49 @@
+[**Script API - v1.26.10**](../../../README.md)
+
+***
+
+[Script API - v1.26.10](../../../packages.md) / [@minecraft/server](../README-1.md) / CameraFadeTimeOptions
+
+# Interface: CameraFadeTimeOptions
+
+Contains timings for a fade transition.
+
+## Source
+
+```ts
+export interface CameraFadeTimeOptions {
+    fadeInTime: number;
+    fadeOutTime: number;
+    holdTime: number;
+}
+```
+
+## Properties
+
+### fadeInTime
+
+> **fadeInTime**: `number`
+
+#### Remarks
+
+Time, in seconds, for a fade-in.
+
+***
+
+### fadeOutTime
+
+> **fadeOutTime**: `number`
+
+#### Remarks
+
+Time, in seconds, for a fade-out.
+
+***
+
+### holdTime
+
+> **holdTime**: `number`
+
+#### Remarks
+
+Time, in seconds, to hold the full screen color.

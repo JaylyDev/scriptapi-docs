@@ -1,0 +1,53 @@
+[**Script API - v1.26.0**](../../../README.md)
+
+***
+
+[Script API - v1.26.0](../../../packages.md) / [@minecraft/server](../README.md) / SetStewEffectFunction
+
+# Class: SetStewEffectFunction
+
+Loot item function that modifies the effects of a dropped
+stew item.
+
+## Extends
+
+- [`LootItemFunction`](LootItemFunction.md)
+
+## Constructors
+
+### Constructor
+
+> `private` **new SetStewEffectFunction**(): `SetStewEffectFunction`
+
+#### Returns
+
+`SetStewEffectFunction`
+
+#### Overrides
+
+[`LootItemFunction`](LootItemFunction.md).[`constructor`](LootItemFunction.md#constructor)
+
+## Properties
+
+### conditions
+
+> `readonly` **conditions**: [`LootItemCondition`](LootItemCondition.md)[]
+
+#### Inherited from
+
+[`LootItemFunction`](LootItemFunction.md).[`conditions`](LootItemFunction.md#conditions)
+
+***
+
+### effects
+
+> `readonly` **effects**: `number`[]
+
+#### Remarks
+
+An array of integers corresponding to stew effects to be
+randomly chosen from and applied to the dropped item.
+
+#### World Ready
+
+This property can't be read in early-execution mode.

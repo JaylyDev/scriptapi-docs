@@ -1,0 +1,39 @@
+[**Script API - v1.26.20.28**](../../../README.md)
+
+***
+
+[Script API - v1.26.20.28](../../../packages.md) / [@minecraft/server-admin](../README.md) / TransferPlayerIpPortOptions
+
+# Interface: TransferPlayerIpPortOptions
+
+Options when transferring a player to a server that supports
+direct host/port connections.
+
+## Source
+
+```ts
+export interface TransferPlayerIpPortOptions {
+    hostname: string;
+    port: number;
+}
+```
+
+## Properties
+
+### hostname
+
+> **hostname**: `string`
+
+#### Remarks
+
+Hostname of the destination server.
+
+***
+
+### port
+
+> **port**: `number`
+
+#### Remarks
+
+Port of the destination server.

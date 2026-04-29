@@ -1,0 +1,13 @@
+[**Script API - v1.26.20.28**](../../../README.md)
+
+***
+
+[Script API - v1.26.20.28](../../../packages.md) / [@minecraft/server](../README.md) / TicksPerDay
+
+# Variable: TicksPerDay
+
+> `const` **TicksPerDay**: `24000` = `24000`
+
+## Remarks
+
+How many times the server ticks in one in-game day.

@@ -1,0 +1,188 @@
+[**Script API - v1.26.0**](../../README.md)
+
+***
+
+[Script API - v1.26.0](../../packages.md) / @minecraft/server-editor-bindings
+
+> [!NOTE]
+> Documentation for this module uses 3rd party types instead of official types. Official types will be shown later in the documentation.
+> 
+> Some parts of the documentation may lack description or examples as the 3rd party types may not include them.
+
+This documentation is generated from [xKingDark/bedrock-metadata](https://github.com/xKingDark/bedrock-metadata) repository.
+
+**`Beta`**
+
+Manifest Details
+```json
+{
+    "module_name": "@minecraft/server-editor-bindings",
+    "version": "0.1.0-beta"
+}
+```
+
+## Enumerations
+
+- [AudioSettingsProperty](enumerations/AudioSettingsProperty.md)
+- [Axis](enumerations/Axis.md)
+- [BlockMaskListType](enumerations/BlockMaskListType.md)
+- [BlockPaletteItemType](enumerations/BlockPaletteItemType.md)
+- [BrushDirectionalPlacementMode](enumerations/BrushDirectionalPlacementMode.md)
+- [BrushElevationMode](enumerations/BrushElevationMode.md)
+- [ContiguousSelectionType](enumerations/ContiguousSelectionType.md)
+- [CursorControlMode](enumerations/CursorControlMode.md)
+- [CursorTargetMode](enumerations/CursorTargetMode.md)
+- [DaylightCycle](enumerations/DaylightCycle.md)
+- [EditorMode](enumerations/EditorMode.md)
+- [EntityOperationType](enumerations/EntityOperationType.md)
+- [ExportResult](enumerations/ExportResult.md)
+- [FlattenMode](enumerations/FlattenMode.md)
+- [GamePublishSetting](enumerations/GamePublishSetting.md)
+- [GraphicsSettingsProperty](enumerations/GraphicsSettingsProperty.md)
+- [InputModifier](enumerations/InputModifier.md)
+- [LogChannel](enumerations/LogChannel.md)
+- [MinimapMarkerType](enumerations/MinimapMarkerType.md)
+- [MinimapViewType](enumerations/MinimapViewType.md)
+- [MouseActionCategory](enumerations/MouseActionCategory.md)
+- [PaintCompletionState](enumerations/PaintCompletionState.md)
+- [PaintMode](enumerations/PaintMode.md)
+- [Plane](enumerations/Plane.md)
+- [PlaytestSessionResult](enumerations/PlaytestSessionResult.md)
+- [PrimitiveType](enumerations/PrimitiveType.md)
+- [ProjectExportType](enumerations/ProjectExportType.md)
+- [SelectionVolumeEventType](enumerations/SelectionVolumeEventType.md)
+- [SpeedSettingsProperty](enumerations/SpeedSettingsProperty.md)
+- [SplineType](enumerations/SplineType.md)
+- [StructureSource](enumerations/StructureSource.md)
+- [ThemeSettingsColorKey](enumerations/ThemeSettingsColorKey.md)
+- [WidgetCollisionType](enumerations/WidgetCollisionType.md)
+- [WidgetComponentType](enumerations/WidgetComponentType.md)
+- [WidgetGizmoEventType](enumerations/WidgetGizmoEventType.md)
+- [WidgetGroupSelectionMode](enumerations/WidgetGroupSelectionMode.md)
+- [WidgetMouseButtonActionType](enumerations/WidgetMouseButtonActionType.md)
+- [WorldGeneratorType](enumerations/WorldGeneratorType.md)
+
+## Classes
+
+- [AudioSettings](classes/AudioSettings.md)
+- [BlockPalette](classes/BlockPalette.md)
+- [BlockPaletteManager](classes/BlockPaletteManager.md)
+- [BlockPaletteSelectedItemChangeAfterEvent](classes/BlockPaletteSelectedItemChangeAfterEvent.md)
+- [BlockPaletteSelectedItemChangeAfterEventSignal](classes/BlockPaletteSelectedItemChangeAfterEventSignal.md)
+- [BlockUtilities](classes/BlockUtilities.md)
+- [BrushShapeManager](classes/BrushShapeManager.md)
+- [ClipboardChangeAfterEvent](classes/ClipboardChangeAfterEvent.md)
+- [ClipboardChangeAfterEventSignal](classes/ClipboardChangeAfterEventSignal.md)
+- [ClipboardItem](classes/ClipboardItem.md)
+- [ClipboardManager](classes/ClipboardManager.md)
+- [CurrentThemeChangeAfterEvent](classes/CurrentThemeChangeAfterEvent.md)
+- [CurrentThemeChangeAfterEventSignal](classes/CurrentThemeChangeAfterEventSignal.md)
+- [CurrentThemeColorChangeAfterEvent](classes/CurrentThemeColorChangeAfterEvent.md)
+- [CurrentThemeColorChangeAfterEventSignal](classes/CurrentThemeColorChangeAfterEventSignal.md)
+- [Cursor](classes/Cursor.md)
+- [CursorPropertiesChangeAfterEvent](classes/CursorPropertiesChangeAfterEvent.md)
+- [CursorPropertyChangeAfterEventSignal](classes/CursorPropertyChangeAfterEventSignal.md)
+- [EditorConstants](classes/EditorConstants.md)
+- [EditorStructure](classes/EditorStructure.md)
+- [EditorStructureManager](classes/EditorStructureManager.md)
+- [ExportManager](classes/ExportManager.md)
+- [Extension](classes/Extension.md)
+- [ExtensionContext](classes/ExtensionContext.md)
+- [ExtensionContextAfterEvents](classes/ExtensionContextAfterEvents.md)
+- [GraphicsSettings](classes/GraphicsSettings.md)
+- [IBlockPaletteItem](classes/IBlockPaletteItem.md)
+- [InvalidWidgetComponentError](classes/InvalidWidgetComponentError.md)
+- [InvalidWidgetError](classes/InvalidWidgetError.md)
+- [InvalidWidgetGroupError](classes/InvalidWidgetGroupError.md)
+- [Logger](classes/Logger.md)
+- [MinecraftEditor](classes/MinecraftEditor.md)
+- [MinimapItem](classes/MinimapItem.md)
+- [MinimapManager](classes/MinimapManager.md)
+- [ModeChangeAfterEvent](classes/ModeChangeAfterEvent.md)
+- [ModeChangeAfterEventSignal](classes/ModeChangeAfterEventSignal.md)
+- [PlaytestManager](classes/PlaytestManager.md)
+- [ProbabilityBlockPaletteItem](classes/ProbabilityBlockPaletteItem.md)
+- [ProjectAfterEvents](classes/ProjectAfterEvents.md)
+- [RelativeVolumeListBlockVolume](classes/RelativeVolumeListBlockVolume.md)
+- [SelectionChangeAfterEventSignal](classes/SelectionChangeAfterEventSignal.md)
+- [SelectionContainerBase](classes/SelectionContainerBase.md)
+- [SelectionContainerEntity](classes/SelectionContainerEntity.md)
+- [SelectionContainerVolume](classes/SelectionContainerVolume.md)
+- [SelectionContainerVolumeEvent](classes/SelectionContainerVolumeEvent.md)
+- [SelectionEventAfterEvent](classes/SelectionEventAfterEvent.md)
+- [SelectionManager](classes/SelectionManager.md)
+- [SettingsManager](classes/SettingsManager.md)
+- [SimpleBlockPaletteItem](classes/SimpleBlockPaletteItem.md)
+- [SimulationState](classes/SimulationState.md)
+- [SimulationStateAfterEvent](classes/SimulationStateAfterEvent.md)
+- [SimulationStateChangeAfterEventSignal](classes/SimulationStateChangeAfterEventSignal.md)
+- [SpeedSettings](classes/SpeedSettings.md)
+- [ThemeSettings](classes/ThemeSettings.md)
+- [TransactionManager](classes/TransactionManager.md)
+- [UserDefinedTransactionHandlerId](classes/UserDefinedTransactionHandlerId.md)
+- [Widget](classes/Widget.md)
+- [WidgetComponentBase](classes/WidgetComponentBase.md)
+- [WidgetComponentBoundingBox](classes/WidgetComponentBoundingBox.md)
+- [WidgetComponentBoundingBoxStateChangeEventParameters](classes/WidgetComponentBoundingBoxStateChangeEventParameters.md)
+- [WidgetComponentClipboard](classes/WidgetComponentClipboard.md)
+- [WidgetComponentEntity](classes/WidgetComponentEntity.md)
+- [WidgetComponentGizmo](classes/WidgetComponentGizmo.md)
+- [WidgetComponentGizmoStateChangeEventParameters](classes/WidgetComponentGizmoStateChangeEventParameters.md)
+- [WidgetComponentGrid](classes/WidgetComponentGrid.md)
+- [WidgetComponentGuide](classes/WidgetComponentGuide.md)
+- [WidgetComponentRenderPrimitive](classes/WidgetComponentRenderPrimitive.md)
+- [WidgetComponentRenderPrimitiveTypeAxialSphere](classes/WidgetComponentRenderPrimitiveTypeAxialSphere.md)
+- [WidgetComponentRenderPrimitiveTypeBase](classes/WidgetComponentRenderPrimitiveTypeBase.md)
+- [WidgetComponentRenderPrimitiveTypeBox](classes/WidgetComponentRenderPrimitiveTypeBox.md)
+- [WidgetComponentRenderPrimitiveTypeDisc](classes/WidgetComponentRenderPrimitiveTypeDisc.md)
+- [WidgetComponentRenderPrimitiveTypeLine](classes/WidgetComponentRenderPrimitiveTypeLine.md)
+- [WidgetComponentSpline](classes/WidgetComponentSpline.md)
+- [WidgetComponentText](classes/WidgetComponentText.md)
+- [WidgetComponentVolumeOutline](classes/WidgetComponentVolumeOutline.md)
+- [WidgetGroup](classes/WidgetGroup.md)
+- [WidgetManager](classes/WidgetManager.md)
+- [WidgetMouseButtonEventData](classes/WidgetMouseButtonEventData.md)
+- [WidgetStateChangeEventData](classes/WidgetStateChangeEventData.md)
+
+## Interfaces
+
+- [BlockMaskList](interfaces/BlockMaskList.md)
+- [ClipboardWriteOptions](interfaces/ClipboardWriteOptions.md)
+- [ContiguousSelectionProperties](interfaces/ContiguousSelectionProperties.md)
+- [CursorPosition](interfaces/CursorPosition.md)
+- [CursorProperties](interfaces/CursorProperties.md)
+- [CursorRay](interfaces/CursorRay.md)
+- [EditorStructureSearchOptions](interfaces/EditorStructureSearchOptions.md)
+- [ExtensionOptionalParameters](interfaces/ExtensionOptionalParameters.md)
+- [GameOptions](interfaces/GameOptions.md)
+- [LocalizationEntry](interfaces/LocalizationEntry.md)
+- [LogProperties](interfaces/LogProperties.md)
+- [ProjectExportOptions](interfaces/ProjectExportOptions.md)
+- [QuickExtrudeProperties](interfaces/QuickExtrudeProperties.md)
+- [SelectionManifestData](interfaces/SelectionManifestData.md)
+- [SelectionManifestEntry](interfaces/SelectionManifestEntry.md)
+- [WeightedBlock](interfaces/WeightedBlock.md)
+- [WidgetComponentBaseOptions](interfaces/WidgetComponentBaseOptions.md)
+- [WidgetComponentBoundingBoxLimit](interfaces/WidgetComponentBoundingBoxLimit.md)
+- [WidgetComponentBoundingBoxOptions](interfaces/WidgetComponentBoundingBoxOptions.md)
+- [WidgetComponentClipboardOptions](interfaces/WidgetComponentClipboardOptions.md)
+- [WidgetComponentEntityOptions](interfaces/WidgetComponentEntityOptions.md)
+- [WidgetComponentGizmoOptions](interfaces/WidgetComponentGizmoOptions.md)
+- [WidgetComponentGridOptions](interfaces/WidgetComponentGridOptions.md)
+- [WidgetComponentGuideOptions](interfaces/WidgetComponentGuideOptions.md)
+- [WidgetComponentRenderPrimitiveOptions](interfaces/WidgetComponentRenderPrimitiveOptions.md)
+- [WidgetComponentSplineOptions](interfaces/WidgetComponentSplineOptions.md)
+- [WidgetComponentTextOptions](interfaces/WidgetComponentTextOptions.md)
+- [WidgetComponentVolumeOutlineOptions](interfaces/WidgetComponentVolumeOutlineOptions.md)
+- [WidgetCreateOptions](interfaces/WidgetCreateOptions.md)
+- [WidgetGroupCreateOptions](interfaces/WidgetGroupCreateOptions.md)
+
+## Type Aliases
+
+- [AudioSettingsPropertyTypeMap](type-aliases/AudioSettingsPropertyTypeMap.md)
+- [GraphicsSettingsPropertyTypeMap](type-aliases/GraphicsSettingsPropertyTypeMap.md)
+- [SpeedSettingsPropertyTypeMap](type-aliases/SpeedSettingsPropertyTypeMap.md)
+
+## Variables
+
+- [editor](variables/editor.md)

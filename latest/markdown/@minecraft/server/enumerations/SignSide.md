@@ -1,0 +1,29 @@
+[**Script API - v1.26.10**](../../../README.md)
+
+***
+
+[Script API - v1.26.10](../../../packages.md) / [@minecraft/server](../README.md) / SignSide
+
+# Enumeration: SignSide
+
+Represents a side of a sign.
+
+## Enumeration Members
+
+### Back
+
+> **Back**: `"Back"`
+
+#### Remarks
+
+The back of the sign.
+
+***
+
+### Front
+
+> **Front**: `"Front"`
+
+#### Remarks
+
+The front of the sign.
