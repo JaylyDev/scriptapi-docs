@@ -94,13 +94,13 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-editor.editor.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-graphics.atmosphere.html</loc>
-    </url>
-    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-net.beforeEvents.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-net.http.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-net.websocket.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/variables/_minecraft_server-ui.uiManager.html</loc>
@@ -749,6 +749,30 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.ChorusFlowerStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CinnabarBrickDoubleSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CinnabarBrickSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CinnabarBrickStairsStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CinnabarBrickWallStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CinnabarDoubleSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CinnabarSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CinnabarStairsStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CinnabarWallStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.CobbledDeepslateDoubleSlabStates.html</loc>
@@ -1726,6 +1750,18 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PolishedBlackstoneWallStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PolishedCinnabarDoubleSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PolishedCinnabarSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PolishedCinnabarStairsStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PolishedCinnabarWallStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PolishedDeepslateDoubleSlabStates.html</loc>
     </url>
     <url>
@@ -1754,6 +1790,18 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PolishedGraniteStairsStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PolishedSulfurDoubleSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PolishedSulfurSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PolishedSulfurStairsStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PolishedSulfurWallStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PolishedTuffDoubleSlabStates.html</loc>
@@ -2174,6 +2222,30 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.StructureBlockStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SulfurBrickDoubleSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SulfurBrickSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SulfurBrickStairsStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SulfurBrickWallStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SulfurDoubleSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SulfurSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SulfurStairsStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SulfurWallStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SunflowerStates.html</loc>
@@ -2713,6 +2785,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.ICollectionTreePropertyItemOptions.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.ICollectionTreeViewControlPaneOptions.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IColorPickerPropertyItem.html</loc>
     </url>
     <url>
@@ -2803,10 +2878,13 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IListPaneTextEntry.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IListPaneViewControlPane.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IListPaneViewControlPaneOptions.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IListPaneViewControlPaneOptions.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IListViewControlPane.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IListViewControlPaneOptions.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IMenu.html</loc>
@@ -3127,6 +3205,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.BlockBoundingBox.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.BlockContainerAccessEventOptions.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.BlockCustomComponent.html</loc>
     </url>
     <url>
@@ -3181,6 +3262,12 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.CompoundBlockVolumeItem.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.ContainerAccessSource.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.ContainerAccessSourceFilter.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.ContainerRules.html</loc>
     </url>
     <url>
@@ -3191,6 +3278,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.CustomCommandResult.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.CustomTexture.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.DefinitionModifier.html</loc>
@@ -3209,6 +3299,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.EntityApplyDamageOptions.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.EntityContainerAccessEventOptions.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.EntityDamageSource.html</loc>
@@ -3308,6 +3401,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.NotEqualsComparison.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.PartyInfo.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.PlayAnimationOptions.html</loc>
@@ -3415,6 +3511,15 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_math.clampNumber.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-admin.deopPlayer.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-admin.kickPlayer.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-admin.opPlayer.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-admin.transferPlayer.html</loc>
     </url>
     <url>
@@ -3467,6 +3572,12 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-gametest.spawnSimulatedPlayer.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-graphics.getBiomeAtmospherics.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_common.InvalidArgumentErrorType.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_diagnostics.SentryEventLevel.html</loc>
@@ -3652,6 +3763,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.PropertyItemType.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.RootPaneLocation.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.SelectionVolumeEventType.html</loc>
     </url>
     <url>
@@ -3712,10 +3826,16 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-net.PacketId.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-ui.DataDrivenScreenClosedReason.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-ui.FormCancelationReason.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-ui.FormRejectReason.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-ui.TextFilteringError.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server.AimAssistTargetMode.html</loc>
@@ -3958,6 +4078,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_common.ArgumentOutOfBoundsError.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_common.ContainerSizeOutOfBoundsError.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_common.EngineError.html</loc>
     </url>
     <url>
@@ -3965,6 +4088,12 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_common.PropertyOutOfBoundsError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_common.RuntimeConditionError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_common.UnsupportedFunctionalityError.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_debug-utilities.DebugArrow.html</loc>
@@ -4042,6 +4171,12 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-admin.AsyncPlayerJoinBeforeEventSignal.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-admin.CannotDeopPlayerError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-admin.CannotKickPlayerError.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-admin.DedicatedServerUtils.html</loc>
     </url>
     <url>
@@ -4055,6 +4190,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-admin.LevelStorageSaveStateChangeError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-admin.PlayerAlreadyOpError.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-admin.SecretString.html</loc>
@@ -4399,7 +4537,10 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-gametest.Test.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-graphics.Atmospherics.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-graphics.BiomeAtmospherics.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.CloseAfterEventSignal.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.HttpClient.html</loc>
@@ -4411,25 +4552,22 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.HttpRequest.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.HttpRequestBodyTooLargeError.html</loc>
-    </url>
-    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.HttpRequestLimitExceededError.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.HttpRequestNotAllowedError.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.HttpResponse.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.HttpsOnlyError.html</loc>
-    </url>
-    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.InternalHttpRequestError.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.MalformedHttpRequestError.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.InternalWebSocketError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.MalformedUriError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.MessageAfterEventSignal.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.NetworkBeforeEvents.html</loc>
@@ -4447,6 +4585,39 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.PacketSendBeforeEventSignal.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.RequestBodyTooLargeError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.TLSOnlyError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.UriNotAllowedError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.WebSocket.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.WebSocketClient.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.WebSocketClientAfterEvents.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.WebSocketClientCloseAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.WebSocketClientReceiveAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.WebSocketConnectionFailedError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.WebSocketLimitExceededError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.WebSocketNotConnectedError.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.ActionFormData.html</loc>
     </url>
     <url>
@@ -4454,6 +4625,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.CustomForm.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.FormCloseError.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.FormRejectError.html</loc>
@@ -4478,6 +4652,12 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.Observable.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.PlayerLeftError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.ServerShutdownError.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.UIManager.html</loc>
@@ -4519,6 +4699,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockComponentBlockBreakEvent.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockComponentBlockStateChangeEvent.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockComponentEntityEvent.html</loc>
     </url>
     <url>
@@ -4553,6 +4736,18 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockComponentTickEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockContainerClosedAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockContainerClosedAfterEventSignal.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockContainerOpenedAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockContainerOpenedAfterEventSignal.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockCustomComponentAlreadyRegisteredError.html</loc>
@@ -4702,6 +4897,18 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.CustomComponentParameters.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.CustomDimensionAlreadyRegisteredError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.CustomDimensionInvalidRegistryError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.CustomDimensionNameError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.CustomDimensionReloadNewDimensionError.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.DamagedByEntityCondition.html</loc>
     </url>
     <url>
@@ -4712,6 +4919,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.Dimension.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.DimensionRegistry.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.DimensionType.html</loc>
@@ -4807,6 +5017,18 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityComponent.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityContainerClosedAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityContainerClosedAfterEventSignal.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityContainerOpenedAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityContainerOpenedAfterEventSignal.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityDefinitionFeedItem.html</loc>
     </url>
     <url>
@@ -4814,6 +5036,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityDieAfterEventSignal.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityEnderInventoryComponent.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityEquippableComponent.html</loc>
@@ -5590,6 +5815,15 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PressurePlatePushAfterEventSignal.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PrimitiveShape.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PrimitiveShapeError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PrimitiveShapesManager.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.ProjectileHitBlockAfterEvent.html</loc>
     </url>
     <url>
@@ -5732,6 +5966,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.TargetBlockHitAfterEventSignal.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.TextPrimitive.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.TickingAreaError.html</loc>
