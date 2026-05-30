@@ -159,6 +159,13 @@ body > .skiptranslate {
 body {
   top: 0px !important;
 }
+#google_translate {
+  margin-right: auto;
+}
+.donate-link {
+  margin-bottom: 3px;
+  font-weight: bold;
+}
 @media (min-width: 770px) and (max-width: 1399px) {
   .col-sidebar {
     top: 84px;
