@@ -94,3 +94,6 @@ iframe {
   width: 100%;
   height: 100%;
 }
+#tsd-search[open] {
+  width: 48rem;
+}

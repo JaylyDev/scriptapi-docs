@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/index.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/index.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/meta/cdn-links.html</loc>
