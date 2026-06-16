@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/index.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/index.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/preview/</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/meta/cdn-links.html</loc>
@@ -313,13 +316,16 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_server-editor.SupportedMouseActionTypes.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_server-editor.TooltipButton.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_server-editor.TooltipContent.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_server-editor.TooltipInteractiveContent.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_server-editor.TooltipInteractiveContentDescription.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_server-editor.TooltipInteractiveContentDescriptionItem.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_server-editor.TooltipLink.html</loc>
@@ -1822,6 +1828,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PotatoesStates.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PotentSulfurStates.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.PoweredComparatorStates.html</loc>
     </url>
     <url>
@@ -2240,6 +2249,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SulfurSlabStates.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SulfurSpikeStates.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/types/_minecraft_vanilla-data.SulfurStairsStates.html</loc>
@@ -2719,6 +2731,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.GameOptions.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.GuidePlane.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IActionBar.html</loc>
     </url>
     <url>
@@ -2812,6 +2827,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IComboBoxPropertyItemOptions.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IContentBadgeManager.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IDataTablePropertyItem.html</loc>
     </url>
     <url>
@@ -2822,6 +2840,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IDisposable.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IDividerPropertyItemOptions.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IDropdownPropertyItem.html</loc>
@@ -2843,6 +2864,12 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IImagePropertyItemOptions.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IIntroductionPane.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IIntroductionPaneOptions.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.ILinkPropertyItem.html</loc>
@@ -2953,6 +2980,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IPane.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IPaneManager.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IPlayerLogger.html</loc>
     </url>
     <url>
@@ -3055,10 +3085,19 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IVector3TimelinePropertyItemOptions.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.IntroductionPaneTabProps.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.LocalizationEntry.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.LogProperties.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.MinimapCreateOptions.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.MinimapMarkerData.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.ModalDialogCreationParams.html</loc>
@@ -3109,6 +3148,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.WidgetComponentGuideOptions.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.WidgetComponentRenderPlaneOptions.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.WidgetComponentRenderPrimitiveOptions.html</loc>
     </url>
     <url>
@@ -3125,6 +3167,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.WidgetGroupCreateOptions.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-editor.WireframeMeshOptions.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-gametest.GameTestErrorContext.html</loc>
@@ -3148,7 +3193,7 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-ui.DividerOptions.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-ui.DropdownItem.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-ui.DropdownItemData.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server-ui.DropdownOptions.html</loc>
@@ -3352,6 +3397,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.EntityRaycastOptions.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.EntitySneakingChangedEventOptions.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.EntityVisibilityRules.html</loc>
     </url>
     <url>
@@ -3403,13 +3451,13 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.NotEqualsComparison.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.PartyInfo.html</loc>
-    </url>
-    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.PlayAnimationOptions.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.PlayerAimAssistSettings.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.PlayerBreakingBlockEventOptions.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/interfaces/_minecraft_server.PlayerSoundOptions.html</loc>
@@ -3577,6 +3625,27 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-graphics.getBiomeAtmospherics.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-graphics.getBiomeColorGrading.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-graphics.getBiomeLighting.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-graphics.getBiomeWater.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-graphics.getPlayerAtmospherics.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-graphics.getPlayerColorGrading.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-graphics.getPlayerLighting.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/functions/_minecraft_server-graphics.getPlayerWater.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_common.InvalidArgumentErrorType.html</loc>
     </url>
     <url>
@@ -3715,6 +3784,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.MinimapMarkerType.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.MinimapTrackingMode.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.MinimapViewType.html</loc>
     </url>
     <url>
@@ -3728,6 +3800,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.MouseActionType.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.MouseCursorIconType.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.MouseInputType.html</loc>
@@ -3761,6 +3836,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.PropertyItemType.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.RenderPlaneGridResolution.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-editor.RootPaneLocation.html</loc>
@@ -3823,7 +3901,13 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-net.HttpRequestMethod.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-net.HttpStatusCode.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-net.PacketId.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-net.WebSocketClientCloseReasons.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-ui.DataDrivenScreenClosedReason.html</loc>
@@ -3833,6 +3917,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-ui.FormRejectReason.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-ui.FormVisibilityErrorReason.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server-ui.TextFilteringError.html</loc>
@@ -3997,6 +4084,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server.PlayerPermissionLevel.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server.PlayerWaypointsMode.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/enums/_minecraft_server.ScoreboardIdentityType.html</loc>
     </url>
     <url>
@@ -4105,10 +4195,22 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_debug-utilities.DebugCircle.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_debug-utilities.DebugCone.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_debug-utilities.DebugCylinder.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_debug-utilities.DebugDrawer.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_debug-utilities.DebugEllipsoid.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_debug-utilities.DebugLine.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_debug-utilities.DebugPyramid.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_debug-utilities.DebugShape.html</loc>
@@ -4309,6 +4411,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.GraphicsSettings.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.GuidePlaneManager.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.IBlockPaletteItem.html</loc>
     </url>
     <url>
@@ -4453,6 +4558,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.WidgetComponentGuide.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.WidgetComponentRenderPlane.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.WidgetComponentRenderPrimitive.html</loc>
     </url>
     <url>
@@ -4484,6 +4592,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.WidgetComponentRenderPrimitiveTypePyramid.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.WidgetComponentRenderPrimitiveTypeWireframeMesh.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-editor.WidgetComponentSpline.html</loc>
@@ -4540,6 +4651,15 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-graphics.BiomeAtmospherics.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-graphics.BiomeColorGrading.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-graphics.BiomeLighting.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-graphics.BiomeWater.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.CloseAfterEventSignal.html</loc>
     </url>
     <url>
@@ -4588,6 +4708,9 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.RequestBodyTooLargeError.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.SerializableParseError.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-net.TLSOnlyError.html</loc>
     </url>
     <url>
@@ -4627,13 +4750,22 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.CustomForm.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.FormCloseError.html</loc>
-    </url>
-    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.FormRejectError.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.FormResponse.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.FormVisibilityError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.InvalidFormError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.InvalidFormModificationError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.InvalidObservableError.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.MessageBox.html</loc>
@@ -4651,13 +4783,19 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.ModalFormResponse.html</loc>
     </url>
     <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.Observable.html</loc>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.ObservableBoolean.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.ObservableNumber.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.ObservableString.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.ObservableUIRawMessage.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.PlayerLeftError.html</loc>
-    </url>
-    <url>
-      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.ServerShutdownError.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server-ui.UIManager.html</loc>
@@ -4763,6 +4901,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockCustomComponentReloadVersionError.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockDynamicPropertiesComponent.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockEvent.html</loc>
@@ -5056,6 +5197,12 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityFlyingSpeedComponent.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityFogComponent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityFogComponentError.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityFrictionModifierComponent.html</loc>
     </url>
     <url>
@@ -5299,6 +5446,12 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntitySpawnError.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityStartSneakingAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityStartSneakingAfterEventSignal.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityStrengthComponent.html</loc>
     </url>
     <url>
@@ -5318,6 +5471,12 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityUnderwaterMovementComponent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityUpgradeAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityUpgradeAfterEventSignal.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.EntityVariantComponent.html</loc>
@@ -5366,6 +5525,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.GameRules.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.ISerializable.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.InputInfo.html</loc>
@@ -5665,6 +5827,12 @@
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PlayerButtonInputAfterEventSignal.html</loc>
     </url>
     <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PlayerCancelBreakingBlockAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PlayerCancelBreakingBlockAfterEventSignal.html</loc>
+    </url>
+    <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PlayerCursorInventoryComponent.html</loc>
     </url>
     <url>
@@ -5777,6 +5945,12 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PlayerSpawnAfterEventSignal.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PlayerStartBreakingBlockAfterEvent.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PlayerStartBreakingBlockAfterEventSignal.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.PlayerSwingStartAfterEvent.html</loc>
@@ -5933,6 +6107,9 @@
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.SmeltItemFunction.html</loc>
+    </url>
+    <url>
+      <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.SoundInstance.html</loc>
     </url>
     <url>
       <loc>https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.SpecificEnchantFunction.html</loc>
