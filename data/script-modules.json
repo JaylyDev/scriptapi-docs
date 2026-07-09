@@ -74,7 +74,7 @@
     },
     {
       "name": "@minecraft/vanilla-data",
-      "version": "1.26.32",
+      "version": "1.26.33",
       "type": "library"
     }
   ],
