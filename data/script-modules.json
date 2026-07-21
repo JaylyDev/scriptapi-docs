@@ -1,6 +1,6 @@
 {
   "latest_release_version": "1.26.30",
-  "latest_preview_version": "1.26.40.31",
+  "latest_preview_version": "1.26.50.20",
   "release_modules": [
     {
       "name": "@minecraft/common",
@@ -106,7 +106,7 @@
     },
     {
       "name": "@minecraft/server",
-      "version": "2.10.0-beta",
+      "version": "2.11.0-beta",
       "type": "native"
     },
     {
@@ -141,17 +141,17 @@
     },
     {
       "name": "@minecraft/server-ui",
-      "version": "2.1.0",
+      "version": "2.2.0",
       "type": "native"
     },
     {
       "name": "@minecraft/server-ui",
-      "version": "2.2.0-beta",
+      "version": "2.3.0-beta",
       "type": "native"
     },
     {
       "name": "@minecraft/vanilla-data",
-      "version": "1.26.40-preview.31",
+      "version": "1.26.50-preview.20",
       "type": "library"
     }
   ]
