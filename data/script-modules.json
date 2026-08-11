@@ -1,6 +1,6 @@
 {
   "latest_release_version": "1.26.40",
-  "latest_preview_version": "1.26.50.24",
+  "latest_preview_version": "1.26.50.25",
   "release_modules": [
     {
       "name": "@minecraft/common",
@@ -131,7 +131,12 @@
     },
     {
       "name": "@minecraft/server-graphics",
-      "version": "1.0.0-beta",
+      "version": "1.0.0",
+      "type": "native"
+    },
+    {
+      "name": "@minecraft/server-graphics",
+      "version": "1.1.0-beta",
       "type": "native"
     },
     {
@@ -151,7 +156,7 @@
     },
     {
       "name": "@minecraft/vanilla-data",
-      "version": "1.26.50-preview.24",
+      "version": "1.26.50-preview.25",
       "type": "library"
     }
   ]
