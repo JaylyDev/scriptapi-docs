@@ -1,6 +1,6 @@
 {
   "latest_release_version": "1.26.50",
-  "latest_preview_version": "1.26.60.28",
+  "latest_preview_version": "1.26.60.29",
   "release_modules": [
     {
       "name": "@minecraft/common",
@@ -161,7 +161,7 @@
     },
     {
       "name": "@minecraft/vanilla-data",
-      "version": "1.26.60-preview.28",
+      "version": "1.26.60-preview.29",
       "type": "library"
     }
   ]
