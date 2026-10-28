@@ -1,0 +1,47 @@
+/* typedoc/src/css/index.css */
+body > .skiptranslate {
+  display: none;
+}
+body {
+  top: 0px !important;
+}
+#google_translate {
+  margin-right: auto;
+}
+.donate-link {
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+@media (min-width: 770px) and (max-width: 1399px) {
+  .col-sidebar {
+    top: 84px;
+  }
+}
+@media (min-width: 1200px) {
+  .page-menu,
+  .site-menu {
+    top: 84px;
+  }
+}
+#tsd-search .results {
+  max-height: 376px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#tsd-search .results li {
+  min-width: 770px;
+}
+[id] {
+  scroll-margin-top: 100px;
+  top: 0px;
+}
+iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: 100%;
+}
+#tsd-search[open] {
+  width: 48rem;
+}
