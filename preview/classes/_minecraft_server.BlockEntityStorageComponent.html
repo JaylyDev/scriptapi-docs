@@ -1,5 +1,5 @@
-<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8" /><link rel="canonical" href="https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockEntityStorageComponent.html" /><meta name="description" content="Documentation for @minecraft/server.BlockEntityStorageComponent in Script API - v26.70.22 | Represents storage for entities associated with a block entity. This component is available on blocks whose behavior pack definition enables entity storage with the minecraft:block_entity component. Stored entities are serialized and removed from the world until they are released or transferred. A block can store up to four entities. Entity storage is scoped to the content pack accessing it." /><meta property="og:description" content="Documentation for @minecraft/server.BlockEntityStorageComponent in Script API - v26.70.22 | Represents storage for entities associated with a block entity. This component is available on blocks whose behavior pack definition enables entity storage with the minecraft:block_entity component. Stored entities are serialized and removed from the world until they are released or transferred. A block can store up to four entities. Entity storage is scoped to the content pack accessing it." /><meta property="og:locale" content="en" /><meta property="og:type" content="article" /><meta property="og:title" content="BlockEntityStorageComponent - @minecraft/server | Script API - v26.70.22 (Beta APIs)" /><meta property="og:site_name" content="JaylyMC" /><meta property="og:image" content="https://jaylydev.github.io/icon.png" /><meta property="og:image:width" content="384" /><meta property="og:image:height" content="384" /><meta http-equiv="x-ua-compatible" content="IE=edge" /><title>BlockEntityStorageComponent - @minecraft/server | Script API - v26.70.22 (Beta APIs)</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="stylesheet" href="../assets/style.css" /><link rel="stylesheet" href="../assets/highlight.css" /><link rel="stylesheet" href="../assets/custom.css" /><script defer src="../assets/main.js"></script><script defer src="../assets/custom.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><script async src="../assets/hierarchy.js" id="tsd-hierarchy-script"></script><script type="text/javascript" async src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar">
-<div class="tsd-toolbar-contents container"><a href="../index.html" class="title notranslate">Script API - v26.70.22</a>
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8" /><link rel="canonical" href="https://jaylydev.github.io/scriptapi-docs/latest/classes/_minecraft_server.BlockEntityStorageComponent.html" /><meta name="description" content="Documentation for @minecraft/server.BlockEntityStorageComponent in Script API - v26.70.23 | Represents storage for entities associated with a block entity. This component is available on blocks whose behavior pack definition enables entity storage with the minecraft:block_entity component. Stored entities are serialized and removed from the world until they are released, transferred, or permanently removed. A block can store up to four entities across all content packs. Entity storage operations are scoped to the content pack accessing it, except for totalSize, which counts entities across all content packs." /><meta property="og:description" content="Documentation for @minecraft/server.BlockEntityStorageComponent in Script API - v26.70.23 | Represents storage for entities associated with a block entity. This component is available on blocks whose behavior pack definition enables entity storage with the minecraft:block_entity component. Stored entities are serialized and removed from the world until they are released, transferred, or permanently removed. A block can store up to four entities across all content packs. Entity storage operations are scoped to the content pack accessing it, except for totalSize, which counts entities across all content packs." /><meta property="og:locale" content="en" /><meta property="og:type" content="article" /><meta property="og:title" content="BlockEntityStorageComponent - @minecraft/server | Script API - v26.70.23 (Beta APIs)" /><meta property="og:site_name" content="JaylyMC" /><meta property="og:image" content="https://jaylydev.github.io/icon.png" /><meta property="og:image:width" content="384" /><meta property="og:image:height" content="384" /><meta http-equiv="x-ua-compatible" content="IE=edge" /><title>BlockEntityStorageComponent - @minecraft/server | Script API - v26.70.23 (Beta APIs)</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="stylesheet" href="../assets/style.css" /><link rel="stylesheet" href="../assets/highlight.css" /><link rel="stylesheet" href="../assets/custom.css" /><script defer src="../assets/main.js"></script><script defer src="../assets/custom.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><script async src="../assets/hierarchy.js" id="tsd-hierarchy-script"></script><script type="text/javascript" async src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container"><a href="../index.html" class="title notranslate">Script API - v26.70.23</a>
 <div id="tsd-toolbar-links"></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/>
 <ul role="listbox" id="tsd-search-results"></ul>
 <div id="tsd-search-status" aria-live="polite" aria-atomic="true">
@@ -17,17 +17,19 @@ entity. This component is available on blocks whose behavior
 pack definition enables entity storage with the
 <code>minecraft:block_entity</code> component. Stored entities are
 serialized and removed from the world until they are
-released or transferred. A block can store up to four
-entities. Entity storage is scoped to the content pack
-accessing it.</p>
+released, transferred, or permanently removed. A block can
+store up to four entities across all content packs. Entity
+storage operations are scoped to the content pack accessing
+it, except for totalSize, which counts entities across all
+content packs.</p>
 </div>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-source">
-<h4 class="tsd-anchor-link notranslate" id="source">Source<a href="#source" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-6">export</span><span class="hl-1"> </span><span class="hl-2">class</span><span class="hl-1"> </span><span class="hl-9">BlockEntityStorageComponent</span><span class="hl-1"> </span><span class="hl-2">extends</span><span class="hl-1"> </span><span class="hl-9">BlockComponent</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-2">private</span><span class="hl-1"> </span><span class="hl-2">constructor</span><span class="hl-1">();</span><br/><span class="hl-1">    </span><span class="hl-2">static</span><span class="hl-1"> </span><span class="hl-2">readonly</span><span class="hl-1"> </span><span class="hl-0">componentId</span><span class="hl-1"> = </span><span class="hl-4">&#39;minecraft:entity_storage&#39;</span><span class="hl-1">;</span><br/><span class="hl-1">    </span><span class="hl-5">getEntities</span><span class="hl-1">(): </span><span class="hl-9">BlockEntityStorageInfo</span><span class="hl-1">[];</span><br/><span class="hl-1">    </span><span class="hl-5">release</span><span class="hl-1">(</span><span class="hl-0">entityId</span><span class="hl-1">: </span><span class="hl-9">string</span><span class="hl-1">): </span><span class="hl-9">Entity</span><span class="hl-1">;</span><br/><span class="hl-1">    </span><span class="hl-5">size</span><span class="hl-1">(): </span><span class="hl-9">number</span><span class="hl-1">;</span><br/><span class="hl-1">    </span><span class="hl-5">store</span><span class="hl-1">(</span><span class="hl-0">entity</span><span class="hl-1">: </span><span class="hl-9">Entity</span><span class="hl-1">): </span><span class="hl-9">string</span><span class="hl-1">;</span><br/><span class="hl-1">    </span><span class="hl-5">transfer</span><span class="hl-1">(</span><span class="hl-0">entityId</span><span class="hl-1">: </span><span class="hl-9">string</span><span class="hl-1">, </span><span class="hl-0">targetBlock</span><span class="hl-1">: </span><span class="hl-9">Block</span><span class="hl-1">): </span><span class="hl-9">void</span><span class="hl-1">;</span><br/><span class="hl-1">}</span>
+<h4 class="tsd-anchor-link notranslate" id="source">Source<a href="#source" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-6">export</span><span class="hl-1"> </span><span class="hl-2">class</span><span class="hl-1"> </span><span class="hl-9">BlockEntityStorageComponent</span><span class="hl-1"> </span><span class="hl-2">extends</span><span class="hl-1"> </span><span class="hl-9">BlockComponent</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-2">private</span><span class="hl-1"> </span><span class="hl-2">constructor</span><span class="hl-1">();</span><br/><span class="hl-1">    </span><span class="hl-2">static</span><span class="hl-1"> </span><span class="hl-2">readonly</span><span class="hl-1"> </span><span class="hl-0">componentId</span><span class="hl-1"> = </span><span class="hl-4">&#39;minecraft:entity_storage&#39;</span><span class="hl-1">;</span><br/><span class="hl-1">    </span><span class="hl-5">getEntities</span><span class="hl-1">(): </span><span class="hl-9">BlockEntityStorageInfo</span><span class="hl-1">[];</span><br/><span class="hl-1">    </span><span class="hl-5">release</span><span class="hl-1">(</span><span class="hl-0">entityId</span><span class="hl-1">: </span><span class="hl-9">string</span><span class="hl-1">): </span><span class="hl-9">Entity</span><span class="hl-1">;</span><br/><span class="hl-1">    </span><span class="hl-5">remove</span><span class="hl-1">(</span><span class="hl-0">entityId</span><span class="hl-1">: </span><span class="hl-9">string</span><span class="hl-1">): </span><span class="hl-9">void</span><span class="hl-1">;</span><br/><span class="hl-1">    </span><span class="hl-5">size</span><span class="hl-1">(): </span><span class="hl-9">number</span><span class="hl-1">;</span><br/><span class="hl-1">    </span><span class="hl-5">store</span><span class="hl-1">(</span><span class="hl-0">entity</span><span class="hl-1">: </span><span class="hl-9">Entity</span><span class="hl-1">): </span><span class="hl-9">string</span><span class="hl-1">;</span><br/><span class="hl-1">    </span><span class="hl-5">totalSize</span><span class="hl-1">(): </span><span class="hl-9">number</span><span class="hl-1">;</span><br/><span class="hl-1">    </span><span class="hl-5">transfer</span><span class="hl-1">(</span><span class="hl-0">entityId</span><span class="hl-1">: </span><span class="hl-9">string</span><span class="hl-1">, </span><span class="hl-0">targetBlock</span><span class="hl-1">: </span><span class="hl-9">Block</span><span class="hl-1">): </span><span class="hl-9">void</span><span class="hl-1">;</span><br/><span class="hl-1">}</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div></section>
-<section class="tsd-panel tsd-hierarchy" data-refl="51500">
+<section class="tsd-panel tsd-hierarchy" data-refl="51783">
 <h4>Hierarchy (<a href="../hierarchy.html#@minecraft/server.BlockEntityStorageComponent">View Summary</a>)</h4>
 <ul class="tsd-hierarchy notranslate">
 <li class="tsd-hierarchy-item"><a href="_minecraft_server.BlockComponent-1.html" class="tsd-signature-type notranslate tsd-kind-class">BlockComponent</a>
@@ -53,8 +55,10 @@ accessing it.</p>
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-index-list notranslate"><a href="#getentities" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Entities</span></a>
 <a href="#release" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>release</span></a>
+<a href="#remove" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove</span></a>
 <a href="#size" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>size</span></a>
 <a href="#store" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>store</span></a>
+<a href="#totalsize" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>total<wbr/>Size</span></a>
 <a href="#transfer" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>transfer</span></a>
 </div></section></div></details></section></section>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -182,6 +186,44 @@ is invalid.</p>
 <h4 class="tsd-anchor-link notranslate" id="world-ready-4">World Ready<a href="#world-ready-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
 </div></div></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-world-ready">
+<h3 class="tsd-anchor-link notranslate" id="remove"><span>remove</span><a href="#remove" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-world-ready">
+<li class="tsd-is-world-ready">
+<div data-nosnippet><div class="tsd-signature tsd-anchor-link notranslate" id="remove-1"><span class="tsd-kind-call-signature">remove</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter notranslate">entityId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">void</span><a href="#remove-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div></div>
+<div class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter notranslate">entityId</span>: <span class="tsd-signature-type notranslate">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The unique ID of an entity stored by the current content
+pack. Use the value returned by
+<a href="#store" class="tsd-kind-method">BlockEntityStorageComponent.store</a> or the <code>uniqueId</code>
+property from <a href="_minecraft_server.BlockEntityStorageInfo.html" class="tsd-kind-class notranslate">BlockEntityStorageInfo</a>.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-remarks">
+<h4 class="tsd-anchor-link notranslate" id="remarks-5">Remarks<a href="#remarks-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Permanently removes a stored entity from the current content
+pack's storage without releasing it into the world. No
+entity, experience, or item drops are spawned.</p>
+</div>
+<div class="tsd-tag-privilege">
+<h4 class="tsd-anchor-link notranslate" id="privilege-1">Privilege<a href="#privilege-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
+</div>
+<div class="tsd-tag-throws">
+<h4 class="tsd-anchor-link notranslate" id="throws-2">Throws<a href="#throws-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Throws if the entity ID is invalid or does not identify an
+entity stored by the current content pack, if the block
+entity is invalid, or if the block's location is not loaded
+or is outside the world boundaries.</p>
+<p>Error</p>
+<p><a href="_minecraft_server.InvalidBlockComponentError-1.html" class="tsd-kind-class notranslate">InvalidBlockComponentError</a></p>
+<p><a href="_minecraft_server.LocationInUnloadedChunkError-1.html" class="tsd-kind-class notranslate">LocationInUnloadedChunkError</a></p>
+<p><a href="_minecraft_server.LocationOutOfWorldBoundariesError-1.html" class="tsd-kind-class notranslate">LocationOutOfWorldBoundariesError</a></p>
+</div>
+<div class="tsd-tag-worldReady">
+<h4 class="tsd-anchor-link notranslate" id="world-ready-5">World Ready<a href="#world-ready-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
+</div></div></div></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-world-ready">
 <h3 class="tsd-anchor-link notranslate" id="size"><span>size</span><a href="#size" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-world-ready">
 <li class="tsd-is-world-ready">
@@ -191,11 +233,11 @@ is invalid.</p>
 
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-remarks">
-<h4 class="tsd-anchor-link notranslate" id="remarks-5">Remarks<a href="#remarks-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Returns the number of entities stored in this block's entity
+<h4 class="tsd-anchor-link notranslate" id="remarks-6">Remarks<a href="#remarks-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Returns the number of entities stored in this block's entity
 storage by the current content pack.</p>
 </div>
 <div class="tsd-tag-throws">
-<h4 class="tsd-anchor-link notranslate" id="throws-2">Throws<a href="#throws-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Throws if the block entity is invalid or the block's
+<h4 class="tsd-anchor-link notranslate" id="throws-3">Throws<a href="#throws-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Throws if the block entity is invalid or the block's
 location is not loaded or is outside the world boundaries.</p>
 <p>Error</p>
 <p><a href="_minecraft_server.InvalidBlockComponentError-1.html" class="tsd-kind-class notranslate">InvalidBlockComponentError</a></p>
@@ -203,7 +245,7 @@ location is not loaded or is outside the world boundaries.</p>
 <p><a href="_minecraft_server.LocationOutOfWorldBoundariesError-1.html" class="tsd-kind-class notranslate">LocationOutOfWorldBoundariesError</a></p>
 </div>
 <div class="tsd-tag-worldReady">
-<h4 class="tsd-anchor-link notranslate" id="world-ready-5">World Ready<a href="#world-ready-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
+<h4 class="tsd-anchor-link notranslate" id="world-ready-6">World Ready<a href="#world-ready-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
 </div></div></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-world-ready">
 <h3 class="tsd-anchor-link notranslate" id="store"><span>store</span><a href="#store" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
@@ -222,16 +264,16 @@ release, transfer, or inspect the stored entity later.</p>
 
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-remarks">
-<h4 class="tsd-anchor-link notranslate" id="remarks-6">Remarks<a href="#remarks-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Serializes and stores an entity in this block's entity
+<h4 class="tsd-anchor-link notranslate" id="remarks-7">Remarks<a href="#remarks-7" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Serializes and stores an entity in this block's entity
 storage. The entity is removed from the world after it is
 stored. Only non-player mob entities can be stored. Entities
 with passengers or that are passengers cannot be stored.</p>
 </div>
 <div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege-1">Privilege<a href="#privilege-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
+<h4 class="tsd-anchor-link notranslate" id="privilege-2">Privilege<a href="#privilege-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
 </div>
 <div class="tsd-tag-throws">
-<h4 class="tsd-anchor-link notranslate" id="throws-3">Throws<a href="#throws-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Throws if the storage is full, the entity is already stored,
+<h4 class="tsd-anchor-link notranslate" id="throws-4">Throws<a href="#throws-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Throws if the storage is full, the entity is already stored,
 the entity cannot be serialized, or the block entity is
 invalid.</p>
 <p>Error</p>
@@ -240,7 +282,31 @@ invalid.</p>
 <p><a href="_minecraft_server.LocationOutOfWorldBoundariesError-1.html" class="tsd-kind-class notranslate">LocationOutOfWorldBoundariesError</a></p>
 </div>
 <div class="tsd-tag-worldReady">
-<h4 class="tsd-anchor-link notranslate" id="world-ready-6">World Ready<a href="#world-ready-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
+<h4 class="tsd-anchor-link notranslate" id="world-ready-7">World Ready<a href="#world-ready-7" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
+</div></div></div></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-world-ready">
+<h3 class="tsd-anchor-link notranslate" id="totalsize"><span>total<wbr/>Size</span><a href="#totalsize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-world-ready">
+<li class="tsd-is-world-ready">
+<div data-nosnippet><div class="tsd-signature tsd-anchor-link notranslate" id="totalsize-1"><span class="tsd-kind-call-signature">totalSize</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">number</span><a href="#totalsize-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div></div>
+<div class="tsd-description">
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">number</span></h4><p>The number of stored entities across all content packs.</p>
+
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-remarks">
+<h4 class="tsd-anchor-link notranslate" id="remarks-8">Remarks<a href="#remarks-8" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Returns the total number of entities stored in this block's
+entity storage across all content packs.</p>
+</div>
+<div class="tsd-tag-throws">
+<h4 class="tsd-anchor-link notranslate" id="throws-5">Throws<a href="#throws-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Throws if the block entity is invalid or the block's
+location is not loaded or is outside the world boundaries.</p>
+<p>Error</p>
+<p><a href="_minecraft_server.InvalidBlockComponentError-1.html" class="tsd-kind-class notranslate">InvalidBlockComponentError</a></p>
+<p><a href="_minecraft_server.LocationInUnloadedChunkError-1.html" class="tsd-kind-class notranslate">LocationInUnloadedChunkError</a></p>
+<p><a href="_minecraft_server.LocationOutOfWorldBoundariesError-1.html" class="tsd-kind-class notranslate">LocationOutOfWorldBoundariesError</a></p>
+</div>
+<div class="tsd-tag-worldReady">
+<h4 class="tsd-anchor-link notranslate" id="world-ready-8">World Ready<a href="#world-ready-8" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
 </div></div></div></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-world-ready">
 <h3 class="tsd-anchor-link notranslate" id="transfer"><span>transfer</span><a href="#transfer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
@@ -264,15 +330,15 @@ block.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-remarks">
-<h4 class="tsd-anchor-link notranslate" id="remarks-7">Remarks<a href="#remarks-7" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Moves a stored entity from this block's entity storage to
+<h4 class="tsd-anchor-link notranslate" id="remarks-9">Remarks<a href="#remarks-9" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Moves a stored entity from this block's entity storage to
 the target block's entity storage without releasing it into
 the world.</p>
 </div>
 <div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege-2">Privilege<a href="#privilege-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
+<h4 class="tsd-anchor-link notranslate" id="privilege-3">Privilege<a href="#privilege-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
 </div>
 <div class="tsd-tag-throws">
-<h4 class="tsd-anchor-link notranslate" id="throws-4">Throws<a href="#throws-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Throws if the entity ID is invalid or not stored by the
+<h4 class="tsd-anchor-link notranslate" id="throws-6">Throws<a href="#throws-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Throws if the entity ID is invalid or not stored by the
 current content pack, if the target block is invalid, in
 another dimension, lacks entity storage, or is full, or if
 the source and target blocks are the same.</p>
@@ -282,7 +348,7 @@ the source and target blocks are the same.</p>
 <p><a href="_minecraft_server.LocationOutOfWorldBoundariesError-1.html" class="tsd-kind-class notranslate">LocationOutOfWorldBoundariesError</a></p>
 </div>
 <div class="tsd-tag-worldReady">
-<h4 class="tsd-anchor-link notranslate" id="world-ready-7">World Ready<a href="#world-ready-7" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
+<h4 class="tsd-anchor-link notranslate" id="world-ready-9">World Ready<a href="#world-ready-9" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
 </div></div></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
@@ -309,9 +375,9 @@ the source and target blocks are the same.</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
 <div><a href="#block" class="tsd-is-inherited tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>block</span></a><a href="#isvalid" class="tsd-is-inherited tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>is<wbr/>Valid</span></a><a href="#typeid" class="tsd-is-inherited tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>type<wbr/>Id</span></a><a href="#componentid"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>component<wbr/>Id</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#getentities" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Entities</span></a><a href="#release" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>release</span></a><a href="#size" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>size</span></a><a href="#store" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>store</span></a><a href="#transfer" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>transfer</span></a></div></details></div></details></div>
+<div><a href="#getentities" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Entities</span></a><a href="#release" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>release</span></a><a href="#remove" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove</span></a><a href="#size" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>size</span></a><a href="#store" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>store</span></a><a href="#totalsize" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>total<wbr/>Size</span></a><a href="#transfer" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>transfer</span></a></div></details></div></details></div>
 <div class="site-menu">
-<nav class="tsd-navigation notranslate"><a href="../modules.html">Script API - v26.70.22</a>
+<nav class="tsd-navigation notranslate"><a href="../modules.html">Script API - v26.70.23</a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container">
 <li>Loading...</li></ul></nav></div></div></div><footer><p>This website is not affiliated with Mojang or Microsoft.</p></footer>
 <div class="overlay"></div><script async src="https://jaylydev.github.io/analytics.js"></script></body></html>
