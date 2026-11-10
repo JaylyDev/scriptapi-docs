@@ -1,6 +1,6 @@
 {
   "latest_release_version": "1.26.60",
-  "latest_preview_version": "1.26.70.23",
+  "latest_preview_version": "1.26.70.24",
   "release_modules": [
     {
       "name": "@minecraft/common",
