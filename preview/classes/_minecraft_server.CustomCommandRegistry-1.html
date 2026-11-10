@@ -57,8 +57,8 @@
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-index-list notranslate"><a href="#registercommand" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>register<wbr/>Command</span></a>
-<a href="#registerenum" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>register<wbr/>Enum</span></a>
+<div class="tsd-index-list notranslate"><a href="#registercommand" class="tsd-index-link tsd-is-write-privilege"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>register<wbr/>Command</span></a>
+<a href="#registerenum" class="tsd-index-link tsd-is-write-privilege"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>register<wbr/>Enum</span></a>
 </div></section></div></details></section></section>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link notranslate" id="constructors-1">Constructors<a href="#constructors-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
@@ -73,10 +73,10 @@
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link notranslate" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
-<section class="tsd-panel tsd-member">
+<section class="tsd-panel tsd-member tsd-is-write-privilege">
 <h3 class="tsd-anchor-link notranslate" id="registercommand"><span>register<wbr/>Command</span><a href="#registercommand" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="">
+<ul class="tsd-signatures tsd-is-write-privilege">
+<li class="tsd-is-write-privilege">
 <div data-nosnippet><div class="tsd-signature tsd-anchor-link notranslate" id="registercommand-1"><span class="tsd-kind-call-signature">registerCommand</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter notranslate">customCommand</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/_minecraft_server.CustomCommand-1.html" class="tsd-signature-type notranslate tsd-kind-interface">CustomCommand</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter notranslate">callback</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><br/>        <span class="tsd-kind-parameter notranslate">origin</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server.CustomCommandOrigin-1.html" class="tsd-signature-type notranslate tsd-kind-class">CustomCommandOrigin</a><span class="tsd-signature-symbol">,</span><br/>        <span class="tsd-signature-symbol">...</span><span class="tsd-kind-parameter notranslate">args</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-signature-symbol">)</span> <span class="tsd-signature-symbol">=&gt;</span> <a href="../interfaces/_minecraft_server.CustomCommandResult-1.html" class="tsd-signature-type notranslate tsd-kind-interface">CustomCommandResult</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type notranslate">undefined</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">void</span><a href="#registercommand-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div></div>
 <div class="tsd-description">
 <div class="tsd-parameters">
@@ -92,11 +92,11 @@
 <h4 class="tsd-anchor-link notranslate" id="remarks">Remarks<a href="#remarks" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Registers a custom command that when executed triggers a
 script callback.</p>
 </div>
-<div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege">Privilege<a href="#privilege" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
+<div class="tsd-tag-writePrivilege">
+<h4 class="tsd-anchor-link notranslate" id="write-privilege">Write Privilege<a href="#write-privilege" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">restricted-execution mode</a>.</p>
 </div>
 <div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege-1">Privilege<a href="#privilege-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>early-execution-allowed - This function can be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
+<h4 class="tsd-anchor-link notranslate" id="privilege">Privilege<a href="#privilege" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>early-execution-allowed - This function can be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
 </div>
 <div class="tsd-tag-throws">
 <h4 class="tsd-anchor-link notranslate" id="throws">Throws<a href="#throws" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can throw errors.</p>
@@ -120,10 +120,10 @@ script callback.</p>
 </code></details><button type="button">Copy</button></pre>
 
 </div></div></div></li></ul></section>
-<section class="tsd-panel tsd-member">
+<section class="tsd-panel tsd-member tsd-is-write-privilege">
 <h3 class="tsd-anchor-link notranslate" id="registerenum"><span>register<wbr/>Enum</span><a href="#registerenum" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="">
+<ul class="tsd-signatures tsd-is-write-privilege">
+<li class="tsd-is-write-privilege">
 <div data-nosnippet><div class="tsd-signature tsd-anchor-link notranslate" id="registerenum-1"><span class="tsd-kind-call-signature">registerEnum</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter notranslate">name</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter notranslate">values</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">void</span><a href="#registerenum-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div></div>
 <div class="tsd-description">
 <div class="tsd-parameters">
@@ -136,11 +136,11 @@ script callback.</p>
 <div class="tsd-tag-remarks">
 <h4 class="tsd-anchor-link notranslate" id="remarks-1">Remarks<a href="#remarks-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Registers a custom command enum.</p>
 </div>
-<div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege-2">Privilege<a href="#privilege-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
+<div class="tsd-tag-writePrivilege">
+<h4 class="tsd-anchor-link notranslate" id="write-privilege-1">Write Privilege<a href="#write-privilege-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">restricted-execution mode</a>.</p>
 </div>
 <div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege-3">Privilege<a href="#privilege-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>early-execution-allowed - This function can be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
+<h4 class="tsd-anchor-link notranslate" id="privilege-1">Privilege<a href="#privilege-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>early-execution-allowed - This function can be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
 </div>
 <div class="tsd-tag-throws">
 <h4 class="tsd-anchor-link notranslate" id="throws-1">Throws<a href="#throws-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can throw errors.</p>
@@ -186,7 +186,7 @@ script callback.</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Constructors</summary>
 <div><a href="#constructor" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#registercommand"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>register<wbr/>Command</span></a><a href="#registerenum"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>register<wbr/>Enum</span></a></div></details></div></details></div>
+<div><a href="#registercommand" class="tsd-is-write-privilege"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>register<wbr/>Command</span></a><a href="#registerenum" class="tsd-is-write-privilege"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>register<wbr/>Enum</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation notranslate"><a href="../modules.html">Script API - v26.70.23</a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container">

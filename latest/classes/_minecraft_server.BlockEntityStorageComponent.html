@@ -52,10 +52,10 @@ accessing it.</p>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-index-list notranslate"><a href="#getentities" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Entities</span></a>
-<a href="#release" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>release</span></a>
+<a href="#release" class="tsd-index-link tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>release</span></a>
 <a href="#size" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>size</span></a>
-<a href="#store" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>store</span></a>
-<a href="#transfer" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>transfer</span></a>
+<a href="#store" class="tsd-index-link tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>store</span></a>
+<a href="#transfer" class="tsd-index-link tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>transfer</span></a>
 </div></section></div></details></section></section>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link notranslate" id="constructors-1">Constructors<a href="#constructors-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
@@ -142,10 +142,10 @@ location is not loaded or is outside the world boundaries.</p>
 <div class="tsd-tag-worldReady">
 <h4 class="tsd-anchor-link notranslate" id="world-ready-3">World Ready<a href="#world-ready-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
 </div></div></div></li></ul></section>
-<section class="tsd-panel tsd-member tsd-is-world-ready">
+<section class="tsd-panel tsd-member tsd-is-write-privilege tsd-is-world-ready">
 <h3 class="tsd-anchor-link notranslate" id="release"><span>release</span><a href="#release" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-is-world-ready">
-<li class="tsd-is-world-ready">
+<ul class="tsd-signatures tsd-is-write-privilege tsd-is-world-ready">
+<li class="tsd-is-write-privilege tsd-is-world-ready">
 <div data-nosnippet><div class="tsd-signature tsd-anchor-link notranslate" id="release-1"><span class="tsd-kind-call-signature">release</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter notranslate">entityId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server.Entity-1.html" class="tsd-signature-type notranslate tsd-kind-class">Entity</a><a href="#release-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div></div>
 <div class="tsd-description">
 <div class="tsd-parameters">
@@ -165,8 +165,8 @@ new runtime ID.</p>
 and spawns it back into the world, at the same location it
 was when stored.</p>
 </div>
-<div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege">Privilege<a href="#privilege" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
+<div class="tsd-tag-writePrivilege">
+<h4 class="tsd-anchor-link notranslate" id="write-privilege">Write Privilege<a href="#write-privilege" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">restricted-execution mode</a>.</p>
 </div>
 <div class="tsd-tag-throws">
 <h4 class="tsd-anchor-link notranslate" id="throws-1">Throws<a href="#throws-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Throws if the entity ID is invalid or does not identify an
@@ -205,10 +205,10 @@ location is not loaded or is outside the world boundaries.</p>
 <div class="tsd-tag-worldReady">
 <h4 class="tsd-anchor-link notranslate" id="world-ready-5">World Ready<a href="#world-ready-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
 </div></div></div></li></ul></section>
-<section class="tsd-panel tsd-member tsd-is-world-ready">
+<section class="tsd-panel tsd-member tsd-is-write-privilege tsd-is-world-ready">
 <h3 class="tsd-anchor-link notranslate" id="store"><span>store</span><a href="#store" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-is-world-ready">
-<li class="tsd-is-world-ready">
+<ul class="tsd-signatures tsd-is-write-privilege tsd-is-world-ready">
+<li class="tsd-is-write-privilege tsd-is-world-ready">
 <div data-nosnippet><div class="tsd-signature tsd-anchor-link notranslate" id="store-1"><span class="tsd-kind-call-signature">store</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter notranslate">entity</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server.Entity-1.html" class="tsd-signature-type notranslate tsd-kind-class">Entity</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">string</span><a href="#store-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div></div>
 <div class="tsd-description">
 <div class="tsd-parameters">
@@ -227,8 +227,8 @@ storage. The entity is removed from the world after it is
 stored. Only non-player mob entities can be stored. Entities
 with passengers or that are passengers cannot be stored.</p>
 </div>
-<div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege-1">Privilege<a href="#privilege-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
+<div class="tsd-tag-writePrivilege">
+<h4 class="tsd-anchor-link notranslate" id="write-privilege-1">Write Privilege<a href="#write-privilege-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">restricted-execution mode</a>.</p>
 </div>
 <div class="tsd-tag-throws">
 <h4 class="tsd-anchor-link notranslate" id="throws-3">Throws<a href="#throws-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Throws if the storage is full, the entity is already stored,
@@ -242,10 +242,10 @@ invalid.</p>
 <div class="tsd-tag-worldReady">
 <h4 class="tsd-anchor-link notranslate" id="world-ready-6">World Ready<a href="#world-ready-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
 </div></div></div></li></ul></section>
-<section class="tsd-panel tsd-member tsd-is-world-ready">
+<section class="tsd-panel tsd-member tsd-is-write-privilege tsd-is-world-ready">
 <h3 class="tsd-anchor-link notranslate" id="transfer"><span>transfer</span><a href="#transfer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-is-world-ready">
-<li class="tsd-is-world-ready">
+<ul class="tsd-signatures tsd-is-write-privilege tsd-is-world-ready">
+<li class="tsd-is-write-privilege tsd-is-world-ready">
 <div data-nosnippet><div class="tsd-signature tsd-anchor-link notranslate" id="transfer-1"><span class="tsd-kind-call-signature">transfer</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter notranslate">entityId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter notranslate">targetBlock</span><span class="tsd-signature-symbol">:</span> <a href="_minecraft_server.Block-1.html" class="tsd-signature-type notranslate tsd-kind-class">Block</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">void</span><a href="#transfer-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div></div>
 <div class="tsd-description">
 <div class="tsd-parameters">
@@ -268,8 +268,8 @@ block.</p>
 the target block's entity storage without releasing it into
 the world.</p>
 </div>
-<div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege-2">Privilege<a href="#privilege-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
+<div class="tsd-tag-writePrivilege">
+<h4 class="tsd-anchor-link notranslate" id="write-privilege-2">Write Privilege<a href="#write-privilege-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">restricted-execution mode</a>.</p>
 </div>
 <div class="tsd-tag-throws">
 <h4 class="tsd-anchor-link notranslate" id="throws-4">Throws<a href="#throws-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Throws if the entity ID is invalid or not stored by the
@@ -309,7 +309,7 @@ the source and target blocks are the same.</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
 <div><a href="#block" class="tsd-is-inherited tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>block</span></a><a href="#isvalid" class="tsd-is-inherited tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>is<wbr/>Valid</span></a><a href="#typeid" class="tsd-is-inherited tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>type<wbr/>Id</span></a><a href="#componentid"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>component<wbr/>Id</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#getentities" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Entities</span></a><a href="#release" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>release</span></a><a href="#size" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>size</span></a><a href="#store" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>store</span></a><a href="#transfer" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>transfer</span></a></div></details></div></details></div>
+<div><a href="#getentities" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Entities</span></a><a href="#release" class="tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>release</span></a><a href="#size" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>size</span></a><a href="#store" class="tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>store</span></a><a href="#transfer" class="tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>transfer</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation notranslate"><a href="../modules.html">Script API - v26.60</a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container">

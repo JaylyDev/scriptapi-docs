@@ -21,7 +21,7 @@ block utility manifest.</p>
 </code><button type="button">Copy</button></pre>
 
 </div></div></section>
-<section class="tsd-panel tsd-hierarchy" data-refl="35499">
+<section class="tsd-panel tsd-hierarchy" data-refl="35501">
 <h4>Hierarchy (<a href="../hierarchy.html#@minecraft/server-editor.ManifestTaskPromise">View Summary</a>)</h4>
 <ul class="tsd-hierarchy notranslate">
 <li class="tsd-hierarchy-item"><a href="_minecraft_server-editor.TaskPromiseBase.html" class="tsd-signature-type notranslate tsd-kind-class">TaskPromiseBase</a>
@@ -44,7 +44,7 @@ block utility manifest.</p>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-index-list notranslate"><a href="#cancel" class="tsd-index-link tsd-is-inherited tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>cancel</span></a>
+<div class="tsd-index-list notranslate"><a href="#cancel" class="tsd-index-link tsd-is-inherited tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>cancel</span></a>
 </div></section></div></details></section></section>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link notranslate" id="constructors-1">Constructors<a href="#constructors-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
@@ -100,10 +100,10 @@ with a <code>TaskCancelledError</code>.</p>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link notranslate" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
-<section class="tsd-panel tsd-member tsd-is-inherited tsd-is-world-ready">
+<section class="tsd-panel tsd-member tsd-is-inherited tsd-is-write-privilege tsd-is-world-ready">
 <h3 class="tsd-anchor-link notranslate" id="cancel"><span>cancel</span><a href="#cancel" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-is-inherited tsd-is-world-ready">
-<li class="tsd-is-inherited tsd-is-world-ready">
+<ul class="tsd-signatures tsd-is-inherited tsd-is-write-privilege tsd-is-world-ready">
+<li class="tsd-is-inherited tsd-is-write-privilege tsd-is-world-ready">
 <div data-nosnippet><div class="tsd-signature tsd-anchor-link notranslate" id="cancel-1"><span class="tsd-kind-call-signature">cancel</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">void</span><a href="#cancel-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div></div>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">void</span></h4>
@@ -112,8 +112,8 @@ with a <code>TaskCancelledError</code>.</p>
 <h4 class="tsd-anchor-link notranslate" id="remarks-3">Remarks<a href="#remarks-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Requests cancellation of the task. Calling this method more
 than once, or after the task has settled, has no effect.</p>
 </div>
-<div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege">Privilege<a href="#privilege" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
+<div class="tsd-tag-writePrivilege">
+<h4 class="tsd-anchor-link notranslate" id="write-privilege">Write Privilege<a href="#write-privilege" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">restricted-execution mode</a>.</p>
 </div>
 <div class="tsd-tag-worldReady">
 <h4 class="tsd-anchor-link notranslate" id="world-ready-3">World Ready<a href="#world-ready-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
@@ -144,7 +144,7 @@ than once, or after the task has settled, has no effect.</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
 <div><a href="#cancelled" class="tsd-is-inherited tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>cancelled</span></a><a href="#progress" class="tsd-is-inherited tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>progress</span></a><a href="#promise" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>promise</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#cancel" class="tsd-is-inherited tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>cancel</span></a></div></details></div></details></div>
+<div><a href="#cancel" class="tsd-is-inherited tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>cancel</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation notranslate"><a href="../modules.html">Script API - v26.70.23</a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container">

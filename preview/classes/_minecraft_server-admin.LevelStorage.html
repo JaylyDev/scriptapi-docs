@@ -32,9 +32,9 @@ dedicated server.</p>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-index-list notranslate"><a href="#savehold" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>save<wbr/>Hold</span></a>
-<a href="#savequery" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>save<wbr/>Query</span></a>
-<a href="#saveresume" class="tsd-index-link tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>save<wbr/>Resume</span></a>
+<div class="tsd-index-list notranslate"><a href="#savehold" class="tsd-index-link tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>save<wbr/>Hold</span></a>
+<a href="#savequery" class="tsd-index-link tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>save<wbr/>Query</span></a>
+<a href="#saveresume" class="tsd-index-link tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>save<wbr/>Resume</span></a>
 </div></section></div></details></section></section>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link notranslate" id="constructors-1">Constructors<a href="#constructors-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
@@ -49,10 +49,10 @@ dedicated server.</p>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link notranslate" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
-<section class="tsd-panel tsd-member tsd-is-world-ready">
+<section class="tsd-panel tsd-member tsd-is-write-privilege tsd-is-world-ready">
 <h3 class="tsd-anchor-link notranslate" id="savehold"><span>save<wbr/>Hold</span><a href="#savehold" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-is-world-ready">
-<li class="tsd-is-world-ready">
+<ul class="tsd-signatures tsd-is-write-privilege tsd-is-world-ready">
+<li class="tsd-is-write-privilege tsd-is-world-ready">
 <div data-nosnippet><div class="tsd-signature tsd-anchor-link notranslate" id="savehold-1"><span class="tsd-kind-call-signature">saveHold</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type notranslate">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#savehold-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div></div>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type notranslate">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -61,16 +61,16 @@ dedicated server.</p>
 <h4 class="tsd-anchor-link notranslate" id="remarks">Remarks<a href="#remarks" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Disables the server writing to the world files and begins
 creating a snapshot.</p>
 </div>
-<div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege">Privilege<a href="#privilege" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
+<div class="tsd-tag-writePrivilege">
+<h4 class="tsd-anchor-link notranslate" id="write-privilege">Write Privilege<a href="#write-privilege" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">restricted-execution mode</a>.</p>
 </div>
 <div class="tsd-tag-worldReady">
 <h4 class="tsd-anchor-link notranslate" id="world-ready">World Ready<a href="#world-ready" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
 </div></div></div></li></ul></section>
-<section class="tsd-panel tsd-member tsd-is-world-ready">
+<section class="tsd-panel tsd-member tsd-is-write-privilege tsd-is-world-ready">
 <h3 class="tsd-anchor-link notranslate" id="savequery"><span>save<wbr/>Query</span><a href="#savequery" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-is-world-ready">
-<li class="tsd-is-world-ready">
+<ul class="tsd-signatures tsd-is-write-privilege tsd-is-world-ready">
+<li class="tsd-is-write-privilege tsd-is-world-ready">
 <div data-nosnippet><div class="tsd-signature tsd-anchor-link notranslate" id="savequery-1"><span class="tsd-kind-call-signature">saveQuery</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_minecraft_server-admin.LevelStorageQuerySnapshotFile.html" class="tsd-signature-type notranslate tsd-kind-class">LevelStorageQuerySnapshotFile</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><a href="#savequery-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div></div>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_minecraft_server-admin.LevelStorageQuerySnapshotFile.html" class="tsd-signature-type notranslate tsd-kind-class">LevelStorageQuerySnapshotFile</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -79,16 +79,16 @@ creating a snapshot.</p>
 <h4 class="tsd-anchor-link notranslate" id="remarks-1">Remarks<a href="#remarks-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Returns the path and size of every file in the current
 snapshot if a snapshot is being taken.</p>
 </div>
-<div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege-1">Privilege<a href="#privilege-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
+<div class="tsd-tag-writePrivilege">
+<h4 class="tsd-anchor-link notranslate" id="write-privilege-1">Write Privilege<a href="#write-privilege-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">restricted-execution mode</a>.</p>
 </div>
 <div class="tsd-tag-worldReady">
 <h4 class="tsd-anchor-link notranslate" id="world-ready-1">World Ready<a href="#world-ready-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
 </div></div></div></li></ul></section>
-<section class="tsd-panel tsd-member tsd-is-world-ready">
+<section class="tsd-panel tsd-member tsd-is-write-privilege tsd-is-world-ready">
 <h3 class="tsd-anchor-link notranslate" id="saveresume"><span>save<wbr/>Resume</span><a href="#saveresume" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-is-world-ready">
-<li class="tsd-is-world-ready">
+<ul class="tsd-signatures tsd-is-write-privilege tsd-is-world-ready">
+<li class="tsd-is-write-privilege tsd-is-world-ready">
 <div data-nosnippet><div class="tsd-signature tsd-anchor-link notranslate" id="saveresume-1"><span class="tsd-kind-call-signature">saveResume</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type notranslate">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type notranslate">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#saveresume-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div></div>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type notranslate">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type notranslate">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -97,8 +97,8 @@ snapshot if a snapshot is being taken.</p>
 <h4 class="tsd-anchor-link notranslate" id="remarks-2">Remarks<a href="#remarks-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Re-enables server writing world state to files and removes
 snapshot.</p>
 </div>
-<div class="tsd-tag-privilege">
-<h4 class="tsd-anchor-link notranslate" id="privilege-2">Privilege<a href="#privilege-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>no-restricted-execution - This function can't be called in restricted-execution mode.</p>
+<div class="tsd-tag-writePrivilege">
+<h4 class="tsd-anchor-link notranslate" id="write-privilege-2">Write Privilege<a href="#write-privilege-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#read-only-mode" target="_blank">restricted-execution mode</a>.</p>
 </div>
 <div class="tsd-tag-worldReady">
 <h4 class="tsd-anchor-link notranslate" id="world-ready-2">World Ready<a href="#world-ready-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>This function can't be called in <a href="/scriptapi-docs/features/script-privileges.html#early-execution-mode" target="_blank">early-execution mode</a>.</p>
@@ -126,7 +126,7 @@ snapshot.</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Constructors</summary>
 <div><a href="#constructor" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#savehold" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>save<wbr/>Hold</span></a><a href="#savequery" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>save<wbr/>Query</span></a><a href="#saveresume" class="tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>save<wbr/>Resume</span></a></div></details></div></details></div>
+<div><a href="#savehold" class="tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>save<wbr/>Hold</span></a><a href="#savequery" class="tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>save<wbr/>Query</span></a><a href="#saveresume" class="tsd-is-write-privilege tsd-is-world-ready"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>save<wbr/>Resume</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation notranslate"><a href="../modules.html">Script API - v26.70.23</a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container">
