@@ -5,7 +5,7 @@ const zombie = world
   .spawnEntity("minecraft:zombie", world.getDefaultSpawnLocation());
 
 const id = system.runInterval(() => {
-  if (!zombie.isValid()) {
+  if (!zombie.isValid) {
     system.clearRun(id);
     return;
   }

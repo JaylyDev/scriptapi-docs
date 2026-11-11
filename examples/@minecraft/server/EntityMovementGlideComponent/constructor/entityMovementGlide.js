@@ -6,5 +6,5 @@ world.afterEvents.entitySpawn.subscribe(({ entity }) => {
   movementGlide.speedWhenTurning;
   movementGlide.startSpeed;
   movementGlide.startSpeed;
-  movementGlide.isValid();
+  movementGlide.isValid;
 });

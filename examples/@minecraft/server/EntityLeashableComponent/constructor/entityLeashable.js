@@ -6,4 +6,4 @@ const leashable = entity.getComponent("leashable");
 leashable.softDistance;
 leashable.leashTo(leashHolderEntity); // Assuming you have an 'leashHolderEntity' instance
 leashable.unleash();
-leashable.isValid();
+leashable.isValid;

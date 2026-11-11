@@ -18,12 +18,12 @@ function runCutscene() {
       });
       system.runTimeout(() => {
         player.camera.clear();
-        player.runCommandAsync("/inputpermission @s camera enabled");
-        player.runCommandAsync("/inputpermission @s movement enabled");
+        player.runCommand("/inputpermission @s camera enabled");
+        player.runCommand("/inputpermission @s movement enabled");
       }, 20);
     });
-    player.runCommandAsync("/inputpermission @s camera disabled");
-    player.runCommandAsync("/inputpermission @s movement disabled");
+    player.runCommand("/inputpermission @s camera disabled");
+    player.runCommand("/inputpermission @s movement disabled");
   }
 }
 

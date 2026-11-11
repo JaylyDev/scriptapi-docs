@@ -4,5 +4,5 @@ import { world } from "@minecraft/server";
 world.beforeEvents.entityRemove.subscribe((data) => {
   world.sendMessage('Entity Removed: ' + data.removedEntity.typeId);
   // Spawn lightning when an entity is removed.
-  data.removedEntity.runCommandAsync('summon lightning_bolt ~ ~10 ~');
+  data.removedEntity.runCommand('summon lightning_bolt ~ ~10 ~');
 })

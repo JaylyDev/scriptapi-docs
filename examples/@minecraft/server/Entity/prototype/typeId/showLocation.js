@@ -4,5 +4,5 @@ import { system, world } from '@minecraft/server';
 system.runInterval(() => {
   const entity = world.getDimension('overworld').getEntities()[0];
   // Finally, show that location as title
-  entity.runCommandAsync(`title @a actionbar X: ${Math.floor(entity.location.x)} | Y: ${Math.floor(entity.location.y)} | Z: ${Math.floor(entity.location.z)}`);
+  entity.runCommand(`title @a actionbar X: ${Math.floor(entity.location.x)} | Y: ${Math.floor(entity.location.y)} | Z: ${Math.floor(entity.location.z)}`);
 });

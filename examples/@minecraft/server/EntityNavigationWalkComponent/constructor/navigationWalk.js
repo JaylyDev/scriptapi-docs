@@ -1,24 +1,71 @@
-import { world } from "@minecraft/server";
+import { world, system } from "@minecraft/server";
 
-const blaze = world.getDimension("overworld").spawnEntity("minecraft:blaze", { x: 0, y: 0, z: 0 });
-const navigationGeneric = blaze.getComponent("minecraft:navigation.walk");
-console.warn('blaze - avoidDamageBlocks: ' + navigationGeneric.avoidDamageBlocks);
-console.warn('blaze - avoidPortals: ' + navigationGeneric.avoidPortals);
-console.warn('blaze - avoidSun: ' + navigationGeneric.avoidSun);
-console.warn('blaze - avoidWater: ' + navigationGeneric.avoidWater);
-console.warn('blaze - canBreach: ' + navigationGeneric.canBreach);
-console.warn('blaze - canBreakDoors: ' + navigationGeneric.canBreakDoors);
-console.warn('blaze - canFloat: ' + navigationGeneric.canFloat);
-console.warn('blaze - canJump: ' + navigationGeneric.canJump);
-console.warn('blaze - canOpenDoors: ' + navigationGeneric.canOpenDoors);
-console.warn('blaze - canOpenIronDoors: ' + navigationGeneric.canOpenIronDoors);
-console.warn('blaze - canPassDoors: ' + navigationGeneric.canPassDoors);
-console.warn('blaze - canPathFromAir: ' + navigationGeneric.canPathFromAir);
-console.warn('blaze - canPathOverLava: ' + navigationGeneric.canPathOverLava);
-console.warn('blaze - canPathOverWater: ' + navigationGeneric.canPathOverWater);
-console.warn('blaze - canSink: ' + navigationGeneric.canSink);
-console.warn('blaze - canSwim: ' + navigationGeneric.canSwim);
-console.warn('blaze - canWalk: ' + navigationGeneric.canWalk);
-console.warn('blaze - canWalkInLava: ' + navigationGeneric.canWalkInLava);
-console.warn('blaze - isAmphibious: ' + navigationGeneric.isAmphibious);
-console.warn('blaze - isValid: ' + navigationGeneric.isValid());
+// This example demonstrates how to work with EntityNavigationWalkComponent
+// This component is used by entities that primarily move by walking on the ground
+
+system.run(() => {
+    const overworld = world.getDimension("overworld");
+    
+    // Spawn a zombie (which uses walk navigation for ground movement)
+    const zombie = overworld.spawnEntity("minecraft:zombie", { x: 0, y: 64, z: 0 });
+    
+    // Get the navigation.walk component
+    const navigationWalk = zombie.getComponent("minecraft:navigation.walk");
+    
+    if (navigationWalk) {
+        console.log("=== Zombie Walk Navigation Properties ===");
+        
+        // Check basic movement capabilities
+        console.log(`Can walk: ${navigationWalk.canWalk}`);
+        console.log(`Can jump: ${navigationWalk.canJump}`);
+        console.log(`Can swim: ${navigationWalk.canSwim}`);
+        console.log(`Can float: ${navigationWalk.canFloat}`);
+        console.log(`Can sink: ${navigationWalk.canSink}`);
+        
+        // Check pathfinding capabilities
+        console.log(`Can path from air: ${navigationWalk.canPathFromAir}`);
+        console.log(`Can path over water: ${navigationWalk.canPathOverWater}`);
+        console.log(`Can path over lava: ${navigationWalk.canPathOverLava}`);
+        
+        // Check avoidance behaviors
+        console.log(`Avoids water: ${navigationWalk.avoidWater}`);
+        console.log(`Avoids sun: ${navigationWalk.avoidSun}`);
+        console.log(`Avoids damage blocks: ${navigationWalk.avoidDamageBlocks}`);
+        console.log(`Avoids portals: ${navigationWalk.avoidPortals}`);
+        
+        // Check door interaction capabilities (important for hostile mobs)
+        console.log(`Can open doors: ${navigationWalk.canOpenDoors}`);
+        console.log(`Can break doors: ${navigationWalk.canBreakDoors}`);
+        console.log(`Can pass doors: ${navigationWalk.canPassDoors}`);
+        console.log(`Can open iron doors: ${navigationWalk.canOpenIronDoors}`);
+        
+        // Check special abilities
+        console.log(`Is amphibious: ${navigationWalk.isAmphibious}`);
+        console.log(`Can breach: ${navigationWalk.canBreach}`);
+        console.log(`Can walk in lava: ${navigationWalk.canWalkInLava}`);
+        
+        console.log(`Component is valid: ${navigationWalk.isValid}`);
+        
+        // Send a summary message to the world
+        world.sendMessage(`Zombie spawned with walk navigation! It moves on the ground.`);
+        
+        // Display what makes walk navigation special
+        if (navigationWalk.canBreakDoors) {
+            console.log("🧟 This zombie can break down doors on hard difficulty!");
+        }
+        
+        if (navigationWalk.avoidSun) {
+            console.log("☀️ This zombie will try to avoid direct sunlight!");
+        }
+        
+        // Compare with other navigation types
+        console.log("\n=== Navigation Type Comparison ===");
+        console.log("Walk navigation is best for:");
+        console.log("- Ground-based entities (zombies, skeletons, villagers)");
+        console.log("- Entities that need to interact with doors");
+        console.log("- Entities that follow terrain closely");
+    } else {
+        console.log("Failed to get navigation.walk component from zombie");
+        world.sendMessage("Could not access zombie walk navigation component");
+    }
+});

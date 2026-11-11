@@ -1,41 +1,46 @@
-import { world } from "@minecraft/server";
+import { system, BlockComponentPlayerPlaceBeforeEvent, 
+         BlockComponentEntityFallOnEvent, BlockComponentOnPlaceEvent, 
+         BlockComponentPlayerBreakEvent, BlockComponentPlayerInteractEvent,
+         BlockComponentRandomTickEvent, BlockComponentStepOffEvent,
+         BlockComponentStepOnEvent, BlockComponentTickEvent,
+         CustomComponentParameters } from "@minecraft/server";
 
-world.beforeEvents.worldInitialize.subscribe((initEvent) => {
-  initEvent.blockComponentRegistry.registerCustomComponent("custom:block", {
-    beforeOnPlayerPlace: (event) => {
+system.beforeEvents.startup.subscribe((startupEvent) => {
+  startupEvent.blockComponentRegistry.registerCustomComponent("custom:block", {
+    beforeOnPlayerPlace: (event: BlockComponentPlayerPlaceBeforeEvent, params: CustomComponentParameters) => {
       const { player, block, face, permutationToPlace, dimension } = event;
       event.cancel = true; // include this if canceling block placement
       // Your code here
     },
-    onEntityFallOn: (event) => {
+    onEntityFallOn: (event: BlockComponentEntityFallOnEvent, params: CustomComponentParameters) => {
       const { entity, block, fallDistance, dimension } = event;
       // Your code here
     },
-    onPlace: (event) => {
+    onPlace: (event: BlockComponentOnPlaceEvent, params: CustomComponentParameters) => {
       const { block, dimension, previousBlock } = event;
       // Your code here
     },
-    onPlayerDestroy: (event) => {
-      const { player, block, dimension, destroyedBlockPermutation } = event;
+    onPlayerBreak: (event: BlockComponentPlayerBreakEvent, params: CustomComponentParameters) => {
+      const { player, block, dimension, brokenBlockPermutation } = event;
       // Your code here
     },
-    onPlayerInteract: (event) => {
+    onPlayerInteract: (event: BlockComponentPlayerInteractEvent, params: CustomComponentParameters) => {
       const { player, block, dimension, face, faceLocation } = event;
       // Your code here
     },
-    onRandomTick: (event) => {
+    onRandomTick: (event: BlockComponentRandomTickEvent, params: CustomComponentParameters) => {
       const { block, dimension } = event;
       // Your code here
     },
-    onStepOff: (event) => {
+    onStepOff: (event: BlockComponentStepOffEvent, params: CustomComponentParameters) => {
       const { entity, block, dimension } = event;
       // Your code here
     },
-    onStepOn: (event) => {
+    onStepOn: (event: BlockComponentStepOnEvent, params: CustomComponentParameters) => {
       const { entity, block, dimension } = event;
       // Your code here
     },
-    onTick: (event) => {
+    onTick: (event: BlockComponentTickEvent, params: CustomComponentParameters) => {
       const { block, dimension } = event;
       // Your code here
     },

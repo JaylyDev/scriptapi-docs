@@ -7,6 +7,10 @@
     "@minecraft/debug-utilities": "beta",
     "@minecraft/math": "latest",
     "@minecraft/server-gametest": "beta",
+    "@minecraft/server-net": "beta",
+    "@minecraft/server-graphics": "beta",
+    "@minecraft/diagnostics": "beta",
+    "@minecraft/server-editor": "beta",
     "@minecraft/server-ui": "beta"
   }
 }

@@ -1,4 +1,3 @@
-// Script by WavePlayz
 
 import { world } from "@minecraft/server";
 
@@ -8,7 +7,7 @@ world.afterEvents.itemCompleteUse.subscribe(eventData => {
     const { source, itemStack } = eventData;
 
     // Construct a message indicating the player's name and the type of item they used
-    world.sendMessage(`Player ${source.name} completed use of item (${itemStack.typeId})`);
+    world.sendMessage(`Player ${source.nameTag} completed use of item (${itemStack.typeId})`);
 });
 
 /*

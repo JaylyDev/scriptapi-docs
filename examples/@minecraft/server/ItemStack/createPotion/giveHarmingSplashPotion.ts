@@ -1,10 +1,8 @@
 import { ItemStack, world } from "@minecraft/server";
-import { MinecraftPotionEffectTypes, MinecraftPotionLiquidTypes, MinecraftPotionModifierTypes } from "@minecraft/vanilla-data";
 
 const item = ItemStack.createPotion({
-  effect: MinecraftPotionEffectTypes.Harming,
-  liquid: MinecraftPotionLiquidTypes.Splash,
-  modifier: MinecraftPotionModifierTypes.Long
+  effect: 'Harming',
+  liquid: 'Splash'
 })
 
 for (const player of world.getAllPlayers()) {

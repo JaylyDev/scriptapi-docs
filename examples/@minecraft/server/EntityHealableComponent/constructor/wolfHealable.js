@@ -4,4 +4,4 @@ const entity = world.getDimension('overworld').getEntities({ type: 'minecraft:wo
 const healable = entity.getComponent("healable");
 healable.forceUse;
 healable.getFeedItems();
-healable.isValid();
+healable.isValid;

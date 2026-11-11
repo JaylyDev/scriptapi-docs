@@ -1,6 +1,7 @@
-import { world } from "@minecraft/server";
+import { system } from "@minecraft/server";
 
-world.beforeEvents.worldInitialize.subscribe((initEvent) => {
+// Use world.beforeEvents.worldInitialize.subscribe if you're using @minecraft/server v1
+system.beforeEvents.startup.subscribe((initEvent) => {
   initEvent.blockComponentRegistry.registerCustomComponent("custom:block", {
     beforeOnPlayerPlace: (event) => {
       const { player, block, face, permutationToPlace, dimension } = event;
@@ -15,8 +16,8 @@ world.beforeEvents.worldInitialize.subscribe((initEvent) => {
       const { block, dimension, previousBlock } = event;
       // Your code here
     },
-    onPlayerDestroy: (event) => {
-      const { player, block, dimension, destroyedBlockPermutation } = event;
+    onPlayerBreak: (event) => {
+      const { player, block, dimension, brokenBlockPermutation } = event;
       // Your code here
     },
     onPlayerInteract: (event) => {

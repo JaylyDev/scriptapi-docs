@@ -8,6 +8,6 @@ world.beforeEvents.entityRemove.subscribe((event) => {
   const location = event.removedEntity.getDynamicProperty('spawn_location') as Vector3; // get location spawn
   const dimension = event.removedEntity.dimension;
   system.run(() => {
-    dimension.spawnEntity(event.removedEntity.typeId, location);
+    dimension.spawnEntity<string>(event.removedEntity.typeId, location);
   })
 });

@@ -1,32 +1,34 @@
-import { world } from "@minecraft/server";
+import { system, CustomComponentParameters, ItemComponentBeforeDurabilityDamageEvent,
+         ItemComponentCompleteUseEvent, ItemComponentConsumeEvent, ItemComponentHitEntityEvent,
+         ItemComponentMineBlockEvent, ItemComponentUseEvent, ItemComponentUseOnEvent } from "@minecraft/server";
 
-world.beforeEvents.worldInitialize.subscribe((initEvent) => {
-  initEvent.itemComponentRegistry.registerCustomComponent("custom:item", {
-    onBeforeDurabilityDamage(event) {
+system.beforeEvents.startup.subscribe((startupEvent) => {
+  startupEvent.itemComponentRegistry.registerCustomComponent("custom:item", {
+    onBeforeDurabilityDamage(event: ItemComponentBeforeDurabilityDamageEvent, params: CustomComponentParameters) {
         const { attackingEntity, durabilityDamage, hitEntity, itemStack } = event;
         // Your code here
     },
-    onCompleteUse(event) {
+    onCompleteUse(event: ItemComponentCompleteUseEvent, params: CustomComponentParameters) {
         const { itemStack, source } = event;
         // Your code here
     },
-    onConsume(event) {
+    onConsume(event: ItemComponentConsumeEvent, params: CustomComponentParameters) {
         const { itemStack, source } = event;
         // Your code here
     },
-    onHitEntity(event) {
+    onHitEntity(event: ItemComponentHitEntityEvent, params: CustomComponentParameters) {
         const { attackingEntity, hadEffect, hitEntity, itemStack } = event;
         // Your code here
     },
-    onMineBlock(event) {
+    onMineBlock(event: ItemComponentMineBlockEvent, params: CustomComponentParameters) {
         const { block, itemStack, minedBlockPermutation, source } = event;
         // Your code here
     },
-    onUse(event) {
+    onUse(event: ItemComponentUseEvent, params: CustomComponentParameters) {
         const { itemStack, source } = event;
         // Your code here
     },
-    onUseOn(event) {
+    onUseOn(event: ItemComponentUseOnEvent, params: CustomComponentParameters) {
         const { source, usedOnBlockPermutation } = event;
         // Your code here
     }

@@ -5,7 +5,7 @@ import { Entity, world } from "@minecraft/server";
  * @param {Entity} entity 
  */
 function showId(entity) {
-    entity.runCommandAsync("say My entity ID: " + entity.id);
+    entity.runCommand("say My entity ID: " + entity.id);
 }
 
 for (const entity of world.getDimension('overworld').getEntities()) {

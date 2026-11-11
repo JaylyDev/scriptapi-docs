@@ -23,5 +23,5 @@ for (const entity of world.getDimension("overworld").getEntities()) {
   navigationFly.canWalk;
   navigationFly.canWalkInLava;
   navigationFly.isAmphibious;
-  navigationFly.isValid();
+  navigationFly.isValid;
 }

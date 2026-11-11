@@ -1,4 +1,3 @@
-// Script by WavePlayz
 
 import { world, DisplaySlotId } from "@minecraft/server";
 

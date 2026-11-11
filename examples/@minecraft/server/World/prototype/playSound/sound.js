@@ -1,9 +1,8 @@
-// Script by WavePlayz
 
 import { world } from "@minecraft/server";
 
-// Subscribe to the `itemUseOn` event, which is triggered when a player uses an item on a block
-world.afterEvents.itemUseOn.subscribe(eventData => {
+// Subscribe to the `itemUse` event, which is triggered when a player uses an item on a block
+world.afterEvents.itemUse.subscribe(eventData => {
     const player = eventData.source;
 
     // Play a sound effect when the player uses an item on a block

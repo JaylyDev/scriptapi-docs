@@ -40,5 +40,5 @@ system.runInterval(() => {
     for (const { biome, distance } of result) {
         player.onScreenDisplay.setActionBar(`Biome: ${biome.id}, Distance: ${distance}`);
     }
-    console.log(`Took ${end - start}ms to find all biomes`);
+    // console.log removed for example clarity
 });

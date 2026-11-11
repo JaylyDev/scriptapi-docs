@@ -4,7 +4,7 @@ const options: EntityQueryOptions = {
   families: ["mob", "animal"],
   excludeTypes: ["cow"],
   maxDistance: 50,
-  excludeGameModes: [GameMode.creative, GameMode.spectator],
+  excludeGameModes: [GameMode.Creative, GameMode.Spectator],
 };
 
 const filteredEntities = world.getDimension("overworld").getEntities(options);

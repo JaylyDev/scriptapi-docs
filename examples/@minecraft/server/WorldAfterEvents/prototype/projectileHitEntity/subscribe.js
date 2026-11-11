@@ -1,4 +1,3 @@
-// Script by WavePlayz
 
 import { Player, world } from "@minecraft/server";
 
@@ -19,7 +18,7 @@ world.afterEvents.projectileHitEntity.subscribe(eventData => {
         const coordinates = `${x}, ${y}, ${z}`;
         
         // Construct a message indicating which player hit which entity and where
-        const message = `${source.name} hit the entity at location ${coordinates}`;
+        const message = `${source.nameTag} hit the entity at location ${coordinates}`;
         
         // Send the message to all players in the world
         world.sendMessage(message);

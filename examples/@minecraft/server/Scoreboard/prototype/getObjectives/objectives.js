@@ -1,4 +1,3 @@
-// Script by WavePlayz
 
 import { world, system, Player } from "@minecraft/server";
 

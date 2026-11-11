@@ -1,6 +1,5 @@
-// Script by WavePlayz
 
-import { world } from "@minecraft/server";
+import { Player, world } from "@minecraft/server";
 
 // Subscribe to the `projectileHitBlock` event, which is triggered when a projectile hits a block
 world.afterEvents.projectileHitBlock.subscribe(eventData => {
@@ -18,10 +17,12 @@ world.afterEvents.projectileHitBlock.subscribe(eventData => {
         // Format the coordinates as a string
         const coordinates = `${x}, ${y}, ${z}`;
         
-        // Construct a message indicating which player hit which block and where
-        const message = `${source.name} hit the block at location ${coordinates}`;
-        
-        // Send the message to all players in the world
-        world.sendMessage(message);
+        if (source instanceof Player) {
+            // If the source is a player, send a message to the world
+            world.sendMessage(`${source.nameTag} hit the block at ${coordinates}`);
+        } else {
+            // If the source is not a player, handle accordingly
+            world.sendMessage(`${source.typeId} hit the block at ${coordinates}`);
+        }
     }
 });

@@ -1,5 +1,5 @@
 import { system } from "@minecraft/server";
 
 const runId = system.run(() => {
-  console.log("Running callback function...");
+  // console.log removed for example clarity
 });

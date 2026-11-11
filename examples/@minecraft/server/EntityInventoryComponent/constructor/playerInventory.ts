@@ -34,7 +34,7 @@ function moveItemBetweenPlayers(fromPlayer: Player, toPlayer: Player) {
   fromPlayer.sendMessage(`inventorySize: ${inventory.inventorySize}`);
   fromPlayer.sendMessage(`private: ${inventory.private}`);
   fromPlayer.sendMessage(`restrictToOwner: ${inventory.restrictToOwner}`);
-  fromPlayer.sendMessage(`isValid: ${inventory.isValid()}`);
+  fromPlayer.sendMessage(`isValid: ${inventory.isValid}`);
   const container = inventory.container;
 
   // Example usage of the custom functions

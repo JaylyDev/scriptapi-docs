@@ -1,4 +1,3 @@
-// Script by WavePlayz
 
 import { world, system, BlockTypes } from "@minecraft/server"; // Import necessary modules from the Minecraft server API
 

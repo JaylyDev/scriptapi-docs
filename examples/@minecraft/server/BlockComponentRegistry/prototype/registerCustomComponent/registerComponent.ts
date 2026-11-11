@@ -1,4 +1,4 @@
-import { BlockComponentStepOnEvent, BlockCustomComponent, BlockPermutation, world } from "@minecraft/server";
+import { BlockComponentStepOnEvent, BlockCustomComponent, BlockPermutation, system } from "@minecraft/server";
 
 class TurnToAirComponent implements BlockCustomComponent {
   onStepOn(data: BlockComponentStepOnEvent) {
@@ -6,6 +6,6 @@ class TurnToAirComponent implements BlockCustomComponent {
   }
 }
 
-world.beforeEvents.worldInitialize.subscribe(event => {
+system.beforeEvents.startup.subscribe(event => {
   event.blockComponentRegistry.registerCustomComponent('jayly:custom_block', new TurnToAirComponent());
 });

@@ -1,4 +1,3 @@
-// Script by WavePlayz
 
 import { world } from "@minecraft/server";
 
@@ -6,5 +5,5 @@ import { world } from "@minecraft/server";
 world.afterEvents.itemReleaseUse.subscribe(eventData => {
     const { source, itemStack } = eventData;
     
-    world.sendMessage(`${source.name} released the use of item ${itemStack.typeId}`);
+    world.sendMessage(`${source.nameTag} released the use of item ${itemStack.typeId}`);
 });

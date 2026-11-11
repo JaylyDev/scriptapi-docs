@@ -15,4 +15,4 @@ rideable.ejectRiders();
 rideable.getFamilyTypes();
 rideable.getRiders();
 rideable.getSeats();
-rideable.isValid();
+rideable.isValid;

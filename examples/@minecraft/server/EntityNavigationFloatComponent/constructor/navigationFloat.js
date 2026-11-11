@@ -21,5 +21,5 @@ for (const entity of world.getDimension("overworld").getEntities()) {
   navigationFloat.canWalk;
   navigationFloat.canWalkInLava;
   navigationFloat.isAmphibious;
-  navigationFloat.isValid();
+  navigationFloat.isValid;
 }

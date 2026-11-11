@@ -1,4 +1,3 @@
-// Script by WavePlayz
 
 import { world } from "@minecraft/server";
 
@@ -6,5 +5,5 @@ import { world } from "@minecraft/server";
 world.afterEvents.itemStopUse.subscribe(eventData => {
     const { source, itemStack } = eventData;
     
-    world.sendMessage(`${source.name} stopped using item ${itemStack.typeId}`);
+    world.sendMessage(`${source.nameTag} stopped using item ${itemStack.typeId}`);
 });

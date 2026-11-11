@@ -1,4 +1,4 @@
-import { BlockPermutation, ItemComponentMineBlockEvent, ItemCustomComponent, world } from "@minecraft/server";
+import { BlockPermutation, ItemComponentMineBlockEvent, ItemCustomComponent, system } from "@minecraft/server";
 
 class MineDiamondComponent implements ItemCustomComponent {
   onMineBlock(e: ItemComponentMineBlockEvent): void {
@@ -9,6 +9,6 @@ class MineDiamondComponent implements ItemCustomComponent {
   };
 }
 
-world.beforeEvents.worldInitialize.subscribe(event => {
+system.beforeEvents.startup.subscribe(event => {
   event.itemComponentRegistry.registerCustomComponent('jayly:custom_item', new MineDiamondComponent());
 });
